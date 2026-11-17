@@ -2,7 +2,7 @@
 
 A multi-tenant AI operations platform built as a Forward Deployed Engineering portfolio project. It helps maintenance and operations teams turn free-text fault reports into evidence-grounded incidents and approved support tickets, while keeping every customer's data isolated and every consequential action behind a human decision.
 
-Both customers (Apex Industrial Manufacturing, Meridian Fleet Logistics) and all their data, people and systems are **fictional**. Everything runs locally on one Windows machine with free software and a CPU-only language model. Nothing is deployed, published or released, and no real customer has used it.
+Both customers (Apex Industrial Manufacturing, Meridian Fleet Logistics) and all their data, people and systems are **fictional**. Everything runs locally on one Windows machine with free software and a CPU-only language model. The source is publicly viewable under a proprietary license. The application has no hosted deployment, release, or real customer usage.
 
 > **Status, stated plainly.** A working local system with extensive automated tests: not a production system and **not a complete implementation of the V4.1 specification**. Of 238 requirements, 203 are assessed verified, 28 partial, 3 missing and 4 not evaluable ([reconciliation](docs/specification/v4.1-reconciliation-matrix.md), [closure plan, 79 unresolved at the tag; 35 remain](docs/planning/requirement-closure-plan.json), [final validation report](docs/planning/final-validation-report.md)). Several AI-quality targets are **not met** (section 20). All tests and evaluations were written by the same author; none is externally certified. The local tag `v4.1.0-local-rc1` marks an engineering checkpoint, not a release.
 
@@ -38,13 +38,41 @@ flowchart LR
 ```
 
 ## 5. Technology stack
-Python 3.10+ (images use 3.12), FastAPI, Pydantic 2, SQLAlchemy, Alembic (migrations 0001 to 0017), PostgreSQL 16 with pgvector, Ollama running `qwen2.5:1.5b`, Sentence Transformers MiniLM embeddings, React 18 with Vite and TypeScript, Vitest, Playwright, pytest, ruff, Docker Compose, Terraform examples (illustrative). Declared licences of everything installed: [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
+Python 3.10+ (images use 3.12), FastAPI, Pydantic 2, SQLAlchemy, Alembic (migrations 0001 to 0017), PostgreSQL 16 with pgvector, Ollama running `qwen2.5:1.5b`, Sentence Transformers MiniLM embeddings, React 18 with Vite and TypeScript, a Python worker for background jobs, Docker Compose, and GitHub Actions for automated checks. Tests use Vitest, Playwright and pytest. Terraform examples are illustrative. Declared licences of everything installed: [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
 
 ## 6. Customer scenarios
 Step-by-step guides written against behaviour that was executed on the live stack (each states what is UI and what is API-only): [Apex Industrial](docs/customer-delivery/apex-demo-guide.md) and [Meridian Fleet](docs/customer-delivery/meridian-demo-guide.md). The 15 acceptance scenarios (UAT-A01..A08, UAT-B01..B07) are in `tests/acceptance/`.
 
 ## 7. Screenshots
-The [guided walkthrough](docs/customer-delivery/technical-walkthrough.md) describes the UI, and the [Batch 5 validation report](docs/planning/batch5-report.md) records the browser checks for measurement verification. Captured browser images are omitted from this snapshot.
+### Product demo
+
+The dark-mode walkthrough follows a fictional Apex Industrial maintenance request from a source-backed answer through supervisor review and confirmed delivery. These screenshots come from the live local application using deterministic AI backends and mock external systems.
+
+**Tenant overview.** Baseline the incident review backlog, delivery outcomes, and approval turnaround before rolling out the workflow.
+
+![Apex Industrial overview with onboarding health, incident review load, and delivery metrics](docs/images/eaop-apex-overview.png)
+
+**Grounded maintenance answer.** The assistant retrieves tenant documents and shows the passages behind its answer to a pump vibration question.
+
+![AI Knowledge Assistant showing the pump vibration answer and two verified supporting citations](docs/images/eaop-grounded-maintenance-answer.png)
+
+**Supervisor approval.** A separate reviewer checks the asset and supporting evidence before approving or rejecting the outbound ticket.
+
+![Approval Queue with incident context, source evidence, and supervisor decision controls](docs/images/eaop-supervisor-approval-queue.png)
+
+**Ticket audit trail.** Filter the append-only log to trace who drafted, approved, and submitted a specific ticket.
+
+![Audit Logs filtered to the ticket, showing timestamps, actors, and workflow events](docs/images/eaop-ticket-audit-trail.png)
+
+**Integration health.** Check API health, submission attempts, scheduled retries, and dead-letter counts during rollout and support.
+
+![Integration Health with API state, delivery metrics, and operational telemetry](docs/images/eaop-integration-health.png)
+
+**Tenant connectors.** Review the configured Apex inventory and ticketing destinations, authorization status, and confirmed ticket delivery.
+
+![Apex Industrial mock inventory and ticketing connectors with destination and delivery status](docs/images/eaop-apex-connectors.png)
+
+See the [guided walkthrough](docs/customer-delivery/technical-walkthrough.md) and [browser acceptance report](docs/planning/batch5-report.md) for the tested flows.
 
 ## 8. Local setup
 Full runbook (startup order, health checks, failures, shutdown): [docs/operations/local-runbook.md](docs/operations/local-runbook.md). From the repository root (Windows paths shown):
