@@ -1,0 +1,71 @@
+{
+  "qa_call_count": 103,
+  "numeric_full_cited_passage": {
+    "baseline": {},
+    "candidate": {}
+  },
+  "numeric_cited_quote_only": {
+    "baseline": {
+      "E2-A-0014": [
+        "85"
+      ],
+      "E2-A-0053": [
+        "3.9"
+      ],
+      "E2-M-0030": [
+        "01",
+        "04",
+        "1003",
+        "2026",
+        "7308"
+      ],
+      "E2-M-0039": [
+        "112"
+      ],
+      "E2-M-0042": [
+        "56"
+      ]
+    },
+    "candidate": {
+      "E2-A-0014": [
+        "85"
+      ],
+      "E2-A-0020": [
+        "70"
+      ],
+      "E2-A-0048": [
+        "08",
+        "2026",
+        "21"
+      ],
+      "E2-A-0053": [
+        "3.9"
+      ],
+      "E2-M-0027": [
+        "8"
+      ],
+      "E2-M-0039": [
+        "112"
+      ],
+      "E2-M-0042": [
+        "56"
+      ]
+    }
+  },
+  "new_absent_asset_digits_exemptions": {},
+  "candidate_citation_owner_currentness_errors": [],
+  "paired_gc_gains": [
+    "E2-M-0060"
+  ],
+  "paired_gc_losses": [
+    "E2-A-0010",
+    "E2-A-0066",
+    "E2-M-0056"
+  ],
+  "grounded_citation_losses": [
+    "E2-M-0056"
+  ],
+  "unanswerable_became_grounded": [
+    "E2-M-0070"
+  ]
+}

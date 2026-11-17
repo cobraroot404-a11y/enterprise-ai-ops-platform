@@ -1,0 +1,34 @@
+{
+  "run_id": "20261113-183650",
+  "head": "e7b15801b64f15e89ce5144f34cd867dbdc779d6",
+  "scope": "same machine, user, Docker daemon, image cache and network as the author: NOT a fresh-machine reproduction",
+  "steps": [
+    {
+      "step": "clone the committed state",
+      "ok": true,
+      "seconds": 1.7,
+      "detail": "1098 files; .env present: False; node_modules present: False"
+    },
+    {
+      "step": "create a new virtual environment",
+      "ok": true,
+      "seconds": 5.7,
+      "detail": "3.10.0"
+    },
+    {
+      "step": "bootstrap pip with Windows system trust",
+      "ok": false,
+      "seconds": 0.8,
+      "detail": "Windows system trust bootstrap requires host Python 3.10+ and pip 24.2+"
+    }
+  ],
+  "ok": false,
+  "containers_requested": true,
+  "options": {
+    "lockfile": true,
+    "live": true,
+    "containers": true,
+    "ollama": true
+  },
+  "cleanup": "removed eaop-clean-n71iane9 (the temporary directory this script created)"
+}

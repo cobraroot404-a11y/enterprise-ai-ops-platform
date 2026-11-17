@@ -1,0 +1,868 @@
+{
+ "baseline_commit": "f098cee3c147dc8c7486d56b0d70c735fde94e6a",
+ "count": 35,
+ "items": [
+  {
+   "id": "P1L14",
+   "part": 1,
+   "spec_lines": [
+    14,
+    15
+   ],
+   "status": "PARTIAL",
+   "acceptance_wording": "A working platform exists and every stage is documented",
+   "title": "Design, implement, test, document and prepare for publication a complete enterprise AI operations platform",
+   "current_implementation": [
+    "backend/app/main.py",
+    "frontend/src/App.tsx"
+   ],
+   "current_evidence": [
+    "docs/evaluation/phase8-heldout-report.md"
+   ],
+   "current_gap": "Built and tested locally; documentation, delivery, cloud and release deliverables are incomplete and nothing is published",
+   "gap_type": "C",
+   "package": "PKG-DOCS",
+   "minimum_change": "Complete the Phase 9/10 deliverables that remain (release stays an owner decision)",
+   "acceptance_test": "Every deliverable listed in Part 34 exists or is explicitly owner-gated",
+   "fully_local_authorised": true,
+   "external_prerequisite": "Publication and release need owner approval"
+  },
+  {
+   "id": "P2L39",
+   "part": 2,
+   "spec_lines": [
+    39,
+    53
+   ],
+   "status": "PARTIAL",
+   "acceptance_wording": "No collaborators; publication instructions provided",
+   "title": "Repository ownership: sole owner Gautham; no organization repo, collaborators, bot collaborators, unnecessary write access, publication without authorization, or overwrite; verify the GitHub account before creation; prepare locally with publication instructions if unauthenticated",
+   "current_implementation": [],
+   "current_evidence": [
+    "docs/specification/v4.1-audit-check-results.json",
+    "docs/planning/publication-handoff.md"
+   ],
+   "current_gap": "The local publication handoff is complete. It records the owner approval, identity, permissions, publication and release procedures. Account verification and repository-side controls remain pending.",
+   "gap_type": "D",
+   "package": "PKG-OWNER",
+   "minimum_change": "Apply the completed publication handoff after owner approval",
+   "acceptance_test": "Approved personal account and repository controls verified",
+   "fully_local_authorised": false,
+   "external_prerequisite": "Owner authorization and GitHub access"
+  },
+  {
+   "id": "P2L54",
+   "part": 2,
+   "spec_lines": [
+    54,
+    70
+   ],
+   "status": "PARTIAL",
+   "acceptance_wording": "git log shows one author, zero trailer lines, conventional prefixes (29 commits at audit time)",
+   "title": "Git authorship Gautham with the verified email, conventional commits, no inaccurate co-author trailers, no history rewriting or fabrication",
+   "current_implementation": [
+    "scripts/provenance_check.py"
+   ],
+   "current_evidence": [
+    "docs/specification/v4.1-audit-check-results.json",
+    "docs/planning/provenance-exceptions.json"
+   ],
+   "current_gap": "PROV-01: an automated check of the whole history (scripts/provenance_check.py) found 52 commits whose messages carry an AI co-author trailer and 3 commits authored and committed under a tool's name instead of the owner's; all are recorded in docs/planning/provenance-exceptions.json. The earlier 'verified' assessment was wrong. No new violation is allowed (test), but existing ones can only be removed by rewriting history, which needs the owner's decision and would move the protected tag",
+   "gap_type": "D",
+   "package": "PKG-OWNER",
+   "minimum_change": "PROV-01: history contains AI co-author trailers and tool-authored commits; only a history rewrite removes them",
+   "acceptance_test": "provenance check reports zero violations",
+   "fully_local_authorised": false,
+   "external_prerequisite": "Owner decision on rewriting history (moves the protected tag)"
+  },
+  {
+   "id": "P2L71",
+   "part": 2,
+   "spec_lines": [
+    71,
+    90
+   ],
+   "status": "PARTIAL",
+   "acceptance_wording": "Repository search finds no promotional attribution",
+   "title": "No AI assistant branding, promotional watermarks or generated-by promotional footers anywhere",
+   "current_implementation": [
+    "scripts/provenance_check.py"
+   ],
+   "current_evidence": [
+    "docs/specification/v4.1-audit-check-results.json",
+    "docs/planning/provenance-exceptions.json"
+   ],
+   "current_gap": "PROV-01: an automated check of the whole history (scripts/provenance_check.py) found 52 commits whose messages carry an AI co-author trailer and 3 commits authored and committed under a tool's name instead of the owner's; all are recorded in docs/planning/provenance-exceptions.json. The earlier 'verified' assessment was wrong. No new violation is allowed (test), but existing ones can only be removed by rewriting history, which needs the owner's decision and would move the protected tag",
+   "gap_type": "D",
+   "package": "PKG-OWNER",
+   "minimum_change": "PROV-01: history contains AI co-author trailers and tool-authored commits; only a history rewrite removes them",
+   "acceptance_test": "provenance check reports zero violations",
+   "fully_local_authorised": false,
+   "external_prerequisite": "Owner decision on rewriting history (moves the protected tag)"
+  },
+  {
+   "id": "P5L313",
+   "part": 5,
+   "spec_lines": [
+    313,
+    317
+   ],
+   "status": "PARTIAL",
+   "acceptance_wording": "JSON logging plus OpenTelemetry",
+   "title": "Observability: structured JSON logging, OpenTelemetry, optional Prometheus/Grafana",
+   "current_implementation": [
+    "backend/app/observability/logging.py",
+    "backend/app/observability/tracing.py"
+   ],
+   "current_evidence": [
+    "evaluation/observability/README.md",
+    "docs/operations/observability.md"
+   ],
+   "current_gap": "Structured JSON logging, trace ids, spans (OpenTelemetry data model as log events), a Prometheus text endpoint and an illustrative Grafana dashboard exist; the OpenTelemetry SDK and exporter do not",
+   "gap_type": "A",
+   "package": "PKG-OBS",
+   "minimum_change": "OpenTelemetry where practical: trace ids first, SDK only if no heavy dependency",
+   "acceptance_test": "Trace ids across processes; text metrics endpoint",
+   "fully_local_authorised": true,
+   "external_prerequisite": "SDK dependency may need approval"
+  },
+  {
+   "id": "P5L319",
+   "part": 5,
+   "spec_lines": [
+    319,
+    321
+   ],
+   "status": "PARTIAL",
+   "acceptance_wording": "CI runs and passes",
+   "title": "CI/CD: GitHub Actions within free allowances",
+   "current_implementation": [
+    ".github/workflows/ci.yml"
+   ],
+   "current_evidence": [],
+   "current_gap": "Workflow expanded and documented; it has never executed (no remote)",
+   "gap_type": "D",
+   "package": "PKG-CI",
+   "minimum_change": "Workflow exists; expand jobs; cannot execute without a remote",
+   "acceptance_test": "Workflow parses and each step runs locally",
+   "fully_local_authorised": true,
+   "external_prerequisite": "A remote to execute CI"
+  },
+  {
+   "id": "P13L511",
+   "part": 13,
+   "spec_lines": [
+    511,
+    511
+   ],
+   "status": "PARTIAL",
+   "acceptance_wording": "Optional; none required",
+   "title": "Optional reranking",
+   "current_implementation": [
+    "backend/app/retrieval/search.py"
+   ],
+   "current_evidence": [
+    "evaluation/reports/phase8/exp-RETR-SWEEP-20261112T054053Z/retrieval_scores.json"
+   ],
+   "current_gap": "A feature reranker exists only as an experimental switch and was not adopted; no neural reranker (no weights approved)",
+   "gap_type": "D",
+   "package": "PKG-AI",
+   "minimum_change": "Neural reranker needs model weights",
+   "acceptance_test": "Reranker decision recorded",
+   "fully_local_authorised": false,
+   "external_prerequisite": "Approval to download weights"
+  },
+  {
+   "id": "P13L512",
+   "part": 13,
+   "spec_lines": [
+    512,
+    514
+   ],
+   "status": "PARTIAL",
+   "acceptance_wording": "Answers grounded in retrieved evidence",
+   "title": "Context assembly, local LLM inference, evidence-grounded answers",
+   "current_implementation": [
+    "backend/app/ai/rag.py",
+    "evaluation/phase8/failure_taxonomy.py"
+   ],
+   "current_evidence": [
+    "docs/evaluation/phase8-heldout-report.md",
+    "docs/evaluation/phase8-baseline-report.md",
+    "docs/evaluation/ai-failure-taxonomy-and-d1.md"
+   ],
+   "current_gap": "Dev failure taxonomy: of 29 non-ok answerable dev queries only 2 are retrieval losses; 17 are answers withheld by the verifier (quotation or number mismatch) and 10 are wrong citation or an incomplete answer. Experiment D1 (answer multi-part questions part by part) was REJECTED (coverage 64.4% vs 66.7%, citation correctness 86.4% vs 91.9%). Targets remain NOT MET; the likely lever is a stronger local model (needs owner approval to download) and independent confirmation data",
+   "gap_type": "E",
+   "package": "PKG-AI",
+   "minimum_change": "Confirm grounded coverage on fresh independently labelled data with the frozen verifier",
+   "acceptance_test": "Grounded coverage measured against its acceptance criterion",
+   "fully_local_authorised": false,
+   "external_prerequisite": "Independent labels and owner authorization for inference"
+  },
+  {
+   "id": "P13L515",
+   "part": 13,
+   "spec_lines": [
+    515,
+    516
+   ],
+   "status": "PARTIAL",
+   "acceptance_wording": "Every citation verified and correct",
+   "title": "Citation generation and citation verification",
+   "current_implementation": [
+    "backend/app/ai/rag.py",
+    "backend/app/ai/safeguards.py",
+    "evaluation/phase8/failure_taxonomy.py"
+   ],
+   "current_evidence": [
+    "docs/evaluation/phase8-heldout-report.md",
+    "docs/evaluation/ai-failure-taxonomy-and-d1.md"
+   ],
+   "current_gap": "Dev failure taxonomy: of 29 non-ok answerable dev queries only 2 are retrieval losses; 17 are answers withheld by the verifier (quotation or number mismatch) and 10 are wrong citation or an incomplete answer. Experiment D1 (answer multi-part questions part by part) was REJECTED (coverage 64.4% vs 66.7%, citation correctness 86.4% vs 91.9%). Targets remain NOT MET; the likely lever is a stronger local model (needs owner approval to download) and independent confirmation data",
+   "gap_type": "E",
+   "package": "PKG-AI",
+   "minimum_change": "Confirm citation correctness on fresh independently labelled data with the frozen verifier",
+   "acceptance_test": "95% citation correctness on a fresh independently labelled set",
+   "fully_local_authorised": false,
+   "external_prerequisite": "Independent labels and owner authorization for inference"
+  },
+  {
+   "id": "P13L517",
+   "part": 13,
+   "spec_lines": [
+    517,
+    517
+   ],
+   "status": "PARTIAL",
+   "acceptance_wording": "Unsupported questions refused",
+   "title": "Insufficient-evidence handling",
+   "current_implementation": [
+    "backend/app/ai/rag.py",
+    "backend/app/ai/ollama_llm.py",
+    "backend/app/services/incident_service.py"
+   ],
+   "current_evidence": [
+    "docs/evaluation/phase8-heldout-report.md",
+    "docs/evaluation/dev-noasset-report.md"
+   ],
+   "current_gap": "Held-out correct abstention 94.1% baseline (16/17). Reports naming no equipment are refused deterministically; several written ids, ids registered only in another tenant, injected ids and model-invented ids are tested (a report naming several ids is routed to human review). Development weaknesses (sibling-model answers) remain in the default configuration",
+   "gap_type": "E",
+   "package": "PKG-AI",
+   "minimum_change": "Confirm abstention on fresh independently labelled data with the frozen verifier",
+   "acceptance_test": "Abstention rate on a fresh set",
+   "fully_local_authorised": false,
+   "external_prerequisite": "Independent labels and owner authorization for inference"
+  },
+  {
+   "id": "P18L659",
+   "part": 18,
+   "spec_lines": [
+    659,
+    660
+   ],
+   "status": "PARTIAL",
+   "acceptance_wording": "No critical or serious violations; keyboard-operable workflow",
+   "title": "Accessibility",
+   "current_implementation": [
+    "frontend/src/components/ConfirmDialog.tsx"
+   ],
+   "current_evidence": [
+    "evaluation/reports/phase6-closure/axe-results.json",
+    "evaluation/reports/phase6-closure/axe-results-chrome.json"
+   ],
+   "current_gap": "Automated axe found zero violations across 43 Edge states and 44 Chrome states. A manual keyboard and screen-reader walkthrough is pending. The owner may conduct it under EAOP 08E.",
+   "gap_type": "D",
+   "package": "PKG-FE",
+   "minimum_change": "Record manual keyboard and Windows Narrator observations",
+   "acceptance_test": "Owner or reviewer records manual keyboard and screen-reader results for the documented workflows",
+   "fully_local_authorised": true,
+   "external_prerequisite": ""
+  },
+  {
+   "id": "P21L769",
+   "part": 21,
+   "spec_lines": [
+    769,
+    769
+   ],
+   "status": "PARTIAL",
+   "acceptance_wording": "Citation correctness >= 95%",
+   "title": "Target: citation correctness at least 95%",
+   "current_implementation": [
+    "evaluation/phase8/score_baseline.py",
+    "evaluation/phase8/failure_taxonomy.py"
+   ],
+   "current_evidence": [
+    "docs/evaluation/phase8-heldout-report.md",
+    "docs/evaluation/phase8-baseline-report.md",
+    "docs/evaluation/ai-failure-taxonomy-and-d1.md"
+   ],
+   "current_gap": "Dev failure taxonomy: of 29 non-ok answerable dev queries only 2 are retrieval losses; 17 are answers withheld by the verifier (quotation or number mismatch) and 10 are wrong citation or an incomplete answer. Experiment D1 (answer multi-part questions part by part) was REJECTED (coverage 64.4% vs 66.7%, citation correctness 86.4% vs 91.9%). Targets remain NOT MET; the likely lever is a stronger local model (needs owner approval to download) and independent confirmation data",
+   "gap_type": "E",
+   "package": "PKG-AI",
+   "minimum_change": "Confirm citation correctness on a fresh independently labelled set",
+   "acceptance_test": "95% on a fresh independent set",
+   "fully_local_authorised": false,
+   "external_prerequisite": "Independent labels and owner authorization for inference"
+  },
+  {
+   "id": "P21L770",
+   "part": 21,
+   "spec_lines": [
+    770,
+    770
+   ],
+   "status": "PARTIAL",
+   "acceptance_wording": "100% schema validity of stored incidents and, as stated, of model output",
+   "title": "Target: structured ticket schema validity 100%",
+   "current_implementation": [
+    "backend/app/schemas/incident.py",
+    "backend/app/ai/ollama_llm.py"
+   ],
+   "current_evidence": [
+    "docs/evaluation/phase8-heldout-report.md",
+    "docs/evaluation/dev-noasset-report.md"
+   ],
+   "current_gap": "Held-out raw model validity was 18 of 20 (NOT MET at the model level). A development experiment (30 new reports) found the model invents an asset id for 16 of 16 reports naming none; the application now identifies the asset itself (30 of 30 correct on the development cases) and records the model's value, so the model-level metric will no longer count it; confirmation needs fresh independent data",
+   "gap_type": "E",
+   "package": "PKG-AI",
+   "minimum_change": "Measure raw structured validity on fresh independently labelled data",
+   "acceptance_test": "Fresh-set raw validity against the original target",
+   "fully_local_authorised": false,
+   "external_prerequisite": "Independent labels and owner authorization for inference"
+  },
+  {
+   "id": "P21L796",
+   "part": 21,
+   "spec_lines": [
+    796,
+    798
+   ],
+   "status": "PARTIAL",
+   "acceptance_wording": "Labelled simulated comparison exists",
+   "title": "Compare manual and automated workflows using equivalent synthetic tasks, distinguishing simulated baselines; no claimed productivity gains",
+   "current_implementation": [
+    "scripts/workflow_comparison.py"
+   ],
+   "current_evidence": [
+    "evaluation/comparison/protocol.md",
+    "evaluation/demo-runs/20261113-150933-73e0/comparison/comparison.json"
+   ],
+   "current_gap": "Batch 12: a transparent protocol and harness exist (evaluation/comparison/protocol.md, scripts/workflow_comparison.py, `demo.py smoke --compare`) and class A (measured automated system time, 20 equivalent synthetic tasks, median and p95 per step) was measured; classes B (observed manual) and C (simulated manual) are structurally separate and EMPTY because no human was observed and no assumptions were supplied (the code refuses to invent them). The comparison itself therefore has not been made. To complete it: record real observed times in observed-manual.csv and re-run",
+   "gap_type": "E",
+   "package": "PKG-OWNER",
+   "minimum_change": "Needs observed human timings",
+   "acceptance_test": "observed-manual.csv from a real observer",
+   "fully_local_authorised": false,
+   "external_prerequisite": "Human observer"
+  },
+  {
+   "id": "P22L815",
+   "part": 22,
+   "spec_lines": [
+    815,
+    815
+   ],
+   "status": "PARTIAL",
+   "acceptance_wording": "OpenTelemetry traces exported",
+   "title": "Use OpenTelemetry where practical",
+   "current_implementation": [
+    "backend/app/observability/tracing.py"
+   ],
+   "current_evidence": [
+    "docs/architecture/optional-infrastructure-decision.md",
+    "docs/operations/observability.md"
+   ],
+   "current_gap": "Span events in the OpenTelemetry data model and W3C propagation exist; the SDK, an OTLP exporter and any receiver do not. Exact needs (docs/operations/observability.md): opentelemetry-sdk==1.45.2 and opentelemetry-exporter-otlp-proto-http==1.45.2 (small PyPI packages; the API 1.45.2 is already locked) and, only for a live demonstration, a collector or backend image. Owner approval required",
+   "gap_type": "A",
+   "package": "PKG-OBS",
+   "minimum_change": "OpenTelemetry where practical",
+   "acceptance_test": "As the observability package",
+   "fully_local_authorised": true,
+   "external_prerequisite": "SDK dependency may need approval"
+  },
+  {
+   "id": "P23L835",
+   "part": 23,
+   "spec_lines": [
+    835,
+    839
+   ],
+   "status": "MISSING",
+   "acceptance_wording": "Optional RabbitMQ, Prometheus, Grafana",
+   "title": "Optional RabbitMQ, Prometheus, Grafana",
+   "current_implementation": [],
+   "current_evidence": [
+    "docs/architecture/optional-infrastructure-decision.md",
+    "docs/operations/observability.md",
+    "infrastructure/monitoring/grafana-dashboard.json",
+    "tests/test_grafana_dashboard.py"
+   ],
+   "current_gap": "Optional RabbitMQ was deliberately omitted. The Prometheus text endpoint, example scrape configuration and Grafana dashboard exist. Dashboard queries were checked against recorded metrics. Neither service was run and the dashboard was never imported.",
+   "gap_type": "D",
+   "package": "PKG-INFRA",
+   "minimum_change": "Optional; decision recorded",
+   "acceptance_test": "n/a",
+   "fully_local_authorised": false,
+   "external_prerequisite": "Owner decision to adopt a broker"
+  },
+  {
+   "id": "P23L856",
+   "part": 23,
+   "spec_lines": [
+    856,
+    857
+   ],
+   "status": "PARTIAL",
+   "acceptance_wording": "Reviewer reproduces the demonstration",
+   "title": "Support CPU-only operation; a reviewer can reproduce the main demonstration on compatible hardware",
+   "current_implementation": [
+    "docs/operations/real-ai-setup-windows.md",
+    "scripts/demo.py",
+    "scripts/demo_smoke.py"
+   ],
+   "current_evidence": [
+    "docs/evaluation/phase8-heldout-report.md",
+    "docs/planning/batch6-report.md",
+    "docs/planning/batch7-report.md",
+    "docs/customer-delivery/demo-handover.md",
+    "evaluation/demo-runs/negative-scenarios.json",
+    "evaluation/demo-runs/negative-scenarios-batch7.json",
+    "evaluation/clean-environment/20261113-183717/report.md",
+    "docs/planning/gate-c-owner-disposition.md"
+   ],
+   "current_gap": "CPU-only works and a clean-checkout reproduction passed on the author's machine; the owner disposition retains the outstanding compatible-hardware walkthrough as a reproducibility-assurance limitation",
+   "gap_type": "D",
+   "package": "PKG-REPRO",
+   "minimum_change": "Reviewer reproduction on compatible hardware",
+   "acceptance_test": "Owner or reviewer reproduces the main CPU-only demo from the package on compatible hardware and records results and deviations",
+   "fully_local_authorised": true,
+   "external_prerequisite": ""
+  },
+  {
+   "id": "P27L968",
+   "part": 27,
+   "spec_lines": [
+    968,
+    982
+   ],
+   "status": "PARTIAL",
+   "acceptance_wording": "All eleven CI checks pass in GitHub Actions",
+   "title": "CI/CD with GitHub Actions: backend/frontend lint and tests, type checking, dependency checks, security checks, Docker build validation, smoke tests, lightweight acceptance tests, release validation",
+   "current_implementation": [
+    ".github/workflows/ci.yml"
+   ],
+   "current_evidence": [],
+   "current_gap": "The workflow now has backend, acceptance, frontend lint and tests, dependency and security, Docker build and release-validation jobs; it has never executed (no remote)",
+   "gap_type": "D",
+   "package": "PKG-CI",
+   "minimum_change": "Add dependency, security, Docker, smoke, acceptance and release jobs",
+   "acceptance_test": "Workflow parses; each job command runs locally",
+   "fully_local_authorised": true,
+   "external_prerequisite": "A remote to execute CI"
+  },
+  {
+   "id": "P31L1138",
+   "part": 31,
+   "spec_lines": [
+    1138,
+    1227
+   ],
+   "status": "PARTIAL",
+   "acceptance_wording": "All ten phases complete",
+   "title": "Implementation roadmap of ten phases",
+   "current_implementation": [
+    "docs/phase6/phase6-closure-gate.md",
+    "docs/phase7/phase7-gate.md"
+   ],
+   "current_evidence": [
+    "docs/phase7/phase7-closure-gate.md",
+    "docs/evaluation/phase8-heldout-disposition.md",
+    "docs/planning/phase-9-10-exit-evidence.md",
+    "docs/architecture/cloud-portability.md",
+    "evaluation/terraform/fmt-check.txt",
+    "docs/planning/publication-handoff.md",
+    "docs/planning/final-validation-report.md",
+    "evaluation/terraform/provider-validation.md",
+    "docs/planning/phase-10-candidate-security-disposition.md"
+   ],
+   "current_gap": "Phase 9 Terraform validation passed locally. The Phase 10 candidate security review is documented with a NOT READY disposition. GitHub identity and CI, the manual business comparison, GitHub audit and tested versioned release remain open.",
+   "gap_type": "C",
+   "package": "PKG-DOCS",
+   "minimum_change": "Complete the remaining roadmap outputs in the Phase 9-10 exit evidence matrix after the documented local security review",
+   "acceptance_test": "Artifact for every mandatory roadmap output, including performed GitHub audit and tested release",
+   "fully_local_authorised": false,
+   "external_prerequisite": "Manual comparison inputs and authorized GitHub identity, CI, audit, publication and release"
+  },
+  {
+   "id": "P31L1229",
+   "part": 31,
+   "spec_lines": [
+    1229,
+    1239
+   ],
+   "status": "PARTIAL",
+   "acceptance_wording": "At each phase end: run tests, fix failures, verify integration, review security, update documentation, commit accurately, record limitations; do not stop at scaffolding",
+   "title": "At each phase end: run tests, fix failures, verify integration, review security, update documentation, commit accurately, record limitations; do not stop at scaffolding",
+   "current_implementation": [],
+   "current_evidence": [
+    "docs/phase6/phase6-closure-gate.md",
+    "docs/phase7/phase7-gate.md",
+    "docs/evaluation/phase8-heldout-report.md",
+    "docs/planning/retrospective-phase-gates-1-4.md",
+    "docs/planning/phase-9-10-exit-evidence.md",
+    "docs/security/phase5-closure-gate.md",
+    "docs/phase7/phase7-closure-gate.md",
+    "docs/evaluation/phase8-heldout-disposition.md",
+    "evaluation/terraform/provider-validation.md",
+    "docs/planning/phase-10-candidate-security-disposition.md"
+   ],
+   "current_gap": "The Phase 10 candidate has a documented local security review. Phase 1 exit test, integration and security records, separate Phase 2-3 exit security reviews and complete Phase 9-10 exit evidence remain outstanding. Current checks do not establish historical actions, independent acceptance or owner approval.",
+   "gap_type": "C",
+   "package": "PKG-DOCS",
+   "minimum_change": "Preserve historical gaps and record remaining Phase 9-10 exit actions when they occur",
+   "acceptance_test": "Direct evidence for the required actions at each phase end, or explicit owner disposition preserving historical gaps",
+   "fully_local_authorised": false,
+   "external_prerequisite": "Original historical records if any surface; authorized remaining phase-end actions and owner disposition of irreducible gaps"
+  },
+  {
+   "id": "P32L1261",
+   "part": 32,
+   "spec_lines": [
+    1261,
+    1261
+   ],
+   "status": "NOT_EVALUABLE",
+   "acceptance_wording": "CI checks pass",
+   "title": "Definition of done 21: CI checks pass",
+   "current_implementation": [],
+   "current_evidence": [],
+   "current_gap": "CI has never run (no remote)",
+   "gap_type": "D",
+   "package": "PKG-CI",
+   "minimum_change": "CI cannot run without a remote",
+   "acceptance_test": "CI run green",
+   "fully_local_authorised": false,
+   "external_prerequisite": "A remote"
+  },
+  {
+   "id": "P32L1272",
+   "part": 32,
+   "spec_lines": [
+    1272,
+    1272
+   ],
+   "status": "PARTIAL",
+   "acceptance_wording": "No unnecessary AI watermarks or promotional branding appear",
+   "title": "Definition of done 32: No unnecessary AI watermarks or promotional branding appear",
+   "current_implementation": [
+    "scripts/provenance_check.py"
+   ],
+   "current_evidence": [
+    "docs/specification/v4.1-audit-check-results.json",
+    "docs/planning/provenance-exceptions.json"
+   ],
+   "current_gap": "PROV-01: an automated check of the whole history (scripts/provenance_check.py) found 52 commits whose messages carry an AI co-author trailer and 3 commits authored and committed under a tool's name instead of the owner's; all are recorded in docs/planning/provenance-exceptions.json. The earlier 'verified' assessment was wrong. No new violation is allowed (test), but existing ones can only be removed by rewriting history, which needs the owner's decision and would move the protected tag",
+   "gap_type": "D",
+   "package": "PKG-OWNER",
+   "minimum_change": "PROV-01: history contains AI co-author trailers and tool-authored commits; only a history rewrite removes them",
+   "acceptance_test": "provenance check reports zero violations",
+   "fully_local_authorised": false,
+   "external_prerequisite": "Owner decision on rewriting history (moves the protected tag)"
+  },
+  {
+   "id": "P32L1273",
+   "part": 32,
+   "spec_lines": [
+    1273,
+    1273
+   ],
+   "status": "PARTIAL",
+   "acceptance_wording": "Git provenance remains accurate",
+   "title": "Definition of done 33: Git provenance remains accurate",
+   "current_implementation": [
+    "scripts/provenance_check.py"
+   ],
+   "current_evidence": [
+    "docs/specification/v4.1-audit-check-results.json",
+    "docs/planning/provenance-exceptions.json"
+   ],
+   "current_gap": "PROV-01: an automated check of the whole history (scripts/provenance_check.py) found 52 commits whose messages carry an AI co-author trailer and 3 commits authored and committed under a tool's name instead of the owner's; all are recorded in docs/planning/provenance-exceptions.json. The earlier 'verified' assessment was wrong. No new violation is allowed (test), but existing ones can only be removed by rewriting history, which needs the owner's decision and would move the protected tag",
+   "gap_type": "D",
+   "package": "PKG-OWNER",
+   "minimum_change": "PROV-01: history contains AI co-author trailers and tool-authored commits; only a history rewrite removes them",
+   "acceptance_test": "provenance check reports zero violations",
+   "fully_local_authorised": false,
+   "external_prerequisite": "Owner decision on rewriting history (moves the protected tag)"
+  },
+  {
+   "id": "P32L1274",
+   "part": 32,
+   "spec_lines": [
+    1274,
+    1274
+   ],
+   "status": "NOT_EVALUABLE",
+   "acceptance_wording": "Repository permissions are reviewed",
+   "title": "Definition of done 34: Repository permissions are reviewed",
+   "current_implementation": [],
+   "current_evidence": [],
+   "current_gap": "No repository exists to review",
+   "gap_type": "D",
+   "package": "PKG-OWNER",
+   "minimum_change": "No repository exists",
+   "acceptance_test": "n/a",
+   "fully_local_authorised": false,
+   "external_prerequisite": "A repository"
+  },
+  {
+   "id": "P32L1275",
+   "part": 32,
+   "spec_lines": [
+    1275,
+    1275
+   ],
+   "status": "NOT_EVALUABLE",
+   "acceptance_wording": "Publication is authorized",
+   "title": "Definition of done 35: Publication is authorized",
+   "current_implementation": [],
+   "current_evidence": [],
+   "current_gap": "Not authorized; nothing published",
+   "gap_type": "D",
+   "package": "PKG-OWNER",
+   "minimum_change": "Owner must authorise publication",
+   "acceptance_test": "n/a",
+   "fully_local_authorised": false,
+   "external_prerequisite": "Owner decision"
+  },
+  {
+   "id": "P32L1276",
+   "part": 32,
+   "spec_lines": [
+    1276,
+    1276
+   ],
+   "status": "MISSING",
+   "acceptance_wording": "A tested versioned release is published",
+   "title": "Definition of done 36: A tested versioned release is published",
+   "current_implementation": [],
+   "current_evidence": [
+    "docs/planning/final-completion-report.md"
+   ],
+   "current_gap": "The local v4.1.0-local-rc1 tag marks an engineering checkpoint. A tested versioned release has yet to be published.",
+   "gap_type": "D",
+   "package": "PKG-OWNER",
+   "minimum_change": "Release needs publication",
+   "acceptance_test": "n/a",
+   "fully_local_authorised": false,
+   "external_prerequisite": "Owner decision"
+  },
+  {
+   "id": "P32L1277",
+   "part": 32,
+   "spec_lines": [
+    1277,
+    1277
+   ],
+   "status": "PARTIAL",
+   "acceptance_wording": "The complete demonstration is reproducible",
+   "title": "Definition of done 37: The complete demonstration is reproducible",
+   "current_implementation": [
+    "scripts/clean_environment_check.py"
+   ],
+   "current_evidence": [
+    "evaluation/clean-environment/20261113-183717/live-demo-report.md",
+    "docs/planning/gate-c-owner-disposition.md"
+   ],
+   "current_gap": "Gate B on the same machine: the whole demonstration (both customers, ingestion, REST, CSV, webhooks, recovery, comparison, backup, browser) passed from a clean checkout with clean dependency installs (evaluation/clean-environment/20261113-183717). The complete 27-step demonstration was not observed in a single session. The owner disposition retains it as a Phase 10 and release-preparation item",
+   "gap_type": "C",
+   "package": "PKG-REPRO",
+   "minimum_change": "Document complete demonstration reproduction and deviations",
+   "acceptance_test": "One observed session accounts for all 27 demonstration steps and records deviations and limitations",
+   "fully_local_authorised": true,
+   "external_prerequisite": ""
+  },
+  {
+   "id": "P33L1282",
+   "part": 33,
+   "spec_lines": [
+    1282,
+    1302
+   ],
+   "status": "PARTIAL",
+   "acceptance_wording": "All 18 inspected before publication",
+   "title": "Before publication, inspect repository owner, visibility, collaborators, app permissions, git author and committer, trailers, README, LICENSE, notices, Actions permissions, secrets, tracked files, documentation, screenshots, diagrams, reports, release notes",
+   "current_implementation": [
+    "scripts/spec_audit_checks.py",
+    "scripts/secret_scan.py"
+   ],
+   "current_evidence": [
+    "docs/specification/v4.1-audit-check-results.json",
+    "docs/planning/publication-handoff.md"
+   ],
+   "current_gap": "The publication handoff records the local and remote pre-publication audit steps. The repository-side checks require an authorized GitHub repository.",
+   "gap_type": "D",
+   "package": "PKG-OWNER",
+   "minimum_change": "Execute the handoff permission and publication audit after authorization",
+   "acceptance_test": "All pre-publication checks evidenced",
+   "fully_local_authorised": false,
+   "external_prerequisite": "An authorized GitHub repository"
+  },
+  {
+   "id": "P33L1303",
+   "part": 33,
+   "spec_lines": [
+    1303,
+    1305
+   ],
+   "status": "PARTIAL",
+   "acceptance_wording": "No promotional attribution found",
+   "title": "Search for assistant branding and watermarks; preserve provenance and legal notices; do not falsify activity metadata",
+   "current_implementation": [
+    "scripts/spec_audit_checks.py",
+    "scripts/provenance_check.py"
+   ],
+   "current_evidence": [
+    "docs/specification/v4.1-audit-check-results.json",
+    "docs/planning/provenance-exceptions.json"
+   ],
+   "current_gap": "PROV-01: an automated check of the whole history (scripts/provenance_check.py) found 52 commits whose messages carry an AI co-author trailer and 3 commits authored and committed under a tool's name instead of the owner's; all are recorded in docs/planning/provenance-exceptions.json. The earlier 'verified' assessment was wrong. No new violation is allowed (test), but existing ones can only be removed by rewriting history, which needs the owner's decision and would move the protected tag",
+   "gap_type": "D",
+   "package": "PKG-OWNER",
+   "minimum_change": "PROV-01: history contains AI co-author trailers and tool-authored commits; only a history rewrite removes them",
+   "acceptance_test": "provenance check reports zero violations",
+   "fully_local_authorised": false,
+   "external_prerequisite": "Owner decision on rewriting history (moves the protected tag)"
+  },
+  {
+   "id": "P34L1322",
+   "part": 34,
+   "spec_lines": [
+    1322,
+    1331
+   ],
+   "status": "PARTIAL",
+   "acceptance_wording": "Execution rules: request only essential information, work in increments, workflows before optional cloud, tests after every phase, no fabrication, no paid services, no collaborators, no copyright change, no publication without approval",
+   "title": "Execution rules: request only essential information, work in increments, workflows before optional cloud, tests after every phase, no fabrication, no paid services, no collaborators, no copyright change, no publication without approval",
+   "current_implementation": [],
+   "current_evidence": [
+    "docs/specification/v4.1-audit-check-results.json"
+   ],
+   "current_gap": "Process rules; adherence evidenced by history and gates, not by tests",
+   "gap_type": "C",
+   "package": "PKG-DOCS",
+   "minimum_change": "Process rules; evidence is history",
+   "acceptance_test": "Documented",
+   "fully_local_authorised": true,
+   "external_prerequisite": ""
+  },
+  {
+   "id": "P34L1349",
+   "part": 34,
+   "spec_lines": [
+    1349,
+    1349
+   ],
+   "status": "PARTIAL",
+   "acceptance_wording": "CI/CD workflows",
+   "title": "Final deliverable 15: CI/CD workflows",
+   "current_implementation": [],
+   "current_evidence": [],
+   "current_gap": "Workflow delivered and tested as text; it has never executed (no remote)",
+   "gap_type": "D",
+   "package": "PKG-CI",
+   "minimum_change": "CI workflow deliverable",
+   "acceptance_test": "Workflow complete",
+   "fully_local_authorised": true,
+   "external_prerequisite": "A remote to execute"
+  },
+  {
+   "id": "P34L1362",
+   "part": 34,
+   "spec_lines": [
+    1362,
+    1362
+   ],
+   "status": "NOT_EVALUABLE",
+   "acceptance_wording": "Authorized GitHub repository",
+   "title": "Final deliverable 28: Authorized GitHub repository",
+   "current_implementation": [],
+   "current_evidence": [],
+   "current_gap": "Not assessable until a repository exists",
+   "gap_type": "D",
+   "package": "PKG-OWNER",
+   "minimum_change": "Repository",
+   "acceptance_test": "n/a",
+   "fully_local_authorised": false,
+   "external_prerequisite": "Owner decision"
+  },
+  {
+   "id": "P34L1363",
+   "part": 34,
+   "spec_lines": [
+    1363,
+    1363
+   ],
+   "status": "MISSING",
+   "acceptance_wording": "Tested versioned release",
+   "title": "Final deliverable 29: Tested versioned release",
+   "current_implementation": [],
+   "current_evidence": [
+    "docs/planning/final-completion-report.md"
+   ],
+   "current_gap": "The local v4.1.0-local-rc1 tag marks an engineering checkpoint. A tested versioned release has yet to be published.",
+   "gap_type": "D",
+   "package": "PKG-OWNER",
+   "minimum_change": "Release",
+   "acceptance_test": "n/a",
+   "fully_local_authorised": false,
+   "external_prerequisite": "Owner decision"
+  },
+  {
+   "id": "P34L1389",
+   "part": 34,
+   "spec_lines": [
+    1389,
+    1393
+   ],
+   "status": "PARTIAL",
+   "acceptance_wording": "Six maintenance rules hold",
+   "title": "Maintain zero paid services, Gautham as sole owner, no collaborators, no promotional branding, accurate provenance and notices, use the complete proprietary license",
+   "current_implementation": [
+    "LICENSE",
+    "scripts/provenance_check.py"
+   ],
+   "current_evidence": [
+    "docs/specification/v4.1-audit-check-results.json",
+    "docs/planning/provenance-exceptions.json"
+   ],
+   "current_gap": "Zero paid services, sole ownership, no collaborators and the licence hold; accurate provenance and no promotional branding do NOT hold in commit history (PROV-01: an automated check of the whole history (scripts/provenance_check.py) found 52 commits whose messages carry an AI co-author trailer and 3 commits authored and committed under a tool's name instead of the owner's; all are recorded in docs/planning/provenance-exceptions.json. The earlier 'verified' assessment was wrong. No new violation is allowed (test), but existing ones can only be removed by rewriting history, which needs the owner's decision and would move the protected tag)",
+   "gap_type": "D",
+   "package": "PKG-OWNER",
+   "minimum_change": "PROV-01: history contains AI co-author trailers and tool-authored commits; only a history rewrite removes them",
+   "acceptance_test": "provenance check reports zero violations",
+   "fully_local_authorised": false,
+   "external_prerequisite": "Owner decision on rewriting history (moves the protected tag)"
+  },
+  {
+   "id": "P34L1395",
+   "part": 34,
+   "spec_lines": [
+    1395,
+    1395
+   ],
+   "status": "PARTIAL",
+   "acceptance_wording": "Begin with environment verification and Phase 1; implement and validate both customer workflows before optional cloud features; continue through testing, evaluation, documentation and authorized publication",
+   "title": "Begin with environment verification and Phase 1; implement and validate both customer workflows before optional cloud features; continue through testing, evaluation, documentation and authorized publication",
+   "current_implementation": [],
+   "current_evidence": [],
+   "current_gap": "Sequence followed through Phase 8; documentation and publication outstanding",
+   "gap_type": "C",
+   "package": "PKG-DOCS",
+   "minimum_change": "Sequence followed",
+   "acceptance_test": "n/a",
+   "fully_local_authorised": true,
+   "external_prerequisite": ""
+  }
+ ]
+}

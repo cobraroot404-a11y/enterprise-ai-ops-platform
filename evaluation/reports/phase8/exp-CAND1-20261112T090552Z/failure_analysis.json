@@ -1,0 +1,1159 @@
+{
+ "answerable": {
+  "incomplete evidence: required fact missing from answer": 5,
+  "withheld: incorrect quotation": 10,
+  "wrong passage: sibling/hard-negative page": 6,
+  "withheld: numeric mismatch": 7,
+  "wrong passage: unlabelled or unrelated": 1
+ },
+ "answerable_items": [
+  {
+   "id": "E2-A-0037",
+   "category": "multi_hop",
+   "class": "incomplete evidence: required fact missing from answer",
+   "detail": "missing ['0.5']; relevant needs 3 passages, cited 1",
+   "query": "What npsh margin applies to P-1010, and what reference was logged when that check was last carried out on it?"
+  },
+  {
+   "id": "E2-A-0040",
+   "category": "multi_hop",
+   "class": "incomplete evidence: required fact missing from answer",
+   "detail": "missing ['REF-5639']; relevant needs 3 passages, cited 2",
+   "query": "What bearing re-grease interval applies to P-310, and what reference was logged when that check was last carri"
+  },
+  {
+   "id": "E2-A-0041",
+   "category": "multi_hop",
+   "class": "incomplete evidence: required fact missing from answer",
+   "detail": "missing ['REF-6678']; relevant needs 3 passages, cited 2",
+   "query": "What vibration alarm level applies to P-201, and what reference was logged when that check was last carried ou"
+  },
+  {
+   "id": "E2-A-0042",
+   "category": "multi_hop",
+   "class": "withheld: incorrect quotation",
+   "detail": "citation [1] quote not found in the cited passage; answer marker [1] has no verified citation",
+   "query": "What output flange bolt torque applies to G-103, and what reference was logged when that check was last carrie"
+  },
+  {
+   "id": "E2-A-0044",
+   "category": "multi_hop",
+   "class": "incomplete evidence: required fact missing from answer",
+   "detail": "missing ['REF-8145']; relevant needs 3 passages, cited 2",
+   "query": "What separator differential pressure limit applies to C-201, and what reference was logged when that check was"
+  },
+  {
+   "id": "E2-A-0047",
+   "category": "multi_hop",
+   "class": "withheld: incorrect quotation",
+   "detail": "citation [1] quote not found in the cited passage",
+   "query": "What training idler adjustment applies to CV-211, and what reference was logged when that check was last carri"
+  },
+  {
+   "id": "E2-A-0048",
+   "category": "multi_hop",
+   "class": "withheld: incorrect quotation",
+   "detail": "citation [1] quote not found in the cited passage; answer marker [1] has no verified citation",
+   "query": "What compressor oil change interval applies to C-109, and what reference was logged when that check was last c"
+  },
+  {
+   "id": "E2-A-0058",
+   "category": "conflicting_record",
+   "class": "wrong passage: sibling/hard-negative page",
+   "detail": "[('apex_service_history.csv', 'INC-N0271')]",
+   "query": "What shaft alignment tolerance applies to P-1010?"
+  },
+  {
+   "id": "E2-A-0078",
+   "category": "procedure",
+   "class": "withheld: numeric mismatch",
+   "detail": "number(s) not found in the cited evidence: 1, 3",
+   "query": "The screw compressor shows this problem: compressor trips on high discharge temperature. What should be checke"
+  },
+  {
+   "id": "E2-A-0079",
+   "category": "procedure",
+   "class": "withheld: numeric mismatch",
+   "detail": "number(s) not found in the cited evidence: 1, 4",
+   "query": "The industrial gearbox shows this problem: gearbox runs hotter than usual. What should be checked?"
+  },
+  {
+   "id": "E2-A-0081",
+   "category": "procedure",
+   "class": "withheld: numeric mismatch",
+   "detail": "number(s) not found in the cited evidence: 1, 3",
+   "query": "The screw compressor shows this problem: oil visible in the discharge air. What should be checked?"
+  },
+  {
+   "id": "E2-A-0082",
+   "category": "procedure",
+   "class": "withheld: numeric mismatch",
+   "detail": "number(s) not found in the cited evidence: 1, 2",
+   "query": "The industrial gearbox shows this problem: oil film at the output shaft. What should be checked?"
+  },
+  {
+   "id": "E2-M-0012",
+   "category": "keyword",
+   "class": "wrong passage: sibling/hard-negative page",
+   "detail": "[('meridian_mx-300_manual.pdf', 6)]",
+   "query": "What coolant temperature alarm is set on the MX-350?"
+  },
+  {
+   "id": "E2-M-0022",
+   "category": "paraphrase",
+   "class": "withheld: incorrect quotation",
+   "detail": "citation [1] quote not found in the cited passage",
+   "query": "How worn can the tyre grooves of the MX-350 be before the tyres are changed?"
+  },
+  {
+   "id": "E2-M-0027",
+   "category": "paraphrase",
+   "class": "withheld: incorrect quotation",
+   "detail": "citation [1] quote not found in the cited passage; answer marker [1] has no verified citation",
+   "query": "To what temperature is the RT-95 cooling unit set for chilled loads?"
+  },
+  {
+   "id": "E2-M-0028",
+   "category": "multi_hop",
+   "class": "withheld: incorrect quotation",
+   "detail": "citation [1] quote not found in the cited passage; answer marker [1] has no verified citation",
+   "query": "What minimum tire tread depth applies to VH-4101, and what reference was logged when that check was last carri"
+  },
+  {
+   "id": "E2-M-0030",
+   "category": "multi_hop",
+   "class": "wrong passage: unlabelled or unrelated",
+   "detail": "[('meridian_activity_log.csv', 'AL-M0275')]",
+   "query": "What cargo temperature deviation alarm applies to VH-1003, and what reference was logged when that check was l"
+  },
+  {
+   "id": "E2-M-0031",
+   "category": "multi_hop",
+   "class": "withheld: incorrect quotation",
+   "detail": "citation [1] quote not found in the cited passage; citation [2] quote not found in the cited passage; citation [3] quote not found in the cited passage",
+   "query": "What shaft alignment tolerance applies to VH-5102, and what reference was logged when that check was last carr"
+  },
+  {
+   "id": "E2-M-0032",
+   "category": "multi_hop",
+   "class": "withheld: numeric mismatch",
+   "detail": "number(s) not found in the cited evidence: 12",
+   "query": "What defrost cycle interval applies to VH-1003, and what reference was logged when that check was last carried"
+  },
+  {
+   "id": "E2-M-0037",
+   "category": "multi_hop",
+   "class": "incomplete evidence: required fact missing from answer",
+   "detail": "missing ['70000', 'REF-2129']; relevant needs 3 passages, cited 1",
+   "query": "What axle oil change distance applies to VH-2102, and what reference was logged when that check was last carri"
+  },
+  {
+   "id": "E2-M-0045",
+   "category": "version_conflict",
+   "class": "withheld: incorrect quotation",
+   "detail": "citation [4] quote not found in the cited passage",
+   "query": "How often does the RT-90 run a defrost cycle?"
+  },
+  {
+   "id": "E2-M-0046",
+   "category": "version_conflict",
+   "class": "withheld: incorrect quotation",
+   "detail": "citation [1] quote not found in the cited passage",
+   "query": "What chilled cargo setpoint is used for the RT-90?"
+  },
+  {
+   "id": "E2-M-0047",
+   "category": "conflicting_record",
+   "class": "wrong passage: sibling/hard-negative page",
+   "detail": "[('meridian_service_history.csv', 'SR-N0271')]",
+   "query": "What air dryer cartridge interval applies to VH-2009?"
+  },
+  {
+   "id": "E2-M-0048",
+   "category": "conflicting_record",
+   "class": "wrong passage: sibling/hard-negative page",
+   "detail": "[('meridian_service_history.csv', 'SR-N0272')]",
+   "query": "What coolant temperature warning applies to VH-1002?"
+  },
+  {
+   "id": "E2-M-0049",
+   "category": "conflicting_record",
+   "class": "wrong passage: sibling/hard-negative page",
+   "detail": "[('meridian_service_history.csv', 'SR-N0273')]",
+   "query": "What refrigerant charge applies to VH-2202?"
+  },
+  {
+   "id": "E2-M-0050",
+   "category": "conflicting_record",
+   "class": "wrong passage: sibling/hard-negative page",
+   "detail": "[('meridian_service_history.csv', 'SR-N0274')]",
+   "query": "What bearing re-grease interval applies to VH-3111?"
+  },
+  {
+   "id": "E2-M-0060",
+   "category": "asset_confusion",
+   "class": "withheld: incorrect quotation",
+   "detail": "citation [1] quote not found in the cited passage; answer marker [1] has no verified citation",
+   "query": "What service brake line pressure did the 2026Q1 inspection record for VH-1011?"
+  },
+  {
+   "id": "E2-M-0062",
+   "category": "procedure",
+   "class": "withheld: numeric mismatch",
+   "detail": "number(s) not found in the cited evidence: 1, 3",
+   "query": "The tractor unit shows this problem: battery warning with slow cranking. What should be checked?"
+  },
+  {
+   "id": "E2-M-0063",
+   "category": "procedure",
+   "class": "withheld: numeric mismatch",
+   "detail": "number(s) not found in the cited evidence: 1, 3",
+   "query": "The tractor unit shows this problem: engine temperature climbing on long grades. What should be checked?"
+  }
+ ],
+ "unanswerable_wrong": [
+  {
+   "id": "E2-M-0086",
+   "subtype": [
+    "gap_in_manual"
+   ],
+   "query": "What is the service interval of the RT-95 refrigeration unit?",
+   "answer": "The service interval of the RT-95 refrigeration unit is 50 days.",
+   "cited": [
+    "meridian_rt-95_manual.pdf"
+   ]
+  }
+ ],
+ "citation_issues": [
+  {
+   "id": "E2-A-0058",
+   "category": "conflicting_record",
+   "cited": [
+    "apex_service_history.csv",
+    "INC-N0271"
+   ],
+   "relevant": [
+    [
+     "apex_cp-250_manual.pdf",
+     5
+    ]
+   ]
+  },
+  {
+   "id": "E2-M-0012",
+   "category": "keyword",
+   "cited": [
+    "meridian_mx-300_manual.pdf",
+    6
+   ],
+   "relevant": [
+    [
+     "meridian_mx-350_manual.pdf",
+     5
+    ]
+   ]
+  },
+  {
+   "id": "E2-M-0030",
+   "category": "multi_hop",
+   "cited": [
+    "meridian_activity_log.csv",
+    "AL-M0275"
+   ],
+   "relevant": [
+    [
+     "meridian_activity_log.csv",
+     "AL-M0273"
+    ],
+    [
+     "meridian_register.csv",
+     "VH-1003"
+    ],
+    [
+     "meridian_rt-95_manual.pdf",
+     2
+    ]
+   ]
+  },
+  {
+   "id": "E2-M-0047",
+   "category": "conflicting_record",
+   "cited": [
+    "meridian_service_history.csv",
+    "SR-N0271"
+   ],
+   "relevant": [
+    [
+     "meridian_mx-300_manual.pdf",
+     2
+    ]
+   ]
+  },
+  {
+   "id": "E2-M-0048",
+   "category": "conflicting_record",
+   "cited": [
+    "meridian_service_history.csv",
+    "SR-N0272"
+   ],
+   "relevant": [
+    [
+     "meridian_lv-260_manual.pdf",
+     5
+    ]
+   ]
+  },
+  {
+   "id": "E2-M-0049",
+   "category": "conflicting_record",
+   "cited": [
+    "meridian_service_history.csv",
+    "SR-N0273"
+   ],
+   "relevant": [
+    [
+     "meridian_rt-95_manual.pdf",
+     4
+    ]
+   ]
+  },
+  {
+   "id": "E2-M-0050",
+   "category": "conflicting_record",
+   "cited": [
+    "meridian_service_history.csv",
+    "SR-N0274"
+   ],
+   "relevant": [
+    [
+     "meridian_cp-200_manual.pdf",
+     1
+    ]
+   ]
+  }
+ ],
+ "extraction": [
+  {
+   "id": "E2-A-X001",
+   "tenant": "apex",
+   "tags": [
+    "clear"
+   ],
+   "label": [
+    "mechanical_vibration",
+    "P3",
+    null,
+    null,
+    null
+   ],
+   "got": [
+    "mechanical_vibration",
+    "P3",
+    "needs_review",
+    1
+   ],
+   "raw_vib": 120.0,
+   "notes": [
+    "The model proposed vibration_mm_s = 120 mm/s, which is not stated in the report; it was not used and the original value is preserved on the record.",
+    "Human review required before ticketing: a numeric value proposed by the model is not in the report."
+   ]
+  },
+  {
+   "id": "E2-A-X002",
+   "tenant": "apex",
+   "tags": [
+    "clear"
+   ],
+   "label": [
+    "leak",
+    "P2",
+    null,
+    null,
+    null
+   ],
+   "got": [
+    "leak",
+    "P2",
+    "pending_review",
+    1
+   ],
+   "raw_vib": null,
+   "notes": []
+  },
+  {
+   "id": "E2-A-X003",
+   "tenant": "apex",
+   "tags": [
+    "clear"
+   ],
+   "label": [
+    "overheating",
+    "P2",
+    null,
+    null,
+    null
+   ],
+   "got": [
+    "overheating",
+    "P2",
+    "pending_review",
+    1
+   ],
+   "raw_vib": null,
+   "notes": []
+  },
+  {
+   "id": "E2-A-X004",
+   "tenant": "apex",
+   "tags": [
+    "clear"
+   ],
+   "label": [
+    "electrical_fault",
+    "P2",
+    null,
+    null,
+    null
+   ],
+   "got": [
+    "electrical_fault",
+    "P2",
+    "needs_review",
+    0
+   ],
+   "raw_vib": null,
+   "notes": [
+    "No grounded manual guidance found; escalation recommended.",
+    "Human review required before ticketing: no grounded evidence."
+   ]
+  },
+  {
+   "id": "E2-A-X007",
+   "tenant": "apex",
+   "tags": [
+    "clear"
+   ],
+   "label": [
+    "other",
+    "P4",
+    null,
+    null,
+    null
+   ],
+   "got": [
+    "performance_degradation",
+    "P4",
+    "needs_review",
+    0
+   ],
+   "raw_vib": null,
+   "notes": [
+    "No grounded manual guidance found; escalation recommended.",
+    "Human review required before ticketing: no grounded evidence."
+   ]
+  },
+  {
+   "id": "E2-A-X009",
+   "tenant": "apex",
+   "tags": [
+    "clear"
+   ],
+   "label": [
+    "leak",
+    "P2",
+    null,
+    null,
+    null
+   ],
+   "got": [
+    "leak",
+    "P2",
+    "pending_review",
+    1
+   ],
+   "raw_vib": null,
+   "notes": []
+  },
+  {
+   "id": "E2-A-X011",
+   "tenant": "apex",
+   "tags": [
+    "clear"
+   ],
+   "label": [
+    "electrical_fault",
+    "P2",
+    null,
+    null,
+    null
+   ],
+   "got": [
+    "electrical_fault",
+    "P2",
+    "pending_review",
+    1
+   ],
+   "raw_vib": null,
+   "notes": []
+  },
+  {
+   "id": "E2-A-X013",
+   "tenant": "apex",
+   "tags": [
+    "clear"
+   ],
+   "label": [
+    "performance_degradation",
+    "P4",
+    null,
+    null,
+    null
+   ],
+   "got": [
+    "performance_degradation",
+    "P4",
+    "pending_review",
+    1
+   ],
+   "raw_vib": null,
+   "notes": []
+  },
+  {
+   "id": "E2-A-X015",
+   "tenant": "apex",
+   "tags": [
+    "severity"
+   ],
+   "label": [
+    "mechanical_vibration",
+    "P1",
+    12.5,
+    null,
+    null
+   ],
+   "got": [
+    "mechanical_vibration",
+    "P1",
+    "pending_review",
+    1
+   ],
+   "raw_vib": 12.5,
+   "notes": []
+  },
+  {
+   "id": "E2-A-X016",
+   "tenant": "apex",
+   "tags": [
+    "severity"
+   ],
+   "label": [
+    "mechanical_vibration",
+    "P2",
+    8.0,
+    null,
+    null
+   ],
+   "got": [
+    "mechanical_vibration",
+    "P2",
+    "needs_review",
+    0
+   ],
+   "raw_vib": 8.0,
+   "notes": [
+    "No grounded manual guidance found; escalation recommended.",
+    "Human review required before ticketing: no grounded evidence."
+   ]
+  },
+  {
+   "id": "E2-A-X018",
+   "tenant": "apex",
+   "tags": [
+    "severity"
+   ],
+   "label": [
+    "noise",
+    "P3",
+    3.1,
+    null,
+    null
+   ],
+   "got": [
+    "mechanical_vibration",
+    "P3",
+    "pending_review",
+    1
+   ],
+   "raw_vib": 3.1,
+   "notes": []
+  },
+  {
+   "id": "E2-A-X019",
+   "tenant": "apex",
+   "tags": [
+    "ambiguous"
+   ],
+   "label": [
+    "noise",
+    "P3",
+    null,
+    null,
+    null
+   ],
+   "got": [
+    "noise",
+    "P3",
+    "needs_review",
+    1
+   ],
+   "raw_vib": 2.5,
+   "notes": [
+    "The model proposed vibration_mm_s = 2.5 mm/s, which is not stated in the report; it was not used and the original value is preserved on the record.",
+    "Human review required before ticketing: a numeric value proposed by the model is not in the report."
+   ]
+  },
+  {
+   "id": "E2-A-X022",
+   "tenant": "apex",
+   "tags": [
+    "ambiguous"
+   ],
+   "label": [
+    "performance_degradation",
+    "P4",
+    null,
+    null,
+    null
+   ],
+   "got": [
+    "performance_degradation",
+    "P4",
+    "pending_review",
+    1
+   ],
+   "raw_vib": null,
+   "notes": []
+  },
+  {
+   "id": "E2-A-X023",
+   "tenant": "apex",
+   "tags": [
+    "safety"
+   ],
+   "label": [
+    "electrical_fault",
+    "P1",
+    null,
+    null,
+    null
+   ],
+   "got": [
+    "electrical_fault",
+    "P1",
+    "pending_review",
+    1
+   ],
+   "raw_vib": null,
+   "notes": []
+  },
+  {
+   "id": "E2-A-X025",
+   "tenant": "apex",
+   "tags": [
+    "unregistered_asset"
+   ],
+   "label": [
+    "mechanical_vibration",
+    "P3",
+    null,
+    null,
+    null
+   ],
+   "got": [
+    "mechanical_vibration",
+    "P3",
+    "needs_review",
+    0
+   ],
+   "raw_vib": 100.0,
+   "notes": [
+    "The model proposed vibration_mm_s = 100 mm/s, which is not stated in the report; it was not used and the original value is preserved on the record.",
+    "No grounded manual guidance found; escalation recommended."
+   ]
+  },
+  {
+   "id": "E2-A-X026",
+   "tenant": "apex",
+   "tags": [
+    "unregistered_asset"
+   ],
+   "label": [
+    "leak",
+    "P2",
+    null,
+    null,
+    null
+   ],
+   "got": [
+    "leak",
+    "P2",
+    "needs_review",
+    0
+   ],
+   "raw_vib": null,
+   "notes": [
+    "No grounded manual guidance found; escalation recommended.",
+    "Equipment P-9621 was not found in the tenant equipment register."
+   ]
+  },
+  {
+   "id": "E2-A-X029",
+   "tenant": "apex",
+   "tags": [
+    "prompt_injection",
+    "adversarial"
+   ],
+   "label": [
+    "leak",
+    "P2",
+    null,
+    null,
+    null
+   ],
+   "got": [
+    "leak",
+    "P2",
+    "pending_review",
+    1
+   ],
+   "raw_vib": null,
+   "notes": []
+  },
+  {
+   "id": "E2-M-X001",
+   "tenant": "meridian",
+   "tags": [
+    "clear"
+   ],
+   "label": [
+    "brake_system",
+    "P3",
+    null,
+    null,
+    null
+   ],
+   "got": [
+    "leak",
+    "P2",
+    "pending_review",
+    1
+   ],
+   "raw_vib": null,
+   "notes": [
+    "Fleet telematics lookup failed (permanent)",
+    "CRM account lookup failed (permanent)"
+   ]
+  },
+  {
+   "id": "E2-M-X002",
+   "tenant": "meridian",
+   "tags": [
+    "clear"
+   ],
+   "label": [
+    "engine_cooling",
+    "P3",
+    null,
+    null,
+    null
+   ],
+   "got": [
+    "engine_cooling",
+    "P3",
+    "pending_review",
+    1
+   ],
+   "raw_vib": null,
+   "notes": [
+    "Fleet telematics lookup failed (permanent)",
+    "CRM account lookup failed (permanent)"
+   ]
+  },
+  {
+   "id": "E2-M-X003",
+   "tenant": "meridian",
+   "tags": [
+    "clear"
+   ],
+   "label": [
+    "tire_wheel",
+    "P3",
+    null,
+    null,
+    null
+   ],
+   "got": [
+    "leak",
+    "P2",
+    "pending_review",
+    1
+   ],
+   "raw_vib": null,
+   "notes": [
+    "Fleet telematics lookup failed (permanent)",
+    "CRM account lookup failed (permanent)"
+   ]
+  },
+  {
+   "id": "E2-M-X004",
+   "tenant": "meridian",
+   "tags": [
+    "clear"
+   ],
+   "label": [
+    "refrigeration_unit",
+    "P2",
+    null,
+    null,
+    null
+   ],
+   "got": [
+    "refrigeration_unit",
+    "P2",
+    "pending_review",
+    4
+   ],
+   "raw_vib": null,
+   "notes": [
+    "Fleet telematics lookup failed (permanent)",
+    "CRM account lookup failed (permanent)"
+   ]
+  },
+  {
+   "id": "E2-M-X007",
+   "tenant": "meridian",
+   "tags": [
+    "clear"
+   ],
+   "label": [
+    "noise_vibration",
+    "P3",
+    null,
+    null,
+    null
+   ],
+   "got": [
+    "noise_vibration",
+    "P3",
+    "pending_review",
+    1
+   ],
+   "raw_vib": null,
+   "notes": [
+    "Fleet telematics lookup failed (permanent)",
+    "CRM account lookup failed (permanent)"
+   ]
+  },
+  {
+   "id": "E2-M-X009",
+   "tenant": "meridian",
+   "tags": [
+    "clear"
+   ],
+   "label": [
+    "engine_cooling",
+    "P3",
+    null,
+    null,
+    null
+   ],
+   "got": [
+    "engine_cooling",
+    "P3",
+    "pending_review",
+    1
+   ],
+   "raw_vib": null,
+   "notes": [
+    "Fleet telematics lookup failed (permanent)",
+    "CRM account lookup failed (permanent)"
+   ]
+  },
+  {
+   "id": "E2-M-X011",
+   "tenant": "meridian",
+   "tags": [
+    "clear"
+   ],
+   "label": [
+    "refrigeration_unit",
+    "P2",
+    null,
+    null,
+    null
+   ],
+   "got": [
+    "refrigeration_unit",
+    "P2",
+    "pending_review",
+    4
+   ],
+   "raw_vib": null,
+   "notes": [
+    "Fleet telematics lookup failed (permanent)",
+    "CRM account lookup failed (permanent)"
+   ]
+  },
+  {
+   "id": "E2-M-X013",
+   "tenant": "meridian",
+   "tags": [
+    "clear"
+   ],
+   "label": [
+    "leak",
+    "P2",
+    null,
+    null,
+    null
+   ],
+   "got": [
+    "leak",
+    "P2",
+    "needs_review",
+    0
+   ],
+   "raw_vib": null,
+   "notes": [
+    "No grounded manual guidance found; escalation recommended.",
+    "Fleet telematics lookup failed (permanent)"
+   ]
+  },
+  {
+   "id": "E2-M-X015",
+   "tenant": "meridian",
+   "tags": [
+    "severity"
+   ],
+   "label": [
+    "brake_system",
+    "P1",
+    null,
+    38,
+    null
+   ],
+   "got": [
+    "brake_system",
+    "P1",
+    "needs_review",
+    0
+   ],
+   "raw_vib": null,
+   "notes": [
+    "No grounded manual guidance found; escalation recommended.",
+    "Vehicle VH-2101: odometer 182450 km, last service 2026-07-02, status in_service"
+   ]
+  },
+  {
+   "id": "E2-M-X016",
+   "tenant": "meridian",
+   "tags": [
+    "severity"
+   ],
+   "label": [
+    "brake_system",
+    "P2",
+    null,
+    52,
+    null
+   ],
+   "got": [
+    "brake_system",
+    "P2",
+    "pending_review",
+    1
+   ],
+   "raw_vib": null,
+   "notes": [
+    "Fleet telematics lookup failed (permanent)",
+    "CRM account lookup failed (permanent)"
+   ]
+  },
+  {
+   "id": "E2-M-X018",
+   "tenant": "meridian",
+   "tags": [
+    "severity"
+   ],
+   "label": [
+    "engine_cooling",
+    "P1",
+    null,
+    null,
+    118
+   ],
+   "got": [
+    "engine_cooling",
+    "P1",
+    "pending_review",
+    1
+   ],
+   "raw_vib": null,
+   "notes": [
+    "Fleet telematics lookup failed (permanent)",
+    "CRM account lookup failed (permanent)"
+   ]
+  },
+  {
+   "id": "E2-M-X019",
+   "tenant": "meridian",
+   "tags": [
+    "ambiguous"
+   ],
+   "label": [
+    "brake_system",
+    "P3",
+    null,
+    null,
+    null
+   ],
+   "got": [
+    "noise_vibration",
+    "P3",
+    "pending_review",
+    1
+   ],
+   "raw_vib": null,
+   "notes": [
+    "Fleet telematics lookup failed (permanent)",
+    "CRM account lookup failed (permanent)"
+   ]
+  },
+  {
+   "id": "E2-M-X022",
+   "tenant": "meridian",
+   "tags": [
+    "ambiguous"
+   ],
+   "label": [
+    "electrical_fault",
+    "P2",
+    null,
+    null,
+    null
+   ],
+   "got": [
+    "noise_vibration",
+    "P3",
+    "needs_review",
+    0
+   ],
+   "raw_vib": null,
+   "notes": [
+    "No grounded manual guidance found; escalation recommended.",
+    "Fleet telematics lookup failed (permanent)"
+   ]
+  },
+  {
+   "id": "E2-M-X023",
+   "tenant": "meridian",
+   "tags": [
+    "safety"
+   ],
+   "label": [
+    "electrical_fault",
+    "P1",
+    null,
+    null,
+    null
+   ],
+   "got": [
+    "leak",
+    "P1",
+    "pending_review",
+    1
+   ],
+   "raw_vib": null,
+   "notes": [
+    "Vehicle VH-2103: odometer 94310 km, last service 2026-06-11, status in_service",
+    "Customer account Northside Pharmacy Supply (fictional) (ACC-502), SLA tier platinum, response within 2 h"
+   ]
+  },
+  {
+   "id": "E2-M-X025",
+   "tenant": "meridian",
+   "tags": [
+    "unregistered_asset"
+   ],
+   "label": [
+    "brake_system",
+    "P3",
+    null,
+    null,
+    null
+   ],
+   "got": [
+    "noise_vibration",
+    "P3",
+    "needs_review",
+    1
+   ],
+   "raw_vib": null,
+   "notes": [
+    "Vehicle VH-9230 was not found in the tenant vehicle register.",
+    "Fleet telematics lookup failed (permanent)"
+   ]
+  },
+  {
+   "id": "E2-M-X026",
+   "tenant": "meridian",
+   "tags": [
+    "unregistered_asset"
+   ],
+   "label": [
+    "refrigeration_unit",
+    "P2",
+    null,
+    null,
+    null
+   ],
+   "got": [
+    "refrigeration_unit",
+    "P2",
+    "needs_review",
+    1
+   ],
+   "raw_vib": null,
+   "notes": [
+    "Vehicle VH-9411 was not found in the tenant vehicle register.",
+    "Fleet telematics lookup failed (permanent)"
+   ]
+  },
+  {
+   "id": "E2-M-X029",
+   "tenant": "meridian",
+   "tags": [
+    "prompt_injection",
+    "adversarial"
+   ],
+   "label": [
+    "brake_system",
+    "P3",
+    null,
+    null,
+    null
+   ],
+   "got": [
+    "leak",
+    "P1",
+    "needs_review",
+    0
+   ],
+   "raw_vib": null,
+   "notes": [
+    "No grounded manual guidance found; escalation recommended.",
+    "Fleet telematics lookup failed (permanent)"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,440 @@
+{
+ "run_id": "exp-RSTAR-20261112T054519Z",
+ "experiment": "RSTAR",
+ "split": "dev",
+ "ingest_seconds": 25.5,
+ "resources": {
+  "ingestion": {
+   "samples": 6,
+   "cpu_pct_mean": 69.8,
+   "cpu_pct_peak": 87,
+   "ollama_working_set_mb_peak": 2021.2,
+   "python_working_set_mb_peak": 851.7,
+   "system_free_ram_mb_min": 1843.0,
+   "system_total_ram_mb": 16026.5
+  },
+  "retrieval_default": {
+   "samples": 1,
+   "cpu_pct_mean": 53,
+   "cpu_pct_peak": 53,
+   "ollama_working_set_mb_peak": 2021.2,
+   "python_working_set_mb_peak": 801.2,
+   "system_free_ram_mb_min": 1861.4,
+   "system_total_ram_mb": 16026.5
+  },
+  "warmup": {
+   "samples": 0
+  },
+  "qa_rep1": {
+   "samples": 128,
+   "cpu_pct_mean": 60.2,
+   "cpu_pct_peak": 96,
+   "ollama_working_set_mb_peak": 2304.7,
+   "python_working_set_mb_peak": 854.2,
+   "system_free_ram_mb_min": 1784.3,
+   "system_total_ram_mb": 16026.5
+  },
+  "extraction_rep1": {
+   "samples": 33,
+   "cpu_pct_mean": 60.1,
+   "cpu_pct_peak": 89,
+   "ollama_working_set_mb_peak": 2306.2,
+   "python_working_set_mb_peak": 877.3,
+   "system_free_ram_mb_min": 1816.2,
+   "system_total_ram_mb": 16026.5
+  }
+ },
+ "window_seconds": {
+  "ingestion": 25.6,
+  "retrieval_default": 4.6,
+  "warmup": 0.0,
+  "qa_rep1": 600.0,
+  "extraction_rep1": 158.6
+ },
+ "ingestion": [
+  {
+   "tenant": "apex",
+   "file": "apex_cc-300_manual.pdf",
+   "superseded_copy": true,
+   "status": "created",
+   "chunks": 6,
+   "seconds": 0.298
+  },
+  {
+   "tenant": "apex",
+   "file": "apex_cp-200_manual.pdf",
+   "superseded_copy": true,
+   "status": "created",
+   "chunks": 6,
+   "seconds": 0.288
+  },
+  {
+   "tenant": "apex",
+   "file": "apex_em-55_manual.pdf",
+   "superseded_copy": true,
+   "status": "created",
+   "chunks": 6,
+   "seconds": 0.156
+  },
+  {
+   "tenant": "apex",
+   "file": "apex_activity_log.csv",
+   "superseded_copy": false,
+   "status": "created",
+   "chunks": 288,
+   "seconds": 4.068
+  },
+  {
+   "tenant": "apex",
+   "file": "apex_belt_conveyor_troubleshooting.pdf",
+   "superseded_copy": false,
+   "status": "created",
+   "chunks": 3,
+   "seconds": 0.108
+  },
+  {
+   "tenant": "apex",
+   "file": "apex_cc-300_manual.pdf",
+   "superseded_copy": false,
+   "status": "new_version",
+   "chunks": 6,
+   "seconds": 0.186
+  },
+  {
+   "tenant": "apex",
+   "file": "apex_cc-350_manual.pdf",
+   "superseded_copy": false,
+   "status": "created",
+   "chunks": 5,
+   "seconds": 0.179
+  },
+  {
+   "tenant": "apex",
+   "file": "apex_centrifugal_pump_troubleshooting.pdf",
+   "superseded_copy": false,
+   "status": "created",
+   "chunks": 3,
+   "seconds": 0.128
+  },
+  {
+   "tenant": "apex",
+   "file": "apex_cp-200_manual.pdf",
+   "superseded_copy": false,
+   "status": "new_version",
+   "chunks": 6,
+   "seconds": 0.185
+  },
+  {
+   "tenant": "apex",
+   "file": "apex_cp-250_manual.pdf",
+   "superseded_copy": false,
+   "status": "created",
+   "chunks": 6,
+   "seconds": 0.178
+  },
+  {
+   "tenant": "apex",
+   "file": "apex_cp-300_manual.pdf",
+   "superseded_copy": false,
+   "status": "created",
+   "chunks": 5,
+   "seconds": 0.154
+  },
+  {
+   "tenant": "apex",
+   "file": "apex_cv-400_manual.pdf",
+   "superseded_copy": false,
+   "status": "created",
+   "chunks": 6,
+   "seconds": 0.147
+  },
+  {
+   "tenant": "apex",
+   "file": "apex_cv-450_manual.pdf",
+   "superseded_copy": false,
+   "status": "created",
+   "chunks": 5,
+   "seconds": 0.148
+  },
+  {
+   "tenant": "apex",
+   "file": "apex_electric_motor_troubleshooting.pdf",
+   "superseded_copy": false,
+   "status": "created",
+   "chunks": 3,
+   "seconds": 0.122
+  },
+  {
+   "tenant": "apex",
+   "file": "apex_em-55_manual.pdf",
+   "superseded_copy": false,
+   "status": "new_version",
+   "chunks": 6,
+   "seconds": 0.162
+  },
+  {
+   "tenant": "apex",
+   "file": "apex_em-75_manual.pdf",
+   "superseded_copy": false,
+   "status": "created",
+   "chunks": 5,
+   "seconds": 0.14
+  },
+  {
+   "tenant": "apex",
+   "file": "apex_gb-500_manual.pdf",
+   "superseded_copy": false,
+   "status": "created",
+   "chunks": 6,
+   "seconds": 0.14
+  },
+  {
+   "tenant": "apex",
+   "file": "apex_gb-550_manual.pdf",
+   "superseded_copy": false,
+   "status": "created",
+   "chunks": 5,
+   "seconds": 0.139
+  },
+  {
+   "tenant": "apex",
+   "file": "apex_industrial_gearbox_troubleshooting.pdf",
+   "superseded_copy": false,
+   "status": "created",
+   "chunks": 3,
+   "seconds": 0.108
+  },
+  {
+   "tenant": "apex",
+   "file": "apex_inspection_2026q1.pdf",
+   "superseded_copy": false,
+   "status": "created",
+   "chunks": 8,
+   "seconds": 0.205
+  },
+  {
+   "tenant": "apex",
+   "file": "apex_inspection_2026q2.pdf",
+   "superseded_copy": false,
+   "status": "created",
+   "chunks": 8,
+   "seconds": 0.176
+  },
+  {
+   "tenant": "apex",
+   "file": "apex_inspection_2026q3.pdf",
+   "superseded_copy": false,
+   "status": "created",
+   "chunks": 8,
+   "seconds": 0.18
+  },
+  {
+   "tenant": "apex",
+   "file": "apex_register.csv",
+   "superseded_copy": false,
+   "status": "created",
+   "chunks": 55,
+   "seconds": 0.68
+  },
+  {
+   "tenant": "apex",
+   "file": "apex_screw_compressor_troubleshooting.pdf",
+   "superseded_copy": false,
+   "status": "created",
+   "chunks": 3,
+   "seconds": 0.112
+  },
+  {
+   "tenant": "apex",
+   "file": "apex_service_history.csv",
+   "superseded_copy": false,
+   "status": "created",
+   "chunks": 274,
+   "seconds": 4.986
+  },
+  {
+   "tenant": "meridian",
+   "file": "meridian_hx-410_manual.pdf",
+   "superseded_copy": true,
+   "status": "created",
+   "chunks": 6,
+   "seconds": 0.111
+  },
+  {
+   "tenant": "meridian",
+   "file": "meridian_lv-220_manual.pdf",
+   "superseded_copy": true,
+   "status": "created",
+   "chunks": 6,
+   "seconds": 0.154
+  },
+  {
+   "tenant": "meridian",
+   "file": "meridian_rt-90_manual.pdf",
+   "superseded_copy": true,
+   "status": "created",
+   "chunks": 6,
+   "seconds": 0.177
+  },
+  {
+   "tenant": "meridian",
+   "file": "meridian_activity_log.csv",
+   "superseded_copy": false,
+   "status": "created",
+   "chunks": 286,
+   "seconds": 3.546
+  },
+  {
+   "tenant": "meridian",
+   "file": "meridian_cp-200_manual.pdf",
+   "superseded_copy": false,
+   "status": "created",
+   "chunks": 6,
+   "seconds": 0.103
+  },
+  {
+   "tenant": "meridian",
+   "file": "meridian_delivery_van_troubleshooting.pdf",
+   "superseded_copy": false,
+   "status": "created",
+   "chunks": 3,
+   "seconds": 0.097
+  },
+  {
+   "tenant": "meridian",
+   "file": "meridian_depot_transfer_pump_troubleshooting.pdf",
+   "superseded_copy": false,
+   "status": "created",
+   "chunks": 3,
+   "seconds": 0.109
+  },
+  {
+   "tenant": "meridian",
+   "file": "meridian_hx-410_manual.pdf",
+   "superseded_copy": false,
+   "status": "new_version",
+   "chunks": 6,
+   "seconds": 0.148
+  },
+  {
+   "tenant": "meridian",
+   "file": "meridian_hx-460_manual.pdf",
+   "superseded_copy": false,
+   "status": "created",
+   "chunks": 5,
+   "seconds": 0.136
+  },
+  {
+   "tenant": "meridian",
+   "file": "meridian_inspection_2026q1.pdf",
+   "superseded_copy": false,
+   "status": "created",
+   "chunks": 8,
+   "seconds": 0.192
+  },
+  {
+   "tenant": "meridian",
+   "file": "meridian_inspection_2026q2.pdf",
+   "superseded_copy": false,
+   "status": "created",
+   "chunks": 8,
+   "seconds": 0.201
+  },
+  {
+   "tenant": "meridian",
+   "file": "meridian_inspection_2026q3.pdf",
+   "superseded_copy": false,
+   "status": "created",
+   "chunks": 8,
+   "seconds": 0.2
+  },
+  {
+   "tenant": "meridian",
+   "file": "meridian_lv-220_manual.pdf",
+   "superseded_copy": false,
+   "status": "new_version",
+   "chunks": 6,
+   "seconds": 0.167
+  },
+  {
+   "tenant": "meridian",
+   "file": "meridian_lv-260_manual.pdf",
+   "superseded_copy": false,
+   "status": "created",
+   "chunks": 5,
+   "seconds": 0.156
+  },
+  {
+   "tenant": "meridian",
+   "file": "meridian_mx-300_manual.pdf",
+   "superseded_copy": false,
+   "status": "created",
+   "chunks": 6,
+   "seconds": 0.164
+  },
+  {
+   "tenant": "meridian",
+   "file": "meridian_mx-350_manual.pdf",
+   "superseded_copy": false,
+   "status": "created",
+   "chunks": 5,
+   "seconds": 0.137
+  },
+  {
+   "tenant": "meridian",
+   "file": "meridian_refrigerated_trailer_troubleshooting.pdf",
+   "superseded_copy": false,
+   "status": "created",
+   "chunks": 3,
+   "seconds": 0.127
+  },
+  {
+   "tenant": "meridian",
+   "file": "meridian_register.csv",
+   "superseded_copy": false,
+   "status": "created",
+   "chunks": 45,
+   "seconds": 0.592
+  },
+  {
+   "tenant": "meridian",
+   "file": "meridian_rigid_truck_troubleshooting.pdf",
+   "superseded_copy": false,
+   "status": "created",
+   "chunks": 3,
+   "seconds": 0.096
+  },
+  {
+   "tenant": "meridian",
+   "file": "meridian_rt-90_manual.pdf",
+   "superseded_copy": false,
+   "status": "new_version",
+   "chunks": 6,
+   "seconds": 0.147
+  },
+  {
+   "tenant": "meridian",
+   "file": "meridian_rt-95_manual.pdf",
+   "superseded_copy": false,
+   "status": "created",
+   "chunks": 5,
+   "seconds": 0.13
+  },
+  {
+   "tenant": "meridian",
+   "file": "meridian_service_history.csv",
+   "superseded_copy": false,
+   "status": "created",
+   "chunks": 274,
+   "seconds": 5.1
+  },
+  {
+   "tenant": "meridian",
+   "file": "meridian_tractor_unit_troubleshooting.pdf",
+   "superseded_copy": false,
+   "status": "created",
+   "chunks": 3,
+   "seconds": 0.088
+  }
+ ]
+}

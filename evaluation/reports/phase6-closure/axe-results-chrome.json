@@ -1,0 +1,286 @@
+{
+ "tool": "axe-core via @axe-core/playwright",
+ "tags": [
+  "wcag2a",
+  "wcag2aa",
+  "wcag21a",
+  "wcag21aa",
+  "best-practice"
+ ],
+ "browser": "Google Chrome",
+ "note": "Automated checks only. Not a WCAG conformance claim and not a screen-reader audit.",
+ "states_audited": 44,
+ "total_violations": 0,
+ "by_impact": {
+  "critical": 0,
+  "serious": 0,
+  "moderate": 0,
+  "minor": 0
+ },
+ "audits": [
+  {
+   "state": "login: default",
+   "url": "/",
+   "passes": 27,
+   "violations": []
+  },
+  {
+   "state": "login: validation errors",
+   "url": "/",
+   "passes": 31,
+   "violations": []
+  },
+  {
+   "state": "login: server error",
+   "url": "/",
+   "passes": 31,
+   "violations": []
+  },
+  {
+   "state": "page: Overview",
+   "url": "/#/overview",
+   "passes": 37,
+   "violations": []
+  },
+  {
+   "state": "page: Customer Onboarding",
+   "url": "/#/onboarding",
+   "passes": 37,
+   "violations": []
+  },
+  {
+   "state": "page: Data Sources",
+   "url": "/#/data-sources",
+   "passes": 46,
+   "violations": []
+  },
+  {
+   "state": "page: Document Library",
+   "url": "/#/documents",
+   "passes": 46,
+   "violations": []
+  },
+  {
+   "state": "page: AI Knowledge Assistant",
+   "url": "/#/assistant",
+   "passes": 34,
+   "violations": []
+  },
+  {
+   "state": "page: Incident Explorer",
+   "url": "/#/incidents",
+   "passes": 39,
+   "violations": []
+  },
+  {
+   "state": "page: Support Tickets",
+   "url": "/#/tickets",
+   "passes": 39,
+   "violations": []
+  },
+  {
+   "state": "page: Approval Queue",
+   "url": "/#/approvals",
+   "passes": 37,
+   "violations": []
+  },
+  {
+   "state": "page: Workflow History",
+   "url": "/#/workflows",
+   "passes": 39,
+   "violations": []
+  },
+  {
+   "state": "page: Integration Health",
+   "url": "/#/integrations",
+   "passes": 42,
+   "violations": []
+  },
+  {
+   "state": "page: Evaluation Dashboard",
+   "url": "/#/evaluation",
+   "passes": 44,
+   "violations": []
+  },
+  {
+   "state": "page: Audit Logs",
+   "url": "/#/audit",
+   "passes": 44,
+   "violations": []
+  },
+  {
+   "state": "page: Administration",
+   "url": "/#/administration",
+   "passes": 45,
+   "violations": []
+  },
+  {
+   "state": "page as auditor: Overview",
+   "url": "/#/overview",
+   "passes": 37,
+   "violations": []
+  },
+  {
+   "state": "page as auditor: Document Library",
+   "url": "/#/documents",
+   "passes": 46,
+   "violations": []
+  },
+  {
+   "state": "page as auditor: Incident Explorer",
+   "url": "/#/incidents",
+   "passes": 39,
+   "violations": []
+  },
+  {
+   "state": "page as auditor: Support Tickets",
+   "url": "/#/tickets",
+   "passes": 39,
+   "violations": []
+  },
+  {
+   "state": "page as auditor: Approval Queue",
+   "url": "/#/approvals",
+   "passes": 37,
+   "violations": []
+  },
+  {
+   "state": "page as engineer: Overview",
+   "url": "/#/overview",
+   "passes": 37,
+   "violations": []
+  },
+  {
+   "state": "page as engineer: Document Library",
+   "url": "/#/documents",
+   "passes": 46,
+   "violations": []
+  },
+  {
+   "state": "page as engineer: Incident Explorer",
+   "url": "/#/incidents",
+   "passes": 39,
+   "violations": []
+  },
+  {
+   "state": "page as engineer: Support Tickets",
+   "url": "/#/tickets",
+   "passes": 39,
+   "violations": []
+  },
+  {
+   "state": "page as engineer: Approval Queue",
+   "url": "/#/approvals",
+   "passes": 37,
+   "violations": []
+  },
+  {
+   "state": "state: loading (tickets)",
+   "url": "/#/tickets",
+   "passes": 39,
+   "violations": []
+  },
+  {
+   "state": "state: empty (documents filtered)",
+   "url": "/#/documents",
+   "passes": 39,
+   "violations": []
+  },
+  {
+   "state": "state: form error (workflow filter)",
+   "url": "/#/workflows",
+   "passes": 39,
+   "violations": []
+  },
+  {
+   "state": "form: documents upload error",
+   "url": "/#/documents",
+   "passes": 46,
+   "violations": []
+  },
+  {
+   "state": "form: assistant question error",
+   "url": "/#/assistant",
+   "passes": 38,
+   "violations": []
+  },
+  {
+   "state": "form: incident report error",
+   "url": "/#/incidents",
+   "passes": 39,
+   "violations": []
+  },
+  {
+   "state": "form: administration member errors",
+   "url": "/#/administration",
+   "passes": 45,
+   "violations": []
+  },
+  {
+   "state": "form: connector configuration errors",
+   "url": "/#/data-sources",
+   "passes": 46,
+   "violations": []
+  },
+  {
+   "state": "form: webhook endpoint errors",
+   "url": "/#/data-sources",
+   "passes": 46,
+   "violations": []
+  },
+  {
+   "state": "dialog: connector confirmation",
+   "url": "/#/data-sources",
+   "passes": 47,
+   "violations": []
+  },
+  {
+   "state": "state: connector rejected by server",
+   "url": "/#/data-sources",
+   "passes": 46,
+   "violations": []
+  },
+  {
+   "state": "incident review: blocked incident with review controls",
+   "url": "/#/incidents",
+   "passes": 48,
+   "violations": []
+  },
+  {
+   "state": "dialog: incident review confirmation",
+   "url": "/#/incidents",
+   "passes": 49,
+   "violations": []
+  },
+  {
+   "state": "ticket approval: queue card",
+   "url": "/#/approvals",
+   "passes": 41,
+   "violations": []
+  },
+  {
+   "state": "dialog: approval confirmation",
+   "url": "/#/approvals",
+   "passes": 42,
+   "violations": []
+  },
+  {
+   "state": "approval queue: decided tab",
+   "url": "/#/approvals",
+   "passes": 37,
+   "violations": []
+  },
+  {
+   "state": "citation inspection: expanded",
+   "url": "/#/assistant",
+   "passes": 36,
+   "violations": []
+  },
+  {
+   "state": "form: profile JSON error",
+   "url": "/#/onboarding",
+   "passes": 41,
+   "violations": []
+  }
+ ]
+}

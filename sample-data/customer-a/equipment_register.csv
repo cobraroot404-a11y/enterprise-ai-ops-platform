@@ -1,0 +1,5 @@
+equipment_id,name,model,location,commissioned
+P-101,Cooling water pump 1,CP-200,Plant 1 Bay 3,2019-04-02
+P-102,Cooling water pump 2,CP-200,Plant 1 Bay 3,2019-04-02
+P-103,Process water pump,CP-200,Plant 1 Bay 4,2021-09-15
+M-201,Compressor motor,EM-55,Plant 2 Bay 1,2020-01-20

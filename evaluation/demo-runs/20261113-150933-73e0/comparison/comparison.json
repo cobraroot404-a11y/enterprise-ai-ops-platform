@@ -1,0 +1,264 @@
+{
+  "report": {
+    "claim": "No real productivity gain is claimed: fictional scenarios, synthetic tasks, same-author measurement.",
+    "A_measured_automated": {
+      "kind": "measured automated system time",
+      "tasks": 20,
+      "backend": {
+        "ai": "deterministic",
+        "llm": "deterministic",
+        "embedding": "deterministic",
+        "note": "deterministic test-only backends: CI/functional only"
+      },
+      "per_step": {
+        "extract_incident": {
+          "n": 20,
+          "median_s": 0.0432,
+          "p95_s": 0.0655,
+          "min_s": 0.0376,
+          "max_s": 0.0713
+        },
+        "review_incident": {
+          "n": 15,
+          "median_s": 0.0289,
+          "p95_s": 0.0305,
+          "min_s": 0.0277,
+          "max_s": 0.0305
+        },
+        "draft_ticket": {
+          "n": 20,
+          "median_s": 0.0245,
+          "p95_s": 0.0266,
+          "min_s": 0.024,
+          "max_s": 0.027
+        },
+        "request_approval": {
+          "n": 20,
+          "median_s": 0.0228,
+          "p95_s": 0.0238,
+          "min_s": 0.0217,
+          "max_s": 0.0241
+        },
+        "approve": {
+          "n": 20,
+          "median_s": 0.0318,
+          "p95_s": 0.039,
+          "min_s": 0.0308,
+          "max_s": 0.0496
+        },
+        "worker_submission": {
+          "n": 20,
+          "median_s": 0.9133,
+          "p95_s": 0.9577,
+          "min_s": 0.5142,
+          "max_s": 1.0139
+        }
+      },
+      "end_to_end_system_time": {
+        "n": 20,
+        "median_s": 1.0659,
+        "p95_s": 1.115,
+        "min_s": 0.6549,
+        "max_s": 1.1606
+      },
+      "excluded": "human think and reading time, network distance, real external systems (local mocks are used)",
+      "human_touchpoints_that_remain": [
+        "engineer: writes the fault report",
+        "engineer: reviews the structured incident",
+        "supervisor: reviews incidents the platform routes to human review",
+        "engineer: drafts the ticket and requests approval",
+        "supervisor: reviews and decides the approval"
+      ]
+    },
+    "B_observed_manual": {
+      "kind": "observed human performance",
+      "available": false,
+      "summary": null,
+      "note": "no observed human data exist; no comparison is made"
+    },
+    "C_simulated_manual": {
+      "kind": "simulated, hypothetical baseline",
+      "available": false,
+      "assumptions": null,
+      "result": null,
+      "note": "no assumptions were supplied; nothing is simulated"
+    }
+  },
+  "raw_automated": [
+    {
+      "task_id": "T01",
+      "extract_incident": 0.060802699998021126,
+      "draft_ticket": 0.02558570000110194,
+      "request_approval": 0.022466499998699874,
+      "approve": 0.031816900009289384,
+      "worker_submission": 0.5141956000006758
+    },
+    {
+      "task_id": "T02",
+      "extract_incident": 0.043156800005817786,
+      "review_incident": 0.03040550000150688,
+      "draft_ticket": 0.025884399976348504,
+      "request_approval": 0.022752499993657693,
+      "approve": 0.03272909999941476,
+      "worker_submission": 0.9117016000091098
+    },
+    {
+      "task_id": "T03",
+      "extract_incident": 0.04337859997758642,
+      "review_incident": 0.02767630000016652,
+      "draft_ticket": 0.025842800008831546,
+      "request_approval": 0.022833800001535565,
+      "approve": 0.03299869998591021,
+      "worker_submission": 0.9180228999757674
+    },
+    {
+      "task_id": "T04",
+      "extract_incident": 0.04407469998113811,
+      "review_incident": 0.029494999995222315,
+      "draft_ticket": 0.02431019998039119,
+      "request_approval": 0.02197370000067167,
+      "approve": 0.031802000012248755,
+      "worker_submission": 0.900123600004008
+    },
+    {
+      "task_id": "T05",
+      "extract_incident": 0.07134729999233969,
+      "draft_ticket": 0.02662419999251142,
+      "request_approval": 0.02409359999001026,
+      "approve": 0.033133899996755645,
+      "worker_submission": 0.9059300999797415
+    },
+    {
+      "task_id": "T06",
+      "extract_incident": 0.04192189997411333,
+      "review_incident": 0.02851770000415854,
+      "draft_ticket": 0.02477710001403466,
+      "request_approval": 0.0230802999867592,
+      "approve": 0.03904810000676662,
+      "worker_submission": 0.9576544000010472
+    },
+    {
+      "task_id": "T07",
+      "extract_incident": 0.037620300019625574,
+      "review_incident": 0.028507899987744167,
+      "draft_ticket": 0.024931699997978285,
+      "request_approval": 0.02281550000770949,
+      "approve": 0.03186350001487881,
+      "worker_submission": 0.9254897000209894
+    },
+    {
+      "task_id": "T08",
+      "extract_incident": 0.04011930001433939,
+      "review_incident": 0.030518799991114065,
+      "draft_ticket": 0.026989500009221956,
+      "request_approval": 0.02384660000097938,
+      "approve": 0.031892300001345575,
+      "worker_submission": 0.9118661000102293
+    },
+    {
+      "task_id": "T09",
+      "extract_incident": 0.06523949999245815,
+      "draft_ticket": 0.024507800000719726,
+      "request_approval": 0.02295300000696443,
+      "approve": 0.032222699985140935,
+      "worker_submission": 0.9225232999888249
+    },
+    {
+      "task_id": "T10",
+      "extract_incident": 0.04499669998767786,
+      "review_incident": 0.02887039998313412,
+      "draft_ticket": 0.02443170000333339,
+      "request_approval": 0.02253670000936836,
+      "approve": 0.03164709999691695,
+      "worker_submission": 0.9252699000062421
+    },
+    {
+      "task_id": "T11",
+      "extract_incident": 0.04280350002227351,
+      "review_incident": 0.028523000015411526,
+      "draft_ticket": 0.02401100000133738,
+      "request_approval": 0.02165199999581091,
+      "approve": 0.03111229999922216,
+      "worker_submission": 0.9530226000060793
+    },
+    {
+      "task_id": "T12",
+      "extract_incident": 0.042991099995560944,
+      "review_incident": 0.02950890001375228,
+      "draft_ticket": 0.02426140001625754,
+      "request_approval": 0.023340300016570836,
+      "approve": 0.030803400004515424,
+      "worker_submission": 0.9185658999776933
+    },
+    {
+      "task_id": "T13",
+      "extract_incident": 0.06545000002370216,
+      "draft_ticket": 0.0243248000042513,
+      "request_approval": 0.0221245999855455,
+      "approve": 0.03127370000584051,
+      "worker_submission": 0.9034665999934077
+    },
+    {
+      "task_id": "T14",
+      "extract_incident": 0.03815840001334436,
+      "review_incident": 0.02869000000646338,
+      "draft_ticket": 0.02414559997851029,
+      "request_approval": 0.022863299993332475,
+      "approve": 0.03148750000400469,
+      "worker_submission": 0.9098423999967054
+    },
+    {
+      "task_id": "T15",
+      "extract_incident": 0.04322089999914169,
+      "review_incident": 0.02856370000517927,
+      "draft_ticket": 0.02420820001862012,
+      "request_approval": 0.022513199975946918,
+      "approve": 0.032354599999962375,
+      "worker_submission": 0.9270107999909669
+    },
+    {
+      "task_id": "T16",
+      "extract_incident": 0.04351059999316931,
+      "review_incident": 0.02892509999219328,
+      "draft_ticket": 0.025013400008901954,
+      "request_approval": 0.02307310001924634,
+      "approve": 0.03167180001037195,
+      "worker_submission": 0.911022199987201
+    },
+    {
+      "task_id": "T17",
+      "extract_incident": 0.06392670000786893,
+      "draft_ticket": 0.02452209999319166,
+      "request_approval": 0.022669300000416115,
+      "approve": 0.031008000019937754,
+      "worker_submission": 0.9147960999980569
+    },
+    {
+      "task_id": "T18",
+      "extract_incident": 0.03898650000337511,
+      "review_incident": 0.029566100012743846,
+      "draft_ticket": 0.024617699993541464,
+      "request_approval": 0.022637899994151667,
+      "approve": 0.030864000000292435,
+      "worker_submission": 1.0139423999935389
+    },
+    {
+      "task_id": "T19",
+      "extract_incident": 0.038765000004787,
+      "review_incident": 0.028865300002507865,
+      "draft_ticket": 0.02445399999851361,
+      "request_approval": 0.02297980000730604,
+      "approve": 0.03227850000257604,
+      "worker_submission": 0.8887272000138182
+    },
+    {
+      "task_id": "T20",
+      "extract_incident": 0.042648599977837875,
+      "review_incident": 0.02849590001278557,
+      "draft_ticket": 0.024537199991755188,
+      "request_approval": 0.02314689999911934,
+      "approve": 0.04963249998399988,
+      "worker_submission": 0.8827770999923814
+    }
+  ]
+}

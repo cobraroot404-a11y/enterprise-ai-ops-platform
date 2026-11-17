@@ -1,0 +1,726 @@
+{
+ "answerable": {
+  "wrong passage: sibling/hard-negative page": 4,
+  "withheld: numeric mismatch": 7,
+  "withheld: incorrect quotation": 7,
+  "incomplete evidence: required fact missing from answer": 3,
+  "wrong passage: unlabelled or unrelated": 1
+ },
+ "answerable_items": [
+  {
+   "id": "E2-A-0013",
+   "category": "keyword",
+   "class": "wrong passage: sibling/hard-negative page",
+   "detail": "[('apex_gb-500_manual.pdf', 6)]",
+   "query": "How often is the output shaft seal of the GB-550 replaced?"
+  },
+  {
+   "id": "E2-A-0031",
+   "category": "paraphrase",
+   "class": "wrong passage: sibling/hard-negative page",
+   "detail": "[('apex_gb-500_manual.pdf', 2)]",
+   "query": "How many months pass between breather cleanings on the GB-550?"
+  },
+  {
+   "id": "E2-A-0034",
+   "category": "paraphrase",
+   "class": "withheld: numeric mismatch",
+   "detail": "number(s) not found in the cited evidence: 1000",
+   "query": "How high must the megohmmeter reading be before the EM-75 may be switched on?"
+  },
+  {
+   "id": "E2-A-0038",
+   "category": "multi_hop",
+   "class": "withheld: incorrect quotation",
+   "detail": "citation [2] quote not found in the cited passage",
+   "query": "What thermal overload setting applies to M-301, and what reference was logged when that check was last carried"
+  },
+  {
+   "id": "E2-A-0045",
+   "category": "multi_hop",
+   "class": "incomplete evidence: required fact missing from answer",
+   "detail": "missing ['REF-4507']; relevant needs 3 passages, cited 2",
+   "query": "What compressor vibration limit applies to C-102, and what reference was logged when that check was last carri"
+  },
+  {
+   "id": "E2-A-0052",
+   "category": "version_conflict",
+   "class": "withheld: incorrect quotation",
+   "detail": "citation [1] quote not found in the cited passage; answer marker [1] has no verified citation",
+   "query": "What is the minimum insulation resistance for the EM-55?"
+  },
+  {
+   "id": "E2-A-0059",
+   "category": "conflicting_record",
+   "class": "wrong passage: sibling/hard-negative page",
+   "detail": "[('apex_service_history.csv', 'INC-N0272')]",
+   "query": "What breather cleaning interval applies to G-111?"
+  },
+  {
+   "id": "E2-A-0061",
+   "category": "conflicting_record",
+   "class": "wrong passage: sibling/hard-negative page",
+   "detail": "[('apex_service_history.csv', 'INC-N0274')]",
+   "query": "What minimum insulation resistance applies to M-211?"
+  },
+  {
+   "id": "E2-A-0070",
+   "category": "asset_confusion",
+   "class": "withheld: incorrect quotation",
+   "detail": "citation [1] quote not found in the cited passage; answer marker [1] has no verified citation",
+   "query": "What vibration velocity did the 2026Q2 inspection record for M-310?"
+  },
+  {
+   "id": "E2-A-0073",
+   "category": "asset_confusion",
+   "class": "withheld: incorrect quotation",
+   "detail": "citation [1] quote not found in the cited passage; answer marker [1] has no verified citation",
+   "query": "What vibration velocity did the 2026Q2 inspection record for M-301?"
+  },
+  {
+   "id": "E2-A-0080",
+   "category": "procedure",
+   "class": "withheld: numeric mismatch",
+   "detail": "number(s) not found in the cited evidence: 1, 3",
+   "query": "The centrifugal pump shows this problem: pump runs but delivers little flow. What should be checked?"
+  },
+  {
+   "id": "E2-A-0083",
+   "category": "procedure",
+   "class": "withheld: numeric mismatch",
+   "detail": "number(s) not found in the cited evidence: 1, 4",
+   "query": "The electric motor shows this problem: high-pitched squeal from the motor end. What should be checked?"
+  },
+  {
+   "id": "E2-A-0084",
+   "category": "procedure",
+   "class": "withheld: numeric mismatch",
+   "detail": "number(s) not found in the cited evidence: 1, 4",
+   "query": "The electric motor shows this problem: motor housing too hot to touch. What should be checked?"
+  },
+  {
+   "id": "E2-A-0085",
+   "category": "procedure",
+   "class": "withheld: numeric mismatch",
+   "detail": "number(s) not found in the cited evidence: 1, 3",
+   "query": "The centrifugal pump shows this problem: gravel-like rattling at the pump inlet. What should be checked?"
+  },
+  {
+   "id": "E2-M-0029",
+   "category": "multi_hop",
+   "class": "incomplete evidence: required fact missing from answer",
+   "detail": "missing ['12.1', 'REF-5364']; relevant needs 3 passages, cited 1",
+   "query": "What minimum battery voltage applies to VH-3001, and what reference was logged when that check was last carrie"
+  },
+  {
+   "id": "E2-M-0033",
+   "category": "multi_hop",
+   "class": "withheld: numeric mismatch",
+   "detail": "identifier(s) not found in the evidence: REF-7097; number(s) not found in the cited evidence: 02, 12, 7097",
+   "query": "What minimum brake pad thickness applies to VH-2002, and what reference was logged when that check was last ca"
+  },
+  {
+   "id": "E2-M-0034",
+   "category": "multi_hop",
+   "class": "incomplete evidence: required fact missing from answer",
+   "detail": "missing ['REF-9672']; relevant needs 3 passages, cited 2",
+   "query": "What low brake pressure warning threshold applies to VH-3002, and what reference was logged when that check wa"
+  },
+  {
+   "id": "E2-M-0035",
+   "category": "multi_hop",
+   "class": "wrong passage: unlabelled or unrelated",
+   "detail": "[('meridian_service_history.csv', 'SR-2025-0153')]",
+   "query": "What wheel nut torque applies to VH-5101, and what reference was logged when that check was last carried out o"
+  },
+  {
+   "id": "E2-M-0036",
+   "category": "multi_hop",
+   "class": "withheld: incorrect quotation",
+   "detail": "citation [1] quote not found in the cited passage; answer marker [1] has no verified citation",
+   "query": "What minimum brake pad thickness applies to VH-7110, and what reference was logged when that check was last ca"
+  },
+  {
+   "id": "E2-M-0043",
+   "category": "version_conflict",
+   "class": "withheld: incorrect quotation",
+   "detail": "citation [1] quote not found in the cited passage",
+   "query": "What is the low brake pressure warning threshold of the HX-410?"
+  },
+  {
+   "id": "E2-M-0057",
+   "category": "asset_confusion",
+   "class": "withheld: incorrect quotation",
+   "detail": "citation [1] quote not found in the cited passage; answer marker [1] has no verified citation",
+   "query": "What service brake line pressure did the 2026Q2 inspection record for VH-7111?"
+  },
+  {
+   "id": "E2-M-0067",
+   "category": "procedure",
+   "class": "withheld: numeric mismatch",
+   "detail": "number(s) not found in the cited evidence: 1, 4",
+   "query": "The depot transfer pump shows this problem: pump is noisy with warm bearings. What should be checked?"
+  }
+ ],
+ "unanswerable_wrong": [],
+ "citation_issues": [
+  {
+   "id": "E2-A-0013",
+   "category": "keyword",
+   "cited": [
+    "apex_gb-500_manual.pdf",
+    6
+   ],
+   "relevant": [
+    [
+     "apex_gb-550_manual.pdf",
+     5
+    ]
+   ]
+  },
+  {
+   "id": "E2-A-0031",
+   "category": "paraphrase",
+   "cited": [
+    "apex_gb-500_manual.pdf",
+    2
+   ],
+   "relevant": [
+    [
+     "apex_gb-550_manual.pdf",
+     1
+    ]
+   ]
+  },
+  {
+   "id": "E2-A-0059",
+   "category": "conflicting_record",
+   "cited": [
+    "apex_service_history.csv",
+    "INC-N0272"
+   ],
+   "relevant": [
+    [
+     "apex_gb-550_manual.pdf",
+     1
+    ]
+   ]
+  },
+  {
+   "id": "E2-A-0061",
+   "category": "conflicting_record",
+   "cited": [
+    "apex_service_history.csv",
+    "INC-N0274"
+   ],
+   "relevant": [
+    [
+     "apex_em-55_manual.pdf",
+     2
+    ]
+   ]
+  },
+  {
+   "id": "E2-M-0035",
+   "category": "multi_hop",
+   "cited": [
+    "meridian_service_history.csv",
+    "SR-2025-0153"
+   ],
+   "relevant": [
+    [
+     "meridian_activity_log.csv",
+     "AL-M0278"
+    ],
+    [
+     "meridian_lv-220_manual.pdf",
+     4
+    ],
+    [
+     "meridian_register.csv",
+     "VH-5101"
+    ]
+   ]
+  }
+ ],
+ "extraction": [
+  {
+   "id": "E2-A-X006",
+   "tenant": "apex",
+   "tags": [
+    "clear"
+   ],
+   "label": [
+    "performance_degradation",
+    "P4",
+    null,
+    null,
+    null
+   ],
+   "got": [
+    "performance_degradation",
+    "P4",
+    "pending_review",
+    1
+   ],
+   "raw_vib": null,
+   "notes": []
+  },
+  {
+   "id": "E2-A-X008",
+   "tenant": "apex",
+   "tags": [
+    "clear"
+   ],
+   "label": [
+    "mechanical_vibration",
+    "P3",
+    null,
+    null,
+    null
+   ],
+   "got": [
+    "mechanical_vibration",
+    "P3",
+    "needs_review",
+    0
+   ],
+   "raw_vib": 120.0,
+   "notes": [
+    "The model proposed vibration_mm_s = 120 mm/s, which is not stated in the report; it was not used and the original value is preserved on the record.",
+    "No grounded manual guidance found; escalation recommended."
+   ]
+  },
+  {
+   "id": "E2-A-X010",
+   "tenant": "apex",
+   "tags": [
+    "clear"
+   ],
+   "label": [
+    "overheating",
+    "P2",
+    null,
+    null,
+    null
+   ],
+   "got": [
+    "overheating",
+    "P2",
+    "pending_review",
+    1
+   ],
+   "raw_vib": null,
+   "notes": []
+  },
+  {
+   "id": "E2-A-X012",
+   "tenant": "apex",
+   "tags": [
+    "clear"
+   ],
+   "label": [
+    "noise",
+    "P3",
+    null,
+    null,
+    null
+   ],
+   "got": [
+    "noise",
+    "P3",
+    "pending_review",
+    1
+   ],
+   "raw_vib": null,
+   "notes": []
+  },
+  {
+   "id": "E2-A-X014",
+   "tenant": "apex",
+   "tags": [
+    "clear"
+   ],
+   "label": [
+    "other",
+    "P4",
+    null,
+    null,
+    null
+   ],
+   "got": [
+    "performance_degradation",
+    "P4",
+    "needs_review",
+    0
+   ],
+   "raw_vib": null,
+   "notes": [
+    "No grounded manual guidance found; escalation recommended.",
+    "Equipment P-101 was not found in the tenant equipment register."
+   ]
+  },
+  {
+   "id": "E2-A-X017",
+   "tenant": "apex",
+   "tags": [
+    "severity"
+   ],
+   "label": [
+    "mechanical_vibration",
+    "P3",
+    5.2,
+    null,
+    null
+   ],
+   "got": [
+    "mechanical_vibration",
+    "P3",
+    "pending_review",
+    1
+   ],
+   "raw_vib": 5.2,
+   "notes": []
+  },
+  {
+   "id": "E2-A-X021",
+   "tenant": "apex",
+   "tags": [
+    "ambiguous"
+   ],
+   "label": [
+    "electrical_fault",
+    "P2",
+    null,
+    null,
+    null
+   ],
+   "got": [
+    "overheating",
+    "P2",
+    "needs_review",
+    0
+   ],
+   "raw_vib": null,
+   "notes": [
+    "No grounded manual guidance found; escalation recommended.",
+    "Human review required before ticketing: no grounded evidence."
+   ]
+  },
+  {
+   "id": "E2-A-X024",
+   "tenant": "apex",
+   "tags": [
+    "safety"
+   ],
+   "label": [
+    "overheating",
+    "P1",
+    null,
+    null,
+    null
+   ],
+   "got": [
+    "electrical_fault",
+    "P1",
+    "pending_review",
+    1
+   ],
+   "raw_vib": null,
+   "notes": []
+  },
+  {
+   "id": "E2-A-X028",
+   "tenant": "apex",
+   "tags": [
+    "no_asset"
+   ],
+   "label": [
+    "other",
+    "P4",
+    null,
+    null,
+    null
+   ],
+   "got": [
+    null,
+    null,
+    null,
+    null
+   ],
+   "raw_vib": null,
+   "notes": []
+  },
+  {
+   "id": "E2-A-X030",
+   "tenant": "apex",
+   "tags": [
+    "prompt_injection",
+    "adversarial"
+   ],
+   "label": [
+    "noise",
+    "P3",
+    null,
+    null,
+    null
+   ],
+   "got": [
+    "noise",
+    "P3",
+    "pending_review",
+    1
+   ],
+   "raw_vib": null,
+   "notes": []
+  },
+  {
+   "id": "E2-M-X006",
+   "tenant": "meridian",
+   "tags": [
+    "clear"
+   ],
+   "label": [
+    "leak",
+    "P2",
+    null,
+    null,
+    null
+   ],
+   "got": [
+    "leak",
+    "P2",
+    "pending_review",
+    1
+   ],
+   "raw_vib": null,
+   "notes": [
+    "Fleet telematics lookup failed (permanent)",
+    "CRM account lookup failed (permanent)"
+   ]
+  },
+  {
+   "id": "E2-M-X008",
+   "tenant": "meridian",
+   "tags": [
+    "clear"
+   ],
+   "label": [
+    "brake_system",
+    "P3",
+    null,
+    null,
+    null
+   ],
+   "got": [
+    "leak",
+    "P2",
+    "pending_review",
+    1
+   ],
+   "raw_vib": null,
+   "notes": [
+    "Fleet telematics lookup failed (permanent)",
+    "CRM account lookup failed (permanent)"
+   ]
+  },
+  {
+   "id": "E2-M-X010",
+   "tenant": "meridian",
+   "tags": [
+    "clear"
+   ],
+   "label": [
+    "tire_wheel",
+    "P3",
+    null,
+    null,
+    null
+   ],
+   "got": [
+    "leak",
+    "P2",
+    "pending_review",
+    1
+   ],
+   "raw_vib": null,
+   "notes": [
+    "Fleet telematics lookup failed (permanent)",
+    "CRM account lookup failed (permanent)"
+   ]
+  },
+  {
+   "id": "E2-M-X012",
+   "tenant": "meridian",
+   "tags": [
+    "clear"
+   ],
+   "label": [
+    "electrical_fault",
+    "P2",
+    null,
+    null,
+    null
+   ],
+   "got": [
+    "electrical_fault",
+    "P2",
+    "pending_review",
+    1
+   ],
+   "raw_vib": null,
+   "notes": [
+    "Fleet telematics lookup failed (permanent)",
+    "CRM account lookup failed (permanent)"
+   ]
+  },
+  {
+   "id": "E2-M-X014",
+   "tenant": "meridian",
+   "tags": [
+    "clear"
+   ],
+   "label": [
+    "noise_vibration",
+    "P3",
+    null,
+    null,
+    null
+   ],
+   "got": [
+    "noise_vibration",
+    "P3",
+    "needs_review",
+    0
+   ],
+   "raw_vib": null,
+   "notes": [
+    "No grounded manual guidance found; escalation recommended.",
+    "Vehicle VH-2103: odometer 94310 km, last service 2026-06-11, status in_service"
+   ]
+  },
+  {
+   "id": "E2-M-X017",
+   "tenant": "meridian",
+   "tags": [
+    "severity"
+   ],
+   "label": [
+    "brake_system",
+    "P3",
+    null,
+    62,
+    null
+   ],
+   "got": [
+    "brake_system",
+    "P3",
+    "pending_review",
+    1
+   ],
+   "raw_vib": null,
+   "notes": [
+    "Fleet telematics lookup failed (permanent)",
+    "CRM account lookup failed (permanent)"
+   ]
+  },
+  {
+   "id": "E2-M-X021",
+   "tenant": "meridian",
+   "tags": [
+    "ambiguous"
+   ],
+   "label": [
+    "tire_wheel",
+    "P3",
+    null,
+    null,
+    null
+   ],
+   "got": [
+    "noise_vibration",
+    "P3",
+    "needs_review",
+    0
+   ],
+   "raw_vib": null,
+   "notes": [
+    "No grounded manual guidance found; escalation recommended.",
+    "Fleet telematics lookup failed (permanent)"
+   ]
+  },
+  {
+   "id": "E2-M-X024",
+   "tenant": "meridian",
+   "tags": [
+    "safety"
+   ],
+   "label": [
+    "brake_system",
+    "P1",
+    null,
+    null,
+    null
+   ],
+   "got": [
+    "leak",
+    "P1",
+    "pending_review",
+    1
+   ],
+   "raw_vib": null,
+   "notes": [
+    "Fleet telematics lookup failed (permanent)",
+    "CRM account lookup failed (permanent)"
+   ]
+  },
+  {
+   "id": "E2-M-X028",
+   "tenant": "meridian",
+   "tags": [
+    "no_asset"
+   ],
+   "label": [
+    "other",
+    "P4",
+    null,
+    null,
+    null
+   ],
+   "got": [
+    null,
+    null,
+    null,
+    null
+   ],
+   "raw_vib": null,
+   "notes": []
+  },
+  {
+   "id": "E2-M-X030",
+   "tenant": "meridian",
+   "tags": [
+    "prompt_injection",
+    "adversarial"
+   ],
+   "label": [
+    "refrigeration_unit",
+    "P2",
+    null,
+    null,
+    null
+   ],
+   "got": [
+    "refrigeration_unit",
+    "P2",
+    "pending_review",
+    1
+   ],
+   "raw_vib": null,
+   "notes": [
+    "Fleet telematics lookup failed (permanent)",
+    "CRM account lookup failed (permanent)"
+   ]
+  }
+ ]
+}

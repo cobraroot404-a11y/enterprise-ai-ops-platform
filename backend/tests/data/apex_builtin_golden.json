@@ -1,0 +1,420 @@
+{
+ "purpose": "Built-in (Apex) behavior recorded from the Phase 4 commit; the current code must reproduce it exactly",
+ "source_commit": "44b1083",
+ "rules_py_sha256_at_source": "680aee345bab1bfc1a0fffdcf068f2cc808646035911c01d56236781088ec89e",
+ "cases": [
+  {
+   "text": "Pump P-101 is vibrating hard at the drive end, reading 8.4 mm/s, with a grinding noise.",
+   "parsed": {
+    "asset_id": "P-101",
+    "category": "mechanical_vibration",
+    "symptoms": [
+     "abnormal vibration",
+     "unusual noise",
+     "vibration velocity 8.4 mm/s"
+    ],
+    "vibration_mm_s": 8.4,
+    "smoke_or_fire": false
+   },
+   "priority": "P2"
+  },
+  {
+   "text": "Idler roller on CV-401 is squealing loudly and the belt edge is fraying.",
+   "parsed": {
+    "asset_id": "CV-401",
+    "category": "noise",
+    "symptoms": [
+     "unusual noise"
+    ],
+    "vibration_mm_s": null,
+    "smoke_or_fire": false
+   },
+   "priority": "P3"
+  },
+  {
+   "text": "Smoke is coming from the terminal box of motor M-202, strong burning smell.",
+   "parsed": {
+    "asset_id": "M-202",
+    "category": "electrical_fault",
+    "symptoms": [
+     "smoke or burning smell"
+    ],
+    "vibration_mm_s": null,
+    "smoke_or_fire": true
+   },
+   "priority": "P1"
+  },
+  {
+   "text": "Compressor CC-301 discharge temperature is climbing and the machine is running too hot.",
+   "parsed": {
+    "asset_id": "CC-301",
+    "category": "overheating",
+    "symptoms": [
+     "overheating"
+    ],
+    "vibration_mm_s": null,
+    "smoke_or_fire": false
+   },
+   "priority": "P2"
+  },
+  {
+   "text": "Oil is dripping from the output shaft of gearbox G-501.",
+   "parsed": {
+    "asset_id": "G-501",
+    "category": "leak",
+    "symptoms": [
+     "fluid leak"
+    ],
+    "vibration_mm_s": null,
+    "smoke_or_fire": false
+   },
+   "priority": "P2"
+  },
+  {
+   "text": "P-102 shows vibration of 5.2 mm/s at the non-drive end.",
+   "parsed": {
+    "asset_id": "P-102",
+    "category": "mechanical_vibration",
+    "symptoms": [
+     "abnormal vibration",
+     "vibration velocity 5.2 mm/s"
+    ],
+    "vibration_mm_s": 5.2,
+    "smoke_or_fire": false
+   },
+   "priority": "P3"
+  },
+  {
+   "text": "Heat exchanger H-601 pressure drop is higher than normal and cooling is poor.",
+   "parsed": {
+    "asset_id": "H-601",
+    "category": "performance_degradation",
+    "symptoms": [
+     "reduced flow or pressure"
+    ],
+    "vibration_mm_s": null,
+    "smoke_or_fire": false
+   },
+   "priority": "P4"
+  },
+  {
+   "text": "Motor M-201 keeps tripping on thermal overload every few minutes.",
+   "parsed": {
+    "asset_id": "M-201",
+    "category": "electrical_fault",
+    "symptoms": [],
+    "vibration_mm_s": null,
+    "smoke_or_fire": false
+   },
+   "priority": "P2"
+  },
+  {
+   "text": "Mechanical seal on P-104 is leaking steadily, a puddle under the pump.",
+   "parsed": {
+    "asset_id": "P-104",
+    "category": "leak",
+    "symptoms": [
+     "fluid leak"
+    ],
+    "vibration_mm_s": null,
+    "smoke_or_fire": false
+   },
+   "priority": "P2"
+  },
+  {
+   "text": "Gearbox G-502 is making a rattling noise under load.",
+   "parsed": {
+    "asset_id": "G-502",
+    "category": "noise",
+    "symptoms": [
+     "unusual noise"
+    ],
+    "vibration_mm_s": null,
+    "smoke_or_fire": false
+   },
+   "priority": "P3"
+  },
+  {
+   "text": "CV-402 gearbox is whining and the oil sight glass looks low.",
+   "parsed": {
+    "asset_id": "CV-402",
+    "category": "other",
+    "symptoms": [],
+    "vibration_mm_s": null,
+    "smoke_or_fire": false
+   },
+   "priority": "P4"
+  },
+  {
+   "text": "Pump P-103 vibration measured 12.5 mm/s, severe shaking of the base plate.",
+   "parsed": {
+    "asset_id": "P-103",
+    "category": "mechanical_vibration",
+    "symptoms": [
+     "abnormal vibration",
+     "vibration velocity 12.5 mm/s"
+    ],
+    "vibration_mm_s": 12.5,
+    "smoke_or_fire": false
+   },
+   "priority": "P1"
+  },
+  {
+   "text": "Fan motor M-203 is very hot to touch and smells like it is overheating.",
+   "parsed": {
+    "asset_id": "M-203",
+    "category": "overheating",
+    "symptoms": [
+     "overheating"
+    ],
+    "vibration_mm_s": null,
+    "smoke_or_fire": false
+   },
+   "priority": "P2"
+  },
+  {
+   "text": "Compressor CC-302 output is low and air pressure drop is visible at the receiver.",
+   "parsed": {
+    "asset_id": "CC-302",
+    "category": "performance_degradation",
+    "symptoms": [
+     "reduced flow or pressure"
+    ],
+    "vibration_mm_s": null,
+    "smoke_or_fire": false
+   },
+   "priority": "P4"
+  },
+  {
+   "text": "Fire in the control cabinet next to CC-301! Flames visible.",
+   "parsed": {
+    "asset_id": "CC-301",
+    "category": "other",
+    "symptoms": [],
+    "vibration_mm_s": null,
+    "smoke_or_fire": true
+   },
+   "priority": "P1"
+  },
+  {
+   "text": "P-101 vibration of 7.5 mm/s at the drive end bearing housing.",
+   "parsed": {
+    "asset_id": "P-101",
+    "category": "mechanical_vibration",
+    "symptoms": [
+     "abnormal vibration",
+     "vibration velocity 7.5 mm/s"
+    ],
+    "vibration_mm_s": 7.5,
+    "smoke_or_fire": false
+   },
+   "priority": "P2"
+  },
+  {
+   "text": "Small oil leak at the shaft seal of H-601 circulation pump skid.",
+   "parsed": {
+    "asset_id": "H-601",
+    "category": "leak",
+    "symptoms": [
+     "fluid leak"
+    ],
+    "vibration_mm_s": null,
+    "smoke_or_fire": false
+   },
+   "priority": "P2"
+  },
+  {
+   "text": "Belt on CV-401 is running off to one side and rubbing the frame.",
+   "parsed": {
+    "asset_id": "CV-401",
+    "category": "other",
+    "symptoms": [],
+    "vibration_mm_s": null,
+    "smoke_or_fire": false
+   },
+   "priority": "P4"
+  },
+  {
+   "text": "P-102 pump vibrating with 8.9 millimetres per second at the bearing.",
+   "parsed": {
+    "asset_id": "P-102",
+    "category": "mechanical_vibration",
+    "symptoms": [
+     "abnormal vibration"
+    ],
+    "vibration_mm_s": null,
+    "smoke_or_fire": false
+   },
+   "priority": "P3"
+  },
+  {
+   "text": "Gearbox G-501 sump is running hot, over 95 degrees.",
+   "parsed": {
+    "asset_id": "G-501",
+    "category": "overheating",
+    "symptoms": [
+     "overheating"
+    ],
+    "vibration_mm_s": null,
+    "smoke_or_fire": false
+   },
+   "priority": "P2"
+  },
+  {
+   "text": "There is a strange noise somewhere in the plant but I cannot tell where it comes from.",
+   "parsed": {
+    "asset_id": null,
+    "category": "noise",
+    "symptoms": [
+     "unusual noise"
+    ],
+    "vibration_mm_s": null,
+    "smoke_or_fire": false
+   },
+   "priority": "P3"
+  },
+  {
+   "text": "Motor M-202 trips its breaker when starting, short circuit suspected.",
+   "parsed": {
+    "asset_id": "M-202",
+    "category": "electrical_fault",
+    "symptoms": [],
+    "vibration_mm_s": null,
+    "smoke_or_fire": false
+   },
+   "priority": "P2"
+  },
+  {
+   "text": "Compressor CC-301 vibration reading 4.8 mm/s, slightly up from last week.",
+   "parsed": {
+    "asset_id": "CC-301",
+    "category": "mechanical_vibration",
+    "symptoms": [
+     "abnormal vibration",
+     "vibration velocity 4.8 mm/s"
+    ],
+    "vibration_mm_s": 4.8,
+    "smoke_or_fire": false
+   },
+   "priority": "P3"
+  },
+  {
+   "text": "Pump P-104 is running but flow is lower than usual and the gauge pressure has fallen.",
+   "parsed": {
+    "asset_id": "P-104",
+    "category": "other",
+    "symptoms": [],
+    "vibration_mm_s": null,
+    "smoke_or_fire": false
+   },
+   "priority": "P4"
+  },
+  {
+   "text": "Pump P-101 shows abnormal vibration at the drive end, measured at 8.4 mm/s, with a grinding noise.",
+   "parsed": {
+    "asset_id": "P-101",
+    "category": "mechanical_vibration",
+    "symptoms": [
+     "abnormal vibration",
+     "unusual noise",
+     "vibration velocity 8.4 mm/s"
+    ],
+    "vibration_mm_s": 8.4,
+    "smoke_or_fire": false
+   },
+   "priority": "P2"
+  },
+  {
+   "text": "Motor M-201 smoking with a burning smell.",
+   "parsed": {
+    "asset_id": "M-201",
+    "category": "electrical_fault",
+    "symptoms": [
+     "smoke or burning smell"
+    ],
+    "vibration_mm_s": null,
+    "smoke_or_fire": true
+   },
+   "priority": "P1"
+  },
+  {
+   "text": "P-103 leaking at the mechanical seal.",
+   "parsed": {
+    "asset_id": "P-103",
+    "category": "leak",
+    "symptoms": [
+     "fluid leak"
+    ],
+    "vibration_mm_s": null,
+    "smoke_or_fire": false
+   },
+   "priority": "P2"
+  },
+  {
+   "text": "Something is slow today.",
+   "parsed": {
+    "asset_id": null,
+    "category": "performance_degradation",
+    "symptoms": [],
+    "vibration_mm_s": null,
+    "smoke_or_fire": false
+   },
+   "priority": "P4"
+  },
+  {
+   "text": "Pump P-102 vibration 4.5 mm/s.",
+   "parsed": {
+    "asset_id": "P-102",
+    "category": "mechanical_vibration",
+    "symptoms": [
+     "abnormal vibration",
+     "vibration velocity 4.5 mm/s"
+    ],
+    "vibration_mm_s": 4.5,
+    "smoke_or_fire": false
+   },
+   "priority": "P3"
+  },
+  {
+   "text": "Pump P-102 vibration 11.2 mm / s with smoke.",
+   "parsed": {
+    "asset_id": "P-102",
+    "category": "mechanical_vibration",
+    "symptoms": [
+     "abnormal vibration",
+     "smoke or burning smell",
+     "vibration velocity 11.2 mm/s"
+    ],
+    "vibration_mm_s": 11.2,
+    "smoke_or_fire": true
+   },
+   "priority": "P1"
+  },
+  {
+   "text": "Pump P-102 running hot, temperature rise.",
+   "parsed": {
+    "asset_id": "P-102",
+    "category": "overheating",
+    "symptoms": [
+     "overheating"
+    ],
+    "vibration_mm_s": null,
+    "smoke_or_fire": false
+   },
+   "priority": "P2"
+  },
+  {
+   "text": "There is a strange noise somewhere in the plant.",
+   "parsed": {
+    "asset_id": null,
+    "category": "noise",
+    "symptoms": [
+     "unusual noise"
+    ],
+    "vibration_mm_s": null,
+    "smoke_or_fire": false
+   },
+   "priority": "P3"
+  }
+ ]
+}

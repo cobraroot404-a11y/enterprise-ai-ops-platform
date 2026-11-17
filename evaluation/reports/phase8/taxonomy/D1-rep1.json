@@ -1,0 +1,61 @@
+{
+ "run": "exp-D1-20261114T050707Z",
+ "rep": 1,
+ "dev_queries": 118,
+ "answerable": 87,
+ "classes": {
+  "1 retrieval: no relevant document in the top 5": 1,
+  "3 ranking: a hard negative ranks above the relevant page": 1,
+  "5 citation association: cites an unlabelled or sibling page": 9,
+  "7b withheld by the verifier: quotation not verbatim": 7,
+  "7c withheld by the verifier: number not in the cited text": 9,
+  "7d withheld by the verifier: other": 4,
+  "ok: grounded, labelled citations, facts present": 56,
+  "unanswerable: correctly refused": 25,
+  "unanswerable: wrongly answered": 6
+ },
+ "secondary_flags": {
+  "4 unsupported claims: a number in the answer is absent from the cited quotes": 31,
+  "10 multi-hop (any outcome class below)": 0,
+  "10 multi-hop queries among the failures": 13,
+  "11 tenant-scoping or provenance error: citations from another tenant's files (must be 0)": 0
+ },
+ "examples": {
+  "7c withheld by the verifier: number not in the cited text": [
+   "E2-A-0010",
+   "E2-A-0040",
+   "E2-A-0066",
+   "E2-A-0078",
+   "E2-A-0079",
+   "E2-A-0081"
+  ],
+  "5 citation association: cites an unlabelled or sibling page": [
+   "E2-A-0037",
+   "E2-A-0044",
+   "E2-A-0058",
+   "E2-M-0012",
+   "E2-M-0027",
+   "E2-M-0028"
+  ],
+  "7b withheld by the verifier: quotation not verbatim": [
+   "E2-A-0039",
+   "E2-A-0041",
+   "E2-A-0047",
+   "E2-A-0048",
+   "E2-M-0045",
+   "E2-M-0046"
+  ],
+  "7d withheld by the verifier: other": [
+   "E2-A-0042",
+   "E2-M-0030",
+   "E2-M-0032",
+   "E2-M-0037"
+  ],
+  "3 ranking: a hard negative ranks above the relevant page": [
+   "E2-M-0048"
+  ],
+  "1 retrieval: no relevant document in the top 5": [
+   "E2-M-0049"
+  ]
+ }
+}

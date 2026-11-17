@@ -1,0 +1,30 @@
+{"expected_asset": null, "id": "NA-01", "kind": "no_asset", "text": "The big pump near the loading dock is shaking badly and making a grinding noise."}
+{"expected_asset": null, "id": "NA-02", "kind": "no_asset", "text": "Something in the boiler room smells like burning insulation, please check it today."}
+{"expected_asset": null, "id": "NA-03", "kind": "no_asset", "text": "Oil is dripping from the gearbox at the end of the packing line."}
+{"expected_asset": null, "id": "NA-04", "kind": "no_asset", "text": "The compressor in the east building keeps tripping its breaker every few minutes."}
+{"expected_asset": null, "id": "NA-05", "kind": "no_asset", "text": "A conveyor belt on the second floor is squealing and running slowly."}
+{"expected_asset": null, "id": "NA-06", "kind": "no_asset", "text": "Water is leaking from a pipe joint above the control room door."}
+{"expected_asset": null, "id": "NA-07", "kind": "no_asset", "text": "The cooling fan on the roof is rattling loudly since the storm."}
+{"expected_asset": null, "id": "NA-08", "kind": "no_asset", "text": "One of the pumps in the pump house is much hotter than the others."}
+{"expected_asset": null, "id": "NA-09", "kind": "no_asset", "text": "Pressure has dropped on the main air line and the tools are weak."}
+{"expected_asset": null, "id": "NA-10", "kind": "no_asset", "text": "The mixer in the paint shop stopped suddenly and will not restart."}
+{"expected_asset": null, "id": "NA-11", "kind": "no_asset", "text": "Strange humming from the electrical cabinet by the back entrance, a bit of smoke too."}
+{"expected_asset": null, "id": "NA-12", "kind": "no_asset", "text": "The heater in the warehouse is not producing any heat today."}
+{"expected_asset": null, "id": "NA-13", "kind": "no_asset", "text": "We hear a loud bang from the press machine every time it cycles."}
+{"expected_asset": null, "id": "NA-14", "kind": "no_asset", "text": "The forklift charger smells hot and the display is flickering."}
+{"expected_asset": null, "id": "NA-15", "kind": "no_asset", "text": "A valve near the tank farm is weeping fluid onto the floor."}
+{"expected_asset": null, "id": "NA-16", "kind": "no_asset", "text": "The old lathe vibrates at high speed and leaves marks on the parts."}
+{"expected_asset": "XJ-204", "id": "WA-01", "kind": "with_asset", "text": "Pump XJ-204 is vibrating strongly at the drive end."}
+{"expected_asset": "GB-77", "id": "WA-02", "kind": "with_asset", "text": "Gearbox GB-77 is leaking oil from the output seal."}
+{"expected_asset": "K-12", "id": "WA-03", "kind": "with_asset", "text": "Compressor K-12 trips its breaker after about five minutes of running."}
+{"expected_asset": "F-3301", "id": "WA-04", "kind": "with_asset", "text": "Fan F-3301 is rattling and the housing feels hot."}
+{"expected_asset": "CV-88", "id": "WA-05", "kind": "with_asset", "text": "Conveyor CV-88 squeals and runs slowly since this morning."}
+{"expected_asset": "EP-409", "id": "WA-06", "kind": "with_asset", "text": "There is a burning smell from panel EP-409 and some smoke."}
+{"expected_asset": "V-1520", "id": "WA-07", "kind": "with_asset", "text": "Valve V-1520 is weeping fluid onto the floor."}
+{"expected_asset": "MX-6", "id": "WA-08", "kind": "with_asset", "text": "Mixer MX-6 stopped suddenly and will not restart."}
+{"expected_asset": "HT-21", "id": "WA-09", "kind": "with_asset", "text": "Heater HT-21 produces no heat at all today."}
+{"expected_asset": "PR-300", "id": "WA-10", "kind": "with_asset", "text": "Press PR-300 makes a loud bang every cycle."}
+{"expected_asset": "P-908", "id": "WA-11", "kind": "with_asset", "text": "Pump P-908 has pressure dropping on the discharge side."}
+{"expected_asset": "LT-14", "id": "WA-12", "kind": "with_asset", "text": "The lathe LT-14 vibrates at high speed and marks the parts."}
+{"expected_asset": "CH-5", "id": "WA-13", "kind": "with_asset", "text": "Charger CH-5 smells hot and its display flickers, near pump P-77 in the same bay."}
+{"expected_asset": "T-02", "id": "WA-14", "kind": "with_asset", "text": "Tank T-02 valve is leaking; the neighbouring tank T-03 is fine."}

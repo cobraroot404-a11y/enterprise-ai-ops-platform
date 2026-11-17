@@ -1,0 +1,4 @@
+alert_ref,raised_at,unit_id,alert_code,alert_text
+AL-5001,2026-09-04T06:12:00,VH-2101,BRK-LOW,Service brake line pressure low at 57 psi
+AL-5002,2026-09-09T14:40:00,VH-2104,ENG-HOT,Coolant temperature high at 108 C
+AL-5003,2026-09-11T09:05:00,VH-2103,COOL-RAD,Possible coolant seep detected from radiator hose

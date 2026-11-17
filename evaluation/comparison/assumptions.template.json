@@ -1,0 +1,9 @@
+{
+  "source": "REPLACE: say where these numbers come from (for example 'my own estimate on <date>'). Delete this file's template suffix to use it.",
+  "steps": {
+    "search_manuals_and_records": [null, null],
+    "write_structured_incident": [null, null],
+    "draft_and_enter_ticket": [null, null],
+    "obtain_approval": [null, null]
+  }
+}

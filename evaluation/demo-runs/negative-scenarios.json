@@ -1,0 +1,37 @@
+[
+ {
+  "scenario": "missing environment file",
+  "passed": true,
+  "detail": "rc=2 demo: [environment] nope.env was not found at <local-path>    -> copy .env.example to .env and replace every placeholder value (see docs/operations/loc"
+ },
+ {
+  "scenario": "invalid JSON configuration",
+  "passed": true,
+  "detail": "rc=1 dbs=[] state=False"
+ },
+ {
+  "scenario": "PostgreSQL unavailable",
+  "passed": true,
+  "detail": "rc=1 t] postgresql: cannot connect to PostgreSQL (OperationalError)\n    -> start it with `python scripts/dev.py up` (Docker Desktop must be running)\n[demo 02:13:46] cleanup: database: none created by this run: nothing dropped"
+ },
+ {
+  "scenario": "required port already occupied",
+  "passed": true,
+  "detail": "rc=1 holder_untouched=True dbs=[]"
+ },
+ {
+  "scenario": "missing local Ollama model",
+  "passed": true,
+  "detail": "rc=1 ollama_running_after=False was_up=False"
+ },
+ {
+  "scenario": "interrupted startup (launcher killed) then down",
+  "passed": true,
+  "detail": "recorded_before_down=['ticketing', 'inventory', 'fleet'] rc=0 dbs=[]"
+ },
+ {
+  "scenario": "interactive up, repeated up refused, status, down, down again",
+  "passed": true,
+  "detail": "up=0 second_up_rc=1 refused=True api=200 ui=200 down=0 down2=0 dbs=[]"
+ }
+]

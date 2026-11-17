@@ -1,0 +1,5 @@
+unit_id,description,model,depot,in_service,account_code
+VH-2101,Refrigerated delivery truck 1,MX-300,Harbor Depot,2022-03-14,ACC-501
+VH-2102,Refrigerated delivery truck 2,MX-300,Harbor Depot,2022-03-14,ACC-501
+VH-2103,Refrigerated delivery truck 3,MX-300,Northside Depot,2023-06-01,ACC-502
+VH-2104,Regional tractor 1,MX-450,Northside Depot,2021-11-09,ACC-503

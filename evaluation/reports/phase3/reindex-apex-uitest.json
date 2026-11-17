@@ -1,0 +1,30 @@
+{
+  "tenant_id": "e490d409-1074-4621-866c-b8c27483b2da",
+  "to_profile": "sentence_transformers:sentence-transformers/all-MiniLM-L6-v2@1110a243fdf4706b3f48f1d95db1a4f5529b4d41:384",
+  "from_profile": "deterministic:hashed-bow-test-only@1:384",
+  "before": {
+    "documents": 5,
+    "versions": 5,
+    "chunks": 16,
+    "current_chunks": 16,
+    "dim384": 16
+  },
+  "started_at": "2026-11-11T19:26:53.831950+00:00",
+  "status": "reindexed",
+  "after": {
+    "documents": 5,
+    "versions": 5,
+    "chunks": 16,
+    "current_chunks": 16,
+    "dim384": 16
+  },
+  "finished_at": "2026-11-11T19:26:54.251562+00:00",
+  "reindex_seconds": 0.48,
+  "index_rebuilt": true,
+  "retrieval_self_check": {
+    "queries": 16,
+    "source_chunk_in_top5": 16,
+    "rate": 1.0
+  },
+  "command": "python scripts/reindex_embeddings.py --tenant apex-uitest --backend sentence_transformers --report evaluation/reports/phase3/reindex-apex-uitest.json"
+}

@@ -1,0 +1,6 @@
+incident_id,date,equipment_id,category,description,root_cause,resolution
+INC-2024-0412,2024-03-12,P-101,mechanical_vibration,Drive-end bearing vibration reached 8.2 mm/s during weekly round,Worn drive-end bearing,Replaced bearing set PN-4417 and realigned coupling
+INC-2025-0107,2025-01-20,P-101,mechanical_vibration,Intermittent vibration with gravel-like noise,Partially blocked suction strainer causing cavitation,Cleaned inlet strainer; vibration returned to 2.1 mm/s
+INC-2025-0633,2025-06-02,P-102,mechanical_vibration,High vibration 7.8 mm/s after maintenance,Coupling misalignment of 0.12 mm,Realigned coupling to 0.03 mm
+INC-2024-0899,2024-08-30,P-103,leak,Mechanical seal leaking,Seal face wear,Replaced seal kit PN-5102
+INC-2025-0301,2025-03-11,M-201,overheating,Motor winding temperature alarm,Blocked cooling fins,Cleaned cooling fins and verified airflow

@@ -1,0 +1,40 @@
+{
+ "dataset": "safety-v6",
+ "seed": 20261117,
+ "cases": 90,
+ "by_tenant": {
+  "apex": 49,
+  "meridian": 41
+ },
+ "valid": 31,
+ "invalid": 59,
+ "expected_urgent": 18,
+ "by_class": {
+  "U10_ambiguous_attribution": 2,
+  "U11_incompatible_unit": 6,
+  "U12_no_observation_structure": 2,
+  "U13_hallucinated_asset": 3,
+  "U14_partial_support": 1,
+  "U1_unsupported_value": 10,
+  "U2_threshold_only": 5,
+  "U3_historical_only": 3,
+  "U4_reference_only": 1,
+  "U5_instruction_text": 10,
+  "U6_quoted_text": 3,
+  "U7_contradictory_current": 5,
+  "U8_wrong_asset": 5,
+  "U9_ambiguous_notation": 3,
+  "V1_supported": 14,
+  "V2_supported_conversion": 4,
+  "V3_model_differs_report_supported": 2,
+  "V4_other_asset_present": 2,
+  "V5_historical_after_current": 3,
+  "V6_threshold_beside_current": 2,
+  "V7_watched_words_legit": 1,
+  "V8_repeated_same_value": 1,
+  "V9_asset_record_table": 1,
+  "V9_both_signals": 1
+ },
+ "genuine_p1_cases": 9,
+ "genuine_p2_cases": 15
+}

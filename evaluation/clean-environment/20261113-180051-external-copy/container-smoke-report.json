@@ -1,0 +1,420 @@
+{
+  "run_id": "20261113-180305",
+  "steps": [
+    {
+      "step": "build the web UI on the host (npm run build: typecheck and production bundle)",
+      "ok": true,
+      "seconds": 6.7,
+      "detail": "ze...\ndist/index.html                   0.42 kB \u2502 gzip:  0.28 kB\ndist/assets/index-C_kFS8jw.css    8.37 kB \u2502 gzip:  2.58 kB\ndist/assets/index-plZNm00S.js   261.69 kB \u2502 gzip: 78.95 kB\n\u2713 built in 1.11s"
+    },
+    {
+      "step": "docker compose build (pulls base images, installs dependencies)",
+      "ok": true,
+      "seconds": 8.7,
+      "detail": "Image eaop-app-backend:eaop-clean-1hk33n5x Built \n Image eaop-app-ui:eaop-clean-1hk33n5x Built \n Image eaop-app-backend:eaop-clean-1hk33n5x Built \n Image eaop-app-backend:eaop-clean-1hk33n5x Built \n Image eaop-app-backend:eaop-clean-1hk33n5x Built \n Image eaop-app-backend:eaop-clean-1hk33n5x Built"
+    },
+    {
+      "step": "start db, migrate, seed Apex, API, worker, mocks and UI",
+      "ok": true,
+      "seconds": 20.4,
+      "detail": "Container eaop-clean-1hk33n5x-ticketing-1 Started \n Container eaop-clean-1hk33n5x-worker-1 Started \n Container eaop-clean-1hk33n5x-servicedesk-1 Started \n Container eaop-clean-1hk33n5x-crm-1 Started"
+    },
+    {
+      "step": "wait for the API (container health)",
+      "ok": true,
+      "seconds": 0.0,
+      "detail": "GET /api/v1/health 200 on 127.0.0.1:18000"
+    },
+    {
+      "step": "onboard Meridian through the public API (inside the API container)",
+      "ok": true,
+      "seconds": 2.7,
+      "detail": "ed (3 chunks)\ndocument meridian_depot_inspection_2026q3.pdf: created (1 chunks)\ndocument service_history.csv: created (4 chunks)\ndocument telematics_alerts.csv: created (3 chunks)\nonboarding complete"
+    },
+    {
+      "step": "Apex and Meridian workflow checks against the containerised API",
+      "ok": true,
+      "seconds": 6.1,
+      "detail": {
+        "external_systems": "simulated: local mock ticketing (8101) and service desk (8105)",
+        "tenants": {
+          "apex-industrial": [
+            {
+              "tenant": "apex-industrial",
+              "step": "sign in as engineer, supervisor, administrator and auditor",
+              "ok": true,
+              "detail": ""
+            },
+            {
+              "tenant": "apex-industrial",
+              "step": "engineer analyses a fault report with a structured observation (HTTP 201)",
+              "ok": true,
+              "detail": "HTTP 201"
+            },
+            {
+              "tenant": "apex-industrial",
+              "step": "the observation is stored as a submitted observation awaiting verification (class C, VALIDATED, not used for priority)",
+              "ok": true,
+              "detail": "{\"trust_status\": \"VALIDATED\", \"evidence_class\": \"C\", \"eligible_for_numeric_priority\": false}"
+            },
+            {
+              "tenant": "apex-industrial",
+              "step": "asset is registered",
+              "ok": true,
+              "detail": "P-101"
+            },
+            {
+              "tenant": "apex-industrial",
+              "step": "engineer cannot verify (403 insufficient_role)",
+              "ok": true,
+              "detail": "HTTP 403"
+            },
+            {
+              "tenant": "apex-industrial",
+              "step": "auditor cannot verify (403 insufficient_role)",
+              "ok": true,
+              "detail": "HTTP 403"
+            },
+            {
+              "tenant": "apex-industrial",
+              "step": "another tenant's supervisor gets 404 (tenant isolation)",
+              "ok": true,
+              "detail": "HTTP 404"
+            },
+            {
+              "tenant": "apex-industrial",
+              "step": "another tenant's engineer cannot read the incident (404)",
+              "ok": true,
+              "detail": "HTTP 404"
+            },
+            {
+              "tenant": "apex-industrial",
+              "step": "supervisor verifies; the server returns HUMAN_VERIFIED, class D, eligible",
+              "ok": true,
+              "detail": "HTTP 200"
+            },
+            {
+              "tenant": "apex-industrial",
+              "step": "priority comes from the server: P3 -> P2 (verification block says P3 -> P2)",
+              "ok": true,
+              "detail": ""
+            },
+            {
+              "tenant": "apex-industrial",
+              "step": "a repeated decision is refused (409)",
+              "ok": true,
+              "detail": "HTTP 409 measurement_not_pending"
+            },
+            {
+              "tenant": "apex-industrial",
+              "step": "the creator cannot verify their own incident's measurement (403 separation_of_duties)",
+              "ok": true,
+              "detail": "HTTP 403"
+            },
+            {
+              "tenant": "apex-industrial",
+              "step": "engineer drafts a ticket (201, DRAFT)",
+              "ok": true,
+              "detail": "HTTP 201"
+            },
+            {
+              "tenant": "apex-industrial",
+              "step": "approval requested (PENDING_APPROVAL)",
+              "ok": true,
+              "detail": "HTTP 200"
+            },
+            {
+              "tenant": "apex-industrial",
+              "step": "the author cannot approve (403)",
+              "ok": true,
+              "detail": "HTTP 403"
+            },
+            {
+              "tenant": "apex-industrial",
+              "step": "supervisor approves",
+              "ok": true,
+              "detail": "HTTP 200"
+            },
+            {
+              "tenant": "apex-industrial",
+              "step": "the worker submits it to the (simulated) external system: SUBMITTED with an external id",
+              "ok": true,
+              "detail": "state SUBMITTED external id MNT-1001"
+            },
+            {
+              "tenant": "apex-industrial",
+              "step": "the audit log shows the whole chain",
+              "ok": true,
+              "detail": "missing []"
+            },
+            {
+              "tenant": "apex-industrial",
+              "step": "document maintenance_log.csv is listed and searchable before deletion",
+              "ok": true,
+              "detail": ""
+            },
+            {
+              "tenant": "apex-industrial",
+              "step": "an engineer cannot delete a document (403)",
+              "ok": true,
+              "detail": "HTTP 403"
+            },
+            {
+              "tenant": "apex-industrial",
+              "step": "another tenant's supervisor cannot delete it or see it (404)",
+              "ok": true,
+              "detail": "HTTP 404"
+            },
+            {
+              "tenant": "apex-industrial",
+              "step": "supervisor deletes: logically deleted at once, cleanup pending or already running",
+              "ok": true,
+              "detail": "HTTP 200 pending"
+            },
+            {
+              "tenant": "apex-industrial",
+              "step": "the deleted document is gone from the listing, direct access (404) and search",
+              "ok": true,
+              "detail": ""
+            },
+            {
+              "tenant": "apex-industrial",
+              "step": "the worker removed the content and verified it (cleanup completed), a repeated delete is idempotent",
+              "ok": true,
+              "detail": "state completed"
+            },
+            {
+              "tenant": "apex-industrial",
+              "step": "the audit log holds the deletion and the cleanup without content",
+              "ok": true,
+              "detail": "document.cleanup_completed, document.created, document.deleted"
+            }
+          ],
+          "meridian-fleet": [
+            {
+              "tenant": "meridian-fleet",
+              "step": "sign in as engineer, supervisor, administrator and auditor",
+              "ok": true,
+              "detail": ""
+            },
+            {
+              "tenant": "meridian-fleet",
+              "step": "engineer analyses a fault report with a structured observation (HTTP 201)",
+              "ok": true,
+              "detail": "HTTP 201"
+            },
+            {
+              "tenant": "meridian-fleet",
+              "step": "the observation is stored as a submitted observation awaiting verification (class C, VALIDATED, not used for priority)",
+              "ok": true,
+              "detail": "{\"trust_status\": \"VALIDATED\", \"evidence_class\": \"C\", \"eligible_for_numeric_priority\": false}"
+            },
+            {
+              "tenant": "meridian-fleet",
+              "step": "asset is registered",
+              "ok": true,
+              "detail": "VH-2101"
+            },
+            {
+              "tenant": "meridian-fleet",
+              "step": "engineer cannot verify (403 insufficient_role)",
+              "ok": true,
+              "detail": "HTTP 403"
+            },
+            {
+              "tenant": "meridian-fleet",
+              "step": "auditor cannot verify (403 insufficient_role)",
+              "ok": true,
+              "detail": "HTTP 403"
+            },
+            {
+              "tenant": "meridian-fleet",
+              "step": "another tenant's supervisor gets 404 (tenant isolation)",
+              "ok": true,
+              "detail": "HTTP 404"
+            },
+            {
+              "tenant": "meridian-fleet",
+              "step": "another tenant's engineer cannot read the incident (404)",
+              "ok": true,
+              "detail": "HTTP 404"
+            },
+            {
+              "tenant": "meridian-fleet",
+              "step": "supervisor verifies; the server returns HUMAN_VERIFIED, class D, eligible",
+              "ok": true,
+              "detail": "HTTP 200"
+            },
+            {
+              "tenant": "meridian-fleet",
+              "step": "priority comes from the server: P3 -> P2 (verification block says P3 -> P2)",
+              "ok": true,
+              "detail": ""
+            },
+            {
+              "tenant": "meridian-fleet",
+              "step": "a repeated decision is refused (409)",
+              "ok": true,
+              "detail": "HTTP 409 measurement_not_pending"
+            },
+            {
+              "tenant": "meridian-fleet",
+              "step": "the creator cannot verify their own incident's measurement (403 separation_of_duties)",
+              "ok": true,
+              "detail": "HTTP 403"
+            },
+            {
+              "tenant": "meridian-fleet",
+              "step": "engineer drafts a ticket (201, DRAFT)",
+              "ok": true,
+              "detail": "HTTP 201"
+            },
+            {
+              "tenant": "meridian-fleet",
+              "step": "approval requested (PENDING_APPROVAL)",
+              "ok": true,
+              "detail": "HTTP 200"
+            },
+            {
+              "tenant": "meridian-fleet",
+              "step": "the author cannot approve (403)",
+              "ok": true,
+              "detail": "HTTP 403"
+            },
+            {
+              "tenant": "meridian-fleet",
+              "step": "supervisor approves",
+              "ok": true,
+              "detail": "HTTP 200"
+            },
+            {
+              "tenant": "meridian-fleet",
+              "step": "the worker submits it to the (simulated) external system: SUBMITTED with an external id",
+              "ok": true,
+              "detail": "state SUBMITTED external id WO-7001"
+            },
+            {
+              "tenant": "meridian-fleet",
+              "step": "the audit log shows the whole chain",
+              "ok": true,
+              "detail": "missing []"
+            },
+            {
+              "tenant": "meridian-fleet",
+              "step": "document telematics_alerts.csv is listed and searchable before deletion",
+              "ok": true,
+              "detail": ""
+            },
+            {
+              "tenant": "meridian-fleet",
+              "step": "an engineer cannot delete a document (403)",
+              "ok": true,
+              "detail": "HTTP 403"
+            },
+            {
+              "tenant": "meridian-fleet",
+              "step": "another tenant's supervisor cannot delete it or see it (404)",
+              "ok": true,
+              "detail": "HTTP 404"
+            },
+            {
+              "tenant": "meridian-fleet",
+              "step": "supervisor deletes: logically deleted at once, cleanup pending or already running",
+              "ok": true,
+              "detail": "HTTP 200 pending"
+            },
+            {
+              "tenant": "meridian-fleet",
+              "step": "the deleted document is gone from the listing, direct access (404) and search",
+              "ok": true,
+              "detail": ""
+            },
+            {
+              "tenant": "meridian-fleet",
+              "step": "the worker removed the content and verified it (cleanup completed), a repeated delete is idempotent",
+              "ok": true,
+              "detail": "state completed"
+            },
+            {
+              "tenant": "meridian-fleet",
+              "step": "the audit log holds the deletion and the cleanup without content",
+              "ok": true,
+              "detail": "document.cleanup_completed, document.created, document.deleted"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "step": "web UI container serves the app and proxies /api",
+      "ok": true,
+      "seconds": 0.0,
+      "detail": true
+    }
+  ],
+  "ok": true,
+  "profile": "deterministic",
+  "images_before": [
+    "eaop-app-backend:eaop-clean-5l37wrjk",
+    "eaop-app-backend:local",
+    "eaop-app-ui:eaop-clean-5l37wrjk",
+    "eaop-app-ui:local",
+    "factoryops-backend:25b6ebc",
+    "factoryops-backend:dev",
+    "factoryops-frontend:25b6ebc",
+    "factoryops-frontend:dev",
+    "factoryops-simulator:dev",
+    "factoryops-worker:25b6ebc",
+    "factoryops-worker:dev",
+    "grafana/grafana-oss:11.3.1",
+    "pgvector/pgvector:pg16",
+    "postgres:16-alpine",
+    "prom/prometheus:v2.55.1",
+    "rabbitmq:3.13-management-alpine"
+  ],
+  "disk_before": {
+    "Active": "1",
+    "Reclaimable": "2.073GB (58%)",
+    "Size": "3.541GB",
+    "TotalCount": "17",
+    "Type": "Images"
+  },
+  "images_new": [
+    "eaop-app-backend:eaop-clean-1hk33n5x",
+    "eaop-app-ui:eaop-clean-1hk33n5x"
+  ],
+  "built_image_sizes": {
+    "eaop-app-backend:eaop-clean-1hk33n5x": "277MB",
+    "eaop-app-ui:eaop-clean-1hk33n5x": "94MB"
+  },
+  "disk_after_build": {
+    "Active": "1",
+    "Reclaimable": "2.075GB (58%)",
+    "Size": "3.545GB",
+    "TotalCount": "19",
+    "Type": "Images"
+  },
+  "workflow_checks": {
+    "apex-industrial": 25,
+    "meridian-fleet": 25
+  },
+  "running": [
+    "api=running",
+    "crm=running",
+    "db=running",
+    "fleet=running",
+    "inventory=running",
+    "servicedesk=running",
+    "ticketing=running",
+    "ui=running",
+    "worker=running"
+  ],
+  "cleanup": {
+    "compose_down_exit": 0,
+    "scope": "project eaop-clean-1hk33n5x only (its containers, network and volume)"
+  },
+  "images_kept": [
+    "eaop-app-backend:eaop-clean-1hk33n5x",
+    "eaop-app-ui:eaop-clean-1hk33n5x"
+  ]
+}

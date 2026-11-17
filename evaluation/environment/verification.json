@@ -1,0 +1,54 @@
+{
+  "generated_utc": "2026-11-13T23:40:25.026542+00:00",
+  "command": "python scripts/verify_environment.py",
+  "git": {
+    "version": "git version 2.55.0.windows.5",
+    "remotes_configured": 0
+  },
+  "github_authentication": {
+    "gh_cli_installed": true,
+    "authenticated": true,
+    "note": "recorded as a fact only; nothing was pushed and no repository exists"
+  },
+  "git_identity": {
+    "author_name": "Gautham",
+    "author_name_is_owner": true,
+    "email_configured": true,
+    "email": "not recorded (private)"
+  },
+  "python": "3.10.0",
+  "node": "v24.13.1",
+  "npm": "11.8.0",
+  "docker": "Docker version 29.7.2, build a7dcaa6",
+  "docker_daemon_reachable": true,
+  "cpu": {
+    "model": "Intel64 Family 6 Model 140 Stepping 1, GenuineIntel",
+    "threads": 8
+  },
+  "ram_gb": 15.7,
+  "gpu": {
+    "adapters": [
+      "Intel(R) Iris(R) Xe Graphics"
+    ],
+    "cuda_capable": false,
+    "note": "inference runs on the CPU; no CUDA device is required or used"
+  },
+  "os": "Windows-10-10.0.26200-SP0",
+  "disk": {
+    "free_gb": 113.9,
+    "total_gb": 294.1
+  },
+  "local_model_compatibility": {
+    "installed": true,
+    "version": "ollama version is 0.40.16",
+    "server_running_now": true,
+    "models_installed": [
+      "qwen2.5:1.5b"
+    ],
+    "required_model": "qwen2.5:1.5b",
+    "required_model_present": true,
+    "ram_sufficient_for_model": true,
+    "basis": "a 1.5B model quantised to 4 bits needs about 2 GB of RAM while loaded; 8 GB is the practical floor with PostgreSQL and the services running",
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2 (CPU)"
+  }
+}

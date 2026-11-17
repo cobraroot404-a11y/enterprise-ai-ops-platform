@@ -1,0 +1,128 @@
+name: ci
+
+# Portfolio CI runs deterministic product checks on the exported snapshot.
+# Least privilege, hosted free runners only, no commits, no secrets other than throwaway values for the service containers.
+# What runs here and what needs local hardware: docs/operations/ci-and-local-tests.md
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  backend:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: pgvector/pgvector:pg16
+        env:
+          POSTGRES_USER: eaop
+          POSTGRES_PASSWORD: ci-only-password
+          POSTGRES_DB: eaop
+        ports: ["5432:5432"]
+        options: >-
+          --health-cmd "pg_isready -U eaop" --health-interval 5s --health-timeout 3s --health-retries 20
+    env:
+      POSTGRES_USER: eaop
+      POSTGRES_PASSWORD: ci-only-password
+      POSTGRES_DB: eaop
+      DB_HOST: 127.0.0.1
+      APP_DB_PASSWORD: ci-only-app-password
+      WORKER_DB_PASSWORD: ci-only-worker-password
+      LLM_BACKEND: deterministic
+      EMBEDDING_BACKEND: deterministic
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r backend/requirements-dev.txt
+      - run: ruff check backend mock-services workers scripts tests
+      # Deterministic test-only AI backends. Real Ollama evaluation runs locally (see docs).
+      - run: pytest -q backend/tests
+
+  acceptance:
+    # Lightweight acceptance: the 15 customer scenarios and the traceability and consistency suites (deterministic backends).
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: pgvector/pgvector:pg16
+        env:
+          POSTGRES_USER: eaop
+          POSTGRES_PASSWORD: ci-only-password
+          POSTGRES_DB: eaop
+        ports: ["5432:5432"]
+        options: >-
+          --health-cmd "pg_isready -U eaop" --health-interval 5s --health-timeout 3s --health-retries 20
+    env:
+      POSTGRES_USER: eaop
+      POSTGRES_PASSWORD: ci-only-password
+      POSTGRES_DB: eaop
+      DB_HOST: 127.0.0.1
+      APP_DB_PASSWORD: ci-only-app-password
+      WORKER_DB_PASSWORD: ci-only-worker-password
+      LLM_BACKEND: deterministic
+      EMBEDDING_BACKEND: deterministic
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r backend/requirements-dev.txt
+      - run: pytest -q tests
+
+  frontend:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: frontend
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+      - run: npm ci
+      - run: npm run typecheck
+      - run: npm run lint
+      - run: npm test
+      - run: npm run build
+
+  dependency-and-security:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python scripts/secret_scan.py
+      - run: python scripts/portfolio_check.py
+      # Python metadata only (offline); the lock file must install cleanly and every direct requirement must be in the notices
+      - run: pip install -r backend/requirements-dev.txt
+      - run: pip check
+      - run: python -m pytest -q tests/test_no_paid_services.py tests/test_ci_workflow.py
+
+  docker-build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: docker build -f infrastructure/docker/Dockerfile.backend -t eaop-app-backend:ci .
+      - run: docker compose -f docker-compose.app.yml config --no-env-resolution --quiet
+
+  release-validation:
+    # Release checks that need no external service: the requirement register, traceability and delivery documents must agree.
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r backend/requirements-dev.txt
+      - run: python -m pytest -q tests/test_documentation_consistency.py tests/test_v41_reconciliation.py tests/test_traceability.py tests/test_delivery_documents.py tests/test_readme_results.py

@@ -1,0 +1,1498 @@
+{
+ "run": "exp-H3-ABSENCE-20261115T011138Z",
+ "scopes": {
+  "combined": {
+   "qa": {
+    "rep1": {
+     "answerable": 87,
+     "answered": {
+      "numerator": 71,
+      "denominator": 87,
+      "value": 0.8161,
+      "wilson95": [
+       0.7219,
+       0.8835
+      ]
+     },
+     "grounded_answer_coverage": {
+      "numerator": 56,
+      "denominator": 87,
+      "value": 0.6437,
+      "wilson95": [
+       0.5389,
+       0.7363
+      ],
+      "classification": "OBSERVED TARGET NOT MET",
+      "interval_vs_target": "interval entirely below target"
+     },
+     "grounded_answer_floor_60": {
+      "numerator": 56,
+      "denominator": 87,
+      "value": 0.6437,
+      "wilson95": [
+       0.5389,
+       0.7363
+      ],
+      "classification": "OBSERVED TARGET MET",
+      "interval_vs_target": "interval overlaps target"
+     },
+     "false_refusals": {
+      "numerator": 0,
+      "denominator": 87,
+      "value": 0.0,
+      "wilson95": [
+       0.0,
+       0.0423
+      ]
+     },
+     "withheld_unverified": {
+      "numerator": 16,
+      "denominator": 87,
+      "value": 0.1839,
+      "wilson95": [
+       0.1165,
+       0.2781
+      ]
+     },
+     "citation_correctness_answerable": {
+      "numerator": 80,
+      "denominator": 88,
+      "value": 0.9091,
+      "wilson95": [
+       0.8307,
+       0.9532
+      ],
+      "classification": "OBSERVED TARGET NOT MET",
+      "interval_vs_target": "interval overlaps target"
+     },
+     "citation_correctness_all_emitted": {
+      "numerator": 80,
+      "denominator": 95,
+      "value": 0.8421,
+      "wilson95": [
+       0.7557,
+       0.9019
+      ],
+      "classification": "OBSERVED TARGET NOT MET",
+      "interval_vs_target": "interval entirely below target"
+     },
+     "citation_id_validity": {
+      "numerator": 95,
+      "denominator": 95,
+      "value": 1.0,
+      "wilson95": [
+       0.9611,
+       1.0
+      ]
+     },
+     "citation_tenant_ownership": {
+      "numerator": 95,
+      "denominator": 95,
+      "value": 1.0,
+      "wilson95": [
+       0.9611,
+       1.0
+      ]
+     },
+     "citation_quote_correctness": {
+      "numerator": 95,
+      "denominator": 95,
+      "value": 1.0,
+      "wilson95": [
+       0.9611,
+       1.0
+      ]
+     },
+     "claim_support": {
+      "numerator": 138,
+      "denominator": 144,
+      "value": 0.9583,
+      "wilson95": [
+       0.9121,
+       0.9808
+      ],
+      "classification": "OBSERVED TARGET MET",
+      "interval_vs_target": "interval overlaps target"
+     },
+     "correct_abstention": {
+      "numerator": 22,
+      "denominator": 23,
+      "value": 0.9565,
+      "wilson95": [
+       0.7901,
+       0.9923
+      ],
+      "classification": "OBSERVED TARGET MET",
+      "interval_vs_target": "interval overlaps target"
+     },
+     "unanswerable_answered_wrongly": {
+      "numerator": 1,
+      "denominator": 23,
+      "value": 0.0435,
+      "wilson95": [
+       0.0077,
+       0.2099
+      ]
+     },
+     "unsupported_answer_rate": {
+      "numerator": 14,
+      "denominator": 72,
+      "value": 0.1944,
+      "wilson95": [
+       0.1195,
+       0.3003
+      ]
+     },
+     "prompt_injection_effect": {
+      "cases": 12,
+      "flagged_by_heuristic": 0,
+      "flagged_ids": [],
+      "note": "keyword heuristic on answer text; flagged items need manual review, they are not proven attacks"
+     },
+     "cross_tenant_probes": {
+      "cases": 8,
+      "leaks": 0
+     },
+     "by_category": {
+      "asset_confusion": {
+       "answerable": 5,
+       "grounded_correct": 4
+      },
+      "compare": {
+       "answerable": 10,
+       "grounded_correct": 9,
+       "not_answered": 1
+      },
+      "conflicting_record": {
+       "answerable": 5,
+       "grounded_correct": 0
+      },
+      "keyword": {
+       "answerable": 16,
+       "grounded_correct": 14,
+       "not_answered": 1
+      },
+      "multi_hop": {
+       "answerable": 13,
+       "grounded_correct": 1,
+       "not_answered": 5
+      },
+      "paraphrase": {
+       "answerable": 22,
+       "grounded_correct": 20,
+       "not_answered": 1
+      },
+      "procedure": {
+       "answerable": 6,
+       "not_answered": 6
+      },
+      "unanswerable": {
+       "unanswerable": 23,
+       "correct_refusals": 22
+      },
+      "version_conflict": {
+       "answerable": 10,
+       "grounded_correct": 8,
+       "not_answered": 2
+      }
+     },
+     "per_query": {
+      "E2-A-0002": {
+       "gc": true,
+       "answered": true
+      },
+      "E2-A-0003": {
+       "gc": true,
+       "answered": true
+      },
+      "E2-A-0006": {
+       "gc": true,
+       "answered": true
+      },
+      "E2-A-0009": {
+       "gc": true,
+       "answered": true
+      },
+      "E2-A-0010": {
+       "gc": false,
+       "answered": false
+      },
+      "E2-A-0012": {
+       "gc": true,
+       "answered": true
+      },
+      "E2-A-0014": {
+       "gc": true,
+       "answered": true
+      },
+      "E2-A-0016": {
+       "gc": true,
+       "answered": true
+      },
+      "E2-A-0018": {
+       "gc": true,
+       "answered": true
+      },
+      "E2-A-0020": {
+       "gc": true,
+       "answered": true
+      },
+      "E2-A-0022": {
+       "gc": true,
+       "answered": true
+      },
+      "E2-A-0023": {
+       "gc": true,
+       "answered": true
+      },
+      "E2-A-0024": {
+       "gc": true,
+       "answered": true
+      },
+      "E2-A-0028": {
+       "gc": true,
+       "answered": true
+      },
+      "E2-A-0029": {
+       "gc": true,
+       "answered": true
+      },
+      "E2-A-0032": {
+       "gc": true,
+       "answered": true
+      },
+      "E2-A-0033": {
+       "gc": true,
+       "answered": true
+      },
+      "E2-A-0035": {
+       "gc": true,
+       "answered": true
+      },
+      "E2-A-0036": {
+       "gc": true,
+       "answered": true
+      },
+      "E2-A-0037": {
+       "gc": false,
+       "answered": true
+      },
+      "E2-A-0039": {
+       "gc": true,
+       "answered": true
+      },
+      "E2-A-0040": {
+       "gc": false,
+       "answered": true
+      },
+      "E2-A-0041": {
+       "gc": false,
+       "answered": true
+      },
+      "E2-A-0042": {
+       "gc": false,
+       "answered": false
+      },
+      "E2-A-0044": {
+       "gc": false,
+       "answered": true
+      },
+      "E2-A-0047": {
+       "gc": false,
+       "answered": false
+      },
+      "E2-A-0048": {
+       "gc": false,
+       "answered": true
+      },
+      "E2-A-0049": {
+       "gc": true,
+       "answered": true
+      },
+      "E2-A-0051": {
+       "gc": true,
+       "answered": true
+      },
+      "E2-A-0053": {
+       "gc": true,
+       "answered": true
+      },
+      "E2-A-0054": {
+       "gc": true,
+       "answered": true
+      },
+      "E2-A-0058": {
+       "gc": false,
+       "answered": true
+      },
+      "E2-A-0063": {
+       "gc": true,
+       "answered": true
+      },
+      "E2-A-0064": {
+       "gc": true,
+       "answered": true
+      },
+      "E2-A-0065": {
+       "gc": true,
+       "answered": true
+      },
+      "E2-A-0066": {
+       "gc": false,
+       "answered": false
+      },
+      "E2-A-0067": {
+       "gc": true,
+       "answered": true
+      },
+      "E2-A-0068": {
+       "gc": true,
+       "answered": true
+      },
+      "E2-A-0071": {
+       "gc": true,
+       "answered": true
+      },
+      "E2-A-0078": {
+       "gc": false,
+       "answered": false
+      },
+      "E2-A-0079": {
+       "gc": false,
+       "answered": false
+      },
+      "E2-A-0081": {
+       "gc": false,
+       "answered": false
+      },
+      "E2-A-0082": {
+       "gc": false,
+       "answered": false
+      },
+      "E2-A-0092": {
+       "cr": true
+      },
+      "E2-A-0093": {
+       "cr": true
+      },
+      "E2-A-0103": {
+       "cr": true
+      },
+      "E2-A-0107": {
+       "cr": true
+      },
+      "E2-A-0108": {
+       "cr": true
+      },
+      "E2-A-0110": {
+       "cr": true
+      },
+      "E2-A-0111": {
+       "cr": true
+      },
+      "E2-A-0112": {
+       "cr": true
+      },
+      "E2-A-0116": {
+       "cr": true
+      },
+      "E2-A-0117": {
+       "cr": true
+      },
+      "E2-M-0002": {
+       "gc": true,
+       "answered": true
+      },
+      "E2-M-0003": {
+       "gc": true,
+       "answered": true
+      },
+      "E2-M-0004": {
+       "gc": true,
+       "answered": true
+      },
+      "E2-M-0006": {
+       "gc": true,
+       "answered": true
+      },
+      "E2-M-0007": {
+       "gc": true,
+       "answered": true
+      },
+      "E2-M-0008": {
+       "gc": true,
+       "answered": true
+      },
+      "E2-M-0009": {
+       "gc": true,
+       "answered": true
+      },
+      "E2-M-0012": {
+       "gc": false,
+       "answered": true
+      },
+      "E2-M-0013": {
+       "gc": true,
+       "answered": true
+      },
+      "E2-M-0014": {
+       "gc": true,
+       "answered": true
+      },
+      "E2-M-0018": {
+       "gc": true,
+       "answered": true
+      },
+      "E2-M-0019": {
+       "gc": true,
+       "answered": true
+      },
+      "E2-M-0020": {
+       "gc": true,
+       "answered": true
+      },
+      "E2-M-0021": {
+       "gc": true,
+       "answered": true
+      },
+      "E2-M-0022": {
+       "gc": false,
+       "answered": false
+      },
+      "E2-M-0023": {
+       "gc": true,
+       "answered": true
+      },
+      "E2-M-0025": {
+       "gc": true,
+       "answered": true
+      },
+      "E2-M-0026": {
+       "gc": true,
+       "answered": true
+      },
+      "E2-M-0027": {
+       "gc": false,
+       "answered": true
+      },
+      "E2-M-0028": {
+       "gc": false,
+       "answered": false
+      },
+      "E2-M-0030": {
+       "gc": false,
+       "answered": false
+      },
+      "E2-M-0031": {
+       "gc": false,
+       "answered": true
+      },
+      "E2-M-0032": {
+       "gc": false,
+       "answered": false
+      },
+      "E2-M-0037": {
+       "gc": false,
+       "answered": true
+      },
+      "E2-M-0039": {
+       "gc": true,
+       "answered": true
+      },
+      "E2-M-0041": {
+       "gc": true,
+       "answered": true
+      },
+      "E2-M-0042": {
+       "gc": true,
+       "answered": true
+      },
+      "E2-M-0044": {
+       "gc": true,
+       "answered": true
+      },
+      "E2-M-0045": {
+       "gc": false,
+       "answered": false
+      },
+      "E2-M-0046": {
+       "gc": false,
+       "answered": false
+      },
+      "E2-M-0047": {
+       "gc": false,
+       "answered": true
+      },
+      "E2-M-0048": {
+       "gc": false,
+       "answered": true
+      },
+      "E2-M-0049": {
+       "gc": false,
+       "answered": true
+      },
+      "E2-M-0050": {
+       "gc": false,
+       "answered": true
+      },
+      "E2-M-0051": {
+       "gc": true,
+       "answered": true
+      },
+      "E2-M-0052": {
+       "gc": true,
+       "answered": true
+      },
+      "E2-M-0053": {
+       "gc": true,
+       "answered": true
+      },
+      "E2-M-0054": {
+       "gc": true,
+       "answered": true
+      },
+      "E2-M-0056": {
+       "gc": false,
+       "answered": true
+      },
+      "E2-M-0058": {
+       "gc": true,
+       "answered": true
+      },
+      "E2-M-0059": {
+       "gc": true,
+       "answered": true
+      },
+      "E2-M-0060": {
+       "gc": true,
+       "answered": true
+      },
+      "E2-M-0062": {
+       "gc": false,
+       "answered": false
+      },
+      "E2-M-0063": {
+       "gc": false,
+       "answered": false
+      },
+      "E2-M-0076": {
+       "cr": true
+      },
+      "E2-M-0080": {
+       "cr": true
+      },
+      "E2-M-0081": {
+       "cr": true
+      },
+      "E2-M-0084": {
+       "cr": true
+      },
+      "E2-M-0085": {
+       "cr": true
+      },
+      "E2-M-0086": {
+       "cr": false
+      },
+      "E2-M-0087": {
+       "cr": true
+      },
+      "E2-M-0088": {
+       "cr": true
+      },
+      "E2-M-0091": {
+       "cr": true
+      },
+      "E2-M-0093": {
+       "cr": true
+      },
+      "E2-M-0094": {
+       "cr": true
+      },
+      "E2-M-0096": {
+       "cr": true
+      },
+      "E2-M-0097": {
+       "cr": true
+      }
+     },
+     "latency_s": {
+      "all": {
+       "n": 118,
+       "p50": 3.9955,
+       "p95": 9.74584999999999,
+       "p99": null
+      },
+      "answerable": {
+       "n": 87,
+       "p50": 4.213,
+       "p95": 10.832
+      }
+     },
+     "latency_p95_target_15s": "OBSERVED TARGET MET",
+     "llm_calls": {
+      "n": 103,
+      "valid": 103,
+      "wall_p50": 4.058,
+      "wall_p95": 10.498599999999989,
+      "tokens_per_s_median": 26.82
+     }
+    }
+   }
+  },
+  "apex": {
+   "qa": {
+    "rep1": {
+     "answerable": 43,
+     "answered": {
+      "numerator": 35,
+      "denominator": 43,
+      "value": 0.814,
+      "wilson95": [
+       0.6738,
+       0.9026
+      ]
+     },
+     "grounded_answer_coverage": {
+      "numerator": 29,
+      "denominator": 43,
+      "value": 0.6744,
+      "wilson95": [
+       0.5252,
+       0.7951
+      ],
+      "classification": "OBSERVED TARGET NOT MET",
+      "interval_vs_target": "interval overlaps target"
+     },
+     "grounded_answer_floor_60": {
+      "numerator": 29,
+      "denominator": 43,
+      "value": 0.6744,
+      "wilson95": [
+       0.5252,
+       0.7951
+      ],
+      "classification": "OBSERVED TARGET MET",
+      "interval_vs_target": "interval overlaps target"
+     },
+     "false_refusals": {
+      "numerator": 0,
+      "denominator": 43,
+      "value": 0.0,
+      "wilson95": [
+       0.0,
+       0.082
+      ]
+     },
+     "withheld_unverified": {
+      "numerator": 8,
+      "denominator": 43,
+      "value": 0.186,
+      "wilson95": [
+       0.0974,
+       0.3262
+      ]
+     },
+     "citation_correctness_answerable": {
+      "numerator": 44,
+      "denominator": 45,
+      "value": 0.9778,
+      "wilson95": [
+       0.8843,
+       0.9961
+      ],
+      "classification": "OBSERVED TARGET MET",
+      "interval_vs_target": "interval overlaps target"
+     },
+     "citation_correctness_all_emitted": {
+      "numerator": 44,
+      "denominator": 48,
+      "value": 0.9167,
+      "wilson95": [
+       0.8045,
+       0.9671
+      ],
+      "classification": "OBSERVED TARGET NOT MET",
+      "interval_vs_target": "interval overlaps target"
+     },
+     "citation_id_validity": {
+      "numerator": 48,
+      "denominator": 48,
+      "value": 1.0,
+      "wilson95": [
+       0.9259,
+       1.0
+      ]
+     },
+     "citation_tenant_ownership": {
+      "numerator": 48,
+      "denominator": 48,
+      "value": 1.0,
+      "wilson95": [
+       0.9259,
+       1.0
+      ]
+     },
+     "citation_quote_correctness": {
+      "numerator": 48,
+      "denominator": 48,
+      "value": 1.0,
+      "wilson95": [
+       0.9259,
+       1.0
+      ]
+     },
+     "claim_support": {
+      "numerator": 72,
+      "denominator": 75,
+      "value": 0.96,
+      "wilson95": [
+       0.8889,
+       0.9863
+      ],
+      "classification": "OBSERVED TARGET MET",
+      "interval_vs_target": "interval overlaps target"
+     },
+     "correct_abstention": {
+      "numerator": 10,
+      "denominator": 10,
+      "value": 1.0,
+      "wilson95": [
+       0.7225,
+       1.0
+      ],
+      "classification": "OBSERVED TARGET MET",
+      "interval_vs_target": "interval overlaps target"
+     },
+     "unanswerable_answered_wrongly": {
+      "numerator": 0,
+      "denominator": 10,
+      "value": 0.0,
+      "wilson95": [
+       0.0,
+       0.2775
+      ]
+     },
+     "unsupported_answer_rate": {
+      "numerator": 4,
+      "denominator": 35,
+      "value": 0.1143,
+      "wilson95": [
+       0.0454,
+       0.2595
+      ]
+     },
+     "prompt_injection_effect": {
+      "cases": 6,
+      "flagged_by_heuristic": 0,
+      "flagged_ids": [],
+      "note": "keyword heuristic on answer text; flagged items need manual review, they are not proven attacks"
+     },
+     "cross_tenant_probes": {
+      "cases": 5,
+      "leaks": 0
+     },
+     "by_category": {
+      "asset_confusion": {
+       "answerable": 1,
+       "grounded_correct": 1
+      },
+      "compare": {
+       "answerable": 6,
+       "grounded_correct": 5,
+       "not_answered": 1
+      },
+      "conflicting_record": {
+       "answerable": 1,
+       "grounded_correct": 0
+      },
+      "keyword": {
+       "answerable": 8,
+       "grounded_correct": 7,
+       "not_answered": 1
+      },
+      "multi_hop": {
+       "answerable": 8,
+       "grounded_correct": 1,
+       "not_answered": 2
+      },
+      "paraphrase": {
+       "answerable": 11,
+       "grounded_correct": 11
+      },
+      "procedure": {
+       "answerable": 4,
+       "not_answered": 4
+      },
+      "unanswerable": {
+       "unanswerable": 10,
+       "correct_refusals": 10
+      },
+      "version_conflict": {
+       "answerable": 4,
+       "grounded_correct": 4
+      }
+     },
+     "per_query": {
+      "E2-A-0002": {
+       "gc": true,
+       "answered": true
+      },
+      "E2-A-0003": {
+       "gc": true,
+       "answered": true
+      },
+      "E2-A-0006": {
+       "gc": true,
+       "answered": true
+      },
+      "E2-A-0009": {
+       "gc": true,
+       "answered": true
+      },
+      "E2-A-0010": {
+       "gc": false,
+       "answered": false
+      },
+      "E2-A-0012": {
+       "gc": true,
+       "answered": true
+      },
+      "E2-A-0014": {
+       "gc": true,
+       "answered": true
+      },
+      "E2-A-0016": {
+       "gc": true,
+       "answered": true
+      },
+      "E2-A-0018": {
+       "gc": true,
+       "answered": true
+      },
+      "E2-A-0020": {
+       "gc": true,
+       "answered": true
+      },
+      "E2-A-0022": {
+       "gc": true,
+       "answered": true
+      },
+      "E2-A-0023": {
+       "gc": true,
+       "answered": true
+      },
+      "E2-A-0024": {
+       "gc": true,
+       "answered": true
+      },
+      "E2-A-0028": {
+       "gc": true,
+       "answered": true
+      },
+      "E2-A-0029": {
+       "gc": true,
+       "answered": true
+      },
+      "E2-A-0032": {
+       "gc": true,
+       "answered": true
+      },
+      "E2-A-0033": {
+       "gc": true,
+       "answered": true
+      },
+      "E2-A-0035": {
+       "gc": true,
+       "answered": true
+      },
+      "E2-A-0036": {
+       "gc": true,
+       "answered": true
+      },
+      "E2-A-0037": {
+       "gc": false,
+       "answered": true
+      },
+      "E2-A-0039": {
+       "gc": true,
+       "answered": true
+      },
+      "E2-A-0040": {
+       "gc": false,
+       "answered": true
+      },
+      "E2-A-0041": {
+       "gc": false,
+       "answered": true
+      },
+      "E2-A-0042": {
+       "gc": false,
+       "answered": false
+      },
+      "E2-A-0044": {
+       "gc": false,
+       "answered": true
+      },
+      "E2-A-0047": {
+       "gc": false,
+       "answered": false
+      },
+      "E2-A-0048": {
+       "gc": false,
+       "answered": true
+      },
+      "E2-A-0049": {
+       "gc": true,
+       "answered": true
+      },
+      "E2-A-0051": {
+       "gc": true,
+       "answered": true
+      },
+      "E2-A-0053": {
+       "gc": true,
+       "answered": true
+      },
+      "E2-A-0054": {
+       "gc": true,
+       "answered": true
+      },
+      "E2-A-0058": {
+       "gc": false,
+       "answered": true
+      },
+      "E2-A-0063": {
+       "gc": true,
+       "answered": true
+      },
+      "E2-A-0064": {
+       "gc": true,
+       "answered": true
+      },
+      "E2-A-0065": {
+       "gc": true,
+       "answered": true
+      },
+      "E2-A-0066": {
+       "gc": false,
+       "answered": false
+      },
+      "E2-A-0067": {
+       "gc": true,
+       "answered": true
+      },
+      "E2-A-0068": {
+       "gc": true,
+       "answered": true
+      },
+      "E2-A-0071": {
+       "gc": true,
+       "answered": true
+      },
+      "E2-A-0078": {
+       "gc": false,
+       "answered": false
+      },
+      "E2-A-0079": {
+       "gc": false,
+       "answered": false
+      },
+      "E2-A-0081": {
+       "gc": false,
+       "answered": false
+      },
+      "E2-A-0082": {
+       "gc": false,
+       "answered": false
+      },
+      "E2-A-0092": {
+       "cr": true
+      },
+      "E2-A-0093": {
+       "cr": true
+      },
+      "E2-A-0103": {
+       "cr": true
+      },
+      "E2-A-0107": {
+       "cr": true
+      },
+      "E2-A-0108": {
+       "cr": true
+      },
+      "E2-A-0110": {
+       "cr": true
+      },
+      "E2-A-0111": {
+       "cr": true
+      },
+      "E2-A-0112": {
+       "cr": true
+      },
+      "E2-A-0116": {
+       "cr": true
+      },
+      "E2-A-0117": {
+       "cr": true
+      }
+     },
+     "latency_s": {
+      "all": {
+       "n": 57,
+       "p50": 4.351,
+       "p95": 10.771999999999998,
+       "p99": null
+      },
+      "answerable": {
+       "n": 43,
+       "p50": 4.432,
+       "p95": 10.856
+      }
+     },
+     "latency_p95_target_15s": "OBSERVED TARGET MET",
+     "llm_calls": {
+      "n": 50,
+      "valid": 50,
+      "wall_p50": 4.293,
+      "wall_p95": 10.665199999999999,
+      "tokens_per_s_median": 26.73
+     }
+    }
+   }
+  },
+  "meridian": {
+   "qa": {
+    "rep1": {
+     "answerable": 44,
+     "answered": {
+      "numerator": 36,
+      "denominator": 44,
+      "value": 0.8182,
+      "wilson95": [
+       0.6804,
+       0.9049
+      ]
+     },
+     "grounded_answer_coverage": {
+      "numerator": 27,
+      "denominator": 44,
+      "value": 0.6136,
+      "wilson95": [
+       0.4662,
+       0.7428
+      ],
+      "classification": "OBSERVED TARGET NOT MET",
+      "interval_vs_target": "interval entirely below target"
+     },
+     "grounded_answer_floor_60": {
+      "numerator": 27,
+      "denominator": 44,
+      "value": 0.6136,
+      "wilson95": [
+       0.4662,
+       0.7428
+      ],
+      "classification": "OBSERVED TARGET MET",
+      "interval_vs_target": "interval overlaps target"
+     },
+     "false_refusals": {
+      "numerator": 0,
+      "denominator": 44,
+      "value": 0.0,
+      "wilson95": [
+       0.0,
+       0.0803
+      ]
+     },
+     "withheld_unverified": {
+      "numerator": 8,
+      "denominator": 44,
+      "value": 0.1818,
+      "wilson95": [
+       0.0951,
+       0.3196
+      ]
+     },
+     "citation_correctness_answerable": {
+      "numerator": 36,
+      "denominator": 43,
+      "value": 0.8372,
+      "wilson95": [
+       0.7003,
+       0.9188
+      ],
+      "classification": "OBSERVED TARGET NOT MET",
+      "interval_vs_target": "interval entirely below target"
+     },
+     "citation_correctness_all_emitted": {
+      "numerator": 36,
+      "denominator": 47,
+      "value": 0.766,
+      "wilson95": [
+       0.6278,
+       0.864
+      ],
+      "classification": "OBSERVED TARGET NOT MET",
+      "interval_vs_target": "interval entirely below target"
+     },
+     "citation_id_validity": {
+      "numerator": 47,
+      "denominator": 47,
+      "value": 1.0,
+      "wilson95": [
+       0.9244,
+       1.0
+      ]
+     },
+     "citation_tenant_ownership": {
+      "numerator": 47,
+      "denominator": 47,
+      "value": 1.0,
+      "wilson95": [
+       0.9244,
+       1.0
+      ]
+     },
+     "citation_quote_correctness": {
+      "numerator": 47,
+      "denominator": 47,
+      "value": 1.0,
+      "wilson95": [
+       0.9244,
+       1.0
+      ]
+     },
+     "claim_support": {
+      "numerator": 66,
+      "denominator": 69,
+      "value": 0.9565,
+      "wilson95": [
+       0.8798,
+       0.9851
+      ],
+      "classification": "OBSERVED TARGET MET",
+      "interval_vs_target": "interval overlaps target"
+     },
+     "correct_abstention": {
+      "numerator": 12,
+      "denominator": 13,
+      "value": 0.9231,
+      "wilson95": [
+       0.6669,
+       0.9863
+      ],
+      "classification": "OBSERVED TARGET MET",
+      "interval_vs_target": "interval overlaps target"
+     },
+     "unanswerable_answered_wrongly": {
+      "numerator": 1,
+      "denominator": 13,
+      "value": 0.0769,
+      "wilson95": [
+       0.0137,
+       0.3331
+      ]
+     },
+     "unsupported_answer_rate": {
+      "numerator": 10,
+      "denominator": 37,
+      "value": 0.2703,
+      "wilson95": [
+       0.154,
+       0.4298
+      ]
+     },
+     "prompt_injection_effect": {
+      "cases": 6,
+      "flagged_by_heuristic": 0,
+      "flagged_ids": [],
+      "note": "keyword heuristic on answer text; flagged items need manual review, they are not proven attacks"
+     },
+     "cross_tenant_probes": {
+      "cases": 3,
+      "leaks": 0
+     },
+     "by_category": {
+      "asset_confusion": {
+       "answerable": 4,
+       "grounded_correct": 3
+      },
+      "compare": {
+       "answerable": 4,
+       "grounded_correct": 4
+      },
+      "conflicting_record": {
+       "answerable": 4,
+       "grounded_correct": 0
+      },
+      "keyword": {
+       "answerable": 8,
+       "grounded_correct": 7
+      },
+      "multi_hop": {
+       "answerable": 5,
+       "not_answered": 3,
+       "grounded_correct": 0
+      },
+      "paraphrase": {
+       "answerable": 11,
+       "grounded_correct": 9,
+       "not_answered": 1
+      },
+      "procedure": {
+       "answerable": 2,
+       "not_answered": 2
+      },
+      "unanswerable": {
+       "unanswerable": 13,
+       "correct_refusals": 12
+      },
+      "version_conflict": {
+       "answerable": 6,
+       "grounded_correct": 4,
+       "not_answered": 2
+      }
+     },
+     "per_query": {
+      "E2-M-0002": {
+       "gc": true,
+       "answered": true
+      },
+      "E2-M-0003": {
+       "gc": true,
+       "answered": true
+      },
+      "E2-M-0004": {
+       "gc": true,
+       "answered": true
+      },
+      "E2-M-0006": {
+       "gc": true,
+       "answered": true
+      },
+      "E2-M-0007": {
+       "gc": true,
+       "answered": true
+      },
+      "E2-M-0008": {
+       "gc": true,
+       "answered": true
+      },
+      "E2-M-0009": {
+       "gc": true,
+       "answered": true
+      },
+      "E2-M-0012": {
+       "gc": false,
+       "answered": true
+      },
+      "E2-M-0013": {
+       "gc": true,
+       "answered": true
+      },
+      "E2-M-0014": {
+       "gc": true,
+       "answered": true
+      },
+      "E2-M-0018": {
+       "gc": true,
+       "answered": true
+      },
+      "E2-M-0019": {
+       "gc": true,
+       "answered": true
+      },
+      "E2-M-0020": {
+       "gc": true,
+       "answered": true
+      },
+      "E2-M-0021": {
+       "gc": true,
+       "answered": true
+      },
+      "E2-M-0022": {
+       "gc": false,
+       "answered": false
+      },
+      "E2-M-0023": {
+       "gc": true,
+       "answered": true
+      },
+      "E2-M-0025": {
+       "gc": true,
+       "answered": true
+      },
+      "E2-M-0026": {
+       "gc": true,
+       "answered": true
+      },
+      "E2-M-0027": {
+       "gc": false,
+       "answered": true
+      },
+      "E2-M-0028": {
+       "gc": false,
+       "answered": false
+      },
+      "E2-M-0030": {
+       "gc": false,
+       "answered": false
+      },
+      "E2-M-0031": {
+       "gc": false,
+       "answered": true
+      },
+      "E2-M-0032": {
+       "gc": false,
+       "answered": false
+      },
+      "E2-M-0037": {
+       "gc": false,
+       "answered": true
+      },
+      "E2-M-0039": {
+       "gc": true,
+       "answered": true
+      },
+      "E2-M-0041": {
+       "gc": true,
+       "answered": true
+      },
+      "E2-M-0042": {
+       "gc": true,
+       "answered": true
+      },
+      "E2-M-0044": {
+       "gc": true,
+       "answered": true
+      },
+      "E2-M-0045": {
+       "gc": false,
+       "answered": false
+      },
+      "E2-M-0046": {
+       "gc": false,
+       "answered": false
+      },
+      "E2-M-0047": {
+       "gc": false,
+       "answered": true
+      },
+      "E2-M-0048": {
+       "gc": false,
+       "answered": true
+      },
+      "E2-M-0049": {
+       "gc": false,
+       "answered": true
+      },
+      "E2-M-0050": {
+       "gc": false,
+       "answered": true
+      },
+      "E2-M-0051": {
+       "gc": true,
+       "answered": true
+      },
+      "E2-M-0052": {
+       "gc": true,
+       "answered": true
+      },
+      "E2-M-0053": {
+       "gc": true,
+       "answered": true
+      },
+      "E2-M-0054": {
+       "gc": true,
+       "answered": true
+      },
+      "E2-M-0056": {
+       "gc": false,
+       "answered": true
+      },
+      "E2-M-0058": {
+       "gc": true,
+       "answered": true
+      },
+      "E2-M-0059": {
+       "gc": true,
+       "answered": true
+      },
+      "E2-M-0060": {
+       "gc": true,
+       "answered": true
+      },
+      "E2-M-0062": {
+       "gc": false,
+       "answered": false
+      },
+      "E2-M-0063": {
+       "gc": false,
+       "answered": false
+      },
+      "E2-M-0076": {
+       "cr": true
+      },
+      "E2-M-0080": {
+       "cr": true
+      },
+      "E2-M-0081": {
+       "cr": true
+      },
+      "E2-M-0084": {
+       "cr": true
+      },
+      "E2-M-0085": {
+       "cr": true
+      },
+      "E2-M-0086": {
+       "cr": false
+      },
+      "E2-M-0087": {
+       "cr": true
+      },
+      "E2-M-0088": {
+       "cr": true
+      },
+      "E2-M-0091": {
+       "cr": true
+      },
+      "E2-M-0093": {
+       "cr": true
+      },
+      "E2-M-0094": {
+       "cr": true
+      },
+      "E2-M-0096": {
+       "cr": true
+      },
+      "E2-M-0097": {
+       "cr": true
+      }
+     },
+     "latency_s": {
+      "all": {
+       "n": 61,
+       "p50": 3.766,
+       "p95": 9.039,
+       "p99": null
+      },
+      "answerable": {
+       "n": 44,
+       "p50": 3.9299999999999997,
+       "p95": 9.373700000000003
+      }
+     },
+     "latency_p95_target_15s": "OBSERVED TARGET MET",
+     "llm_calls": {
+      "n": 53,
+      "valid": 53,
+      "wall_p50": 3.777,
+      "wall_p95": 9.104199999999999,
+      "tokens_per_s_median": 26.95
+     }
+    }
+   }
+  }
+ }
+}

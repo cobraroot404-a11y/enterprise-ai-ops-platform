@@ -1,0 +1,27 @@
+{
+  "name": "apex-eval-v1",
+  "synthetic": true,
+  "fictional": true,
+  "documents": [
+    "eval_cc300_compressor_manual.pdf",
+    "eval_cp200_pump_manual.pdf",
+    "eval_cv400_conveyor_manual.pdf",
+    "eval_em55_motor_manual.pdf",
+    "eval_equipment_register.csv",
+    "eval_gb500_gearbox_manual.pdf",
+    "eval_ht600_heat_exchanger_manual.pdf",
+    "eval_incident_history.csv",
+    "eval_inspection_2026q2.pdf",
+    "eval_inspection_2026q3.pdf"
+  ],
+  "queries": {
+    "answerable_dev": 12,
+    "answerable_test": 36,
+    "unanswerable_dev": 4,
+    "unanswerable_test": 8
+  },
+  "fault_reports": 24,
+  "text_files_sha256": "0d89d1b81e276f7ae9cad056eeb960d60283b58f026d8a41b5d894e1683d9569",
+  "relevance_unit": "(filename, page) for PDFs; (filename, record_id) for CSV rows",
+  "splits": "dev: calibrate evidence threshold only; test: held-out reported results"
+}

@@ -1,0 +1,340 @@
+{
+  "generated_utc": "2026-11-13T21:18:12.726858+00:00",
+  "command": "INTEGRATION_REPORT=1 python -m pytest backend/tests/test_integration_success_rate.py -q",
+  "definition": "see the module docstring: a run succeeds iff the request is accepted, the durable job COMPLETES as synced, every source record was seen and created",
+  "environment": {
+    "backends": "deterministic test-only AI backends",
+    "sources": "local mock records service and signed local deliveries",
+    "python": "3.10.0"
+  },
+  "denominator": 14,
+  "succeeded": 14,
+  "rate": 1.0,
+  "target": 0.95,
+  "target_met": true,
+  "by_class": {
+    "rest": {
+      "attempted": 6,
+      "succeeded": 6
+    },
+    "csv": {
+      "attempted": 2,
+      "succeeded": 2
+    },
+    "webhook": {
+      "attempted": 6,
+      "succeeded": 6
+    }
+  },
+  "limits": "same-author suite; 14 nominal runs so the rate is coarse; local mocks; not a production measurement; failure handling is measured separately",
+  "runs": [
+    {
+      "class": "csv",
+      "run": "apex",
+      "succeeded": true,
+      "status": "COMPLETED",
+      "outcome": "synced",
+      "sync": {
+        "pages": 1,
+        "seen": 7,
+        "created": 7,
+        "updated": 0,
+        "unchanged": 0,
+        "linked_duplicate": 0,
+        "skipped_deleted": 0,
+        "tombstoned_changed": 0,
+        "duplicate_in_sync": 0,
+        "conflict": 0,
+        "invalid": 0,
+        "rejections": {},
+        "truncated": false
+      }
+    },
+    {
+      "class": "csv",
+      "run": "meridian",
+      "succeeded": true,
+      "status": "COMPLETED",
+      "outcome": "synced",
+      "sync": {
+        "pages": 1,
+        "seen": 5,
+        "created": 5,
+        "updated": 0,
+        "unchanged": 0,
+        "linked_duplicate": 0,
+        "skipped_deleted": 0,
+        "tombstoned_changed": 0,
+        "duplicate_in_sync": 0,
+        "conflict": 0,
+        "invalid": 0,
+        "rejections": {},
+        "truncated": false
+      }
+    },
+    {
+      "class": "rest",
+      "run": "cursor-apex",
+      "succeeded": true,
+      "status": "COMPLETED",
+      "outcome": "synced",
+      "sync": {
+        "pages": 3,
+        "seen": 7,
+        "created": 7,
+        "updated": 0,
+        "unchanged": 0,
+        "linked_duplicate": 0,
+        "skipped_deleted": 0,
+        "tombstoned_changed": 0,
+        "duplicate_in_sync": 0,
+        "conflict": 0,
+        "invalid": 0,
+        "rejections": {},
+        "truncated": false
+      }
+    },
+    {
+      "class": "rest",
+      "run": "cursor-meridian",
+      "succeeded": true,
+      "status": "COMPLETED",
+      "outcome": "synced",
+      "sync": {
+        "pages": 2,
+        "seen": 5,
+        "created": 5,
+        "updated": 0,
+        "unchanged": 0,
+        "linked_duplicate": 0,
+        "skipped_deleted": 0,
+        "tombstoned_changed": 0,
+        "duplicate_in_sync": 0,
+        "conflict": 0,
+        "invalid": 0,
+        "rejections": {},
+        "truncated": false
+      }
+    },
+    {
+      "class": "rest",
+      "run": "offset-apex",
+      "succeeded": true,
+      "status": "COMPLETED",
+      "outcome": "synced",
+      "sync": {
+        "pages": 3,
+        "seen": 7,
+        "created": 7,
+        "updated": 0,
+        "unchanged": 0,
+        "linked_duplicate": 0,
+        "skipped_deleted": 0,
+        "tombstoned_changed": 0,
+        "duplicate_in_sync": 0,
+        "conflict": 0,
+        "invalid": 0,
+        "rejections": {},
+        "truncated": false
+      }
+    },
+    {
+      "class": "rest",
+      "run": "offset-meridian",
+      "succeeded": true,
+      "status": "COMPLETED",
+      "outcome": "synced",
+      "sync": {
+        "pages": 2,
+        "seen": 5,
+        "created": 5,
+        "updated": 0,
+        "unchanged": 0,
+        "linked_duplicate": 0,
+        "skipped_deleted": 0,
+        "tombstoned_changed": 0,
+        "duplicate_in_sync": 0,
+        "conflict": 0,
+        "invalid": 0,
+        "rejections": {},
+        "truncated": false
+      }
+    },
+    {
+      "class": "rest",
+      "run": "page-apex",
+      "succeeded": true,
+      "status": "COMPLETED",
+      "outcome": "synced",
+      "sync": {
+        "pages": 3,
+        "seen": 7,
+        "created": 7,
+        "updated": 0,
+        "unchanged": 0,
+        "linked_duplicate": 0,
+        "skipped_deleted": 0,
+        "tombstoned_changed": 0,
+        "duplicate_in_sync": 0,
+        "conflict": 0,
+        "invalid": 0,
+        "rejections": {},
+        "truncated": false
+      }
+    },
+    {
+      "class": "rest",
+      "run": "page-meridian",
+      "succeeded": true,
+      "status": "COMPLETED",
+      "outcome": "synced",
+      "sync": {
+        "pages": 2,
+        "seen": 5,
+        "created": 5,
+        "updated": 0,
+        "unchanged": 0,
+        "linked_duplicate": 0,
+        "skipped_deleted": 0,
+        "tombstoned_changed": 0,
+        "duplicate_in_sync": 0,
+        "conflict": 0,
+        "invalid": 0,
+        "rejections": {},
+        "truncated": false
+      }
+    },
+    {
+      "class": "webhook",
+      "run": "endpoint1-delivery1",
+      "succeeded": true,
+      "status": "COMPLETED",
+      "outcome": "synced",
+      "sync": {
+        "pages": 1,
+        "seen": 1,
+        "created": 1,
+        "updated": 0,
+        "unchanged": 0,
+        "linked_duplicate": 0,
+        "skipped_deleted": 0,
+        "tombstoned_changed": 0,
+        "duplicate_in_sync": 0,
+        "conflict": 0,
+        "invalid": 0,
+        "rejections": {},
+        "truncated": false
+      }
+    },
+    {
+      "class": "webhook",
+      "run": "endpoint1-delivery2",
+      "succeeded": true,
+      "status": "COMPLETED",
+      "outcome": "synced",
+      "sync": {
+        "pages": 1,
+        "seen": 1,
+        "created": 1,
+        "updated": 0,
+        "unchanged": 0,
+        "linked_duplicate": 0,
+        "skipped_deleted": 0,
+        "tombstoned_changed": 0,
+        "duplicate_in_sync": 0,
+        "conflict": 0,
+        "invalid": 0,
+        "rejections": {},
+        "truncated": false
+      }
+    },
+    {
+      "class": "webhook",
+      "run": "endpoint1-delivery3",
+      "succeeded": true,
+      "status": "COMPLETED",
+      "outcome": "synced",
+      "sync": {
+        "pages": 1,
+        "seen": 1,
+        "created": 1,
+        "updated": 0,
+        "unchanged": 0,
+        "linked_duplicate": 0,
+        "skipped_deleted": 0,
+        "tombstoned_changed": 0,
+        "duplicate_in_sync": 0,
+        "conflict": 0,
+        "invalid": 0,
+        "rejections": {},
+        "truncated": false
+      }
+    },
+    {
+      "class": "webhook",
+      "run": "endpoint2-delivery1",
+      "succeeded": true,
+      "status": "COMPLETED",
+      "outcome": "synced",
+      "sync": {
+        "pages": 1,
+        "seen": 1,
+        "created": 1,
+        "updated": 0,
+        "unchanged": 0,
+        "linked_duplicate": 0,
+        "skipped_deleted": 0,
+        "tombstoned_changed": 0,
+        "duplicate_in_sync": 0,
+        "conflict": 0,
+        "invalid": 0,
+        "rejections": {},
+        "truncated": false
+      }
+    },
+    {
+      "class": "webhook",
+      "run": "endpoint2-delivery2",
+      "succeeded": true,
+      "status": "COMPLETED",
+      "outcome": "synced",
+      "sync": {
+        "pages": 1,
+        "seen": 1,
+        "created": 1,
+        "updated": 0,
+        "unchanged": 0,
+        "linked_duplicate": 0,
+        "skipped_deleted": 0,
+        "tombstoned_changed": 0,
+        "duplicate_in_sync": 0,
+        "conflict": 0,
+        "invalid": 0,
+        "rejections": {},
+        "truncated": false
+      }
+    },
+    {
+      "class": "webhook",
+      "run": "endpoint2-delivery3",
+      "succeeded": true,
+      "status": "COMPLETED",
+      "outcome": "synced",
+      "sync": {
+        "pages": 1,
+        "seen": 1,
+        "created": 1,
+        "updated": 0,
+        "unchanged": 0,
+        "linked_duplicate": 0,
+        "skipped_deleted": 0,
+        "tombstoned_changed": 0,
+        "duplicate_in_sync": 0,
+        "conflict": 0,
+        "invalid": 0,
+        "rejections": {},
+        "truncated": false
+      }
+    }
+  ]
+}

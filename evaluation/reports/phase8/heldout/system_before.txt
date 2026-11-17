@@ -1,0 +1,14 @@
+
+Name                       CPU MB
+----                       --- --
+ChatGPT             3351.65625   
+claude             3159.796875   
+claude              2002.21875   
+Docker Desktop     1756.421875   
+audiodg                 1602.5   
+Spotify            1571.015625   
+com.docker.backend  1569.09375   
+claude             1305.015625   
+
+
+

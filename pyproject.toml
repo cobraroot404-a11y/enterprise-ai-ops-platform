@@ -1,0 +1,64 @@
+[tool.ruff]
+line-length = 120
+target-version = "py310"
+extend-exclude = [".venv", "frontend"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]
+ignore = ["B008"]  # FastAPI Depends()/Query() defaults are idiomatic
+
+[tool.ruff.lint.per-file-ignores]
+"backend/migrations/**" = ["E501"]
+"backend/tests/**" = ["E501"]  # test tables and fixtures favour readability over line length
+"tests/**" = ["E501"]
+"mock-services/**" = ["E501"]  # fictional data tables
+"evaluation/**" = ["E501", "I001"]  # dataset tables and harness favour readability over line length
+"scripts/**" = ["I001", "E501"]  # sys.path setup must precede first-party imports; scripts favour readable tables
+"workers/**" = ["I001"]
+# Phase 8 quality-switch modules and the code paths they touch carry long explanatory comments next to each switch (documented, not a code-style shortcut)
+"backend/app/ai/tuning.py" = ["E501"]
+"backend/app/ai/suppression.py" = ["E501"]
+"backend/app/ai/measurements.py" = ["E501"]
+"backend/app/ai/measurement_evidence.py" = ["E501"]
+"backend/app/ai/measurement_trust.py" = ["E501"]
+"backend/app/api/v1/response_models.py" = ["E501"]
+"backend/app/api/v1/error_contracts.py" = ["E501"]
+"backend/app/ingestion/lifecycle.py" = ["E501"]
+"backend/app/ingestion/jobs.py" = ["E501"]
+"backend/app/ingestion/sources.py" = ["E501"]
+"backend/app/connectors/rest_records.py" = ["E501"]
+"backend/app/connectors/ratelimit.py" = ["E501"]
+"backend/app/core/limits.py" = ["E501"]
+"backend/app/api/v1/ops_routes.py" = ["E501"]
+"backend/app/observability/metrics.py" = ["E501"]
+"backend/app/observability/tracing.py" = ["E501"]
+"backend/app/core/request_limits.py" = ["E501"]
+"backend/app/connectors/http.py" = ["E501"]
+"backend/app/api/v1/core_routes.py" = ["E501"]
+"backend/app/main.py" = ["E501"]
+"backend/app/core/config.py" = ["E501"]
+"backend/app/workflows/worker.py" = ["E501"]
+"backend/app/workflows/ticket_service.py" = ["E501"]
+"backend/app/ingestion/sync.py" = ["E501"]
+"backend/app/ingestion/webhooks.py" = ["E501"]
+"backend/app/evaluation_registry.py" = ["E501"]
+"backend/app/api/v1/webhook_routes.py" = ["E501"]
+"backend/tests/test_source_ingestion.py" = ["F811"]  # shares the fixtures of test_ingestion_jobs by import
+"backend/tests/test_rest_sync.py" = ["F811"]  # shares the fixtures of test_ingestion_jobs by import
+"backend/tests/test_webhooks.py" = ["F811"]  # shares the fixtures of test_ingestion_jobs by import
+"backend/tests/test_csv_connector.py" = ["F811"]  # shares fixtures of other test modules by import
+"backend/app/ai/rag.py" = ["E501"]
+"backend/app/ai/safety.py" = ["E501"]
+"backend/app/retrieval/entities.py" = ["E501"]
+"backend/app/retrieval/search.py" = ["E501"]
+"backend/app/services/incident_service.py" = ["E501"]
+"backend/app/ingestion/service.py" = ["E501"]
+"backend/app/ai/ollama_llm.py" = ["E501"]
+"backend/app/api/v1/domain_routes.py" = ["E501"]
+
+[tool.pytest.ini_options]
+pythonpath = ["backend", "backend/tests", "workers", "mock-services/ticketing", "mock-services/inventory", "mock-services/servicedesk", "mock-services/fleet", "mock-services/crm", "mock-services/records", "scripts", "."]
+testpaths = ["tests", "backend/tests"]
+markers = [
+  "real_ai: needs real Ollama + MiniLM (opt in with RUN_REAL_AI=1; never run in CI)",
+]

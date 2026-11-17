@@ -1,0 +1,25 @@
+incident_id,date,equipment_id,category,description,root_cause,resolution
+INC-2025-1001,2025-01-15,CV-401,noise,Seized idler roller scoring the belt,Idler bearing seized,Replaced idler PN-9105 and the damaged belt section
+INC-2025-1002,2025-01-15,CC-301,performance_degradation,"Oil carryover into the air line after 9,500 operating hours",Separator element beyond service life,Replaced separator element PN-8801
+INC-2025-1003,2025-01-15,M-202,overheating,Winding temperature alarm at 138 C,Cooling fins blocked with dust,Cleaned the cooling fins
+INC-2025-1004,2025-01-15,P-104,leak,Mechanical seal leaking 20 drops per minute after commissioning,Pump run dry during start-up,Replaced seal with kit PN-5102 and added a priming check
+INC-2025-1005,2025-01-15,G-501,leak,Oil leak at the output shaft,Blocked breather pressurized the casing,Replaced breather and shaft seal PN-9301
+INC-2025-1006,2025-01-15,H-601,performance_degradation,Approach temperature rose 8 C above baseline,Tube fouling,Chemical cleaning with citric acid
+INC-2025-1007,2025-01-15,CC-302,overheating,Discharge temperature trip at 116 C,Oil cooler clogged with dust,Cleaned the oil cooler and topped up oil
+INC-2025-1008,2025-01-15,M-203,electrical_fault,Insulation resistance only 4 MOhm after a flood,Moisture in the windings,Dried windings with low-voltage heating; retest gave 250 MOhm
+INC-2025-1009,2025-01-15,CV-402,noise,Metallic whine from the gearbox,Low gear oil level,Refilled ISO VG 220 oil and replaced the seal
+INC-2025-1010,2025-01-15,P-103,mechanical_vibration,Vibration of 6.9 mm/s at the drive end,Soft foot at the motor mounting,Shimmed the foot and realigned
+INC-2025-1011,2025-01-15,P-102,noise,Gravel-like noise and high strainer differential pressure,Blocked inlet strainer causing cavitation,Cleaned the strainer
+INC-2025-1012,2025-01-15,H-601,leak,Cooling water conductivity rose sharply,Tube leak,Plugged three tubes
+INC-2025-1013,2025-01-15,CC-301,performance_degradation,Reduced capacity and high interstage temperature,Failed valve plate,Replaced valve plates PN-8822
+INC-2025-1014,2025-01-15,CV-401,other,Belt drifting toward the tight side,Training idler out of position,Adjusted the training idler by 1.5 degrees
+INC-2025-1015,2025-01-15,G-502,noise,Gear noise with 0.4 mm backlash,Pitting on gear teeth,Replaced the gear set
+INC-2025-1016,2025-01-15,M-201,electrical_fault,Repeated thermal overload trips,Phase imbalance of 3.5 percent from a loose terminal,Tightened the terminal
+INC-2025-2001,2025-06-01,P-101,mechanical_vibration,Routine vibration reading above trend,Bearing wear,Scheduled bearing replacement
+INC-2025-2002,2025-06-01,P-102,leak,Minor seal weeping,Seal face wear,Monitored and replaced at next outage
+INC-2025-2003,2025-06-01,M-201,overheating,Warm bearing housing,Excess grease,Removed excess grease
+INC-2025-2004,2025-06-01,CC-302,noise,Rattling from the enclosure,Loose panel,Tightened panel fasteners
+INC-2025-2005,2025-06-01,CV-402,other,Skirting rubber worn,Normal wear,Replaced skirting rubber
+INC-2025-2006,2025-06-01,G-501,overheating,Sump temperature high on a hot day,High ambient,Cleaned cooling fan guard
+INC-2025-2007,2025-06-01,H-601,performance_degradation,Slight pressure drop increase,Strainer partly blocked,Cleaned strainer
+INC-2025-2008,2025-06-01,P-104,noise,Humming at the coupling guard,Guard resonance,Added damping strip

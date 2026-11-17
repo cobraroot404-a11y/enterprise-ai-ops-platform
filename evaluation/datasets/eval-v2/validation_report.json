@@ -1,0 +1,103 @@
+{
+  "problems": [],
+  "ok": true,
+  "passages": {
+    "apex": {
+      "total": 735,
+      "current": 717
+    },
+    "meridian": {
+      "total": 712,
+      "current": 694
+    }
+  },
+  "queries": {
+    "total": 215,
+    "by_category": {
+      "keyword": 28,
+      "paraphrase": 35,
+      "multi_hop": 22,
+      "version_conflict": 18,
+      "conflicting_record": 8,
+      "compare": 13,
+      "asset_confusion": 14,
+      "procedure": 14,
+      "adversarial_injection": 12,
+      "unanswerable": 51
+    },
+    "by_tag": {
+      "hard_negative": 139,
+      "paraphrase": 35,
+      "multi_relevant": 35,
+      "multi_document": 35,
+      "version_conflict": 18,
+      "conflicting_record": 8,
+      "similar_identifiers": 14,
+      "semantic": 14,
+      "adversarial": 28,
+      "prompt_injection": 16,
+      "unanswerable": 51,
+      "undocumented": 12,
+      "nonexistent_id": 8,
+      "gap_in_manual": 9,
+      "other_tenant_only": 8,
+      "cross_tenant": 8,
+      "outside_domain": 6,
+      "approval_bypass": 4,
+      "direct_injection": 4
+    },
+    "answerable": 152,
+    "unanswerable_or_refusal_expected": 51,
+    "unanswerable_incl_adversarial_optional": 63,
+    "multi_relevant": 35,
+    "hard_negative_queries": 114,
+    "adversarial_or_cross_tenant": 28,
+    "version_conflict": 18,
+    "by_split_and_tenant": {
+      "challenge/apex": 13,
+      "challenge/meridian": 9,
+      "dev/apex": 57,
+      "dev/meridian": 61,
+      "test/apex": 47,
+      "test/meridian": 28
+    },
+    "by_split": {
+      "test": 75,
+      "dev": 118,
+      "challenge": 22
+    },
+    "by_difficulty": {
+      "medium": 103,
+      "easy": 8,
+      "hard": 104
+    }
+  },
+  "incident_cases": {
+    "total": 60,
+    "by_tenant": {
+      "apex": 30,
+      "meridian": 30
+    },
+    "by_split": {
+      "dev": 34,
+      "challenge": 6,
+      "test": 20
+    },
+    "by_tag": {
+      "clear": 28,
+      "severity": 8,
+      "ambiguous": 8,
+      "safety": 4,
+      "unregistered_asset": 4,
+      "no_asset": 4,
+      "prompt_injection": 4,
+      "adversarial": 4
+    }
+  },
+  "leakage_checks": {
+    "max_cross_split_query_jaccard": 0.846,
+    "exact_duplicate_queries": 0,
+    "groups_spanning_splits": 0
+  },
+  "evidence_spans_verified": 187
+}

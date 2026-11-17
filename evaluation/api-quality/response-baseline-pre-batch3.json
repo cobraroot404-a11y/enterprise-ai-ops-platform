@@ -1,0 +1,1055 @@
+{
+ "DELETE /api/v1/tenants/{tenant_id}/members/{user_id}": {
+  "content_type": "application/json",
+  "headers": [
+   "content-type",
+   "x-correlation-id"
+  ],
+  "shape": {
+   "removed": "str:uuid"
+  },
+  "status": 200
+ },
+ "GET /api/v1/approvals": {
+  "content_type": "application/json",
+  "headers": [
+   "content-type",
+   "x-correlation-id"
+  ],
+  "shape": {
+   "items": [
+    "{\"attempts\": \"int\", \"created_at\": \"str:datetime\", \"created_by\": \"str:uuid\", \"description\": \"str\", \"external_ticket_id\": \"null\", \"id\": \"str:uuid\", \"incident_id\": \"str:uuid\", \"last_error\": \"null\", \"priority\": \"str=P2\", \"state\": \"str=PENDING_APPROVAL\", \"submitted_at\": \"null\", \"title\": \"str\", \"updated_at\": \"str:datetime\"}",
+    "{\"attempts\": \"int\", \"created_at\": \"str:datetime\", \"created_by\": \"str:uuid\", \"description\": \"str\", \"external_ticket_id\": \"null\", \"id\": \"str:uuid\", \"incident_id\": \"str:uuid\", \"last_error\": \"null\", \"priority\": \"str=P3\", \"state\": \"str=PENDING_APPROVAL\", \"submitted_at\": \"null\", \"title\": \"str\", \"updated_at\": \"str:datetime\"}"
+   ],
+   "limit": "int",
+   "offset": "int",
+   "total": "int"
+  },
+  "status": 200
+ },
+ "GET /api/v1/approvals [status=decided]": {
+  "content_type": "application/json",
+  "headers": [
+   "content-type",
+   "x-correlation-id"
+  ],
+  "shape": {
+   "items": [
+    "{\"comment\": \"str\", \"decided_at\": \"str:datetime\", \"decided_by\": \"str:uuid\", \"decision\": \"str=approved\", \"ticket_id\": \"str:uuid\"}"
+   ],
+   "limit": "int",
+   "offset": "int",
+   "total": "int"
+  },
+  "status": 200
+ },
+ "GET /api/v1/audit": {
+  "content_type": "application/json",
+  "headers": [
+   "content-type",
+   "x-correlation-id"
+  ],
+  "shape": {
+   "items": [
+    "{\"action\": \"str\", \"actor\": \"str\", \"actor_type\": \"str\", \"correlation_id\": \"null\", \"created_at\": \"str:datetime\", \"details\": \"empty-object\", \"entity_id\": \"str:uuid\", \"entity_type\": \"str\", \"id\": \"int\"}",
+    "{\"action\": \"str\", \"actor\": \"str\", \"actor_type\": \"str\", \"correlation_id\": \"null\", \"created_at\": \"str:datetime\", \"details\": {\"email\": \"str\", \"role\": \"str=support_engineer\"}, \"entity_id\": \"str:uuid\", \"entity_type\": \"str\", \"id\": \"int\"}",
+    "{\"action\": \"str\", \"actor\": \"str\", \"actor_type\": \"str\", \"correlation_id\": \"null\", \"created_at\": \"str:datetime\", \"details\": {\"from\": \"str\", \"to\": \"str\"}, \"entity_id\": \"str:uuid\", \"entity_type\": \"str\", \"id\": \"int\"}",
+    "{\"action\": \"str\", \"actor\": \"str\", \"actor_type\": \"str\", \"correlation_id\": \"str:uuid\", \"created_at\": \"str:datetime\", \"details\": \"empty-object\", \"entity_id\": \"str:uuid\", \"entity_type\": \"str\", \"id\": \"int\"}",
+    "{\"action\": \"str\", \"actor\": \"str\", \"actor_type\": \"str\", \"correlation_id\": \"str:uuid\", \"created_at\": \"str:datetime\", \"details\": {\"applied_rule\": \"str\", \"asset_id\": \"str\", \"authorized_by\": \"null\", \"decided_at\": \"str:datetime\", \"excluded_candidates\": [\"{\\\"evidence_class\\\": \\\"str=A\\\", \\\"observation_id\\\": \\\"str\\\", \\\"trust_status\\\": \\\"str=UNVERIFIED\\\"}\"], \"incident_id\": \"str:uuid\", \"numeric_rules_executed\": \"bool\", \"observations\": \"empty-list\", \"reason\": \"str\", \"resulting_priority\": \"str\", \"tenant_id\": \"str:uuid\"}, \"entity_id\": \"str:uuid\", \"entity_type\": \"str\", \"id\": \"int\"}",
+    "{\"action\": \"str\", \"actor\": \"str\", \"actor_type\": \"str\", \"correlation_id\": \"str:uuid\", \"created_at\": \"str:datetime\", \"details\": {\"applied_rule\": \"str\", \"asset_id\": \"str\", \"authorized_by\": \"str:uuid\", \"decided_at\": \"str:datetime\", \"evidence_class\": \"str=D\", \"incident_id\": \"str:uuid\", \"measurement_type\": \"str\", \"numeric_rules_executed\": \"bool\", \"observation_id\": \"str\", \"observations\": [\"{\\\"evidence_class\\\": \\\"str=D\\\", \\\"measurement_type\\\": \\\"str\\\", \\\"observation_id\\\": \\\"str\\\", \\\"provenance\\\": {\\\"channel\\\": \\\"str\\\", \\\"client_source_label\\\": \\\"null\\\", \\\"envelope_version\\\": \\\"int\\\", \\\"establishes_truth\\\": \\\"bool\\\", \\\"evidence_location\\\": {\\\"end\\\": \\\"int\\\", \\\"start\\\": \\\"int\\\", \\\"value_end\\\": \\\"int\\\", \\\"value_start\\\": \\\"int\\\"}, \\\"evidence_span\\\": \\\"str\\\", \\\"extraction_origin\\\": \\\"str\\\", \\\"incident_id\\\": \\\"str:uuid\\\", \\\"observation_id\\\": \\\"str\\\", \\\"original_status\\\": \\\"str\\\", \\\"original_trust_status\\\": \\\"str\\\", \\\"simulation_source_id\\\": \\\"null\\\", \\\"source_available\\\": \\\"bool\\\", \\\"source_document_id\\\": \\\"str:uuid\\\", \\\"source_field\\\": \\\"str\\\", \\\"source_missing_reason\\\": \\\"null\\\", \\\"source_type\\\": \\\"str\\\", \\\"submitted_by\\\": \\\"str:uuid\\\", \\\"tenant_id\\\": \\\"str:uuid\\\", \\\"trust_class\\\": \\\"str\\\"}, \\\"simulated\\\": \\\"bool\\\", \\\"unit\\\": \\\"str\\\", \\\"value\\\": \\\"float\\\", \\\"verification_status\\\": \\\"str\\\"}\"], \"priority_after\": \"str\", \"priority_before\": \"str\", \"provenance\": {\"channel\": \"str\", \"client_source_label\": \"null\", \"envelope_version\": \"int\", \"establishes_truth\": \"bool\", \"evidence_location\": {\"end\": \"int\", \"start\": \"int\", \"value_end\": \"int\", \"value_start\": \"int\"}, \"evidence_span\": \"str\", \"extraction_origin\": \"str\", \"incident_id\": \"str:uuid\", \"observation_id\": \"str\", \"original_status\": \"str\", \"original_trust_status\": \"str\", \"simulation_source_id\": \"null\", \"source_available\": \"bool\", \"source_document_id\": \"str:uuid\", \"source_field\": \"str\", \"source_missing_reason\": \"null\", \"source_type\": \"str\", \"submitted_by\": \"str:uuid\", \"tenant_id\": \"str:uuid\", \"trust_class\": \"str\"}, \"reason\": \"str\", \"resulting_priority\": \"str\", \"tenant_id\": \"str:uuid\", \"unit\": \"str\", \"value\": \"float\", \"verification_status\": \"str\"}, \"entity_id\": \"str:uuid\", \"entity_type\": \"str\", \"id\": \"int\"}",
+    "{\"action\": \"str\", \"actor\": \"str\", \"actor_type\": \"str\", \"correlation_id\": \"str:uuid\", \"created_at\": \"str:datetime\", \"details\": {\"asset_id\": \"str\", \"backend\": \"str\", \"citations\": \"int\", \"measurement_decisions\": [\"{\\\"context\\\": \\\"str\\\", \\\"name\\\": \\\"str\\\", \\\"reason\\\": \\\"str\\\", \\\"status\\\": \\\"str=unverified\\\"}\"], \"measurements_unsupported\": \"int\", \"measurements_verified\": \"empty-list\", \"priority\": \"str=P3\", \"related\": \"int\", \"review_urgency\": \"str=routine\"}, \"entity_id\": \"str:uuid\", \"entity_type\": \"str\", \"id\": \"int\"}",
+    "{\"action\": \"str\", \"actor\": \"str\", \"actor_type\": \"str\", \"correlation_id\": \"str:uuid\", \"created_at\": \"str:datetime\", \"details\": {\"asset_id\": \"str\", \"backend\": \"str\", \"citations\": \"int\", \"measurement_decisions\": [\"{\\\"context\\\": \\\"str\\\", \\\"name\\\": \\\"str\\\", \\\"reason\\\": \\\"str\\\", \\\"status\\\": \\\"str=unverified\\\"}\"], \"measurements_unsupported\": \"int\", \"measurements_verified\": \"empty-list\", \"priority\": \"str=P3\", \"related\": \"int\", \"review_urgency\": \"str=urgent\"}, \"entity_id\": \"str:uuid\", \"entity_type\": \"str\", \"id\": \"int\"}",
+    "{\"action\": \"str\", \"actor\": \"str\", \"actor_type\": \"str\", \"correlation_id\": \"str:uuid\", \"created_at\": \"str:datetime\", \"details\": {\"asset_id\": \"str\", \"found_in_register\": \"bool\"}, \"entity_id\": \"str:uuid\", \"entity_type\": \"str\", \"id\": \"int\"}",
+    "{\"action\": \"str\", \"actor\": \"str\", \"actor_type\": \"str\", \"correlation_id\": \"str:uuid\", \"created_at\": \"str:datetime\", \"details\": {\"candidate_value\": \"float\", \"comment\": \"str\", \"evidence_class\": \"str=D\", \"from\": \"str\", \"measurement\": \"str\", \"observation_id\": \"str\", \"provenance\": {\"channel\": \"str\", \"client_source_label\": \"null\", \"envelope_version\": \"int\", \"establishes_truth\": \"bool\", \"evidence_location\": {\"end\": \"int\", \"start\": \"int\", \"value_end\": \"int\", \"value_start\": \"int\"}, \"evidence_span\": \"str\", \"extraction_origin\": \"str\", \"incident_id\": \"str:uuid\", \"observation_id\": \"str\", \"original_status\": \"str\", \"original_trust_status\": \"str\", \"simulation_source_id\": \"null\", \"source_available\": \"bool\", \"source_document_id\": \"str:uuid\", \"source_field\": \"str\", \"source_missing_reason\": \"null\", \"source_type\": \"str\", \"submitted_by\": \"str:uuid\", \"tenant_id\": \"str:uuid\", \"trust_class\": \"str\"}, \"to\": \"str\"}, \"entity_id\": \"str:uuid\", \"entity_type\": \"str\", \"id\": \"int\"}",
+    "{\"action\": \"str\", \"actor\": \"str\", \"actor_type\": \"str\", \"correlation_id\": \"str:uuid\", \"created_at\": \"str:datetime\", \"details\": {\"chunks\": \"int\", \"embedding_backend\": \"str\", \"filename\": \"str\", \"sha256\": \"str\", \"version\": \"int\"}, \"entity_id\": \"str:uuid\", \"entity_type\": \"str\", \"id\": \"int\"}",
+    "{\"action\": \"str\", \"actor\": \"str\", \"actor_type\": \"str\", \"correlation_id\": \"str:uuid\", \"created_at\": \"str:datetime\", \"details\": {\"citations\": \"int\", \"grounded\": \"bool\", \"insufficient_evidence\": \"bool\", \"llm_backend\": \"str\"}, \"entity_id\": \"null\", \"entity_type\": \"str\", \"id\": \"int\"}",
+    "{\"action\": \"str\", \"actor\": \"str\", \"actor_type\": \"str\", \"correlation_id\": \"str:uuid\", \"created_at\": \"str:datetime\", \"details\": {\"comment\": \"str\", \"from\": \"str\"}, \"entity_id\": \"str:uuid\", \"entity_type\": \"str\", \"id\": \"int\"}",
+    "{\"action\": \"str\", \"actor\": \"str\", \"actor_type\": \"str\", \"correlation_id\": \"str:uuid\", \"created_at\": \"str:datetime\", \"details\": {\"comment\": \"str\"}, \"entity_id\": \"str:uuid\", \"entity_type\": \"str\", \"id\": \"int\"}",
+    "{\"action\": \"str\", \"actor\": \"str\", \"actor_type\": \"str\", \"correlation_id\": \"str:uuid\", \"created_at\": \"str:datetime\", \"details\": {\"fields\": [\"\\\"str\\\"\"]}, \"entity_id\": \"str:uuid\", \"entity_type\": \"str\", \"id\": \"int\"}",
+    "{\"action\": \"str\", \"actor\": \"str\", \"actor_type\": \"str\", \"correlation_id\": \"str:uuid\", \"created_at\": \"str:datetime\", \"details\": {\"filename\": \"str\"}, \"entity_id\": \"str:uuid\", \"entity_type\": \"str\", \"id\": \"int\"}",
+    "{\"action\": \"str\", \"actor\": \"str\", \"actor_type\": \"str\", \"correlation_id\": \"str:uuid\", \"created_at\": \"str:datetime\", \"details\": {\"from\": \"str\", \"reason\": \"null\", \"to\": \"str\"}, \"entity_id\": \"str:uuid\", \"entity_type\": \"str\", \"id\": \"int\"}",
+    "{\"action\": \"str\", \"actor\": \"str\", \"actor_type\": \"str\", \"correlation_id\": \"str:uuid\", \"created_at\": \"str:datetime\", \"details\": {\"from\": \"str\", \"reason\": \"str\", \"to\": \"str\"}, \"entity_id\": \"str:uuid\", \"entity_type\": \"str\", \"id\": \"int\"}",
+    "{\"action\": \"str\", \"actor\": \"str\", \"actor_type\": \"str\", \"correlation_id\": \"str:uuid\", \"created_at\": \"str:datetime\", \"details\": {\"incident_id\": \"str:uuid\"}, \"entity_id\": \"str:uuid\", \"entity_type\": \"str\", \"id\": \"int\"}",
+    "{\"action\": \"str\", \"actor\": \"str\", \"actor_type\": \"str\", \"correlation_id\": \"str:uuid\", \"created_at\": \"str:datetime\", \"details\": {\"kind\": \"str=ticketing\", \"name\": \"str\"}, \"entity_id\": \"str:uuid\", \"entity_type\": \"str\", \"id\": \"int\"}"
+   ],
+   "limit": "int",
+   "offset": "int",
+   "total": "int"
+  },
+  "status": 200
+ },
+ "GET /api/v1/auth/me": {
+  "content_type": "application/json",
+  "headers": [
+   "content-type",
+   "x-correlation-id"
+  ],
+  "shape": {
+   "email": "str",
+   "full_name": "str",
+   "id": "str:uuid",
+   "is_platform_admin": "bool",
+   "role": "str=tenant_admin",
+   "tenant_id": "str:uuid"
+  },
+  "status": 200
+ },
+ "GET /api/v1/connectors": {
+  "content_type": "application/json",
+  "headers": [
+   "content-type",
+   "x-correlation-id"
+  ],
+  "shape": {
+   "items": [
+    "{\"base_url\": \"str\", \"config\": \"empty-object\", \"has_secret\": \"bool\", \"id\": \"str:uuid\", \"kind\": \"str=inventory\", \"name\": \"str\"}",
+    "{\"base_url\": \"str\", \"config\": \"empty-object\", \"has_secret\": \"bool\", \"id\": \"str:uuid\", \"kind\": \"str=ticketing\", \"name\": \"str\"}"
+   ]
+  },
+  "status": 200
+ },
+ "GET /api/v1/connectors [meridian]": {
+  "content_type": "application/json",
+  "headers": [
+   "content-type",
+   "x-correlation-id"
+  ],
+  "shape": {
+   "items": [
+    "{\"base_url\": \"str\", \"config\": \"empty-object\", \"has_secret\": \"bool\", \"id\": \"str:uuid\", \"kind\": \"str=crm\", \"name\": \"str\"}",
+    "{\"base_url\": \"str\", \"config\": \"empty-object\", \"has_secret\": \"bool\", \"id\": \"str:uuid\", \"kind\": \"str=fleet\", \"name\": \"str\"}",
+    "{\"base_url\": \"str\", \"config\": {\"create_path\": \"str\", \"id_field\": \"str\", \"payload_map\": {\"asset_id\": \"str\", \"description\": \"str\", \"priority\": \"str=urgency\", \"source_ticket_id\": \"str\", \"title\": \"str\"}, \"priority_map\": {\"P1\": \"str\", \"P2\": \"str\", \"P3\": \"str\", \"P4\": \"str\"}}, \"has_secret\": \"bool\", \"id\": \"str:uuid\", \"kind\": \"str=ticketing\", \"name\": \"str\"}"
+   ]
+  },
+  "status": 200
+ },
+ "GET /api/v1/connectors/health": {
+  "content_type": "application/json",
+  "headers": [
+   "content-type",
+   "x-correlation-id"
+  ],
+  "shape": {
+   "items": [
+    "{\"base_url\": \"str\", \"delivery\": {\"failed\": \"int\", \"last_error\": \"null\", \"last_success_at\": \"null\", \"retry_pending\": \"int\", \"submitted\": \"int\", \"submitting\": \"int\"}, \"destination_authorized\": \"bool\", \"destination_reason\": \"null\", \"has_secret_ref\": \"bool\", \"id\": \"str:uuid\", \"kind\": \"str=ticketing\", \"name\": \"str\", \"probe\": \"str\", \"secret_configured\": \"bool\", \"status\": \"str=ok\"}",
+    "{\"base_url\": \"str\", \"delivery\": {\"failed\": \"int\", \"last_error\": \"null\", \"last_success_at\": \"null\", \"retry_pending\": \"int\", \"submitted\": \"int\", \"submitting\": \"int\"}, \"destination_authorized\": \"bool\", \"destination_reason\": \"null\", \"has_secret_ref\": \"bool\", \"id\": \"str:uuid\", \"kind\": \"str=ticketing\", \"name\": \"str\", \"probe\": \"str\", \"secret_configured\": \"null\", \"status\": \"str=ok\"}",
+    "{\"base_url\": \"str\", \"destination_authorized\": \"bool\", \"destination_reason\": \"null\", \"has_secret_ref\": \"bool\", \"id\": \"str:uuid\", \"kind\": \"str=inventory\", \"name\": \"str\", \"probe\": \"str\", \"secret_configured\": \"null\", \"status\": \"str=ok\"}"
+   ]
+  },
+  "status": 200
+ },
+ "GET /api/v1/documents": {
+  "content_type": "application/json",
+  "headers": [
+   "content-type",
+   "x-correlation-id"
+  ],
+  "shape": {
+   "items": [
+    "{\"chunk_count\": \"int\", \"created_at\": \"str:datetime\", \"current_version\": \"int\", \"filename\": \"str\", \"id\": \"str:uuid\", \"kind\": \"str=equipment_manual\", \"page_count\": \"int\"}",
+    "{\"chunk_count\": \"int\", \"created_at\": \"str:datetime\", \"current_version\": \"int\", \"filename\": \"str\", \"id\": \"str:uuid\", \"kind\": \"str=equipment_register\", \"page_count\": \"null\"}",
+    "{\"chunk_count\": \"int\", \"created_at\": \"str:datetime\", \"current_version\": \"int\", \"filename\": \"str\", \"id\": \"str:uuid\", \"kind\": \"str=incident_history\", \"page_count\": \"null\"}",
+    "{\"chunk_count\": \"int\", \"created_at\": \"str:datetime\", \"current_version\": \"int\", \"filename\": \"str\", \"id\": \"str:uuid\", \"kind\": \"str=inspection_report\", \"page_count\": \"int\"}",
+    "{\"chunk_count\": \"int\", \"created_at\": \"str:datetime\", \"current_version\": \"int\", \"filename\": \"str\", \"id\": \"str:uuid\", \"kind\": \"str=maintenance_log\", \"page_count\": \"null\"}"
+   ],
+   "limit": "int",
+   "offset": "int",
+   "total": "int"
+  },
+  "status": 200
+ },
+ "GET /api/v1/documents/{document_id}": {
+  "content_type": "application/json",
+  "headers": [
+   "content-type",
+   "x-correlation-id"
+  ],
+  "shape": {
+   "current_version": "int",
+   "filename": "str",
+   "id": "str:uuid",
+   "kind": "str=maintenance_log",
+   "versions": [
+    "{\"chunks\": \"int\", \"created_at\": \"str:datetime\", \"embedding_backend\": \"str\", \"sha256\": \"str\", \"size_bytes\": \"int\", \"version\": \"int\"}"
+   ]
+  },
+  "status": 200
+ },
+ "GET /api/v1/evaluation/reports": {
+  "content_type": "application/json",
+  "headers": [
+   "content-type",
+   "x-correlation-id"
+  ],
+  "shape": {
+   "available": "bool",
+   "disclaimer": "str",
+   "fault_injection": {
+    "failed": "int",
+    "generated_utc": "str:datetime",
+    "items": [
+     "{\"id\": \"str\", \"name\": \"str\", \"passed\": \"bool\"}"
+    ],
+    "passed": "int",
+    "scenarios": "int",
+    "source": "str"
+   },
+   "runs": [
+    "{\"backends\": {\"embedding\": \"str\", \"llm\": \"str\"}, \"command\": \"str\", \"dataset\": \"str\", \"evidence_class\": \"str\", \"group\": \"str\", \"hardware\": {\"cpu\": \"str\", \"gpu\": \"null\", \"os\": \"str\", \"ram_gb\": \"float\"}, \"has_note\": \"bool\", \"id\": \"str\", \"metrics\": {\"citation_correctness\": \"float\", \"correct_refusals\": \"str\", \"duplicate_tickets\": \"int\", \"e2e_median_s\": \"float\", \"e2e_p95_s\": \"float\", \"groundedness_rate\": \"float\", \"llm_inference_median_s\": \"null\", \"llm_inference_p95_s\": \"null\", \"mrr\": \"float\", \"precision_at_5\": \"float\", \"recall_at_5\": \"float\", \"structured_validity\": \"float\"}, \"started_utc\": \"str:datetime\", \"versions\": {\"embedding_profile\": \"str\", \"ollama\": \"null\", \"ollama_model\": \"null\", \"ollama_model_digest\": \"null\", \"postgres\": \"str\", \"python\": \"str\"}}",
+    "{\"backends\": {\"embedding\": \"str\", \"llm\": \"str\"}, \"command\": \"str\", \"dataset\": \"str\", \"evidence_class\": \"str=real_ai\", \"group\": \"str\", \"hardware\": {\"cpu\": \"str\", \"gpu\": \"null\", \"os\": \"str\", \"ram_gb\": \"float\"}, \"has_note\": \"bool\", \"id\": \"str\", \"metrics\": {\"citation_correctness\": \"float\", \"correct_refusals\": \"str\", \"duplicate_tickets\": \"int\", \"e2e_median_s\": \"float\", \"e2e_p95_s\": \"float\", \"groundedness_rate\": \"float\", \"llm_inference_median_s\": \"float\", \"llm_inference_p95_s\": \"float\", \"mrr\": \"float\", \"precision_at_5\": \"float\", \"recall_at_5\": \"float\", \"structured_validity\": \"float\"}, \"started_utc\": \"str:datetime\", \"versions\": {\"embedding_profile\": \"str\", \"ollama\": \"str\", \"ollama_model\": \"str\", \"ollama_model_digest\": \"str\", \"postgres\": \"str\", \"python\": \"str\"}}"
+   ],
+   "smoke": [
+    "{\"checks_passed\": \"int\", \"checks_total\": \"int\", \"failed\": \"empty-list\", \"id\": \"str\", \"label\": \"str\", \"models\": {\"embedding_profile\": \"str\", \"ollama_model\": \"str\"}, \"started_utc\": \"str:datetime\"}",
+    "{\"checks_passed\": \"int\", \"checks_total\": \"int\", \"failed\": [\"\\\"str\\\"\"], \"id\": \"str\", \"label\": \"str\", \"models\": {\"embedding_profile\": \"str\", \"ollama_model\": \"str\"}, \"started_utc\": \"str:datetime\"}"
+   ],
+   "targets": [
+    "{\"actual\": {\"max\": \"float\", \"min\": \"float\", \"runs\": \"int\"}, \"id\": \"str\", \"label\": \"str\", \"op\": \"str\", \"status\": \"str=MET\", \"value\": \"float\"}",
+    "{\"actual\": {\"max\": \"float\", \"min\": \"float\", \"runs\": \"int\"}, \"id\": \"str\", \"label\": \"str\", \"op\": \"str\", \"status\": \"str=NOT MET\", \"value\": \"float\"}",
+    "{\"actual\": {\"max\": \"int\", \"min\": \"int\", \"runs\": \"int\"}, \"id\": \"str\", \"label\": \"str\", \"op\": \"str\", \"status\": \"str=MET\", \"value\": \"int\"}"
+   ]
+  },
+  "status": 200
+ },
+ "GET /api/v1/health": {
+  "content_type": "application/json",
+  "headers": [
+   "content-type",
+   "x-correlation-id"
+  ],
+  "shape": {
+   "embedding_backend": "str",
+   "llm_backend": "str",
+   "status": "str=ok"
+  },
+  "status": 200
+ },
+ "GET /api/v1/incidents": {
+  "content_type": "application/json",
+  "headers": [
+   "content-type",
+   "x-correlation-id"
+  ],
+  "shape": {
+   "items": [
+    "{\"asset_id\": \"str\", \"asset_verified\": \"bool\", \"category\": \"str=mechanical_vibration\", \"citations\": [\"{\\\"chunk_id\\\": \\\"str:uuid\\\", \\\"document_id\\\": \\\"str:uuid\\\", \\\"filename\\\": \\\"str\\\", \\\"marker\\\": \\\"int\\\", \\\"page_number\\\": \\\"int\\\", \\\"quote\\\": \\\"str\\\", \\\"record_id\\\": \\\"null\\\", \\\"version\\\": \\\"int\\\"}\"], \"created_at\": \"str:datetime\", \"extraction_backend\": \"str\", \"id\": \"str:uuid\", \"measurements\": [\"{\\\"asset_id\\\": \\\"str\\\", \\\"candidate_value\\\": \\\"float\\\", \\\"candidate_values\\\": [\\\"\\\\\\\"float\\\\\\\"\\\"], \\\"context_type\\\": \\\"str\\\", \\\"converted\\\": \\\"bool\\\", \\\"eligible_for_numeric_priority\\\": \\\"bool\\\", \\\"evidence_class\\\": \\\"str=A\\\", \\\"evidence_location\\\": {\\\"end\\\": \\\"int\\\", \\\"start\\\": \\\"int\\\", \\\"value_end\\\": \\\"int\\\", \\\"value_start\\\": \\\"int\\\"}, \\\"evidence_span\\\": \\\"str\\\", \\\"implied_priority\\\": \\\"str\\\", \\\"incident_id\\\": \\\"str:uuid\\\", \\\"measurement_type\\\": \\\"str\\\", \\\"method\\\": \\\"str\\\", \\\"model_proposed_value\\\": \\\"float\\\", \\\"name\\\": \\\"str\\\", \\\"normalized_unit\\\": \\\"str\\\", \\\"normalized_value\\\": \\\"float\\\", \\\"numeric_locale\\\": \\\"null\\\", \\\"numeric_notation\\\": \\\"str\\\", \\\"observation_id\\\": \\\"str\\\", \\\"observation_timestamp\\\": \\\"null\\\", \\\"original_unit\\\": \\\"str\\\", \\\"original_value\\\": \\\"str\\\", \\\"potentially_critical\\\": \\\"bool\\\", \\\"provenance\\\": {\\\"channel\\\": \\\"str\\\", \\\"client_source_label\\\": \\\"null\\\", \\\"envelope_version\\\": \\\"int\\\", \\\"establishes_truth\\\": \\\"bool\\\", \\\"evidence_location\\\": {\\\"end\\\": \\\"int\\\", \\\"start\\\": \\\"int\\\", \\\"value_end\\\": \\\"int\\\", \\\"value_start\\\": \\\"int\\\"}, \\\"evidence_span\\\": \\\"str\\\", \\\"extraction_origin\\\": \\\"str\\\", \\\"incident_id\\\": \\\"str:uuid\\\", \\\"observation_id\\\": \\\"str\\\", \\\"original_status\\\": \\\"str\\\", \\\"original_trust_status\\\": \\\"str\\\", \\\"simulation_source_id\\\": \\\"null\\\", \\\"source_available\\\": \\\"bool\\\", \\\"source_document_id\\\": \\\"str:uuid\\\", \\\"source_field\\\": \\\"str\\\", \\\"source_missing_reason\\\": \\\"null\\\", \\\"source_type\\\": \\\"str\\\", \\\"submitted_by\\\": \\\"str:uuid\\\", \\\"tenant_id\\\": \\\"str:uuid\\\", \\\"trust_class\\\": \\\"str\\\"}, \\\"reason\\\": \\\"str\\\", \\\"review_required\\\": \\\"bool\\\", \\\"simulated\\\": \\\"bool\\\", \\\"source\\\": \\\"str\\\", \\\"source_document_id\\\": \\\"str:uuid\\\", \\\"source_text\\\": \\\"str\\\", \\\"status\\\": \\\"str=unverified\\\", \\\"temporal_status\\\": \\\"str\\\", \\\"tenant_id\\\": \\\"str:uuid\\\", \\\"trust_status\\\": \\\"str=UNVERIFIED\\\", \\\"unit\\\": \\\"str\\\", \\\"value\\\": \\\"null\\\", \\\"verification_reason\\\": \\\"str\\\", \\\"verification_status\\\": \\\"str\\\"}\"], \"notes\": [\"\\\"str\\\"\"], \"priority\": \"str=P3\", \"recommended_action\": \"str\", \"related_incidents\": [\"{\\\"chunk_id\\\": \\\"str:uuid\\\", \\\"filename\\\": \\\"str\\\", \\\"record_id\\\": \\\"str\\\", \\\"same_asset\\\": \\\"bool\\\", \\\"summary\\\": \\\"str\\\"}\"], \"report_text\": \"str\", \"review_status\": \"str=needs_review\", \"review_urgency\": \"str=urgent\", \"symptoms\": [\"\\\"str\\\"\"]}",
+    "{\"asset_id\": \"str\", \"asset_verified\": \"bool\", \"category\": \"str=mechanical_vibration\", \"citations\": [\"{\\\"chunk_id\\\": \\\"str:uuid\\\", \\\"document_id\\\": \\\"str:uuid\\\", \\\"filename\\\": \\\"str\\\", \\\"marker\\\": \\\"int\\\", \\\"page_number\\\": \\\"int\\\", \\\"quote\\\": \\\"str\\\", \\\"record_id\\\": \\\"null\\\", \\\"version\\\": \\\"int\\\"}\"], \"created_at\": \"str:datetime\", \"extraction_backend\": \"str\", \"id\": \"str:uuid\", \"measurements\": [\"{\\\"asset_id\\\": \\\"str\\\", \\\"candidate_value\\\": \\\"float\\\", \\\"candidate_values\\\": [\\\"\\\\\\\"float\\\\\\\"\\\"], \\\"context_type\\\": \\\"str\\\", \\\"converted\\\": \\\"bool\\\", \\\"eligible_for_numeric_priority\\\": \\\"bool\\\", \\\"evidence_class\\\": \\\"str=A\\\", \\\"evidence_location\\\": {\\\"end\\\": \\\"int\\\", \\\"start\\\": \\\"int\\\", \\\"value_end\\\": \\\"int\\\", \\\"value_start\\\": \\\"int\\\"}, \\\"evidence_span\\\": \\\"str\\\", \\\"implied_priority\\\": \\\"str\\\", \\\"incident_id\\\": \\\"str:uuid\\\", \\\"measurement_type\\\": \\\"str\\\", \\\"method\\\": \\\"str\\\", \\\"model_proposed_value\\\": \\\"float\\\", \\\"name\\\": \\\"str\\\", \\\"normalized_unit\\\": \\\"str\\\", \\\"normalized_value\\\": \\\"float\\\", \\\"numeric_locale\\\": \\\"null\\\", \\\"numeric_notation\\\": \\\"str\\\", \\\"observation_id\\\": \\\"str\\\", \\\"observation_timestamp\\\": \\\"null\\\", \\\"original_unit\\\": \\\"str\\\", \\\"original_value\\\": \\\"str\\\", \\\"potentially_critical\\\": \\\"bool\\\", \\\"provenance\\\": {\\\"channel\\\": \\\"str\\\", \\\"client_source_label\\\": \\\"null\\\", \\\"envelope_version\\\": \\\"int\\\", \\\"establishes_truth\\\": \\\"bool\\\", \\\"evidence_location\\\": {\\\"end\\\": \\\"int\\\", \\\"start\\\": \\\"int\\\", \\\"value_end\\\": \\\"int\\\", \\\"value_start\\\": \\\"int\\\"}, \\\"evidence_span\\\": \\\"str\\\", \\\"extraction_origin\\\": \\\"str\\\", \\\"incident_id\\\": \\\"str:uuid\\\", \\\"observation_id\\\": \\\"str\\\", \\\"original_status\\\": \\\"str\\\", \\\"original_trust_status\\\": \\\"str\\\", \\\"simulation_source_id\\\": \\\"null\\\", \\\"source_available\\\": \\\"bool\\\", \\\"source_document_id\\\": \\\"str:uuid\\\", \\\"source_field\\\": \\\"str\\\", \\\"source_missing_reason\\\": \\\"null\\\", \\\"source_type\\\": \\\"str\\\", \\\"submitted_by\\\": \\\"str:uuid\\\", \\\"tenant_id\\\": \\\"str:uuid\\\", \\\"trust_class\\\": \\\"str\\\"}, \\\"reason\\\": \\\"str\\\", \\\"review_required\\\": \\\"bool\\\", \\\"simulated\\\": \\\"bool\\\", \\\"source\\\": \\\"str\\\", \\\"source_document_id\\\": \\\"str:uuid\\\", \\\"source_text\\\": \\\"str\\\", \\\"status\\\": \\\"str=unverified\\\", \\\"temporal_status\\\": \\\"str\\\", \\\"tenant_id\\\": \\\"str:uuid\\\", \\\"trust_status\\\": \\\"str=UNVERIFIED\\\", \\\"unit\\\": \\\"str\\\", \\\"value\\\": \\\"null\\\", \\\"verification_reason\\\": \\\"str\\\", \\\"verification_status\\\": \\\"str\\\"}\"], \"notes\": [\"\\\"str\\\"\"], \"priority\": \"str=P3\", \"recommended_action\": \"str\", \"related_incidents\": [\"{\\\"chunk_id\\\": \\\"str:uuid\\\", \\\"filename\\\": \\\"str\\\", \\\"record_id\\\": \\\"str\\\", \\\"same_asset\\\": \\\"bool\\\", \\\"summary\\\": \\\"str\\\"}\"], \"report_text\": \"str\", \"review_status\": \"str=pending_review\", \"review_urgency\": \"str=urgent\", \"symptoms\": [\"\\\"str\\\"\"]}"
+   ],
+   "limit": "int",
+   "offset": "int",
+   "total": "int"
+  },
+  "status": 200
+ },
+ "GET /api/v1/incidents/{incident_id}": {
+  "content_type": "application/json",
+  "headers": [
+   "content-type",
+   "x-correlation-id"
+  ],
+  "shape": {
+   "asset_id": "str",
+   "asset_verified": "bool",
+   "category": "str=mechanical_vibration",
+   "citations": [
+    "{\"chunk_id\": \"str:uuid\", \"document_id\": \"str:uuid\", \"filename\": \"str\", \"marker\": \"int\", \"page_number\": \"int\", \"quote\": \"str\", \"record_id\": \"null\", \"version\": \"int\"}"
+   ],
+   "created_at": "str:datetime",
+   "extraction_backend": "str",
+   "id": "str:uuid",
+   "measurements": [
+    "{\"asset_id\": \"str\", \"candidate_value\": \"float\", \"candidate_values\": [\"\\\"float\\\"\"], \"context_type\": \"str\", \"converted\": \"bool\", \"eligible_for_numeric_priority\": \"bool\", \"evidence_class\": \"str=A\", \"evidence_location\": {\"end\": \"int\", \"start\": \"int\", \"value_end\": \"int\", \"value_start\": \"int\"}, \"evidence_span\": \"str\", \"implied_priority\": \"str\", \"incident_id\": \"str:uuid\", \"measurement_type\": \"str\", \"method\": \"str\", \"model_proposed_value\": \"float\", \"name\": \"str\", \"normalized_unit\": \"str\", \"normalized_value\": \"float\", \"numeric_locale\": \"null\", \"numeric_notation\": \"str\", \"observation_id\": \"str\", \"observation_timestamp\": \"null\", \"original_unit\": \"str\", \"original_value\": \"str\", \"potentially_critical\": \"bool\", \"provenance\": {\"channel\": \"str\", \"client_source_label\": \"null\", \"envelope_version\": \"int\", \"establishes_truth\": \"bool\", \"evidence_location\": {\"end\": \"int\", \"start\": \"int\", \"value_end\": \"int\", \"value_start\": \"int\"}, \"evidence_span\": \"str\", \"extraction_origin\": \"str\", \"incident_id\": \"str:uuid\", \"observation_id\": \"str\", \"original_status\": \"str\", \"original_trust_status\": \"str\", \"simulation_source_id\": \"null\", \"source_available\": \"bool\", \"source_document_id\": \"str:uuid\", \"source_field\": \"str\", \"source_missing_reason\": \"null\", \"source_type\": \"str\", \"submitted_by\": \"str:uuid\", \"tenant_id\": \"str:uuid\", \"trust_class\": \"str\"}, \"reason\": \"str\", \"review_required\": \"bool\", \"simulated\": \"bool\", \"source\": \"str\", \"source_document_id\": \"str:uuid\", \"source_text\": \"str\", \"status\": \"str=unverified\", \"temporal_status\": \"str\", \"tenant_id\": \"str:uuid\", \"trust_status\": \"str=UNVERIFIED\", \"unit\": \"str\", \"value\": \"null\", \"verification_reason\": \"str\", \"verification_status\": \"str\"}"
+   ],
+   "notes": [
+    "\"str\""
+   ],
+   "priority": "str=P3",
+   "recommended_action": "str",
+   "related_incidents": [
+    "{\"chunk_id\": \"str:uuid\", \"filename\": \"str\", \"record_id\": \"str\", \"same_asset\": \"bool\", \"summary\": \"str\"}"
+   ],
+   "report_text": "str",
+   "review_status": "str=pending_review",
+   "review_urgency": "str=urgent",
+   "symptoms": [
+    "\"str\""
+   ]
+  },
+  "status": 200
+ },
+ "GET /api/v1/incidents/{incident_id}/history": {
+  "content_type": "application/json",
+  "headers": [
+   "content-type",
+   "x-correlation-id"
+  ],
+  "shape": {
+   "events": [
+    "{\"action\": \"str\", \"actor\": \"str\", \"actor_type\": \"str\", \"created_at\": \"str:datetime\", \"details\": {\"applied_rule\": \"str\", \"asset_id\": \"str\", \"authorized_by\": \"null\", \"decided_at\": \"str:datetime\", \"excluded_candidates\": [\"{\\\"evidence_class\\\": \\\"str=A\\\", \\\"observation_id\\\": \\\"str\\\", \\\"trust_status\\\": \\\"str=UNVERIFIED\\\"}\"], \"incident_id\": \"str:uuid\", \"numeric_rules_executed\": \"bool\", \"observations\": \"empty-list\", \"reason\": \"str\", \"resulting_priority\": \"str\", \"tenant_id\": \"str:uuid\"}, \"id\": \"int\"}",
+    "{\"action\": \"str\", \"actor\": \"str\", \"actor_type\": \"str\", \"created_at\": \"str:datetime\", \"details\": {\"asset_id\": \"str\", \"backend\": \"str\", \"citations\": \"int\", \"measurement_decisions\": [\"{\\\"context\\\": \\\"str\\\", \\\"name\\\": \\\"str\\\", \\\"reason\\\": \\\"str\\\", \\\"status\\\": \\\"str=unverified\\\"}\"], \"measurements_unsupported\": \"int\", \"measurements_verified\": \"empty-list\", \"priority\": \"str=P3\", \"related\": \"int\", \"review_urgency\": \"str=urgent\"}, \"id\": \"int\"}"
+   ],
+   "incident_id": "str:uuid",
+   "tickets": "empty-list"
+  },
+  "status": 200
+ },
+ "GET /api/v1/ingestion/status": {
+  "content_type": "application/json",
+  "headers": [
+   "content-type",
+   "x-correlation-id"
+  ],
+  "shape": {
+   "chunks": "int",
+   "documents_versions": "int"
+  },
+  "status": 200
+ },
+ "GET /api/v1/metrics": {
+  "content_type": "application/json",
+  "headers": [
+   "content-type",
+   "x-correlation-id"
+  ],
+  "shape": {
+   "approvals_decided": "int",
+   "avg_approval_turnaround_seconds": "null",
+   "dead_letters": "int",
+   "documents": "int",
+   "documents_by_kind": {
+    "equipment_manual": "int",
+    "equipment_register": "int",
+    "incident_history": "int",
+    "inspection_report": "int",
+    "maintenance_log": "int"
+   },
+   "incidents": "int",
+   "incidents_by_priority": "empty-object",
+   "incidents_by_review_status": "empty-object",
+   "outbox_by_status": "empty-object",
+   "submission_attempts": "int",
+   "tickets_by_state": "empty-object",
+   "tickets_needing_retries": "int"
+  },
+  "status": 200
+ },
+ "GET /api/v1/observability/summary": {
+  "content_type": "application/json",
+  "headers": [
+   "content-type",
+   "x-correlation-id"
+  ],
+  "shape": {
+   "database": {
+    "approvals": {
+     "approved": "int",
+     "rejected": "int"
+    },
+    "incident_review": {
+     "accepted": "int",
+     "cleared_without_review": "int",
+     "extracted": "int",
+     "needs_review_now": "int",
+     "rejected": "int",
+     "required_review": "int",
+     "review_required_rate": "null"
+    },
+    "submission": {
+     "blocked_by_release_controls": "int",
+     "dead_lettered": "int",
+     "retries_scheduled": "int",
+     "submitted": "int"
+    },
+    "ticket_error_classes": "empty-object",
+    "ticket_transitions": "empty-list"
+   },
+   "process": {
+    "counters": "empty-list",
+    "process_started_at": "float",
+    "timers": [
+     "{\"count\": \"int\", \"labels\": {\"tenant\": \"str:uuid\"}, \"max_s\": \"float\", \"mean_s\": \"float\", \"name\": \"str\", \"p50_s\": \"float\", \"p95_s\": \"float\", \"window\": \"int\"}"
+    ],
+    "uptime_s": "float"
+   },
+   "scope": "str"
+  },
+  "status": 200
+ },
+ "GET /api/v1/onboarding/health": {
+  "content_type": "application/json",
+  "headers": [
+   "content-type",
+   "x-correlation-id"
+  ],
+  "shape": {
+   "checks": [
+    "{\"detail\": \"str\", \"id\": \"str\", \"label\": \"str\", \"status\": \"str=pass\"}"
+   ],
+   "passed": "int",
+   "total": "int"
+  },
+  "status": 200
+ },
+ "GET /api/v1/onboarding/health [meridian]": {
+  "content_type": "application/json",
+  "headers": [
+   "content-type",
+   "x-correlation-id"
+  ],
+  "shape": {
+   "checks": [
+    "{\"detail\": \"str\", \"id\": \"str\", \"label\": \"str\", \"status\": \"str=pass\"}"
+   ],
+   "passed": "int",
+   "total": "int"
+  },
+  "status": 200
+ },
+ "GET /api/v1/platform/audit": {
+  "content_type": "application/json",
+  "headers": [
+   "content-type",
+   "x-correlation-id"
+  ],
+  "shape": {
+   "items": [
+    "{\"action\": \"str\", \"actor_id\": \"str:uuid\", \"created_at\": \"str:datetime\", \"details\": {\"email\": \"str\"}, \"id\": \"int\"}"
+   ],
+   "limit": "int",
+   "offset": "int",
+   "total": "int"
+  },
+  "status": 200
+ },
+ "GET /api/v1/tenant-profile": {
+  "content_type": "application/json",
+  "headers": [
+   "content-type",
+   "x-correlation-id"
+  ],
+  "shape": {
+   "profile": "null",
+   "updated_at": "null",
+   "using_defaults": "bool",
+   "version": "int"
+  },
+  "status": 200
+ },
+ "GET /api/v1/tenant-profile [meridian]": {
+  "content_type": "application/json",
+  "headers": [
+   "content-type",
+   "x-correlation-id"
+  ],
+  "shape": {
+   "profile": {
+    "asset_id_pattern": "str",
+    "asset_label": "str",
+    "categories": [
+     "{\"description\": \"str\", \"keywords\": [\"\\\"str\\\"\"], \"name\": \"str\"}"
+    ],
+    "default_priority": "str",
+    "document_kinds": [
+     "\"str\""
+    ],
+    "enrichments": [
+     "{\"connector_kind\": \"str\", \"label\": \"str\", \"path\": \"str\", \"required_fields\": [\"\\\"str\\\"\"], \"template\": \"str\"}"
+    ],
+    "field_maps": {
+     "fleet_register": {
+      "columns": {
+       "depot": "str",
+       "description": "str",
+       "unit_id": "str"
+      },
+      "id_field": "str"
+     },
+     "service_history": {
+      "columns": {
+       "cause": "str",
+       "fix": "str",
+       "issue_summary": "str",
+       "issue_type": "str",
+       "record_ref": "str",
+       "service_date": "str",
+       "unit_id": "str"
+      },
+      "id_field": "str"
+     },
+     "telematics_alerts": {
+      "columns": {
+       "alert_ref": "str",
+       "alert_text": "str",
+       "raised_at": "str",
+       "unit_id": "str"
+      },
+      "id_field": "str"
+     }
+    },
+    "guidance_kinds": [
+     "\"str\""
+    ],
+    "history_kind": "str",
+    "priority_rules": [
+     "{\"any\": [\"{\\\"category_in\\\": [\\\"\\\\\\\"str\\\\\\\"\\\"], \\\"flag\\\": \\\"null\\\", \\\"gte\\\": \\\"null\\\", \\\"lte\\\": \\\"null\\\", \\\"signal\\\": \\\"null\\\"}\"], \"priority\": \"str=P3\"}",
+     "{\"any\": [\"{\\\"category_in\\\": \\\"null\\\", \\\"flag\\\": \\\"null\\\", \\\"gte\\\": \\\"float\\\", \\\"lte\\\": \\\"null\\\", \\\"signal\\\": \\\"str\\\"}\", \"{\\\"category_in\\\": \\\"null\\\", \\\"flag\\\": \\\"null\\\", \\\"gte\\\": \\\"null\\\", \\\"lte\\\": \\\"float\\\", \\\"signal\\\": \\\"str\\\"}\", \"{\\\"category_in\\\": [\\\"\\\\\\\"str\\\\\\\"\\\"], \\\"flag\\\": \\\"null\\\", \\\"gte\\\": \\\"null\\\", \\\"lte\\\": \\\"null\\\", \\\"signal\\\": \\\"null\\\"}\"], \"priority\": \"str=P2\"}",
+     "{\"any\": [\"{\\\"category_in\\\": \\\"null\\\", \\\"flag\\\": \\\"null\\\", \\\"gte\\\": \\\"float\\\", \\\"lte\\\": \\\"null\\\", \\\"signal\\\": \\\"str\\\"}\", \"{\\\"category_in\\\": \\\"null\\\", \\\"flag\\\": \\\"null\\\", \\\"gte\\\": \\\"null\\\", \\\"lte\\\": \\\"float\\\", \\\"signal\\\": \\\"str\\\"}\", \"{\\\"category_in\\\": \\\"null\\\", \\\"flag\\\": \\\"str\\\", \\\"gte\\\": \\\"null\\\", \\\"lte\\\": \\\"null\\\", \\\"signal\\\": \\\"null\\\"}\"], \"priority\": \"str=P1\"}"
+    ],
+    "register_kind": "str",
+    "safety_keywords": [
+     "\"str\""
+    ],
+    "signals": [
+     "{\"name\": \"str\", \"regex\": \"str\", \"unit\": \"str\"}"
+    ],
+    "symptoms": [
+     "{\"keywords\": [\"\\\"str\\\"\"], \"name\": \"str\"}"
+    ]
+   },
+   "updated_at": "str:datetime",
+   "using_defaults": "bool",
+   "version": "int"
+  },
+  "status": 200
+ },
+ "GET /api/v1/tenants/mine": {
+  "content_type": "application/json",
+  "headers": [
+   "content-type",
+   "x-correlation-id"
+  ],
+  "shape": {
+   "items": [
+    "{\"id\": \"str:uuid\", \"name\": \"str\", \"role\": \"str=tenant_admin\", \"slug\": \"str\"}"
+   ]
+  },
+  "status": 200
+ },
+ "GET /api/v1/tenants/{tenant_id}/members": {
+  "content_type": "application/json",
+  "headers": [
+   "content-type",
+   "x-correlation-id"
+  ],
+  "shape": {
+   "items": [
+    "{\"email\": \"str\", \"full_name\": \"str\", \"role\": \"str=maintenance_supervisor\", \"user_id\": \"str:uuid\"}",
+    "{\"email\": \"str\", \"full_name\": \"str\", \"role\": \"str=read_only_auditor\", \"user_id\": \"str:uuid\"}",
+    "{\"email\": \"str\", \"full_name\": \"str\", \"role\": \"str=support_engineer\", \"user_id\": \"str:uuid\"}",
+    "{\"email\": \"str\", \"full_name\": \"str\", \"role\": \"str=tenant_admin\", \"user_id\": \"str:uuid\"}"
+   ]
+  },
+  "status": 200
+ },
+ "GET /api/v1/tickets": {
+  "content_type": "application/json",
+  "headers": [
+   "content-type",
+   "x-correlation-id"
+  ],
+  "shape": {
+   "items": [
+    "{\"attempts\": \"int\", \"created_at\": \"str:datetime\", \"created_by\": \"str:uuid\", \"description\": \"str\", \"external_ticket_id\": \"null\", \"id\": \"str:uuid\", \"incident_id\": \"str:uuid\", \"last_error\": \"null\", \"priority\": \"str=P2\", \"state\": \"str=DRAFT\", \"submitted_at\": \"null\", \"title\": \"str\", \"updated_at\": \"str:datetime\"}",
+    "{\"attempts\": \"int\", \"created_at\": \"str:datetime\", \"created_by\": \"str:uuid\", \"description\": \"str\", \"external_ticket_id\": \"null\", \"id\": \"str:uuid\", \"incident_id\": \"str:uuid\", \"last_error\": \"null\", \"priority\": \"str=P3\", \"state\": \"str=DRAFT\", \"submitted_at\": \"null\", \"title\": \"str\", \"updated_at\": \"str:datetime\"}"
+   ],
+   "limit": "int",
+   "offset": "int",
+   "total": "int"
+  },
+  "status": 200
+ },
+ "GET /api/v1/tickets/{ticket_id}": {
+  "content_type": "application/json",
+  "headers": [
+   "content-type",
+   "x-correlation-id"
+  ],
+  "shape": {
+   "attempts": "int",
+   "created_at": "str:datetime",
+   "created_by": "str:uuid",
+   "description": "str",
+   "external_ticket_id": "null",
+   "id": "str:uuid",
+   "incident_id": "str:uuid",
+   "last_error": "null",
+   "priority": "str=P2",
+   "state": "str=DRAFT",
+   "submitted_at": "null",
+   "title": "str",
+   "updated_at": "str:datetime"
+  },
+  "status": 200
+ },
+ "GET /api/v1/tickets/{ticket_id}/history": {
+  "content_type": "application/json",
+  "headers": [
+   "content-type",
+   "x-correlation-id"
+  ],
+  "shape": {
+   "approvals": [
+    "{\"comment\": \"str\", \"decided_at\": \"str:datetime\", \"decided_by\": \"str:uuid\", \"decision\": \"str=approved\"}"
+   ],
+   "events": [
+    "{\"action\": \"str\", \"actor\": \"str\", \"actor_type\": \"str\", \"created_at\": \"str:datetime\", \"details\": {\"comment\": \"str\"}, \"id\": \"int\"}",
+    "{\"action\": \"str\", \"actor\": \"str\", \"actor_type\": \"str\", \"created_at\": \"str:datetime\", \"details\": {\"fields\": [\"\\\"str\\\"\"]}, \"id\": \"int\"}",
+    "{\"action\": \"str\", \"actor\": \"str\", \"actor_type\": \"str\", \"created_at\": \"str:datetime\", \"details\": {\"from\": \"str\", \"reason\": \"null\", \"to\": \"str\"}, \"id\": \"int\"}",
+    "{\"action\": \"str\", \"actor\": \"str\", \"actor_type\": \"str\", \"created_at\": \"str:datetime\", \"details\": {\"incident_id\": \"str:uuid\"}, \"id\": \"int\"}"
+   ],
+   "ticket_id": "str:uuid"
+  },
+  "status": 200
+ },
+ "GET /api/v1/workflows": {
+  "content_type": "application/json",
+  "headers": [
+   "content-type",
+   "x-correlation-id"
+  ],
+  "shape": {
+   "items": [
+    "{\"attempts\": \"int\", \"created_at\": \"str:datetime\", \"id\": \"int\", \"last_error\": \"null\", \"processed_at\": \"null\", \"status\": \"str=pending\", \"ticket_id\": \"str:uuid\", \"topic\": \"str=ticket.submit\"}"
+   ],
+   "limit": "int",
+   "offset": "int",
+   "total": "int"
+  },
+  "status": 200
+ },
+ "PATCH /api/v1/tenants/{tenant_id}/members/{user_id}": {
+  "content_type": "application/json",
+  "headers": [
+   "content-type",
+   "x-correlation-id"
+  ],
+  "shape": {
+   "role": "str=maintenance_supervisor",
+   "user_id": "str:uuid"
+  },
+  "status": 200
+ },
+ "PATCH /api/v1/tickets/{ticket_id}": {
+  "content_type": "application/json",
+  "headers": [
+   "content-type",
+   "x-correlation-id"
+  ],
+  "shape": {
+   "attempts": "int",
+   "created_at": "str:datetime",
+   "created_by": "str:uuid",
+   "description": "str",
+   "external_ticket_id": "null",
+   "id": "str:uuid",
+   "incident_id": "str:uuid",
+   "last_error": "null",
+   "priority": "str=P2",
+   "state": "str=DRAFT",
+   "submitted_at": "null",
+   "title": "str",
+   "updated_at": "str:datetime"
+  },
+  "status": 200
+ },
+ "POST /api/v1/ai/ask": {
+  "content_type": "application/json",
+  "headers": [
+   "content-type",
+   "x-correlation-id"
+  ],
+  "shape": {
+   "answer": "str",
+   "citations": [
+    "{\"chunk_id\": \"str:uuid\", \"document_id\": \"str:uuid\", \"filename\": \"str\", \"marker\": \"int\", \"page_number\": \"int\", \"quote\": \"str\", \"record_id\": \"null\", \"version\": \"int\"}",
+    "{\"chunk_id\": \"str:uuid\", \"document_id\": \"str:uuid\", \"filename\": \"str\", \"marker\": \"int\", \"page_number\": \"null\", \"quote\": \"str\", \"record_id\": \"str\", \"version\": \"int\"}"
+   ],
+   "embedding_backend": "str",
+   "excluded_suspicious": "empty-list",
+   "grounded": "bool",
+   "insufficient_evidence": "bool",
+   "llm_backend": "str",
+   "llm_model": "str",
+   "problems": "empty-list"
+  },
+  "status": 200
+ },
+ "POST /api/v1/approvals/{ticket_id}/decision": {
+  "content_type": "application/json",
+  "headers": [
+   "content-type",
+   "x-correlation-id"
+  ],
+  "shape": {
+   "attempts": "int",
+   "created_at": "str:datetime",
+   "created_by": "str:uuid",
+   "description": "str",
+   "external_ticket_id": "null",
+   "id": "str:uuid",
+   "incident_id": "str:uuid",
+   "last_error": "null",
+   "priority": "str=P2",
+   "state": "str=APPROVED",
+   "submitted_at": "null",
+   "title": "str",
+   "updated_at": "str:datetime"
+  },
+  "status": 200
+ },
+ "POST /api/v1/auth/login": {
+  "content_type": "application/json",
+  "headers": [
+   "content-type",
+   "x-correlation-id"
+  ],
+  "shape": {
+   "access_token": "str",
+   "role": "str=tenant_admin",
+   "tenant_id": "str:uuid",
+   "token_type": "str",
+   "user": {
+    "email": "str",
+    "full_name": "str",
+    "id": "str:uuid"
+   }
+  },
+  "status": 200
+ },
+ "POST /api/v1/connectors": {
+  "content_type": "application/json",
+  "headers": [
+   "content-type",
+   "x-correlation-id"
+  ],
+  "shape": {
+   "id": "str:uuid",
+   "kind": "str=ticketing",
+   "name": "str"
+  },
+  "status": 201
+ },
+ "POST /api/v1/documents": {
+  "content_type": "application/json",
+  "headers": [
+   "content-type",
+   "x-correlation-id"
+  ],
+  "shape": {
+   "chunk_count": "int",
+   "document_id": "str:uuid",
+   "status": "str=duplicate",
+   "version": "int"
+  },
+  "status": 201
+ },
+ "POST /api/v1/incidents/extract": {
+  "content_type": "application/json",
+  "headers": [
+   "content-type",
+   "x-correlation-id"
+  ],
+  "shape": {
+   "asset_id": "str",
+   "asset_verified": "bool",
+   "category": "str=mechanical_vibration",
+   "citations": [
+    "{\"chunk_id\": \"str:uuid\", \"document_id\": \"str:uuid\", \"filename\": \"str\", \"marker\": \"int\", \"page_number\": \"int\", \"quote\": \"str\", \"record_id\": \"null\", \"version\": \"int\"}"
+   ],
+   "created_at": "str:datetime",
+   "extraction_backend": "str",
+   "id": "str:uuid",
+   "measurements": [
+    "{\"asset_id\": \"str\", \"candidate_value\": \"float\", \"candidate_values\": [\"\\\"float\\\"\"], \"context_type\": \"str\", \"converted\": \"bool\", \"eligible_for_numeric_priority\": \"bool\", \"evidence_class\": \"str=A\", \"evidence_location\": {\"end\": \"int\", \"start\": \"int\", \"value_end\": \"int\", \"value_start\": \"int\"}, \"evidence_span\": \"str\", \"implied_priority\": \"str\", \"incident_id\": \"str:uuid\", \"measurement_type\": \"str\", \"method\": \"str\", \"model_proposed_value\": \"float\", \"name\": \"str\", \"normalized_unit\": \"str\", \"normalized_value\": \"float\", \"numeric_locale\": \"null\", \"numeric_notation\": \"str\", \"observation_id\": \"str\", \"observation_timestamp\": \"null\", \"original_unit\": \"str\", \"original_value\": \"str\", \"potentially_critical\": \"bool\", \"provenance\": {\"channel\": \"str\", \"client_source_label\": \"null\", \"envelope_version\": \"int\", \"establishes_truth\": \"bool\", \"evidence_location\": {\"end\": \"int\", \"start\": \"int\", \"value_end\": \"int\", \"value_start\": \"int\"}, \"evidence_span\": \"str\", \"extraction_origin\": \"str\", \"incident_id\": \"str:uuid\", \"observation_id\": \"str\", \"original_status\": \"str\", \"original_trust_status\": \"str\", \"simulation_source_id\": \"null\", \"source_available\": \"bool\", \"source_document_id\": \"str:uuid\", \"source_field\": \"str\", \"source_missing_reason\": \"null\", \"source_type\": \"str\", \"submitted_by\": \"str:uuid\", \"tenant_id\": \"str:uuid\", \"trust_class\": \"str\"}, \"reason\": \"str\", \"review_required\": \"bool\", \"simulated\": \"bool\", \"source\": \"str\", \"source_document_id\": \"str:uuid\", \"source_text\": \"str\", \"status\": \"str=unverified\", \"temporal_status\": \"str\", \"tenant_id\": \"str:uuid\", \"trust_status\": \"str=UNVERIFIED\", \"unit\": \"str\", \"value\": \"null\", \"verification_reason\": \"str\", \"verification_status\": \"str\"}"
+   ],
+   "notes": [
+    "\"str\""
+   ],
+   "priority": "str=P3",
+   "recommended_action": "str",
+   "related_incidents": [
+    "{\"chunk_id\": \"str:uuid\", \"filename\": \"str\", \"record_id\": \"str\", \"same_asset\": \"bool\", \"summary\": \"str\"}"
+   ],
+   "report_text": "str",
+   "review_status": "str=pending_review",
+   "review_urgency": "str=urgent",
+   "symptoms": [
+    "\"str\""
+   ]
+  },
+  "status": 201
+ },
+ "POST /api/v1/incidents/{incident_id}/measurements/{name}/verify": {
+  "content_type": "application/json",
+  "headers": [
+   "content-type",
+   "x-correlation-id"
+  ],
+  "shape": {
+   "asset_id": "str",
+   "asset_verified": "bool",
+   "category": "str=mechanical_vibration",
+   "citations": [
+    "{\"chunk_id\": \"str:uuid\", \"document_id\": \"str:uuid\", \"filename\": \"str\", \"marker\": \"int\", \"page_number\": \"int\", \"quote\": \"str\", \"record_id\": \"null\", \"version\": \"int\"}"
+   ],
+   "created_at": "str:datetime",
+   "extraction_backend": "str",
+   "id": "str:uuid",
+   "measurements": [
+    "{\"asset_id\": \"str\", \"candidate_value\": \"float\", \"candidate_values\": [\"\\\"float\\\"\"], \"context_type\": \"str\", \"converted\": \"bool\", \"eligible_for_numeric_priority\": \"bool\", \"evidence_class\": \"str=D\", \"evidence_location\": {\"end\": \"int\", \"start\": \"int\", \"value_end\": \"int\", \"value_start\": \"int\"}, \"evidence_span\": \"str\", \"implied_priority\": \"str\", \"incident_id\": \"str:uuid\", \"measurement_type\": \"str\", \"method\": \"str\", \"model_proposed_value\": \"float\", \"name\": \"str\", \"normalized_unit\": \"str\", \"normalized_value\": \"float\", \"numeric_locale\": \"null\", \"numeric_notation\": \"str\", \"observation_id\": \"str\", \"observation_timestamp\": \"null\", \"original_unit\": \"str\", \"original_value\": \"str\", \"potentially_critical\": \"bool\", \"provenance\": {\"channel\": \"str\", \"client_source_label\": \"null\", \"envelope_version\": \"int\", \"establishes_truth\": \"bool\", \"evidence_location\": {\"end\": \"int\", \"start\": \"int\", \"value_end\": \"int\", \"value_start\": \"int\"}, \"evidence_span\": \"str\", \"extraction_origin\": \"str\", \"incident_id\": \"str:uuid\", \"observation_id\": \"str\", \"original_status\": \"str\", \"original_trust_status\": \"str\", \"simulation_source_id\": \"null\", \"source_available\": \"bool\", \"source_document_id\": \"str:uuid\", \"source_field\": \"str\", \"source_missing_reason\": \"null\", \"source_type\": \"str\", \"submitted_by\": \"str:uuid\", \"tenant_id\": \"str:uuid\", \"trust_class\": \"str\"}, \"reason\": \"str\", \"review_required\": \"bool\", \"simulated\": \"bool\", \"source\": \"str\", \"source_document_id\": \"str:uuid\", \"source_text\": \"str\", \"status\": \"str=verified\", \"temporal_status\": \"str\", \"tenant_id\": \"str:uuid\", \"trust_status\": \"str=HUMAN_VERIFIED\", \"unit\": \"str\", \"value\": \"float\", \"verification\": {\"applied_rule\": \"str\", \"audit_event_id\": \"int\", \"comment\": \"str\", \"decision\": \"str=approve\", \"incident_id\": \"str:uuid\", \"observation_id\": \"str\", \"priority_after\": \"str\", \"priority_before\": \"str\", \"provenance_envelope_unchanged\": \"bool\", \"reviewed_at\": \"str:datetime\", \"reviewer_id\": \"str:uuid\", \"transition\": \"str\"}, \"verification_comment\": \"str\", \"verification_reason\": \"str\", \"verification_status\": \"str\", \"verified_at\": \"str:datetime\", \"verified_by\": \"str:uuid\"}"
+   ],
+   "notes": [
+    "\"str\""
+   ],
+   "priority": "str=P2",
+   "recommended_action": "str",
+   "related_incidents": [
+    "{\"chunk_id\": \"str:uuid\", \"filename\": \"str\", \"record_id\": \"str\", \"same_asset\": \"bool\", \"summary\": \"str\"}"
+   ],
+   "report_text": "str",
+   "review_status": "str=pending_review",
+   "review_urgency": "str=urgent",
+   "symptoms": [
+    "\"str\""
+   ]
+  },
+  "status": 200
+ },
+ "POST /api/v1/incidents/{incident_id}/review": {
+  "content_type": "application/json",
+  "headers": [
+   "content-type",
+   "x-correlation-id"
+  ],
+  "shape": {
+   "asset_id": "str",
+   "asset_verified": "bool",
+   "category": "str=mechanical_vibration",
+   "citations": [
+    "{\"chunk_id\": \"str:uuid\", \"document_id\": \"str:uuid\", \"filename\": \"str\", \"marker\": \"int\", \"page_number\": \"int\", \"quote\": \"str\", \"record_id\": \"null\", \"version\": \"int\"}"
+   ],
+   "created_at": "str:datetime",
+   "extraction_backend": "str",
+   "id": "str:uuid",
+   "measurements": [
+    "{\"asset_id\": \"str\", \"candidate_value\": \"float\", \"candidate_values\": [\"\\\"float\\\"\"], \"context_type\": \"str\", \"converted\": \"bool\", \"eligible_for_numeric_priority\": \"bool\", \"evidence_class\": \"str=A\", \"evidence_location\": {\"end\": \"int\", \"start\": \"int\", \"value_end\": \"int\", \"value_start\": \"int\"}, \"evidence_span\": \"str\", \"implied_priority\": \"str\", \"incident_id\": \"str:uuid\", \"measurement_type\": \"str\", \"method\": \"str\", \"model_proposed_value\": \"float\", \"name\": \"str\", \"normalized_unit\": \"str\", \"normalized_value\": \"float\", \"numeric_locale\": \"null\", \"numeric_notation\": \"str\", \"observation_id\": \"str\", \"observation_timestamp\": \"null\", \"original_unit\": \"str\", \"original_value\": \"str\", \"potentially_critical\": \"bool\", \"provenance\": {\"channel\": \"str\", \"client_source_label\": \"null\", \"envelope_version\": \"int\", \"establishes_truth\": \"bool\", \"evidence_location\": {\"end\": \"int\", \"start\": \"int\", \"value_end\": \"int\", \"value_start\": \"int\"}, \"evidence_span\": \"str\", \"extraction_origin\": \"str\", \"incident_id\": \"str:uuid\", \"observation_id\": \"str\", \"original_status\": \"str\", \"original_trust_status\": \"str\", \"simulation_source_id\": \"null\", \"source_available\": \"bool\", \"source_document_id\": \"str:uuid\", \"source_field\": \"str\", \"source_missing_reason\": \"null\", \"source_type\": \"str\", \"submitted_by\": \"str:uuid\", \"tenant_id\": \"str:uuid\", \"trust_class\": \"str\"}, \"reason\": \"str\", \"review_required\": \"bool\", \"simulated\": \"bool\", \"source\": \"str\", \"source_document_id\": \"str:uuid\", \"source_text\": \"str\", \"status\": \"str=unverified\", \"temporal_status\": \"str\", \"tenant_id\": \"str:uuid\", \"trust_status\": \"str=UNVERIFIED\", \"unit\": \"str\", \"value\": \"null\", \"verification_reason\": \"str\", \"verification_status\": \"str\"}"
+   ],
+   "notes": [
+    "\"str\""
+   ],
+   "priority": "str=P3",
+   "recommended_action": "str",
+   "related_incidents": [
+    "{\"chunk_id\": \"str:uuid\", \"filename\": \"str\", \"record_id\": \"str\", \"same_asset\": \"bool\", \"summary\": \"str\"}"
+   ],
+   "report_text": "str",
+   "review_status": "str=accepted",
+   "review_urgency": "str=urgent",
+   "symptoms": [
+    "\"str\""
+   ]
+  },
+  "status": 200
+ },
+ "POST /api/v1/incidents/{incident_id}/verify-asset": {
+  "content_type": "application/json",
+  "headers": [
+   "content-type",
+   "x-correlation-id"
+  ],
+  "shape": {
+   "asset_id": "str",
+   "asset_verified": "bool",
+   "category": "str=mechanical_vibration",
+   "citations": [
+    "{\"chunk_id\": \"str:uuid\", \"document_id\": \"str:uuid\", \"filename\": \"str\", \"marker\": \"int\", \"page_number\": \"int\", \"quote\": \"str\", \"record_id\": \"null\", \"version\": \"int\"}"
+   ],
+   "created_at": "str:datetime",
+   "extraction_backend": "str",
+   "id": "str:uuid",
+   "measurements": [
+    "{\"asset_id\": \"str\", \"candidate_value\": \"float\", \"candidate_values\": [\"\\\"float\\\"\"], \"context_type\": \"str\", \"converted\": \"bool\", \"eligible_for_numeric_priority\": \"bool\", \"evidence_class\": \"str=A\", \"evidence_location\": {\"end\": \"int\", \"start\": \"int\", \"value_end\": \"int\", \"value_start\": \"int\"}, \"evidence_span\": \"str\", \"implied_priority\": \"str\", \"incident_id\": \"str:uuid\", \"measurement_type\": \"str\", \"method\": \"str\", \"model_proposed_value\": \"float\", \"name\": \"str\", \"normalized_unit\": \"str\", \"normalized_value\": \"float\", \"numeric_locale\": \"null\", \"numeric_notation\": \"str\", \"observation_id\": \"str\", \"observation_timestamp\": \"null\", \"original_unit\": \"str\", \"original_value\": \"str\", \"potentially_critical\": \"bool\", \"provenance\": {\"channel\": \"str\", \"client_source_label\": \"null\", \"envelope_version\": \"int\", \"establishes_truth\": \"bool\", \"evidence_location\": {\"end\": \"int\", \"start\": \"int\", \"value_end\": \"int\", \"value_start\": \"int\"}, \"evidence_span\": \"str\", \"extraction_origin\": \"str\", \"incident_id\": \"str:uuid\", \"observation_id\": \"str\", \"original_status\": \"str\", \"original_trust_status\": \"str\", \"simulation_source_id\": \"null\", \"source_available\": \"bool\", \"source_document_id\": \"str:uuid\", \"source_field\": \"str\", \"source_missing_reason\": \"null\", \"source_type\": \"str\", \"submitted_by\": \"str:uuid\", \"tenant_id\": \"str:uuid\", \"trust_class\": \"str\"}, \"reason\": \"str\", \"review_required\": \"bool\", \"simulated\": \"bool\", \"source\": \"str\", \"source_document_id\": \"str:uuid\", \"source_text\": \"str\", \"status\": \"str=unverified\", \"temporal_status\": \"str\", \"tenant_id\": \"str:uuid\", \"trust_status\": \"str=UNVERIFIED\", \"unit\": \"str\", \"value\": \"null\", \"verification_reason\": \"str\", \"verification_status\": \"str\"}"
+   ],
+   "notes": [
+    "\"str\""
+   ],
+   "priority": "str=P3",
+   "recommended_action": "str",
+   "related_incidents": [
+    "{\"chunk_id\": \"str:uuid\", \"filename\": \"str\", \"record_id\": \"str\", \"same_asset\": \"bool\", \"summary\": \"str\"}"
+   ],
+   "report_text": "str",
+   "review_status": "str=needs_review",
+   "review_urgency": "str=urgent",
+   "symptoms": [
+    "\"str\""
+   ]
+  },
+  "status": 200
+ },
+ "POST /api/v1/search": {
+  "content_type": "application/json",
+  "headers": [
+   "content-type",
+   "x-correlation-id"
+  ],
+  "shape": {
+   "embedding_backend": "str",
+   "items": [
+    "{\"chunk_id\": \"str:uuid\", \"document_id\": \"str:uuid\", \"filename\": \"str\", \"kind\": \"str=equipment_manual\", \"overlap\": \"float\", \"page_number\": \"int\", \"record_id\": \"null\", \"score\": \"float\", \"similarity\": \"float\", \"suspicious\": \"bool\", \"text\": \"str\", \"version\": \"int\"}",
+    "{\"chunk_id\": \"str:uuid\", \"document_id\": \"str:uuid\", \"filename\": \"str\", \"kind\": \"str=incident_history\", \"overlap\": \"float\", \"page_number\": \"null\", \"record_id\": \"str\", \"score\": \"float\", \"similarity\": \"float\", \"suspicious\": \"bool\", \"text\": \"str\", \"version\": \"int\"}"
+   ]
+  },
+  "status": 200
+ },
+ "POST /api/v1/tenants": {
+  "content_type": "application/json",
+  "headers": [
+   "content-type",
+   "x-correlation-id"
+  ],
+  "shape": {
+   "id": "str:uuid",
+   "name": "str",
+   "slug": "str"
+  },
+  "status": 201
+ },
+ "POST /api/v1/tenants/{tenant_id}/members": {
+  "content_type": "application/json",
+  "headers": [
+   "content-type",
+   "x-correlation-id"
+  ],
+  "shape": {
+   "role": "str=support_engineer",
+   "user_id": "str:uuid"
+  },
+  "status": 201
+ },
+ "POST /api/v1/tickets": {
+  "content_type": "application/json",
+  "headers": [
+   "content-type",
+   "x-correlation-id"
+  ],
+  "shape": {
+   "attempts": "int",
+   "created_at": "str:datetime",
+   "created_by": "str:uuid",
+   "description": "str",
+   "external_ticket_id": "null",
+   "id": "str:uuid",
+   "incident_id": "str:uuid",
+   "last_error": "null",
+   "priority": "str=P2",
+   "state": "str=DRAFT",
+   "submitted_at": "null",
+   "title": "str",
+   "updated_at": "str:datetime"
+  },
+  "status": 201
+ },
+ "POST /api/v1/tickets/{ticket_id}/cancel": {
+  "content_type": "application/json",
+  "headers": [
+   "content-type",
+   "x-correlation-id"
+  ],
+  "shape": {
+   "attempts": "int",
+   "created_at": "str:datetime",
+   "created_by": "str:uuid",
+   "description": "str",
+   "external_ticket_id": "null",
+   "id": "str:uuid",
+   "incident_id": "str:uuid",
+   "last_error": "null",
+   "priority": "str=P3",
+   "state": "str=CANCELLED",
+   "submitted_at": "null",
+   "title": "str",
+   "updated_at": "str:datetime"
+  },
+  "status": 200
+ },
+ "POST /api/v1/tickets/{ticket_id}/request-approval": {
+  "content_type": "application/json",
+  "headers": [
+   "content-type",
+   "x-correlation-id"
+  ],
+  "shape": {
+   "attempts": "int",
+   "created_at": "str:datetime",
+   "created_by": "str:uuid",
+   "description": "str",
+   "external_ticket_id": "null",
+   "id": "str:uuid",
+   "incident_id": "str:uuid",
+   "last_error": "null",
+   "priority": "str=P2",
+   "state": "str=PENDING_APPROVAL",
+   "submitted_at": "null",
+   "title": "str",
+   "updated_at": "str:datetime"
+  },
+  "status": 200
+ },
+ "POST /api/v1/tickets/{ticket_id}/retry": {
+  "content_type": "application/json",
+  "headers": [
+   "content-type",
+   "x-correlation-id"
+  ],
+  "shape": {
+   "attempts": "int",
+   "created_at": "str:datetime",
+   "created_by": "str:uuid",
+   "description": "str",
+   "external_ticket_id": "null",
+   "id": "str:uuid",
+   "incident_id": "str:uuid",
+   "last_error": "null",
+   "priority": "str=P3",
+   "state": "str=RETRY_PENDING",
+   "submitted_at": "null",
+   "title": "str",
+   "updated_at": "str:datetime"
+  },
+  "status": 200
+ },
+ "POST /api/v1/tickets/{ticket_id}/submit": {
+  "content_type": "application/json",
+  "headers": [
+   "content-type",
+   "x-correlation-id"
+  ],
+  "shape": {
+   "attempts": "int",
+   "created_at": "str:datetime",
+   "created_by": "str:uuid",
+   "description": "str",
+   "external_ticket_id": "null",
+   "id": "str:uuid",
+   "incident_id": "str:uuid",
+   "last_error": "null",
+   "priority": "str=P3",
+   "state": "str=APPROVED",
+   "submitted_at": "null",
+   "title": "str",
+   "updated_at": "str:datetime"
+  },
+  "status": 200
+ },
+ "PUT /api/v1/tenant-profile": {
+  "content_type": "application/json",
+  "headers": [
+   "content-type",
+   "x-correlation-id"
+  ],
+  "shape": {
+   "version": "int"
+  },
+  "status": 200
+ }
+}

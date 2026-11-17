@@ -1,0 +1,15 @@
+equipment_id,name,model,location
+P-101,Cooling water pump 1,CP-200,Plant 1 Bay 3
+P-102,Cooling water pump 2,CP-200,Plant 1 Bay 3
+P-103,Process water pump,CP-200,Plant 1 Bay 4
+P-104,Boiler feed pump,CP-200,Plant 1 Bay 5
+M-201,Compressor motor A,EM-55,Plant 2 Bay 1
+M-202,Compressor motor B,EM-55,Plant 2 Bay 1
+M-203,Fan motor,EM-55,Plant 2 Bay 2
+CC-301,Air compressor 1,CC-300,Plant 2 Bay 1
+CC-302,Air compressor 2,CC-300,Plant 2 Bay 1
+CV-401,Feed conveyor,CV-400,Plant 3 Line 1
+CV-402,Discharge conveyor,CV-400,Plant 3 Line 1
+G-501,Mixer gearbox,GB-500,Plant 3 Line 2
+G-502,Crusher gearbox,GB-500,Plant 3 Line 2
+H-601,Process cooler,HT-600,Plant 1 Bay 6

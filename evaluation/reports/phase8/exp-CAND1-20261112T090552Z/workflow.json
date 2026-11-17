@@ -1,0 +1,110 @@
+[
+ {
+  "case": "E2-A-X001",
+  "tenant": "apex",
+  "review_required": true,
+  "reviewed": true,
+  "draft_status": 201,
+  "submit_before_approval": 409,
+  "engineer_approval_status": 403,
+  "supervisor_approval_status": 200,
+  "worker_outcomes": [
+   "submitted"
+  ],
+  "final_state": "SUBMITTED",
+  "external_ticket_id": "MNT-1001",
+  "extract_s": 7.241,
+  "approval_to_submitted_s": 0.22,
+  "total_s": 7.692
+ },
+ {
+  "case": "E2-A-X002",
+  "tenant": "apex",
+  "review_required": false,
+  "reviewed": false,
+  "draft_status": 201,
+  "submit_before_approval": 409,
+  "engineer_approval_status": 403,
+  "supervisor_approval_status": 200,
+  "worker_outcomes": [
+   "submitted"
+  ],
+  "final_state": "SUBMITTED",
+  "external_ticket_id": "MNT-1002",
+  "extract_s": 8.368,
+  "approval_to_submitted_s": 0.163,
+  "total_s": 8.675
+ },
+ {
+  "case": "E2-A-X003",
+  "tenant": "apex",
+  "review_required": false,
+  "reviewed": false,
+  "draft_status": 201,
+  "submit_before_approval": 409,
+  "engineer_approval_status": 403,
+  "supervisor_approval_status": 200,
+  "worker_outcomes": [
+   "submitted"
+  ],
+  "final_state": "SUBMITTED",
+  "external_ticket_id": "MNT-1003",
+  "extract_s": 8.477,
+  "approval_to_submitted_s": 0.205,
+  "total_s": 8.87
+ },
+ {
+  "case": "E2-M-X001",
+  "tenant": "meridian",
+  "review_required": false,
+  "reviewed": false,
+  "draft_status": 201,
+  "submit_before_approval": 409,
+  "engineer_approval_status": 403,
+  "supervisor_approval_status": 200,
+  "worker_outcomes": [
+   "submitted"
+  ],
+  "final_state": "SUBMITTED",
+  "external_ticket_id": "WO-7001",
+  "extract_s": 7.59,
+  "approval_to_submitted_s": 0.156,
+  "total_s": 7.872
+ },
+ {
+  "case": "E2-M-X002",
+  "tenant": "meridian",
+  "review_required": false,
+  "reviewed": false,
+  "draft_status": 201,
+  "submit_before_approval": 409,
+  "engineer_approval_status": 403,
+  "supervisor_approval_status": 200,
+  "worker_outcomes": [
+   "submitted"
+  ],
+  "final_state": "SUBMITTED",
+  "external_ticket_id": "WO-7002",
+  "extract_s": 7.202,
+  "approval_to_submitted_s": 0.238,
+  "total_s": 7.577
+ },
+ {
+  "case": "E2-M-X003",
+  "tenant": "meridian",
+  "review_required": false,
+  "reviewed": false,
+  "draft_status": 201,
+  "submit_before_approval": 409,
+  "engineer_approval_status": 403,
+  "supervisor_approval_status": 200,
+  "worker_outcomes": [
+   "submitted"
+  ],
+  "final_state": "SUBMITTED",
+  "external_ticket_id": "WO-7003",
+  "extract_s": 9.28,
+  "approval_to_submitted_s": 0.145,
+  "total_s": 9.555
+ }
+]

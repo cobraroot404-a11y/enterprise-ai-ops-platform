@@ -1,0 +1,221 @@
+{
+ "requirement": "V41-17.03 (index defect V41-17.03-IDX)",
+ "generated_at": "2026-11-12T22:54:34-05:00 (EST)",
+ "postgres_version": "16.15 (Debian 16.15-1.pgdg12+2)",
+ "settings": {
+  "shared_buffers": "128MB",
+  "work_mem": "4MB",
+  "random_page_cost": "4"
+ },
+ "dataset_rows": {
+  "incidents": 200040,
+  "approvals": 50040,
+  "outbox_events": 100050,
+  "tickets": 50040,
+  "tenants": 11
+ },
+ "tenants": 10,
+ "queried_tenant_rows": {
+  "large": 20000,
+  "small": 40
+ },
+ "new_index_sizes": {
+  "incidents_tenant_created_idx": "7960 kB",
+  "approvals_tenant_decided_idx": "2008 kB",
+  "outbox_events_tenant_id_idx": "3992 kB"
+ },
+ "runs_per_query": 7,
+ "queries": {
+  "large": {
+   "Q1 incidents: newest 50 for a tenant": {
+    "before_ms": 13.886,
+    "after_ms": 0.039,
+    "before_scan": "Limit > Gather Merge > Sort > Seq Scan(incidents)",
+    "after_scan": "Limit > Index Scan(incidents_tenant_created_idx)",
+    "after_uses_new_index": true,
+    "before_buffers": {
+     "Shared Hit Blocks": 4520,
+     "Shared Read Blocks": 0
+    },
+    "after_buffers": {
+     "Shared Hit Blocks": 15,
+     "Shared Read Blocks": 0
+    }
+   },
+   "Q2 incidents: newest 50 needing review": {
+    "before_ms": 12.529,
+    "after_ms": 0.14,
+    "before_scan": "Limit > Gather Merge > Sort > Seq Scan(incidents)",
+    "after_scan": "Limit > Index Scan(incidents_tenant_created_idx)",
+    "after_uses_new_index": true,
+    "before_buffers": {
+     "Shared Hit Blocks": 4520,
+     "Shared Read Blocks": 0
+    },
+    "after_buffers": {
+     "Shared Hit Blocks": 117,
+     "Shared Read Blocks": 0
+    }
+   },
+   "Q3 incidents: tenant count": {
+    "before_ms": 10.366,
+    "after_ms": 2.245,
+    "before_scan": "Aggregate > Gather > Aggregate > Seq Scan(incidents)",
+    "after_scan": "Aggregate > Index Only Scan(incidents_tenant_created_idx)",
+    "after_uses_new_index": true,
+    "before_buffers": {
+     "Shared Hit Blocks": 4446,
+     "Shared Read Blocks": 0
+    },
+    "after_buffers": {
+     "Shared Hit Blocks": 103,
+     "Shared Read Blocks": 0
+    }
+   },
+   "Q4 approvals: newest 50 decisions for a tenant": {
+    "before_ms": 2.714,
+    "after_ms": 0.028,
+    "before_scan": "Limit > Sort > Seq Scan(approvals)",
+    "after_scan": "Limit > Index Scan(approvals_tenant_decided_idx)",
+    "after_uses_new_index": true,
+    "before_buffers": {
+     "Shared Hit Blocks": 715,
+     "Shared Read Blocks": 0
+    },
+    "after_buffers": {
+     "Shared Hit Blocks": 29,
+     "Shared Read Blocks": 0
+    }
+   },
+   "Q5 outbox: newest 50 events for a tenant": {
+    "before_ms": 0.076,
+    "after_ms": 0.059,
+    "before_scan": "Limit > Index Scan(outbox_events_pkey)",
+    "after_scan": "Limit > Index Scan(outbox_events_pkey)",
+    "after_uses_new_index": false,
+    "before_buffers": {
+     "Shared Hit Blocks": 15,
+     "Shared Read Blocks": 0
+    },
+    "after_buffers": {
+     "Shared Hit Blocks": 15,
+     "Shared Read Blocks": 0
+    }
+   },
+   "Q6 outbox: newest 50 dead letters for a tenant": {
+    "before_ms": 5.33,
+    "after_ms": 2.685,
+    "before_scan": "Limit > Sort > Seq Scan(outbox_events)",
+    "after_scan": "Limit > Sort > Bitmap Heap Scan(outbox_events) > Bitmap Index Scan(outbox_events_tenant_id_idx)",
+    "after_uses_new_index": true,
+    "before_buffers": {
+     "Shared Hit Blocks": 1540,
+     "Shared Read Blocks": 0
+    },
+    "after_buffers": {
+     "Shared Hit Blocks": 1592,
+     "Shared Read Blocks": 0
+    }
+   }
+  },
+  "small": {
+   "Q1 incidents: newest 50 for a tenant": {
+    "before_ms": 10.889,
+    "after_ms": 0.041,
+    "before_scan": "Limit > Gather Merge > Sort > Seq Scan(incidents)",
+    "after_scan": "Limit > Sort > Bitmap Heap Scan(incidents) > Bitmap Index Scan(incidents_tenant_created_idx)",
+    "after_uses_new_index": true,
+    "before_buffers": {
+     "Shared Hit Blocks": 4520,
+     "Shared Read Blocks": 0
+    },
+    "after_buffers": {
+     "Shared Hit Blocks": 4,
+     "Shared Read Blocks": 0
+    }
+   },
+   "Q2 incidents: newest 50 needing review": {
+    "before_ms": 12.095,
+    "after_ms": 0.031,
+    "before_scan": "Limit > Sort > Gather > Seq Scan(incidents)",
+    "after_scan": "Limit > Sort > Bitmap Heap Scan(incidents) > Bitmap Index Scan(incidents_tenant_created_idx)",
+    "after_uses_new_index": true,
+    "before_buffers": {
+     "Shared Hit Blocks": 4446,
+     "Shared Read Blocks": 0
+    },
+    "after_buffers": {
+     "Shared Hit Blocks": 4,
+     "Shared Read Blocks": 0
+    }
+   },
+   "Q3 incidents: tenant count": {
+    "before_ms": 9.587,
+    "after_ms": 0.021,
+    "before_scan": "Aggregate > Gather > Aggregate > Seq Scan(incidents)",
+    "after_scan": "Aggregate > Index Only Scan(incidents_tenant_created_idx)",
+    "after_uses_new_index": true,
+    "before_buffers": {
+     "Shared Hit Blocks": 4446,
+     "Shared Read Blocks": 0
+    },
+    "after_buffers": {
+     "Shared Hit Blocks": 4,
+     "Shared Read Blocks": 0
+    }
+   },
+   "Q4 approvals: newest 50 decisions for a tenant": {
+    "before_ms": 2.61,
+    "after_ms": 0.023,
+    "before_scan": "Limit > Sort > Seq Scan(approvals)",
+    "after_scan": "Limit > Index Scan(approvals_tenant_decided_idx)",
+    "after_uses_new_index": true,
+    "before_buffers": {
+     "Shared Hit Blocks": 715,
+     "Shared Read Blocks": 0
+    },
+    "after_buffers": {
+     "Shared Hit Blocks": 24,
+     "Shared Read Blocks": 0
+    }
+   },
+   "Q5 outbox: newest 50 events for a tenant": {
+    "before_ms": 5.481,
+    "after_ms": 0.019,
+    "before_scan": "Limit > Sort > Seq Scan(outbox_events)",
+    "after_scan": "Limit > Index Scan(outbox_events_tenant_id_idx)",
+    "after_uses_new_index": true,
+    "before_buffers": {
+     "Shared Hit Blocks": 1540,
+     "Shared Read Blocks": 0
+    },
+    "after_buffers": {
+     "Shared Hit Blocks": 4,
+     "Shared Read Blocks": 0
+    }
+   },
+   "Q6 outbox: newest 50 dead letters for a tenant": {
+    "before_ms": 5.581,
+    "after_ms": 0.021,
+    "before_scan": "Limit > Sort > Seq Scan(outbox_events)",
+    "after_scan": "Limit > Sort > Bitmap Heap Scan(outbox_events) > Bitmap Index Scan(outbox_events_tenant_id_idx)",
+    "after_uses_new_index": true,
+    "before_buffers": {
+     "Shared Hit Blocks": 1540,
+     "Shared Read Blocks": 0
+    },
+    "after_buffers": {
+     "Shared Hit Blocks": 4,
+     "Shared Read Blocks": 0
+    }
+   }
+  }
+ },
+ "notes": [
+  "Disposable database, synthetic data, owner role with an explicit tenant predicate; row-level security is verified separately by the migration tests.",
+  "Medians of 7 runs on one laptop (warm cache); numbers are not production claims and no improvement is asserted beyond what is shown.",
+  "'large' is a tenant with the full per-tenant row count interleaved with the others; 'small' has 40 incidents and 50 outbox events that are the OLDEST rows in their tables, the case where a tenant-leading index matters most.",
+  "The worker's cross-tenant claim query is not tenant-scoped and is not covered by these indexes.",
+  "PostgreSQL may choose a sequential or bitmap scan on small data; this dataset is large enough (200k incident rows by default) to make the choice meaningful but is still synthetic."
+ ]
+}

@@ -1,0 +1,288 @@
+{
+ "run": "baseline-20261112T035539Z",
+ "all_pass": true,
+ "checks": [
+  {
+   "n": 1,
+   "check": "three repetitions, every expected query accounted for",
+   "result": "PASS",
+   "detail": "reps [1, 2, 3]; QA 118 queries x3, extraction 34 cases x3; missing/duplicates/unexpected all empty: True"
+  },
+  {
+   "n": 2,
+   "check": "failed baseline preserved as INVALID with documented cause",
+   "result": "PASS",
+   "detail": "evaluation\\reports\\phase8\\INVALID-baseline-20261112T030653Z-token-expiry"
+  },
+  {
+   "n": 13,
+   "check": "unsuccessful/invalid run evidence preserved",
+   "result": "PASS",
+   "detail": "all raw files of the invalid run are kept in the repository next to INVALID.md (never deleted or edited)"
+  },
+  {
+   "n": 3,
+   "check": "token refresh works; no request dropped silently",
+   "result": "PASS",
+   "detail": "401/403 records in the valid run: 0; the runner re-authenticates every 8 minutes and has no retry loop, so every request appears once with its status (a failure is recorded, never dropped)"
+  },
+  {
+   "n": 4,
+   "check": "authentication fix did not change model, prompts, retrieval, citation verification or incident validation",
+   "result": "PASS",
+   "detail": "git diff 0837a52..49d3c92 (the commit the baseline ran at) over backend/, frontend/src, mock-services, onboarding, workers is empty: True; prompt sha256 3710b8b7897780f8..., ollama options {'temperature': 0, 'seed': 7, 'num_ctx': 4096, 'num_predict': 320}, evidence threshold 0.5"
+  },
+  {
+   "n": 15,
+   "check": "no optimisation experiments or final held-out evaluation",
+   "result": "PASS",
+   "detail": "report directories at ad178d6: ['INVALID-baseline-20261112T030653Z-token-expiry', 'baseline-20261112T035539Z']; run split: dev; no application code changed between the Phase 7 closure and the baseline run"
+  },
+  {
+   "n": 5,
+   "check": "frozen dataset and held-out hashes match commit c0d19c9",
+   "result": "PASS",
+   "detail": "git diff c0d19c9..HEAD on eval-v2 empty: True; split hashes equal: {'challenge': True, 'dev': True, 'test': True}; verify: frozen hashes OK; test sha256 19540a5c88eb7943..."
+  },
+  {
+   "n": 6,
+   "check": "frozen questions, labels and scoring criteria unmodified (no new dataset version)",
+   "result": "PASS",
+   "detail": "eval-v2.0 files byte-identical to the freeze commit; the scorer fact-matching fix was made before any score was computed and is covered by regression tests (see 9)"
+  },
+  {
+   "n": 7,
+   "check": "no held-out test or challenge data used",
+   "result": "PASS",
+   "detail": "every record id belongs to the dev split (152 distinct ids, 0 held-out); command: python evaluation/phase8/run_baseline.py --reps 3 --label baseline"
+  },
+  {
+   "n": 8,
+   "check": "raw outputs, manifest, query ids, dataset hashes and recomputed scores agree",
+   "result": "PASS",
+   "detail": "every metric stored in scores.json is reproduced exactly from the raw files by the current scorer (differences: 0); the current scorer (v1.2) additionally computes ['cases_with_unsupported_numeric', 'numeric_values_proposed_unsupported', 'per_query', 'unsupported_numeric_accepted_as_verified'], which the stored file predates (additive metrics, none of the stored values changed); manifest dataset hashes match the frozen files: True; counts 118/34"
+  },
+  {
+   "n": 9,
+   "check": "scorer fix has regression tests and hand-checked examples",
+   "result": "PASS",
+   "detail": "13 passed in 0.11s"
+  },
+  {
+   "n": 10,
+   "check": "AI-quality, infrastructure and harness failures separated",
+   "result": "PASS",
+   "detail": "harness failures (auth/unhandled): 0; infrastructure (5xx/429): 0/0; other HTTP errors in the valid run: 0; AI-quality failures are scored (refusals, wrong answers, invalid raw output) and reported in the baseline report, not here"
+  },
+  {
+   "n": 11,
+   "check": "repetitions are repeated measurements on the same queries",
+   "result": "PASS",
+   "detail": "headline values use repetition 1; repetitions 2 and 3 are reported only as run-to-run spread (scores.json run_to_run_spread); no pooling"
+  },
+  {
+   "n": 12,
+   "check": "counts, failures, elapsed time and resource measurements reported",
+   "result": "PASS",
+   "detail": "elapsed 3289.2 s; resource windows: ['concurrency1', 'concurrency2', 'concurrency4', 'extraction_rep1', 'extraction_rep2', 'extraction_rep3', 'ingestion', 'qa_rep1', 'qa_rep2', 'qa_rep3', 'retrieval', 'warmup', 'workflow']; per-file accounting in integrity.json"
+  },
+  {
+   "n": 14,
+   "check": "no additional models downloaded",
+   "result": "PASS",
+   "detail": "Ollama models: [('qwen2.5:1.5b', '65ec06548149')]; run digest 65ec06548149; local model folder entries: ['.locks', 'CACHEDIR.TAG', 'MINILM_REVISION.txt', 'models--sentence-transformers--all-MiniLM-L6-v2']"
+  }
+ ],
+ "accounting": {
+  "qa_rep1": {
+   "expected": 118,
+   "records": 118,
+   "missing": [],
+   "duplicates": [],
+   "unexpected": [],
+   "status": {
+    "200": 118
+   }
+  },
+  "qa_rep2": {
+   "expected": 118,
+   "records": 118,
+   "missing": [],
+   "duplicates": [],
+   "unexpected": [],
+   "status": {
+    "200": 118
+   }
+  },
+  "qa_rep3": {
+   "expected": 118,
+   "records": 118,
+   "missing": [],
+   "duplicates": [],
+   "unexpected": [],
+   "status": {
+    "200": 118
+   }
+  },
+  "extraction_rep1": {
+   "expected": 34,
+   "records": 34,
+   "missing": [],
+   "duplicates": [],
+   "unexpected": [],
+   "status": {
+    "201": 34
+   }
+  },
+  "extraction_rep2": {
+   "expected": 34,
+   "records": 34,
+   "missing": [],
+   "duplicates": [],
+   "unexpected": [],
+   "status": {
+    "201": 34
+   }
+  },
+  "extraction_rep3": {
+   "expected": 34,
+   "records": 34,
+   "missing": [],
+   "duplicates": [],
+   "unexpected": [],
+   "status": {
+    "201": 34
+   }
+  }
+ },
+ "failure_classes": {},
+ "elapsed_s": 3289.2,
+ "resources": {
+  "ingestion": {
+   "samples": 3,
+   "cpu_pct_mean": 72,
+   "cpu_pct_peak": 91,
+   "ollama_working_set_mb_peak": 37.0,
+   "python_working_set_mb_peak": 849.1,
+   "system_free_ram_mb_min": 3503.6,
+   "system_total_ram_mb": 16026.5
+  },
+  "retrieval": {
+   "samples": 4,
+   "cpu_pct_mean": 50.5,
+   "cpu_pct_peak": 68,
+   "ollama_working_set_mb_peak": 37.0,
+   "python_working_set_mb_peak": 798.2,
+   "system_free_ram_mb_min": 3524.2,
+   "system_total_ram_mb": 16026.5
+  },
+  "warmup": {
+   "samples": 0
+  },
+  "qa_rep1": {
+   "samples": 128,
+   "cpu_pct_mean": 64.0,
+   "cpu_pct_peak": 100,
+   "ollama_working_set_mb_peak": 1986.6,
+   "python_working_set_mb_peak": 864.0,
+   "system_free_ram_mb_min": 1136.6,
+   "system_total_ram_mb": 16026.5
+  },
+  "extraction_rep1": {
+   "samples": 31,
+   "cpu_pct_mean": 61.6,
+   "cpu_pct_peak": 100,
+   "ollama_working_set_mb_peak": 1962.1,
+   "python_working_set_mb_peak": 884.4,
+   "system_free_ram_mb_min": 1464.4,
+   "system_total_ram_mb": 16026.5
+  },
+  "qa_rep2": {
+   "samples": 119,
+   "cpu_pct_mean": 65.9,
+   "cpu_pct_peak": 100,
+   "ollama_working_set_mb_peak": 2142.5,
+   "python_working_set_mb_peak": 949.3,
+   "system_free_ram_mb_min": 789.9,
+   "system_total_ram_mb": 16026.5
+  },
+  "extraction_rep2": {
+   "samples": 38,
+   "cpu_pct_mean": 71.7,
+   "cpu_pct_peak": 100,
+   "ollama_working_set_mb_peak": 2141.0,
+   "python_working_set_mb_peak": 966.6,
+   "system_free_ram_mb_min": 441.3,
+   "system_total_ram_mb": 16026.5
+  },
+  "qa_rep3": {
+   "samples": 129,
+   "cpu_pct_mean": 73.0,
+   "cpu_pct_peak": 100,
+   "ollama_working_set_mb_peak": 2107.2,
+   "python_working_set_mb_peak": 986.1,
+   "system_free_ram_mb_min": 540.9,
+   "system_total_ram_mb": 16026.5
+  },
+  "extraction_rep3": {
+   "samples": 36,
+   "cpu_pct_mean": 71.7,
+   "cpu_pct_peak": 100,
+   "ollama_working_set_mb_peak": 2082.6,
+   "python_working_set_mb_peak": 686.1,
+   "system_free_ram_mb_min": 659.9,
+   "system_total_ram_mb": 16026.5
+  },
+  "workflow": {
+   "samples": 5,
+   "cpu_pct_mean": 68.4,
+   "cpu_pct_peak": 90,
+   "ollama_working_set_mb_peak": 2075.4,
+   "python_working_set_mb_peak": 648.8,
+   "system_free_ram_mb_min": 799.1,
+   "system_total_ram_mb": 16026.5
+  },
+  "concurrency1": {
+   "samples": 7,
+   "cpu_pct_mean": 76.6,
+   "cpu_pct_peak": 93,
+   "ollama_working_set_mb_peak": 2086.8,
+   "python_working_set_mb_peak": 644.7,
+   "system_free_ram_mb_min": 770.5,
+   "system_total_ram_mb": 16026.5
+  },
+  "concurrency2": {
+   "samples": 6,
+   "cpu_pct_mean": 76.3,
+   "cpu_pct_peak": 88,
+   "ollama_working_set_mb_peak": 2086.7,
+   "python_working_set_mb_peak": 816.8,
+   "system_free_ram_mb_min": 691.7,
+   "system_total_ram_mb": 16026.5
+  },
+  "concurrency4": {
+   "samples": 3,
+   "cpu_pct_mean": 76,
+   "cpu_pct_peak": 89,
+   "ollama_working_set_mb_peak": 2086.4,
+   "python_working_set_mb_peak": 820.2,
+   "system_free_ram_mb_min": 681.3,
+   "system_total_ram_mb": 16026.5
+  }
+ },
+ "phase_window_seconds": {
+  "ingestion": 21.1,
+  "retrieval": 14.6,
+  "warmup": 0.1,
+  "qa_rep1": 600.3,
+  "extraction_rep1": 149.1,
+  "qa_rep2": 587.7,
+  "extraction_rep2": 200.6,
+  "qa_rep3": 675.0,
+  "extraction_rep3": 182.4,
+  "workflow": 27.9,
+  "concurrency1": 36.9,
+  "concurrency2": 28.3,
+  "concurrency4": 15.0
+ }
+}

@@ -1,0 +1,336 @@
+{
+ "defect": "PROV-01",
+ "note": "Known provenance violations in existing history. Recording them fixes nothing; removal needs the owner's decision (history rewrite, which also moves the protected tag).",
+ "exceptions": [
+  {
+   "commit": "f38de83f62c0501feff8cad9538d17a4c86b9dcc",
+   "reasons": [
+    "author or committer is not Gautham (Codex / Codex)"
+   ]
+  },
+  {
+   "commit": "8d880194aa2aa6e7218d1869cc1c8f1fdb57900f",
+   "reasons": [
+    "author or committer is not Gautham (Codex / Codex)"
+   ]
+  },
+  {
+   "commit": "07648dc29a01dab9d0df89c3ebdfebc2fa72e234",
+   "reasons": [
+    "author or committer is not Gautham (Codex / Codex)"
+   ]
+  },
+  {
+   "commit": "3c25aa75bdbff109086984d67fb2f55cbe443081",
+   "reasons": [
+    "message contains: anthropic, claude, co-authored-by"
+   ]
+  },
+  {
+   "commit": "5456ff7a2b5a77e8a052fc5511802498274e2cef",
+   "reasons": [
+    "message contains: anthropic, claude, co-authored-by"
+   ]
+  },
+  {
+   "commit": "821d7bf77f6a0e1951007dd04b1ece8ce07efef2",
+   "reasons": [
+    "message contains: anthropic, claude, co-authored-by"
+   ]
+  },
+  {
+   "commit": "e6fea15ef90589d5928e6dda9694ec432ebbf068",
+   "reasons": [
+    "message contains: anthropic, claude, co-authored-by"
+   ]
+  },
+  {
+   "commit": "b7c7cf48de2046488e2d4d7cea0e6a093aab6f15",
+   "reasons": [
+    "message contains: anthropic, claude, co-authored-by"
+   ]
+  },
+  {
+   "commit": "348be189ae831ba4a62f97047e6df1510676f148",
+   "reasons": [
+    "message contains: anthropic, claude, co-authored-by"
+   ]
+  },
+  {
+   "commit": "05265f7fe9761823d34d11ef94b03df3c60a192c",
+   "reasons": [
+    "message contains: anthropic, claude, co-authored-by"
+   ]
+  },
+  {
+   "commit": "6f7493a1a65192e036ab4c133a6a468019760bb8",
+   "reasons": [
+    "message contains: anthropic, claude, co-authored-by"
+   ]
+  },
+  {
+   "commit": "eb8ee55fe948e2af29043ec3be7acc685e9ab648",
+   "reasons": [
+    "message contains: anthropic, claude, co-authored-by"
+   ]
+  },
+  {
+   "commit": "54dd375127a8275620a89dc476157cea88d31d17",
+   "reasons": [
+    "message contains: anthropic, claude, co-authored-by"
+   ]
+  },
+  {
+   "commit": "75024fe886ddb27817f4ecb439a9c607048337c1",
+   "reasons": [
+    "message contains: anthropic, claude, co-authored-by"
+   ]
+  },
+  {
+   "commit": "58ef4cc5d724584969bb38aacf27b76f19f99d63",
+   "reasons": [
+    "message contains: anthropic, claude, co-authored-by"
+   ]
+  },
+  {
+   "commit": "3ef28527ce2d0f73d4da7810f84d705fc1a2dfb7",
+   "reasons": [
+    "message contains: anthropic, claude, co-authored-by"
+   ]
+  },
+  {
+   "commit": "3bcfdf03d400940bcc699bbb1c96790220f1bb90",
+   "reasons": [
+    "message contains: anthropic, claude, co-authored-by"
+   ]
+  },
+  {
+   "commit": "fba699d82c57708b7f0f66e0bdc679bb4dedd6c7",
+   "reasons": [
+    "message contains: anthropic, claude, co-authored-by"
+   ]
+  },
+  {
+   "commit": "f1a9369f879f0be65fad92a77f8999d2c0c36c38",
+   "reasons": [
+    "message contains: anthropic, claude, co-authored-by"
+   ]
+  },
+  {
+   "commit": "696d790f1aeb8ce71b28af6996fddf09d8f1ef6a",
+   "reasons": [
+    "message contains: anthropic, claude, co-authored-by"
+   ]
+  },
+  {
+   "commit": "6107bf0115f4c3b12e433e489e1d319830f3e8ca",
+   "reasons": [
+    "message contains: anthropic, claude, co-authored-by"
+   ]
+  },
+  {
+   "commit": "82929fdf80e04c556533cdcfeb8b90aecaf42d84",
+   "reasons": [
+    "message contains: anthropic, claude, co-authored-by"
+   ]
+  },
+  {
+   "commit": "ebaedf4c1dbca7b67901b242f011fd754ac94bdd",
+   "reasons": [
+    "message contains: anthropic, claude, co-authored-by"
+   ]
+  },
+  {
+   "commit": "8c9dce17283e5017d65ec5e8e2b9d93a88a738c0",
+   "reasons": [
+    "message contains: anthropic, claude, co-authored-by"
+   ]
+  },
+  {
+   "commit": "300484fdf0649eaf76ac083db69733fe8151e3a0",
+   "reasons": [
+    "message contains: anthropic, claude, co-authored-by"
+   ]
+  },
+  {
+   "commit": "a8813ab4888b14b25f0c8d5028b96bf87bd9b9af",
+   "reasons": [
+    "message contains: anthropic, claude, co-authored-by"
+   ]
+  },
+  {
+   "commit": "28bbc398098b37c1f3778fa542248f307d043307",
+   "reasons": [
+    "message contains: anthropic, claude, co-authored-by"
+   ]
+  },
+  {
+   "commit": "204e9813a2b0eed2fc10c47d9a4949fee0894681",
+   "reasons": [
+    "message contains: anthropic, claude, co-authored-by"
+   ]
+  },
+  {
+   "commit": "59e12eb38bd2ab67da9d0089dd3622c21153848d",
+   "reasons": [
+    "message contains: anthropic, claude, co-authored-by"
+   ]
+  },
+  {
+   "commit": "36d5eba8a0bf10896384b4f8799e71d59edeaa54",
+   "reasons": [
+    "message contains: anthropic, claude, co-authored-by"
+   ]
+  },
+  {
+   "commit": "31b55ef182bfd1839b0bab74c781fabfa4e03527",
+   "reasons": [
+    "message contains: anthropic, claude, co-authored-by"
+   ]
+  },
+  {
+   "commit": "2a14b54122c90cce53060e48cf6d14a3b09cef65",
+   "reasons": [
+    "message contains: anthropic, claude, co-authored-by"
+   ]
+  },
+  {
+   "commit": "7d143c905f8fe1f5e800414ea831dbffa567b07d",
+   "reasons": [
+    "message contains: anthropic, claude, co-authored-by"
+   ]
+  },
+  {
+   "commit": "58e5fcb157019e575d19ec2fc50079f0eb5934a6",
+   "reasons": [
+    "message contains: anthropic, claude, co-authored-by"
+   ]
+  },
+  {
+   "commit": "6cca02e853bf1ca491039c09c11178b443782b17",
+   "reasons": [
+    "message contains: anthropic, claude, co-authored-by"
+   ]
+  },
+  {
+   "commit": "6671e3cb9eaec96120010ed98e7ef4373f731358",
+   "reasons": [
+    "message contains: anthropic, claude, co-authored-by"
+   ]
+  },
+  {
+   "commit": "d583e7ed0bb7ab213dd0315641f0e7f87fa1b74b",
+   "reasons": [
+    "message contains: anthropic, claude, co-authored-by"
+   ]
+  },
+  {
+   "commit": "a1b33f8af2c4913bc7193a43d0470f3f65701fd9",
+   "reasons": [
+    "message contains: anthropic, claude, co-authored-by"
+   ]
+  },
+  {
+   "commit": "e66a7ab95c5a25b01ef2723697e6b798ef4746a5",
+   "reasons": [
+    "message contains: anthropic, claude, co-authored-by"
+   ]
+  },
+  {
+   "commit": "b0a2d8d12fe18c65e4c9fbe919c1b82870a19615",
+   "reasons": [
+    "message contains: anthropic, claude, co-authored-by"
+   ]
+  },
+  {
+   "commit": "ca331c6735f3a975b4d0f6e61ada87a78959f825",
+   "reasons": [
+    "message contains: anthropic, claude, co-authored-by"
+   ]
+  },
+  {
+   "commit": "3f9920d3cb36c16f85f1b651b1c84020314d7e8c",
+   "reasons": [
+    "message contains: anthropic, claude, co-authored-by"
+   ]
+  },
+  {
+   "commit": "f8109881ff7f8a24d978c2a77c3b1740b9e48bbe",
+   "reasons": [
+    "message contains: anthropic, claude, co-authored-by"
+   ]
+  },
+  {
+   "commit": "dd4f743c0de57f2de0cf7b3cd21f5dc1a590fecf",
+   "reasons": [
+    "message contains: anthropic, claude, co-authored-by"
+   ]
+  },
+  {
+   "commit": "ebf2a4c51b1bc77e785eccd152140a5bcc93e0bc",
+   "reasons": [
+    "message contains: anthropic, claude, co-authored-by"
+   ]
+  },
+  {
+   "commit": "1520710b2ce4319d599f303ff25ba9ce0b6e81e6",
+   "reasons": [
+    "message contains: anthropic, claude, co-authored-by"
+   ]
+  },
+  {
+   "commit": "b0c94de8edaf872d974f9a20f94307febda4353c",
+   "reasons": [
+    "message contains: anthropic, claude, co-authored-by"
+   ]
+  },
+  {
+   "commit": "62b1b2355ed7693ff978f5707066a5689c5e62c4",
+   "reasons": [
+    "message contains: anthropic, claude, co-authored-by"
+   ]
+  },
+  {
+   "commit": "ca87b63efb9183ac0b8d0849352e83684c333e81",
+   "reasons": [
+    "message contains: anthropic, claude, co-authored-by"
+   ]
+  },
+  {
+   "commit": "4d60b6bbe3b32ca3f20b79dcd28a1c8e1c7b78cb",
+   "reasons": [
+    "message contains: anthropic, claude, co-authored-by"
+   ]
+  },
+  {
+   "commit": "0ce9532fde29cdb9916c7cce547d0eb6b6666a43",
+   "reasons": [
+    "message contains: anthropic, claude, co-authored-by"
+   ]
+  },
+  {
+   "commit": "de4561d64551e8bcf04141a4b99d4dc9c82dcb73",
+   "reasons": [
+    "message contains: anthropic, claude, co-authored-by"
+   ]
+  },
+  {
+   "commit": "48a5f18f569dd31309b27e15255a95254dd75e99",
+   "reasons": [
+    "message contains: anthropic, claude, co-authored-by"
+   ]
+  },
+  {
+   "commit": "cd29766bb93d919dcaf0916e353596c157406a6e",
+   "reasons": [
+    "message contains: anthropic, claude, co-authored-by"
+   ]
+  },
+  {
+   "commit": "7b1a7522cb23ea9f33344fd59dad4f530e79033d",
+   "reasons": [
+    "message contains: anthropic, claude, co-authored-by"
+   ]
+  }
+ ]
+}

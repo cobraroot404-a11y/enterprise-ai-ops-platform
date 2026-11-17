@@ -1,0 +1,453 @@
+{
+ "spec_integrity": {
+  "working_tree_sha256": "b1c573e2c209ac68712b36851d56af0fb4c464509b422f96899761b6427760da",
+  "committed_blob_sha256": "9f5205e56c4a3347655147a3f4901daacdd8d61d18061328e6a2a208dd87e1cf",
+  "expected": "b1c573e2c209ac68712b36851d56af0fb4c464509b422f96899761b6427760da",
+  "working_tree_matches": true,
+  "committed_blob_matches": false,
+  "bytes": 38943,
+  "lines": 1394
+ },
+ "license_exact": {
+  "spec_lines": "115-207",
+  "identical": true,
+  "spec_line_count": 93,
+  "license_line_count": 93
+ },
+ "structure": {
+  "directories": {
+   "backend/app/api": {
+    "exists": true,
+    "tracked_content_files": 7
+   },
+   "backend/app/auth": {
+    "exists": true,
+    "tracked_content_files": 1
+   },
+   "backend/app/core": {
+    "exists": true,
+    "tracked_content_files": 7
+   },
+   "backend/app/database": {
+    "exists": true,
+    "tracked_content_files": 2
+   },
+   "backend/app/models": {
+    "exists": true,
+    "tracked_content_files": 1
+   },
+   "backend/app/schemas": {
+    "exists": true,
+    "tracked_content_files": 2
+   },
+   "backend/app/services": {
+    "exists": true,
+    "tracked_content_files": 2
+   },
+   "backend/app/connectors": {
+    "exists": true,
+    "tracked_content_files": 5
+   },
+   "backend/app/ingestion": {
+    "exists": true,
+    "tracked_content_files": 3
+   },
+   "backend/app/retrieval": {
+    "exists": true,
+    "tracked_content_files": 6
+   },
+   "backend/app/ai": {
+    "exists": true,
+    "tracked_content_files": 11
+   },
+   "backend/app/workflows": {
+    "exists": true,
+    "tracked_content_files": 4
+   },
+   "backend/app/audit": {
+    "exists": true,
+    "tracked_content_files": 2
+   },
+   "backend/app/observability": {
+    "exists": true,
+    "tracked_content_files": 3
+   },
+   "backend/migrations": {
+    "exists": true,
+    "tracked_content_files": 9
+   },
+   "backend/tests": {
+    "exists": true,
+    "tracked_content_files": 22
+   },
+   "frontend/src/components": {
+    "exists": true,
+    "tracked_content_files": 4
+   },
+   "frontend/src/pages": {
+    "exists": true,
+    "tracked_content_files": 15
+   },
+   "frontend/src/hooks": {
+    "exists": true,
+    "tracked_content_files": 6
+   },
+   "frontend/src/services": {
+    "exists": true,
+    "tracked_content_files": 4
+   },
+   "frontend/src/types": {
+    "exists": true,
+    "tracked_content_files": 1
+   },
+   "frontend/src/layouts": {
+    "exists": false,
+    "tracked_content_files": 0
+   },
+   "frontend/src/styles": {
+    "exists": true,
+    "tracked_content_files": 1
+   },
+   "frontend/tests": {
+    "exists": false,
+    "tracked_content_files": 0
+   },
+   "workers": {
+    "exists": true,
+    "tracked_content_files": 1
+   },
+   "mock-services/crm": {
+    "exists": true,
+    "tracked_content_files": 1
+   },
+   "mock-services/inventory": {
+    "exists": true,
+    "tracked_content_files": 1
+   },
+   "mock-services/ticketing": {
+    "exists": true,
+    "tracked_content_files": 1
+   },
+   "evaluation/datasets": {
+    "exists": true,
+    "tracked_content_files": 70
+   },
+   "evaluation/benchmarks": {
+    "exists": true,
+    "tracked_content_files": 4
+   },
+   "evaluation/customer-acceptance": {
+    "exists": true,
+    "tracked_content_files": 4
+   },
+   "evaluation/failure-reports": {
+    "exists": true,
+    "tracked_content_files": 4
+   },
+   "evaluation/reports": {
+    "exists": true,
+    "tracked_content_files": 255
+   },
+   "tests/acceptance": {
+    "exists": true,
+    "tracked_content_files": 5
+   },
+   "tests/fault_injection": {
+    "exists": true,
+    "tracked_content_files": 3
+   },
+   "infrastructure/docker": {
+    "exists": true,
+    "tracked_content_files": 1
+   },
+   "infrastructure/terraform": {
+    "exists": true,
+    "tracked_content_files": 0
+   },
+   "infrastructure/kubernetes": {
+    "exists": true,
+    "tracked_content_files": 0
+   },
+   "infrastructure/monitoring": {
+    "exists": true,
+    "tracked_content_files": 0
+   },
+   "scripts": {
+    "exists": true,
+    "tracked_content_files": 17
+   },
+   "docs/architecture": {
+    "exists": true,
+    "tracked_content_files": 3
+   },
+   "docs/customer-discovery": {
+    "exists": true,
+    "tracked_content_files": 0
+   },
+   "docs/customer-delivery": {
+    "exists": true,
+    "tracked_content_files": 0
+   },
+   "docs/customer-acceptance": {
+    "exists": true,
+    "tracked_content_files": 1
+   },
+   "docs/customer-onboarding": {
+    "exists": true,
+    "tracked_content_files": 0
+   },
+   "docs/integrations": {
+    "exists": true,
+    "tracked_content_files": 0
+   },
+   "docs/security": {
+    "exists": true,
+    "tracked_content_files": 6
+   },
+   "docs/deployment": {
+    "exists": true,
+    "tracked_content_files": 1
+   },
+   "docs/operations": {
+    "exists": true,
+    "tracked_content_files": 5
+   },
+   "docs/reliability": {
+    "exists": true,
+    "tracked_content_files": 1
+   },
+   "docs/evaluation": {
+    "exists": true,
+    "tracked_content_files": 17
+   },
+   "docs/performance": {
+    "exists": true,
+    "tracked_content_files": 0
+   },
+   "sample-data/customer-a": {
+    "exists": true,
+    "tracked_content_files": 6
+   },
+   "sample-data/customer-b": {
+    "exists": true,
+    "tracked_content_files": 6
+   },
+   ".github/workflows": {
+    "exists": true,
+    "tracked_content_files": 1
+   }
+  },
+  "root_files": {
+   ".env.example": true,
+   ".gitignore": true,
+   ".dockerignore": true,
+   ".editorconfig": true,
+   "LICENSE": true,
+   "THIRD_PARTY_NOTICES.md": true,
+   "README.md": true,
+   "SECURITY.md": true,
+   "CHANGELOG.md": true,
+   "docker-compose.yml": true,
+   "Makefile": true
+  },
+  "missing_dirs": [
+   "frontend/src/layouts",
+   "frontend/tests"
+  ],
+  "empty_dirs": [
+   "infrastructure/terraform",
+   "infrastructure/kubernetes",
+   "infrastructure/monitoring",
+   "docs/customer-discovery",
+   "docs/customer-delivery",
+   "docs/customer-onboarding",
+   "docs/integrations",
+   "docs/performance"
+  ],
+  "missing_root_files": []
+ },
+ "api_namespaces": {
+  "auth": true,
+  "tenants": true,
+  "connectors": true,
+  "documents": true,
+  "ingestion": true,
+  "search": true,
+  "ai": true,
+  "incidents": true,
+  "tickets": true,
+  "approvals": true,
+  "workflows": true,
+  "audit": true,
+  "metrics": true,
+  "health": true
+ },
+ "api_namespaces_found": [
+  "/api/v1/ai",
+  "/api/v1/approvals",
+  "/api/v1/audit",
+  "/api/v1/auth",
+  "/api/v1/connectors",
+  "/api/v1/documents",
+  "/api/v1/evaluation",
+  "/api/v1/health",
+  "/api/v1/incidents",
+  "/api/v1/ingestion",
+  "/api/v1/metrics",
+  "/api/v1/observability",
+  "/api/v1/onboarding",
+  "/api/v1/platform",
+  "/api/v1/search",
+  "/api/v1/tenants",
+  "/api/v1/tickets",
+  "/api/v1/workflows"
+ ],
+ "database": {
+  "model_tables": [
+   "approvals",
+   "audit_events",
+   "connectors",
+   "document_chunks",
+   "document_versions",
+   "documents",
+   "embedding_profiles",
+   "incidents",
+   "memberships",
+   "outbox_events",
+   "tenant_profiles",
+   "tenants",
+   "tickets",
+   "users"
+  ],
+  "migration_tables": [
+   "approvals",
+   "audit_events",
+   "connectors",
+   "document_chunks",
+   "document_versions",
+   "documents",
+   "embedding_profiles",
+   "incidents",
+   "memberships",
+   "outbox_events",
+   "tenant_profiles",
+   "tenants",
+   "tickets",
+   "users"
+  ],
+  "required_entities": {
+   "Tenants": true,
+   "Users": true,
+   "Roles": false,
+   "Memberships": true,
+   "Connectors": true,
+   "Documents": true,
+   "Document versions": true,
+   "Document chunks": true,
+   "Embeddings": false,
+   "Ingestion jobs": false,
+   "Incidents": true,
+   "Tickets": true,
+   "Approvals": true,
+   "Workflow executions": false,
+   "Outbox events": true,
+   "Audit events": true,
+   "Evaluation runs": false
+  }
+ },
+ "frontend_pages": {
+  "nav_labels": [
+   "Overview",
+   "Customer Onboarding",
+   "Data Sources",
+   "Document Library",
+   "AI Knowledge Assistant",
+   "Incident Explorer",
+   "Support Tickets",
+   "Approval Queue",
+   "Workflow History",
+   "Integration Health",
+   "Evaluation Dashboard",
+   "Audit Logs",
+   "Administration"
+  ]
+ },
+ "git": {
+  "commits": 29,
+  "distinct_authors": [
+   "Gautham|<owner-email>"
+  ],
+  "distinct_committers": [
+   "Gautham|<owner-email>"
+  ],
+  "commits_with_trailer_lines": 0,
+  "remotes": [],
+  "tags": [],
+  "branches": [
+   "feat/apex-vertical-slice",
+   "main"
+  ]
+ },
+ "branding": {
+  "files_with_matches": {
+   "evaluation/phase8/score_baseline.py": [
+    "generated by"
+   ],
+   "evaluation/benchmarks/make_report.py": [
+    "generated by"
+   ],
+   "docs/traceability/requirements-traceability-matrix.md": [
+    "generated by"
+   ],
+   "scripts/generate_phase7_docs.py": [
+    "generated by"
+   ],
+   "scripts/generate_traceability.py": [
+    "generated by"
+   ],
+   "docs/evaluation/phase8-dataset-methodology.md": [
+    "generated by"
+   ],
+   ".gitignore": [
+    "claude"
+   ],
+   "docs/evaluation/phase8-risk-register.md": [
+    "generated by"
+   ],
+   "docs/reliability/fault-injection-results.md": [
+    "generated by"
+   ],
+   "docs/evaluation/phase8-baseline-integrity.md": [
+    "generated by"
+   ],
+   "frontend/src/styles/app.css": [
+    "cursor"
+   ],
+   "evaluation/phase8/verify_baseline.py": [
+    "generated by"
+   ],
+   "docs/phase7/phase7-gate.md": [
+    "generated by"
+   ]
+  }
+ },
+ "docker_compose": {
+  "services": [
+   "postgres",
+   "pgdata"
+  ]
+ },
+ "tracked_counts": {
+  "ci_workflows": [
+   ".github/workflows/ci.yml"
+  ],
+  "terraform_files": [],
+  "dockerfiles": [],
+  "third_party_notices_bytes": 1835,
+  "security_md_bytes": 272
+ },
+ "secrets_hygiene": {
+  "env_ignored": true,
+  "tracked_env_files": []
+ }
+}

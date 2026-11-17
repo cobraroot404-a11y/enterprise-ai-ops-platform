@@ -1,0 +1,46 @@
+unit_id,description,depot,model,registered
+VH-3002,Tractor Unit VH-3002,North Depot,HX-410,2021-12-07
+VH-2203,Tractor Unit VH-2203,East Depot,HX-410,2022-12-11
+VH-7111,Tractor Unit VH-7111,North Depot,HX-410,2022-09-14
+VH-3001,Tractor Unit VH-3001,North Depot,HX-410,2023-05-02
+VH-7109,Tractor Unit VH-7109,East Depot,HX-410,2022-04-25
+VH-2003,Tractor Unit VH-2003,East Depot,HX-460,2021-07-25
+VH-6102,Tractor Unit VH-6102,North Depot,HX-460,2019-06-08
+VH-1001,Tractor Unit VH-1001,Harbour Depot,HX-460,2019-07-29
+VH-6101,Tractor Unit VH-6101,East Depot,HX-460,2022-10-19
+VH-7103,Tractor Unit VH-7103,East Depot,HX-460,2019-05-08
+VH-3009,Delivery Van VH-3009,North Depot,LV-220,2023-09-03
+VH-5101,Delivery Van VH-5101,East Depot,LV-220,2019-11-04
+VH-2101,Delivery Van VH-2101,Harbour Depot,LV-220,2018-02-05
+VH-2001,Delivery Van VH-2001,Harbour Depot,LV-220,2022-05-11
+VH-2002,Delivery Van VH-2002,Harbour Depot,LV-220,2019-09-24
+VH-7110,Delivery Van VH-7110,Harbour Depot,LV-260,2018-08-20
+VH-4111,Delivery Van VH-4111,Harbour Depot,LV-260,2022-05-19
+VH-1011,Delivery Van VH-1011,North Depot,LV-260,2020-08-30
+VH-2110,Delivery Van VH-2110,East Depot,LV-260,2020-04-26
+VH-1002,Delivery Van VH-1002,North Depot,LV-260,2023-07-12
+VH-2111,Refrigerated Trailer VH-2111,Harbour Depot,RT-90,2019-02-09
+VH-2011,Refrigerated Trailer VH-2011,East Depot,RT-90,2021-11-27
+VH-5111,Refrigerated Trailer VH-5111,East Depot,RT-90,2024-02-06
+VH-3101,Refrigerated Trailer VH-3101,North Depot,RT-90,2020-01-16
+VH-3109,Refrigerated Trailer VH-3109,North Depot,RT-90,2022-01-27
+VH-2202,Refrigerated Trailer VH-2202,North Depot,RT-95,2018-10-10
+VH-3011,Refrigerated Trailer VH-3011,North Depot,RT-95,2022-07-16
+VH-1003,Refrigerated Trailer VH-1003,East Depot,RT-95,2020-03-30
+VH-3102,Refrigerated Trailer VH-3102,North Depot,RT-95,2019-08-18
+VH-6111,Refrigerated Trailer VH-6111,East Depot,RT-95,2020-03-26
+VH-5109,Rigid Truck VH-5109,North Depot,MX-300,2020-03-16
+VH-4102,Rigid Truck VH-4102,North Depot,MX-300,2018-10-06
+VH-2009,Rigid Truck VH-2009,East Depot,MX-300,2018-03-01
+VH-3110,Rigid Truck VH-3110,Harbour Depot,MX-300,2022-05-27
+VH-4101,Rigid Truck VH-4101,Harbour Depot,MX-300,2021-07-15
+VH-6103,Rigid Truck VH-6103,North Depot,MX-350,2022-01-08
+VH-2209,Rigid Truck VH-2209,Harbour Depot,MX-350,2022-09-20
+VH-7102,Rigid Truck VH-7102,Harbour Depot,MX-350,2024-04-28
+VH-4103,Rigid Truck VH-4103,East Depot,MX-350,2019-04-30
+VH-2102,Rigid Truck VH-2102,Harbour Depot,MX-350,2019-08-17
+VH-2103,Depot Transfer Pump VH-2103,Harbour Depot,CP-200,2021-06-18
+VH-3111,Depot Transfer Pump VH-3111,East Depot,CP-200,2018-11-05
+VH-5102,Depot Transfer Pump VH-5102,North Depot,CP-200,2021-11-06
+VH-5110,Depot Transfer Pump VH-5110,North Depot,CP-200,2023-10-07
+VH-3010,Depot Transfer Pump VH-3010,Harbour Depot,CP-200,2019-01-10

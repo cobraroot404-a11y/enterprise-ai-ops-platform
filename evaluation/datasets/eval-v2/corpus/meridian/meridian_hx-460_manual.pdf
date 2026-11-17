@@ -1,0 +1,185 @@
+%PDF-1.3
+%“Œ‹ž ReportLab Generated PDF document (opensource)
+1 0 obj
+<<
+/F1 2 0 R /F2 3 0 R
+>>
+endobj
+2 0 obj
+<<
+/BaseFont /Helvetica /Encoding /WinAnsiEncoding /Name /F1 /Subtype /Type1 /Type /Font
+>>
+endobj
+3 0 obj
+<<
+/BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding /Name /F2 /Subtype /Type1 /Type /Font
+>>
+endobj
+4 0 obj
+<<
+/Contents 12 0 R /MediaBox [ 0 0 595.2756 841.8898 ] /Parent 11 0 R /Resources <<
+/Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ]
+>> /Rotate 0 /Trans <<
+
+>> 
+  /Type /Page
+>>
+endobj
+5 0 obj
+<<
+/Contents 13 0 R /MediaBox [ 0 0 595.2756 841.8898 ] /Parent 11 0 R /Resources <<
+/Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ]
+>> /Rotate 0 /Trans <<
+
+>> 
+  /Type /Page
+>>
+endobj
+6 0 obj
+<<
+/Contents 14 0 R /MediaBox [ 0 0 595.2756 841.8898 ] /Parent 11 0 R /Resources <<
+/Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ]
+>> /Rotate 0 /Trans <<
+
+>> 
+  /Type /Page
+>>
+endobj
+7 0 obj
+<<
+/Contents 15 0 R /MediaBox [ 0 0 595.2756 841.8898 ] /Parent 11 0 R /Resources <<
+/Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ]
+>> /Rotate 0 /Trans <<
+
+>> 
+  /Type /Page
+>>
+endobj
+8 0 obj
+<<
+/Contents 16 0 R /MediaBox [ 0 0 595.2756 841.8898 ] /Parent 11 0 R /Resources <<
+/Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ]
+>> /Rotate 0 /Trans <<
+
+>> 
+  /Type /Page
+>>
+endobj
+9 0 obj
+<<
+/PageMode /UseNone /Pages 11 0 R /Type /Catalog
+>>
+endobj
+10 0 obj
+<<
+/Author (anonymous) /CreationDate (D:20000101000000+00'00') /Creator (anonymous) /Keywords () /ModDate (D:20000101000000+00'00') /Producer (ReportLab PDF Library - \(opensource\)) 
+  /Subject (unspecified) /Title (untitled) /Trapped /False
+>>
+endobj
+11 0 obj
+<<
+/Count 5 /Kids [ 4 0 R 5 0 R 6 0 R 7 0 R 8 0 R ] /Type /Pages
+>>
+endobj
+12 0 obj
+<<
+/Length 395
+>>
+stream
+1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
+BT /F2 13 Tf 15.6 TL ET
+BT 1 0 0 1 50 790 Tm (HX-460 tractor unit - Low brake pressure warning threshold) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 50 760 Tm (The HX-460 low air pressure warning for the service brake circuit is set at 55 psi.) Tj T* ET
+BT 1 0 0 1 50 744 Tm (Perform this check at the depot with the vehicle on level ground.) Tj T* ET
+ 
+endstream
+endobj
+13 0 obj
+<<
+/Length 328
+>>
+stream
+1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
+BT /F2 13 Tf 15.6 TL ET
+BT 1 0 0 1 50 790 Tm (HX-460 tractor unit - Coolant temperature alarm) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 50 760 Tm (The HX-460 coolant temperature alarm triggers at 111 C. Use only approved workshop) Tj T* ET
+BT 1 0 0 1 50 744 Tm (equipment.) Tj T* ET
+ 
+endstream
+endobj
+14 0 obj
+<<
+/Length 325
+>>
+stream
+1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
+BT /F2 13 Tf 15.6 TL ET
+BT 1 0 0 1 50 790 Tm (HX-460 tractor unit - Cold tire pressure) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 50 760 Tm (Set cold steer-axle tire pressure on the HX-460 to 115 psi. Use only approved workshop) Tj T* ET
+BT 1 0 0 1 50 744 Tm (equipment.) Tj T* ET
+ 
+endstream
+endobj
+15 0 obj
+<<
+/Length 363
+>>
+stream
+1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
+BT /F2 13 Tf 15.6 TL ET
+BT 1 0 0 1 50 790 Tm (HX-460 tractor unit - DEF tank refill warning) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 50 760 Tm (The DEF refill warning for the HX-460 appears at 20 percent tank level. Record the) Tj T* ET
+BT 1 0 0 1 50 744 Tm (result in the driver defect and service system.) Tj T* ET
+ 
+endstream
+endobj
+16 0 obj
+<<
+/Length 379
+>>
+stream
+1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
+BT /F2 13 Tf 15.6 TL ET
+BT 1 0 0 1 50 790 Tm (HX-460 tractor unit - Minimum battery voltage) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 50 760 Tm (A resting battery voltage under 11.9 V on the HX-460 calls for charging or replacement.) Tj T* ET
+BT 1 0 0 1 50 744 Tm (Record the result in the driver defect and service system.) Tj T* ET
+ 
+endstream
+endobj
+xref
+0 17
+0000000000 65535 f 
+0000000061 00000 n 
+0000000102 00000 n 
+0000000209 00000 n 
+0000000321 00000 n 
+0000000526 00000 n 
+0000000731 00000 n 
+0000000936 00000 n 
+0000001141 00000 n 
+0000001346 00000 n 
+0000001415 00000 n 
+0000001677 00000 n 
+0000001761 00000 n 
+0000002207 00000 n 
+0000002586 00000 n 
+0000002962 00000 n 
+0000003376 00000 n 
+trailer
+<<
+/ID 
+[<1c178198fbdfa51b25995d89d4102043><1c178198fbdfa51b25995d89d4102043>]
+% ReportLab generated PDF document -- digest (opensource)
+
+/Info 10 0 R
+/Root 9 0 R
+/Size 17
+>>
+startxref
+3806
+%%EOF

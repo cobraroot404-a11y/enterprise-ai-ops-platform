@@ -1,0 +1,146 @@
+[
+ {
+  "id": "S0",
+  "description": "Meridian tenant is indexed with the real MiniLM profile (not the deterministic embedder)",
+  "passed": true,
+  "detail": {
+   "provider": "sentence_transformers",
+   "model": "sentence-transformers/all-MiniLM-L6-v2",
+   "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+   "dim": 384
+  }
+ },
+ {
+  "id": "S1",
+  "description": "Every retrieved chunk for every search belongs to Meridian (and each search returned results)",
+  "passed": true,
+  "detail": null
+ },
+ {
+  "id": "S2a",
+  "description": "Every citation emitted points at a current Meridian-owned chunk",
+  "passed": true,
+  "detail": {
+   "questions_with_grounded_answer": 2,
+   "of": 5
+  }
+ },
+ {
+  "id": "S2b",
+  "description": "Every emitted citation quote is verbatim text of the cited chunk",
+  "passed": true,
+  "detail": null
+ },
+ {
+  "id": "S2c",
+  "description": "The out-of-scope question received no answer and no citations",
+  "passed": true,
+  "detail": null
+ },
+ {
+  "id": "S3a",
+  "description": "Asset ID extracted exactly as written in every report that contains one",
+  "passed": true,
+  "detail": null
+ },
+ {
+  "id": "S3b",
+  "description": "Priority is exactly what the tenant's deterministic rules give for the extracted category and the regex-derived readings (the model never sets priority)",
+  "passed": true,
+  "detail": null
+ },
+ {
+  "id": "S3c",
+  "description": "The report without a vehicle ID is rejected (asset_not_identified) rather than guessed",
+  "passed": true,
+  "detail": null
+ },
+ {
+  "id": "S4",
+  "description": "Registered vehicles are verified against the fleet register; the unregistered VH-9999 is not",
+  "passed": true,
+  "detail": null
+ },
+ {
+  "id": "S5a",
+  "description": "review_status is pending_review only when the vehicle is registered AND grounded evidence exists",
+  "passed": true,
+  "detail": {
+   "statuses": {
+    "R1": "needs_review",
+    "R2": "pending_review",
+    "R3": "pending_review",
+    "R4": "needs_review",
+    "R5": "needs_review"
+   }
+  }
+ },
+ {
+  "id": "S5b",
+  "description": "No ticket can be drafted from an incident in needs_review (HTTP 409)",
+  "passed": true,
+  "detail": {
+   "R1": 409,
+   "R4": 409,
+   "R5": 409
+  }
+ },
+ {
+  "id": "S6a",
+  "description": "A supervisor-accepted incident for an UNREGISTERED vehicle still cannot be approved for release",
+  "passed": true,
+  "detail": {
+   "error": {
+    "code": "asset_not_registered",
+    "message": "Asset VH-9999 is not in the tenant's authoritative register; register it and re-verify the incident before external submission",
+    "correlation_id": "a0965a28-ebb4-425b-88a3-40dbe177ee49"
+   }
+  }
+ },
+ {
+  "id": "S6b",
+  "description": "Approved ticket was submitted once to Meridian's service desk and stored with a WO- id",
+  "passed": true,
+  "detail": null
+ },
+ {
+  "id": "S6c",
+  "description": "Customer-specific mapping applied: payload keys and urgency follow Meridian's connector config",
+  "passed": true,
+  "detail": null
+ },
+ {
+  "id": "S6d",
+  "description": "Apex's maintenance ticketing system received nothing from Meridian's workflow",
+  "passed": true,
+  "detail": null
+ },
+ {
+  "id": "S7",
+  "description": "Audit trail contains every expected event type for the exercised workflow",
+  "passed": true,
+  "detail": {
+   "missing": []
+  }
+ },
+ {
+  "id": "S8",
+  "description": "Apex users cannot read or act on Meridian objects (and vice versa), and Apex retrieval never returns Meridian chunks",
+  "passed": true,
+  "detail": {
+   "apex.tenant_admin.GET meridian incident": 404,
+   "apex.tenant_admin.GET meridian ticket": 404,
+   "apex.tenant_admin.approve meridian ticket": 404,
+   "meridian.tenant_admin.GET apex incident": 404,
+   "apex.maintenance_supervisor.GET meridian incident": 404,
+   "apex.maintenance_supervisor.GET meridian ticket": 404,
+   "apex.maintenance_supervisor.approve meridian ticket": 404,
+   "meridian.maintenance_supervisor.GET apex incident": 404,
+   "apex.support_engineer.GET meridian incident": 404,
+   "apex.support_engineer.GET meridian ticket": 404,
+   "apex.support_engineer.approve meridian ticket": 403,
+   "meridian.support_engineer.GET apex incident": 404,
+   "apex.GET meridian document": 404
+  }
+ }
+]

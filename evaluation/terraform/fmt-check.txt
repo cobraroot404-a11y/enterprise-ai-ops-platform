@@ -1,0 +1,8 @@
+Terraform CLI v1.17.2 (official HashiCorp release), run locally on 2026-11-13T19:50Z
+Download: terraform_1.17.2_windows_amd64.zip 38,669,356 bytes from releases.hashicorp.com; installed outside the repository at <local-path> (terraform.exe 132,255,368 bytes)
+Verified: SHA-256 2244b7a379ea8c4b224a2eab411b7288f41ef36316fca27ae4b51b1cf2a53024 matches the signed SHA256SUMS; gpg: Good signature from HashiCorp Security, key 374E C75B 4859 1360 4A83 1CC7 C820 C6D5 CD27 AB87 (primary C874 011F 0AB4 0511 0D02 1055 3436 5D94 72D7 468F)
+
+$ terraform fmt -check -diff -recursive   (infrastructure/terraform)
+exit code: 0
+
+NOT run: terraform init / validate / plan / apply. validate needs init, which downloads the AWS provider (hundreds of MB): a substantial download that was not authorised. fmt parses every file, so syntax errors would have failed it, but schema-level validation (attribute names, types, required arguments) has NOT been performed.

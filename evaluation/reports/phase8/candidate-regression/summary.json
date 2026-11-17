@@ -1,0 +1,17 @@
+{
+ "recorded_utc": "2026-11-12",
+ "code_commit_for_full_suites": "a14bbb4",
+ "note": "Full backend suites were run at the final code state; fault injection, real-AI, UAT and frontend suites were run at d5a7e41 plus test-only edits (no application code changed afterwards).",
+ "Backend full suite, default settings": "356 passed, 13 skipped (12 real-AI, opt-in FI-10), 0 failed",
+ "Backend full suite, candidate settings (EAOP_TUNING=candidate_v1)": "356 passed, 13 skipped, 0 failed",
+ "Fault injection FI-01..FI-10, FI-09b, REL-01..04 under candidate, RUN_DISRUPTIVE=1 (incl. PostgreSQL stop/restart)": "15 passed, 0 failed",
+ "Real-AI backend tests under candidate (Ollama + MiniLM)": "12 passed",
+ "UAT-A01..A08 and UAT-B01..B07 + end-to-end reliability + observability evidence, real Ollama, under candidate": "21 passed (15 UAT scenarios)",
+ "Security suites (SSRF/egress, RLS, RBAC, JWT, identity, review gate, control mutations, environment guards)": "included in both full suites: all passed",
+ "Frontend (default settings)": "typecheck clean, lint clean, Vitest 43 passed, Playwright 47 passed / 1 skipped (opt-in screenshots) incl. accessibility and keyboard specs",
+ "Secret scan": "0 findings in 642 files",
+ "Dataset freeze verification": "frozen hashes OK (git diff c0d19c9..HEAD on eval-v2 empty)",
+ "Baseline integrity (15 checks)": "ALL PASS (re-verified; check 8 reproduces every stored metric exactly, additive v1.2 metrics noted)",
+ "Phase 8 unit tests": "metrics 9, scorer 4, dataset integrity 4, quality/safety 18 (backend/tests/test_phase8_quality.py) passed",
+ "Known behavioural difference under the candidate": "a legacy fixture test whose scripted model always cites passage [1] withholds a supported answer under the candidate's identifier boost (safe direction); the test was made independent of ambient tuning and the difference is recorded in the report"
+}

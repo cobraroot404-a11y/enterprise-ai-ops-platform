@@ -1,0 +1,12 @@
+# Overlay for docker-compose.app.yml (used by `python scripts/container_smoke.py --ollama`): the API container uses the Ollama server running ON THE HOST as its language model.
+# Nothing is downloaded: Ollama and the model must already be installed and running on the host (python scripts/ollama_ctl.py start). The embedding backend stays the deterministic
+# test-only one, because the backend image deliberately contains no torch or sentence-transformers; so this profile validates real LLM inference from a container, not real embeddings.
+# The host's Ollama must accept connections from the container (it listens on 127.0.0.1 by default; Docker Desktop forwards host.docker.internal to the host).
+services:
+  api:
+    environment:
+      LLM_BACKEND: ollama
+      OLLAMA_BASE_URL: http://host.docker.internal:11434
+      OLLAMA_MODEL: qwen2.5:1.5b
+    extra_hosts:
+      - "host.docker.internal:host-gateway"

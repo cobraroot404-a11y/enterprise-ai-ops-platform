@@ -1,0 +1,85 @@
+{
+  "description": "Equivalent SYNTHETIC fault reports for the registered Apex demonstration pumps (P-101, P-102, P-103): seven component parts times three pumps, cycling four report templates, first 20 tasks. They are fictional; no real fault, customer or measurement is represented.",
+  "tasks": [
+    {
+      "id": "T01",
+      "report": "Operator reports an abnormal noise and rising vibration at the drive end bearing of pump P-101 since the start of the shift."
+    },
+    {
+      "id": "T02",
+      "report": "Pump P-102 shows a visible leak near the drive end bearing; the operator asks for an inspection."
+    },
+    {
+      "id": "T03",
+      "report": "The drive end bearing of pump P-103 looks worn and the readings drift compared with last week."
+    },
+    {
+      "id": "T04",
+      "report": "Maintenance notes a recurring fault at the mechanical seal of pump P-101 and asks whether earlier incidents exist."
+    },
+    {
+      "id": "T05",
+      "report": "Operator reports an abnormal noise and rising vibration at the mechanical seal of pump P-102 since the start of the shift."
+    },
+    {
+      "id": "T06",
+      "report": "Pump P-103 shows a visible leak near the mechanical seal; the operator asks for an inspection."
+    },
+    {
+      "id": "T07",
+      "report": "The flexible coupling of pump P-101 looks worn and the readings drift compared with last week."
+    },
+    {
+      "id": "T08",
+      "report": "Maintenance notes a recurring fault at the flexible coupling of pump P-102 and asks whether earlier incidents exist."
+    },
+    {
+      "id": "T09",
+      "report": "Operator reports an abnormal noise and rising vibration at the flexible coupling of pump P-103 since the start of the shift."
+    },
+    {
+      "id": "T10",
+      "report": "Pump P-101 shows a visible leak near the suction strainer; the operator asks for an inspection."
+    },
+    {
+      "id": "T11",
+      "report": "The suction strainer of pump P-102 looks worn and the readings drift compared with last week."
+    },
+    {
+      "id": "T12",
+      "report": "Maintenance notes a recurring fault at the suction strainer of pump P-103 and asks whether earlier incidents exist."
+    },
+    {
+      "id": "T13",
+      "report": "Operator reports an abnormal noise and rising vibration at the impeller housing of pump P-101 since the start of the shift."
+    },
+    {
+      "id": "T14",
+      "report": "Pump P-102 shows a visible leak near the impeller housing; the operator asks for an inspection."
+    },
+    {
+      "id": "T15",
+      "report": "The impeller housing of pump P-103 looks worn and the readings drift compared with last week."
+    },
+    {
+      "id": "T16",
+      "report": "Maintenance notes a recurring fault at the lubrication line of pump P-101 and asks whether earlier incidents exist."
+    },
+    {
+      "id": "T17",
+      "report": "Operator reports an abnormal noise and rising vibration at the lubrication line of pump P-102 since the start of the shift."
+    },
+    {
+      "id": "T18",
+      "report": "Pump P-103 shows a visible leak near the lubrication line; the operator asks for an inspection."
+    },
+    {
+      "id": "T19",
+      "report": "The motor mounting of pump P-101 looks worn and the readings drift compared with last week."
+    },
+    {
+      "id": "T20",
+      "report": "Maintenance notes a recurring fault at the motor mounting of pump P-102 and asks whether earlier incidents exist."
+    }
+  ]
+}

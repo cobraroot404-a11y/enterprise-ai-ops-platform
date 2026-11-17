@@ -1,0 +1,206 @@
+[
+ {
+  "name": "default",
+  "tuning": {}
+ },
+ {
+  "name": "E2_k20",
+  "tuning": {
+   "rrf_k": 20
+  }
+ },
+ {
+  "name": "E2_k100",
+  "tuning": {
+   "rrf_k": 100
+  }
+ },
+ {
+  "name": "E2_wt0.5",
+  "tuning": {
+   "w_text": 0.5
+  }
+ },
+ {
+  "name": "E2_wt1.5",
+  "tuning": {
+   "w_text": 1.5
+  }
+ },
+ {
+  "name": "E2_wt2.0",
+  "tuning": {
+   "w_text": 2.0
+  }
+ },
+ {
+  "name": "E2_wv1.5",
+  "tuning": {
+   "w_vec": 1.5
+  }
+ },
+ {
+  "name": "E2_k20_wt1.5",
+  "tuning": {
+   "rrf_k": 20,
+   "w_text": 1.5
+  }
+ },
+ {
+  "name": "E3_b0.005",
+  "tuning": {
+   "entity_boost": 0.005
+  }
+ },
+ {
+  "name": "E3_b0.01",
+  "tuning": {
+   "entity_boost": 0.01
+  }
+ },
+ {
+  "name": "E3_b0.02",
+  "tuning": {
+   "entity_boost": 0.02
+  }
+ },
+ {
+  "name": "E3_b0.05",
+  "tuning": {
+   "entity_boost": 0.05
+  }
+ },
+ {
+  "name": "E4_split",
+  "tuning": {
+   "subquery_split": true
+  }
+ },
+ {
+  "name": "E3b0.02_E4",
+  "tuning": {
+   "entity_boost": 0.02,
+   "subquery_split": true
+  }
+ },
+ {
+  "name": "E9_w0",
+  "tuning": {
+   "rerank": true,
+   "rerank_weights": [
+    1,
+    0.5,
+    0.5,
+    0.2,
+    0.1
+   ]
+  }
+ },
+ {
+  "name": "E9_w1",
+  "tuning": {
+   "rerank": true,
+   "rerank_weights": [
+    1,
+    0.3,
+    1.0,
+    0.3,
+    0.1
+   ]
+  }
+ },
+ {
+  "name": "E9_w2",
+  "tuning": {
+   "rerank": true,
+   "rerank_weights": [
+    1,
+    1,
+    1,
+    0.5,
+    0.05
+   ]
+  }
+ },
+ {
+  "name": "E9_w3",
+  "tuning": {
+   "rerank": true,
+   "rerank_weights": [
+    0.5,
+    0.5,
+    1.0,
+    0.5,
+    0.1
+   ]
+  }
+ },
+ {
+  "name": "E9_w4",
+  "tuning": {
+   "rerank": true,
+   "rerank_weights": [
+    1,
+    0,
+    1,
+    0,
+    0.2
+   ]
+  }
+ },
+ {
+  "name": "E9_w5",
+  "tuning": {
+   "rerank": true,
+   "rerank_weights": [
+    1,
+    0.5,
+    0.0,
+    0.2,
+    0.1
+   ]
+  }
+ },
+ {
+  "name": "E9_w6",
+  "tuning": {
+   "rerank": true,
+   "rerank_weights": [
+    1,
+    0.5,
+    2.0,
+    0.2,
+    0.1
+   ]
+  }
+ },
+ {
+  "name": "E3b0.02_E4_E9w1",
+  "tuning": {
+   "entity_boost": 0.02,
+   "subquery_split": true,
+   "rerank": true,
+   "rerank_weights": [
+    1,
+    0.3,
+    1.0,
+    0.3,
+    0.1
+   ]
+  }
+ },
+ {
+  "name": "E3b0.02_E9w1",
+  "tuning": {
+   "entity_boost": 0.02,
+   "rerank": true,
+   "rerank_weights": [
+    1,
+    0.3,
+    1.0,
+    0.3,
+    0.1
+   ]
+  }
+ }
+]

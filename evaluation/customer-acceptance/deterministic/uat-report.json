@@ -1,0 +1,565 @@
+{
+  "generated_utc": "2026-11-17T01:25:11.205546+00:00",
+  "mode": "deterministic",
+  "ai_evidence": "Deterministic TEST-ONLY backends: workflow, security and integration evidence only; NOT acceptance evidence for AI behaviour.",
+  "command": "UAT_BACKEND=deterministic python -m pytest tests/acceptance -q",
+  "summary": {
+    "scenarios": 15,
+    "passed": 15,
+    "failed": 0
+  },
+  "scenarios": [
+    {
+      "id": "UAT-A01",
+      "customer": "Apex Industrial Manufacturing (fictional)",
+      "title": "Document ingestion",
+      "requirement_ids": [
+        "R12.1",
+        "R12.2",
+        "R12.3"
+      ],
+      "preconditions": "Apex tenant exists with no documents; support engineer signed in",
+      "test_data": "Fictional Apex pump manual (PDF), inspection report (PDF), equipment register, incident history and maintenance log (CSV)",
+      "steps": [
+        "Upload each of the five sample files",
+        "Upload the equipment register again unchanged",
+        "List the documents",
+        "Search for a manual passage and read its provenance"
+      ],
+      "expected": "Five documents created with chunks; the repeat upload is reported as duplicate; hashes and versions are listed; search results carry page numbers (PDF) or record ids (CSV)",
+      "actual": "5 documents ingested {'apex_cp200_pump_manual.pdf': ('created', 3), 'apex_inspection_report_2026q3.pdf': ('created', 1), 'equipment_register.csv': ('created', 4), 'incident_history.csv': ('created', 5), 'maintenance_log.csv': ('created', 3)}; repeat upload 'duplicate'; first hit page=None",
+      "status": "PASS",
+      "evidence": {
+        "ingest_results": {
+          "apex_cp200_pump_manual.pdf": [
+            "created",
+            3
+          ],
+          "apex_inspection_report_2026q3.pdf": [
+            "created",
+            1
+          ],
+          "equipment_register.csv": [
+            "created",
+            4
+          ],
+          "incident_history.csv": [
+            "created",
+            5
+          ],
+          "maintenance_log.csv": [
+            "created",
+            3
+          ]
+        },
+        "documents_listed": 5,
+        "duplicate_status": "duplicate",
+        "sha256_recorded": true,
+        "provenance_page_numbers": [
+          1,
+          2
+        ]
+      },
+      "limitations": "",
+      "backend_mode": "deterministic",
+      "executed_utc": "2026-11-17T01:24:51.669048+00:00",
+      "error": ""
+    },
+    {
+      "id": "UAT-A02",
+      "customer": "Apex Industrial Manufacturing (fictional)",
+      "title": "Evidence-grounded retrieval",
+      "requirement_ids": [
+        "R13.1",
+        "R13.2",
+        "R13.3"
+      ],
+      "preconditions": "Apex documents ingested",
+      "test_data": "3 answerable questions and 1 unanswerable question",
+      "steps": [
+        "Ask each question",
+        "Check every citation: source ownership and verbatim quote",
+        "Ask an out-of-scope question"
+      ],
+      "expected": "Every answer shown is grounded with verified citations from Apex documents; unanswerable questions get an insufficient-evidence response with no citation. For the real model: at least 2 of the 3 prepared questions produce a verified grounded answer (measured Phase 3 coverage was about 75%)",
+      "actual": "3 of 3 answerable questions grounded with verified citations; out-of-scope question refused",
+      "status": "PASS",
+      "evidence": {
+        "answers": [
+          {
+            "question": "What should I check when pump P-101 shows abnormal vibration at the drive-end bearing?",
+            "grounded": true,
+            "citations": 3,
+            "problems": []
+          },
+          {
+            "question": "At what vibration velocity should the CP-200 pump be stopped?",
+            "grounded": true,
+            "citations": 3,
+            "problems": []
+          },
+          {
+            "question": "What causes cavitation in the pump and what should be done?",
+            "grounded": true,
+            "citations": 1,
+            "problems": []
+          }
+        ],
+        "backend": "deterministic"
+      },
+      "limitations": "Real-model coverage varies between runs; the 95% citation-correctness target remains NOT MET (Phase 3/4).",
+      "backend_mode": "deterministic",
+      "executed_utc": "2026-11-17T01:24:52.503945+00:00",
+      "error": ""
+    },
+    {
+      "id": "UAT-A03",
+      "customer": "Apex Industrial Manufacturing (fictional)",
+      "title": "Historical incident matching",
+      "requirement_ids": [
+        "R14.2",
+        "R7.1"
+      ],
+      "preconditions": "Apex incident history ingested",
+      "test_data": "Report: P-101 abnormal vibration 8.4 mm/s with grinding noise",
+      "steps": [
+        "Extract an incident from the report",
+        "Inspect related incidents"
+      ],
+      "expected": "Past incidents for the same equipment (INC-2024-0412, INC-2025-0107) are listed, same-asset first, from Apex's own history",
+      "actual": "related incidents ['INC-2025-0107', 'INC-2024-0412', 'INC-2025-0633']; first is same-asset",
+      "status": "PASS",
+      "evidence": {
+        "related_incident_ids": [
+          "INC-2025-0107",
+          "INC-2024-0412",
+          "INC-2025-0633"
+        ],
+        "incident_id": "9d1f2997-955b-4021-b535-4f57126a6946"
+      },
+      "limitations": "",
+      "backend_mode": "deterministic",
+      "executed_utc": "2026-11-17T01:24:53.150530+00:00",
+      "error": ""
+    },
+    {
+      "id": "UAT-A04",
+      "customer": "Apex Industrial Manufacturing (fictional)",
+      "title": "Structured ticket generation",
+      "requirement_ids": [
+        "R14.1",
+        "R14.3",
+        "R14.4",
+        "R7.1"
+      ],
+      "preconditions": "Apex documents ingested",
+      "test_data": "Report: P-101 abnormal vibration 8.4 mm/s with grinding noise",
+      "steps": [
+        "Extract the incident",
+        "Check the validated fields",
+        "Create a ticket draft (after human review if the platform requires it)"
+      ],
+      "expected": "A schema-valid incident (asset P-101 verified, category, symptoms, priority P3 from category rules; the free-text vibration reading is an UNVERIFIED candidate flagged for urgent review, not a priority input, citations or an explicit no-evidence note, review status); a draft whose content carries the asset, priority, evidence and notes",
+      "actual": "incident pending_review (category mechanical_vibration, 1 citation(s)); draft DRAFT",
+      "status": "PASS",
+      "evidence": {
+        "category": "mechanical_vibration",
+        "priority": "P3",
+        "review_status": "pending_review",
+        "citations": 1,
+        "extraction_backend": "deterministic/deterministic",
+        "backend": "deterministic"
+      },
+      "limitations": "In real-AI mode the model's category and symptoms vary; priority is rule-based.",
+      "backend_mode": "deterministic",
+      "executed_utc": "2026-11-17T01:24:53.836594+00:00",
+      "error": ""
+    },
+    {
+      "id": "UAT-A05",
+      "customer": "Apex Industrial Manufacturing (fictional)",
+      "title": "Unapproved submission blocked",
+      "requirement_ids": [
+        "R15.1",
+        "R15.2",
+        "R16.2"
+      ],
+      "preconditions": "Apex draft tickets exist",
+      "test_data": "Two tickets: one PENDING_APPROVAL, one REJECTED",
+      "steps": [
+        "Try to submit an unapproved ticket",
+        "Let the worker run",
+        "Engineer tries to approve",
+        "Supervisor rejects; try to retry/submit the rejected ticket"
+      ],
+      "expected": "Submission refused (409); the external system receives nothing; engineers cannot approve; a rejected ticket can never be submitted",
+      "actual": "submit before approval 409; engineer approval 403; rejected ticket submit/retry 409; worker idle; mock requests 0",
+      "status": "PASS",
+      "evidence": {
+        "submit_status": 409,
+        "engineer_approval_status": 403,
+        "external_requests": 0
+      },
+      "limitations": "",
+      "backend_mode": "deterministic",
+      "executed_utc": "2026-11-17T01:24:54.848072+00:00",
+      "error": ""
+    },
+    {
+      "id": "UAT-A06",
+      "customer": "Apex Industrial Manufacturing (fictional)",
+      "title": "Approved ticket submission",
+      "requirement_ids": [
+        "R15.1",
+        "R11.1",
+        "R15.5",
+        "R7.1"
+      ],
+      "preconditions": "Apex incident reviewed as required",
+      "test_data": "P-101 incident, supervisor approval",
+      "steps": [
+        "Request approval",
+        "Supervisor approves",
+        "Worker submits",
+        "Read the ticket and the audit trail"
+      ],
+      "expected": "The ticket reaches the maintenance mock exactly once, its external id (MNT-) is stored, and the audit trail records draft, approval and submission",
+      "actual": "ticket SUBMITTED as MNT-1009; 1 external ticket; audit has draft, approval, submission",
+      "status": "PASS",
+      "evidence": {
+        "external_ticket_id": "MNT-1009",
+        "external_tickets": 1,
+        "audit_actions": [
+          "approval.approved",
+          "document.created",
+          "incident.extracted",
+          "incident.priority_decided",
+          "ingestion.attempt_started",
+          "ingestion.job_completed",
+          "ingestion.job_created",
+          "ticket.drafted",
+          "ticket.submitted",
+          "ticket.transition"
+        ]
+      },
+      "limitations": "",
+      "backend_mode": "deterministic",
+      "executed_utc": "2026-11-17T01:24:55.776750+00:00",
+      "error": ""
+    },
+    {
+      "id": "UAT-A07",
+      "customer": "Apex Industrial Manufacturing (fictional)",
+      "title": "Duplicate prevention",
+      "requirement_ids": [
+        "R15.3",
+        "R15.6",
+        "R11.3"
+      ],
+      "preconditions": "Apex incident ready for a ticket",
+      "test_data": "Concurrent drafts, concurrent approvals, direct re-submit, lost-response retry",
+      "steps": [
+        "Create tickets for one incident from 5 threads",
+        "Approve one ticket from 6 threads",
+        "Re-submit and re-approve",
+        "Inject a lost response and let the worker retry"
+      ],
+      "expected": "One ticket per incident; one approval wins; one external ticket in every case, including after a lost response",
+      "actual": "draft codes [201, 409, 409, 409, 409]; approval codes [200, 409, 409, 409, 409, 409]; worker ['retry_scheduled', 'submitted']; external tickets 1",
+      "status": "PASS",
+      "evidence": {
+        "draft_status_codes": [
+          201,
+          409,
+          409,
+          409,
+          409
+        ],
+        "approval_status_codes": [
+          200,
+          409,
+          409,
+          409,
+          409,
+          409
+        ],
+        "worker_outcomes": [
+          "retry_scheduled",
+          "submitted"
+        ],
+        "external_tickets": 1
+      },
+      "limitations": "",
+      "backend_mode": "deterministic",
+      "executed_utc": "2026-11-17T01:24:56.811665+00:00",
+      "error": ""
+    },
+    {
+      "id": "UAT-A08",
+      "customer": "Apex Industrial Manufacturing (fictional)",
+      "title": "API failure recovery",
+      "requirement_ids": [
+        "R15.4",
+        "R11.2",
+        "R15.3"
+      ],
+      "preconditions": "Apex approved tickets; maintenance mock configurable",
+      "test_data": "Two consecutive HTTP 503 responses; one permanent HTTP 400",
+      "steps": [
+        "Approve a ticket while the mock returns 503 twice",
+        "Run the worker",
+        "Approve another while the mock returns 400",
+        "Fix and retry as a supervisor"
+      ],
+      "expected": "Transient failures are retried with backoff and end SUBMITTED once; a permanent failure is FAILED (not retried automatically) and a supervisor retry then succeeds with exactly one external ticket per ticket",
+      "actual": "503 x2: ['retry_scheduled', 'retry_scheduled', 'submitted'], attempts 3; 400: FAILED then supervisor retry SUBMITTED; external tickets 2 for 2 tickets",
+      "status": "PASS",
+      "evidence": {
+        "transient_outcomes": [
+          "retry_scheduled",
+          "retry_scheduled",
+          "submitted"
+        ],
+        "attempts": 3,
+        "permanent_state": "FAILED",
+        "external_tickets": 2
+      },
+      "limitations": "",
+      "backend_mode": "deterministic",
+      "executed_utc": "2026-11-17T01:24:58.249969+00:00",
+      "error": ""
+    },
+    {
+      "id": "UAT-B01",
+      "customer": "Meridian Fleet Logistics (fictional)",
+      "title": "Second-tenant onboarding",
+      "requirement_ids": [
+        "R10.1",
+        "R10.3",
+        "R8.1"
+      ],
+      "preconditions": "Platform running with Apex; Meridian origins authorized by the operator (server allow-list); no Meridian code exists in the services",
+      "test_data": "onboarding/meridian.json (tenant, members, connectors, domain profile, documents)",
+      "steps": [
+        "Run the onboarding tool against the public API only",
+        "Read the onboarding health checks",
+        "Check that no customer-specific tables exist"
+      ],
+      "expected": "Meridian exists as a separate tenant with members, connectors, profile and documents created through supported APIs only, and all health checks pass; the database schema contains no Meridian-specific objects",
+      "actual": "8 of 8 onboarding checks pass; profile v1; no customer-specific tables",
+      "status": "PASS",
+      "evidence": {
+        "health": {
+          "profile": "pass",
+          "register": "pass",
+          "guidance": "pass",
+          "embedding": "pass",
+          "approvers": "pass",
+          "ticketing": "pass",
+          "destinations": "pass",
+          "secrets": "pass"
+        },
+        "profile_version": 1
+      },
+      "limitations": "",
+      "backend_mode": "deterministic",
+      "executed_utc": "2026-11-17T01:24:59.370808+00:00",
+      "error": ""
+    },
+    {
+      "id": "UAT-B02",
+      "customer": "Meridian Fleet Logistics (fictional)",
+      "title": "Customer-specific schema mapping",
+      "requirement_ids": [
+        "R10.2",
+        "R12.3"
+      ],
+      "preconditions": "Meridian onboarded with field mappings in its profile",
+      "test_data": "fleet_register.csv, service_history.csv, telematics_alerts.csv with Meridian's own column names",
+      "steps": [
+        "Search for a service record",
+        "Inspect the stored passage and record id"
+      ],
+      "expected": "Records are keyed by Meridian's ids (VH-xxxx, SR-xxxx) and carry the mapped column names (vehicle_id, root_cause, resolution)",
+      "actual": "service record SR-3002 and register record VH-2101 carry mapped columns",
+      "status": "PASS",
+      "evidence": {
+        "service_record": "SR-3002",
+        "mapped_columns_present": [
+          "vehicle_id",
+          "root_cause"
+        ]
+      },
+      "limitations": "",
+      "backend_mode": "deterministic",
+      "executed_utc": "2026-11-17T01:25:00.439290+00:00",
+      "error": ""
+    },
+    {
+      "id": "UAT-B03",
+      "customer": "Meridian Fleet Logistics (fictional)",
+      "title": "Fleet issue extraction",
+      "requirement_ids": [
+        "R14.1",
+        "R14.3",
+        "R8.1"
+      ],
+      "preconditions": "Meridian onboarded; fleet and CRM mocks running",
+      "test_data": "Report: Vehicle VH-2101 shows low brake pressure of 52 psi with a hissing noise at the rear axle.",
+      "steps": [
+        "Extract the incident",
+        "Check asset verification, deterministic priority and enrichment notes",
+        "Extract a report with no vehicle id"
+      ],
+      "expected": "VH-2101 identified and verified against the fleet register; priority P3 from Meridian's category rules (the free-text 52 psi is an UNVERIFIED candidate, not a priority input); fleet telematics and CRM notes present; a report without a vehicle id is rejected, never guessed",
+      "actual": "VH-2101 verified; category brake_system; priority P3; 2 citation(s); enrichments present",
+      "status": "PASS",
+      "evidence": {
+        "category": "brake_system",
+        "priority": "P3",
+        "review_status": "pending_review",
+        "backend": "deterministic",
+        "extraction_backend": "deterministic/deterministic"
+      },
+      "limitations": "In real-AI mode the model may choose a near-miss category (observed: 'leak'); priority follows the extracted category and the regex-read signals.",
+      "backend_mode": "deterministic",
+      "executed_utc": "2026-11-17T01:25:01.611104+00:00",
+      "error": ""
+    },
+    {
+      "id": "UAT-B04",
+      "customer": "Meridian Fleet Logistics (fictional)",
+      "title": "Ticket approval",
+      "requirement_ids": [
+        "R15.1",
+        "R15.2",
+        "R8.1"
+      ],
+      "preconditions": "Meridian incident extracted",
+      "test_data": "VH-2101 brake incident",
+      "steps": [
+        "Draft and request approval as an engineer",
+        "Engineer tries to approve",
+        "Supervisor approves"
+      ],
+      "expected": "The author cannot approve; the supervisor's decision is recorded with a comment; the ticket becomes APPROVED",
+      "actual": "author approval 403; supervisor approval recorded with comment; ticket APPROVED",
+      "status": "PASS",
+      "evidence": {
+        "state": "APPROVED",
+        "approvals": [
+          {
+            "decision": "approved",
+            "decided_by": "777796fa-89e9-4673-9d91-d40145ff944d",
+            "comment": "Brake fault verified",
+            "decided_at": "2026-11-17T01:25:02.910029+00:00"
+          }
+        ]
+      },
+      "limitations": "",
+      "backend_mode": "deterministic",
+      "executed_utc": "2026-11-17T01:25:02.950603+00:00",
+      "error": ""
+    },
+    {
+      "id": "UAT-B05",
+      "customer": "Meridian Fleet Logistics (fictional)",
+      "title": "Correct customer API submission",
+      "requirement_ids": [
+        "R11.1",
+        "R10.2",
+        "R8.1"
+      ],
+      "preconditions": "Meridian connector maps to the service-desk work-order contract; Apex also active",
+      "test_data": "Approved Meridian ticket and an approved Apex ticket in the same worker queue",
+      "steps": [
+        "Approve both tickets",
+        "Run the worker",
+        "Inspect each external system"
+      ],
+      "expected": "Meridian's ticket arrives only at its service desk as a work order with the mapped fields and urgency (WO- id); Apex's reaches only its own system (MNT- id)",
+      "actual": "work order WO-7004 with mapped fields; Apex system received only its own ticket",
+      "status": "PASS",
+      "evidence": {
+        "work_order": "WO-7004",
+        "payload_keys": [
+          "details",
+          "source_ref",
+          "summary",
+          "urgency",
+          "vehicle_ref"
+        ],
+        "urgency": "normal",
+        "apex_system_tickets": 1
+      },
+      "limitations": "",
+      "backend_mode": "deterministic",
+      "executed_utc": "2026-11-17T01:25:05.147988+00:00",
+      "error": ""
+    },
+    {
+      "id": "UAT-B06",
+      "customer": "Meridian Fleet Logistics (fictional)",
+      "title": "Cross-tenant access denied",
+      "requirement_ids": [
+        "R16.1",
+        "R8.1"
+      ],
+      "preconditions": "Apex and Meridian both hold incidents, tickets and documents",
+      "test_data": "Apex and Meridian users of every role",
+      "steps": [
+        "Create a ticket in each tenant",
+        "Each tenant's users try to read and act on the other's objects",
+        "Search and ask from each tenant for the other's content"
+      ],
+      "expected": "Every cross-tenant read or action is denied or hidden; retrieval never returns the other tenant's passages; audit trails are separate",
+      "actual": "12 of 12 cross-tenant attempts denied; searches stayed inside each tenant; audit trails separate",
+      "status": "PASS",
+      "evidence": {
+        "attempts_denied": 12,
+        "apex_search_hits": 10,
+        "meridian_search_hits": 10
+      },
+      "limitations": "",
+      "backend_mode": "deterministic",
+      "executed_utc": "2026-11-17T01:25:07.468699+00:00",
+      "error": ""
+    },
+    {
+      "id": "UAT-B07",
+      "customer": "Meridian Fleet Logistics (fictional)",
+      "title": "Failure recovery",
+      "requirement_ids": [
+        "R15.4",
+        "R15.3",
+        "R11.2"
+      ],
+      "preconditions": "Meridian approved tickets; service-desk mock configurable",
+      "test_data": "HTTP 503 once, then a lost response",
+      "steps": [
+        "Approve a ticket while the service desk returns 503",
+        "Run the worker",
+        "Approve another and lose the response",
+        "Run the worker"
+      ],
+      "expected": "Both tickets end SUBMITTED; each produced exactly one work order (the lost response is replayed with the same idempotency key)",
+      "actual": "503: ['retry_scheduled', 'submitted']; lost response: ['retry_scheduled', 'submitted']; work orders 2 for 2 tickets",
+      "status": "PASS",
+      "evidence": {
+        "transient_outcomes": [
+          "retry_scheduled",
+          "submitted"
+        ],
+        "lost_response_outcomes": [
+          "retry_scheduled",
+          "submitted"
+        ],
+        "work_orders": 2
+      },
+      "limitations": "",
+      "backend_mode": "deterministic",
+      "executed_utc": "2026-11-17T01:25:10.180989+00:00",
+      "error": ""
+    }
+  ]
+}

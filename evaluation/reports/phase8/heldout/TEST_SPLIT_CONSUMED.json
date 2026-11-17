@@ -1,0 +1,11 @@
+{
+ "status": "CONSUMED",
+ "recorded": "2026-11-12 (EST)",
+ "split": "test",
+ "split_sha256": "19540a5c88eb7943a640f0fb802de6f40612c32a70e0a58c1ac4af2cb3e6893a",
+ "consumed_for_candidate_configuration_sha256": "4e24e63f3f2d06c31946d07e52d6f3a5c6c378a1f47b9b0535d8750368268e03",
+ "evaluation_runs": ["exp-HELDOUT-BASELINE-20261112T190915Z", "exp-HELDOUT-CANDIDATE-20261112T193240Z"],
+ "blind": false,
+ "partial_pre_run_label_exposure": "11 test-split items (labels only, no model outputs) were displayed in the Gate B label-review worksheet before any model run; see docs/evaluation/phase8-heldout-disposition.md",
+ "rule": "Not to be used to select, tune or re-evaluate any successor configuration. A new unbiased claim requires a fresh untouched evaluation set."
+}

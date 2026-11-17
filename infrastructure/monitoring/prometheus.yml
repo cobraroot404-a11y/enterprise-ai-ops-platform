@@ -1,0 +1,15 @@
+# ILLUSTRATIVE Prometheus scrape configuration for the platform's /metrics endpoint (optional, specification Parts 22 and 23).
+# Prometheus and Grafana are NOT installed or run by this project and this file was never loaded by a Prometheus server; the endpoint itself is tested
+# (backend/tests/test_durable_metrics.py). /metrics needs a bearer token for a user with metrics:read in ONE tenant and returns that tenant's series plus platform-level series,
+# so scrape one job per tenant. Keep the token in a file readable only by Prometheus; never paste it here.
+global:
+  scrape_interval: 30s
+scrape_configs:
+  - job_name: eaop-apex-industrial
+    metrics_path: /metrics
+    authorization:
+      type: Bearer
+      credentials_file: /etc/prometheus/secrets/apex-industrial.token
+    static_configs:
+      - targets: ["127.0.0.1:8000"]
+        labels: {tenant: apex-industrial}

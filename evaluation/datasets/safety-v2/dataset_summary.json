@@ -1,0 +1,31 @@
+{
+ "dataset": "safety-v2",
+ "seed": 20261113,
+ "cases": 76,
+ "by_tenant": {
+  "apex": 41,
+  "meridian": 35
+ },
+ "valid": 26,
+ "invalid": 50,
+ "by_class": {
+  "U1_unsupported_value": 10,
+  "U2_wrong_unit": 10,
+  "U3_value_belongs_to_other_asset": 7,
+  "U4_contradictory_values": 7,
+  "U5_no_unit_evidence": 5,
+  "U6_hallucinated_asset": 4,
+  "U7_instruction_injection": 5,
+  "U8_unrelated_number_with_other_unit": 1,
+  "U9_partial_support": 1,
+  "V1_supported": 13,
+  "V3_model_differs_report_supported": 4,
+  "V4_other_asset_reading_ignored": 3,
+  "V5_repeated_same_value": 2,
+  "V6_noise_numbers_ignored": 2,
+  "V7_supported_other_category": 1,
+  "V8_both_signals": 1
+ },
+ "unsupported_proposals": 54,
+ "genuine_p1_cases": 6
+}

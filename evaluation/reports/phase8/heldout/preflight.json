@@ -1,0 +1,104 @@
+{
+ "head": "a2571a42c5908cf6d79b5a8586647e9c4d2a4d8a",
+ "candidate_config": {
+  "entity_boost": 0.02,
+  "entity_gate": true,
+  "query_override_gate": true,
+  "claim_completion": true,
+  "numeric_verification": true,
+  "guidance_query": "asset_context"
+ },
+ "candidate_hash": "4e24e63f3f2d06c31946d07e52d6f3a5c6c378a1f47b9b0535d8750368268e03",
+ "all_pass": true,
+ "checks": [
+  {
+   "n": 1,
+   "check": "expected branch and clean working tree",
+   "result": "PASS",
+   "detail": "branch feat/apex-vertical-slice; porcelain: clean"
+  },
+  {
+   "n": 2,
+   "check": "HEAD commit and configuration hash recorded",
+   "result": "PASS",
+   "detail": "HEAD a2571a42c5908cf6d79b5a8586647e9c4d2a4d8a; candidate hash 4e24e63f3f2d06c31946d07e52d6f3a5c6c378a1f47b9b0535d8750368268e03; candidate JSON {\"entity_boost\": 0.02, \"entity_gate\": true, \"query_override_gate\": true, \"claim_completion\": true, \"numeric_verification\": true, \"guidance_query\": \"asset_context\"}"
+  },
+  {
+   "n": 3,
+   "check": "candidate configuration hash equals the frozen value",
+   "result": "PASS",
+   "detail": "4e24e63f3f2d06c31946d07e52d6f3a5c6c378a1f47b9b0535d8750368268e03 == 4e24e63f3f2d06c31946d07e52d6f3a5c6c378a1f47b9b0535d8750368268e03: True"
+  },
+  {
+   "n": 4,
+   "check": "frozen held-out dataset hash matches the recorded manifest",
+   "result": "PASS",
+   "detail": "verify: frozen hashes OK; test split sha256 19540a5c88eb7943a640f0fb802de6f40612c32a70e0a58c1ac4af2cb3e6893a (recorded at c0d19c9); counts {'queries.jsonl': 75, 'incidents.jsonl': 20}"
+  },
+  {
+   "n": 5,
+   "check": "dataset, labels, metric definitions and protocol unchanged since freezing; scorer changes are additive",
+   "result": "PASS",
+   "detail": "eval-v2 diff since c0d19c9: none; metric-definition/protocol numstat since freeze (added, deleted, file): ['46\\t0\\tdocs/evaluation/phase8-evaluation-protocol-v1.1.md', '27\\t1\\tdocs/evaluation/phase8-metric-definitions.md', '']; scorer/metrics numstat since the baseline run commit: ['22\\t0\\tevaluation/phase8/metrics.py', '47\\t2\\tevaluation/phase8/score_baseline.py', '']; the exact reproduction test is check 9"
+  },
+  {
+   "n": 6,
+   "check": "all 15 baseline integrity checks pass",
+   "result": "PASS",
+   "detail": "verifier exit 0; 15 PASS lines; ollama: Ollama: 0.40.16"
+  },
+  {
+   "n": 7,
+   "check": "baseline and candidate development evidence preserved",
+   "result": "PASS",
+   "detail": "29 run directories present and tracked; required: ['baseline-20261112T035539Z', 'INVALID-baseline-20261112T030653Z-token-expiry', 'exp-CAND1-20261112T090552Z', 'exp-RSTAR-20261112T054519Z', 'exp-B0-20261112T052628Z']"
+  },
+  {
+   "n": 8,
+   "check": "no held-out items inspected or used during optimisation",
+   "result": "PASS",
+   "detail": "held-out ids in any recorded run output: 0; run manifests' splits: ['dev']; harness refused non-dev splits without an explicit flag. DISCLOSURE: held-out ids appear (labels only, no model output) in these repository documents: [('docs\\\\evaluation\\\\phase8-dataset-methodology.md', 1), ('docs\\\\evaluation\\\\phase8-label-review-sample.md', 12)]. The dataset was authored by the same party that built the candidate and a 28-item label-review worksheet drawn from all splits was generated before optimisation; neither was used for any tuning decision."
+  },
+  {
+   "n": 9,
+   "check": "additive scorer keys do not alter historical metrics",
+   "result": "PASS",
+   "detail": "stored metrics reproduced exactly (differences: 0); additive keys ['cases_with_unsupported_numeric', 'numeric_values_proposed_unsupported', 'per_query', 'unsupported_numeric_accepted_as_verified']; additive key occurrences 36"
+  },
+  {
+   "n": 10,
+   "check": "candidate is enabled explicitly through EAOP_TUNING and recorded",
+   "result": "PASS",
+   "detail": "the development run manifest records tuning {'entity_boost': 0.02, 'entity_gate': True, 'query_override_gate': True, 'claim_completion': True, 'numeric_verification': True, 'guidance_query': 'asset_context'} with hash 4e24e63f3f2d06c31946d07e52d6f3a5c6c378a1f47b9b0535d8750368268e03; the held-out run passes the same JSON via --tuning (EAOP_TUNING) and its manifest will be compared"
+  }
+ ],
+ "code_sha256": {
+  "evaluation/phase8/metrics.py": "b3676b03e5b96066ae0c8838d7335f98fc29745166449eb6f9e3885d13bf2537",
+  "evaluation/phase8/score_baseline.py": "46fdb1e565db663a2f66409061eb73329eb0d3f814762e04e85278d257869b71",
+  "evaluation/phase8/score_experiment.py": "60b151a33243b77991f03cb19a05bfa2873357aeb81261804ed045ea3a12522e",
+  "evaluation/phase8/run_experiment.py": "def404354a7a5322cea4a8c2d20f709aefb6979bf6fd27edc05e54c3c7faf5d5",
+  "evaluation/phase8/run_baseline.py": "f87b0cedc39f9955bdf62fb619085f767373aea31c3f6e5c1df3fd4fb474f4fd",
+  "evaluation/phase8/gen_dataset.py": "6e0f6c04245c563b99c4952c443a17cf505f091050ebcb8e6b73c863f3abffd0",
+  "evaluation/phase8/validate_dataset.py": "07812cedcd4de0cc81c3cf9d3a01666ee7950e6454d54d2722766e0b838adf0b",
+  "evaluation/phase8/configs/candidate_v1.json": "419fd85552674537d49b0855160a63bfc72fab4eb0efc5c8b6e01968bebc4a80",
+  "backend/app/ai/tuning.py": "9355d70059d350d5b86504074753cbf6b6085155804755798887d0721fdcbbb5",
+  "backend/app/ai/rag.py": "80aa36282f1cce1dfb2279cced7f50e2947f1805b3e656888f1190f9608328c2",
+  "backend/app/ai/safeguards.py": "7df33c00e6e40ba66b17fecefe6aae8b1d265854f4ab3bfe53997223638bf96e",
+  "backend/app/ai/safety.py": "0798adb6ac1260ed06e6ab0bd57061fc23c8acbb5518565239d63d02316dcbed",
+  "backend/app/ai/measurements.py": "e18e6a67abb9de9f5f31f4154513fcdb90858929e652764c62f784bfde0ee58b",
+  "backend/app/retrieval/search.py": "319381b61defb7b277bbebf78347d6ba7069eacfe1daa0019ce704fafe9f6876",
+  "backend/app/retrieval/entities.py": "4bfcec035527b968ca6f36322b2f756dd14aa5103473ff729f1ad34bab059a34",
+  "backend/app/services/incident_service.py": "402f4eb9dfccae96de049a57b23fd2f382e7bf0800965a230144622725a05622",
+  "backend/app/ai/ollama_llm.py": "a3737335441ffb991f74dfd4c7b5c871b874762241cbd1896d3d5615bcb21201"
+ },
+ "held_out_documents_mentioning_ids": [
+  [
+   "docs\\evaluation\\phase8-dataset-methodology.md",
+   1
+  ],
+  [
+   "docs\\evaluation\\phase8-label-review-sample.md",
+   12
+  ]
+ ]
+}

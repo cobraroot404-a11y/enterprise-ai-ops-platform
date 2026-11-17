@@ -1,0 +1,74 @@
+{
+ "run_id": "exp-D1-20261114T050707Z",
+ "experiment": "D1",
+ "command": "python evaluation/phase8/run_experiment.py --id D1 --tuning {\"entity_boost\": 0.02, \"entity_gate\": true, \"query_override_gate\": true, \"claim_completion\": true, \"numeric_verification\": true, \"guidance_query\": \"asset_context\", \"decompose_answers\": true} --phases qa --reps 1",
+ "started_utc": "2026-11-14T05:07:07.357281+00:00",
+ "finished_utc": "2026-11-14T05:18:09.368208+00:00",
+ "duration_s": 662.0,
+ "git_commit": "8303761f3f7028e9d204f50e2d30707c85a9fe4b",
+ "uncommitted_changes_in_scope": [
+  "M backend/app/ai/ollama_llm.py",
+  " M backend/app/ai/rag.py",
+  " M backend/app/ai/rules.py",
+  " M backend/app/ai/tuning.py",
+  " M backend/app/services/incident_service.py",
+  "?? backend/tests/test_asset_resolution_security.py",
+  "?? backend/tests/test_decompose_answers.py",
+  "?? evaluation/phase8/failure_taxonomy.py"
+ ],
+ "python": "3.10.0",
+ "versions": {
+  "python": "3.10.0",
+  "torch": "2.14.1+cpu",
+  "transformers": "5.20.2",
+  "sentence_transformers": "6.3.0",
+  "huggingface_hub": "2.4.0",
+  "numpy": "2.2.6",
+  "ollama": "0.40.16",
+  "ollama_model": "qwen2.5:1.5b",
+  "ollama_model_digest": "65ec06548149b04c096a120e4a6da9d4017ea809c91734ea5631e89f96ddc57b",
+  "prompt_version": "3",
+  "prompts_sha256": "3710b8b7897780f85600ce5eb007731ae5f38f895790d09c3cdb096a921575c6",
+  "ollama_options": {
+   "temperature": 0,
+   "seed": 7,
+   "num_ctx": 4096,
+   "num_predict": 320
+  },
+  "postgres": "16.15 (Debian 16.15-1.pgdg12+2)",
+  "pgvector": "0.8.7",
+  "embedding_profile": "sentence_transformers:sentence-transformers/all-MiniLM-L6-v2@1110a243fdf4706b3f48f1d95db1a4f5529b4d41:384",
+  "embedding_evidence_threshold_used": 0.5
+ },
+ "tuning_at_ingestion": {
+  "entity_boost": 0.02,
+  "entity_gate": true,
+  "query_override_gate": true,
+  "claim_completion": true,
+  "numeric_verification": true,
+  "guidance_query": "asset_context",
+  "decompose_answers": true
+ },
+ "tuning_hash_at_ingestion": "be06990a9ea9619aff9f281db86e218b5bd3f55d8a7af7b5753d5571fb600ec7",
+ "reps": 1,
+ "phases": [
+  "qa"
+ ],
+ "dataset": {
+  "name": "eval-v2",
+  "split": "dev",
+  "queries": 118,
+  "cases": 34,
+  "manifest_sha256": "42fec8bc8abea9efff135208127990747d915287e77e8b3d64b65732e7d9cb62",
+  "frozen_splits_sha256": "31d18132ad3d2bd22fdac903c721b2427c67822634d1ceca76204520f880f42f"
+ },
+ "runtime": {
+  "ollama_options": {
+   "temperature": 0,
+   "seed": 7,
+   "num_ctx": 4096,
+   "num_predict": 320
+  },
+  "evidence_threshold": 0.5
+ }
+}

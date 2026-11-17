@@ -1,0 +1,133 @@
+# ILLUSTRATIVE Kubernetes manifests (specification Part 24: optional, after the local platform works). They were NEVER applied to a cluster: there is no cluster, no kubectl and
+# no cloud account in this project. They are parsed and checked as text by tests/test_infrastructure_examples.py. Nothing here claims a cloud deployment.
+#
+# Assumptions to review before any real use: the images eaop-app-backend:local and eaop-app-ui:local are built locally (docker compose -f docker-compose.app.yml build) and pushed to a
+# registry you control (replace the image names); PostgreSQL with pgvector is provided outside this file (managed, or a StatefulSet you add); every secret is created by the operator as the
+# Secret named eaop-secrets (never committed); the AI backends here are the deterministic test-only ones, so this is a functional example, not a production configuration; connector egress
+# allow-lists (EGRESS_ALLOWLIST) must be configured for real upstream systems.
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: eaop
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: eaop-config
+  namespace: eaop
+data:
+  DB_HOST: eaop-postgres.eaop.svc.cluster.local
+  POSTGRES_PORT: "5432"
+  POSTGRES_DB: eaop
+  POSTGRES_USER: eaop
+  LLM_BACKEND: deterministic
+  EMBEDDING_BACKEND: deterministic
+  EAOP_ENV: development
+  METRICS_FLUSH_SECONDS: "10"
+---
+# The Secret eaop-secrets is created by the operator and never committed. Required keys: POSTGRES_PASSWORD, APP_DB_PASSWORD, WORKER_DB_PASSWORD, JWT_SECRET
+# (kubectl -n eaop create secret generic eaop-secrets --from-literal=KEY=value for each key).
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: eaop-migrate
+  namespace: eaop
+spec:
+  backoffLimit: 2
+  template:
+    spec:
+      restartPolicy: Never
+      containers:
+        - name: migrate
+          image: eaop-app-backend:local
+          command: ["python", "scripts/migrate.py"]
+          envFrom:
+            - configMapRef: {name: eaop-config}
+            - secretRef: {name: eaop-secrets}
+          securityContext: {runAsNonRoot: true, runAsUser: 10001, allowPrivilegeEscalation: false, capabilities: {drop: ["ALL"]}}
+          resources: {requests: {cpu: 100m, memory: 128Mi}, limits: {cpu: 500m, memory: 256Mi}}
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: api
+  namespace: eaop
+spec:
+  replicas: 2  # more than one API process is safe: rate limits and metrics are shared through PostgreSQL
+  selector:
+    matchLabels: {app: api}
+  template:
+    metadata:
+      labels: {app: api}
+    spec:
+      containers:
+        - name: api
+          image: eaop-app-backend:local
+          ports: [{containerPort: 8000}]
+          envFrom:
+            - configMapRef: {name: eaop-config}
+            - secretRef: {name: eaop-secrets}
+          readinessProbe: {httpGet: {path: /api/v1/health, port: 8000}, periodSeconds: 5}
+          livenessProbe: {httpGet: {path: /api/v1/health, port: 8000}, initialDelaySeconds: 20, periodSeconds: 10}
+          securityContext: {runAsNonRoot: true, runAsUser: 10001, allowPrivilegeEscalation: false, capabilities: {drop: ["ALL"]}}
+          resources: {requests: {cpu: 200m, memory: 256Mi}, limits: {cpu: "1", memory: 512Mi}}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: api
+  namespace: eaop
+spec:
+  selector: {app: api}
+  ports: [{port: 8000, targetPort: 8000}]
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: worker
+  namespace: eaop
+spec:
+  replicas: 2  # leases and fenced claims make several workers safe
+  selector:
+    matchLabels: {app: worker}
+  template:
+    metadata:
+      labels: {app: worker}
+    spec:
+      containers:
+        - name: worker
+          image: eaop-app-backend:local
+          command: ["python", "workers/run_worker.py"]
+          envFrom:
+            - configMapRef: {name: eaop-config}
+            - secretRef: {name: eaop-secrets}
+          securityContext: {runAsNonRoot: true, runAsUser: 10001, allowPrivilegeEscalation: false, capabilities: {drop: ["ALL"]}}
+          resources: {requests: {cpu: 100m, memory: 256Mi}, limits: {cpu: 500m, memory: 512Mi}}
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ui
+  namespace: eaop
+spec:
+  replicas: 1
+  selector:
+    matchLabels: {app: ui}
+  template:
+    metadata:
+      labels: {app: ui}
+    spec:
+      containers:
+        - name: ui
+          image: eaop-app-ui:local
+          ports: [{containerPort: 80}]
+          resources: {requests: {cpu: 50m, memory: 32Mi}, limits: {cpu: 200m, memory: 64Mi}}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: ui
+  namespace: eaop
+spec:
+  selector: {app: ui}
+  ports: [{port: 80, targetPort: 80}]

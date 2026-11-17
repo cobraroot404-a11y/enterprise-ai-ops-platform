@@ -1,0 +1,462 @@
+{
+ "meta": {
+  "model": "qwen2.5:1.5b",
+  "options": {
+   "temperature": 0,
+   "seed": 7,
+   "num_ctx": 4096,
+   "num_predict": 320
+  },
+  "dataset_sha256": "61f71813ea934877bf645082824f491edbe211f1f98e7b7d53ea5eab59cd51f7",
+  "elapsed_s": 155.6,
+  "note": "development evidence only; not confirmation"
+ },
+ "summary": {
+  "A_current": {
+   "no_asset_cases": 16,
+   "invented": 16,
+   "null_correct": 0,
+   "with_asset_cases": 14,
+   "correct": 13,
+   "null_wrong": 0,
+   "raw_valid": 13,
+   "total": 30
+  },
+  "B_explicit_null": {
+   "no_asset_cases": 16,
+   "invented": 15,
+   "null_correct": 1,
+   "with_asset_cases": 14,
+   "correct": 13,
+   "null_wrong": 0,
+   "raw_valid": 14,
+   "total": 30
+  }
+ },
+ "rows": {
+  "A_current": [
+   {
+    "id": "NA-01",
+    "kind": "no_asset",
+    "expected": null,
+    "outcome": "invented",
+    "raw": "{\n  \"asset_id\": \"P-101\",\n  \"category\": \"mechanical_vibration\",\n  \"symptoms\": [\"shaking\", \"grinding noise\"],\n  \"vibration_mm_s\": 5.2,\n  \"smoke_or_fire\": false\n}"
+   },
+   {
+    "id": "NA-02",
+    "kind": "no_asset",
+    "expected": null,
+    "outcome": "invented",
+    "raw": "{\n  \"asset_id\": \"P-101\",\n  \"category\": \"electrical_fault\",\n  \"symptoms\": [\n    \"smoke_or_fire\"\n  ],\n  \"vibration_mm_s\": null,\n  \"smoke_or_fire\": true\n}"
+   },
+   {
+    "id": "NA-03",
+    "kind": "no_asset",
+    "expected": null,
+    "outcome": "invented",
+    "raw": "{\n  \"asset_id\": \"P-101\",\n  \"category\": \"leak\",\n  \"symptoms\": [\"oil dripping from the gearbox\"],\n  \"vibration_mm_s\": null,\n  \"smoke_or_fire\": false\n}"
+   },
+   {
+    "id": "NA-04",
+    "kind": "no_asset",
+    "expected": null,
+    "outcome": "invented",
+    "raw": "{\n  \"asset_id\": \"P-101\",\n  \"category\": \"electrical_fault\",\n  \"symptoms\": [\n    \"breaker or overload trips\"\n  ],\n  \"vibration_mm_s\": null,\n  \"smoke_or_fire\": false\n}"
+   },
+   {
+    "id": "NA-05",
+    "kind": "no_asset",
+    "expected": null,
+    "outcome": "invented",
+    "raw": "{\n  \"asset_id\": \"P-102\",\n  \"category\": \"noise\",\n  \"symptoms\": [\"squealing\", \"running slowly\"],\n  \"vibration_mm_s\": null,\n  \"smoke_or_fire\": false\n}"
+   },
+   {
+    "id": "NA-06",
+    "kind": "no_asset",
+    "expected": null,
+    "outcome": "invented",
+    "raw": "{\n  \"asset_id\": \"P-101\",\n  \"category\": \"leak\",\n  \"symptoms\": [\n    \"water leaking\"\n  ],\n  \"vibration_mm_s\": null,\n  \"smoke_or_fire\": false\n}"
+   },
+   {
+    "id": "NA-07",
+    "kind": "no_asset",
+    "expected": null,
+    "outcome": "invented",
+    "raw": "{\n  \"asset_id\": \"P-101\",\n  \"category\": \"noise\",\n  \"symptoms\": [\"rattling\"],\n  \"vibration_mm_s\": null,\n  \"smoke_or_fire\": false\n}"
+   },
+   {
+    "id": "NA-08",
+    "kind": "no_asset",
+    "expected": null,
+    "outcome": "invented",
+    "raw": "{\n  \"asset_id\": \"P-101\",\n  \"category\": \"overheating\",\n  \"symptoms\": [\n    \"hotter than the others\"\n  ],\n  \"vibration_mm_s\": null,\n  \"smoke_or_fire\": false\n}"
+   },
+   {
+    "id": "NA-09",
+    "kind": "no_asset",
+    "expected": null,
+    "outcome": "invented",
+    "raw": "{\n  \"asset_id\": \"P-101\",\n  \"category\": \"performance_degradation\",\n  \"symptoms\": [\n    \"pressure has dropped\"\n  ],\n  \"vibration_mm_s\": null,\n  \"smoke_or_fire\": false\n}"
+   },
+   {
+    "id": "NA-10",
+    "kind": "no_asset",
+    "expected": null,
+    "outcome": "invented",
+    "raw": "{\n  \"asset_id\": \"P-101\",\n  \"category\": \"performance_degradation\",\n  \"symptoms\": [\n    \"The mixer in the paint shop stopped suddenly and will not restart.\"\n  ],\n  \"vibration_mm_s\": null,\n  \"smoke_or_fire\": false\n}"
+   },
+   {
+    "id": "NA-11",
+    "kind": "no_asset",
+    "expected": null,
+    "outcome": "invented",
+    "raw": "{\n  \"asset_id\": \"P-101\",\n  \"category\": \"electrical_fault\",\n  \"symptoms\": [\n    \"humming\",\n    \"smoke\"\n  ],\n  \"vibration_mm_s\": null,\n  \"smoke_or_fire\": true\n}"
+   },
+   {
+    "id": "NA-12",
+    "kind": "no_asset",
+    "expected": null,
+    "outcome": "invented",
+    "raw": "{\n  \"asset_id\": \"P-101\",\n  \"category\": \"performance_degradation\",\n  \"symptoms\": [\n    \"no heat\"\n  ],\n  \"vibration_mm_s\": null,\n  \"smoke_or_fire\": false\n}"
+   },
+   {
+    "id": "NA-13",
+    "kind": "no_asset",
+    "expected": null,
+    "outcome": "invented",
+    "raw": "{\n  \"asset_id\": \"P-101\",\n  \"category\": \"noise\",\n  \"symptoms\": [\"loud bang\"],\n  \"vibration_mm_s\": null,\n  \"smoke_or_fire\": false\n}"
+   },
+   {
+    "id": "NA-14",
+    "kind": "no_asset",
+    "expected": null,
+    "outcome": "invented",
+    "raw": "{\n  \"asset_id\": \"P-101\",\n  \"category\": \"electrical_fault\",\n  \"symptoms\": [\n    \"smoke_or_fire\",\n    \"overheating\"\n  ],\n  \"vibration_mm_s\": null,\n  \"smoke_or_fire\": true\n}"
+   },
+   {
+    "id": "NA-15",
+    "kind": "no_asset",
+    "expected": null,
+    "outcome": "invented",
+    "raw": "{\n  \"asset_id\": \"T-101\",\n  \"category\": \"leak\",\n  \"symptoms\": [\"weeping fluid onto the floor\"],\n  \"vibration_mm_s\": null,\n  \"smoke_or_fire\": false\n}"
+   },
+   {
+    "id": "NA-16",
+    "kind": "no_asset",
+    "expected": null,
+    "outcome": "invented",
+    "raw": "{\n  \"asset_id\": \"P-101\",\n  \"category\": \"mechanical_vibration\",\n  \"symptoms\": [\"vibration_mm_s: 1200\"],\n  \"vibration_mm_s\": 1200,\n  \"smoke_or_fire\": false\n}"
+   },
+   {
+    "id": "WA-01",
+    "kind": "with_asset",
+    "expected": "XJ-204",
+    "outcome": "invented",
+    "raw": "{\n  \"asset_id\": \"P-204\",\n  \"category\": \"mechanical_vibration\",\n  \"symptoms\": [\"vibration_mm_s\"],\n  \"vibration_mm_s\": 100,\n  \"smoke_or_fire\": false\n}"
+   },
+   {
+    "id": "WA-02",
+    "kind": "with_asset",
+    "expected": "GB-77",
+    "outcome": "correct",
+    "raw": "{\n  \"asset_id\": \"GB-77\",\n  \"category\": \"leak\",\n  \"symptoms\": [\n    \"leaking oil\"\n  ],\n  \"vibration_mm_s\": null,\n  \"smoke_or_fire\": false\n}"
+   },
+   {
+    "id": "WA-03",
+    "kind": "with_asset",
+    "expected": "K-12",
+    "outcome": "correct",
+    "raw": "{\n  \"asset_id\": \"K-12\",\n  \"category\": \"electrical_fault\",\n  \"symptoms\": [\n    \"breaker or overload trips\"\n  ],\n  \"vibration_mm_s\": null,\n  \"smoke_or_fire\": false\n}"
+   },
+   {
+    "id": "WA-04",
+    "kind": "with_asset",
+    "expected": "F-3301",
+    "outcome": "correct",
+    "raw": "{\n  \"asset_id\": \"F-3301\",\n  \"category\": \"noise\",\n  \"symptoms\": [\"rattling\", \"housing feels hot\"],\n  \"vibration_mm_s\": null,\n  \"smoke_or_fire\": false\n}"
+   },
+   {
+    "id": "WA-05",
+    "kind": "with_asset",
+    "expected": "CV-88",
+    "outcome": "correct",
+    "raw": "{\n  \"asset_id\": \"CV-88\",\n  \"category\": \"noise\",\n  \"symptoms\": [\"squeals\", \"runs slowly\"],\n  \"vibration_mm_s\": null,\n  \"smoke_or_fire\": false\n}"
+   },
+   {
+    "id": "WA-06",
+    "kind": "with_asset",
+    "expected": "EP-409",
+    "outcome": "correct",
+    "raw": "{\n  \"asset_id\": \"EP-409\",\n  \"category\": \"electrical_fault\",\n  \"symptoms\": [\n    \"smoke_or_fire\"\n  ],\n  \"vibration_mm_s\": null,\n  \"smoke_or_fire\": true\n}"
+   },
+   {
+    "id": "WA-07",
+    "kind": "with_asset",
+    "expected": "V-1520",
+    "outcome": "correct",
+    "raw": "{\n  \"asset_id\": \"V-1520\",\n  \"category\": \"leak\",\n  \"symptoms\": [\"weeping fluid onto the floor\"],\n  \"vibration_mm_s\": null,\n  \"smoke_or_fire\": false\n}"
+   },
+   {
+    "id": "WA-08",
+    "kind": "with_asset",
+    "expected": "MX-6",
+    "outcome": "correct",
+    "raw": "{\n  \"asset_id\": \"MX-6\",\n  \"category\": \"performance_degradation\",\n  \"symptoms\": [\n    \"Mixer MX-6 stopped suddenly and will not restart\"\n  ],\n  \"vibration_mm_s\": null,\n  \"smoke_or_fire\": false\n}"
+   },
+   {
+    "id": "WA-09",
+    "kind": "with_asset",
+    "expected": "HT-21",
+    "outcome": "correct",
+    "raw": "{\n  \"asset_id\": \"HT-21\",\n  \"category\": \"performance_degradation\",\n  \"symptoms\": [\n    \"no heat\"\n  ],\n  \"vibration_mm_s\": null,\n  \"smoke_or_fire\": false\n}"
+   },
+   {
+    "id": "WA-10",
+    "kind": "with_asset",
+    "expected": "PR-300",
+    "outcome": "correct",
+    "raw": "{\n  \"asset_id\": \"PR-300\",\n  \"category\": \"noise\",\n  \"symptoms\": [\"loud bang\"],\n  \"vibration_mm_s\": null,\n  \"smoke_or_fire\": false\n}"
+   },
+   {
+    "id": "WA-11",
+    "kind": "with_asset",
+    "expected": "P-908",
+    "outcome": "correct",
+    "raw": "{\n  \"asset_id\": \"P-908\",\n  \"category\": \"performance_degradation\",\n  \"symptoms\": [\"pressure dropping on the discharge side\"],\n  \"vibration_mm_s\": null,\n  \"smoke_or_fire\": false\n}"
+   },
+   {
+    "id": "WA-12",
+    "kind": "with_asset",
+    "expected": "LT-14",
+    "outcome": "correct",
+    "raw": "{\n  \"asset_id\": \"LT-14\",\n  \"category\": \"mechanical_vibration\",\n  \"symptoms\": [\"vibration_mm_s\"],\n  \"vibration_mm_s\": 120,\n  \"smoke_or_fire\": false\n}"
+   },
+   {
+    "id": "WA-13",
+    "kind": "with_asset",
+    "expected": "CH-5",
+    "outcome": "correct",
+    "raw": "{\n  \"asset_id\": \"CH-5\",\n  \"category\": \"overheating\",\n  \"symptoms\": [\n    \"display flickers\"\n  ],\n  \"vibration_mm_s\": null,\n  \"smoke_or_fire\": false\n}"
+   },
+   {
+    "id": "WA-14",
+    "kind": "with_asset",
+    "expected": "T-02",
+    "outcome": "correct",
+    "raw": "{\n  \"asset_id\": \"T-02\",\n  \"category\": \"leak\",\n  \"symptoms\": [\"leaking\"],\n  \"vibration_mm_s\": null,\n  \"smoke_or_fire\": false\n}"
+   }
+  ],
+  "B_explicit_null": [
+   {
+    "id": "NA-01",
+    "kind": "no_asset",
+    "expected": null,
+    "outcome": "invented",
+    "raw": "{\n  \"asset_id\": \"P-101\",\n  \"category\": \"mechanical_vibration\",\n  \"symptoms\": [\"shaking\", \"grinding\"],\n  \"vibration_mm_s\": 5.2,\n  \"smoke_or_fire\": false\n}"
+   },
+   {
+    "id": "NA-02",
+    "kind": "no_asset",
+    "expected": null,
+    "outcome": "invented",
+    "raw": "{\n  \"asset_id\": \"null\",\n  \"category\": \"electrical_fault\",\n  \"symptoms\": [\n    \"smoke_or_fire\"\n  ],\n  \"vibration_mm_s\": null,\n  \"smoke_or_fire\": true\n}"
+   },
+   {
+    "id": "NA-03",
+    "kind": "no_asset",
+    "expected": null,
+    "outcome": "invented",
+    "raw": "{\n  \"asset_id\": \"P-101\",\n  \"category\": \"leak\",\n  \"symptoms\": [\n    \"oil dripping\"\n  ],\n  \"vibration_mm_s\": null,\n  \"smoke_or_fire\": false\n}"
+   },
+   {
+    "id": "NA-04",
+    "kind": "no_asset",
+    "expected": null,
+    "outcome": "invented",
+    "raw": "{\n  \"asset_id\": \"P-101\",\n  \"category\": \"electrical_fault\",\n  \"symptoms\": [\n    \"breaker or overload trips\"\n  ],\n  \"vibration_mm_s\": null,\n  \"smoke_or_fire\": false\n}"
+   },
+   {
+    "id": "NA-05",
+    "kind": "no_asset",
+    "expected": null,
+    "outcome": "invented",
+    "raw": "{\n  \"asset_id\": \"P-101\",\n  \"category\": \"noise\",\n  \"symptoms\": [\"squealing\", \"running slowly\"],\n  \"vibration_mm_s\": null,\n  \"smoke_or_fire\": false\n}"
+   },
+   {
+    "id": "NA-06",
+    "kind": "no_asset",
+    "expected": null,
+    "outcome": "invented",
+    "raw": "{\n  \"asset_id\": \"P-101\",\n  \"category\": \"leak\",\n  \"symptoms\": [\n    \"leaking\"\n  ],\n  \"vibration_mm_s\": null,\n  \"smoke_or_fire\": false\n}"
+   },
+   {
+    "id": "NA-07",
+    "kind": "no_asset",
+    "expected": null,
+    "outcome": "invented",
+    "raw": "{\n  \"asset_id\": \"P-101\",\n  \"category\": \"noise\",\n  \"symptoms\": [\"rattling loudly\"],\n  \"vibration_mm_s\": null,\n  \"smoke_or_fire\": false\n}"
+   },
+   {
+    "id": "NA-08",
+    "kind": "no_asset",
+    "expected": null,
+    "outcome": "invented",
+    "raw": "{\n  \"asset_id\": \"P-101\",\n  \"category\": \"overheating\",\n  \"symptoms\": [\n    \"hotter than the others\"\n  ],\n  \"vibration_mm_s\": null,\n  \"smoke_or_fire\": false\n}"
+   },
+   {
+    "id": "NA-09",
+    "kind": "no_asset",
+    "expected": null,
+    "outcome": "invented",
+    "raw": "{\n  \"asset_id\": \"null\",\n  \"category\": \"performance_degradation\",\n  \"symptoms\": [\n    \"pressure has dropped\"\n  ],\n  \"vibration_mm_s\": null,\n  \"smoke_or_fire\": false\n}"
+   },
+   {
+    "id": "NA-10",
+    "kind": "no_asset",
+    "expected": null,
+    "outcome": "invented",
+    "raw": "{\n  \"asset_id\": \"P-101\",\n  \"category\": \"performance_degradation\",\n  \"symptoms\": [\n    \"The mixer in the paint shop stopped suddenly and will not restart.\"\n  ],\n  \"vibration_mm_s\": null,\n  \"smoke_or_fire\": false\n}"
+   },
+   {
+    "id": "NA-11",
+    "kind": "no_asset",
+    "expected": null,
+    "outcome": "invented",
+    "raw": "{\n  \"asset_id\": \"null\",\n  \"category\": \"electrical_fault\",\n  \"symptoms\": [\n    \"humming\",\n    \"smoke\"\n  ],\n  \"vibration_mm_s\": null,\n  \"smoke_or_fire\": true\n}"
+   },
+   {
+    "id": "NA-12",
+    "kind": "no_asset",
+    "expected": null,
+    "outcome": "null_correct",
+    "raw": "{\n  \"asset_id\": null,\n  \"category\": \"performance_degradation\",\n  \"symptoms\": [\n    \"no heat\"\n  ],\n  \"vibration_mm_s\": null,\n  \"smoke_or_fire\": false\n}"
+   },
+   {
+    "id": "NA-13",
+    "kind": "no_asset",
+    "expected": null,
+    "outcome": "invented",
+    "raw": "{\n  \"asset_id\": \"P-101\",\n  \"category\": \"noise\",\n  \"symptoms\": [\n    \"loud bang\"\n  ],\n  \"vibration_mm_s\": null,\n  \"smoke_or_fire\": false\n}"
+   },
+   {
+    "id": "NA-14",
+    "kind": "no_asset",
+    "expected": null,
+    "outcome": "invented",
+    "raw": "{\n  \"asset_id\": \"P-101\",\n  \"category\": \"overheating\",\n  \"symptoms\": [\n    \"smoke_or_fire\"\n  ],\n  \"vibration_mm_s\": null,\n  \"smoke_or_fire\": true\n}"
+   },
+   {
+    "id": "NA-15",
+    "kind": "no_asset",
+    "expected": null,
+    "outcome": "invented",
+    "raw": "{\n  \"asset_id\": \"P-101\",\n  \"category\": \"leak\",\n  \"symptoms\": [\n    \"weeping fluid onto the floor\"\n  ],\n  \"vibration_mm_s\": null,\n  \"smoke_or_fire\": false\n}"
+   },
+   {
+    "id": "NA-16",
+    "kind": "no_asset",
+    "expected": null,
+    "outcome": "invented",
+    "raw": "{\n  \"asset_id\": \"P-101\",\n  \"category\": \"mechanical_vibration\",\n  \"symptoms\": [\n    \"vibration_mm_s\"\n  ],\n  \"vibration_mm_s\": 120,\n  \"smoke_or_fire\": false\n}"
+   },
+   {
+    "id": "WA-01",
+    "kind": "with_asset",
+    "expected": "XJ-204",
+    "outcome": "invented",
+    "raw": "{\n  \"asset_id\": \"P-101\",\n  \"category\": \"mechanical_vibration\",\n  \"symptoms\": [\"vibration_mm_s\"],\n  \"vibration_mm_s\": 120,\n  \"smoke_or_fire\": false\n}"
+   },
+   {
+    "id": "WA-02",
+    "kind": "with_asset",
+    "expected": "GB-77",
+    "outcome": "correct",
+    "raw": "{\n  \"asset_id\": \"GB-77\",\n  \"category\": \"leak\",\n  \"symptoms\": [\n    \"leaking oil\"\n  ],\n  \"vibration_mm_s\": null,\n  \"smoke_or_fire\": false\n}"
+   },
+   {
+    "id": "WA-03",
+    "kind": "with_asset",
+    "expected": "K-12",
+    "outcome": "correct",
+    "raw": "{\n  \"asset_id\": \"K-12\",\n  \"category\": \"electrical_fault\",\n  \"symptoms\": [\n    \"breaker trips\"\n  ],\n  \"vibration_mm_s\": null,\n  \"smoke_or_fire\": false\n}"
+   },
+   {
+    "id": "WA-04",
+    "kind": "with_asset",
+    "expected": "F-3301",
+    "outcome": "correct",
+    "raw": "{\n  \"asset_id\": \"F-3301\",\n  \"category\": \"noise\",\n  \"symptoms\": [\n    \"rattling\"\n  ],\n  \"vibration_mm_s\": null,\n  \"smoke_or_fire\": false\n}"
+   },
+   {
+    "id": "WA-05",
+    "kind": "with_asset",
+    "expected": "CV-88",
+    "outcome": "correct",
+    "raw": "{\n  \"asset_id\": \"CV-88\",\n  \"category\": \"noise\",\n  \"symptoms\": [\"squeals\", \"runs slowly\"],\n  \"vibration_mm_s\": null,\n  \"smoke_or_fire\": false\n}"
+   },
+   {
+    "id": "WA-06",
+    "kind": "with_asset",
+    "expected": "EP-409",
+    "outcome": "correct",
+    "raw": "{\n  \"asset_id\": \"EP-409\",\n  \"category\": \"electrical_fault\",\n  \"symptoms\": [\n    \"burning smell\",\n    \"smoke\"\n  ],\n  \"vibration_mm_s\": null,\n  \"smoke_or_fire\": true\n}"
+   },
+   {
+    "id": "WA-07",
+    "kind": "with_asset",
+    "expected": "V-1520",
+    "outcome": "correct",
+    "raw": "{\n  \"asset_id\": \"V-1520\",\n  \"category\": \"leak\",\n  \"symptoms\": [\"weeping fluid onto the floor\"],\n  \"vibration_mm_s\": null,\n  \"smoke_or_fire\": false\n}"
+   },
+   {
+    "id": "WA-08",
+    "kind": "with_asset",
+    "expected": "MX-6",
+    "outcome": "correct",
+    "raw": "{\n  \"asset_id\": \"MX-6\",\n  \"category\": \"performance_degradation\",\n  \"symptoms\": [\n    \"Mixer MX-6 stopped suddenly and will not restart\"\n  ],\n  \"vibration_mm_s\": null,\n  \"smoke_or_fire\": false\n}"
+   },
+   {
+    "id": "WA-09",
+    "kind": "with_asset",
+    "expected": "HT-21",
+    "outcome": "correct",
+    "raw": "{\n  \"asset_id\": \"HT-21\",\n  \"category\": \"performance_degradation\",\n  \"symptoms\": [\n    \"no heat\"\n  ],\n  \"vibration_mm_s\": null,\n  \"smoke_or_fire\": false\n}"
+   },
+   {
+    "id": "WA-10",
+    "kind": "with_asset",
+    "expected": "PR-300",
+    "outcome": "correct",
+    "raw": "{\n  \"asset_id\": \"PR-300\",\n  \"category\": \"noise\",\n  \"symptoms\": [\n    \"loud bang\"\n  ],\n  \"vibration_mm_s\": null,\n  \"smoke_or_fire\": false\n}"
+   },
+   {
+    "id": "WA-11",
+    "kind": "with_asset",
+    "expected": "P-908",
+    "outcome": "correct",
+    "raw": "{\n  \"asset_id\": \"P-908\",\n  \"category\": \"performance_degradation\",\n  \"symptoms\": [\n    \"pressure dropping on the discharge side\"\n  ],\n  \"vibration_mm_s\": null,\n  \"smoke_or_fire\": false\n}"
+   },
+   {
+    "id": "WA-12",
+    "kind": "with_asset",
+    "expected": "LT-14",
+    "outcome": "correct",
+    "raw": "{\n  \"asset_id\": \"LT-14\",\n  \"category\": \"mechanical_vibration\",\n  \"symptoms\": [\n    \"vibration_mm_s\"\n  ],\n  \"vibration_mm_s\": 120,\n  \"smoke_or_fire\": false\n}"
+   },
+   {
+    "id": "WA-13",
+    "kind": "with_asset",
+    "expected": "CH-5",
+    "outcome": "correct",
+    "raw": "{\n  \"asset_id\": \"CH-5\",\n  \"category\": \"overheating\",\n  \"symptoms\": [\n    \"smell hot\",\n    \"display flickers\"\n  ],\n  \"vibration_mm_s\": null,\n  \"smoke_or_fire\": false\n}"
+   },
+   {
+    "id": "WA-14",
+    "kind": "with_asset",
+    "expected": "T-02",
+    "outcome": "correct",
+    "raw": "{\n  \"asset_id\": \"T-02\",\n  \"category\": \"leak\",\n  \"symptoms\": [\"leaking\"],\n  \"vibration_mm_s\": null,\n  \"smoke_or_fire\": false\n}"
+   }
+  ]
+ }
+}

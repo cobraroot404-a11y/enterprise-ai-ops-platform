@@ -1,0 +1,602 @@
+{
+ "meridian_onboarding": {
+  "summary": {
+   "tenant_id": "6ff91190-7b23-40a0-bbac-a3be1e7cd51e",
+   "members": {
+    "maintenance_supervisor": "added",
+    "support_engineer": "added",
+    "read_only_auditor": "added"
+   },
+   "connectors": {
+    "ticketing": "created",
+    "fleet": "created",
+    "crm": "created"
+   },
+   "documents": {
+    "fleet_register.csv": "created",
+    "meridian_mx300_maintenance_manual.pdf": "created",
+    "meridian_depot_inspection_2026q3.pdf": "created",
+    "service_history.csv": "created",
+    "telematics_alerts.csv": "created"
+   },
+   "profile_version": 1
+  },
+  "seconds": 2.53
+ },
+ "searches": [
+  {
+   "query": "brake line pressure air dryer leak",
+   "results": [
+    {
+     "file": "meridian_mx300_maintenance_manual.pdf",
+     "page": 2,
+     "record": null,
+     "similarity": 0.641455328681392,
+     "tenant_is_meridian": true
+    },
+    {
+     "file": "service_history.csv",
+     "page": null,
+     "record": "SR-3001",
+     "similarity": 0.5782186058489599,
+     "tenant_is_meridian": true
+    },
+    {
+     "file": "service_history.csv",
+     "page": null,
+     "record": "SR-3002",
+     "similarity": 0.44114014768544907,
+     "tenant_is_meridian": true
+    },
+    {
+     "file": "meridian_depot_inspection_2026q3.pdf",
+     "page": 1,
+     "record": null,
+     "similarity": 0.4736192618410342,
+     "tenant_is_meridian": true
+    },
+    {
+     "file": "telematics_alerts.csv",
+     "page": null,
+     "record": "AL-5001",
+     "similarity": 0.43013945254613406,
+     "tenant_is_meridian": true
+    }
+   ]
+  },
+  {
+   "query": "coolant temperature thermostat radiator",
+   "results": [
+    {
+     "file": "meridian_mx300_maintenance_manual.pdf",
+     "page": 3,
+     "record": null,
+     "similarity": 0.4946707195436132,
+     "tenant_is_meridian": true
+    },
+    {
+     "file": "service_history.csv",
+     "page": null,
+     "record": "SR-3003",
+     "similarity": 0.49542421157071803,
+     "tenant_is_meridian": true
+    },
+    {
+     "file": "telematics_alerts.csv",
+     "page": null,
+     "record": "AL-5002",
+     "similarity": 0.40069867364184264,
+     "tenant_is_meridian": true
+    },
+    {
+     "file": "meridian_depot_inspection_2026q3.pdf",
+     "page": 1,
+     "record": null,
+     "similarity": 0.24585336496194,
+     "tenant_is_meridian": true
+    },
+    {
+     "file": "telematics_alerts.csv",
+     "page": null,
+     "record": "AL-5003",
+     "similarity": 0.35850792673088494,
+     "tenant_is_meridian": true
+    }
+   ]
+  },
+  {
+   "query": "VH-2101 service history",
+   "results": [
+    {
+     "file": "meridian_depot_inspection_2026q3.pdf",
+     "page": 1,
+     "record": null,
+     "similarity": 0.3801023107858593,
+     "tenant_is_meridian": true
+    },
+    {
+     "file": "fleet_register.csv",
+     "page": null,
+     "record": "VH-2103",
+     "similarity": 0.3654062180584283,
+     "tenant_is_meridian": true
+    },
+    {
+     "file": "fleet_register.csv",
+     "page": null,
+     "record": "VH-2102",
+     "similarity": 0.3597992384254266,
+     "tenant_is_meridian": true
+    },
+    {
+     "file": "fleet_register.csv",
+     "page": null,
+     "record": "VH-2104",
+     "similarity": 0.3500112012038723,
+     "tenant_is_meridian": true
+    },
+    {
+     "file": "fleet_register.csv",
+     "page": null,
+     "record": "VH-2101",
+     "similarity": 0.3590184557145414,
+     "tenant_is_meridian": true
+    }
+   ]
+  },
+  {
+   "query": "refrigeration unit cargo temperature",
+   "results": [
+    {
+     "file": "meridian_mx300_maintenance_manual.pdf",
+     "page": 3,
+     "record": null,
+     "similarity": 0.633385463549444,
+     "tenant_is_meridian": true
+    },
+    {
+     "file": "service_history.csv",
+     "page": null,
+     "record": "SR-3004",
+     "similarity": 0.5790081526031353,
+     "tenant_is_meridian": true
+    },
+    {
+     "file": "meridian_mx300_maintenance_manual.pdf",
+     "page": 1,
+     "record": null,
+     "similarity": 0.4280795285559551,
+     "tenant_is_meridian": true
+    },
+    {
+     "file": "telematics_alerts.csv",
+     "page": null,
+     "record": "AL-5002",
+     "similarity": 0.33667596141386724,
+     "tenant_is_meridian": true
+    },
+    {
+     "file": "fleet_register.csv",
+     "page": null,
+     "record": "VH-2101",
+     "similarity": 0.29867518567886664,
+     "tenant_is_meridian": true
+    }
+   ]
+  },
+  {
+   "query": "telematics alert brake low",
+   "results": [
+    {
+     "file": "meridian_mx300_maintenance_manual.pdf",
+     "page": 2,
+     "record": null,
+     "similarity": 0.5391664546233594,
+     "tenant_is_meridian": true
+    },
+    {
+     "file": "telematics_alerts.csv",
+     "page": null,
+     "record": "AL-5001",
+     "similarity": 0.5317641903376389,
+     "tenant_is_meridian": true
+    },
+    {
+     "file": "service_history.csv",
+     "page": null,
+     "record": "SR-3001",
+     "similarity": 0.38509677433588574,
+     "tenant_is_meridian": true
+    },
+    {
+     "file": "service_history.csv",
+     "page": null,
+     "record": "SR-3002",
+     "similarity": 0.3228771252173013,
+     "tenant_is_meridian": true
+    },
+    {
+     "file": "telematics_alerts.csv",
+     "page": null,
+     "record": "AL-5003",
+     "similarity": 0.20678593071432483,
+     "tenant_is_meridian": true
+    }
+   ]
+  }
+ ],
+ "answers": [
+  {
+   "id": "Q1",
+   "question": "What should I do when the service brake line pressure falls below 55 psi?",
+   "answerable_by_design": true,
+   "grounded": true,
+   "insufficient_evidence": false,
+   "answer": "Remove the vehicle from its route and inspect the brake lines, fittings and air dryer for leaks. A vehicle below 40 psi must not be driven.",
+   "problems": [],
+   "citations": [
+    {
+     "file": "meridian_mx300_maintenance_manual.pdf",
+     "page": 2,
+     "record": null,
+     "quote": "If service brake line pressure falls below 55 psi, remove the vehicle from its route and inspect the brake lines, fittings and air dryer for leaks. A vehicle below 40 psi must not be driven.",
+     "chunk_tenant_is_meridian": true,
+     "chunk_is_current": true,
+     "quote_in_chunk": true
+    }
+   ],
+   "seconds": 6.47
+  },
+  {
+   "id": "Q2",
+   "question": "At what coolant temperature should the thermostat be replaced?",
+   "answerable_by_design": true,
+   "grounded": false,
+   "insufficient_evidence": false,
+   "answer": "The generated answer could not be verified against the source documents and was withheld.",
+   "problems": [
+    "citation [2] does not reference a retrieved passage"
+   ],
+   "citations": [],
+   "seconds": 3.64
+  },
+  {
+   "id": "Q3",
+   "question": "What must be done before any under-vehicle maintenance work?",
+   "answerable_by_design": true,
+   "grounded": false,
+   "insufficient_evidence": true,
+   "answer": "Insufficient evidence in the available documents to answer this question.",
+   "problems": [],
+   "citations": [],
+   "seconds": 0.07
+  },
+  {
+   "id": "Q4",
+   "question": "Which part replaces a cracked rear brake chamber diaphragm?",
+   "answerable_by_design": true,
+   "grounded": true,
+   "insufficient_evidence": false,
+   "answer": "Replaced brake chamber kit PN-7790 [1].",
+   "problems": [],
+   "citations": [
+    {
+     "file": "service_history.csv",
+     "page": null,
+     "record": "SR-3002",
+     "quote": "root_cause: Cracked brake chamber diaphragm; resolution: Replaced brake chamber kit PN-7790",
+     "chunk_tenant_is_meridian": true,
+     "chunk_is_current": true,
+     "quote_in_chunk": true
+    }
+   ],
+   "seconds": 2.91
+  },
+  {
+   "id": "Q5",
+   "question": "What is the chief executive's favourite colour?",
+   "answerable_by_design": false,
+   "grounded": false,
+   "insufficient_evidence": true,
+   "answer": "Insufficient evidence in the available documents to answer this question.",
+   "problems": [],
+   "citations": [],
+   "seconds": 0.05
+  }
+ ],
+ "extractions": [
+  {
+   "id": "R1",
+   "report": "Vehicle VH-2101 shows low brake pressure of 52 psi with a hissing noise at the rear axle.",
+   "http_status": 201,
+   "seconds": 3.06,
+   "expected": {
+    "asset": "VH-2101",
+    "priority": "P2",
+    "asset_verified": true
+   },
+   "result": {
+    "asset_id": "VH-2101",
+    "asset_verified": true,
+    "category": "leak",
+    "priority": "P2",
+    "review_status": "needs_review",
+    "recommended_action": "No supporting documentation was found for this symptom pattern. Escalate to a maintenance supervisor for manual diagnosis.",
+    "symptoms": [
+     "low brake pressure",
+     "hissing noise at the rear axle"
+    ],
+    "notes": [
+     "No grounded manual guidance found; escalation recommended.",
+     "Vehicle VH-2101: odometer 182450 km, last service 2026-07-02, status in_service",
+     "Customer account Harbor Fresh Foods (fictional) (ACC-501), SLA tier gold, response within 4 h",
+     "Human review required before ticketing: no grounded evidence."
+    ],
+    "extraction_backend": "ollama/sentence_transformers",
+    "citations": []
+   }
+  },
+  {
+   "id": "R2",
+   "report": "VH-2104 coolant temperature reached 118 C on the hill climb and steam was seen.",
+   "http_status": 201,
+   "seconds": 6.26,
+   "expected": {
+    "asset": "VH-2104",
+    "priority": "P1",
+    "asset_verified": true
+   },
+   "result": {
+    "asset_id": "VH-2104",
+    "asset_verified": true,
+    "category": "engine_cooling",
+    "priority": "P1",
+    "review_status": "pending_review",
+    "recommended_action": "Stop safely and allow the engine to cool.",
+    "symptoms": [
+     "coolant_temp_c: 118 C"
+    ],
+    "notes": [
+     "Vehicle VH-2104: odometer 301870 km, last service 2026-05-28, status in_service",
+     "Customer account Regional Building Materials (fictional) (ACC-503), SLA tier standard, response within 24 h"
+    ],
+    "extraction_backend": "ollama/sentence_transformers",
+    "citations": [
+     {
+      "file": "meridian_mx300_maintenance_manual.pdf",
+      "page": 3,
+      "record": null
+     }
+    ]
+   }
+  },
+  {
+   "id": "R3",
+   "report": "VH-2102 brake line pressure is 38 psi and the driver reports poor braking.",
+   "http_status": 201,
+   "seconds": 6.0,
+   "expected": {
+    "asset": "VH-2102",
+    "priority": "P1",
+    "asset_verified": true
+   },
+   "result": {
+    "asset_id": "VH-2102",
+    "asset_verified": true,
+    "category": "brake_system",
+    "priority": "P1",
+    "review_status": "pending_review",
+    "recommended_action": "Inspect the brake lines, fittings, and air dryer for leaks [1].",
+    "symptoms": [
+     "poor braking"
+    ],
+    "notes": [
+     "Vehicle VH-2102: odometer 176120 km, last service 2026-08-19, status in_service",
+     "Customer account Harbor Fresh Foods (fictional) (ACC-501), SLA tier gold, response within 4 h"
+    ],
+    "extraction_backend": "ollama/sentence_transformers",
+    "citations": [
+     {
+      "file": "meridian_mx300_maintenance_manual.pdf",
+      "page": 2,
+      "record": null
+     }
+    ]
+   }
+  },
+  {
+   "id": "R4",
+   "report": "VH-2103 has a flat tyre on the rear axle.",
+   "http_status": 201,
+   "seconds": 3.11,
+   "expected": {
+    "asset": "VH-2103",
+    "priority": "P3",
+    "asset_verified": true
+   },
+   "result": {
+    "asset_id": "VH-2103",
+    "asset_verified": true,
+    "category": "leak",
+    "priority": "P2",
+    "review_status": "needs_review",
+    "recommended_action": "No supporting documentation was found for this symptom pattern. Escalate to a maintenance supervisor for manual diagnosis.",
+    "symptoms": [
+     "flat tyre on the rear axle"
+    ],
+    "notes": [
+     "No grounded manual guidance found; escalation recommended.",
+     "Vehicle VH-2103: odometer 94310 km, last service 2026-06-11, status in_service",
+     "Customer account Northside Pharmacy Supply (fictional) (ACC-502), SLA tier platinum, response within 2 h",
+     "Human review required before ticketing: no grounded evidence."
+    ],
+    "extraction_backend": "ollama/sentence_transformers",
+    "citations": []
+   }
+  },
+  {
+   "id": "R5",
+   "report": "Vehicle VH-9999 shows low brake pressure of 50 psi.",
+   "http_status": 201,
+   "seconds": 7.76,
+   "expected": {
+    "asset": "VH-9999",
+    "priority": "P2",
+    "asset_verified": false
+   },
+   "result": {
+    "asset_id": "VH-9999",
+    "asset_verified": false,
+    "category": "brake_system",
+    "priority": "P2",
+    "review_status": "needs_review",
+    "recommended_action": "Inspect the brake lines, fittings, and air dryer for leaks; drain the air tanks; replace the air dryer cartridge if moisture is found; replace the rear brake chamber kit if the diaphragm is cracked or if a hissing leak persists after tightening fittings.",
+    "symptoms": [
+     "low brake pressure"
+    ],
+    "notes": [
+     "Vehicle VH-9999 was not found in the tenant vehicle register.",
+     "Fleet telematics lookup failed (permanent)",
+     "CRM account lookup failed (permanent)",
+     "Human review required before ticketing: vehicle not in the authorized register."
+    ],
+    "extraction_backend": "ollama/sentence_transformers",
+    "citations": [
+     {
+      "file": "meridian_mx300_maintenance_manual.pdf",
+      "page": 2,
+      "record": null
+     }
+    ]
+   }
+  },
+  {
+   "id": "R6",
+   "report": "There is a strange noise somewhere in the depot but nobody knows which truck.",
+   "http_status": 422,
+   "seconds": 2.72,
+   "expected": {
+    "asset": null,
+    "priority": null,
+    "asset_verified": null
+   },
+   "error": {
+    "code": "asset_not_identified",
+    "message": "Could not identify the vehicle ID in the report.",
+    "correlation_id": "183912ad-e3bb-400b-97c0-062c0ee97e15"
+   }
+  }
+ ],
+ "category_observations": [
+  {
+   "id": "R1",
+   "model_category": "leak",
+   "keyword_rule_category": "brake_system",
+   "priority": "P2",
+   "priority_expected_if_category_matched_keywords": "P2"
+  },
+  {
+   "id": "R2",
+   "model_category": "engine_cooling",
+   "keyword_rule_category": "engine_cooling",
+   "priority": "P1",
+   "priority_expected_if_category_matched_keywords": "P1"
+  },
+  {
+   "id": "R3",
+   "model_category": "brake_system",
+   "keyword_rule_category": "brake_system",
+   "priority": "P1",
+   "priority_expected_if_category_matched_keywords": "P1"
+  },
+  {
+   "id": "R4",
+   "model_category": "leak",
+   "keyword_rule_category": "tire_wheel",
+   "priority": "P2",
+   "priority_expected_if_category_matched_keywords": "P3"
+  },
+  {
+   "id": "R5",
+   "model_category": "brake_system",
+   "keyword_rule_category": "brake_system",
+   "priority": "P2",
+   "priority_expected_if_category_matched_keywords": "P2"
+  }
+ ],
+ "draft_attempts_on_needs_review": {
+  "R1": 409,
+  "R4": 409,
+  "R5": 409
+ },
+ "submission": {
+  "approval_http": 200,
+  "worker_outcomes": [
+   "submitted"
+  ],
+  "ticket": {
+   "id": "8e2b1e15-b4c4-469c-a367-947c2261daf5",
+   "incident_id": "55d039a1-2730-4f37-924a-f665b04dc327",
+   "title": "[P2] leak on VH-2101",
+   "description": "Asset: VH-2101\nCategory: leak\nSymptoms: low brake pressure, hissing noise at the rear axle\n\nRecommended action: No supporting documentation was found for this symptom pattern. Escalate to a maintenance supervisor for manual diagnosis.\n\nEvidence:\n  (none)\n\nRelated incidents:\n  SR-3001 (service_history.csv)\n  SR-3002 (service_history.csv)\n\nNotes:\n  No grounded manual guidance found; escalation recommended.\n  Vehicle VH-2101: odometer 182450 km, last service 2026-07-02, status in_service\n  Customer account Harbor Fresh Foods (fictional) (ACC-501), SLA tier gold, response within 4 h\n  Human review required before ticketing: no grounded evidence.\n  Human review: accepted by a supervisor. Justification: Smoke test: supervisor reviewed the brake report.",
+   "priority": "P2",
+   "state": "SUBMITTED",
+   "external_ticket_id": "WO-7001",
+   "attempts": 1,
+   "last_error": null,
+   "created_by": "67cc7035-d5b1-4658-abee-f22a41b655e3",
+   "created_at": "2026-11-11T22:41:53.548224+00:00",
+   "updated_at": "2026-11-11T22:41:53.733074+00:00",
+   "submitted_at": "2026-11-11T22:41:53.733074+00:00"
+  },
+  "service_desk_orders": [
+   {
+    "work_order_id": "WO-7001",
+    "payload": {
+     "summary": "[P2] leak on VH-2101",
+     "details": "Asset: VH-2101\nCategory: leak\nSymptoms: low brake pressure, hissing noise at the rear axle\n\nRecommended action: No supporting documentation was found for this symptom pattern. Escalate to a maintenance supervisor for manual diagnosis.\n\nEvidence:\n  (none)\n\nRelated incidents:\n  SR-3001 (service_history.csv)\n  SR-3002 (service_history.csv)\n\nNotes:\n  No grounded manual guidance found; escalation recommended.\n  Vehicle VH-2101: odometer 182450 km, last service 2026-07-02, status in_service\n  Customer account Harbor Fresh Foods (fictional) (ACC-501), SLA tier gold, response within 4 h\n  Human review required before ticketing: no grounded evidence.\n  Human review: accepted by a supervisor. Justification: Smoke test: supervisor reviewed the brake report.",
+     "urgency": "high",
+     "vehicle_ref": "VH-2101",
+     "source_ref": "8e2b1e15-b4c4-469c-a367-947c2261daf5"
+    },
+    "idempotency_key": "983d97e1-105b-4d7a-b257-942aa653b597"
+   }
+  ],
+  "service_desk_requests_during_run": 1,
+  "maintenance_system_tickets": 0
+ },
+ "audit_actions_seen": [
+  "ai.ask",
+  "approval.approved",
+  "connector.created",
+  "document.created",
+  "incident.extracted",
+  "incident.review_accept",
+  "member.added",
+  "platform.tenant_access",
+  "profile.updated",
+  "tenant.created",
+  "ticket.drafted",
+  "ticket.submitted",
+  "ticket.transition"
+ ],
+ "cross_tenant": {
+  "status_codes": {
+   "apex.tenant_admin.GET meridian incident": 404,
+   "apex.tenant_admin.GET meridian ticket": 404,
+   "apex.tenant_admin.approve meridian ticket": 404,
+   "meridian.tenant_admin.GET apex incident": 404,
+   "apex.maintenance_supervisor.GET meridian incident": 404,
+   "apex.maintenance_supervisor.GET meridian ticket": 404,
+   "apex.maintenance_supervisor.approve meridian ticket": 404,
+   "meridian.maintenance_supervisor.GET apex incident": 404,
+   "apex.support_engineer.GET meridian incident": 404,
+   "apex.support_engineer.GET meridian ticket": 404,
+   "apex.support_engineer.approve meridian ticket": 403,
+   "meridian.support_engineer.GET apex incident": 404,
+   "apex.GET meridian document": 404
+  },
+  "apex_search_hits": 10,
+  "meridian_chunks_seen_by_apex": 0
+ }
+}

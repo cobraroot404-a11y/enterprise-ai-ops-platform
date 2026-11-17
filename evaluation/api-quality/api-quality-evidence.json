@@ -1,0 +1,440 @@
+{
+ "requirement": "V41-17.03",
+ "title": "API quality: nine properties",
+ "generated_at": "2026-11-13T15:33:09-05:00 (EST)",
+ "command": "cd backend && python -m pytest tests/test_api_contract.py tests/test_api_response_schemas.py tests/test_api_response_contract.py tests/test_api_error_contract.py",
+ "pytest_exit_code": 0,
+ "commit_at_run": "ff23bbbd441e08a1a400ecf2c206edd21aa7b770",
+ "working_tree_dirty_at_run": true,
+ "openapi_snapshot_sha256": "343744d84acbef7609e422a1e44dca4ed62955c80ddf43fa343a8885972e6ec4",
+ "properties": {
+  "P1 typed contracts": {
+   "status": "verified",
+   "tests": 7,
+   "passed": 7,
+   "known_defects": []
+  },
+  "P2 validation": {
+   "status": "verified",
+   "tests": 11,
+   "passed": 11,
+   "known_defects": []
+  },
+  "P3 pagination": {
+   "status": "verified",
+   "tests": 10,
+   "passed": 10,
+   "known_defects": []
+  },
+  "P4 standardized errors": {
+   "status": "verified",
+   "tests": 5,
+   "passed": 5,
+   "known_defects": []
+  },
+  "P5 OpenAPI documentation": {
+   "status": "verified",
+   "tests": 3,
+   "passed": 3,
+   "known_defects": []
+  },
+  "P6 database migrations": {
+   "status": "verified",
+   "tests": 3,
+   "passed": 3,
+   "known_defects": []
+  },
+  "P7 transactions": {
+   "status": "verified",
+   "tests": 3,
+   "passed": 3,
+   "known_defects": []
+  },
+  "P8 constraints": {
+   "status": "verified",
+   "tests": 2,
+   "passed": 2,
+   "known_defects": []
+  },
+  "P9 indexes": {
+   "status": "verified",
+   "tests": 3,
+   "passed": 3,
+   "known_defects": []
+  }
+ },
+ "tests": [
+  {
+   "test": "test_p1_every_request_body_has_a_typed_schema_and_every_ref_resolves",
+   "outcome": "passed",
+   "note": null
+  },
+  {
+   "test": "test_p1_success_responses_declare_typed_schemas_in_openapi",
+   "outcome": "passed",
+   "note": null
+  },
+  {
+   "test": "test_p1_documented_resource_shapes_are_stable",
+   "outcome": "passed",
+   "note": null
+  },
+  {
+   "test": "test_p1_responses_are_json_and_typed_values",
+   "outcome": "passed",
+   "note": null
+  },
+  {
+   "test": "test_p2_every_json_body_route_rejects_wrong_shapes_without_a_500",
+   "outcome": "passed",
+   "note": null
+  },
+  {
+   "test": "test_p2_incident_extraction_validates_input[body0-report_text]",
+   "outcome": "passed",
+   "note": null
+  },
+  {
+   "test": "test_p2_incident_extraction_validates_input[body1-report_text]",
+   "outcome": "passed",
+   "note": null
+  },
+  {
+   "test": "test_p2_incident_extraction_validates_input[body2-report_text]",
+   "outcome": "passed",
+   "note": null
+  },
+  {
+   "test": "test_p2_incident_extraction_validates_input[body3-report_text]",
+   "outcome": "passed",
+   "note": null
+  },
+  {
+   "test": "test_p2_incident_extraction_validates_input[body4-numeric_locale]",
+   "outcome": "passed",
+   "note": null
+  },
+  {
+   "test": "test_p2_incident_extraction_validates_input[body5-observations]",
+   "outcome": "passed",
+   "note": null
+  },
+  {
+   "test": "test_p2_incident_extraction_validates_input[body6-observations]",
+   "outcome": "passed",
+   "note": null
+  },
+  {
+   "test": "test_p2_malformed_json_bad_ids_and_enums",
+   "outcome": "passed",
+   "note": null
+  },
+  {
+   "test": "test_p2_oversize_json_body_is_rejected_with_a_standard_error",
+   "outcome": "passed",
+   "note": null
+  },
+  {
+   "test": "test_p2_unknown_upload_kind_and_empty_file_are_rejected",
+   "outcome": "passed",
+   "note": null
+  },
+  {
+   "test": "test_p3_every_list_endpoint_is_discovered_and_paginates_consistently",
+   "outcome": "passed",
+   "note": null
+  },
+  {
+   "test": "test_p3_pagination_bounds_are_enforced_on_every_list_endpoint[params0]",
+   "outcome": "passed",
+   "note": null
+  },
+  {
+   "test": "test_p3_pagination_bounds_are_enforced_on_every_list_endpoint[params1]",
+   "outcome": "passed",
+   "note": null
+  },
+  {
+   "test": "test_p3_pagination_bounds_are_enforced_on_every_list_endpoint[params2]",
+   "outcome": "passed",
+   "note": null
+  },
+  {
+   "test": "test_p3_pagination_bounds_are_enforced_on_every_list_endpoint[params3]",
+   "outcome": "passed",
+   "note": null
+  },
+  {
+   "test": "test_p3_pagination_bounds_are_enforced_on_every_list_endpoint[params4]",
+   "outcome": "passed",
+   "note": null
+  },
+  {
+   "test": "test_p3_pagination_bounds_are_enforced_on_every_list_endpoint[params5]",
+   "outcome": "passed",
+   "note": null
+  },
+  {
+   "test": "test_p3_limit_edges_and_default",
+   "outcome": "passed",
+   "note": null
+  },
+  {
+   "test": "test_p3_lists_are_tenant_scoped",
+   "outcome": "passed",
+   "note": null
+  },
+  {
+   "test": "test_p3_platform_audit_paginates_too",
+   "outcome": "passed",
+   "note": null
+  },
+  {
+   "test": "test_p4_authentication_authorization_and_not_found_errors_use_the_standard_body",
+   "outcome": "passed",
+   "note": null
+  },
+  {
+   "test": "test_p4_conflict_errors_use_the_standard_body",
+   "outcome": "passed",
+   "note": null
+  },
+  {
+   "test": "test_p4_unknown_routes_and_wrong_methods_use_the_standard_body",
+   "outcome": "passed",
+   "note": null
+  },
+  {
+   "test": "test_p4_internal_failures_do_not_leak_internals_and_keep_the_correlation_id",
+   "outcome": "passed",
+   "note": null
+  },
+  {
+   "test": "test_p4_every_response_carries_a_correlation_id_and_supplied_ids_are_echoed",
+   "outcome": "passed",
+   "note": null
+  },
+  {
+   "test": "test_p5_openapi_is_valid_complete_and_documents_every_operation",
+   "outcome": "passed",
+   "note": null
+  },
+  {
+   "test": "test_p5_openapi_declares_the_bearer_security_scheme_for_every_protected_operation",
+   "outcome": "passed",
+   "note": null
+  },
+  {
+   "test": "test_p5_committed_openapi_snapshot_matches_the_live_contract",
+   "outcome": "passed",
+   "note": null
+  },
+  {
+   "test": "test_p6_migrations_have_one_linear_head_and_the_database_is_at_head",
+   "outcome": "passed",
+   "note": null
+  },
+  {
+   "test": "test_p6_models_never_reference_schema_the_migrations_did_not_create",
+   "outcome": "passed",
+   "note": null
+  },
+  {
+   "test": "test_p6_migrations_can_be_applied_from_scratch_and_are_idempotent_at_head",
+   "outcome": "passed",
+   "note": null
+  },
+  {
+   "test": "test_p7_a_rejected_upload_leaves_no_partial_rows",
+   "outcome": "passed",
+   "note": null
+  },
+  {
+   "test": "test_p7_a_failure_inside_a_state_change_rolls_back_the_state_and_its_audit_event",
+   "outcome": "passed",
+   "note": null
+  },
+  {
+   "test": "test_p7_a_state_change_and_its_audit_event_commit_together",
+   "outcome": "passed",
+   "note": null
+  },
+  {
+   "test": "test_p8_key_constraints_exist_at_the_database",
+   "outcome": "passed",
+   "note": null
+  },
+  {
+   "test": "test_p8_violating_rows_are_rejected_by_the_database",
+   "outcome": "passed",
+   "note": null
+  },
+  {
+   "test": "test_p9_search_integrity_and_uniqueness_indexes_exist",
+   "outcome": "passed",
+   "note": null
+  },
+  {
+   "test": "test_p9_every_tenant_scoped_table_has_a_tenant_leading_index",
+   "outcome": "passed",
+   "note": null
+  },
+  {
+   "test": "test_p9_the_indexes_added_by_migration_0008_exist_with_the_intended_columns",
+   "outcome": "passed",
+   "note": null
+  },
+  {
+   "test": "test_the_signed_receiver_is_the_only_exception_and_its_documentation_is_accurate",
+   "outcome": "passed",
+   "note": null
+  },
+  {
+   "test": "test_p1_every_success_response_declares_a_meaningful_typed_object_schema",
+   "outcome": "passed",
+   "note": null
+  },
+  {
+   "test": "test_p1_created_operations_document_201_and_others_200",
+   "outcome": "passed",
+   "note": null
+  },
+  {
+   "test": "test_p1_free_form_json_is_limited_to_the_documented_exceptions",
+   "outcome": "passed",
+   "note": null
+  },
+  {
+   "test": "test_every_runtime_response_conforms_to_its_declared_openapi_schema",
+   "outcome": "passed",
+   "note": null
+  },
+  {
+   "test": "test_the_validator_detects_violations_so_the_conformance_test_is_meaningful",
+   "outcome": "passed",
+   "note": null
+  },
+  {
+   "test": "test_no_response_exposes_secret_or_credential_fields",
+   "outcome": "passed",
+   "note": null
+  },
+  {
+   "test": "test_response_models_do_not_declare_credential_fields",
+   "outcome": "passed",
+   "note": null
+  },
+  {
+   "test": "test_error_responses_are_unchanged_by_response_models",
+   "outcome": "passed",
+   "note": null
+  },
+  {
+   "test": "test_published_schemas_are_closed_except_for_the_documented_open_models",
+   "outcome": "passed",
+   "note": null
+  },
+  {
+   "test": "test_extra_keys_pass_through_at_runtime_but_are_flagged_against_the_closed_schema",
+   "outcome": "passed",
+   "note": null
+  },
+  {
+   "test": "test_capture_baseline",
+   "outcome": "passed",
+   "note": null
+  },
+  {
+   "test": "test_runtime_responses_are_unchanged_from_the_pre_batch3_baseline",
+   "outcome": "passed",
+   "note": null
+  },
+  {
+   "test": "test_openapi_documents_the_standardized_error_envelope_not_the_framework_default",
+   "outcome": "passed",
+   "note": null
+  },
+  {
+   "test": "test_the_declared_statuses_are_exactly_the_table_and_cover_every_operation",
+   "outcome": "passed",
+   "note": null
+  },
+  {
+   "test": "test_every_observed_error_response_conforms_to_the_documented_schema_and_headers",
+   "outcome": "passed",
+   "note": null
+  },
+  {
+   "test": "test_declared_and_emitted_error_statuses_agree_in_both_directions",
+   "outcome": "passed",
+   "note": null
+  },
+  {
+   "test": "test_every_observed_error_code_is_named_in_the_status_description",
+   "outcome": "passed",
+   "note": null
+  },
+  {
+   "test": "test_statuses_that_an_operation_cannot_produce_are_not_declared",
+   "outcome": "passed",
+   "note": null
+  },
+  {
+   "test": "test_status_counts_and_the_creating_operations_are_exactly_as_documented",
+   "outcome": "passed",
+   "note": null
+  }
+ ],
+ "runtime_response_compatibility": {
+  "tests": 17,
+  "passed": 17,
+  "failed": [],
+  "note": "pre-Batch-3 baseline comparison, strict schema conformance of every runtime response, secret-field scan, error-response contract (Batch 3.1)"
+ },
+ "http_status_counts": {
+  "operations": 55,
+  "success": {
+   "200": 44,
+   "201": 7,
+   "202": 4
+  },
+  "created_201": [
+   "POST /api/v1/connectors",
+   "POST /api/v1/documents",
+   "POST /api/v1/incidents/extract",
+   "POST /api/v1/tenants",
+   "POST /api/v1/tenants/{tenant_id}/members",
+   "POST /api/v1/tickets",
+   "POST /api/v1/webhook-endpoints"
+  ],
+  "operations_documenting_each_error_status": {
+   "401": 54,
+   "403": 30,
+   "404": 25,
+   "409": 19,
+   "413": 18,
+   "415": 2,
+   "422": 27,
+   "429": 5,
+   "500": 55,
+   "503": 55
+  },
+  "default_validation_schema_documented": false
+ },
+ "error_contract": {
+  "tests": 7,
+  "passed": 7,
+  "failed": [],
+  "checks": [
+   "test_declared_and_emitted_error_statuses_agree_in_both_directions",
+   "test_every_observed_error_code_is_named_in_the_status_description",
+   "test_every_observed_error_response_conforms_to_the_documented_schema_and_headers",
+   "test_openapi_documents_the_standardized_error_envelope_not_the_framework_default",
+   "test_status_counts_and_the_creating_operations_are_exactly_as_documented",
+   "test_statuses_that_an_operation_cannot_produce_are_not_declared",
+   "test_the_declared_statuses_are_exactly_the_table_and_cover_every_operation"
+  ]
+ },
+ "all_nine_verified": true,
+ "evidence_note": "generated from JUnit results of the run recorded here; same-author tests"
+}

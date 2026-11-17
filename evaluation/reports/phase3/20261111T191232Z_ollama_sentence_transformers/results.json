@@ -1,0 +1,571 @@
+{
+  "run_id": "20261111T191232Z_ollama_sentence_transformers",
+  "evidence_class": "real_ai",
+  "backends": {
+    "llm": "ollama",
+    "embedding": "sentence_transformers"
+  },
+  "embedder_load_s": 8.338,
+  "phases": {},
+  "corpus": {
+    "documents": 15,
+    "chunks": 86,
+    "chunks_with_384_dim_embedding": 86,
+    "ingest": [
+      {
+        "file": "eval_equipment_register.csv",
+        "status": "created",
+        "chunks": 14,
+        "seconds": 0.31
+      },
+      {
+        "file": "eval_incident_history.csv",
+        "status": "created",
+        "chunks": 24,
+        "seconds": 0.423
+      },
+      {
+        "file": "eval_inspection_2026q2.pdf",
+        "status": "created",
+        "chunks": 2,
+        "seconds": 0.098
+      },
+      {
+        "file": "eval_inspection_2026q3.pdf",
+        "status": "created",
+        "chunks": 2,
+        "seconds": 0.101
+      },
+      {
+        "file": "eval_cp200_pump_manual.pdf",
+        "status": "created",
+        "chunks": 6,
+        "seconds": 0.211
+      },
+      {
+        "file": "eval_em55_motor_manual.pdf",
+        "status": "created",
+        "chunks": 5,
+        "seconds": 0.16
+      },
+      {
+        "file": "eval_cc300_compressor_manual.pdf",
+        "status": "created",
+        "chunks": 5,
+        "seconds": 0.161
+      },
+      {
+        "file": "eval_cv400_conveyor_manual.pdf",
+        "status": "created",
+        "chunks": 4,
+        "seconds": 0.13
+      },
+      {
+        "file": "eval_gb500_gearbox_manual.pdf",
+        "status": "created",
+        "chunks": 4,
+        "seconds": 0.148
+      },
+      {
+        "file": "eval_ht600_heat_exchanger_manual.pdf",
+        "status": "created",
+        "chunks": 4,
+        "seconds": 0.144
+      },
+      {
+        "file": "apex_cp200_pump_manual.pdf",
+        "status": "created",
+        "chunks": 3,
+        "seconds": 0.162
+      },
+      {
+        "file": "apex_inspection_report_2026q3.pdf",
+        "status": "created",
+        "chunks": 1,
+        "seconds": 0.088
+      },
+      {
+        "file": "equipment_register.csv",
+        "status": "created",
+        "chunks": 4,
+        "seconds": 0.112
+      },
+      {
+        "file": "incident_history.csv",
+        "status": "created",
+        "chunks": 5,
+        "seconds": 0.164
+      },
+      {
+        "file": "maintenance_log.csv",
+        "status": "created",
+        "chunks": 3,
+        "seconds": 0.098
+      }
+    ],
+    "ingest_seconds": {
+      "n": 15,
+      "median": 0.148,
+      "p95": 0.3439,
+      "min": 0.088,
+      "max": 0.423,
+      "mean": 0.1673
+    },
+    "includes_demo_corpus_as_distractors": true
+  },
+  "calibration": {
+    "initial_threshold": 0.5,
+    "chosen_threshold": 0.5,
+    "dev_table": [
+      {
+        "threshold": 0.15,
+        "balanced_accuracy": 0.5,
+        "answerable_passed": 12,
+        "unanswerable_blocked": 0
+      },
+      {
+        "threshold": 0.2,
+        "balanced_accuracy": 0.625,
+        "answerable_passed": 12,
+        "unanswerable_blocked": 1
+      },
+      {
+        "threshold": 0.25,
+        "balanced_accuracy": 0.625,
+        "answerable_passed": 12,
+        "unanswerable_blocked": 1
+      },
+      {
+        "threshold": 0.3,
+        "balanced_accuracy": 0.625,
+        "answerable_passed": 12,
+        "unanswerable_blocked": 1
+      },
+      {
+        "threshold": 0.35,
+        "balanced_accuracy": 0.75,
+        "answerable_passed": 12,
+        "unanswerable_blocked": 2
+      },
+      {
+        "threshold": 0.4,
+        "balanced_accuracy": 0.75,
+        "answerable_passed": 12,
+        "unanswerable_blocked": 2
+      },
+      {
+        "threshold": 0.45,
+        "balanced_accuracy": 0.75,
+        "answerable_passed": 12,
+        "unanswerable_blocked": 2
+      },
+      {
+        "threshold": 0.5,
+        "balanced_accuracy": 0.9583,
+        "answerable_passed": 11,
+        "unanswerable_blocked": 4
+      },
+      {
+        "threshold": 0.55,
+        "balanced_accuracy": 0.7917,
+        "answerable_passed": 7,
+        "unanswerable_blocked": 4
+      },
+      {
+        "threshold": 0.6,
+        "balanced_accuracy": 0.7083,
+        "answerable_passed": 5,
+        "unanswerable_blocked": 4
+      }
+    ],
+    "dev_queries": 16
+  },
+  "retrieval": {
+    "dev": {
+      "answerable_queries": 12,
+      "recall_at_5": 1.0,
+      "precision_at_5": 0.2,
+      "mrr": 0.9167,
+      "hit_at_1": 10,
+      "queries_with_relevant_in_top5": 12,
+      "evidence_gate_pass_answerable": 11,
+      "unanswerable_queries": 4,
+      "evidence_gate_blocks_unanswerable": 4,
+      "by_type": {
+        "incident": {
+          "n": 1,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.2
+        },
+        "keyword": {
+          "n": 3,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.2
+        },
+        "paraphrase": {
+          "n": 8,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.2
+        }
+      }
+    },
+    "test": {
+      "answerable_queries": 36,
+      "recall_at_5": 1.0,
+      "precision_at_5": 0.2,
+      "mrr": 0.9167,
+      "hit_at_1": 30,
+      "queries_with_relevant_in_top5": 36,
+      "evidence_gate_pass_answerable": 32,
+      "unanswerable_queries": 8,
+      "evidence_gate_blocks_unanswerable": 6,
+      "by_type": {
+        "incident": {
+          "n": 8,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.2
+        },
+        "keyword": {
+          "n": 6,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.2
+        },
+        "paraphrase": {
+          "n": 22,
+          "recall_at_5": 1.0,
+          "precision_at_5": 0.2
+        }
+      }
+    },
+    "latency_s": {
+      "n": 44,
+      "median": 0.0239,
+      "p95": 0.0295,
+      "min": 0.018,
+      "max": 0.0356,
+      "mean": 0.0241
+    },
+    "test_split_queries": 44,
+    "ablation_test": {
+      "vector": {
+        "answerable_queries": 36,
+        "recall_at_5": 1.0,
+        "precision_at_5": 0.2,
+        "mrr": 0.8889,
+        "hit_at_1": 28,
+        "queries_with_relevant_in_top5": 36,
+        "evidence_gate_pass_answerable": 32,
+        "unanswerable_queries": 8,
+        "evidence_gate_blocks_unanswerable": 6,
+        "by_type": {
+          "incident": {
+            "n": 8,
+            "recall_at_5": 1.0,
+            "precision_at_5": 0.2
+          },
+          "keyword": {
+            "n": 6,
+            "recall_at_5": 1.0,
+            "precision_at_5": 0.2
+          },
+          "paraphrase": {
+            "n": 22,
+            "recall_at_5": 1.0,
+            "precision_at_5": 0.2
+          }
+        }
+      },
+      "fts": {
+        "answerable_queries": 36,
+        "recall_at_5": 1.0,
+        "precision_at_5": 0.2,
+        "mrr": 0.9306,
+        "hit_at_1": 31,
+        "queries_with_relevant_in_top5": 36,
+        "evidence_gate_pass_answerable": 32,
+        "unanswerable_queries": 8,
+        "evidence_gate_blocks_unanswerable": 6,
+        "by_type": {
+          "incident": {
+            "n": 8,
+            "recall_at_5": 1.0,
+            "precision_at_5": 0.2
+          },
+          "keyword": {
+            "n": 6,
+            "recall_at_5": 1.0,
+            "precision_at_5": 0.2
+          },
+          "paraphrase": {
+            "n": 22,
+            "recall_at_5": 1.0,
+            "precision_at_5": 0.2
+          }
+        }
+      }
+    },
+    "definitions": {
+      "recall_at_5": "per answerable query: relevant units found in top-5 / relevant units; averaged",
+      "precision_at_5": "per answerable query: top-5 chunks that belong to a relevant unit / 5; averaged (ceiling < 1 when a query has one relevant unit)"
+    }
+  },
+  "llm_cold_start_s": 1.55,
+  "qa": {
+    "answerable_queries": 36,
+    "unanswerable_queries": 8,
+    "grounded_answers": 27,
+    "groundedness_rate": 0.75,
+    "false_abstentions": 4,
+    "withheld_unverified_or_invalid": 5,
+    "correct_abstentions": 6,
+    "wrongly_answered_unanswerable": 1,
+    "citations_emitted": 27,
+    "citation_correctness": 0.9259,
+    "answers_with_all_key_facts": 25,
+    "answers_with_all_key_facts_or_in_quotes": 25,
+    "latency_wall_s": {
+      "n": 44,
+      "median": 3.59,
+      "p95": 6.5025,
+      "min": 0.023,
+      "max": 7.402,
+      "mean": 3.2764
+    },
+    "llm_inference_s": {
+      "n": 34,
+      "median": 4.1265,
+      "p95": 6.6982,
+      "min": 2.333,
+      "max": 7.376,
+      "mean": 4.1893
+    },
+    "tokens_per_s": {
+      "n": 34,
+      "median": 23.165,
+      "p95": 25.1565,
+      "min": 19.54,
+      "max": 26.36,
+      "mean": 23.0882
+    },
+    "output_tokens": {
+      "n": 34,
+      "median": 53.5,
+      "p95": 89.7,
+      "min": 17,
+      "max": 138,
+      "mean": 58.6176
+    },
+    "prompt_tokens": {
+      "n": 34,
+      "median": 343.0,
+      "p95": 561.45,
+      "min": 283,
+      "max": 649,
+      "mean": 386.2941
+    },
+    "llm_schema_valid": "34/34",
+    "split": "test",
+    "extra_latency_samples_s": {
+      "n": 8,
+      "median": 3.0255,
+      "p95": 4.3461,
+      "min": 0.027,
+      "max": 4.561,
+      "mean": 2.6194
+    }
+  },
+  "structured": {
+    "reports": 24,
+    "model_output_schema_valid": 23,
+    "model_output_validity_rate": 0.9583,
+    "asset_id_correct": 23,
+    "category_correct": 21,
+    "symptoms_present": 23,
+    "vibration_correct": 23,
+    "smoke_flag_correct": 23,
+    "priority_correct": 22,
+    "pipeline_ok_or_expected_rejection": 24,
+    "pipeline_used_rules_fallback": 0,
+    "extract_latency_s": {
+      "n": 24,
+      "median": 2.703,
+      "p95": 3.3866,
+      "min": 2.212,
+      "max": 3.448,
+      "mean": 2.7924
+    },
+    "pipeline_latency_s": {
+      "n": 24,
+      "median": 2.614,
+      "p95": 6.7695,
+      "min": 1.922,
+      "max": 7.021,
+      "mean": 3.5238
+    }
+  },
+  "e2e": {
+    "runs": [
+      {
+        "run": 1,
+        "state": "SUBMITTED",
+        "external_ticket_id": "MNT-1001",
+        "worker_outcomes": [
+          "submitted"
+        ],
+        "total_s": 6.463,
+        "extract_s": 6.108,
+        "draft_and_request_s": 0.129,
+        "approve_s": 0.062,
+        "submit_s": 0.164,
+        "incident_citations": 1
+      },
+      {
+        "run": 2,
+        "state": "SUBMITTED",
+        "external_ticket_id": "MNT-1002",
+        "worker_outcomes": [
+          "submitted"
+        ],
+        "total_s": 6.213,
+        "extract_s": 6.031,
+        "draft_and_request_s": 0.07,
+        "approve_s": 0.039,
+        "submit_s": 0.073,
+        "incident_citations": 0
+      },
+      {
+        "run": 3,
+        "state": "SUBMITTED",
+        "external_ticket_id": "MNT-1003",
+        "worker_outcomes": [
+          "submitted"
+        ],
+        "total_s": 5.387,
+        "extract_s": 5.212,
+        "draft_and_request_s": 0.066,
+        "approve_s": 0.037,
+        "submit_s": 0.072,
+        "incident_citations": 0
+      },
+      {
+        "run": 4,
+        "state": "SUBMITTED",
+        "external_ticket_id": "MNT-1004",
+        "worker_outcomes": [
+          "submitted"
+        ],
+        "total_s": 5.913,
+        "extract_s": 5.733,
+        "draft_and_request_s": 0.067,
+        "approve_s": 0.039,
+        "submit_s": 0.073,
+        "incident_citations": 0
+      },
+      {
+        "run": 5,
+        "state": "SUBMITTED",
+        "external_ticket_id": "MNT-1005",
+        "worker_outcomes": [
+          "submitted"
+        ],
+        "total_s": 6.546,
+        "extract_s": 6.323,
+        "draft_and_request_s": 0.086,
+        "approve_s": 0.048,
+        "submit_s": 0.089,
+        "incident_citations": 0
+      }
+    ],
+    "all_submitted": true,
+    "external_tickets_created": 5,
+    "expected_external_tickets": 5,
+    "duplicates": 0,
+    "total_s": {
+      "n": 5,
+      "median": 6.213,
+      "p95": 6.5294,
+      "min": 5.387,
+      "max": 6.546,
+      "mean": 6.1044
+    },
+    "extract_s": {
+      "n": 5,
+      "median": 6.031,
+      "p95": 6.28,
+      "min": 5.212,
+      "max": 6.323,
+      "mean": 5.8814
+    },
+    "audit_events": 78
+  },
+  "resources": {
+    "ingestion": {
+      "samples": 1,
+      "cpu_pct_mean": 63,
+      "cpu_pct_peak": 63,
+      "ollama_working_set_mb_peak": 84.4,
+      "python_working_set_mb_peak": 564.5,
+      "system_free_ram_mb_min": 2400.3,
+      "system_total_ram_mb": 16026.5
+    },
+    "retrieval": {
+      "samples": 1,
+      "cpu_pct_mean": 56,
+      "cpu_pct_peak": 56,
+      "ollama_working_set_mb_peak": 84.3,
+      "python_working_set_mb_peak": 599.0,
+      "system_free_ram_mb_min": 2413.1,
+      "system_total_ram_mb": 16026.5
+    },
+    "qa": {
+      "samples": 36,
+      "cpu_pct_mean": 61.8,
+      "cpu_pct_peak": 84,
+      "ollama_working_set_mb_peak": 85.8,
+      "python_working_set_mb_peak": 605.7,
+      "system_free_ram_mb_min": 2207.7,
+      "system_total_ram_mb": 16026.5
+    },
+    "structured": {
+      "samples": 33,
+      "cpu_pct_mean": 58.9,
+      "cpu_pct_peak": 89,
+      "ollama_working_set_mb_peak": 84.8,
+      "python_working_set_mb_peak": 608.1,
+      "system_free_ram_mb_min": 2206.1,
+      "system_total_ram_mb": 16026.5
+    },
+    "e2e": {
+      "samples": 6,
+      "cpu_pct_mean": 61.7,
+      "cpu_pct_peak": 82,
+      "ollama_working_set_mb_peak": 83.8,
+      "python_working_set_mb_peak": 611.4,
+      "system_free_ram_mb_min": 2309.4,
+      "system_total_ram_mb": 16026.5
+    }
+  },
+  "versions": {
+    "python": "3.10.0",
+    "torch": "2.14.1+cpu",
+    "transformers": "5.20.2",
+    "sentence_transformers": "6.3.0",
+    "huggingface_hub": "2.4.0",
+    "numpy": "2.2.6",
+    "ollama": "0.40.16",
+    "ollama_model": "qwen2.5:1.5b",
+    "ollama_model_digest": "65ec06548149b04c096a120e4a6da9d4017ea809c91734ea5631e89f96ddc57b",
+    "prompt_version": "3",
+    "prompts_sha256": "3710b8b7897780f85600ce5eb007731ae5f38f895790d09c3cdb096a921575c6",
+    "ollama_options": {
+      "temperature": 0,
+      "seed": 7,
+      "num_ctx": 4096,
+      "num_predict": 320
+    },
+    "postgres": "16.15 (Debian 16.15-1.pgdg12+2)",
+    "pgvector": "0.8.7",
+    "embedding_profile": "sentence_transformers:sentence-transformers/all-MiniLM-L6-v2@1110a243fdf4706b3f48f1d95db1a4f5529b4d41:384",
+    "embedding_evidence_threshold_used": 0.5
+  }
+}

@@ -1,0 +1,59 @@
+{
+ "command": "E2E_REAL_AI=1 npx playwright test --project=real-ai (frontend/)",
+ "label": "Real-AI UI smoke tests (Ollama qwen2.5:1.5b + MiniLM); invariants only, not quality metrics",
+ "tests": [
+  {
+   "title": "Apex through the UI with real inference: labelled answer or honest refusal, gated incident, confirmed submission",
+   "project": "real-ai",
+   "status": "passed",
+   "duration_ms": 24405,
+   "annotations": [
+    {
+     "type": "serial"
+    },
+    {
+     "type": "apex-question",
+     "description": "grounded answer with verified citations"
+    },
+    {
+     "type": "apex-review",
+     "description": "verified evidence, no review required"
+    }
+   ]
+  },
+  {
+   "title": "Meridian through the UI with real inference: profile extraction, enrichments, gating and its own service desk",
+   "project": "real-ai",
+   "status": "passed",
+   "duration_ms": 27480,
+   "annotations": [
+    {
+     "type": "serial"
+    },
+    {
+     "type": "meridian-review",
+     "description": "human review was required"
+    }
+   ]
+  },
+  {
+   "title": "real embeddings keep retrieval inside each tenant, in the UI",
+   "project": "real-ai",
+   "status": "passed",
+   "duration_ms": 1758,
+   "annotations": [
+    {
+     "type": "serial"
+    }
+   ]
+  }
+ ],
+ "stats": {
+  "startTime": "2026-11-11T23:19:55.884Z",
+  "duration": 85508.478,
+  "expected": 3,
+  "skipped": 0,
+  "unexpected": 0,
+  "flaky": 0
+ }
+}

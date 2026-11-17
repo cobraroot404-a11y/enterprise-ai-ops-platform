@@ -1,0 +1,216 @@
+{
+  "generated_utc": "2026-11-13T21:12:17.667401+00:00",
+  "command": "RECOVERY_REPORT=1 python -m pytest tests/fault_injection/test_recovery_rate.py -q",
+  "definition": "see the module docstring: a case is recovered iff every ticket ends SUBMITTED, no duplicate external ticket exists, and database and mock agree",
+  "environment": {
+    "backends": "deterministic test-only AI backends",
+    "external_system": "local mock ticketing",
+    "python": "3.10.0"
+  },
+  "denominator": 11,
+  "recovered": 11,
+  "rate": 1.0,
+  "target": 0.95,
+  "target_met": true,
+  "limits": "same-author suite; 11 cases so the rate is coarse; mock external system; not a production recovery measurement",
+  "cases": [
+    {
+      "id": "R01",
+      "description": "HTTP 503 once",
+      "failure_sequence": [
+        "503 x1"
+      ],
+      "tickets": 1,
+      "recovered": true,
+      "worker_outcomes": [
+        "retry_scheduled",
+        "submitted"
+      ],
+      "max_attempts_used": 2,
+      "duplicate_external_tickets": 0,
+      "integrity_consistent": true
+    },
+    {
+      "id": "R02",
+      "description": "HTTP 503 twice",
+      "failure_sequence": [
+        "503 x2"
+      ],
+      "tickets": 1,
+      "recovered": true,
+      "worker_outcomes": [
+        "retry_scheduled",
+        "retry_scheduled",
+        "submitted"
+      ],
+      "max_attempts_used": 3,
+      "duplicate_external_tickets": 0,
+      "integrity_consistent": true
+    },
+    {
+      "id": "R03",
+      "description": "HTTP 503 four times (the fifth and last attempt succeeds)",
+      "failure_sequence": [
+        "503 x4"
+      ],
+      "tickets": 1,
+      "recovered": true,
+      "worker_outcomes": [
+        "retry_scheduled",
+        "retry_scheduled",
+        "retry_scheduled",
+        "retry_scheduled",
+        "submitted"
+      ],
+      "max_attempts_used": 5,
+      "duplicate_external_tickets": 0,
+      "integrity_consistent": true
+    },
+    {
+      "id": "R04",
+      "description": "HTTP 429 with Retry-After twice",
+      "failure_sequence": [
+        "429 x2"
+      ],
+      "tickets": 1,
+      "recovered": true,
+      "worker_outcomes": [
+        "retry_scheduled",
+        "retry_scheduled",
+        "submitted"
+      ],
+      "max_attempts_used": 3,
+      "duplicate_external_tickets": 0,
+      "integrity_consistent": true
+    },
+    {
+      "id": "R05",
+      "description": "Network timeout once",
+      "failure_sequence": [
+        "timeout x1"
+      ],
+      "tickets": 1,
+      "recovered": true,
+      "worker_outcomes": [
+        "retry_scheduled",
+        "submitted"
+      ],
+      "max_attempts_used": 2,
+      "duplicate_external_tickets": 0,
+      "integrity_consistent": true
+    },
+    {
+      "id": "R06",
+      "description": "Malformed 200 response after the external ticket was created",
+      "failure_sequence": [
+        "malformed x1"
+      ],
+      "tickets": 1,
+      "recovered": true,
+      "worker_outcomes": [
+        "retry_scheduled",
+        "submitted"
+      ],
+      "max_attempts_used": 2,
+      "duplicate_external_tickets": 0,
+      "integrity_consistent": true
+    },
+    {
+      "id": "R07",
+      "description": "Response lost after creation, once",
+      "failure_sequence": [
+        "lost_response x1"
+      ],
+      "tickets": 1,
+      "recovered": true,
+      "worker_outcomes": [
+        "retry_scheduled",
+        "submitted"
+      ],
+      "max_attempts_used": 2,
+      "duplicate_external_tickets": 0,
+      "integrity_consistent": true
+    },
+    {
+      "id": "R08",
+      "description": "Response lost after creation, twice",
+      "failure_sequence": [
+        "lost_response x2"
+      ],
+      "tickets": 1,
+      "recovered": true,
+      "worker_outcomes": [
+        "retry_scheduled",
+        "retry_scheduled",
+        "submitted"
+      ],
+      "max_attempts_used": 3,
+      "duplicate_external_tickets": 0,
+      "integrity_consistent": true
+    },
+    {
+      "id": "R09",
+      "description": "Mixed sequence: 503, lost response, 429",
+      "failure_sequence": [
+        "503 x1",
+        "lost_response x1",
+        "429 x1"
+      ],
+      "tickets": 1,
+      "recovered": true,
+      "worker_outcomes": [
+        "retry_scheduled",
+        "retry_scheduled",
+        "retry_scheduled",
+        "submitted"
+      ],
+      "max_attempts_used": 4,
+      "duplicate_external_tickets": 0,
+      "integrity_consistent": true
+    },
+    {
+      "id": "R10",
+      "description": "Burst of 5 tickets through a window of 3 consecutive 503s",
+      "failure_sequence": [
+        "503 x3"
+      ],
+      "tickets": 5,
+      "recovered": true,
+      "worker_outcomes": [
+        "retry_scheduled",
+        "retry_scheduled",
+        "retry_scheduled",
+        "submitted",
+        "submitted",
+        "submitted",
+        "submitted",
+        "submitted"
+      ],
+      "max_attempts_used": 4,
+      "duplicate_external_tickets": 0,
+      "integrity_consistent": true
+    },
+    {
+      "id": "R11",
+      "description": "Burst of 5 tickets through 3 lost responses",
+      "failure_sequence": [
+        "lost_response x3"
+      ],
+      "tickets": 5,
+      "recovered": true,
+      "worker_outcomes": [
+        "retry_scheduled",
+        "retry_scheduled",
+        "retry_scheduled",
+        "submitted",
+        "submitted",
+        "submitted",
+        "submitted",
+        "submitted"
+      ],
+      "max_attempts_used": 4,
+      "duplicate_external_tickets": 0,
+      "integrity_consistent": true
+    }
+  ]
+}

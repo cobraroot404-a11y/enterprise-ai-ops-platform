@@ -1,0 +1,2 @@
+[{"name": "E1_prefix", "tuning": {"index_prefix": true}},
+ {"name": "E1_prefix_E3", "tuning": {"index_prefix": true, "entity_boost": 0.02}}]

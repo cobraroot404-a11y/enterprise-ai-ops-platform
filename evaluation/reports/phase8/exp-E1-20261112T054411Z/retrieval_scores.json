@@ -1,0 +1,411 @@
+{
+ "E1_prefix": {
+  "tuning": {
+   "index_prefix": true
+  },
+  "tuning_hash": "5f9992fdd5649713964ca6409fdc787024ce88394dc699c8917b5942677f1ce1",
+  "combined": {
+   "hybrid": {
+    "queries": 87,
+    "recall@1": 0.5441,
+    "recall@3": 0.8429,
+    "recall@5": 0.9004,
+    "recall@10": 0.9234,
+    "precision@5": 0.2414,
+    "precision_ceiling@5": 0.2828,
+    "mrr": 0.8097,
+    "ndcg@5": 0.8157,
+    "ndcg@10": 0.8225,
+    "recall@5_ci95": [
+     0.8467,
+     0.9464
+    ],
+    "ndcg@5_ci95": [
+     0.7602,
+     0.8677
+    ],
+    "latency_s": {
+     "p50": 0.0356,
+     "p95": 0.04634,
+     "n": 87
+    }
+   },
+   "cross_tenant_leakage": {
+    "retrieved_passages": 1180,
+    "foreign": 0,
+    "rate": 0.0
+   },
+   "hybrid_recall@5_by_category": {
+    "asset_confusion": {
+     "n": 5,
+     "value": 0.8
+    },
+    "compare": {
+     "n": 10,
+     "value": 1.0
+    },
+    "conflicting_record": {
+     "n": 5,
+     "value": 0.8
+    },
+    "keyword": {
+     "n": 16,
+     "value": 1.0
+    },
+    "multi_hop": {
+     "n": 13,
+     "value": 0.641
+    },
+    "paraphrase": {
+     "n": 22,
+     "value": 0.9091
+    },
+    "procedure": {
+     "n": 6,
+     "value": 1.0
+    },
+    "version_conflict": {
+     "n": 10,
+     "value": 1.0
+    }
+   }
+  },
+  "apex": {
+   "hybrid": {
+    "queries": 43,
+    "recall@1": 0.5271,
+    "recall@3": 0.8682,
+    "recall@5": 0.9147,
+    "recall@10": 0.9147,
+    "precision@5": 0.2605,
+    "precision_ceiling@5": 0.3023,
+    "mrr": 0.8302,
+    "ndcg@5": 0.835,
+    "ndcg@10": 0.835,
+    "recall@5_ci95": [
+     0.8527,
+     0.969
+    ],
+    "ndcg@5_ci95": [
+     0.7639,
+     0.8977
+    ],
+    "latency_s": {
+     "p50": 0.0384,
+     "p95": 0.046849999999999996,
+     "n": 43
+    }
+   },
+   "cross_tenant_leakage": {
+    "retrieved_passages": 570,
+    "foreign": 0,
+    "rate": 0.0
+   },
+   "hybrid_recall@5_by_category": {
+    "asset_confusion": {
+     "n": 1,
+     "value": 1.0
+    },
+    "compare": {
+     "n": 6,
+     "value": 1.0
+    },
+    "conflicting_record": {
+     "n": 1,
+     "value": 1.0
+    },
+    "keyword": {
+     "n": 8,
+     "value": 1.0
+    },
+    "multi_hop": {
+     "n": 8,
+     "value": 0.6667
+    },
+    "paraphrase": {
+     "n": 11,
+     "value": 0.9091
+    },
+    "procedure": {
+     "n": 4,
+     "value": 1.0
+    },
+    "version_conflict": {
+     "n": 4,
+     "value": 1.0
+    }
+   }
+  },
+  "meridian": {
+   "hybrid": {
+    "queries": 44,
+    "recall@1": 0.5606,
+    "recall@3": 0.8182,
+    "recall@5": 0.8864,
+    "recall@10": 0.9318,
+    "precision@5": 0.2227,
+    "precision_ceiling@5": 0.2636,
+    "mrr": 0.7896,
+    "ndcg@5": 0.7968,
+    "ndcg@10": 0.8102,
+    "recall@5_ci95": [
+     0.7955,
+     0.9621
+    ],
+    "ndcg@5_ci95": [
+     0.7053,
+     0.8771
+    ],
+    "latency_s": {
+     "p50": 0.0311,
+     "p95": 0.0409,
+     "n": 44
+    }
+   },
+   "cross_tenant_leakage": {
+    "retrieved_passages": 610,
+    "foreign": 0,
+    "rate": 0.0
+   },
+   "hybrid_recall@5_by_category": {
+    "asset_confusion": {
+     "n": 4,
+     "value": 0.75
+    },
+    "compare": {
+     "n": 4,
+     "value": 1.0
+    },
+    "conflicting_record": {
+     "n": 4,
+     "value": 0.75
+    },
+    "keyword": {
+     "n": 8,
+     "value": 1.0
+    },
+    "multi_hop": {
+     "n": 5,
+     "value": 0.6
+    },
+    "paraphrase": {
+     "n": 11,
+     "value": 0.9091
+    },
+    "procedure": {
+     "n": 2,
+     "value": 1.0
+    },
+    "version_conflict": {
+     "n": 6,
+     "value": 1.0
+    }
+   }
+  }
+ },
+ "E1_prefix_E3": {
+  "tuning": {
+   "index_prefix": true,
+   "entity_boost": 0.02
+  },
+  "tuning_hash": "8eea4f3ca71a4126d8d8c44ab2b72d7bdc110b813dc86f19044ecafd9df8b65f",
+  "combined": {
+   "hybrid": {
+    "queries": 87,
+    "recall@1": 0.7625,
+    "recall@3": 0.9234,
+    "recall@5": 0.9349,
+    "recall@10": 0.954,
+    "precision@5": 0.2483,
+    "precision_ceiling@5": 0.2828,
+    "mrr": 0.9511,
+    "ndcg@5": 0.9405,
+    "ndcg@10": 0.9476,
+    "recall@5_ci95": [
+     0.8966,
+     0.9655
+    ],
+    "ndcg@5_ci95": [
+     0.9048,
+     0.9698
+    ],
+    "latency_s": {
+     "p50": 0.0372,
+     "p95": 0.056100000000000004,
+     "n": 87
+    }
+   },
+   "cross_tenant_leakage": {
+    "retrieved_passages": 1180,
+    "foreign": 0,
+    "rate": 0.0
+   },
+   "hybrid_recall@5_by_category": {
+    "asset_confusion": {
+     "n": 5,
+     "value": 1.0
+    },
+    "compare": {
+     "n": 10,
+     "value": 1.0
+    },
+    "conflicting_record": {
+     "n": 5,
+     "value": 0.8
+    },
+    "keyword": {
+     "n": 16,
+     "value": 1.0
+    },
+    "multi_hop": {
+     "n": 13,
+     "value": 0.641
+    },
+    "paraphrase": {
+     "n": 22,
+     "value": 1.0
+    },
+    "procedure": {
+     "n": 6,
+     "value": 1.0
+    },
+    "version_conflict": {
+     "n": 10,
+     "value": 1.0
+    }
+   }
+  },
+  "apex": {
+   "hybrid": {
+    "queries": 43,
+    "recall@1": 0.7829,
+    "recall@3": 0.938,
+    "recall@5": 0.938,
+    "recall@10": 0.9457,
+    "precision@5": 0.2651,
+    "precision_ceiling@5": 0.3023,
+    "mrr": 0.9884,
+    "ndcg@5": 0.9725,
+    "ndcg@10": 0.9739,
+    "recall@5_ci95": [
+     0.8992,
+     0.9767
+    ],
+    "ndcg@5_ci95": [
+     0.9502,
+     0.9892
+    ],
+    "latency_s": {
+     "p50": 0.0351,
+     "p95": 0.056299999999999996,
+     "n": 43
+    }
+   },
+   "cross_tenant_leakage": {
+    "retrieved_passages": 570,
+    "foreign": 0,
+    "rate": 0.0
+   },
+   "hybrid_recall@5_by_category": {
+    "asset_confusion": {
+     "n": 1,
+     "value": 1.0
+    },
+    "compare": {
+     "n": 6,
+     "value": 1.0
+    },
+    "conflicting_record": {
+     "n": 1,
+     "value": 1.0
+    },
+    "keyword": {
+     "n": 8,
+     "value": 1.0
+    },
+    "multi_hop": {
+     "n": 8,
+     "value": 0.6667
+    },
+    "paraphrase": {
+     "n": 11,
+     "value": 1.0
+    },
+    "procedure": {
+     "n": 4,
+     "value": 1.0
+    },
+    "version_conflict": {
+     "n": 4,
+     "value": 1.0
+    }
+   }
+  },
+  "meridian": {
+   "hybrid": {
+    "queries": 44,
+    "recall@1": 0.7424,
+    "recall@3": 0.9091,
+    "recall@5": 0.9318,
+    "recall@10": 0.9621,
+    "precision@5": 0.2318,
+    "precision_ceiling@5": 0.2636,
+    "mrr": 0.9148,
+    "ndcg@5": 0.9093,
+    "ndcg@10": 0.9219,
+    "recall@5_ci95": [
+     0.8712,
+     0.9773
+    ],
+    "ndcg@5_ci95": [
+     0.8437,
+     0.9622
+    ],
+    "latency_s": {
+     "p50": 0.0382,
+     "p95": 0.054545,
+     "n": 44
+    }
+   },
+   "cross_tenant_leakage": {
+    "retrieved_passages": 610,
+    "foreign": 0,
+    "rate": 0.0
+   },
+   "hybrid_recall@5_by_category": {
+    "asset_confusion": {
+     "n": 4,
+     "value": 1.0
+    },
+    "compare": {
+     "n": 4,
+     "value": 1.0
+    },
+    "conflicting_record": {
+     "n": 4,
+     "value": 0.75
+    },
+    "keyword": {
+     "n": 8,
+     "value": 1.0
+    },
+    "multi_hop": {
+     "n": 5,
+     "value": 0.6
+    },
+    "paraphrase": {
+     "n": 11,
+     "value": 1.0
+    },
+    "procedure": {
+     "n": 2,
+     "value": 1.0
+    },
+    "version_conflict": {
+     "n": 6,
+     "value": 1.0
+    }
+   }
+  }
+ }
+}

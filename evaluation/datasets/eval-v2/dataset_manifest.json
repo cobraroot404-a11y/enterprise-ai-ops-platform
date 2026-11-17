@@ -1,0 +1,31 @@
+{
+  "dataset": "eval-v2",
+  "version": "eval-v2.0",
+  "synthetic": true,
+  "fictional_customers": true,
+  "seed": 20261111,
+  "queries": 215,
+  "incident_cases": 60,
+  "queries_by_split": {
+    "test": 75,
+    "dev": 118,
+    "challenge": 22
+  },
+  "cases_by_split": {
+    "dev": 34,
+    "challenge": 6,
+    "test": 20
+  },
+  "assigned_item_counts": {
+    "queries": {
+      "dev": 118,
+      "test": 75,
+      "challenge": 22
+    },
+    "cases": {
+      "dev": 34,
+      "test": 20,
+      "challenge": 6
+    }
+  }
+}

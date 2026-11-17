@@ -1,0 +1,5 @@
+record_ref,service_date,unit_id,issue_type,issue_summary,cause,fix
+SR-3001,2025-02-18,VH-2101,brake_system,Low brake line pressure of 49 psi reported at pre-trip,Saturated air dryer cartridge,Replaced air dryer cartridge PN-7731
+SR-3002,2025-05-07,VH-2102,brake_system,Hissing leak at rear brake chamber with pressure drop to 52 psi,Cracked brake chamber diaphragm,Replaced brake chamber kit PN-7790
+SR-3003,2025-08-22,VH-2104,engine_cooling,Coolant temperature reached 118 C on a hill climb,Failed thermostat,Replaced thermostat PN-8120
+SR-3004,2025-10-03,VH-2103,refrigeration_unit,Cargo temperature rose to -12 C during a delivery,Condenser fan motor fault,Replaced condenser fan motor

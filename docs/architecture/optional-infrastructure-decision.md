@@ -1,0 +1,11 @@
+# Optional infrastructure: OpenTelemetry, Prometheus, Grafana, RabbitMQ (decision record)
+
+Question asked by the owner: are these mandatory for the original acceptance criteria, and does existing functionality already satisfy the requirements? Nothing was installed.
+
+| Item | Original wording | Mandatory? | What exists | Decision |
+|---|---|---|---|---|
+| OpenTelemetry | "Use OpenTelemetry where practical" (Part 22) | No: "where practical" is a qualifier, not an acceptance criterion | JSON logs with correlation ids on every request and job, `X-Correlation-ID` echoed, in-process counters and timers, durable database counts, an observability summary endpoint, per-tenant metrics | **Not implemented.** The SDK and an exporter would add dependencies and a collector to run for no acceptance criterion. Trace ids and span propagation across the API, worker and mocks remain a gap (V41-22.01 stays Partial, V41-22.02 stays Missing). If traces are wanted, the smallest step is the OpenTelemetry SDK with a console or file exporter. |
+| Prometheus, Grafana | "Optional Prometheus and Grafana" (Parts 22 and 23) | No: explicitly optional | The same in-process metrics, available as JSON | **Not implemented.** The images exist on this machine only because another project uses them; they are not this project's and were not used. A Prometheus text endpoint over the existing counters would be about 40 lines and no dependency, but metrics are process-local and reset on restart, so a scraper would see misleading history; fix that first. |
+| RabbitMQ | "Optional RabbitMQ" (Part 23) | No: explicitly optional | The database outbox and the `ingestion_jobs` queue, polled by the worker, with fenced leases, bounded backoff and idempotency, tested including crashes and races | **Not implemented, deliberately.** The database queue gives atomic enqueue with the business transaction; a broker would need an outbox relay to keep that, with no acceptance gain on one machine. See [../customer-delivery/09-architecture-tradeoff-record.md](../customer-delivery/09-architecture-tradeoff-record.md). |
+
+Consequence for the register: V41-22.02, V41-22.03 and V41-23.02 stay **Missing**, recorded as optional and deliberately not implemented, not as failures; no mandatory criterion depends on them. This decision can be reversed by the owner at any time.

@@ -1,0 +1,1395 @@
+ENTERPRISE AI OPERATIONS PLATFORM
+FINAL MASTER IMPLEMENTATION PROMPT V4.1
+Broad Forward Deployed Engineer Portfolio Edition
+Project: Enterprise AI Operations Platform
+Repository: `enterprise-ai-operations-platform`
+Owner: Gautham
+Copyright: Copyright (c) 2026 Gautham. All rights reserved.
+Repository Visibility: Public
+License: Custom Proprietary Source-Visible License
+Mandatory Paid Services: $0
+Primary Target: Broad Forward Deployed Engineer roles
+Secondary Targets: AI Engineer, Solutions Engineer, Integration Engineer, Backend Engineer, Data Platform Engineer, Technical Solutions Engineer
+PART 1: PRIMARY MISSION
+Act as a principal Forward Deployed Engineer, enterprise software architect, AI engineer, integration engineer, security engineer, DevOps engineer, QA engineer, and customer-facing technical lead.
+Design, implement, test, document, and prepare for publication a complete enterprise AI operations platform.
+The platform must demonstrate the complete lifecycle of Forward Deployed Engineering:
+
+1. Customer discovery and requirements engineering.
+2. Enterprise software integration.
+3. Backend and frontend development.
+4. AI and retrieval-augmented generation.
+5. Multi-tenant security.
+6. Human-in-the-loop workflow automation.
+7. Reliability and failure recovery.
+8. Customer-specific deployment.
+9. Troubleshooting and operational support.
+10. Reproducible testing.
+11. Business outcome measurement.
+12. Cloud deployment portability.
+13. Architecture tradeoff analysis.
+14. Customer acceptance and handover.
+15. Clear technical communication.
+
+Build one coherent product serving two fictional enterprise customers.
+Do not produce a collection of disconnected demonstrations.
+The result must be a functioning, reproducible application, not just scaffolding, architecture diagrams, or conceptual documentation.
+Do not fabricate completed features, test results, benchmarks, deployments, security guarantees, customer feedback, or GitHub activity.
+PART 2: NON-NEGOTIABLE PROJECT RULES
+2.1 Repository ownership
+The intended sole GitHub repository owner is Gautham.
+Create the repository under Gautham's authorized personal GitHub account.
+Do not:
+
+* Create an organization-owned repository.
+* Add collaborators.
+* Invite external maintainers.
+* Add bot accounts as collaborators.
+* Grant unnecessary repository write access.
+* Publish without explicit authorization.
+* Overwrite an existing repository without approval.
+
+Verify the authenticated GitHub account before repository creation.
+If authentication is unavailable, prepare the project locally and provide publication instructions.
+2.2 Git authorship
+Configure the Git author name as:
+Gautham
+Use only the owner's verified and authorized Git email.
+Do not invent or impersonate a Git identity.
+Use conventional commits, such as:
+
+* feat: implement tenant-aware ingestion
+* feat: add evidence-grounded retrieval
+* feat: implement approval state machine
+* test: validate cross-tenant isolation
+* test: implement fault injection
+* docs: document deployment tradeoffs
+
+Do not add inaccurate co-author trailers.
+Do not rewrite history to conceal genuine contributors.
+Do not fabricate commit history.
+2.3 No AI watermarks or promotional branding
+Do not include unnecessary AI assistant branding, promotional watermarks, generated-by footers, or promotional badges in:
+
+* Source code
+* README
+* Documentation
+* Commit messages
+* Screenshots
+* Architecture diagrams
+* Frontend
+* Dashboard
+* Reports
+* Release notes
+* Demo assets
+
+Do not add promotional attribution to ChatGPT, Claude, Cursor, or other coding assistants.
+Legitimate technical references to AI, LLMs, Ollama, embeddings, and RAG must remain.
+Preserve legally required third-party attribution and accurate provenance.
+Do not falsify Git metadata.
+GitHub may independently display automation or bot metadata. Do not claim that all such metadata can be hidden.
+2.4 Zero mandatory paid services
+The entire core platform must operate without mandatory paid software, APIs, subscriptions, or cloud hosting.
+Do not require:
+
+* Paid OpenAI APIs
+* Paid Anthropic APIs
+* AWS billing
+* Azure billing
+* Google Cloud billing
+* Paid vector databases
+* Paid monitoring platforms
+* Paid authentication services
+* Paid CI/CD plans
+* Paid datasets
+* Paid hosting
+
+Use local infrastructure and freely available software.
+Document hardware, electricity, storage, and bandwidth requirements separately.
+Do not silently activate paid services.
+PART 3: COMPLETE PROPRIETARY SOURCE-VISIBLE LICENSE
+Create a root-level file named `LICENSE`.
+Copy the following license text exactly, beginning with "Proprietary Source-Visible License" and ending with "Proprietary Source-Visible Software. Not Open Source."
+Do not substitute an open-source license.
+BEGIN LICENSE TEXT
+Proprietary Source-Visible License
+Copyright (c) 2026 Gautham. All rights reserved.
+
+0. SUMMARY (NON-BINDING)
+
+This repository contains proprietary source-visible software.
+You may view, study, clone, and run the Work locally for personal, non-commercial educational, recruitment evaluation, and portfolio-review purposes, subject to the terms below.
+You may not redistribute, publish modified versions, incorporate the Work into another project, provide it as a service, or exploit it commercially without the Owner's prior written permission.
+This is not an open-source license.
+
+1. DEFINITIONS
+
+1.1 "Work" means the original source code, documentation, configuration, diagrams, test suites, sample data, user interfaces, and other copyrightable materials authored by the Owner and distributed in this repository.
+1.2 "Third-Party Components" means software, libraries, frameworks, models, datasets, assets, and other materials owned by third parties.
+1.3 "Owner" means Gautham, the copyright holder identified above.
+1.4 "You" means any individual or legal entity exercising rights under this license.
+1.5 "Evaluation Use" means personal, non-commercial inspection, study, testing, and local execution of the Work to assess its functionality, architecture, engineering quality, or suitability as a portfolio demonstration.
+
+2. LIMITED LICENSE GRANT
+
+Subject to compliance with this license, the Owner grants You a limited, non-exclusive, non-transferable, non-sublicensable, revocable license to:
+(a) access, view, and study the Work;
+(b) download or clone one or more copies of the Work as reasonably necessary for Evaluation Use;
+(c) install and execute the Work locally for Evaluation Use;
+(d) create temporary local modifications strictly necessary to configure, test, or evaluate the Work, provided such modifications are not distributed; and
+(e) use screenshots, brief descriptions, or limited excerpts solely for non-commercial technical review, recruitment assessment, or evaluation, with appropriate attribution.
+This grant does not authorize production deployment, public hosting, commercial exploitation, or incorporation into another project.
+
+3. RESTRICTIONS
+
+Except as expressly permitted in Section 2 or by applicable law, You may not, without the Owner's prior written permission:
+(a) redistribute, republish, mirror, sublicense, sell, rent, or lease the Work;
+(b) distribute modified versions or derivative works;
+(c) incorporate the Work or any substantial original portion into another software product, service, repository, or commercial offering;
+(d) operate the Work as a publicly accessible or commercial hosted service;
+(e) remove, obscure, or misrepresent copyright or licensing notices;
+(f) claim ownership or authorship of the Work;
+(g) submit the Work or a substantial original portion as Your own work in an academic, employment, or competitive context;
+(h) use the Work as a dataset for training, fine-tuning, or improving machine-learning models without the Owner's prior written permission, except where applicable law independently permits such use; or
+(i) use the Work in a manner exceeding the limited permissions expressly granted by this license.
+For this section, a substantial portion is assessed according to copyright law, considering the originality and qualitative importance of the material, not merely its length.
+
+4. OWNERSHIP AND RESERVATION OF RIGHTS
+
+The Owner retains all copyright and other applicable intellectual property rights in the Work.
+No ownership rights are transferred under this license.
+Public availability of the source code does not make the Work open-source software or place it in the public domain.
+No patent, trademark, or trade-secret license is granted except where expressly required by applicable law.
+All rights not expressly granted are reserved.
+
+5. THIRD-PARTY COMPONENTS
+
+Third-Party Components remain governed by their respective licenses.
+This license applies only to rights the Owner is legally entitled to license.
+Nothing in this license restricts rights independently granted to recipients under applicable third-party licenses.
+Required third-party notices and license terms must be preserved.
+Where a Third-Party Component is distributed with the Work, its applicable license takes precedence for that component.
+
+6. EVALUATION AND RECRUITMENT REVIEW
+
+Recruiters, hiring managers, technical interviewers, educators, and individual reviewers may access, clone, configure, and execute the Work locally for Evaluation Use.
+Such permission does not extend to commercial production use, public hosting, redistribution, or incorporation into another project.
+Organizations requiring broader evaluation, deployment, or commercial rights must obtain the Owner's prior written permission.
+
+7. NO WARRANTY
+
+THE WORK IS PROVIDED "AS IS" AND "AS AVAILABLE", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW.
+THE OWNER DISCLAIMS ALL WARRANTIES, INCLUDING MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, NON-INFRINGEMENT, ACCURACY, SECURITY, AND RELIABILITY.
+THE OWNER DOES NOT WARRANT THAT THE WORK WILL BE ERROR-FREE, SECURE, OR UNINTERRUPTED.
+
+8. LIMITATION OF LIABILITY
+
+TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, THE OWNER SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, EXEMPLARY, OR PUNITIVE DAMAGES ARISING FROM USE OF THE WORK.
+THE OWNER'S LIABILITY SHALL OTHERWISE BE LIMITED TO THE EXTENT PERMITTED BY APPLICABLE LAW.
+
+9. TERMINATION
+
+The rights granted under this license terminate automatically upon a material breach of its terms.
+Upon termination, You must cease activities authorized solely by this license and delete copies retained under its permission, except where retention is independently permitted by law.
+Termination does not affect rights independently granted by third parties or applicable law.
+
+10. REQUESTING ADDITIONAL PERMISSION
+
+Requests for commercial use, redistribution, public hosting, modification, or other permissions beyond this license should be directed to the Owner through the contact information associated with the repository's hosting account.
+Additional rights require written authorization from the Owner.
+
+11. SEVERABILITY AND INTERPRETATION
+
+If any provision is found unenforceable, the remaining provisions remain effective to the extent permitted by applicable law.
+Nothing in this license limits rights that cannot legally be restricted, including applicable statutory exceptions and limitations.
+This license constitutes the agreement governing permissions granted by the Owner for the Work, except where a separate written agreement applies.
+Copyright (c) 2026 Gautham. All rights reserved.
+Proprietary Source-Visible Software. Not Open Source.
+END LICENSE TEXT
+This is a proposed custom license and has not been legally reviewed.
+Create `THIRD_PARTY_NOTICES.md`.
+Preserve applicable third-party license requirements.
+Audit dependencies, models, datasets, container images, and assets.
+PART 4: IMPLEMENTATION PRIORITIES
+Use this priority hierarchy.
+Priority 0: Complete customer workflows
+Implement two fully functioning end-to-end customer scenarios.
+Do not prioritize optional infrastructure over customer delivery.
+Priority 1: Security and correctness
+Implement:
+
+* Authentication
+* Authorization
+* Tenant isolation
+* Human approval
+* Validated inputs
+* Transactional state management
+* Idempotency
+* Auditability
+
+Priority 2: Reliability
+Implement:
+
+* Retries
+* Timeouts
+* Recovery
+* Fault injection
+* Error classification
+* Duplicate prevention
+* Observability
+
+Priority 3: Measurable evidence
+Implement:
+
+* Automated tests
+* Customer acceptance tests
+* Retrieval evaluation
+* Workflow benchmarks
+* Failure recovery reports
+* Reproducible results
+
+Priority 4: Customer delivery
+Implement:
+
+* Customer discovery
+* Requirements traceability
+* Onboarding
+* Deployment scripts
+* Runbooks
+* Troubleshooting
+* Technical handover
+
+Priority 5: Portability
+Implement:
+
+* Cloud-ready architecture
+* Terraform/OpenTofu validation
+* Deployment tradeoff documentation
+* Optional Kubernetes examples
+
+Do not sacrifice working core functionality to add optional technologies.
+PART 5: TECHNOLOGY STACK
+Use the following preferred stack.
+Backend:
+
+* Python
+* FastAPI
+* Pydantic
+* SQLAlchemy
+* Alembic
+
+Database:
+
+* PostgreSQL
+* pgvector
+
+AI:
+
+* Ollama
+* Sentence Transformers
+* Locally runnable LLM
+
+Frontend:
+
+* React
+* TypeScript
+* Vite
+
+Workflow:
+
+* PostgreSQL-backed state machine
+* Background workers
+
+Infrastructure:
+
+* Docker Compose
+
+Testing:
+
+* Pytest
+* Vitest
+* Playwright
+
+Observability:
+
+* Structured JSON logging
+* OpenTelemetry
+* Optional Prometheus/Grafana
+
+CI/CD:
+
+* GitHub Actions within free allowances
+
+Infrastructure as Code:
+
+* Terraform or OpenTofu
+
+Support CPU-only inference.
+Inspect available hardware before choosing the local model.
+Do not require new hardware purchases.
+PART 6: CUSTOMER DISCOVERY AND REQUIREMENTS
+Create realistic fictional customer discovery documents.
+Directory:
+`docs/customer-discovery/`
+Include:
+
+* Business background
+* Current workflow
+* Pain points
+* Stakeholders
+* Existing systems
+* Data sources
+* Security constraints
+* Deployment constraints
+* Success criteria
+* Assumptions
+* Open questions
+
+Clearly identify fictional assumptions.
+Do not claim real customer interviews occurred.
+Create a requirements-to-solution traceability matrix.
+Every major requirement must map to:
+
+1. Customer need.
+2. Technical implementation.
+3. Component or API.
+4. Test case.
+5. Acceptance criterion.
+6. Evidence artifact.
+
+PART 7: CUSTOMER A — APEX INDUSTRIAL MANUFACTURING
+Build a fictional industrial manufacturing customer.
+Business problem:
+Maintenance engineers need to investigate equipment failures using manuals, maintenance records, incident histories, and inventory systems.
+Data sources:
+
+* Equipment manuals
+* Inspection reports
+* Maintenance CSVs
+* Historical incidents
+* Mock inventory API
+* Mock maintenance ticket API
+
+Required workflow:
+
+1. Report abnormal pump vibration.
+2. Identify the equipment.
+3. Retrieve relevant manual passages.
+4. Find historical incidents.
+5. Produce an evidence-grounded explanation.
+6. Display citations.
+7. Extract a structured issue.
+8. Draft a maintenance ticket.
+9. Request supervisor approval.
+10. Approve the ticket.
+11. Submit to the mock maintenance API.
+12. Store the external ticket ID.
+13. Record the audit trail.
+14. Update operational metrics.
+
+Implement and demonstrate the complete workflow.
+PART 8: CUSTOMER B — MERIDIAN FLEET LOGISTICS
+Build a fictional fleet logistics customer.
+Data sources:
+
+* Vehicle inspection CSVs
+* Service manuals
+* Fleet maintenance records
+* Mock fleet API
+* Mock ticketing API
+
+Required workflow:
+
+1. Onboard Meridian as a separate tenant.
+2. Configure customer-specific field mappings.
+3. Ingest inspection records.
+4. Identify a maintenance issue.
+5. Retrieve supporting documentation.
+6. Generate a structured incident.
+7. Draft a support ticket.
+8. Request approval.
+9. Submit the approved ticket.
+10. Record the result.
+11. Demonstrate tenant isolation.
+
+The same core platform must support both customers without code rewrites.
+PART 9: SYSTEM ARCHITECTURE
+Use a modular monolith with background workers.
+Core modules:
+
+1. Authentication
+2. Tenant Management
+3. Customer Configuration
+4. Enterprise Connectors
+5. Document Ingestion
+6. Retrieval Engine
+7. AI Inference
+8. Incident Intelligence
+9. Workflow Orchestration
+10. Audit Logging
+11. Observability
+12. Evaluation
+13. Customer Dashboard
+
+Use PostgreSQL as the authoritative workflow state store.
+Use pgvector for semantic retrieval.
+Use a transactional outbox where appropriate.
+Avoid unnecessary microservices.
+PART 10: CUSTOMER ONBOARDING
+Implement:
+
+* Tenant creation
+* User membership
+* Role assignment
+* Data source registration
+* Connector configuration
+* Schema mapping
+* Workflow policies
+* Configuration validation
+* Onboarding health checks
+
+A new customer must be configurable without modifying the core application.
+PART 11: ENTERPRISE INTEGRATIONS
+Implement reusable connectors for:
+
+* Mock CRM
+* Mock inventory
+* Mock ticketing
+* CSV
+* REST APIs
+* Webhooks
+
+Support:
+
+* Authentication
+* Pagination
+* Rate limiting
+* Timeouts
+* Retries
+* Exponential backoff
+* Schema validation
+* Error classification
+* Idempotency
+* Health checks
+
+Mock APIs must support configurable failure responses.
+PART 12: DOCUMENT INGESTION
+Support:
+
+* PDF
+* CSV
+* JSON
+* REST API records
+* Webhook payloads
+
+Implement:
+
+* Parsing
+* Normalization
+* Validation
+* Metadata extraction
+* Content hashing
+* Duplicate detection
+* Version tracking
+* Idempotent ingestion
+* Retry handling
+* Reprocessing
+* Deletion
+* Reindexing
+
+Preserve source provenance, including page numbers and record identifiers.
+PART 13: RETRIEVAL-AUGMENTED GENERATION
+Use local inference with Ollama and Sentence Transformers.
+Implement:
+
+1. Document chunking.
+2. Embedding generation.
+3. Vector indexing.
+4. PostgreSQL full-text search.
+5. Hybrid retrieval.
+6. Tenant-aware filtering.
+7. Optional reranking.
+8. Context assembly.
+9. Local LLM inference.
+10. Evidence-grounded answers.
+11. Citation generation.
+12. Citation verification.
+13. Insufficient-evidence handling.
+
+Never fabricate citations.
+Treat retrieved documents as untrusted input.
+Do not permit model-generated text to authorize external business actions.
+PART 14: INCIDENT INTELLIGENCE
+Use validated Pydantic schemas.
+Required fields:
+
+* Tenant ID
+* Equipment or vehicle ID
+* Incident category
+* Symptoms
+* Related incidents
+* Suggested priority
+* Supporting citations
+* Recommended action
+* Review status
+
+Validate model output.
+Use deterministic business rules where appropriate.
+PART 15: HUMAN APPROVAL WORKFLOWS
+Implement states:
+
+* DRAFT
+* PENDING_APPROVAL
+* APPROVED
+* REJECTED
+* SUBMITTING
+* SUBMITTED
+* FAILED
+* RETRY_PENDING
+* CANCELLED
+
+Requirements:
+
+* Human approval before external submission.
+* Role-based approval.
+* Editable drafts.
+* Recorded decisions.
+* Valid state transitions.
+* Idempotent submission.
+* Retry and recovery.
+* Duplicate prevention.
+* Audit history.
+
+Rejected tickets must never be submitted.
+Retries must not bypass approval.
+Test concurrent approvals.
+PART 16: SECURITY
+Implement:
+
+* Authentication
+* RBAC
+* Tenant authorization
+* Tenant-aware retrieval
+* Secure credential handling
+* Input validation
+* Upload restrictions
+* Rate limiting
+* Audit logging
+* Prompt-injection defenses
+* Negative authorization tests
+
+Roles:
+
+* Platform Administrator
+* Tenant Administrator
+* Maintenance Supervisor
+* Support Engineer
+* Read-Only Auditor
+
+Use PostgreSQL row-level security where practical.
+Do not rely exclusively on frontend permission checks.
+Do not commit secrets.
+PART 17: BACKEND AND DATABASE
+Use FastAPI, Pydantic, SQLAlchemy, Alembic, PostgreSQL, and pgvector.
+Required API namespaces:
+`/api/v1/auth`
+`/api/v1/tenants`
+`/api/v1/connectors`
+`/api/v1/documents`
+`/api/v1/ingestion`
+`/api/v1/search`
+`/api/v1/ai`
+`/api/v1/incidents`
+`/api/v1/tickets`
+`/api/v1/approvals`
+`/api/v1/workflows`
+`/api/v1/audit`
+`/api/v1/metrics`
+`/api/v1/health`
+Implement:
+
+* Typed contracts
+* Validation
+* Pagination
+* Standardized errors
+* OpenAPI documentation
+* Database migrations
+* Transactions
+* Constraints
+* Indexes
+
+Database entities:
+
+* Tenants
+* Users
+* Roles
+* Memberships
+* Connectors
+* Documents
+* Document versions
+* Document chunks
+* Embeddings
+* Ingestion jobs
+* Incidents
+* Tickets
+* Approvals
+* Workflow executions
+* Outbox events
+* Audit events
+* Evaluation runs
+
+PART 18: FRONTEND
+Use React, TypeScript, and Vite.
+Required pages:
+
+1. Overview
+2. Customer Onboarding
+3. Data Sources
+4. Document Library
+5. AI Knowledge Assistant
+6. Incident Explorer
+7. Support Tickets
+8. Approval Queue
+9. Workflow History
+10. Integration Health
+11. Evaluation Dashboard
+12. Audit Logs
+13. Administration
+
+Implement:
+
+* Responsive layout
+* Accessibility
+* Form validation
+* Loading states
+* Empty states
+* Error states
+* Search
+* Filtering
+* Pagination
+
+Do not display fabricated metrics.
+PART 19: CUSTOMER ACCEPTANCE TESTING
+Create:
+`docs/customer-acceptance/`
+`tests/acceptance/`
+`evaluation/customer-acceptance/`
+Each test must contain:
+
+* Test ID
+* Requirement ID
+* Preconditions
+* Test data
+* Steps
+* Expected result
+* Actual result
+* Pass/fail status
+* Evidence reference
+* Execution timestamp
+
+Customer A tests:
+
+* UAT-A01: Document ingestion.
+* UAT-A02: Evidence-grounded retrieval.
+* UAT-A03: Historical incident matching.
+* UAT-A04: Structured ticket generation.
+* UAT-A05: Unapproved submission blocked.
+* UAT-A06: Approved ticket submission.
+* UAT-A07: Duplicate prevention.
+* UAT-A08: API failure recovery.
+
+Customer B tests:
+
+* UAT-B01: Second-tenant onboarding.
+* UAT-B02: Customer-specific schema mapping.
+* UAT-B03: Fleet issue extraction.
+* UAT-B04: Ticket approval.
+* UAT-B05: Correct customer API submission.
+* UAT-B06: Cross-tenant access denied.
+* UAT-B07: Failure recovery.
+
+All critical security, approval, and isolation tests must pass.
+Generate machine-readable JSON and human-readable Markdown reports.
+PART 20: FAULT-INJECTION TESTING
+Create:
+`tests/fault_injection/`
+`docs/reliability/`
+`evaluation/failure-reports/`
+Implement:
+
+* FI-01: HTTP 503 outage.
+* FI-02: HTTP 429 rate limiting.
+* FI-03: Network timeout.
+* FI-04: Malformed API response.
+* FI-05: Unauthorized cross-tenant access.
+* FI-06: Concurrent approvals.
+* FI-07: Worker interruption.
+* FI-08: Prompt injection.
+* FI-09: Duplicate ingestion.
+* FI-10: Database interruption.
+
+For every scenario record:
+
+* Initial state
+* Injected fault
+* Expected behavior
+* Actual behavior
+* Recovery action
+* Final state
+* Pass/fail result
+
+Demonstrate safe recovery without unauthorized actions or duplicate ticket submissions.
+Use local mock services.
+PART 21: EVIDENCE-BASED EVALUATION
+Create:
+`evaluation/datasets/`
+`evaluation/benchmarks/`
+`evaluation/reports/`
+`docs/performance/`
+Measure:
+
+* Retrieval Recall@5
+* Retrieval Precision@5
+* Citation correctness
+* Answer groundedness
+* Structured output validity
+* Ticket creation accuracy
+* Workflow completion rate
+* Integration success rate
+* Failure recovery rate
+* Tenant isolation test outcomes
+* API latency
+* Retrieval latency
+* LLM inference latency
+* End-to-end workflow duration
+
+Initial proposed targets:
+
+* Recall@5: at least 85%.
+* Citation correctness: at least 95%.
+* Structured ticket schema validity: 100%.
+* Unauthorized cross-tenant access: zero successful attempts in the defined test suite.
+* Unauthorized ticket submissions: zero.
+* Duplicate tickets during tested retries: zero.
+* Critical UAT pass rate: 100%.
+* Transient failure recovery: at least 95% in the defined test suite.
+
+These are targets, not achieved results.
+Define denominators and evaluation methodology.
+Report actual measurements.
+Record:
+
+* CPU
+* RAM
+* GPU, if available
+* Operating system
+* Python version
+* PostgreSQL version
+* Ollama version
+* LLM model
+* Embedding model
+* Dataset size
+* Test repetitions
+* Benchmark date
+
+Report median and p95 latency where feasible.
+Compare manual and automated workflows using equivalent synthetic tasks.
+Clearly distinguish simulated baselines from observed human performance.
+Do not claim real customer productivity gains from fictional scenarios.
+PART 22: OBSERVABILITY
+Implement:
+
+* Structured JSON logging
+* Correlation IDs
+* Trace IDs
+* Request latency
+* Ingestion duration
+* Retrieval latency
+* Inference duration
+* Workflow completion time
+* External API failures
+* Retry counts
+* Dead-letter counts
+* Approval turnaround time
+
+Use OpenTelemetry where practical.
+Optional:
+
+* Prometheus
+* Grafana
+
+Do not log secrets or sensitive content.
+PART 23: REPRODUCIBLE LOCAL DEPLOYMENT
+Use Docker Compose.
+Core services:
+
+* Backend
+* Frontend
+* PostgreSQL with pgvector
+* Worker
+* Mock CRM
+* Mock inventory
+* Mock ticketing
+* Local Ollama integration
+
+Optional:
+
+* RabbitMQ
+* Prometheus
+* Grafana
+
+Provide:
+
+* `.env.example`
+* Startup scripts
+* Database migrations
+* Seed data
+* Health checks
+* Smoke tests
+* Acceptance test commands
+* Fault-injection commands
+* Benchmark commands
+* Backup instructions
+* Restore instructions
+* Shutdown instructions
+
+Support CPU-only operation.
+A reviewer must be able to reproduce the main customer demonstration on compatible hardware.
+PART 24: CLOUD DEPLOYMENT PORTABILITY
+The primary implementation must remain local and free.
+Do not provision paid cloud resources.
+Design the architecture so it can be adapted to:
+
+* AWS
+* Azure
+* Google Cloud
+* Kubernetes
+
+Create:
+`infrastructure/terraform/`
+Include:
+
+* Terraform or OpenTofu configuration
+* Variables
+* Outputs
+* Provider constraints
+* Example configuration
+* Validation instructions
+
+Run local formatting and validation where feasible.
+Do not execute billable infrastructure provisioning.
+Do not require cloud credentials for ordinary local operation.
+Create cloud deployment architecture documents for AWS, Azure, and GCP.
+Choose one provider for a detailed illustrative blueprint.
+Document the others at comparison level.
+Explain:
+
+* Compute
+* Database
+* Storage
+* Networking
+* Identity
+* Secrets
+* Observability
+* Scaling
+* Availability
+* Security
+* Cost
+
+Optional Kubernetes examples may be added after the local platform is fully working.
+Do not claim successful cloud deployment unless actual deployment and testing occurred.
+Create:
+`docs/architecture/deployment-tradeoffs.md`
+Compare:
+
+* Modular monolith versus microservices
+* Docker Compose versus Kubernetes
+* Local versus hosted inference
+* PostgreSQL/pgvector versus managed vector databases
+* Background workers versus managed queues
+* Local versus cloud deployment
+
+Discuss cost, complexity, reliability, scalability, security, and operational burden.
+PART 25: CUSTOMER-FACING TECHNICAL COMMUNICATION
+Create:
+`docs/customer-delivery/`
+Include:
+
+1. Customer Discovery Summary
+2. Requirements-to-Solution Matrix
+3. Solution Architecture Proposal
+4. Integration Specification
+5. Deployment Plan
+6. Customer Acceptance Plan
+7. Troubleshooting Guide
+8. Operational Handover
+9. Architecture Tradeoff Record
+10. Implementation Retrospective
+
+Use realistic fictional scenarios.
+Do not claim real customer interviews.
+Prepare a 10–15 minute technical walkthrough explaining:
+
+* Customer problem
+* Requirements
+* Architecture
+* Integrations
+* Security
+* Workflow automation
+* Failure recovery
+* Measured outcomes
+* Deployment tradeoffs
+
+Use actual application behavior.
+PART 26: AUTOMATED TESTING
+Implement:
+
+* Unit tests
+* Integration tests
+* API contract tests
+* Database tests
+* Authentication tests
+* Authorization tests
+* Tenant isolation tests
+* RAG evaluation tests
+* Workflow transition tests
+* Retry tests
+* Idempotency tests
+* Frontend tests
+* End-to-end tests
+* Customer acceptance tests
+* Fault-injection tests
+* Deployment smoke tests
+
+Use Pytest, Vitest, and Playwright.
+Use deterministic synthetic fixtures.
+Make tests runnable locally without paid services.
+PART 27: CI/CD
+Use GitHub Actions within applicable free allowances.
+Implement:
+
+* Backend linting
+* Backend tests
+* Frontend linting
+* Frontend tests
+* Type checking
+* Dependency checks
+* Security checks
+* Docker build validation
+* Smoke tests
+* Lightweight acceptance tests
+* Release validation
+
+Run resource-intensive LLM evaluations locally when necessary.
+Document which tests execute in CI and which require local hardware.
+Use least-privilege permissions.
+Do not require paid runners.
+Do not create unnecessary bot-authored commits.
+PART 28: REPOSITORY STRUCTURE
+Use:
+enterprise-ai-operations-platform/
+backend/
+app/
+api/
+auth/
+core/
+database/
+models/
+schemas/
+services/
+connectors/
+ingestion/
+retrieval/
+ai/
+workflows/
+audit/
+observability/
+migrations/
+tests/
+frontend/
+src/
+components/
+pages/
+hooks/
+services/
+types/
+layouts/
+styles/
+tests/
+workers/
+mock-services/
+crm/
+inventory/
+ticketing/
+evaluation/
+datasets/
+benchmarks/
+customer-acceptance/
+failure-reports/
+reports/
+tests/
+acceptance/
+fault_injection/
+infrastructure/
+docker/
+terraform/
+kubernetes/
+monitoring/
+scripts/
+docs/
+architecture/
+customer-discovery/
+customer-delivery/
+customer-acceptance/
+customer-onboarding/
+integrations/
+security/
+deployment/
+operations/
+reliability/
+evaluation/
+performance/
+sample-data/
+customer-a/
+customer-b/
+.github/
+workflows/
+.env.example
+.gitignore
+.dockerignore
+.editorconfig
+LICENSE
+THIRD_PARTY_NOTICES.md
+README.md
+SECURITY.md
+CHANGELOG.md
+docker-compose.yml
+Makefile
+Create optional directories only when needed.
+PART 29: RECRUITER-READY README
+Include:
+
+1. Project overview.
+2. Business problem.
+3. Key capabilities.
+4. Architecture diagram.
+5. Technology stack.
+6. Customer scenarios.
+7. Screenshots.
+8. Local setup.
+9. End-to-end demo.
+10. API documentation.
+11. Security model.
+12. Customer acceptance results.
+13. Fault-injection results.
+14. Verified engineering benchmarks.
+15. Hardware specifications.
+16. Test commands.
+17. CI status.
+18. Cloud portability.
+19. Architecture tradeoffs.
+20. Known limitations.
+21. License information.
+
+Include a section titled:
+"Verified Engineering Results"
+For each metric show:
+
+* Metric
+* Actual result
+* Target
+* Test command
+* Evidence location
+
+Do not populate unexecuted benchmarks with invented results.
+PART 30: END-TO-END FDE DEMONSTRATION
+Create a reproducible demonstration showing:
+
+1. Start the platform.
+2. Authenticate.
+3. Onboard Apex.
+4. Configure integrations.
+5. Ingest equipment documents.
+6. Ask a maintenance question.
+7. Inspect citations.
+8. Identify related incidents.
+9. Generate a structured ticket.
+10. Request approval.
+11. Approve the ticket.
+12. Submit to the mock API.
+13. Simulate an API outage.
+14. Demonstrate recovery.
+15. Verify no duplicate ticket.
+16. Display audit history.
+17. Onboard Meridian.
+18. Configure custom mappings.
+19. Ingest fleet records.
+20. Generate and approve a fleet ticket.
+21. Demonstrate tenant isolation.
+22. Run customer acceptance tests.
+23. Run fault-injection tests.
+24. Run evaluation benchmarks.
+25. Display verified results.
+26. Explain cloud portability.
+27. Explain architecture tradeoffs.
+
+All demonstrations must use the actual working application.
+PART 31: IMPLEMENTATION ROADMAP
+Phase 1: Foundation
+
+* Environment verification
+* GitHub identity verification
+* Repository initialization
+* License
+* Project structure
+* Docker
+* Database
+* CI
+
+Phase 2: Customer onboarding and integration
+
+* Authentication
+* Tenant model
+* RBAC
+* Customer onboarding
+* Connectors
+* Mock APIs
+
+Phase 3: Document intelligence
+
+* Ingestion
+* Metadata
+* Embeddings
+* Vector indexing
+* Hybrid retrieval
+* Local inference
+* Citations
+
+Phase 4: Workflow automation
+
+* Incident extraction
+* Ticket drafting
+* Approval
+* State machine
+* External submission
+* Recovery
+
+Phase 5: Customer dashboard
+
+* Frontend
+* Document explorer
+* AI assistant
+* Incident explorer
+* Approval queue
+* Metrics
+
+Phase 6: Security and reliability
+
+* Tenant isolation
+* Authorization tests
+* Prompt-injection tests
+* Audit logging
+* Observability
+* Fault injection
+
+Phase 7: Customer acceptance
+
+* Apex UAT
+* Meridian UAT
+* Requirements traceability
+* Acceptance reports
+
+Phase 8: Evaluation
+
+* Retrieval benchmarks
+* Citation evaluation
+* Workflow benchmarks
+* Failure recovery
+* Business workflow comparison
+
+Phase 9: Cloud portability
+
+* Cloud-ready architecture
+* Terraform/OpenTofu examples
+* Local validation
+* Deployment tradeoffs
+* Optional Kubernetes examples
+
+Phase 10: Documentation and release
+
+* README
+* Customer discovery documents
+* Architecture documentation
+* Deployment runbook
+* Technical demonstration
+* Security review
+* GitHub audit
+* Versioned release
+
+At the end of each phase:
+
+1. Run applicable tests.
+2. Fix failures.
+3. Verify integration.
+4. Review security.
+5. Update documentation.
+6. Commit validated changes with accurate metadata.
+7. Record completed work and remaining limitations.
+
+Do not stop at scaffolding.
+PART 32: DEFINITION OF DONE
+The project is complete only when:
+
+1. The platform runs locally.
+2. No paid service is mandatory.
+3. Both customer scenarios work end to end.
+4. Tenant isolation is tested.
+5. Enterprise connectors function.
+6. Documents can be ingested.
+7. RAG returns verifiable citations.
+8. Structured incidents can be generated.
+9. Human approval is enforced.
+10. Approved tickets reach mock systems.
+11. Failed workflows recover.
+12. Duplicate tickets are prevented.
+13. Audit history is available.
+14. The frontend works.
+15. Automated tests pass.
+16. Customer acceptance tests pass.
+17. Fault-injection tests are reproducible.
+18. Evaluation reports contain actual measurements.
+19. Hardware specifications are documented.
+20. Docker deployment is reproducible.
+21. CI checks pass.
+22. Cloud portability is documented.
+23. Terraform/OpenTofu examples are validated where feasible.
+24. Architecture tradeoffs are documented.
+25. Customer discovery materials are complete.
+26. Requirements traceability is available.
+27. Technical handover documentation is complete.
+28. The README contains verified results.
+29. The proprietary license is present.
+30. Third-party notices are preserved.
+31. No unauthorized collaborators are invited.
+32. No unnecessary AI watermarks or promotional branding appear.
+33. Git provenance remains accurate.
+34. Repository permissions are reviewed.
+35. Publication is authorized.
+36. A tested versioned release is published.
+37. The complete demonstration is reproducible.
+
+PART 33: FINAL GITHUB AUDIT
+Before publication, inspect:
+
+* Repository owner
+* Visibility
+* Collaborator access
+* GitHub App permissions
+* Git author
+* Git committer
+* Commit trailers
+* README
+* LICENSE
+* Third-party notices
+* GitHub Actions permissions
+* Secrets
+* Tracked files
+* Documentation
+* Screenshots
+* Diagrams
+* Reports
+* Release notes
+
+Search for unintended assistant promotional branding and watermarks.
+Preserve accurate provenance and legally required notices.
+Do not falsify GitHub activity metadata.
+Do not publish without explicit approval.
+PART 34: EXECUTION PROTOCOL
+Begin by verifying:
+
+* Git
+* GitHub authentication
+* Authorized Git identity
+* Python
+* Node.js
+* Docker
+* CPU
+* RAM
+* GPU
+* Disk space
+* Local model compatibility
+
+Request only essential missing information.
+Implement in working increments.
+Prioritize complete customer workflows before optional cloud infrastructure.
+Run tests after every phase.
+Fix failures before advancing.
+Do not fabricate results.
+Do not activate paid services.
+Do not invite collaborators.
+Do not change the owner's copyright identity.
+Do not publish without explicit approval.
+If a requirement cannot be met, state the limitation and propose a compliant alternative.
+Final deliverables
+Deliver:
+
+1. Complete source code.
+2. Working backend.
+3. Working frontend.
+4. Database migrations.
+5. Local RAG pipeline.
+6. Enterprise connectors.
+7. Human approval workflow.
+8. Tenant security.
+9. Audit logging.
+10. Automated tests.
+11. Customer acceptance reports.
+12. Fault-injection reports.
+13. Benchmark reports.
+14. Docker deployment.
+15. CI/CD workflows.
+16. Professional README.
+17. Architecture diagrams.
+18. Customer discovery documentation.
+19. Requirements traceability matrix.
+20. Deployment runbook.
+21. Security documentation.
+22. Troubleshooting guide.
+23. Cloud portability documentation.
+24. Terraform/OpenTofu examples.
+25. Architecture tradeoff analysis.
+26. Proprietary LICENSE file.
+27. Third-party notices.
+28. Authorized GitHub repository.
+29. Tested versioned release.
+30. Reproducible technical demonstration.
+31. Final implementation and validation report.
+
+FINAL OBJECTIVE
+Build a technically credible, fully functioning Enterprise AI Operations Platform demonstrating the complete lifecycle of Forward Deployed Engineering.
+The project must demonstrate:
+
+* Customer problem discovery.
+* Requirements engineering.
+* Enterprise integration.
+* Backend and frontend development.
+* AI and retrieval engineering.
+* Multi-tenant security.
+* Human-approved automation.
+* Workflow reliability.
+* Fault recovery.
+* Customer-specific deployment.
+* Customer acceptance testing.
+* Measurable engineering outcomes.
+* Cloud deployment portability.
+* Architecture tradeoff analysis.
+* Technical communication.
+* Operational handover.
+
+Maintain zero mandatory paid services.
+Maintain Gautham as the intended sole GitHub repository owner.
+Do not invite collaborators.
+Do not include unnecessary AI watermarks or assistant promotional branding.
+Preserve accurate Git provenance and required legal notices.
+Use the complete proprietary source-visible license included in this prompt.
+Begin with environment verification and Phase 1. Implement and validate both customer workflows before expanding into optional cloud portability features. Continue through testing, evaluation, documentation, and authorized publication.

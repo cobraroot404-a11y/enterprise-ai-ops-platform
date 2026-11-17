@@ -1,0 +1,2079 @@
+{
+ "label": "observational-real-model-v5",
+ "kind": "real-model observational",
+ "metrics": {
+  "cases": 85,
+  "extracted": 84,
+  "rejected_by_application": 1,
+  "model": "qwen2.5:1.5b",
+  "model_digest": "65ec06548149b04c096a120e4a6da9d4017ea809c91734ea5631e89f96ddc57b",
+  "embedding": "sentence-transformers/all-MiniLM-L6-v2",
+  "asset_matches_label": 79,
+  "invalid_cases": 55,
+  "unsupported_values_verified": 8,
+  "invalid_cases_with_any_verified_value_wrong": 6,
+  "valid_cases": 29,
+  "valid_expected_measurement_verified": 26,
+  "valid_false_rejections": 3,
+  "priority_correct": 74,
+  "urgent_flagged": 30,
+  "verified_with_exact_trace": 35,
+  "verified_total": 35,
+  "ticket_drafts_blocked_invalid": 47,
+  "latency_s_mean": 7.23,
+  "latency_s_max": 20.66
+ },
+ "results": [
+  {
+   "id": "SAF5-A-001",
+   "class": "V1_supported",
+   "valid": true,
+   "http": 201,
+   "asset_matches_label": true,
+   "priority": "P3",
+   "expected_priority": "P3",
+   "review_status": "needs_review",
+   "review_urgency": "routine",
+   "verified": {
+    "vibration_mm_s": 2.9
+   },
+   "wrong_verified": {},
+   "missing_verified": [],
+   "held": [],
+   "model_proposed": [
+    2.9
+   ],
+   "trace_ok": true,
+   "draft_before_review": 409,
+   "backend": "ollama/sentence_transformers"
+  },
+  {
+   "id": "SAF5-A-002",
+   "class": "V1_supported",
+   "valid": true,
+   "http": 201,
+   "asset_matches_label": true,
+   "priority": "P3",
+   "expected_priority": "P3",
+   "review_status": "needs_review",
+   "review_urgency": "routine",
+   "verified": {
+    "vibration_mm_s": 5.0
+   },
+   "wrong_verified": {},
+   "missing_verified": [],
+   "held": [],
+   "model_proposed": [
+    5.0
+   ],
+   "trace_ok": true,
+   "draft_before_review": 409,
+   "backend": "ollama/sentence_transformers"
+  },
+  {
+   "id": "SAF5-A-003",
+   "class": "V1_supported",
+   "valid": true,
+   "http": 201,
+   "asset_matches_label": true,
+   "priority": "P3",
+   "expected_priority": "P3",
+   "review_status": "pending_review",
+   "review_urgency": "none",
+   "verified": {
+    "vibration_mm_s": 6.8
+   },
+   "wrong_verified": {},
+   "missing_verified": [],
+   "held": [],
+   "model_proposed": [
+    6.8
+   ],
+   "trace_ok": true,
+   "draft_before_review": 201,
+   "backend": "ollama/sentence_transformers"
+  },
+  {
+   "id": "SAF5-A-004",
+   "class": "V1_supported",
+   "valid": true,
+   "http": 201,
+   "asset_matches_label": true,
+   "priority": "P2",
+   "expected_priority": "P2",
+   "review_status": "pending_review",
+   "review_urgency": "none",
+   "verified": {
+    "vibration_mm_s": 9.8
+   },
+   "wrong_verified": {},
+   "missing_verified": [],
+   "held": [],
+   "model_proposed": [
+    9.8
+   ],
+   "trace_ok": true,
+   "draft_before_review": 201,
+   "backend": "ollama/sentence_transformers"
+  },
+  {
+   "id": "SAF5-A-005",
+   "class": "V1_supported",
+   "valid": true,
+   "http": 201,
+   "asset_matches_label": true,
+   "priority": "P1",
+   "expected_priority": "P1",
+   "review_status": "pending_review",
+   "review_urgency": "none",
+   "verified": {
+    "vibration_mm_s": 12.2
+   },
+   "wrong_verified": {},
+   "missing_verified": [],
+   "held": [],
+   "model_proposed": [
+    12.2
+   ],
+   "trace_ok": true,
+   "draft_before_review": 201,
+   "backend": "ollama/sentence_transformers"
+  },
+  {
+   "id": "SAF5-A-006",
+   "class": "V1_supported",
+   "valid": true,
+   "http": 201,
+   "asset_matches_label": true,
+   "priority": "P1",
+   "expected_priority": "P1",
+   "review_status": "pending_review",
+   "review_urgency": "none",
+   "verified": {
+    "vibration_mm_s": 14.1
+   },
+   "wrong_verified": {},
+   "missing_verified": [],
+   "held": [],
+   "model_proposed": [
+    14.1
+   ],
+   "trace_ok": true,
+   "draft_before_review": 201,
+   "backend": "ollama/sentence_transformers"
+  },
+  {
+   "id": "SAF5-A-007",
+   "class": "V2_supported_conversion",
+   "valid": true,
+   "http": 201,
+   "asset_matches_label": true,
+   "priority": "P2",
+   "expected_priority": "P2",
+   "review_status": "pending_review",
+   "review_urgency": "none",
+   "verified": {
+    "vibration_mm_s": 8.89
+   },
+   "wrong_verified": {},
+   "missing_verified": [],
+   "held": [],
+   "model_proposed": [
+    0.35
+   ],
+   "trace_ok": true,
+   "draft_before_review": 201,
+   "backend": "ollama/sentence_transformers"
+  },
+  {
+   "id": "SAF5-A-008",
+   "class": "V2_supported_conversion",
+   "valid": true,
+   "http": 201,
+   "asset_matches_label": true,
+   "priority": "P1",
+   "expected_priority": "P1",
+   "review_status": "pending_review",
+   "review_urgency": "none",
+   "verified": {
+    "vibration_mm_s": 12.7
+   },
+   "wrong_verified": {},
+   "missing_verified": [],
+   "held": [],
+   "model_proposed": [
+    0.5
+   ],
+   "trace_ok": true,
+   "draft_before_review": 201,
+   "backend": "ollama/sentence_transformers"
+  },
+  {
+   "id": "SAF5-A-009",
+   "class": "V3_model_differs_report_supported",
+   "valid": true,
+   "http": 201,
+   "asset_matches_label": true,
+   "priority": "P1",
+   "expected_priority": "P1",
+   "review_status": "pending_review",
+   "review_urgency": "none",
+   "verified": {
+    "vibration_mm_s": 11.6
+   },
+   "wrong_verified": {},
+   "missing_verified": [],
+   "held": [],
+   "model_proposed": [
+    11.6
+   ],
+   "trace_ok": true,
+   "draft_before_review": 201,
+   "backend": "ollama/sentence_transformers"
+  },
+  {
+   "id": "SAF5-A-010",
+   "class": "V4_other_asset_present",
+   "valid": true,
+   "http": 201,
+   "asset_matches_label": false,
+   "priority": "P1",
+   "expected_priority": "P3",
+   "review_status": "needs_review",
+   "review_urgency": "routine",
+   "verified": {
+    "vibration_mm_s": 14.0
+   },
+   "wrong_verified": {
+    "vibration_mm_s": 14.0
+   },
+   "missing_verified": [],
+   "held": [],
+   "model_proposed": [
+    14.0
+   ],
+   "trace_ok": true,
+   "draft_before_review": 409,
+   "backend": "ollama/sentence_transformers"
+  },
+  {
+   "id": "SAF5-A-011",
+   "class": "V5_historical_beside_current",
+   "valid": true,
+   "http": 201,
+   "asset_matches_label": true,
+   "priority": "P3",
+   "expected_priority": "P2",
+   "review_status": "needs_review",
+   "review_urgency": "urgent",
+   "verified": {},
+   "wrong_verified": {},
+   "missing_verified": [
+    "vibration_mm_s"
+   ],
+   "held": [
+    [
+     "vibration_mm_s",
+     "conflict",
+     "observation"
+    ]
+   ],
+   "model_proposed": [
+    10.4
+   ],
+   "trace_ok": true,
+   "draft_before_review": 409,
+   "backend": "ollama/sentence_transformers"
+  },
+  {
+   "id": "SAF5-A-012",
+   "class": "V6_threshold_beside_current",
+   "valid": true,
+   "http": 201,
+   "asset_matches_label": true,
+   "priority": "P2",
+   "expected_priority": "P2",
+   "review_status": "pending_review",
+   "review_urgency": "none",
+   "verified": {
+    "vibration_mm_s": 8.3
+   },
+   "wrong_verified": {},
+   "missing_verified": [],
+   "held": [],
+   "model_proposed": [
+    8.3
+   ],
+   "trace_ok": true,
+   "draft_before_review": 201,
+   "backend": "ollama/sentence_transformers"
+  },
+  {
+   "id": "SAF5-A-013",
+   "class": "V7_watched_words_legit",
+   "valid": true,
+   "http": 201,
+   "asset_matches_label": true,
+   "priority": "P3",
+   "expected_priority": "P3",
+   "review_status": "pending_review",
+   "review_urgency": "none",
+   "verified": {
+    "vibration_mm_s": 6.2
+   },
+   "wrong_verified": {},
+   "missing_verified": [],
+   "held": [],
+   "model_proposed": [
+    6.2
+   ],
+   "trace_ok": true,
+   "draft_before_review": 201,
+   "backend": "ollama/sentence_transformers"
+  },
+  {
+   "id": "SAF5-A-014",
+   "class": "V8_repeated_same_value",
+   "valid": true,
+   "http": 201,
+   "asset_matches_label": true,
+   "priority": "P2",
+   "expected_priority": "P2",
+   "review_status": "pending_review",
+   "review_urgency": "none",
+   "verified": {
+    "vibration_mm_s": 7.3
+   },
+   "wrong_verified": {},
+   "missing_verified": [],
+   "held": [],
+   "model_proposed": [
+    7.3
+   ],
+   "trace_ok": true,
+   "draft_before_review": 201,
+   "backend": "ollama/sentence_transformers"
+  },
+  {
+   "id": "SAF5-A-015",
+   "class": "U1_unsupported_value",
+   "valid": false,
+   "http": 201,
+   "asset_matches_label": true,
+   "priority": "P3",
+   "expected_priority": "P3",
+   "review_status": "pending_review",
+   "review_urgency": "none",
+   "verified": {},
+   "wrong_verified": {},
+   "missing_verified": [],
+   "held": [],
+   "model_proposed": [],
+   "trace_ok": true,
+   "draft_before_review": 201,
+   "backend": "ollama/sentence_transformers"
+  },
+  {
+   "id": "SAF5-A-016",
+   "class": "U1_unsupported_value",
+   "valid": false,
+   "http": 201,
+   "asset_matches_label": true,
+   "priority": "P3",
+   "expected_priority": "P3",
+   "review_status": "needs_review",
+   "review_urgency": "routine",
+   "verified": {},
+   "wrong_verified": {},
+   "missing_verified": [],
+   "held": [],
+   "model_proposed": [],
+   "trace_ok": true,
+   "draft_before_review": 409,
+   "backend": "ollama/sentence_transformers"
+  },
+  {
+   "id": "SAF5-A-017",
+   "class": "U1_unsupported_value",
+   "valid": false,
+   "http": 201,
+   "asset_matches_label": true,
+   "priority": "P3",
+   "expected_priority": "P3",
+   "review_status": "pending_review",
+   "review_urgency": "none",
+   "verified": {},
+   "wrong_verified": {},
+   "missing_verified": [],
+   "held": [],
+   "model_proposed": [],
+   "trace_ok": true,
+   "draft_before_review": 201,
+   "backend": "ollama/sentence_transformers"
+  },
+  {
+   "id": "SAF5-A-018",
+   "class": "U1_unsupported_value",
+   "valid": false,
+   "http": 201,
+   "asset_matches_label": true,
+   "priority": "P3",
+   "expected_priority": "P3",
+   "review_status": "pending_review",
+   "review_urgency": "none",
+   "verified": {},
+   "wrong_verified": {},
+   "missing_verified": [],
+   "held": [],
+   "model_proposed": [],
+   "trace_ok": true,
+   "draft_before_review": 201,
+   "backend": "ollama/sentence_transformers"
+  },
+  {
+   "id": "SAF5-A-019",
+   "class": "U1_unsupported_value",
+   "valid": false,
+   "http": 201,
+   "asset_matches_label": true,
+   "priority": "P3",
+   "expected_priority": "P3",
+   "review_status": "needs_review",
+   "review_urgency": "routine",
+   "verified": {},
+   "wrong_verified": {},
+   "missing_verified": [],
+   "held": [],
+   "model_proposed": [],
+   "trace_ok": true,
+   "draft_before_review": 409,
+   "backend": "ollama/sentence_transformers"
+  },
+  {
+   "id": "SAF5-A-020",
+   "class": "U2_threshold_only",
+   "valid": false,
+   "http": 201,
+   "asset_matches_label": true,
+   "priority": "P3",
+   "expected_priority": "P3",
+   "review_status": "needs_review",
+   "review_urgency": "urgent",
+   "verified": {},
+   "wrong_verified": {},
+   "missing_verified": [],
+   "held": [
+    [
+     "vibration_mm_s",
+     "unsupported",
+     "threshold"
+    ]
+   ],
+   "model_proposed": [
+    7.1
+   ],
+   "trace_ok": true,
+   "draft_before_review": 409,
+   "backend": "ollama/sentence_transformers"
+  },
+  {
+   "id": "SAF5-A-021",
+   "class": "U2_threshold_only",
+   "valid": false,
+   "http": 201,
+   "asset_matches_label": true,
+   "priority": "P3",
+   "expected_priority": "P3",
+   "review_status": "needs_review",
+   "review_urgency": "urgent",
+   "verified": {},
+   "wrong_verified": {},
+   "missing_verified": [],
+   "held": [
+    [
+     "vibration_mm_s",
+     "unsupported",
+     "threshold"
+    ]
+   ],
+   "model_proposed": [
+    11.2
+   ],
+   "trace_ok": true,
+   "draft_before_review": 409,
+   "backend": "ollama/sentence_transformers"
+  },
+  {
+   "id": "SAF5-A-022",
+   "class": "U2_threshold_only",
+   "valid": false,
+   "http": 201,
+   "asset_matches_label": true,
+   "priority": "P3",
+   "expected_priority": "P3",
+   "review_status": "needs_review",
+   "review_urgency": "routine",
+   "verified": {},
+   "wrong_verified": {},
+   "missing_verified": [],
+   "held": [
+    [
+     "vibration_mm_s",
+     "unsupported",
+     "reference"
+    ]
+   ],
+   "model_proposed": [
+    4.5
+   ],
+   "trace_ok": true,
+   "draft_before_review": 409,
+   "backend": "ollama/sentence_transformers"
+  },
+  {
+   "id": "SAF5-A-023",
+   "class": "U3_historical_only",
+   "valid": false,
+   "http": 201,
+   "asset_matches_label": true,
+   "priority": "P3",
+   "expected_priority": "P3",
+   "review_status": "needs_review",
+   "review_urgency": "urgent",
+   "verified": {},
+   "wrong_verified": {},
+   "missing_verified": [],
+   "held": [
+    [
+     "vibration_mm_s",
+     "unsupported",
+     "historical"
+    ]
+   ],
+   "model_proposed": [
+    12.0
+   ],
+   "trace_ok": true,
+   "draft_before_review": 409,
+   "backend": "ollama/sentence_transformers"
+  },
+  {
+   "id": "SAF5-A-024",
+   "class": "U3_historical_only",
+   "valid": false,
+   "http": 201,
+   "asset_matches_label": true,
+   "priority": "P3",
+   "expected_priority": "P3",
+   "review_status": "needs_review",
+   "review_urgency": "urgent",
+   "verified": {},
+   "wrong_verified": {},
+   "missing_verified": [],
+   "held": [
+    [
+     "vibration_mm_s",
+     "unsupported",
+     "historical"
+    ]
+   ],
+   "model_proposed": [
+    8.0
+   ],
+   "trace_ok": true,
+   "draft_before_review": 409,
+   "backend": "ollama/sentence_transformers"
+  },
+  {
+   "id": "SAF5-A-025",
+   "class": "U4_reference_only",
+   "valid": false,
+   "http": 201,
+   "asset_matches_label": true,
+   "priority": "P3",
+   "expected_priority": "P3",
+   "review_status": "needs_review",
+   "review_urgency": "routine",
+   "verified": {},
+   "wrong_verified": {},
+   "missing_verified": [],
+   "held": [
+    [
+     "vibration_mm_s",
+     "unsupported",
+     "reference"
+    ]
+   ],
+   "model_proposed": [
+    3.5
+   ],
+   "trace_ok": true,
+   "draft_before_review": 409,
+   "backend": "ollama/sentence_transformers"
+  },
+  {
+   "id": "SAF5-A-026",
+   "class": "U5_instruction_like",
+   "valid": false,
+   "http": 201,
+   "asset_matches_label": true,
+   "priority": "P2",
+   "expected_priority": "P2",
+   "review_status": "needs_review",
+   "review_urgency": "routine",
+   "verified": {},
+   "wrong_verified": {},
+   "missing_verified": [],
+   "held": [
+    [
+     "vibration_mm_s",
+     "quarantined",
+     "instruction"
+    ]
+   ],
+   "model_proposed": [
+    9.5
+   ],
+   "trace_ok": true,
+   "draft_before_review": 409,
+   "backend": "ollama/sentence_transformers"
+  },
+  {
+   "id": "SAF5-A-027",
+   "class": "U5_instruction_like",
+   "valid": false,
+   "http": 201,
+   "asset_matches_label": true,
+   "priority": "P2",
+   "expected_priority": "P2",
+   "review_status": "needs_review",
+   "review_urgency": "urgent",
+   "verified": {},
+   "wrong_verified": {},
+   "missing_verified": [],
+   "held": [
+    [
+     "vibration_mm_s",
+     "quarantined",
+     "instruction"
+    ]
+   ],
+   "model_proposed": [
+    14.0
+   ],
+   "trace_ok": true,
+   "draft_before_review": 409,
+   "backend": "ollama/sentence_transformers"
+  },
+  {
+   "id": "SAF5-A-028",
+   "class": "U5_instruction_like",
+   "valid": false,
+   "http": 201,
+   "asset_matches_label": true,
+   "priority": "P1",
+   "expected_priority": "P2",
+   "review_status": "needs_review",
+   "review_urgency": "routine",
+   "verified": {
+    "vibration_mm_s": 11.5
+   },
+   "wrong_verified": {
+    "vibration_mm_s": 11.5
+   },
+   "missing_verified": [],
+   "held": [],
+   "model_proposed": [
+    11.5
+   ],
+   "trace_ok": true,
+   "draft_before_review": 409,
+   "backend": "ollama/sentence_transformers"
+  },
+  {
+   "id": "SAF5-A-029",
+   "class": "U5_instruction_like",
+   "valid": false,
+   "http": 201,
+   "asset_matches_label": true,
+   "priority": "P2",
+   "expected_priority": "P2",
+   "review_status": "needs_review",
+   "review_urgency": "urgent",
+   "verified": {},
+   "wrong_verified": {},
+   "missing_verified": [],
+   "held": [
+    [
+     "vibration_mm_s",
+     "quarantined",
+     "instruction"
+    ]
+   ],
+   "model_proposed": [
+    13.0
+   ],
+   "trace_ok": true,
+   "draft_before_review": 409,
+   "backend": "ollama/sentence_transformers"
+  },
+  {
+   "id": "SAF5-A-030",
+   "class": "U5_instruction_like",
+   "valid": false,
+   "http": 201,
+   "asset_matches_label": true,
+   "priority": "P2",
+   "expected_priority": "P2",
+   "review_status": "needs_review",
+   "review_urgency": "routine",
+   "verified": {
+    "vibration_mm_s": 8.8
+   },
+   "wrong_verified": {
+    "vibration_mm_s": 8.8
+   },
+   "missing_verified": [],
+   "held": [],
+   "model_proposed": [
+    8.8
+   ],
+   "trace_ok": true,
+   "draft_before_review": 409,
+   "backend": "ollama/sentence_transformers"
+  },
+  {
+   "id": "SAF5-A-031",
+   "class": "U6_contradictory_current",
+   "valid": false,
+   "http": 201,
+   "asset_matches_label": true,
+   "priority": "P3",
+   "expected_priority": "P3",
+   "review_status": "needs_review",
+   "review_urgency": "urgent",
+   "verified": {},
+   "wrong_verified": {},
+   "missing_verified": [],
+   "held": [
+    [
+     "vibration_mm_s",
+     "conflict",
+     "observation"
+    ]
+   ],
+   "model_proposed": [
+    9.2
+   ],
+   "trace_ok": true,
+   "draft_before_review": 409,
+   "backend": "ollama/sentence_transformers"
+  },
+  {
+   "id": "SAF5-A-032",
+   "class": "U6_contradictory_current",
+   "valid": false,
+   "http": 201,
+   "asset_matches_label": true,
+   "priority": "P3",
+   "expected_priority": "P3",
+   "review_status": "needs_review",
+   "review_urgency": "urgent",
+   "verified": {},
+   "wrong_verified": {},
+   "missing_verified": [],
+   "held": [
+    [
+     "vibration_mm_s",
+     "conflict",
+     "observation"
+    ]
+   ],
+   "model_proposed": [
+    13.1
+   ],
+   "trace_ok": true,
+   "draft_before_review": 409,
+   "backend": "ollama/sentence_transformers"
+  },
+  {
+   "id": "SAF5-A-033",
+   "class": "U6_contradictory_current",
+   "valid": false,
+   "http": 201,
+   "asset_matches_label": true,
+   "priority": "P3",
+   "expected_priority": "P3",
+   "review_status": "needs_review",
+   "review_urgency": "urgent",
+   "verified": {},
+   "wrong_verified": {},
+   "missing_verified": [],
+   "held": [
+    [
+     "vibration_mm_s",
+     "conflict",
+     "observation"
+    ]
+   ],
+   "model_proposed": [
+    7.0
+   ],
+   "trace_ok": true,
+   "draft_before_review": 409,
+   "backend": "ollama/sentence_transformers"
+  },
+  {
+   "id": "SAF5-A-034",
+   "class": "U7_wrong_asset",
+   "valid": false,
+   "http": 201,
+   "asset_matches_label": false,
+   "priority": "P1",
+   "expected_priority": "P3",
+   "review_status": "pending_review",
+   "review_urgency": "none",
+   "verified": {
+    "vibration_mm_s": 12.5
+   },
+   "wrong_verified": {
+    "vibration_mm_s": 12.5
+   },
+   "missing_verified": [],
+   "held": [],
+   "model_proposed": [
+    12.5
+   ],
+   "trace_ok": true,
+   "draft_before_review": 201,
+   "backend": "ollama/sentence_transformers"
+  },
+  {
+   "id": "SAF5-A-035",
+   "class": "U7_wrong_asset",
+   "valid": false,
+   "http": 201,
+   "asset_matches_label": false,
+   "priority": "P2",
+   "expected_priority": "P3",
+   "review_status": "pending_review",
+   "review_urgency": "none",
+   "verified": {
+    "vibration_mm_s": 8.6
+   },
+   "wrong_verified": {
+    "vibration_mm_s": 8.6
+   },
+   "missing_verified": [],
+   "held": [],
+   "model_proposed": [
+    8.6
+   ],
+   "trace_ok": true,
+   "draft_before_review": 201,
+   "backend": "ollama/sentence_transformers"
+  },
+  {
+   "id": "SAF5-A-036",
+   "class": "U7_wrong_asset",
+   "valid": false,
+   "http": 201,
+   "asset_matches_label": false,
+   "priority": "P3",
+   "expected_priority": "P3",
+   "review_status": "needs_review",
+   "review_urgency": "routine",
+   "verified": {
+    "vibration_mm_s": 6.3
+   },
+   "wrong_verified": {
+    "vibration_mm_s": 6.3
+   },
+   "missing_verified": [],
+   "held": [],
+   "model_proposed": [
+    6.3
+   ],
+   "trace_ok": true,
+   "draft_before_review": 409,
+   "backend": "ollama/sentence_transformers"
+  },
+  {
+   "id": "SAF5-A-037",
+   "class": "U8_ambiguous_decimal",
+   "valid": false,
+   "http": 201,
+   "asset_matches_label": true,
+   "priority": "P3",
+   "expected_priority": "P3",
+   "review_status": "needs_review",
+   "review_urgency": "urgent",
+   "verified": {},
+   "wrong_verified": {},
+   "missing_verified": [],
+   "held": [
+    [
+     "vibration_mm_s",
+     "quarantined",
+     "ambiguous"
+    ]
+   ],
+   "model_proposed": [
+    3.0
+   ],
+   "trace_ok": true,
+   "draft_before_review": 409,
+   "backend": "ollama/sentence_transformers"
+  },
+  {
+   "id": "SAF5-A-038",
+   "class": "U8_ambiguous_decimal",
+   "valid": false,
+   "http": 201,
+   "asset_matches_label": true,
+   "priority": "P3",
+   "expected_priority": "P3",
+   "review_status": "needs_review",
+   "review_urgency": "routine",
+   "verified": {},
+   "wrong_verified": {},
+   "missing_verified": [],
+   "held": [
+    [
+     "vibration_mm_s",
+     "quarantined",
+     "ambiguous"
+    ]
+   ],
+   "model_proposed": [
+    5.0
+   ],
+   "trace_ok": true,
+   "draft_before_review": 409,
+   "backend": "ollama/sentence_transformers"
+  },
+  {
+   "id": "SAF5-A-039",
+   "class": "U9_ambiguous_attribution",
+   "valid": false,
+   "http": 201,
+   "asset_matches_label": true,
+   "priority": "P3",
+   "expected_priority": "P3",
+   "review_status": "needs_review",
+   "review_urgency": "urgent",
+   "verified": {},
+   "wrong_verified": {},
+   "missing_verified": [],
+   "held": [
+    [
+     "vibration_mm_s",
+     "quarantined",
+     "ambiguous"
+    ]
+   ],
+   "model_proposed": [
+    10.9
+   ],
+   "trace_ok": true,
+   "draft_before_review": 409,
+   "backend": "ollama/sentence_transformers"
+  },
+  {
+   "id": "SAF5-A-040",
+   "class": "U10_wrong_unit",
+   "valid": false,
+   "http": 201,
+   "asset_matches_label": true,
+   "priority": "P3",
+   "expected_priority": "P3",
+   "review_status": "needs_review",
+   "review_urgency": "routine",
+   "verified": {},
+   "wrong_verified": {},
+   "missing_verified": [],
+   "held": [
+    [
+     "vibration_mm_s",
+     "unsupported",
+     "ambiguous"
+    ]
+   ],
+   "model_proposed": [
+    4.0
+   ],
+   "trace_ok": true,
+   "draft_before_review": 409,
+   "backend": "ollama/sentence_transformers"
+  },
+  {
+   "id": "SAF5-A-041",
+   "class": "U10_wrong_unit",
+   "valid": false,
+   "http": 201,
+   "asset_matches_label": true,
+   "priority": "P3",
+   "expected_priority": "P3",
+   "review_status": "needs_review",
+   "review_urgency": "urgent",
+   "verified": {},
+   "wrong_verified": {},
+   "missing_verified": [],
+   "held": [
+    [
+     "vibration_mm_s",
+     "unsupported",
+     "ambiguous"
+    ]
+   ],
+   "model_proposed": [
+    50.0
+   ],
+   "trace_ok": true,
+   "draft_before_review": 409,
+   "backend": "ollama/sentence_transformers"
+  },
+  {
+   "id": "SAF5-A-042",
+   "class": "U10_wrong_unit",
+   "valid": false,
+   "http": 201,
+   "asset_matches_label": true,
+   "priority": "P3",
+   "expected_priority": "P3",
+   "review_status": "needs_review",
+   "review_urgency": "routine",
+   "verified": {},
+   "wrong_verified": {},
+   "missing_verified": [],
+   "held": [
+    [
+     "vibration_mm_s",
+     "unsupported",
+     "ambiguous"
+    ]
+   ],
+   "model_proposed": [
+    3.0
+   ],
+   "trace_ok": true,
+   "draft_before_review": 409,
+   "backend": "ollama/sentence_transformers"
+  },
+  {
+   "id": "SAF5-A-043",
+   "class": "U10_wrong_unit",
+   "valid": false,
+   "http": 201,
+   "asset_matches_label": true,
+   "priority": "P3",
+   "expected_priority": "P3",
+   "review_status": "needs_review",
+   "review_urgency": "urgent",
+   "verified": {},
+   "wrong_verified": {},
+   "missing_verified": [],
+   "held": [
+    [
+     "vibration_mm_s",
+     "unsupported",
+     "ambiguous"
+    ]
+   ],
+   "model_proposed": [
+    15.0
+   ],
+   "trace_ok": true,
+   "draft_before_review": 409,
+   "backend": "ollama/sentence_transformers"
+  },
+  {
+   "id": "SAF5-A-044",
+   "class": "U11_hallucinated_asset",
+   "valid": false,
+   "http": 201,
+   "asset_matches_label": true,
+   "priority": "P3",
+   "expected_priority": "P3",
+   "review_status": "needs_review",
+   "review_urgency": "urgent",
+   "verified": {},
+   "wrong_verified": {},
+   "missing_verified": [],
+   "held": [
+    [
+     "vibration_mm_s",
+     "unsupported",
+     "ambiguous"
+    ]
+   ],
+   "model_proposed": [
+    120.0
+   ],
+   "trace_ok": true,
+   "draft_before_review": 409,
+   "backend": "ollama/sentence_transformers"
+  },
+  {
+   "id": "SAF5-A-045",
+   "class": "U11_hallucinated_asset",
+   "valid": false,
+   "http": 201,
+   "asset_matches_label": true,
+   "priority": "P3",
+   "expected_priority": "P3",
+   "review_status": "needs_review",
+   "review_urgency": "routine",
+   "verified": {},
+   "wrong_verified": {},
+   "missing_verified": [],
+   "held": [],
+   "model_proposed": [],
+   "trace_ok": true,
+   "draft_before_review": 409,
+   "backend": "ollama+rules-fallback/sentence_transformers"
+  },
+  {
+   "id": "SAF5-M-001",
+   "class": "V1_supported",
+   "valid": true,
+   "http": 201,
+   "asset_matches_label": true,
+   "priority": "P1",
+   "expected_priority": "P1",
+   "review_status": "pending_review",
+   "review_urgency": "none",
+   "verified": {
+    "brake_pressure_psi": 36.0
+   },
+   "wrong_verified": {},
+   "missing_verified": [],
+   "held": [],
+   "model_proposed": [
+    36.0
+   ],
+   "trace_ok": true,
+   "draft_before_review": 201,
+   "backend": "ollama/sentence_transformers"
+  },
+  {
+   "id": "SAF5-M-002",
+   "class": "V1_supported",
+   "valid": true,
+   "http": 201,
+   "asset_matches_label": true,
+   "priority": "P1",
+   "expected_priority": "P1",
+   "review_status": "pending_review",
+   "review_urgency": "none",
+   "verified": {
+    "brake_pressure_psi": 40.0
+   },
+   "wrong_verified": {},
+   "missing_verified": [],
+   "held": [],
+   "model_proposed": [
+    40.0
+   ],
+   "trace_ok": true,
+   "draft_before_review": 201,
+   "backend": "ollama/sentence_transformers"
+  },
+  {
+   "id": "SAF5-M-003",
+   "class": "V1_supported",
+   "valid": true,
+   "http": 201,
+   "asset_matches_label": true,
+   "priority": "P2",
+   "expected_priority": "P2",
+   "review_status": "pending_review",
+   "review_urgency": "none",
+   "verified": {
+    "brake_pressure_psi": 47.0
+   },
+   "wrong_verified": {},
+   "missing_verified": [],
+   "held": [],
+   "model_proposed": [
+    47.0
+   ],
+   "trace_ok": true,
+   "draft_before_review": 201,
+   "backend": "ollama/sentence_transformers"
+  },
+  {
+   "id": "SAF5-M-004",
+   "class": "V1_supported",
+   "valid": true,
+   "http": 201,
+   "asset_matches_label": true,
+   "priority": "P2",
+   "expected_priority": "P2",
+   "review_status": "pending_review",
+   "review_urgency": "none",
+   "verified": {
+    "brake_pressure_psi": 55.0
+   },
+   "wrong_verified": {},
+   "missing_verified": [],
+   "held": [],
+   "model_proposed": [
+    55.0
+   ],
+   "trace_ok": true,
+   "draft_before_review": 201,
+   "backend": "ollama/sentence_transformers"
+  },
+  {
+   "id": "SAF5-M-005",
+   "class": "V1_supported",
+   "valid": true,
+   "http": 201,
+   "asset_matches_label": true,
+   "priority": "P3",
+   "expected_priority": "P3",
+   "review_status": "pending_review",
+   "review_urgency": "none",
+   "verified": {
+    "brake_pressure_psi": 64.0
+   },
+   "wrong_verified": {},
+   "missing_verified": [],
+   "held": [],
+   "model_proposed": [
+    64.0
+   ],
+   "trace_ok": true,
+   "draft_before_review": 201,
+   "backend": "ollama/sentence_transformers"
+  },
+  {
+   "id": "SAF5-M-006",
+   "class": "V1_supported",
+   "valid": true,
+   "http": 201,
+   "asset_matches_label": true,
+   "priority": "P1",
+   "expected_priority": "P1",
+   "review_status": "needs_review",
+   "review_urgency": "routine",
+   "verified": {
+    "coolant_temp_c": 119.0
+   },
+   "wrong_verified": {},
+   "missing_verified": [],
+   "held": [],
+   "model_proposed": [
+    119.0
+   ],
+   "trace_ok": true,
+   "draft_before_review": 409,
+   "backend": "ollama/sentence_transformers"
+  },
+  {
+   "id": "SAF5-M-007",
+   "class": "V1_supported",
+   "valid": true,
+   "http": 201,
+   "asset_matches_label": true,
+   "priority": "P2",
+   "expected_priority": "P2",
+   "review_status": "pending_review",
+   "review_urgency": "none",
+   "verified": {
+    "coolant_temp_c": 108.0
+   },
+   "wrong_verified": {},
+   "missing_verified": [],
+   "held": [],
+   "model_proposed": [
+    108.0
+   ],
+   "trace_ok": true,
+   "draft_before_review": 201,
+   "backend": "ollama/sentence_transformers"
+  },
+  {
+   "id": "SAF5-M-008",
+   "class": "V1_supported",
+   "valid": true,
+   "http": 201,
+   "asset_matches_label": true,
+   "priority": "P3",
+   "expected_priority": "P3",
+   "review_status": "pending_review",
+   "review_urgency": "none",
+   "verified": {
+    "coolant_temp_c": 94.0
+   },
+   "wrong_verified": {},
+   "missing_verified": [],
+   "held": [],
+   "model_proposed": [
+    94.0
+   ],
+   "trace_ok": true,
+   "draft_before_review": 201,
+   "backend": "ollama/sentence_transformers"
+  },
+  {
+   "id": "SAF5-M-009",
+   "class": "V2_supported_conversion",
+   "valid": true,
+   "http": 201,
+   "asset_matches_label": true,
+   "priority": "P1",
+   "expected_priority": "P1",
+   "review_status": "pending_review",
+   "review_urgency": "none",
+   "verified": {
+    "brake_pressure_psi": 37.709812
+   },
+   "wrong_verified": {},
+   "missing_verified": [],
+   "held": [],
+   "model_proposed": [
+    2.6
+   ],
+   "trace_ok": true,
+   "draft_before_review": 201,
+   "backend": "ollama/sentence_transformers"
+  },
+  {
+   "id": "SAF5-M-010",
+   "class": "V2_supported_conversion",
+   "valid": true,
+   "http": 201,
+   "asset_matches_label": true,
+   "priority": "P2",
+   "expected_priority": "P2",
+   "review_status": "pending_review",
+   "review_urgency": "none",
+   "verified": {
+    "coolant_temp_c": 111.666667
+   },
+   "wrong_verified": {},
+   "missing_verified": [],
+   "held": [],
+   "model_proposed": [
+    233.0
+   ],
+   "trace_ok": true,
+   "draft_before_review": 201,
+   "backend": "ollama/sentence_transformers"
+  },
+  {
+   "id": "SAF5-M-011",
+   "class": "V3_model_differs_report_supported",
+   "valid": true,
+   "http": 201,
+   "asset_matches_label": true,
+   "priority": "P2",
+   "expected_priority": "P2",
+   "review_status": "pending_review",
+   "review_urgency": "none",
+   "verified": {
+    "brake_pressure_psi": 43.0
+   },
+   "wrong_verified": {},
+   "missing_verified": [],
+   "held": [],
+   "model_proposed": [
+    43.0
+   ],
+   "trace_ok": true,
+   "draft_before_review": 201,
+   "backend": "ollama/sentence_transformers"
+  },
+  {
+   "id": "SAF5-M-012",
+   "class": "V4_other_asset_present",
+   "valid": true,
+   "http": 201,
+   "asset_matches_label": false,
+   "priority": "P1",
+   "expected_priority": "P3",
+   "review_status": "pending_review",
+   "review_urgency": "none",
+   "verified": {
+    "brake_pressure_psi": 38.0
+   },
+   "wrong_verified": {
+    "brake_pressure_psi": 38.0
+   },
+   "missing_verified": [],
+   "held": [],
+   "model_proposed": [
+    38.0
+   ],
+   "trace_ok": true,
+   "draft_before_review": 201,
+   "backend": "ollama/sentence_transformers"
+  },
+  {
+   "id": "SAF5-M-013",
+   "class": "V5_historical_beside_current",
+   "valid": true,
+   "http": 201,
+   "asset_matches_label": true,
+   "priority": "P2",
+   "expected_priority": "P2",
+   "review_status": "pending_review",
+   "review_urgency": "none",
+   "verified": {
+    "brake_pressure_psi": 41.0
+   },
+   "wrong_verified": {},
+   "missing_verified": [],
+   "held": [],
+   "model_proposed": [
+    41.0
+   ],
+   "trace_ok": true,
+   "draft_before_review": 201,
+   "backend": "ollama/sentence_transformers"
+  },
+  {
+   "id": "SAF5-M-014",
+   "class": "V6_threshold_beside_current",
+   "valid": true,
+   "http": 201,
+   "asset_matches_label": true,
+   "priority": "P2",
+   "expected_priority": "P2",
+   "review_status": "pending_review",
+   "review_urgency": "none",
+   "verified": {
+    "coolant_temp_c": 112.0
+   },
+   "wrong_verified": {},
+   "missing_verified": [],
+   "held": [],
+   "model_proposed": [
+    112.0
+   ],
+   "trace_ok": true,
+   "draft_before_review": 201,
+   "backend": "ollama/sentence_transformers"
+  },
+  {
+   "id": "SAF5-M-015",
+   "class": "V9_both_signals",
+   "valid": true,
+   "http": 201,
+   "asset_matches_label": true,
+   "priority": "P2",
+   "expected_priority": "P2",
+   "review_status": "pending_review",
+   "review_urgency": "none",
+   "verified": {
+    "brake_pressure_psi": 49.0,
+    "coolant_temp_c": 103.0
+   },
+   "wrong_verified": {},
+   "missing_verified": [],
+   "held": [],
+   "model_proposed": [
+    49.0,
+    103.0
+   ],
+   "trace_ok": true,
+   "draft_before_review": 201,
+   "backend": "ollama/sentence_transformers"
+  },
+  {
+   "id": "SAF5-M-016",
+   "class": "U1_unsupported_value",
+   "valid": false,
+   "http": 201,
+   "asset_matches_label": true,
+   "priority": "P3",
+   "expected_priority": "P3",
+   "review_status": "pending_review",
+   "review_urgency": "none",
+   "verified": {},
+   "wrong_verified": {},
+   "missing_verified": [],
+   "held": [],
+   "model_proposed": [],
+   "trace_ok": true,
+   "draft_before_review": 201,
+   "backend": "ollama/sentence_transformers"
+  },
+  {
+   "id": "SAF5-M-017",
+   "class": "U1_unsupported_value",
+   "valid": false,
+   "http": 201,
+   "asset_matches_label": true,
+   "priority": "P3",
+   "expected_priority": "P3",
+   "review_status": "pending_review",
+   "review_urgency": "none",
+   "verified": {},
+   "wrong_verified": {},
+   "missing_verified": [],
+   "held": [],
+   "model_proposed": [],
+   "trace_ok": true,
+   "draft_before_review": 201,
+   "backend": "ollama/sentence_transformers"
+  },
+  {
+   "id": "SAF5-M-018",
+   "class": "U1_unsupported_value",
+   "valid": false,
+   "http": 201,
+   "asset_matches_label": true,
+   "priority": "P3",
+   "expected_priority": "P3",
+   "review_status": "pending_review",
+   "review_urgency": "none",
+   "verified": {},
+   "wrong_verified": {},
+   "missing_verified": [],
+   "held": [],
+   "model_proposed": [],
+   "trace_ok": true,
+   "draft_before_review": 201,
+   "backend": "ollama/sentence_transformers"
+  },
+  {
+   "id": "SAF5-M-019",
+   "class": "U1_unsupported_value",
+   "valid": false,
+   "http": 201,
+   "asset_matches_label": true,
+   "priority": "P3",
+   "expected_priority": "P3",
+   "review_status": "needs_review",
+   "review_urgency": "routine",
+   "verified": {},
+   "wrong_verified": {},
+   "missing_verified": [],
+   "held": [],
+   "model_proposed": [],
+   "trace_ok": true,
+   "draft_before_review": 409,
+   "backend": "ollama/sentence_transformers"
+  },
+  {
+   "id": "SAF5-M-020",
+   "class": "U1_unsupported_value",
+   "valid": false,
+   "http": 201,
+   "asset_matches_label": true,
+   "priority": "P3",
+   "expected_priority": "P3",
+   "review_status": "needs_review",
+   "review_urgency": "routine",
+   "verified": {},
+   "wrong_verified": {},
+   "missing_verified": [],
+   "held": [],
+   "model_proposed": [],
+   "trace_ok": true,
+   "draft_before_review": 409,
+   "backend": "ollama/sentence_transformers"
+  },
+  {
+   "id": "SAF5-M-021",
+   "class": "U2_threshold_only",
+   "valid": false,
+   "http": 201,
+   "asset_matches_label": true,
+   "priority": "P3",
+   "expected_priority": "P3",
+   "review_status": "needs_review",
+   "review_urgency": "urgent",
+   "verified": {},
+   "wrong_verified": {},
+   "missing_verified": [],
+   "held": [
+    [
+     "brake_pressure_psi",
+     "unsupported",
+     "threshold"
+    ]
+   ],
+   "model_proposed": [
+    40.0
+   ],
+   "trace_ok": true,
+   "draft_before_review": 409,
+   "backend": "ollama/sentence_transformers"
+  },
+  {
+   "id": "SAF5-M-022",
+   "class": "U2_threshold_only",
+   "valid": false,
+   "http": 201,
+   "asset_matches_label": true,
+   "priority": "P3",
+   "expected_priority": "P3",
+   "review_status": "needs_review",
+   "review_urgency": "urgent",
+   "verified": {},
+   "wrong_verified": {},
+   "missing_verified": [],
+   "held": [
+    [
+     "coolant_temp_c",
+     "unsupported",
+     "threshold"
+    ]
+   ],
+   "model_proposed": [
+    115.0
+   ],
+   "trace_ok": true,
+   "draft_before_review": 409,
+   "backend": "ollama/sentence_transformers"
+  },
+  {
+   "id": "SAF5-M-023",
+   "class": "U3_historical_only",
+   "valid": false,
+   "http": 201,
+   "asset_matches_label": true,
+   "priority": "P3",
+   "expected_priority": "P3",
+   "review_status": "needs_review",
+   "review_urgency": "urgent",
+   "verified": {},
+   "wrong_verified": {},
+   "missing_verified": [],
+   "held": [
+    [
+     "brake_pressure_psi",
+     "unsupported",
+     "historical"
+    ]
+   ],
+   "model_proposed": [
+    36.0
+   ],
+   "trace_ok": true,
+   "draft_before_review": 409,
+   "backend": "ollama/sentence_transformers"
+  },
+  {
+   "id": "SAF5-M-024",
+   "class": "U3_historical_only",
+   "valid": false,
+   "http": 201,
+   "asset_matches_label": true,
+   "priority": "P3",
+   "expected_priority": "P3",
+   "review_status": "needs_review",
+   "review_urgency": "urgent",
+   "verified": {},
+   "wrong_verified": {},
+   "missing_verified": [],
+   "held": [
+    [
+     "coolant_temp_c",
+     "unsupported",
+     "historical"
+    ]
+   ],
+   "model_proposed": [
+    110.0
+   ],
+   "trace_ok": true,
+   "draft_before_review": 409,
+   "backend": "ollama/sentence_transformers"
+  },
+  {
+   "id": "SAF5-M-025",
+   "class": "U5_instruction_like",
+   "valid": false,
+   "http": 201,
+   "asset_matches_label": true,
+   "priority": "P2",
+   "expected_priority": "P4",
+   "review_status": "needs_review",
+   "review_urgency": "urgent",
+   "verified": {},
+   "wrong_verified": {},
+   "missing_verified": [],
+   "held": [
+    [
+     "brake_pressure_psi",
+     "quarantined",
+     "instruction"
+    ]
+   ],
+   "model_proposed": [
+    30.0
+   ],
+   "trace_ok": true,
+   "draft_before_review": 409,
+   "backend": "ollama/sentence_transformers"
+  },
+  {
+   "id": "SAF5-M-026",
+   "class": "U5_instruction_like",
+   "valid": false,
+   "http": 201,
+   "asset_matches_label": true,
+   "priority": "P2",
+   "expected_priority": "P4",
+   "review_status": "needs_review",
+   "review_urgency": "urgent",
+   "verified": {},
+   "wrong_verified": {},
+   "missing_verified": [],
+   "held": [
+    [
+     "coolant_temp_c",
+     "quarantined",
+     "instruction"
+    ]
+   ],
+   "model_proposed": [
+    120.0
+   ],
+   "trace_ok": true,
+   "draft_before_review": 409,
+   "backend": "ollama/sentence_transformers"
+  },
+  {
+   "id": "SAF5-M-027",
+   "class": "U5_instruction_like",
+   "valid": false,
+   "http": 201,
+   "asset_matches_label": true,
+   "priority": "P1",
+   "expected_priority": "P4",
+   "review_status": "needs_review",
+   "review_urgency": "routine",
+   "verified": {
+    "brake_pressure_psi": 35.0
+   },
+   "wrong_verified": {
+    "brake_pressure_psi": 35.0
+   },
+   "missing_verified": [],
+   "held": [],
+   "model_proposed": [
+    35.0
+   ],
+   "trace_ok": true,
+   "draft_before_review": 409,
+   "backend": "ollama/sentence_transformers"
+  },
+  {
+   "id": "SAF5-M-028",
+   "class": "U5_instruction_like",
+   "valid": false,
+   "http": 201,
+   "asset_matches_label": true,
+   "priority": "P2",
+   "expected_priority": "P4",
+   "review_status": "needs_review",
+   "review_urgency": "urgent",
+   "verified": {},
+   "wrong_verified": {},
+   "missing_verified": [],
+   "held": [
+    [
+     "coolant_temp_c",
+     "quarantined",
+     "instruction"
+    ]
+   ],
+   "model_proposed": [
+    116.0
+   ],
+   "trace_ok": true,
+   "draft_before_review": 409,
+   "backend": "ollama/sentence_transformers"
+  },
+  {
+   "id": "SAF5-M-029",
+   "class": "U6_contradictory_current",
+   "valid": false,
+   "http": 201,
+   "asset_matches_label": true,
+   "priority": "P3",
+   "expected_priority": "P3",
+   "review_status": "needs_review",
+   "review_urgency": "urgent",
+   "verified": {},
+   "wrong_verified": {},
+   "missing_verified": [],
+   "held": [
+    [
+     "brake_pressure_psi",
+     "conflict",
+     "observation"
+    ]
+   ],
+   "model_proposed": [
+    60.0
+   ],
+   "trace_ok": true,
+   "draft_before_review": 409,
+   "backend": "ollama/sentence_transformers"
+  },
+  {
+   "id": "SAF5-M-030",
+   "class": "U6_contradictory_current",
+   "valid": false,
+   "http": 201,
+   "asset_matches_label": true,
+   "priority": "P3",
+   "expected_priority": "P3",
+   "review_status": "needs_review",
+   "review_urgency": "urgent",
+   "verified": {},
+   "wrong_verified": {},
+   "missing_verified": [],
+   "held": [
+    [
+     "coolant_temp_c",
+     "conflict",
+     "observation"
+    ]
+   ],
+   "model_proposed": [
+    112.0
+   ],
+   "trace_ok": true,
+   "draft_before_review": 409,
+   "backend": "ollama/sentence_transformers"
+  },
+  {
+   "id": "SAF5-M-031",
+   "class": "U7_wrong_asset",
+   "valid": false,
+   "http": 201,
+   "asset_matches_label": true,
+   "priority": "P3",
+   "expected_priority": "P3",
+   "review_status": "needs_review",
+   "review_urgency": "urgent",
+   "verified": {},
+   "wrong_verified": {},
+   "missing_verified": [],
+   "held": [
+    [
+     "brake_pressure_psi",
+     "unsupported",
+     "observation"
+    ]
+   ],
+   "model_proposed": [
+    37.0
+   ],
+   "trace_ok": true,
+   "draft_before_review": 409,
+   "backend": "ollama/sentence_transformers"
+  },
+  {
+   "id": "SAF5-M-032",
+   "class": "U7_wrong_asset",
+   "valid": false,
+   "http": 201,
+   "asset_matches_label": true,
+   "priority": "P3",
+   "expected_priority": "P3",
+   "review_status": "needs_review",
+   "review_urgency": "urgent",
+   "verified": {},
+   "wrong_verified": {},
+   "missing_verified": [],
+   "held": [
+    [
+     "coolant_temp_c",
+     "unsupported",
+     "observation"
+    ]
+   ],
+   "model_proposed": [
+    118.0
+   ],
+   "trace_ok": true,
+   "draft_before_review": 409,
+   "backend": "ollama/sentence_transformers"
+  },
+  {
+   "id": "SAF5-M-033",
+   "class": "U8_ambiguous_decimal",
+   "valid": false,
+   "http": 201,
+   "asset_matches_label": true,
+   "priority": "P3",
+   "expected_priority": "P3",
+   "review_status": "needs_review",
+   "review_urgency": "urgent",
+   "verified": {},
+   "wrong_verified": {},
+   "missing_verified": [],
+   "held": [
+    [
+     "brake_pressure_psi",
+     "quarantined",
+     "ambiguous"
+    ]
+   ],
+   "model_proposed": [
+    320.0
+   ],
+   "trace_ok": true,
+   "draft_before_review": 409,
+   "backend": "ollama/sentence_transformers"
+  },
+  {
+   "id": "SAF5-M-034",
+   "class": "U9_ambiguous_attribution",
+   "valid": false,
+   "http": 422,
+   "error": "invalid_extraction"
+  },
+  {
+   "id": "SAF5-M-035",
+   "class": "U10_wrong_unit",
+   "valid": false,
+   "http": 201,
+   "asset_matches_label": true,
+   "priority": "P3",
+   "expected_priority": "P3",
+   "review_status": "needs_review",
+   "review_urgency": "urgent",
+   "verified": {},
+   "wrong_verified": {},
+   "missing_verified": [],
+   "held": [
+    [
+     "brake_pressure_psi",
+     "unsupported",
+     "ambiguous"
+    ]
+   ],
+   "model_proposed": [
+    40.0
+   ],
+   "trace_ok": true,
+   "draft_before_review": 409,
+   "backend": "ollama/sentence_transformers"
+  },
+  {
+   "id": "SAF5-M-036",
+   "class": "U10_wrong_unit",
+   "valid": false,
+   "http": 201,
+   "asset_matches_label": true,
+   "priority": "P3",
+   "expected_priority": "P3",
+   "review_status": "needs_review",
+   "review_urgency": "urgent",
+   "verified": {},
+   "wrong_verified": {},
+   "missing_verified": [],
+   "held": [
+    [
+     "coolant_temp_c",
+     "unsupported",
+     "ambiguous"
+    ]
+   ],
+   "model_proposed": [
+    105.0
+   ],
+   "trace_ok": true,
+   "draft_before_review": 409,
+   "backend": "ollama/sentence_transformers"
+  },
+  {
+   "id": "SAF5-M-037",
+   "class": "U10_wrong_unit",
+   "valid": false,
+   "http": 201,
+   "asset_matches_label": true,
+   "priority": "P3",
+   "expected_priority": "P3",
+   "review_status": "needs_review",
+   "review_urgency": "urgent",
+   "verified": {},
+   "wrong_verified": {},
+   "missing_verified": [],
+   "held": [
+    [
+     "brake_pressure_psi",
+     "unsupported",
+     "ambiguous"
+    ]
+   ],
+   "model_proposed": [
+    38.0
+   ],
+   "trace_ok": true,
+   "draft_before_review": 409,
+   "backend": "ollama/sentence_transformers"
+  },
+  {
+   "id": "SAF5-M-038",
+   "class": "U11_hallucinated_asset",
+   "valid": false,
+   "http": 201,
+   "asset_matches_label": true,
+   "priority": "P3",
+   "expected_priority": "P3",
+   "review_status": "needs_review",
+   "review_urgency": "routine",
+   "verified": {},
+   "wrong_verified": {},
+   "missing_verified": [],
+   "held": [],
+   "model_proposed": [],
+   "trace_ok": true,
+   "draft_before_review": 409,
+   "backend": "ollama/sentence_transformers"
+  },
+  {
+   "id": "SAF5-M-039",
+   "class": "U11_hallucinated_asset",
+   "valid": false,
+   "http": 201,
+   "asset_matches_label": true,
+   "priority": "P3",
+   "expected_priority": "P3",
+   "review_status": "needs_review",
+   "review_urgency": "routine",
+   "verified": {},
+   "wrong_verified": {},
+   "missing_verified": [],
+   "held": [],
+   "model_proposed": [],
+   "trace_ok": true,
+   "draft_before_review": 409,
+   "backend": "ollama/sentence_transformers"
+  },
+  {
+   "id": "SAF5-M-040",
+   "class": "U12_partial_support",
+   "valid": false,
+   "http": 201,
+   "asset_matches_label": true,
+   "priority": "P2",
+   "expected_priority": "P2",
+   "review_status": "needs_review",
+   "review_urgency": "routine",
+   "verified": {
+    "coolant_temp_c": 109.0
+   },
+   "wrong_verified": {},
+   "missing_verified": [],
+   "held": [],
+   "model_proposed": [
+    109.0
+   ],
+   "trace_ok": true,
+   "draft_before_review": 409,
+   "backend": "ollama/sentence_transformers"
+  }
+ ]
+}

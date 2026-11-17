@@ -1,0 +1,26 @@
+{
+  "purpose": "Phase 6 quality gate (full frontend)",
+  "date": "2026-11-11",
+  "commands": {
+    "backend": "python -m pytest -q --junitxml=evaluation/reports/phase6-gate/pytest-junit.xml",
+    "backend_real_ai": "RUN_REAL_AI=1 python -m pytest backend/tests/test_real_ai.py -q",
+    "frontend": "cd frontend && npm run typecheck && npm run lint && npm test && npm run build",
+    "e2e_deterministic": "cd frontend && npx playwright test",
+    "e2e_real_ai": "cd frontend && E2E_REAL_AI=1 npx playwright test --project=real-ai"
+  },
+  "results": {
+    "backend": "275 passed, 0 failed, 13 skipped",
+    "backend_real_ai": "12 passed",
+    "typecheck": "clean",
+    "lint": "clean (frontend and backend)",
+    "vitest": "43 passed",
+    "build": "clean",
+    "playwright_deterministic": "39 passed, 1 skipped (opt-in screenshots)",
+    "playwright_real_ai": "3 passed (smoke, invariants only)"
+  },
+  "notes": [
+    "Deterministic UI tests use test-only AI backends and say nothing about AI quality.",
+    "Browser: Microsoft Edge already installed; nothing downloaded.",
+    "Phase 3/4 evidence untouched; citation target remains NOT MET."
+  ]
+}

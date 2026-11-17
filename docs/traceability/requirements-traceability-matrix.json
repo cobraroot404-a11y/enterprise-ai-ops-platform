@@ -1,0 +1,1715 @@
+{
+  "counts": {
+    "partially verified": 22,
+    "verified": 59,
+    "not implemented": 4
+  },
+  "total": 85,
+  "requirements": [
+    {
+      "id": "R2.1",
+      "part": 2,
+      "title": "Zero mandatory paid services; local-first operation",
+      "category": "project rules",
+      "acceptance": "Core platform runs with local PostgreSQL, Ollama and Sentence Transformers only",
+      "implementation": [
+        "docker-compose.yml",
+        "backend/app/ai/ollama_llm.py",
+        "backend/app/ai/embeddings.py",
+        "docs/deployment/accepted-limitations.md"
+      ],
+      "tests": [
+        "backend/tests/test_real_ai.py"
+      ],
+      "evidence": [
+        "evaluation/reports/phase7-gate/manifest.json"
+      ],
+      "status": "partially verified",
+      "limitation": "No automated check asserts the absence of paid dependencies; verified by inspection of requirements files and the Phase 7 manual end-to-end runs."
+    },
+    {
+      "id": "R2.2",
+      "part": 2,
+      "title": "Accurate Git authorship, no AI watermarks or co-author trailers",
+      "category": "project rules",
+      "acceptance": "All commits authored by the verified identity; no promotional attribution",
+      "implementation": [
+        "README.md",
+        "CHANGELOG.md"
+      ],
+      "tests": [],
+      "evidence": [
+        "evaluation/reports/phase7-gate/manifest.json"
+      ],
+      "status": "partially verified",
+      "limitation": "Verified by git log inspection at each gate, not by an automated test."
+    },
+    {
+      "id": "R3.1",
+      "part": 3,
+      "title": "Proprietary source-visible license present",
+      "category": "project rules",
+      "acceptance": "LICENSE file matches the approved text",
+      "implementation": [
+        "LICENSE",
+        "THIRD_PARTY_NOTICES.md"
+      ],
+      "tests": [],
+      "evidence": [
+        "LICENSE"
+      ],
+      "status": "partially verified",
+      "limitation": "Presence verified by inspection; the license has not been legally reviewed."
+    },
+    {
+      "id": "R5.1",
+      "part": 5,
+      "title": "Preferred stack (FastAPI, Pydantic, SQLAlchemy, Alembic, PostgreSQL+pgvector, React/TypeScript/Vite, Pytest/Vitest/Playwright)",
+      "category": "architecture",
+      "acceptance": "Components in use and runnable",
+      "implementation": [
+        "backend/app/main.py",
+        "backend/migrations/versions/0001_initial_schema.py",
+        "frontend/src/App.tsx",
+        "frontend/playwright.config.ts"
+      ],
+      "tests": [
+        "backend/tests/test_smoke_and_ingestion.py",
+        "frontend/src/pages/pages.test.tsx",
+        "frontend/e2e/auth-and-roles.spec.ts"
+      ],
+      "evidence": [
+        "evaluation/reports/phase7-gate/manifest.json"
+      ],
+      "status": "verified",
+      "limitation": ""
+    },
+    {
+      "id": "R5.2",
+      "part": 5,
+      "title": "CPU-only inference chosen after hardware inspection",
+      "category": "AI",
+      "acceptance": "Hardware recorded; model fits CPU/RAM",
+      "implementation": [
+        "scripts/capture_hardware.py",
+        "scripts/ollama_ctl.py"
+      ],
+      "tests": [
+        "tests/test_hardware_capture.py"
+      ],
+      "evidence": [
+        "evaluation/reports/phase3/SUMMARY.md"
+      ],
+      "status": "verified",
+      "limitation": "One hardware profile (i7-1165G7, 15.7 GB) only."
+    },
+    {
+      "id": "R6.1",
+      "part": 6,
+      "title": "Fictional customer discovery documents",
+      "category": "delivery",
+      "acceptance": "docs/customer-discovery complete with fictional assumptions labelled",
+      "implementation": [
+        "docs/customer-discovery/apex-industrial.md",
+        "docs/customer-discovery/meridian-fleet.md"
+      ],
+      "tests": [
+        "tests/test_delivery_documents.py"
+      ],
+      "evidence": [
+        "docs/customer-discovery/README.md"
+      ],
+      "status": "verified",
+      "limitation": "Fictional by design and labelled as assumptions; no real interviews exist; same-author documents."
+    },
+    {
+      "id": "R6.2",
+      "part": 6,
+      "title": "Requirements-to-solution traceability matrix",
+      "category": "delivery",
+      "acceptance": "Every major requirement maps to need, implementation, component, test, acceptance criterion, evidence",
+      "implementation": [
+        "scripts/generate_traceability.py",
+        "scripts/traceability_data.py"
+      ],
+      "tests": [
+        "tests/test_traceability.py"
+      ],
+      "evidence": [
+        "scripts/traceability_data.py",
+        "docs/customer-delivery/02-requirements-to-solution-matrix.md"
+      ],
+      "status": "partially verified",
+      "limitation": "'Customer need' is expressed through the specification part; the fictional discovery documents (R6.1) that would supply real needs, now exist (docs/customer-discovery), but the matrix is generated from the 85-item provisional catalogue, not from all 238 requirements."
+    },
+    {
+      "id": "R7.1",
+      "part": 7,
+      "title": "Apex end-to-end workflow (report -> evidence-grounded explanation -> structured issue -> ticket -> approval -> mock submission -> external id -> audit -> metrics)",
+      "category": "UAT",
+      "acceptance": "All 14 workflow steps demonstrated through the real API and UI",
+      "implementation": [
+        "backend/app/api/v1/domain_routes.py",
+        "backend/app/workflows/ticket_service.py",
+        "frontend/src/pages/IncidentsPage.tsx"
+      ],
+      "tests": [
+        "tests/acceptance/test_uat_customer_a.py::test_uat_a06_approved_ticket_submission",
+        "tests/acceptance/test_end_to_end_reliability.py::test_apex_end_to_end_reliability",
+        "frontend/e2e/workflows.spec.ts"
+      ],
+      "evidence": [
+        "evaluation/customer-acceptance/deterministic/uat-report.json",
+        "evaluation/customer-acceptance/real/uat-report.json",
+        "evaluation/reports/phase7-gate/manifest.json"
+      ],
+      "status": "verified",
+      "limitation": "Real-AI runs show the review gate sends a large share of incidents to a human (about 75% in the Phase 3/4 data)."
+    },
+    {
+      "id": "R8.1",
+      "part": 8,
+      "title": "Meridian end-to-end workflow as a separate tenant through configuration only",
+      "category": "UAT",
+      "acceptance": "All Meridian workflow steps demonstrated; no Meridian-specific code in shared services",
+      "implementation": [
+        "onboarding/meridian.json",
+        "scripts/onboard_tenant.py",
+        "backend/app/profile/engine.py"
+      ],
+      "tests": [
+        "tests/acceptance/test_uat_customer_b.py::test_uat_b_meridian_uses_the_same_application_and_no_customer_code",
+        "tests/acceptance/test_end_to_end_reliability.py::test_meridian_end_to_end_reliability",
+        "backend/tests/test_meridian.py"
+      ],
+      "evidence": [
+        "evaluation/customer-acceptance/deterministic/uat-report.json",
+        "evaluation/customer-acceptance/real/uat-report.json"
+      ],
+      "status": "verified",
+      "limitation": "Apex and Meridian retain two execution paths (documented technical debt)."
+    },
+    {
+      "id": "R9.1",
+      "part": 9,
+      "title": "Modular monolith with background worker; PostgreSQL authoritative state; pgvector retrieval; transactional outbox",
+      "category": "architecture",
+      "acceptance": "Single deployable API + worker; outbox events drive submission",
+      "implementation": [
+        "backend/app",
+        "workers/run_worker.py",
+        "backend/app/workflows/worker.py"
+      ],
+      "tests": [
+        "backend/tests/test_workflow.py",
+        "tests/fault_injection/test_additional_reliability.py::test_rel04_recovery_after_api_process_restart"
+      ],
+      "evidence": [
+        "evaluation/failure-reports/phase7/fi-report.json"
+      ],
+      "status": "verified",
+      "limitation": ""
+    },
+    {
+      "id": "R9.2",
+      "part": 9,
+      "title": "Core modules: auth, tenants, configuration, connectors, ingestion, retrieval, AI, incidents, workflow, audit, observability, evaluation, dashboard",
+      "category": "architecture",
+      "acceptance": "Each module exists and is exercised",
+      "implementation": [
+        "backend/app/api/v1",
+        "backend/app/profile",
+        "backend/app/observability",
+        "frontend/src/pages"
+      ],
+      "tests": [
+        "backend/tests/test_ops_routes.py",
+        "backend/tests/test_observability.py"
+      ],
+      "evidence": [
+        "evaluation/reports/phase7-gate/manifest.json"
+      ],
+      "status": "partially verified",
+      "limitation": "Evaluation is a set of scripts and artifacts plus a read-only dashboard, not a managed service (see R21.x)."
+    },
+    {
+      "id": "R10.1",
+      "part": 10,
+      "title": "New customer configurable without modifying the core application",
+      "category": "onboarding",
+      "acceptance": "Tenant onboarded through public APIs and configuration only",
+      "implementation": [
+        "scripts/onboard_tenant.py",
+        "backend/app/profile/service.py",
+        "backend/app/api/v1/profile_routes.py"
+      ],
+      "tests": [
+        "tests/acceptance/test_uat_customer_b.py::test_uat_b01_second_tenant_onboarding",
+        "backend/tests/test_meridian.py"
+      ],
+      "evidence": [
+        "evaluation/customer-acceptance/deterministic/uat-report.json",
+        "evaluation/customer-acceptance/real/uat-report.json"
+      ],
+      "status": "verified",
+      "limitation": ""
+    },
+    {
+      "id": "R10.2",
+      "part": 10,
+      "title": "Customer-specific schema/field mappings and workflow policies",
+      "category": "onboarding",
+      "acceptance": "CSV/JSON mappings, categories, signals, priority rules and ticketing contract configured per tenant",
+      "implementation": [
+        "backend/app/profile/schema.py",
+        "backend/app/connectors/clients.py"
+      ],
+      "tests": [
+        "tests/acceptance/test_uat_customer_b.py::test_uat_b02_customer_specific_schema_mapping",
+        "backend/tests/test_profile_engine.py"
+      ],
+      "evidence": [
+        "evaluation/customer-acceptance/deterministic/uat-report.json",
+        "evaluation/customer-acceptance/real/uat-report.json"
+      ],
+      "status": "verified",
+      "limitation": ""
+    },
+    {
+      "id": "R10.3",
+      "part": 10,
+      "title": "Configuration validation and onboarding health checks",
+      "category": "onboarding",
+      "acceptance": "Invalid profiles rejected; health checks derived from real configuration",
+      "implementation": [
+        "backend/app/api/v1/ops_routes.py",
+        "frontend/src/pages/OnboardingPage.tsx"
+      ],
+      "tests": [
+        "backend/tests/test_ops_routes.py",
+        "backend/tests/test_profile_engine.py",
+        "frontend/e2e/admin-config-and-quality.spec.ts"
+      ],
+      "evidence": [
+        "evaluation/customer-acceptance/deterministic/uat-report.json",
+        "evaluation/customer-acceptance/real/uat-report.json"
+      ],
+      "status": "verified",
+      "limitation": ""
+    },
+    {
+      "id": "R10.4",
+      "part": 10,
+      "title": "Tenant creation, membership and role assignment",
+      "category": "onboarding",
+      "acceptance": "Platform admin creates tenants; tenant admins manage members; no self-escalation",
+      "implementation": [
+        "backend/app/api/v1/core_routes.py",
+        "backend/migrations/versions/0002_memberships_rls.py"
+      ],
+      "tests": [
+        "backend/tests/test_membership_rls.py",
+        "backend/tests/test_identity_security.py"
+      ],
+      "evidence": [
+        "docs/security/identity-tables.md"
+      ],
+      "status": "verified",
+      "limitation": ""
+    },
+    {
+      "id": "R11.1",
+      "part": 11,
+      "title": "Reusable connectors for mock CRM, inventory, ticketing and REST APIs; mock APIs with configurable failures",
+      "category": "integration",
+      "acceptance": "Connectors work against local mocks; mocks inject 503/429/timeout/malformed/lost-response/400",
+      "implementation": [
+        "backend/app/connectors",
+        "mock-services"
+      ],
+      "tests": [
+        "backend/tests/test_meridian.py",
+        "tests/acceptance/test_uat_customer_b.py::test_uat_b05_correct_customer_api_submission",
+        "tests/fault_injection/test_fault_injection.py"
+      ],
+      "evidence": [
+        "evaluation/customer-acceptance/deterministic/uat-report.json",
+        "evaluation/customer-acceptance/real/uat-report.json",
+        "evaluation/failure-reports/phase7/fi-report.json"
+      ],
+      "status": "verified",
+      "limitation": ""
+    },
+    {
+      "id": "R11.2",
+      "part": 11,
+      "title": "Timeouts, retries, exponential backoff, error classification",
+      "category": "integration",
+      "acceptance": "Transient vs permanent classification; bounded timeouts; backoff and dead-letter",
+      "implementation": [
+        "backend/app/connectors/http.py",
+        "backend/app/workflows/worker.py"
+      ],
+      "tests": [
+        "tests/fault_injection/test_fault_injection.py",
+        "backend/tests/test_workflow.py",
+        "backend/tests/test_observability.py::test_connector_failures_retries_and_denials_are_classified"
+      ],
+      "evidence": [
+        "evaluation/failure-reports/phase7/fi-report.json"
+      ],
+      "status": "verified",
+      "limitation": ""
+    },
+    {
+      "id": "R11.3",
+      "part": 11,
+      "title": "Idempotency",
+      "category": "integration",
+      "acceptance": "A lost response and replays create exactly one external ticket",
+      "implementation": [
+        "backend/app/workflows/worker.py",
+        "mock-services/ticketing/ticketing_app.py"
+      ],
+      "tests": [
+        "backend/tests/test_control_mutations.py",
+        "tests/acceptance/test_uat_customer_a.py::test_uat_a07_duplicate_prevention",
+        "tests/fault_injection/test_fault_injection.py::test_fi04_malformed_response_after_server_side_create"
+      ],
+      "evidence": [
+        "evaluation/failure-reports/phase7/fi-report.json",
+        "evaluation/customer-acceptance/deterministic/uat-report.json",
+        "evaluation/customer-acceptance/real/uat-report.json"
+      ],
+      "status": "verified",
+      "limitation": ""
+    },
+    {
+      "id": "R11.4",
+      "part": 11,
+      "title": "CSV, webhook connectors, connector authentication, pagination, rate limiting, schema validation, health checks",
+      "category": "integration",
+      "acceptance": "Each capability implemented and tested",
+      "implementation": [
+        "backend/app/connectors",
+        "backend/app/api/v1/ops_routes.py"
+      ],
+      "tests": [
+        "backend/tests/test_ops_routes.py"
+      ],
+      "evidence": [],
+      "status": "partially verified",
+      "limitation": "Connector health reports configuration and delivery results, not a live probe. CSV/webhook connector kinds exist as names only; pagination and per-connector rate limiting are not implemented; authentication is an API-key header."
+    },
+    {
+      "id": "R12.1",
+      "part": 12,
+      "title": "Ingestion of PDF, CSV and JSON with parsing, normalization and validation",
+      "category": "retrieval",
+      "acceptance": "Supported types ingested into passages; unsupported types and oversize files refused",
+      "implementation": [
+        "backend/app/ingestion/parsers.py",
+        "backend/app/ingestion/service.py"
+      ],
+      "tests": [
+        "backend/tests/test_smoke_and_ingestion.py",
+        "tests/acceptance/test_uat_customer_a.py::test_uat_a01_document_ingestion",
+        "backend/tests/test_resource_limits.py"
+      ],
+      "evidence": [
+        "evaluation/customer-acceptance/deterministic/uat-report.json",
+        "evaluation/customer-acceptance/real/uat-report.json"
+      ],
+      "status": "verified",
+      "limitation": "REST API records and webhook payloads as ingestion sources are not implemented."
+    },
+    {
+      "id": "R12.2",
+      "part": 12,
+      "title": "Content hashing, duplicate detection, version tracking, idempotent concurrent ingestion",
+      "category": "retrieval",
+      "acceptance": "Identical content reported duplicate; changed content becomes a new version; races resolve safely",
+      "implementation": [
+        "backend/app/ingestion/service.py"
+      ],
+      "tests": [
+        "tests/fault_injection/test_fault_injection.py::test_fi09_duplicate_ingestion",
+        "tests/fault_injection/test_fault_injection.py::test_fi09b_forced_ingestion_race"
+      ],
+      "evidence": [
+        "evaluation/failure-reports/phase7/fi-report.json"
+      ],
+      "status": "verified",
+      "limitation": ""
+    },
+    {
+      "id": "R12.3",
+      "part": 12,
+      "title": "Source provenance (page numbers, record identifiers)",
+      "category": "retrieval",
+      "acceptance": "Every passage carries page or record id and is cited with it",
+      "implementation": [
+        "backend/app/ingestion/parsers.py",
+        "backend/app/retrieval/search.py"
+      ],
+      "tests": [
+        "tests/acceptance/test_uat_customer_a.py::test_uat_a01_document_ingestion",
+        "tests/acceptance/test_uat_customer_b.py::test_uat_b02_customer_specific_schema_mapping"
+      ],
+      "evidence": [
+        "evaluation/customer-acceptance/deterministic/uat-report.json",
+        "evaluation/customer-acceptance/real/uat-report.json"
+      ],
+      "status": "verified",
+      "limitation": ""
+    },
+    {
+      "id": "R12.4",
+      "part": 12,
+      "title": "Reprocessing and reindexing",
+      "category": "retrieval",
+      "acceptance": "Atomic reindex between embedding models with verification",
+      "implementation": [
+        "scripts/reindex_embeddings.py",
+        "backend/app/retrieval/reindex.py"
+      ],
+      "tests": [
+        "backend/tests/test_embedding_profiles.py",
+        "backend/tests/test_real_ai.py::test_reindex_deterministic_tenant_to_minilm"
+      ],
+      "evidence": [
+        "evaluation/reports/phase3/reindex-apex-industrial.json"
+      ],
+      "status": "verified",
+      "limitation": ""
+    },
+    {
+      "id": "R12.5",
+      "part": 12,
+      "title": "Document deletion and retry handling for ingestion jobs",
+      "category": "retrieval",
+      "acceptance": "Documents can be deleted; ingestion jobs retried",
+      "implementation": [
+        "backend/app/ingestion/lifecycle.py",
+        "backend/app/ingestion/jobs.py",
+        "backend/app/ingestion/sources.py"
+      ],
+      "tests": [
+        "backend/tests/test_document_lifecycle.py",
+        "backend/tests/test_ingestion_jobs.py",
+        "backend/tests/test_source_ingestion.py"
+      ],
+      "evidence": [
+        "docs/planning/batch8-report.md",
+        "docs/planning/batch9-report.md",
+        "docs/planning/batch10-report.md",
+        "evaluation/demo-runs/20261113-075909-0569/report.json"
+      ],
+      "status": "verified",
+      "limitation": ""
+    },
+    {
+      "id": "R13.1",
+      "part": 13,
+      "title": "Chunking, embeddings, vector index, full-text search, hybrid retrieval, tenant-aware filtering",
+      "category": "retrieval",
+      "acceptance": "Hybrid retrieval returns only the tenant's current passages",
+      "implementation": [
+        "backend/app/retrieval/search.py",
+        "backend/migrations/versions/0001_initial_schema.py"
+      ],
+      "tests": [
+        "backend/tests/test_smoke_and_ingestion.py",
+        "backend/tests/test_security.py",
+        "tests/acceptance/test_uat_customer_a.py::test_uat_a02_evidence_grounded_retrieval"
+      ],
+      "evidence": [
+        "evaluation/customer-acceptance/deterministic/uat-report.json",
+        "evaluation/customer-acceptance/real/uat-report.json",
+        "evaluation/reports/phase3/SUMMARY.md"
+      ],
+      "status": "verified",
+      "limitation": "Recall@5 saturates on the small synthetic corpus; optional reranking (R13.5) is not implemented."
+    },
+    {
+      "id": "R13.2",
+      "part": 13,
+      "title": "Evidence-grounded answers with citation generation and verification",
+      "category": "AI",
+      "acceptance": "Every citation is a verbatim quote of a current tenant-owned passage; unsupported identifiers and numbers are withheld",
+      "implementation": [
+        "backend/app/ai/rag.py",
+        "backend/app/ai/safeguards.py"
+      ],
+      "tests": [
+        "backend/tests/test_ai_safeguards.py",
+        "backend/tests/test_rag_incidents.py",
+        "backend/tests/test_real_ai.py"
+      ],
+      "evidence": [
+        "evaluation/customer-acceptance/deterministic/uat-report.json",
+        "evaluation/customer-acceptance/real/uat-report.json",
+        "evaluation/reports/phase3/SUMMARY.md",
+        "evaluation/reports/phase4-remeasure/README.md"
+      ],
+      "status": "partially verified",
+      "limitation": "Citation correctness: 89.3-92.6% (Phase 3/4, 95% target NOT MET); on the Phase 8 development split 85.7% baseline and 91.9% with the development candidate (NOT MET); held-out evaluation not yet run."
+    },
+    {
+      "id": "R13.3",
+      "part": 13,
+      "title": "Insufficient-evidence handling; never fabricate citations",
+      "category": "AI",
+      "acceptance": "Out-of-scope questions get an insufficient-evidence response with no citations",
+      "implementation": [
+        "backend/app/ai/rag.py"
+      ],
+      "tests": [
+        "tests/acceptance/test_uat_customer_a.py::test_uat_a02_evidence_grounded_retrieval",
+        "backend/tests/test_real_ai.py::test_real_unanswerable_question_is_not_fabricated"
+      ],
+      "evidence": [
+        "evaluation/customer-acceptance/deterministic/uat-report.json",
+        "evaluation/customer-acceptance/real/uat-report.json",
+        "evaluation/reports/phase3/SUMMARY.md"
+      ],
+      "status": "partially verified",
+      "limitation": "6 of 8 unanswerable questions refused in the Phase 3/4 measurements; on the Phase 8 development split correct abstention 60.9% baseline and 95.7% (22/23) with the development candidate (dev only, observed target met, interval overlaps); held-out evaluation not yet run."
+    },
+    {
+      "id": "R13.4",
+      "part": 13,
+      "title": "Retrieved documents treated as untrusted; model text cannot authorize actions",
+      "category": "security",
+      "acceptance": "Prompt-injection passages quarantined; no action created from document text",
+      "implementation": [
+        "backend/app/ai/safety.py"
+      ],
+      "tests": [
+        "tests/fault_injection/test_fault_injection.py::test_fi08_prompt_injection",
+        "backend/tests/test_ai_safeguards.py"
+      ],
+      "evidence": [
+        "evaluation/failure-reports/phase7/fi-report.json"
+      ],
+      "status": "verified",
+      "limitation": ""
+    },
+    {
+      "id": "R13.5",
+      "part": 13,
+      "title": "Optional reranking",
+      "category": "retrieval",
+      "acceptance": "Reranker available",
+      "implementation": [],
+      "tests": [],
+      "evidence": [],
+      "status": "not implemented",
+      "limitation": "Deliberately not built; a reranker needs approval (governance) and an evaluation."
+    },
+    {
+      "id": "R13.6",
+      "part": 13,
+      "title": "Local inference with Ollama and Sentence Transformers",
+      "category": "AI",
+      "acceptance": "Approved models run locally and are pinned",
+      "implementation": [
+        "backend/app/ai/ollama_llm.py",
+        "backend/app/ai/embeddings.py",
+        "scripts/fetch_models.py"
+      ],
+      "tests": [
+        "backend/tests/test_real_ai.py"
+      ],
+      "evidence": [
+        "evaluation/customer-acceptance/deterministic/uat-report.json",
+        "evaluation/customer-acceptance/real/uat-report.json",
+        "evaluation/reports/phase3/SUMMARY.md"
+      ],
+      "status": "verified",
+      "limitation": "Only qwen2.5:1.5b and all-MiniLM-L6-v2 were evaluated."
+    },
+    {
+      "id": "R14.1",
+      "part": 14,
+      "title": "Validated structured incident schema (tenant, asset, category, symptoms, related incidents, priority, citations, recommended action, review status)",
+      "category": "AI",
+      "acceptance": "Model output must validate; invalid output falls back or is rejected",
+      "implementation": [
+        "backend/app/schemas/incident.py",
+        "backend/app/services/incident_service.py"
+      ],
+      "tests": [
+        "tests/acceptance/test_uat_customer_a.py::test_uat_a04_structured_ticket_generation",
+        "tests/fault_injection/test_additional_reliability.py::test_rel03_invalid_structured_ai_output",
+        "backend/tests/test_rag_incidents.py"
+      ],
+      "evidence": [
+        "evaluation/customer-acceptance/deterministic/uat-report.json",
+        "evaluation/customer-acceptance/real/uat-report.json",
+        "evaluation/failure-reports/phase7/fi-report.json"
+      ],
+      "status": "verified",
+      "limitation": "Extraction schema validity 23/24 on the Phase 3/4 report set (one hallucinated asset rejected)."
+    },
+    {
+      "id": "R14.2",
+      "part": 14,
+      "title": "Related (historical) incident matching",
+      "category": "AI",
+      "acceptance": "Same-asset history listed first from the tenant's own records",
+      "implementation": [
+        "backend/app/services/incident_service.py"
+      ],
+      "tests": [
+        "tests/acceptance/test_uat_customer_a.py::test_uat_a03_historical_incident_matching"
+      ],
+      "evidence": [
+        "evaluation/customer-acceptance/deterministic/uat-report.json",
+        "evaluation/customer-acceptance/real/uat-report.json"
+      ],
+      "status": "verified",
+      "limitation": ""
+    },
+    {
+      "id": "R14.3",
+      "part": 14,
+      "title": "Deterministic business rules for priority",
+      "category": "AI",
+      "acceptance": "Priority never decided by the model",
+      "implementation": [
+        "backend/app/ai/rules.py",
+        "backend/app/profile/engine.py"
+      ],
+      "tests": [
+        "backend/tests/test_apex_compat.py",
+        "backend/tests/test_profile_engine.py"
+      ],
+      "evidence": [
+        "evaluation/customer-acceptance/deterministic/uat-report.json",
+        "evaluation/customer-acceptance/real/uat-report.json"
+      ],
+      "status": "verified",
+      "limitation": "Priority depends on the model-extracted category (observed to change priority in the Meridian smoke run)."
+    },
+    {
+      "id": "R14.5",
+      "part": 14,
+      "title": "Numeric measurements used for priority are traceable to the report (value, unit, source, evidence span, status); unsupported values are never accepted as verified",
+      "category": "AI safety",
+      "acceptance": "V8 trust policy (supersedes the V7 wording below): free-text and LLM values are unverified candidates; only signed-simulation or human-verified observations are eligible. Earlier V7 layer: a model-proposed measurement is used only when the report states it with the right unit for the incident's own asset, without a contradicting reading and outside instruction-like text; otherwise it is quarantined with the reason recorded and the incident is held for human review; genuine values and real P1 incidents are unchanged",
+      "implementation": [
+        "backend/app/ai/measurements.py",
+        "backend/app/services/incident_service.py",
+        "backend/migrations/versions/0007_incident_measurements.py"
+      ],
+      "tests": [
+        "backend/tests/test_numeric_safety.py",
+        "backend/tests/test_numeric_evidence.py",
+        "backend/tests/test_numeric_structural_v6.py",
+        "backend/tests/test_numeric_boundary_v7.py",
+        "backend/tests/test_measurement_trust_v8.py",
+        "backend/tests/test_provenance_closure_v8.py",
+        "backend/tests/test_phase8_quality.py::test_extraction_drops_unsupported_numbers_and_routes_to_review",
+        "backend/tests/test_phase8_quality.py::test_a_genuine_p1_is_not_suppressed"
+      ],
+      "evidence": [
+        "docs/evaluation/numeric-safety-remediation.md",
+        "docs/evaluation/numeric-safety-hardening-v5.md",
+        "docs/evaluation/numeric-safety-hardening-v6.md",
+        "docs/evaluation/numeric-safety-hardening-v7.md",
+        "docs/evaluation/numeric-safety-architecture-v8.md",
+        "docs/evaluation/numeric-safety-provenance-closure-v8.md",
+        "evaluation/reports/safety/final-v8.json"
+      ],
+      "status": "partially verified",
+      "limitation": "Author-built evidence only: V8 architecture: only signed-simulation or human-verified observations drive numeric priority; the frozen safety-v8 run (kept as FAILED) met every safety gate except complete priority-decision provenance (63/64); a targeted provenance-envelope closure was then verified by targeted and regression tests only; class E (authenticated sensor) not implemented; the model itself still hallucinates numbers."
+    },
+    {
+      "id": "R13.7",
+      "part": 13,
+      "title": "Questions that name an identifier absent from the cited evidence, or that try to override the evidence/tenant/approval rules, are refused",
+      "category": "AI safety",
+      "acceptance": "Entity gate and override gate refuse such questions without raising false refusals",
+      "implementation": [
+        "backend/app/ai/rag.py",
+        "backend/app/ai/safety.py",
+        "backend/app/retrieval/entities.py"
+      ],
+      "tests": [
+        "backend/tests/test_phase8_quality.py::test_question_override_gate_refuses_rule_override_attempts_only",
+        "backend/tests/test_phase8_quality.py::test_identifier_extraction_and_model_field"
+      ],
+      "evidence": [
+        "evaluation/reports/phase8/exp-E8b-20261112T075317Z/qa_rep1.jsonl",
+        "docs/evaluation/phase8-optimization-log.md"
+      ],
+      "status": "partially verified",
+      "limitation": "Development split only (23 unanswerable queries, 0 false refusals on 87 answerable); gate patterns were written against dev phrasing; off by default; attribute mix-ups (right model, wrong parameter) are not caught."
+    },
+    {
+      "id": "R14.4",
+      "part": 14,
+      "title": "Review status and human-review gate",
+      "category": "workflow",
+      "acceptance": "needs_review blocks ticketing; acceptance never verifies unsupported claims; unregistered assets blocked before release",
+      "implementation": [
+        "backend/app/workflows/ticket_service.py",
+        "backend/app/workflows/worker.py",
+        "backend/app/api/v1/domain_routes.py"
+      ],
+      "tests": [
+        "backend/tests/test_review_gate.py",
+        "tests/acceptance/test_uat_customer_b.py::test_uat_b03_fleet_issue_extraction"
+      ],
+      "evidence": [
+        "evaluation/customer-acceptance/deterministic/uat-report.json",
+        "evaluation/customer-acceptance/real/uat-report.json"
+      ],
+      "status": "verified",
+      "limitation": "About 75% of incidents require human review with the approved model (operational limitation, intentionally not relaxed)."
+    },
+    {
+      "id": "R15.1",
+      "part": 15,
+      "title": "Human approval before external submission; rejected tickets never submitted; retries cannot bypass approval",
+      "category": "workflow",
+      "acceptance": "No external call without a recorded approval; worker re-verifies",
+      "implementation": [
+        "backend/app/workflows/ticket_service.py",
+        "backend/app/workflows/worker.py"
+      ],
+      "tests": [
+        "tests/acceptance/test_uat_customer_a.py::test_uat_a05_unapproved_submission_blocked",
+        "backend/tests/test_workflow.py",
+        "backend/tests/test_control_mutations.py"
+      ],
+      "evidence": [
+        "evaluation/customer-acceptance/deterministic/uat-report.json",
+        "evaluation/customer-acceptance/real/uat-report.json",
+        "evaluation/failure-reports/phase7/fi-report.json"
+      ],
+      "status": "verified",
+      "limitation": ""
+    },
+    {
+      "id": "R15.2",
+      "part": 15,
+      "title": "Role-based approval and separation of duties",
+      "category": "security",
+      "acceptance": "Only supervisors/admins decide; authors cannot approve their own ticket",
+      "implementation": [
+        "backend/app/core/rbac.py",
+        "backend/app/workflows/ticket_service.py"
+      ],
+      "tests": [
+        "tests/acceptance/test_uat_customer_b.py::test_uat_b04_ticket_approval",
+        "backend/tests/test_api_namespace_security.py"
+      ],
+      "evidence": [
+        "evaluation/customer-acceptance/deterministic/uat-report.json",
+        "evaluation/customer-acceptance/real/uat-report.json"
+      ],
+      "status": "verified",
+      "limitation": ""
+    },
+    {
+      "id": "R15.3",
+      "part": 15,
+      "title": "Idempotent submission and duplicate prevention",
+      "category": "workflow",
+      "acceptance": "At most one external ticket per ticket under retries, lost responses and concurrency",
+      "implementation": [
+        "backend/app/workflows/worker.py"
+      ],
+      "tests": [
+        "tests/acceptance/test_uat_customer_a.py::test_uat_a07_duplicate_prevention",
+        "tests/fault_injection/test_fault_injection.py::test_fi06_concurrent_approvals",
+        "tests/acceptance/test_end_to_end_reliability.py"
+      ],
+      "evidence": [
+        "evaluation/customer-acceptance/deterministic/uat-report.json",
+        "evaluation/customer-acceptance/real/uat-report.json",
+        "evaluation/failure-reports/phase7/fi-report.json"
+      ],
+      "status": "verified",
+      "limitation": ""
+    },
+    {
+      "id": "R15.4",
+      "part": 15,
+      "title": "Retry and recovery",
+      "category": "reliability",
+      "acceptance": "Transient failures recover automatically; permanent failures are reported and manually retryable",
+      "implementation": [
+        "backend/app/workflows/worker.py"
+      ],
+      "tests": [
+        "tests/acceptance/test_uat_customer_a.py::test_uat_a08_api_failure_recovery",
+        "tests/acceptance/test_uat_customer_b.py::test_uat_b07_failure_recovery",
+        "tests/fault_injection/test_fault_injection.py::test_fi01_http_503_outage",
+        "tests/fault_injection/test_fault_injection.py::test_fi07_worker_interruption"
+      ],
+      "evidence": [
+        "evaluation/failure-reports/phase7/fi-report.json",
+        "evaluation/customer-acceptance/deterministic/uat-report.json",
+        "evaluation/customer-acceptance/real/uat-report.json"
+      ],
+      "status": "verified",
+      "limitation": ""
+    },
+    {
+      "id": "R15.5",
+      "part": 15,
+      "title": "Nine ticket states, valid transitions, editable drafts, recorded decisions, audit history",
+      "category": "workflow",
+      "acceptance": "State machine enforced; every transition audited",
+      "implementation": [
+        "backend/app/workflows/state_machine.py",
+        "backend/app/audit/service.py"
+      ],
+      "tests": [
+        "backend/tests/test_workflow.py",
+        "backend/tests/test_control_mutations.py"
+      ],
+      "evidence": [
+        "evaluation/customer-acceptance/deterministic/uat-report.json",
+        "evaluation/customer-acceptance/real/uat-report.json"
+      ],
+      "status": "verified",
+      "limitation": ""
+    },
+    {
+      "id": "R15.6",
+      "part": 15,
+      "title": "Concurrent approvals tested",
+      "category": "reliability",
+      "acceptance": "Eight simultaneous approvals produce one winner",
+      "implementation": [
+        "tests/fault_injection/test_fault_injection.py"
+      ],
+      "tests": [
+        "tests/fault_injection/test_fault_injection.py::test_fi06_concurrent_approvals"
+      ],
+      "evidence": [
+        "evaluation/failure-reports/phase7/fi-report.json"
+      ],
+      "status": "verified",
+      "limitation": ""
+    },
+    {
+      "id": "R16.1",
+      "part": 16,
+      "title": "Tenant authorization, tenant-aware retrieval, row-level security",
+      "category": "security",
+      "acceptance": "Zero successful cross-tenant accesses across APIs, retrieval, workflows and external systems",
+      "implementation": [
+        "backend/migrations/versions/0001_initial_schema.py",
+        "backend/app/database/session.py"
+      ],
+      "tests": [
+        "tests/fault_injection/test_fault_injection.py::test_fi05_unauthorized_cross_tenant_access",
+        "tests/acceptance/test_uat_customer_b.py::test_uat_b06_cross_tenant_access_denied",
+        "backend/tests/test_security.py",
+        "backend/tests/test_api_namespace_security.py"
+      ],
+      "evidence": [
+        "evaluation/failure-reports/phase7/fi-report.json",
+        "evaluation/customer-acceptance/deterministic/uat-report.json",
+        "evaluation/customer-acceptance/real/uat-report.json"
+      ],
+      "status": "verified",
+      "limitation": "The tenant context is trusted application input; a fully compromised application process could set it (documented in identity-tables.md)."
+    },
+    {
+      "id": "R16.2",
+      "part": 16,
+      "title": "Authentication, RBAC for the five roles, negative authorization tests on every route",
+      "category": "security",
+      "acceptance": "Role x route matrix has zero violations",
+      "implementation": [
+        "backend/app/api/deps.py",
+        "backend/app/core/rbac.py"
+      ],
+      "tests": [
+        "backend/tests/test_api_namespace_security.py",
+        "backend/tests/test_jwt_and_throttle.py",
+        "backend/tests/test_security.py"
+      ],
+      "evidence": [
+        "docs/phase6/phase6-closure-gate.md"
+      ],
+      "status": "verified",
+      "limitation": ""
+    },
+    {
+      "id": "R16.3",
+      "part": 16,
+      "title": "Secure credential handling and no committed secrets",
+      "category": "security",
+      "acceptance": "Secrets only by environment reference; secret scan clean; test credentials confined and refused in production",
+      "implementation": [
+        "scripts/secret_scan.py",
+        "backend/app/core/production_guard.py"
+      ],
+      "tests": [
+        "tests/test_environment_guards.py"
+      ],
+      "evidence": [
+        "docs/security/test-credentials.md"
+      ],
+      "status": "verified",
+      "limitation": "Pattern/known-value scan only, not a history-wide scanner."
+    },
+    {
+      "id": "R16.4",
+      "part": 16,
+      "title": "Input validation and upload restrictions; rate limiting",
+      "category": "security",
+      "acceptance": "Typed validation, size and type limits, bounded concurrency, login throttle",
+      "implementation": [
+        "backend/app/core/limits.py",
+        "backend/app/api/v1/core_routes.py"
+      ],
+      "tests": [
+        "backend/tests/test_resource_limits.py",
+        "backend/tests/test_jwt_and_throttle.py"
+      ],
+      "evidence": [
+        "docs/security/rate-limiting-limitations.md"
+      ],
+      "status": "partially verified",
+      "limitation": "Throttling and limits are per process; distributed rate limiting is required before production."
+    },
+    {
+      "id": "R16.5",
+      "part": 16,
+      "title": "Audit logging (append-only)",
+      "category": "security",
+      "acceptance": "Every consequential action recorded; trail cannot be altered",
+      "implementation": [
+        "backend/app/audit/service.py"
+      ],
+      "tests": [
+        "backend/tests/test_control_mutations.py",
+        "tests/acceptance/test_uat_customer_a.py::test_uat_a06_approved_ticket_submission"
+      ],
+      "evidence": [
+        "evaluation/customer-acceptance/deterministic/uat-report.json",
+        "evaluation/customer-acceptance/real/uat-report.json"
+      ],
+      "status": "verified",
+      "limitation": ""
+    },
+    {
+      "id": "R16.6",
+      "part": 16,
+      "title": "Outbound connector security (SSRF)",
+      "category": "security",
+      "acceptance": "No tenant-configurable connector can reach an unauthorized destination on any execution path",
+      "implementation": [
+        "backend/app/connectors/egress.py"
+      ],
+      "tests": [
+        "backend/tests/test_connector_egress.py"
+      ],
+      "evidence": [
+        "docs/security/connector-egress.md",
+        "docs/phase6/phase6-closure-gate.md"
+      ],
+      "status": "partially verified",
+      "limitation": "Application-level only; network-level egress restrictions are required in production."
+    },
+    {
+      "id": "R16.7",
+      "part": 16,
+      "title": "Prompt-injection defenses",
+      "category": "security",
+      "acceptance": "Poisoned passages quarantined",
+      "implementation": [
+        "backend/app/ai/safety.py"
+      ],
+      "tests": [
+        "tests/fault_injection/test_fault_injection.py::test_fi08_prompt_injection"
+      ],
+      "evidence": [
+        "evaluation/failure-reports/phase7/fi-report.json"
+      ],
+      "status": "verified",
+      "limitation": ""
+    },
+    {
+      "id": "R17.1",
+      "part": 17,
+      "title": "Required API namespaces, typed contracts, pagination, standardized errors, OpenAPI",
+      "category": "architecture",
+      "acceptance": "All required namespaces exist and are covered by the route table",
+      "implementation": [
+        "backend/app/main.py",
+        "backend/app/api/v1"
+      ],
+      "tests": [
+        "backend/tests/test_api_contract.py",
+        "backend/tests/test_api_response_schemas.py",
+        "backend/tests/test_api_response_contract.py",
+        "backend/tests/test_api_error_contract.py",
+        "backend/tests/test_api_namespace_security.py"
+      ],
+      "evidence": [
+        "evaluation/reports/phase7-gate/manifest.json",
+        "evaluation/api-quality/api-quality-evidence.json",
+        "docs/api/response-inventory.md"
+      ],
+      "status": "verified",
+      "limitation": ""
+    },
+    {
+      "id": "R17.2",
+      "part": 17,
+      "title": "Migrations, transactions, constraints, indexes",
+      "category": "architecture",
+      "acceptance": "Alembic migrations 0001-0008 apply cleanly (0008 verified up/down/reapply on a disposable database); constraints prove invariants; every tenant-scoped table has a tenant-leading index",
+      "implementation": [
+        "backend/migrations/versions"
+      ],
+      "tests": [
+        "backend/tests/test_api_contract.py",
+        "backend/tests/test_migration_0008_indexes.py",
+        "backend/tests/test_control_mutations.py",
+        "backend/tests/test_membership_rls.py"
+      ],
+      "evidence": [
+        "evaluation/reports/phase7-gate/manifest.json",
+        "evaluation/api-quality/api-quality-evidence.json",
+        "evaluation/api-quality/index-query-plans.json"
+      ],
+      "status": "verified",
+      "limitation": ""
+    },
+    {
+      "id": "R17.3",
+      "part": 17,
+      "title": "Required database entities (including ingestion jobs, evaluation runs, workflow executions, roles table)",
+      "category": "architecture",
+      "acceptance": "All listed entities exist",
+      "implementation": [
+        "backend/app/models/__init__.py"
+      ],
+      "tests": [],
+      "evidence": [],
+      "status": "partially verified",
+      "limitation": "Implemented: tenants, users, memberships, connectors, documents, versions, chunks (embeddings), incidents, tickets, approvals, outbox events, audit events, profiles. Not implemented as tables: roles (string column), ingestion jobs, evaluation runs (file artifacts), workflow executions (outbox events serve)."
+    },
+    {
+      "id": "R18.1",
+      "part": 18,
+      "title": "13 required pages on React/TypeScript/Vite using real backend data",
+      "category": "frontend",
+      "acceptance": "All 13 pages render against the real backend without console errors",
+      "implementation": [
+        "frontend/src/nav.ts",
+        "frontend/src/pages"
+      ],
+      "tests": [
+        "frontend/e2e/auth-and-roles.spec.ts",
+        "frontend/src/pages/pages.test.tsx"
+      ],
+      "evidence": [
+        "docs/phase6/phase6-closure-gate.md",
+        "docs/phase6/phase6-review-report.md"
+      ],
+      "status": "verified",
+      "limitation": ""
+    },
+    {
+      "id": "R18.2",
+      "part": 18,
+      "title": "Responsive layout, loading/empty/error states, search, filtering, pagination, form validation",
+      "category": "frontend",
+      "acceptance": "States exist and no horizontal overflow at 375 px",
+      "implementation": [
+        "frontend/src/components/ui.tsx",
+        "frontend/src/hooks/usePagedList.ts"
+      ],
+      "tests": [
+        "frontend/e2e/admin-config-and-quality.spec.ts",
+        "frontend/e2e/documents-and-assistant.spec.ts",
+        "frontend/src/pages/pages.test.tsx"
+      ],
+      "evidence": [
+        "docs/phase6/phase6-closure-gate.md"
+      ],
+      "status": "verified",
+      "limitation": ""
+    },
+    {
+      "id": "R18.3",
+      "part": 18,
+      "title": "Accessibility",
+      "category": "frontend",
+      "acceptance": "No critical or serious automated violations; keyboard-operable critical workflow",
+      "implementation": [
+        "frontend/src/components/ConfirmDialog.tsx"
+      ],
+      "tests": [
+        "frontend/e2e/accessibility.spec.ts",
+        "frontend/e2e/keyboard-workflow.spec.ts"
+      ],
+      "evidence": [
+        "evaluation/reports/phase6-closure/axe-results.json"
+      ],
+      "status": "partially verified",
+      "limitation": "43 states audited with axe (0 violations), Edge only; no screen-reader audit; WCAG conformance is not claimed."
+    },
+    {
+      "id": "R18.4",
+      "part": 18,
+      "title": "No fabricated metrics displayed",
+      "category": "frontend",
+      "acceptance": "Evaluation and overview figures come from artifacts or tenant records; targets labelled as targets",
+      "implementation": [
+        "backend/app/api/v1/ops_routes.py",
+        "frontend/src/pages/EvaluationPage.tsx"
+      ],
+      "tests": [
+        "backend/tests/test_ops_routes.py",
+        "frontend/e2e/admin-config-and-quality.spec.ts"
+      ],
+      "evidence": [
+        "docs/phase6/phase6-review-report.md"
+      ],
+      "status": "verified",
+      "limitation": ""
+    },
+    {
+      "id": "R19.1",
+      "part": 19,
+      "title": "Customer A acceptance tests UAT-A01 to UAT-A08 with JSON and Markdown reports",
+      "category": "UAT",
+      "acceptance": "All eight pass in deterministic and real-AI modes",
+      "implementation": [
+        "tests/acceptance/test_uat_customer_a.py",
+        "tests/acceptance/conftest.py"
+      ],
+      "tests": [
+        "tests/acceptance/test_uat_customer_a.py"
+      ],
+      "evidence": [
+        "evaluation/customer-acceptance/deterministic/uat-report.json",
+        "evaluation/customer-acceptance/real/uat-report.json",
+        "evaluation/customer-acceptance/deterministic/uat-report.md",
+        "evaluation/customer-acceptance/real/uat-report.md"
+      ],
+      "status": "verified",
+      "limitation": "AI-dependent acceptance (A02-A04) rests on the real-model run, which uses an explicit threshold (2 of 3 grounded answers)."
+    },
+    {
+      "id": "R19.2",
+      "part": 19,
+      "title": "Customer B acceptance tests UAT-B01 to UAT-B07",
+      "category": "UAT",
+      "acceptance": "All seven pass in deterministic and real-AI modes",
+      "implementation": [
+        "tests/acceptance/test_uat_customer_b.py"
+      ],
+      "tests": [
+        "tests/acceptance/test_uat_customer_b.py"
+      ],
+      "evidence": [
+        "evaluation/customer-acceptance/deterministic/uat-report.json",
+        "evaluation/customer-acceptance/real/uat-report.json",
+        "evaluation/customer-acceptance/deterministic/uat-report.md",
+        "evaluation/customer-acceptance/real/uat-report.md"
+      ],
+      "status": "verified",
+      "limitation": "Meridian has no AI-quality benchmark (Phase 8)."
+    },
+    {
+      "id": "R20.1",
+      "part": 20,
+      "title": "FI-01 HTTP 503 outage",
+      "category": "reliability",
+      "acceptance": "Retried automatically, one external ticket",
+      "implementation": [
+        "tests/fault_injection/test_fault_injection.py"
+      ],
+      "tests": [
+        "tests/fault_injection/test_fault_injection.py::test_fi01_http_503_outage"
+      ],
+      "evidence": [
+        "evaluation/failure-reports/phase7/fi-report.json"
+      ],
+      "status": "verified",
+      "limitation": ""
+    },
+    {
+      "id": "R20.2",
+      "part": 20,
+      "title": "FI-02 HTTP 429 rate limiting",
+      "category": "reliability",
+      "acceptance": "Retried automatically, one external ticket",
+      "implementation": [
+        "tests/fault_injection/test_fault_injection.py"
+      ],
+      "tests": [
+        "tests/fault_injection/test_fault_injection.py::test_fi02_http_429_rate_limiting"
+      ],
+      "evidence": [
+        "evaluation/failure-reports/phase7/fi-report.json"
+      ],
+      "status": "verified",
+      "limitation": ""
+    },
+    {
+      "id": "R20.3",
+      "part": 20,
+      "title": "FI-03 Network timeout",
+      "category": "reliability",
+      "acceptance": "Timeout classified transient; no duplicate",
+      "implementation": [
+        "tests/fault_injection/test_fault_injection.py"
+      ],
+      "tests": [
+        "tests/fault_injection/test_fault_injection.py::test_fi03_network_timeout"
+      ],
+      "evidence": [
+        "evaluation/failure-reports/phase7/fi-report.json"
+      ],
+      "status": "verified",
+      "limitation": ""
+    },
+    {
+      "id": "R20.4",
+      "part": 20,
+      "title": "FI-04 Malformed API response",
+      "category": "reliability",
+      "acceptance": "Replay with the idempotency key creates no second ticket",
+      "implementation": [
+        "tests/fault_injection/test_fault_injection.py"
+      ],
+      "tests": [
+        "tests/fault_injection/test_fault_injection.py::test_fi04_malformed_response_after_server_side_create"
+      ],
+      "evidence": [
+        "evaluation/failure-reports/phase7/fi-report.json"
+      ],
+      "status": "verified",
+      "limitation": ""
+    },
+    {
+      "id": "R20.5",
+      "part": 20,
+      "title": "FI-05 Unauthorized cross-tenant access",
+      "category": "reliability",
+      "acceptance": "40 attempts, 0 successes",
+      "implementation": [
+        "tests/fault_injection/test_fault_injection.py"
+      ],
+      "tests": [
+        "tests/fault_injection/test_fault_injection.py::test_fi05_unauthorized_cross_tenant_access"
+      ],
+      "evidence": [
+        "evaluation/failure-reports/phase7/fi-report.json"
+      ],
+      "status": "verified",
+      "limitation": ""
+    },
+    {
+      "id": "R20.6",
+      "part": 20,
+      "title": "FI-06 Concurrent approvals",
+      "category": "reliability",
+      "acceptance": "One winner among 8 concurrent approvals",
+      "implementation": [
+        "tests/fault_injection/test_fault_injection.py"
+      ],
+      "tests": [
+        "tests/fault_injection/test_fault_injection.py::test_fi06_concurrent_approvals"
+      ],
+      "evidence": [
+        "evaluation/failure-reports/phase7/fi-report.json"
+      ],
+      "status": "verified",
+      "limitation": ""
+    },
+    {
+      "id": "R20.7",
+      "part": 20,
+      "title": "FI-07 Worker interruption",
+      "category": "reliability",
+      "acceptance": "Lease expiry lets another worker resume; one external ticket",
+      "implementation": [
+        "tests/fault_injection/test_fault_injection.py"
+      ],
+      "tests": [
+        "tests/fault_injection/test_fault_injection.py::test_fi07_worker_interruption"
+      ],
+      "evidence": [
+        "evaluation/failure-reports/phase7/fi-report.json"
+      ],
+      "status": "verified",
+      "limitation": ""
+    },
+    {
+      "id": "R20.8",
+      "part": 20,
+      "title": "FI-08 Prompt injection",
+      "category": "reliability",
+      "acceptance": "Poisoned content quarantined; nothing created",
+      "implementation": [
+        "tests/fault_injection/test_fault_injection.py"
+      ],
+      "tests": [
+        "tests/fault_injection/test_fault_injection.py::test_fi08_prompt_injection"
+      ],
+      "evidence": [
+        "evaluation/failure-reports/phase7/fi-report.json"
+      ],
+      "status": "verified",
+      "limitation": ""
+    },
+    {
+      "id": "R20.9",
+      "part": 20,
+      "title": "FI-09 Duplicate ingestion",
+      "category": "reliability",
+      "acceptance": "One stored copy under sequential and concurrent uploads",
+      "implementation": [
+        "tests/fault_injection/test_fault_injection.py"
+      ],
+      "tests": [
+        "tests/fault_injection/test_fault_injection.py::test_fi09_duplicate_ingestion",
+        "tests/fault_injection/test_fault_injection.py::test_fi09b_forced_ingestion_race"
+      ],
+      "evidence": [
+        "evaluation/failure-reports/phase7/fi-report.json"
+      ],
+      "status": "verified",
+      "limitation": ""
+    },
+    {
+      "id": "R20.10",
+      "part": 20,
+      "title": "FI-10 Database interruption",
+      "category": "reliability",
+      "acceptance": "API 503, no external call, replay after restart, one ticket",
+      "implementation": [
+        "tests/fault_injection/test_fault_injection.py"
+      ],
+      "tests": [
+        "tests/fault_injection/test_fault_injection.py::test_fi10_database_interruption"
+      ],
+      "evidence": [
+        "evaluation/failure-reports/phase7/fi-report.json"
+      ],
+      "status": "verified",
+      "limitation": "Disruptive: stops the project's own PostgreSQL container; opt-in (RUN_DISRUPTIVE=1)."
+    },
+    {
+      "id": "R20.11",
+      "part": 20,
+      "title": "Additional dependency failures: LLM timeout/failure, embedding failure, invalid structured output, API restart",
+      "category": "reliability",
+      "acceptance": "Honest withholding, 503 not 500, human-review fallback, no state lost",
+      "implementation": [
+        "tests/fault_injection/test_additional_reliability.py"
+      ],
+      "tests": [
+        "tests/fault_injection/test_additional_reliability.py"
+      ],
+      "evidence": [
+        "evaluation/failure-reports/phase7/fi-report.json"
+      ],
+      "status": "verified",
+      "limitation": "These are REL-01 to REL-04, separate from the specification's FI identifiers."
+    },
+    {
+      "id": "R21.1",
+      "part": 21,
+      "title": "Retrieval and generation metrics on labelled data (Recall@5, precision, citation correctness, groundedness, structured validity)",
+      "category": "AI",
+      "acceptance": "Reported with denominators, methodology and actual measurements",
+      "implementation": [
+        "evaluation/benchmarks/run_phase3.py",
+        "evaluation/datasets/apex-eval-v1"
+      ],
+      "tests": [
+        "tests/test_hardware_capture.py"
+      ],
+      "evidence": [
+        "evaluation/reports/phase3/SUMMARY.md",
+        "evaluation/reports/phase4-remeasure/README.md"
+      ],
+      "status": "partially verified",
+      "limitation": "Single small synthetic dataset, author-written labels, no confidence intervals; 95% citation target NOT MET; harder multi-tenant dataset planned for Phase 8."
+    },
+    {
+      "id": "R21.2",
+      "part": 21,
+      "title": "Workflow, integration, recovery and isolation measures",
+      "category": "reliability",
+      "acceptance": "Workflow completion, duplicates, recovery and isolation reported",
+      "implementation": [
+        "evaluation/failure-reports",
+        "evaluation/customer-acceptance"
+      ],
+      "tests": [
+        "tests/fault_injection/test_fault_injection.py",
+        "tests/acceptance/test_uat_customer_a.py",
+        "tests/acceptance/test_uat_customer_b.py"
+      ],
+      "evidence": [
+        "evaluation/failure-reports/phase7/fi-report.json",
+        "evaluation/customer-acceptance/deterministic/uat-report.json",
+        "evaluation/customer-acceptance/real/uat-report.json"
+      ],
+      "status": "verified",
+      "limitation": ""
+    },
+    {
+      "id": "R21.3",
+      "part": 21,
+      "title": "Latency measurements (API, retrieval, LLM, end-to-end) with hardware recorded",
+      "category": "AI",
+      "acceptance": "Median and p95 reported with hardware, model and repetitions",
+      "implementation": [
+        "evaluation/benchmarks/run_phase3.py",
+        "backend/app/observability/metrics.py"
+      ],
+      "tests": [
+        "backend/tests/test_observability.py"
+      ],
+      "evidence": [
+        "evaluation/reports/phase3/SUMMARY.md",
+        "evaluation/reports/phase4-remeasure/README.md"
+      ],
+      "status": "partially verified",
+      "limitation": "Local single-machine measurements; the observability metrics are process-scoped."
+    },
+    {
+      "id": "R21.4",
+      "part": 21,
+      "title": "Manual-versus-automated comparison labelled as a simulated baseline",
+      "category": "AI",
+      "acceptance": "Comparison with clear labelling",
+      "implementation": [],
+      "tests": [],
+      "evidence": [],
+      "status": "not implemented",
+      "limitation": "Not produced; planned for Phase 8."
+    },
+    {
+      "id": "R22.1",
+      "part": 22,
+      "title": "Structured JSON logging, correlation ids, no secrets or sensitive content in logs",
+      "category": "observability",
+      "acceptance": "Every request line has a correlation id; credentials, tokens and document text never appear",
+      "implementation": [
+        "backend/app/observability/logging.py",
+        "backend/app/main.py"
+      ],
+      "tests": [
+        "backend/tests/test_observability.py"
+      ],
+      "evidence": [
+        "evaluation/observability/README.md"
+      ],
+      "status": "verified",
+      "limitation": ""
+    },
+    {
+      "id": "R22.2",
+      "part": 22,
+      "title": "Tenant-aware operational metrics (latency, retries, failures, review rate, submission outcomes, error classes)",
+      "category": "observability",
+      "acceptance": "Metrics scoped to the tenant; no sensitive content",
+      "implementation": [
+        "backend/app/observability/metrics.py",
+        "backend/app/api/v1/ops_routes.py"
+      ],
+      "tests": [
+        "backend/tests/test_observability.py"
+      ],
+      "evidence": [
+        "evaluation/observability/README.md"
+      ],
+      "status": "partially verified",
+      "limitation": "Process metrics reset on restart and cover only the API process; worker activity is durable only through the database and logs. Not production telemetry."
+    },
+    {
+      "id": "R22.3",
+      "part": 22,
+      "title": "OpenTelemetry traces; optional Prometheus and Grafana",
+      "category": "observability",
+      "acceptance": "Trace ids exported",
+      "implementation": [],
+      "tests": [],
+      "evidence": [],
+      "status": "not implemented",
+      "limitation": "Correlation ids exist; no OpenTelemetry or Prometheus exporter is implemented (optional per the specification)."
+    },
+    {
+      "id": "R23.1",
+      "part": 23,
+      "title": "Reproducible local deployment with Docker Compose",
+      "category": "delivery",
+      "acceptance": "A single documented command starts the stack",
+      "implementation": [
+        "docker-compose.yml",
+        "docker-compose.app.yml",
+        "scripts/dev.py",
+        "scripts/container_smoke.py"
+      ],
+      "tests": [
+        "tests/test_environment_guards.py"
+      ],
+      "evidence": [
+        "evaluation/container-smoke/20261113-145441/report.md"
+      ],
+      "status": "partially verified",
+      "limitation": "docker-compose.yml runs PostgreSQL for development; docker-compose.app.yml builds and runs the whole stack in containers (smoke-tested twice) with the deterministic AI backends only. Ollama integration from inside a container is untested."
+    },
+    {
+      "id": "R24.1",
+      "part": 24,
+      "title": "Cloud portability documentation and Terraform/OpenTofu examples",
+      "category": "delivery",
+      "acceptance": "Documented and validated where feasible",
+      "implementation": [
+        "docs/architecture/cloud-portability.md",
+        "docs/architecture/deployment-tradeoffs.md",
+        "infrastructure/terraform/main.tf"
+      ],
+      "tests": [
+        "tests/test_delivery_documents.py::test_cloud_and_infrastructure_documents_do_not_claim_a_deployment_or_validation_that_did_not_happen"
+      ],
+      "evidence": [
+        "docs/architecture/cloud-portability.md",
+        "infrastructure/terraform/README.md",
+        "evaluation/terraform/provider-validation.md"
+      ],
+      "status": "verified",
+      "limitation": "The Terraform example passed local schema validation with AWS 5.100.0 on Windows amd64. Cloud portability mappings are design analysis. No cloud deployment was attempted."
+    },
+    {
+      "id": "R25.1",
+      "part": 25,
+      "title": "Customer-facing technical communication",
+      "category": "delivery",
+      "acceptance": "Delivery documents complete",
+      "implementation": [
+        "docs/customer-delivery/technical-walkthrough.md",
+        "docs/architecture/diagrams.md",
+        "docs/operations/deployment-runbook.md"
+      ],
+      "tests": [
+        "tests/test_delivery_documents.py"
+      ],
+      "evidence": [
+        "docs/customer-delivery/01-customer-discovery-summary.md",
+        "docs/customer-delivery/10-implementation-retrospective.md"
+      ],
+      "status": "verified",
+      "limitation": "Ten delivery documents, walkthrough script, diagrams and runbook for FICTIONAL customers; same-author documents; the walkthrough has not been presented."
+    },
+    {
+      "id": "R26.1",
+      "part": 26,
+      "title": "Automated tests: backend, frontend, e2e, security, fault injection, acceptance",
+      "category": "reliability",
+      "acceptance": "All suites pass",
+      "implementation": [
+        "tests",
+        "backend/tests",
+        "frontend/src",
+        "frontend/e2e"
+      ],
+      "tests": [
+        "tests/test_traceability.py"
+      ],
+      "evidence": [
+        "evaluation/reports/phase7-gate/manifest.json"
+      ],
+      "status": "verified",
+      "limitation": ""
+    },
+    {
+      "id": "R27.1",
+      "part": 27,
+      "title": "CI/CD with GitHub Actions within free allowances",
+      "category": "delivery",
+      "acceptance": "Workflow runs and passes in CI",
+      "implementation": [
+        ".github/workflows/ci.yml"
+      ],
+      "tests": [],
+      "evidence": [],
+      "status": "partially verified",
+      "limitation": "The workflow file exists but has never run: nothing is pushed."
+    },
+    {
+      "id": "R29.1",
+      "part": 29,
+      "title": "README with a verified-results table (metric, actual, target, command, evidence)",
+      "category": "delivery",
+      "acceptance": "Every row is a measured result with a command and an evidence path",
+      "implementation": [
+        "README.md"
+      ],
+      "tests": [],
+      "evidence": [
+        "README.md"
+      ],
+      "status": "partially verified",
+      "limitation": "Updated at each phase gate by hand; not machine-checked against the artifacts."
+    },
+    {
+      "id": "R30.1",
+      "part": 30,
+      "title": "Complete end-to-end demonstration reproducible",
+      "category": "delivery",
+      "acceptance": "Scripted demo reproducible by a third party",
+      "implementation": [
+        "docs/operations",
+        "frontend/e2e/workflows.spec.ts"
+      ],
+      "tests": [
+        "frontend/e2e/workflows.spec.ts",
+        "tests/acceptance/test_end_to_end_reliability.py"
+      ],
+      "evidence": [
+        "evaluation/reports/phase7-gate/manifest.json"
+      ],
+      "status": "partially verified",
+      "limitation": "The 27-step demo script is a Phase 10 deliverable; the same flows are automated."
+    },
+    {
+      "id": "R33.1",
+      "part": 33,
+      "title": "Final GitHub audit and publication",
+      "category": "delivery",
+      "acceptance": "Authorized publication of a tested release",
+      "implementation": [],
+      "tests": [],
+      "evidence": [],
+      "status": "not implemented",
+      "limitation": "Publication is a separate approval gate; nothing has been pushed or released."
+    },
+    {
+      "id": "R32.1",
+      "part": 32,
+      "title": "Definition of done checklist",
+      "category": "project rules",
+      "acceptance": "All 37 items satisfied",
+      "implementation": [],
+      "tests": [
+        "tests/test_traceability.py"
+      ],
+      "evidence": [
+        "evaluation/reports/phase7-gate/manifest.json"
+      ],
+      "status": "partially verified",
+      "limitation": "Items 20-25, 27, 35-37 and parts of 18, 21, 28 remain open (Docker deployment, CI, cloud portability, discovery and handover documents, publication)."
+    }
+  ]
+}

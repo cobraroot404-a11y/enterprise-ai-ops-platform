@@ -1,0 +1,39 @@
+{
+ "qa_rep1": {
+  "records": 118,
+  "status": {
+   "200": 90,
+   "401": 28
+  }
+ },
+ "qa_rep2": {
+  "records": 118,
+  "status": {
+   "401": 118
+  }
+ },
+ "qa_rep3": {
+  "records": 118,
+  "status": {
+   "401": 118
+  }
+ },
+ "extraction_rep1": {
+  "records": 34,
+  "status": {
+   "401": 34
+  }
+ },
+ "extraction_rep2": {
+  "records": 34,
+  "status": {
+   "401": 34
+  }
+ },
+ "extraction_rep3": {
+  "records": 34,
+  "status": {
+   "401": 34
+  }
+ }
+}

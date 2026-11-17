@@ -1,0 +1,56 @@
+equipment_id,name,location,model,commissioned
+P-201,Centrifugal Pump P-201,Plant 2 Line B,CP-200,2019-01-03
+P-103,Centrifugal Pump P-103,Utilities Hall,CP-200,2024-05-04
+P-203,Centrifugal Pump P-203,Plant 1 Bay 5,CP-200,2020-10-12
+P-110,Centrifugal Pump P-110,Utilities Hall,CP-200,2024-01-14
+P-109,Centrifugal Pump P-109,Plant 1 Bay 3,CP-200,2019-07-27
+P-1010,Centrifugal Pump P-1010,Plant 1 Bay 3,CP-250,2022-09-05
+P-310,Centrifugal Pump P-310,Plant 1 Bay 5,CP-250,2023-02-13
+P-210,Centrifugal Pump P-210,Utilities Hall,CP-250,2022-09-18
+P-1011,Centrifugal Pump P-1011,Plant 2 Line B,CP-250,2022-11-28
+P-211,Centrifugal Pump P-211,Plant 2 Line B,CP-250,2022-12-18
+P-202,Centrifugal Pump P-202,Utilities Hall,CP-300,2020-12-15
+P-1001,Centrifugal Pump P-1001,Utilities Hall,CP-300,2019-05-24
+P-302,Centrifugal Pump P-302,Utilities Hall,CP-300,2018-05-27
+P-102,Centrifugal Pump P-102,Plant 2 Line B,CP-300,2019-02-09
+P-301,Centrifugal Pump P-301,Utilities Hall,CP-300,2020-09-24
+M-301,Electric Motor M-301,Plant 2 Line B,EM-55,2019-12-18
+M-211,Electric Motor M-211,Plant 1 Bay 5,EM-55,2022-01-31
+M-103,Electric Motor M-103,Plant 1 Bay 5,EM-55,2018-03-25
+M-310,Electric Motor M-310,Plant 1 Bay 5,EM-55,2018-09-14
+M-210,Electric Motor M-210,Utilities Hall,EM-55,2018-08-10
+M-1010,Electric Motor M-1010,Plant 1 Bay 5,EM-75,2021-02-17
+M-110,Electric Motor M-110,Utilities Hall,EM-75,2022-01-13
+M-209,Electric Motor M-209,Plant 1 Bay 3,EM-75,2019-03-26
+M-1001,Electric Motor M-1001,Plant 1 Bay 3,EM-75,2023-07-22
+M-202,Electric Motor M-202,Utilities Hall,EM-75,2020-06-27
+C-101,Screw Compressor C-101,Utilities Hall,CC-300,2020-07-30
+C-109,Screw Compressor C-109,Plant 1 Bay 5,CC-300,2023-08-18
+C-111,Screw Compressor C-111,Plant 1 Bay 3,CC-300,2019-08-27
+C-202,Screw Compressor C-202,Plant 2 Line B,CC-300,2019-12-01
+C-102,Screw Compressor C-102,Plant 1 Bay 3,CC-300,2021-07-09
+C-209,Screw Compressor C-209,Utilities Hall,CC-350,2023-12-27
+C-301,Screw Compressor C-301,Plant 1 Bay 5,CC-350,2024-03-17
+C-103,Screw Compressor C-103,Plant 2 Line B,CC-350,2018-08-22
+C-1010,Screw Compressor C-1010,Utilities Hall,CC-350,2024-05-16
+C-201,Screw Compressor C-201,Plant 2 Line B,CC-350,2023-06-21
+CV-210,Belt Conveyor CV-210,Utilities Hall,CV-400,2022-11-08
+CV-302,Belt Conveyor CV-302,Plant 1 Bay 3,CV-400,2021-08-26
+CV-1010,Belt Conveyor CV-1010,Plant 1 Bay 5,CV-400,2019-03-23
+CV-109,Belt Conveyor CV-109,Utilities Hall,CV-400,2022-05-26
+CV-211,Belt Conveyor CV-211,Plant 1 Bay 3,CV-400,2023-12-30
+CV-111,Belt Conveyor CV-111,Plant 2 Line B,CV-450,2023-06-07
+CV-310,Belt Conveyor CV-310,Plant 2 Line B,CV-450,2021-01-24
+CV-202,Belt Conveyor CV-202,Plant 2 Line B,CV-450,2021-10-26
+CV-209,Belt Conveyor CV-209,Plant 1 Bay 5,CV-450,2024-01-13
+CV-203,Belt Conveyor CV-203,Plant 1 Bay 3,CV-450,2018-04-14
+G-109,Industrial Gearbox G-109,Plant 1 Bay 5,GB-500,2018-01-20
+G-302,Industrial Gearbox G-302,Plant 1 Bay 3,GB-500,2023-02-19
+G-101,Industrial Gearbox G-101,Plant 2 Line B,GB-500,2024-01-30
+G-103,Industrial Gearbox G-103,Utilities Hall,GB-500,2021-07-26
+G-102,Industrial Gearbox G-102,Plant 1 Bay 5,GB-500,2020-12-05
+G-1011,Industrial Gearbox G-1011,Plant 1 Bay 5,GB-550,2019-01-20
+G-203,Industrial Gearbox G-203,Utilities Hall,GB-550,2020-11-28
+G-211,Industrial Gearbox G-211,Plant 1 Bay 3,GB-550,2022-04-09
+G-111,Industrial Gearbox G-111,Plant 2 Line B,GB-550,2023-02-02
+G-110,Industrial Gearbox G-110,Utilities Hall,GB-550,2023-07-15

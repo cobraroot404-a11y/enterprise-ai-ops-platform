@@ -1,0 +1,750 @@
+{
+ "run_id": "20261113-041657-5fa4",
+ "mode": "smoke",
+ "ai": "deterministic",
+ "started_at": "2026-11-13T04:16:58-05:00",
+ "executed": [],
+ "failures": [],
+ "skipped": [
+  "browser smoke (--no-browser)"
+ ],
+ "git_head": "05265f7fe9761823d34d11ef94b03df3c60a192c",
+ "preflight": [
+  {
+   "check": "python environment",
+   "ok": true,
+   "detail": "<local-path>",
+   "hint": "run with the project's virtual environment: .venv\\Scripts\\python scripts\\demo.py ..."
+  },
+  {
+   "check": "environment configuration",
+   "ok": true,
+   "detail": "required settings present, JSON settings valid, mock origins authorised",
+   "hint": "fix .env (names only are shown here; values are never printed)"
+  },
+  {
+   "check": "node",
+   "ok": true,
+   "detail": "C:\\Program Files\\nodejs\\node.EXE",
+   "hint": "install Node 20+ (not done automatically)"
+  },
+  {
+   "check": "frontend dependencies",
+   "ok": true,
+   "detail": "frontend/node_modules/vite present",
+   "hint": "run `npm install` in frontend/ (not done automatically)"
+  },
+  {
+   "check": "disk space",
+   "ok": true,
+   "detail": "113 GB free",
+   "hint": "free at least 2 GB"
+  },
+  {
+   "check": "ports free",
+   "ok": true,
+   "detail": "all required ports free",
+   "hint": "another program (possibly your own dev stack) holds these ports; the launcher never stops processes it did not start. Stop that program yourself or run `python scripts/demo.py down` if it is a previous demo"
+  },
+  {
+   "check": "postgresql",
+   "ok": true,
+   "detail": "PostgreSQL reachable, pgvector available",
+   "hint": "start it with `python scripts/dev.py up` (Docker Desktop must be running)"
+  }
+ ],
+ "database": {
+  "name": "eaop_demo_20261113_041657_5fa4",
+  "revision": "0010",
+  "head": "0010",
+  "created_by_this_run": true
+ },
+ "workflows": {
+  "external_systems": "simulated: local mock ticketing (8101) and service desk (8105)",
+  "tenants": {
+   "apex-industrial": [
+    {
+     "tenant": "apex-industrial",
+     "step": "sign in as engineer, supervisor, administrator and auditor",
+     "ok": true,
+     "detail": ""
+    },
+    {
+     "tenant": "apex-industrial",
+     "step": "engineer analyses a fault report with a structured observation (HTTP 201)",
+     "ok": true,
+     "detail": "HTTP 201"
+    },
+    {
+     "tenant": "apex-industrial",
+     "step": "the observation is stored as a submitted observation awaiting verification (class C, VALIDATED, not used for priority)",
+     "ok": true,
+     "detail": "{\"trust_status\": \"VALIDATED\", \"evidence_class\": \"C\", \"eligible_for_numeric_priority\": false}"
+    },
+    {
+     "tenant": "apex-industrial",
+     "step": "asset is registered",
+     "ok": true,
+     "detail": "P-101"
+    },
+    {
+     "tenant": "apex-industrial",
+     "step": "engineer cannot verify (403 insufficient_role)",
+     "ok": true,
+     "detail": "HTTP 403"
+    },
+    {
+     "tenant": "apex-industrial",
+     "step": "auditor cannot verify (403 insufficient_role)",
+     "ok": true,
+     "detail": "HTTP 403"
+    },
+    {
+     "tenant": "apex-industrial",
+     "step": "another tenant's supervisor gets 404 (tenant isolation)",
+     "ok": true,
+     "detail": "HTTP 404"
+    },
+    {
+     "tenant": "apex-industrial",
+     "step": "another tenant's engineer cannot read the incident (404)",
+     "ok": true,
+     "detail": "HTTP 404"
+    },
+    {
+     "tenant": "apex-industrial",
+     "step": "supervisor verifies; the server returns HUMAN_VERIFIED, class D, eligible",
+     "ok": true,
+     "detail": "HTTP 200"
+    },
+    {
+     "tenant": "apex-industrial",
+     "step": "priority comes from the server: P3 -> P2 (verification block says P3 -> P2)",
+     "ok": true,
+     "detail": ""
+    },
+    {
+     "tenant": "apex-industrial",
+     "step": "a repeated decision is refused (409)",
+     "ok": true,
+     "detail": "HTTP 409 measurement_not_pending"
+    },
+    {
+     "tenant": "apex-industrial",
+     "step": "the creator cannot verify their own incident's measurement (403 separation_of_duties)",
+     "ok": true,
+     "detail": "HTTP 403"
+    },
+    {
+     "tenant": "apex-industrial",
+     "step": "engineer drafts a ticket (201, DRAFT)",
+     "ok": true,
+     "detail": "HTTP 201"
+    },
+    {
+     "tenant": "apex-industrial",
+     "step": "approval requested (PENDING_APPROVAL)",
+     "ok": true,
+     "detail": "HTTP 200"
+    },
+    {
+     "tenant": "apex-industrial",
+     "step": "the author cannot approve (403)",
+     "ok": true,
+     "detail": "HTTP 403"
+    },
+    {
+     "tenant": "apex-industrial",
+     "step": "supervisor approves",
+     "ok": true,
+     "detail": "HTTP 200"
+    },
+    {
+     "tenant": "apex-industrial",
+     "step": "the worker submits it to the (simulated) external system: SUBMITTED with an external id",
+     "ok": true,
+     "detail": "state SUBMITTED external id MNT-1001"
+    },
+    {
+     "tenant": "apex-industrial",
+     "step": "the audit log shows the whole chain",
+     "ok": true,
+     "detail": "missing []"
+    },
+    {
+     "tenant": "apex-industrial",
+     "step": "document maintenance_log.csv is listed and searchable before deletion",
+     "ok": true,
+     "detail": ""
+    },
+    {
+     "tenant": "apex-industrial",
+     "step": "an engineer cannot delete a document (403)",
+     "ok": true,
+     "detail": "HTTP 403"
+    },
+    {
+     "tenant": "apex-industrial",
+     "step": "another tenant's supervisor cannot delete it or see it (404)",
+     "ok": true,
+     "detail": "HTTP 404"
+    },
+    {
+     "tenant": "apex-industrial",
+     "step": "supervisor deletes: logically deleted at once, cleanup pending or already running",
+     "ok": true,
+     "detail": "HTTP 200 pending"
+    },
+    {
+     "tenant": "apex-industrial",
+     "step": "the deleted document is gone from the listing, direct access (404) and search",
+     "ok": true,
+     "detail": ""
+    },
+    {
+     "tenant": "apex-industrial",
+     "step": "the worker removed the content and verified it (cleanup completed), a repeated delete is idempotent",
+     "ok": true,
+     "detail": "state completed"
+    },
+    {
+     "tenant": "apex-industrial",
+     "step": "the audit log holds the deletion and the cleanup without content",
+     "ok": true,
+     "detail": "document.cleanup_completed, document.created, document.deleted"
+    }
+   ],
+   "meridian-fleet": [
+    {
+     "tenant": "meridian-fleet",
+     "step": "sign in as engineer, supervisor, administrator and auditor",
+     "ok": true,
+     "detail": ""
+    },
+    {
+     "tenant": "meridian-fleet",
+     "step": "engineer analyses a fault report with a structured observation (HTTP 201)",
+     "ok": true,
+     "detail": "HTTP 201"
+    },
+    {
+     "tenant": "meridian-fleet",
+     "step": "the observation is stored as a submitted observation awaiting verification (class C, VALIDATED, not used for priority)",
+     "ok": true,
+     "detail": "{\"trust_status\": \"VALIDATED\", \"evidence_class\": \"C\", \"eligible_for_numeric_priority\": false}"
+    },
+    {
+     "tenant": "meridian-fleet",
+     "step": "asset is registered",
+     "ok": true,
+     "detail": "VH-2101"
+    },
+    {
+     "tenant": "meridian-fleet",
+     "step": "engineer cannot verify (403 insufficient_role)",
+     "ok": true,
+     "detail": "HTTP 403"
+    },
+    {
+     "tenant": "meridian-fleet",
+     "step": "auditor cannot verify (403 insufficient_role)",
+     "ok": true,
+     "detail": "HTTP 403"
+    },
+    {
+     "tenant": "meridian-fleet",
+     "step": "another tenant's supervisor gets 404 (tenant isolation)",
+     "ok": true,
+     "detail": "HTTP 404"
+    },
+    {
+     "tenant": "meridian-fleet",
+     "step": "another tenant's engineer cannot read the incident (404)",
+     "ok": true,
+     "detail": "HTTP 404"
+    },
+    {
+     "tenant": "meridian-fleet",
+     "step": "supervisor verifies; the server returns HUMAN_VERIFIED, class D, eligible",
+     "ok": true,
+     "detail": "HTTP 200"
+    },
+    {
+     "tenant": "meridian-fleet",
+     "step": "priority comes from the server: P3 -> P2 (verification block says P3 -> P2)",
+     "ok": true,
+     "detail": ""
+    },
+    {
+     "tenant": "meridian-fleet",
+     "step": "a repeated decision is refused (409)",
+     "ok": true,
+     "detail": "HTTP 409 measurement_not_pending"
+    },
+    {
+     "tenant": "meridian-fleet",
+     "step": "the creator cannot verify their own incident's measurement (403 separation_of_duties)",
+     "ok": true,
+     "detail": "HTTP 403"
+    },
+    {
+     "tenant": "meridian-fleet",
+     "step": "engineer drafts a ticket (201, DRAFT)",
+     "ok": true,
+     "detail": "HTTP 201"
+    },
+    {
+     "tenant": "meridian-fleet",
+     "step": "approval requested (PENDING_APPROVAL)",
+     "ok": true,
+     "detail": "HTTP 200"
+    },
+    {
+     "tenant": "meridian-fleet",
+     "step": "the author cannot approve (403)",
+     "ok": true,
+     "detail": "HTTP 403"
+    },
+    {
+     "tenant": "meridian-fleet",
+     "step": "supervisor approves",
+     "ok": true,
+     "detail": "HTTP 200"
+    },
+    {
+     "tenant": "meridian-fleet",
+     "step": "the worker submits it to the (simulated) external system: SUBMITTED with an external id",
+     "ok": true,
+     "detail": "state SUBMITTED external id WO-7001"
+    },
+    {
+     "tenant": "meridian-fleet",
+     "step": "the audit log shows the whole chain",
+     "ok": true,
+     "detail": "missing []"
+    },
+    {
+     "tenant": "meridian-fleet",
+     "step": "document telematics_alerts.csv is listed and searchable before deletion",
+     "ok": true,
+     "detail": ""
+    },
+    {
+     "tenant": "meridian-fleet",
+     "step": "an engineer cannot delete a document (403)",
+     "ok": true,
+     "detail": "HTTP 403"
+    },
+    {
+     "tenant": "meridian-fleet",
+     "step": "another tenant's supervisor cannot delete it or see it (404)",
+     "ok": true,
+     "detail": "HTTP 404"
+    },
+    {
+     "tenant": "meridian-fleet",
+     "step": "supervisor deletes: logically deleted at once, cleanup pending or already running",
+     "ok": true,
+     "detail": "HTTP 200 pending"
+    },
+    {
+     "tenant": "meridian-fleet",
+     "step": "the deleted document is gone from the listing, direct access (404) and search",
+     "ok": true,
+     "detail": ""
+    },
+    {
+     "tenant": "meridian-fleet",
+     "step": "the worker removed the content and verified it (cleanup completed), a repeated delete is idempotent",
+     "ok": true,
+     "detail": "state completed"
+    },
+    {
+     "tenant": "meridian-fleet",
+     "step": "the audit log holds the deletion and the cleanup without content",
+     "ok": true,
+     "detail": "document.cleanup_completed, document.created, document.deleted"
+    }
+   ]
+  }
+ },
+ "ingestion": {
+  "fault": "simulated: the embedding step raises while the fault switch file exists (scripts/fault_boot.py); the retry logic is exercised against that failure mode",
+  "tenants": {
+   "apex-industrial": [
+    {
+     "tenant": "apex-industrial",
+     "step": "a supported document uploads synchronously (201) as before",
+     "ok": true,
+     "detail": "HTTP 201"
+    },
+    {
+     "tenant": "apex-industrial",
+     "step": "the upload left a COMPLETED durable ingestion job with its outcome and chunk count",
+     "ok": true,
+     "detail": "{\"status\": \"COMPLETED\", \"outcome\": \"created\", \"attempts\": 1}"
+    },
+    {
+     "tenant": "apex-industrial",
+     "step": "the content is retrievable once indexed",
+     "ok": true,
+     "detail": ""
+    },
+    {
+     "tenant": "apex-industrial",
+     "step": "during the SIMULATED embedding outage the upload keeps its contract: 503 embedding_unavailable with Retry-After",
+     "ok": true,
+     "detail": "HTTP 503"
+    },
+    {
+     "tenant": "apex-industrial",
+     "step": "a RETRY_PENDING job with a sanitised error and a next attempt time exists",
+     "ok": true,
+     "detail": ""
+    },
+    {
+     "tenant": "apex-industrial",
+     "step": "bounded retry then recovery: COMPLETED after 3 attempts (limit 5), document created, now retrievable",
+     "ok": true,
+     "detail": ""
+    },
+    {
+     "tenant": "apex-industrial",
+     "step": "repeating the upload afterwards is a duplicate: nothing is stored twice",
+     "ok": true,
+     "detail": ""
+    },
+    {
+     "tenant": "apex-industrial",
+     "step": "an engineer cannot reprocess (403)",
+     "ok": true,
+     "detail": "HTTP 403"
+    },
+    {
+     "tenant": "apex-industrial",
+     "step": "a supervisor queues reprocessing (202)",
+     "ok": true,
+     "detail": "HTTP 202"
+    },
+    {
+     "tenant": "apex-industrial",
+     "step": "replacement generation activated (1 to 2); retrieval serves the document once, no duplicates",
+     "ok": true,
+     "detail": ""
+    },
+    {
+     "tenant": "apex-industrial",
+     "step": "another tenant cannot see this tenant's jobs (404, indistinguishable from unknown)",
+     "ok": true,
+     "detail": ""
+    },
+    {
+     "tenant": "apex-industrial",
+     "step": "another tenant's supervisor cannot reprocess it (404)",
+     "ok": true,
+     "detail": "HTTP 404"
+    },
+    {
+     "tenant": "apex-industrial",
+     "step": "deletion while a reprocessing job is queued cancels it (document_deleted); the content never returns",
+     "ok": true,
+     "detail": ""
+    },
+    {
+     "tenant": "apex-industrial",
+     "step": "after recovery the cancelled job does not run: the document stays deleted, unsearchable, not reprocessable (404)",
+     "ok": true,
+     "detail": ""
+    },
+    {
+     "tenant": "apex-industrial",
+     "step": "the audit log records job creation, retry, completion, reprocessing, cancellation and cleanup",
+     "ok": true,
+     "detail": "missing []"
+    }
+   ],
+   "meridian-fleet": [
+    {
+     "tenant": "meridian-fleet",
+     "step": "a supported document uploads synchronously (201) as before",
+     "ok": true,
+     "detail": "HTTP 201"
+    },
+    {
+     "tenant": "meridian-fleet",
+     "step": "the upload left a COMPLETED durable ingestion job with its outcome and chunk count",
+     "ok": true,
+     "detail": "{\"status\": \"COMPLETED\", \"outcome\": \"created\", \"attempts\": 1}"
+    },
+    {
+     "tenant": "meridian-fleet",
+     "step": "the content is retrievable once indexed",
+     "ok": true,
+     "detail": ""
+    },
+    {
+     "tenant": "meridian-fleet",
+     "step": "during the SIMULATED embedding outage the upload keeps its contract: 503 embedding_unavailable with Retry-After",
+     "ok": true,
+     "detail": "HTTP 503"
+    },
+    {
+     "tenant": "meridian-fleet",
+     "step": "a RETRY_PENDING job with a sanitised error and a next attempt time exists",
+     "ok": true,
+     "detail": ""
+    },
+    {
+     "tenant": "meridian-fleet",
+     "step": "bounded retry then recovery: COMPLETED after 3 attempts (limit 5), document created, now retrievable",
+     "ok": true,
+     "detail": ""
+    },
+    {
+     "tenant": "meridian-fleet",
+     "step": "repeating the upload afterwards is a duplicate: nothing is stored twice",
+     "ok": true,
+     "detail": ""
+    },
+    {
+     "tenant": "meridian-fleet",
+     "step": "an engineer cannot reprocess (403)",
+     "ok": true,
+     "detail": "HTTP 403"
+    },
+    {
+     "tenant": "meridian-fleet",
+     "step": "a supervisor queues reprocessing (202)",
+     "ok": true,
+     "detail": "HTTP 202"
+    },
+    {
+     "tenant": "meridian-fleet",
+     "step": "replacement generation activated (1 to 2); retrieval serves the document once, no duplicates",
+     "ok": true,
+     "detail": ""
+    },
+    {
+     "tenant": "meridian-fleet",
+     "step": "another tenant cannot see this tenant's jobs (404, indistinguishable from unknown)",
+     "ok": true,
+     "detail": ""
+    },
+    {
+     "tenant": "meridian-fleet",
+     "step": "another tenant's supervisor cannot reprocess it (404)",
+     "ok": true,
+     "detail": "HTTP 404"
+    },
+    {
+     "tenant": "meridian-fleet",
+     "step": "deletion while a reprocessing job is queued cancels it (document_deleted); the content never returns",
+     "ok": true,
+     "detail": ""
+    },
+    {
+     "tenant": "meridian-fleet",
+     "step": "after recovery the cancelled job does not run: the document stays deleted, unsearchable, not reprocessable (404)",
+     "ok": true,
+     "detail": ""
+    },
+    {
+     "tenant": "meridian-fleet",
+     "step": "the audit log records job creation, retry, completion, reprocessing, cancellation and cleanup",
+     "ok": true,
+     "detail": "missing []"
+    }
+   ]
+  }
+ },
+ "backup": {
+  "file": "backups\\demo\\eaop_demo_20261113_041657_5fa4-20261113T091745Z.dump",
+  "bytes": 104441,
+  "sha256": "bbb8d4aafb6d007d26a03c77ef7419df3c0ad7bc8f21d23d7afd2051172594dd",
+  "source_database": "eaop_demo_20261113_041657_5fa4",
+  "restore_database": "eaop_demo_restore_20261113_041746_4e08",
+  "restore_database_state": "dropped",
+  "checks": [
+   {
+    "check": "backup file matches its manifest (sha256, size)",
+    "ok": true,
+    "detail": "104441 bytes"
+   },
+   {
+    "check": "pg_restore into a new isolated database",
+    "ok": true,
+    "detail": "completed"
+   },
+   {
+    "check": "migration revision preserved",
+    "ok": true,
+    "detail": "0010"
+   },
+   {
+    "check": "tenants preserved",
+    "ok": true,
+    "detail": "apex-industrial, meridian-fleet"
+   },
+   {
+    "check": "row counts of every table equal the source",
+    "ok": true,
+    "detail": "16 tables, 218 rows"
+   },
+   {
+    "check": "per-tenant counts equal the source",
+    "ok": true,
+    "detail": "documents, incidents, tickets, audit, approvals, outbox, connectors, memberships, chunks"
+   },
+   {
+    "check": "row-level security enabled and forced exactly as in the source",
+    "ok": true,
+    "detail": "31 policies"
+   },
+   {
+    "check": "tenant isolation holds for the restricted application role",
+    "ok": true,
+    "detail": "2 tenants each see only their own rows; with no tenant context 0 rows are visible"
+   },
+   {
+    "check": "backup contains no secret values from .env",
+    "ok": true,
+    "detail": "no secret value found in the dump text"
+   }
+  ],
+  "tenants": [
+   "apex-industrial",
+   "meridian-fleet"
+  ],
+  "tables": 16,
+  "rows": 218
+ },
+ "timeline": [
+  {
+   "step": "preflight",
+   "ok": true,
+   "seconds": 3.5,
+   "detail": "7 checks passed"
+  },
+  {
+   "step": "create disposable database eaop_demo_20261113_041657_5fa4",
+   "ok": true,
+   "seconds": 0.1,
+   "detail": "created"
+  },
+  {
+   "step": "apply migrations (alembic upgrade head)",
+   "ok": true,
+   "seconds": 1.5,
+   "detail": "revision 0010"
+  },
+  {
+   "step": "seed Apex Industrial fixtures",
+   "ok": true,
+   "seconds": 1.5,
+   "detail": "ok (log .demo\\20261113-041657-5fa4\\logs\\seed-apex.log)"
+  },
+  {
+   "step": "start ticketing and wait for readiness",
+   "ok": true,
+   "seconds": 1.8,
+   "detail": "responds over HTTP"
+  },
+  {
+   "step": "start inventory and wait for readiness",
+   "ok": true,
+   "seconds": 1.3,
+   "detail": "responds over HTTP"
+  },
+  {
+   "step": "start fleet and wait for readiness",
+   "ok": true,
+   "seconds": 1.3,
+   "detail": "responds over HTTP"
+  },
+  {
+   "step": "start crm and wait for readiness",
+   "ok": true,
+   "seconds": 1.3,
+   "detail": "responds over HTTP"
+  },
+  {
+   "step": "start servicedesk and wait for readiness",
+   "ok": true,
+   "seconds": 1.3,
+   "detail": "responds over HTTP"
+  },
+  {
+   "step": "start worker and wait for readiness",
+   "ok": true,
+   "seconds": 2.3,
+   "detail": "logged 'worker started'"
+  },
+  {
+   "step": "start api and wait for readiness",
+   "ok": true,
+   "seconds": 2.4,
+   "detail": "GET /api/v1/health 200 (database reachable)"
+  },
+  {
+   "step": "onboard Meridian Fleet (public API)",
+   "ok": true,
+   "seconds": 1.7,
+   "detail": "ok (log .demo\\20261113-041657-5fa4\\logs\\onboard-meridian.log)"
+  },
+  {
+   "step": "customer workflows through the API (Apex and Meridian)",
+   "ok": true,
+   "seconds": 6.7,
+   "detail": ""
+  },
+  {
+   "step": "live ingestion checkpoint: jobs, retry (simulated outage), reprocessing, deletion races",
+   "ok": true,
+   "seconds": 20.9,
+   "detail": ""
+  },
+  {
+   "step": "backup the demo database and prove it restores (isolated restore database)",
+   "ok": true,
+   "seconds": 2.2,
+   "detail": ""
+  }
+ ],
+ "cleanup": [
+  {
+   "resource": "process api (pid 13844)",
+   "result": "stopped"
+  },
+  {
+   "resource": "process worker (pid 28144)",
+   "result": "stopped"
+  },
+  {
+   "resource": "process servicedesk (pid 544)",
+   "result": "stopped"
+  },
+  {
+   "resource": "process crm (pid 17628)",
+   "result": "stopped"
+  },
+  {
+   "resource": "process fleet (pid 27068)",
+   "result": "stopped"
+  },
+  {
+   "resource": "process inventory (pid 25280)",
+   "result": "stopped"
+  },
+  {
+   "resource": "process ticketing (pid 20344)",
+   "result": "stopped"
+  },
+  {
+   "resource": "database eaop_demo_20261113_041657_5fa4",
+   "result": "dropped"
+  }
+ ],
+ "duration_seconds": 60.0,
+ "finished_at": "2026-11-13T04:17:57-05:00",
+ "success": true
+}

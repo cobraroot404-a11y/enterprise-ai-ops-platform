@@ -1,0 +1,4 @@
+# Copy to terraform.tfvars (git-ignored) to override the defaults. Contains no secrets.
+region            = "eu-west-1"
+name_prefix       = "eaop-example"
+db_instance_class = "db.t4g.medium"

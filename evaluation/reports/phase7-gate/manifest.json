@@ -1,0 +1,80 @@
+{
+  "phase": 7,
+  "generated_utc": "2026-11-12T00:39:20.489310+00:00",
+  "hardware": "i7-1165G7, 15.7 GB RAM, CPU-only",
+  "python": "3.10.0",
+  "results": {
+    "backend_full_suite": {
+      "command": "python -m pytest -q",
+      "passed": 322,
+      "failed": 0,
+      "skipped": 13,
+      "note": "13 skipped = 12 real-AI + opt-in FI-10 (run separately)"
+    },
+    "fault_injection": {
+      "command": "RUN_DISRUPTIVE=1 python -m pytest tests/fault_injection -q",
+      "passed": 15,
+      "failed": 0,
+      "scenarios": "FI-01..FI-10, FI-09b, REL-01..REL-04",
+      "report": "evaluation/failure-reports/phase7/fi-report.json"
+    },
+    "uat_deterministic": {
+      "command": "UAT_BACKEND=deterministic python -m pytest tests/acceptance -q",
+      "passed": 20,
+      "failed": 0,
+      "uat_scenarios": "15 of 15"
+    },
+    "uat_real_ai": {
+      "command": "UAT_BACKEND=real python -m pytest tests/acceptance -q",
+      "passed": 20,
+      "failed": 0,
+      "uat_scenarios": "15 of 15",
+      "models": "Ollama qwen2.5:1.5b + MiniLM all-MiniLM-L6-v2"
+    },
+    "real_ai_backend": {
+      "command": "RUN_REAL_AI=1 python -m pytest backend/tests/test_real_ai.py -q",
+      "passed": 12,
+      "failed": 0
+    },
+    "security_ssrf_guards": {
+      "command": "python -m pytest backend/tests/test_connector_egress.py tests/test_environment_guards.py -q",
+      "passed": 90,
+      "failed": 0
+    },
+    "secret_scan": {
+      "command": "python scripts/secret_scan.py",
+      "findings": 0,
+      "files": 390
+    },
+    "frontend": {
+      "typecheck": "clean",
+      "lint": "clean",
+      "vitest": "43 passed",
+      "build": "ok"
+    },
+    "playwright": {
+      "command": "cd frontend && npx playwright test",
+      "passed": 47,
+      "skipped": 1,
+      "note": "skipped = opt-in screenshots; includes accessibility and keyboard specs"
+    },
+    "accessibility": {
+      "tool": "axe-core via @axe-core/playwright, Microsoft Edge",
+      "states": 43,
+      "violations": 0,
+      "claim": "automated checks only; no WCAG conformance claim"
+    },
+    "traceability": {
+      "requirements": 83,
+      "verified": 55,
+      "partially_verified": 20,
+      "not_implemented": 8,
+      "report": "docs/traceability/requirements-traceability-matrix.md"
+    },
+    "observability": {
+      "command": "python -m pytest tests/acceptance/test_observability_evidence.py -q",
+      "evidence": "evaluation/observability/"
+    }
+  },
+  "not_run_this_phase": "Playwright real-AI smoke (3 tests) was not re-run; last result is from Phase 6."
+}

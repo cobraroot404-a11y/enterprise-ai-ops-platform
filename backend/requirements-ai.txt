@@ -1,0 +1,4 @@
+# Real local AI backends (Phase 3). Installed on top of requirements.txt.
+# Windows/Linux note: on Windows the PyPI `torch` wheel is the CPU-only build (no CUDA libraries).
+# Exact tested versions are pinned in requirements-ai.lock.txt.
+sentence-transformers>=6.3,<7

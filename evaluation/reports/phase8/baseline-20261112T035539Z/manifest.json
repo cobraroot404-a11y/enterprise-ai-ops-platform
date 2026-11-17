@@ -1,0 +1,69 @@
+{
+ "run_id": "baseline-20261112T035539Z",
+ "label": "baseline",
+ "command": "python evaluation/phase8/run_baseline.py --reps 3 --label baseline",
+ "started_utc": "2026-11-12T03:55:39.756559+00:00",
+ "finished_utc": "2026-11-12T04:50:28.938590+00:00",
+ "duration_s": 3289.2,
+ "git_commit": "49d3c922c058efdd4645eebd17e538f76e4a84c0",
+ "working_tree_dirty_in_app_code": false,
+ "python": "3.10.0",
+ "os": "Windows-10-10.0.26200-SP0",
+ "hardware": {
+  "timestamp_utc": "2026-11-12T04:50:28.938590+00:00",
+  "os": "Windows-10-10.0.26200-SP0",
+  "cpu": "Intel64 Family 6 Model 140 Stepping 1, GenuineIntel",
+  "cpu_threads": 8,
+  "ram_gb": 15.7,
+  "python": "3.10.0",
+  "docker": "Docker version 29.7.2, build a7dcaa6",
+  "ollama": null,
+  "node": "v24.13.1"
+ },
+ "versions": {
+  "python": "3.10.0",
+  "torch": "2.14.1+cpu",
+  "transformers": "5.20.2",
+  "sentence_transformers": "6.3.0",
+  "huggingface_hub": "2.4.0",
+  "numpy": "2.2.6",
+  "ollama": "0.40.16",
+  "ollama_model": "qwen2.5:1.5b",
+  "ollama_model_digest": "65ec06548149b04c096a120e4a6da9d4017ea809c91734ea5631e89f96ddc57b",
+  "prompt_version": "3",
+  "prompts_sha256": "3710b8b7897780f85600ce5eb007731ae5f38f895790d09c3cdb096a921575c6",
+  "ollama_options": {
+   "temperature": 0,
+   "seed": 7,
+   "num_ctx": 4096,
+   "num_predict": 320
+  },
+  "postgres": "16.15 (Debian 16.15-1.pgdg12+2)",
+  "pgvector": "0.8.7",
+  "embedding_profile": "sentence_transformers:sentence-transformers/all-MiniLM-L6-v2@1110a243fdf4706b3f48f1d95db1a4f5529b4d41:384",
+  "embedding_evidence_threshold_used": 0.5
+ },
+ "node": "v24.13.1",
+ "dataset": {
+  "name": "eval-v2",
+  "version": "eval-v2.0",
+  "split": "dev",
+  "manifest_sha256": "42fec8bc8abea9efff135208127990747d915287e77e8b3d64b65732e7d9cb62",
+  "frozen_splits_sha256": "31d18132ad3d2bd22fdac903c721b2427c67822634d1ceca76204520f880f42f",
+  "queries": 118,
+  "cases": 34
+ },
+ "runtime": {
+  "reps": 3,
+  "ollama_options": {
+   "temperature": 0,
+   "seed": 7,
+   "num_ctx": 4096,
+   "num_predict": 320
+  },
+  "evidence_threshold": 0.5,
+  "embedding_profile": "sentence_transformers:sentence-transformers/all-MiniLM-L6-v2@1110a243fdf4706b3f48f1d95db1a4f5529b4d41:384",
+  "max_concurrent_llm": 2
+ },
+ "isolation": "database eaop_eval2; tenants apex-benchmark and meridian-eval2; mocks on loopback; egress dev-mock policy for those origins only"
+}

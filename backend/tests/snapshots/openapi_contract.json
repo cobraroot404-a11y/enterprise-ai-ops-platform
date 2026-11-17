@@ -1,0 +1,3151 @@
+{
+ "operations": {
+  "DELETE /api/v1/documents/{document_id}": {
+   "body": [],
+   "params": [
+    "header:authorization",
+    "path:document_id*"
+   ],
+   "responses": [
+    "200",
+    "401",
+    "403",
+    "404",
+    "500",
+    "503"
+   ],
+   "secured": true,
+   "success": {
+    "200": "DocumentDeletion"
+   },
+   "tags": [
+    "documents"
+   ]
+  },
+  "DELETE /api/v1/tenants/{tenant_id}/members/{user_id}": {
+   "body": [],
+   "params": [
+    "header:authorization",
+    "path:tenant_id*",
+    "path:user_id*"
+   ],
+   "responses": [
+    "200",
+    "401",
+    "403",
+    "404",
+    "500",
+    "503"
+   ],
+   "secured": true,
+   "success": {
+    "200": "MemberRemoved"
+   },
+   "tags": [
+    "tenants"
+   ]
+  },
+  "GET /api/v1/approvals": {
+   "body": [],
+   "params": [
+    "header:authorization",
+    "query:limit",
+    "query:offset",
+    "query:status"
+   ],
+   "responses": [
+    "200",
+    "401",
+    "422",
+    "500",
+    "503"
+   ],
+   "secured": true,
+   "success": {
+    "200": "Page_ApprovalDecisionOut_|Page_TicketOut_"
+   },
+   "tags": [
+    "approvals"
+   ]
+  },
+  "GET /api/v1/audit": {
+   "body": [],
+   "params": [
+    "header:authorization",
+    "query:action",
+    "query:entity_id",
+    "query:entity_type",
+    "query:limit",
+    "query:offset",
+    "query:q"
+   ],
+   "responses": [
+    "200",
+    "401",
+    "403",
+    "422",
+    "500",
+    "503"
+   ],
+   "secured": true,
+   "success": {
+    "200": "Page_AuditEventItem_"
+   },
+   "tags": [
+    "audit"
+   ]
+  },
+  "GET /api/v1/auth/me": {
+   "body": [],
+   "params": [
+    "header:authorization"
+   ],
+   "responses": [
+    "200",
+    "401",
+    "500",
+    "503"
+   ],
+   "secured": true,
+   "success": {
+    "200": "MeResponse"
+   },
+   "tags": [
+    "auth"
+   ]
+  },
+  "GET /api/v1/connectors": {
+   "body": [],
+   "params": [
+    "header:authorization"
+   ],
+   "responses": [
+    "200",
+    "401",
+    "403",
+    "500",
+    "503"
+   ],
+   "secured": true,
+   "success": {
+    "200": "ConnectorsList"
+   },
+   "tags": [
+    "connectors"
+   ]
+  },
+  "GET /api/v1/connectors/health": {
+   "body": [],
+   "params": [
+    "header:authorization",
+    "query:probe"
+   ],
+   "responses": [
+    "200",
+    "401",
+    "403",
+    "422",
+    "500",
+    "503"
+   ],
+   "secured": true,
+   "success": {
+    "200": "ConnectorsHealth"
+   },
+   "tags": [
+    "connectors"
+   ]
+  },
+  "GET /api/v1/documents": {
+   "body": [],
+   "params": [
+    "header:authorization",
+    "query:kind",
+    "query:limit",
+    "query:offset",
+    "query:order",
+    "query:q",
+    "query:sort"
+   ],
+   "responses": [
+    "200",
+    "401",
+    "422",
+    "500",
+    "503"
+   ],
+   "secured": true,
+   "success": {
+    "200": "Page_DocumentRow_"
+   },
+   "tags": [
+    "documents"
+   ]
+  },
+  "GET /api/v1/documents/{document_id}": {
+   "body": [],
+   "params": [
+    "header:authorization",
+    "path:document_id*"
+   ],
+   "responses": [
+    "200",
+    "401",
+    "404",
+    "500",
+    "503"
+   ],
+   "secured": true,
+   "success": {
+    "200": "DocumentDetail"
+   },
+   "tags": [
+    "documents"
+   ]
+  },
+  "GET /api/v1/evaluation/registry": {
+   "body": [],
+   "params": [
+    "header:authorization",
+    "query:limit",
+    "query:offset",
+    "query:suite"
+   ],
+   "responses": [
+    "200",
+    "401",
+    "403",
+    "422",
+    "500",
+    "503"
+   ],
+   "secured": true,
+   "success": {
+    "200": "EvaluationRegistry"
+   },
+   "tags": [
+    "evaluation"
+   ]
+  },
+  "GET /api/v1/evaluation/reports": {
+   "body": [],
+   "params": [
+    "header:authorization"
+   ],
+   "responses": [
+    "200",
+    "401",
+    "500",
+    "503"
+   ],
+   "secured": true,
+   "success": {
+    "200": "EvaluationReports"
+   },
+   "tags": [
+    "evaluation"
+   ]
+  },
+  "GET /api/v1/health": {
+   "body": [],
+   "params": [],
+   "responses": [
+    "200",
+    "500",
+    "503"
+   ],
+   "secured": false,
+   "success": {
+    "200": "HealthResponse"
+   },
+   "tags": [
+    "health"
+   ]
+  },
+  "GET /api/v1/incidents": {
+   "body": [],
+   "params": [
+    "header:authorization",
+    "query:asset_id",
+    "query:limit",
+    "query:offset",
+    "query:order",
+    "query:priority",
+    "query:q",
+    "query:review_status",
+    "query:sort"
+   ],
+   "responses": [
+    "200",
+    "401",
+    "422",
+    "500",
+    "503"
+   ],
+   "secured": true,
+   "success": {
+    "200": "Page_IncidentOut_"
+   },
+   "tags": [
+    "incidents"
+   ]
+  },
+  "GET /api/v1/incidents/{incident_id}": {
+   "body": [],
+   "params": [
+    "header:authorization",
+    "path:incident_id*"
+   ],
+   "responses": [
+    "200",
+    "401",
+    "404",
+    "500",
+    "503"
+   ],
+   "secured": true,
+   "success": {
+    "200": "IncidentOut"
+   },
+   "tags": [
+    "incidents"
+   ]
+  },
+  "GET /api/v1/incidents/{incident_id}/history": {
+   "body": [],
+   "params": [
+    "header:authorization",
+    "path:incident_id*"
+   ],
+   "responses": [
+    "200",
+    "401",
+    "404",
+    "500",
+    "503"
+   ],
+   "secured": true,
+   "success": {
+    "200": "IncidentHistory"
+   },
+   "tags": [
+    "history"
+   ]
+  },
+  "GET /api/v1/ingestion/jobs": {
+   "body": [],
+   "params": [
+    "header:authorization",
+    "query:document_id",
+    "query:job_type",
+    "query:limit",
+    "query:offset",
+    "query:status"
+   ],
+   "responses": [
+    "200",
+    "401",
+    "422",
+    "500",
+    "503"
+   ],
+   "secured": true,
+   "success": {
+    "200": "Page_IngestionJobOut_"
+   },
+   "tags": [
+    "ingestion"
+   ]
+  },
+  "GET /api/v1/ingestion/jobs/{job_id}": {
+   "body": [],
+   "params": [
+    "header:authorization",
+    "path:job_id*"
+   ],
+   "responses": [
+    "200",
+    "401",
+    "404",
+    "500",
+    "503"
+   ],
+   "secured": true,
+   "success": {
+    "200": "IngestionJobOut"
+   },
+   "tags": [
+    "ingestion"
+   ]
+  },
+  "GET /api/v1/ingestion/status": {
+   "body": [],
+   "params": [
+    "header:authorization"
+   ],
+   "responses": [
+    "200",
+    "401",
+    "500",
+    "503"
+   ],
+   "secured": true,
+   "success": {
+    "200": "IngestionStatus"
+   },
+   "tags": [
+    "ingestion"
+   ]
+  },
+  "GET /api/v1/metrics": {
+   "body": [],
+   "params": [
+    "header:authorization"
+   ],
+   "responses": [
+    "200",
+    "401",
+    "500",
+    "503"
+   ],
+   "secured": true,
+   "success": {
+    "200": "Metrics"
+   },
+   "tags": [
+    "metrics"
+   ]
+  },
+  "GET /api/v1/observability/summary": {
+   "body": [],
+   "params": [
+    "header:authorization"
+   ],
+   "responses": [
+    "200",
+    "401",
+    "500",
+    "503"
+   ],
+   "secured": true,
+   "success": {
+    "200": "ObservabilitySummary"
+   },
+   "tags": [
+    "observability"
+   ]
+  },
+  "GET /api/v1/onboarding/health": {
+   "body": [],
+   "params": [
+    "header:authorization"
+   ],
+   "responses": [
+    "200",
+    "401",
+    "500",
+    "503"
+   ],
+   "secured": true,
+   "success": {
+    "200": "OnboardingHealth"
+   },
+   "tags": [
+    "onboarding"
+   ]
+  },
+  "GET /api/v1/platform/audit": {
+   "body": [],
+   "params": [
+    "header:authorization",
+    "query:limit",
+    "query:offset"
+   ],
+   "responses": [
+    "200",
+    "401",
+    "403",
+    "422",
+    "500",
+    "503"
+   ],
+   "secured": true,
+   "success": {
+    "200": "Page_PlatformAuditItem_"
+   },
+   "tags": [
+    "platform"
+   ]
+  },
+  "GET /api/v1/tenant-profile": {
+   "body": [],
+   "params": [
+    "header:authorization"
+   ],
+   "responses": [
+    "200",
+    "401",
+    "500",
+    "503"
+   ],
+   "secured": true,
+   "success": {
+    "200": "ProfileRead"
+   },
+   "tags": [
+    "tenant-profile"
+   ]
+  },
+  "GET /api/v1/tenants/mine": {
+   "body": [],
+   "params": [
+    "header:authorization"
+   ],
+   "responses": [
+    "200",
+    "401",
+    "500",
+    "503"
+   ],
+   "secured": true,
+   "success": {
+    "200": "TenantsMine"
+   },
+   "tags": [
+    "tenants"
+   ]
+  },
+  "GET /api/v1/tenants/{tenant_id}/members": {
+   "body": [],
+   "params": [
+    "header:authorization",
+    "path:tenant_id*"
+   ],
+   "responses": [
+    "200",
+    "401",
+    "403",
+    "404",
+    "500",
+    "503"
+   ],
+   "secured": true,
+   "success": {
+    "200": "MembersList"
+   },
+   "tags": [
+    "tenants"
+   ]
+  },
+  "GET /api/v1/tickets": {
+   "body": [],
+   "params": [
+    "header:authorization",
+    "query:limit",
+    "query:offset",
+    "query:order",
+    "query:priority",
+    "query:q",
+    "query:sort",
+    "query:state"
+   ],
+   "responses": [
+    "200",
+    "401",
+    "422",
+    "500",
+    "503"
+   ],
+   "secured": true,
+   "success": {
+    "200": "Page_TicketOut_"
+   },
+   "tags": [
+    "tickets"
+   ]
+  },
+  "GET /api/v1/tickets/{ticket_id}": {
+   "body": [],
+   "params": [
+    "header:authorization",
+    "path:ticket_id*"
+   ],
+   "responses": [
+    "200",
+    "401",
+    "404",
+    "500",
+    "503"
+   ],
+   "secured": true,
+   "success": {
+    "200": "TicketOut"
+   },
+   "tags": [
+    "tickets"
+   ]
+  },
+  "GET /api/v1/tickets/{ticket_id}/history": {
+   "body": [],
+   "params": [
+    "header:authorization",
+    "path:ticket_id*"
+   ],
+   "responses": [
+    "200",
+    "401",
+    "404",
+    "500",
+    "503"
+   ],
+   "secured": true,
+   "success": {
+    "200": "TicketHistory"
+   },
+   "tags": [
+    "history"
+   ]
+  },
+  "GET /api/v1/webhook-endpoints": {
+   "body": [],
+   "params": [
+    "header:authorization"
+   ],
+   "responses": [
+    "200",
+    "401",
+    "403",
+    "500",
+    "503"
+   ],
+   "secured": true,
+   "success": {
+    "200": "WebhookEndpointsList"
+   },
+   "tags": [
+    "webhooks"
+   ]
+  },
+  "GET /api/v1/workflows": {
+   "body": [],
+   "params": [
+    "header:authorization",
+    "query:limit",
+    "query:offset",
+    "query:status",
+    "query:ticket_id"
+   ],
+   "responses": [
+    "200",
+    "401",
+    "422",
+    "500",
+    "503"
+   ],
+   "secured": true,
+   "success": {
+    "200": "Page_WorkflowEvent_"
+   },
+   "tags": [
+    "workflows"
+   ]
+  },
+  "PATCH /api/v1/tenants/{tenant_id}/members/{user_id}": {
+   "body": [
+    "MemberUpdate"
+   ],
+   "params": [
+    "header:authorization",
+    "path:tenant_id*",
+    "path:user_id*"
+   ],
+   "responses": [
+    "200",
+    "401",
+    "403",
+    "404",
+    "413",
+    "422",
+    "500",
+    "503"
+   ],
+   "secured": true,
+   "success": {
+    "200": "MemberChange"
+   },
+   "tags": [
+    "tenants"
+   ]
+  },
+  "PATCH /api/v1/tickets/{ticket_id}": {
+   "body": [
+    "TicketUpdate"
+   ],
+   "params": [
+    "header:authorization",
+    "path:ticket_id*"
+   ],
+   "responses": [
+    "200",
+    "401",
+    "403",
+    "404",
+    "409",
+    "413",
+    "422",
+    "500",
+    "503"
+   ],
+   "secured": true,
+   "success": {
+    "200": "TicketOut"
+   },
+   "tags": [
+    "tickets"
+   ]
+  },
+  "PATCH /api/v1/webhook-endpoints/{endpoint_id}": {
+   "body": [
+    "EndpointUpdate"
+   ],
+   "params": [
+    "header:authorization",
+    "path:endpoint_id*"
+   ],
+   "responses": [
+    "200",
+    "401",
+    "403",
+    "404",
+    "409",
+    "413",
+    "422",
+    "500",
+    "503"
+   ],
+   "secured": true,
+   "success": {
+    "200": "WebhookEndpointOut"
+   },
+   "tags": [
+    "webhooks"
+   ]
+  },
+  "POST /api/v1/ai/ask": {
+   "body": [
+    "AskRequest"
+   ],
+   "params": [
+    "header:authorization"
+   ],
+   "responses": [
+    "200",
+    "401",
+    "413",
+    "422",
+    "429",
+    "500",
+    "503"
+   ],
+   "secured": true,
+   "success": {
+    "200": "AskResponse"
+   },
+   "tags": [
+    "ai"
+   ]
+  },
+  "POST /api/v1/approvals/{ticket_id}/decision": {
+   "body": [
+    "Decision"
+   ],
+   "params": [
+    "header:authorization",
+    "path:ticket_id*"
+   ],
+   "responses": [
+    "200",
+    "401",
+    "403",
+    "404",
+    "409",
+    "413",
+    "422",
+    "500",
+    "503"
+   ],
+   "secured": true,
+   "success": {
+    "200": "TicketOut"
+   },
+   "tags": [
+    "approvals"
+   ]
+  },
+  "POST /api/v1/auth/login": {
+   "body": [
+    "LoginRequest"
+   ],
+   "params": [],
+   "responses": [
+    "200",
+    "401",
+    "413",
+    "422",
+    "429",
+    "500",
+    "503"
+   ],
+   "secured": false,
+   "success": {
+    "200": "LoginResponse"
+   },
+   "tags": [
+    "auth"
+   ]
+  },
+  "POST /api/v1/connectors": {
+   "body": [
+    "ConnectorCreate"
+   ],
+   "params": [
+    "header:authorization"
+   ],
+   "responses": [
+    "201",
+    "401",
+    "403",
+    "409",
+    "413",
+    "422",
+    "500",
+    "503"
+   ],
+   "secured": true,
+   "success": {
+    "201": "ConnectorCreated"
+   },
+   "tags": [
+    "connectors"
+   ]
+  },
+  "POST /api/v1/connectors/{connector_id}/sync": {
+   "body": [],
+   "params": [
+    "header:authorization",
+    "path:connector_id*"
+   ],
+   "responses": [
+    "202",
+    "401",
+    "403",
+    "404",
+    "409",
+    "500",
+    "503"
+   ],
+   "secured": true,
+   "success": {
+    "202": "IngestionJobOut"
+   },
+   "tags": [
+    "connectors"
+   ]
+  },
+  "POST /api/v1/documents": {
+   "body": [
+    "Body_upload_document_api_v1_documents_post"
+   ],
+   "params": [
+    "header:authorization"
+   ],
+   "responses": [
+    "201",
+    "401",
+    "403",
+    "413",
+    "415",
+    "422",
+    "429",
+    "500",
+    "503"
+   ],
+   "secured": true,
+   "success": {
+    "201": "DocumentUploaded"
+   },
+   "tags": [
+    "documents"
+   ]
+  },
+  "POST /api/v1/documents/{document_id}/reprocess": {
+   "body": [],
+   "params": [
+    "header:authorization",
+    "path:document_id*"
+   ],
+   "responses": [
+    "202",
+    "401",
+    "403",
+    "404",
+    "409",
+    "500",
+    "503"
+   ],
+   "secured": true,
+   "success": {
+    "202": "IngestionJobOut"
+   },
+   "tags": [
+    "documents"
+   ]
+  },
+  "POST /api/v1/incidents/extract": {
+   "body": [
+    "ExtractRequest"
+   ],
+   "params": [
+    "header:authorization"
+   ],
+   "responses": [
+    "201",
+    "401",
+    "403",
+    "413",
+    "422",
+    "429",
+    "500",
+    "503"
+   ],
+   "secured": true,
+   "success": {
+    "201": "IncidentOut"
+   },
+   "tags": [
+    "incidents"
+   ]
+  },
+  "POST /api/v1/incidents/{incident_id}/measurements/{name}/verify": {
+   "body": [
+    "MeasurementVerification"
+   ],
+   "params": [
+    "header:authorization",
+    "path:incident_id*",
+    "path:name*"
+   ],
+   "responses": [
+    "200",
+    "401",
+    "403",
+    "404",
+    "409",
+    "413",
+    "422",
+    "500",
+    "503"
+   ],
+   "secured": true,
+   "success": {
+    "200": "IncidentOut"
+   },
+   "tags": [
+    "incidents"
+   ]
+  },
+  "POST /api/v1/incidents/{incident_id}/review": {
+   "body": [
+    "IncidentReview"
+   ],
+   "params": [
+    "header:authorization",
+    "path:incident_id*"
+   ],
+   "responses": [
+    "200",
+    "401",
+    "403",
+    "404",
+    "409",
+    "413",
+    "422",
+    "500",
+    "503"
+   ],
+   "secured": true,
+   "success": {
+    "200": "IncidentOut"
+   },
+   "tags": [
+    "incidents"
+   ]
+  },
+  "POST /api/v1/incidents/{incident_id}/verify-asset": {
+   "body": [],
+   "params": [
+    "header:authorization",
+    "path:incident_id*"
+   ],
+   "responses": [
+    "200",
+    "401",
+    "403",
+    "404",
+    "409",
+    "500",
+    "503"
+   ],
+   "secured": true,
+   "success": {
+    "200": "IncidentOut"
+   },
+   "tags": [
+    "incidents"
+   ]
+  },
+  "POST /api/v1/ingestion/jobs/{job_id}/retry": {
+   "body": [],
+   "params": [
+    "header:authorization",
+    "path:job_id*"
+   ],
+   "responses": [
+    "202",
+    "401",
+    "403",
+    "404",
+    "409",
+    "500",
+    "503"
+   ],
+   "secured": true,
+   "success": {
+    "202": "IngestionJobOut"
+   },
+   "tags": [
+    "ingestion"
+   ]
+  },
+  "POST /api/v1/search": {
+   "body": [
+    "SearchRequest"
+   ],
+   "params": [
+    "header:authorization"
+   ],
+   "responses": [
+    "200",
+    "401",
+    "413",
+    "422",
+    "500",
+    "503"
+   ],
+   "secured": true,
+   "success": {
+    "200": "SearchResponse"
+   },
+   "tags": [
+    "search"
+   ]
+  },
+  "POST /api/v1/tenants": {
+   "body": [
+    "TenantCreate"
+   ],
+   "params": [
+    "header:authorization"
+   ],
+   "responses": [
+    "201",
+    "401",
+    "403",
+    "409",
+    "413",
+    "422",
+    "500",
+    "503"
+   ],
+   "secured": true,
+   "success": {
+    "201": "TenantCreated"
+   },
+   "tags": [
+    "tenants"
+   ]
+  },
+  "POST /api/v1/tenants/{tenant_id}/members": {
+   "body": [
+    "MemberCreate"
+   ],
+   "params": [
+    "header:authorization",
+    "path:tenant_id*"
+   ],
+   "responses": [
+    "201",
+    "401",
+    "403",
+    "404",
+    "409",
+    "413",
+    "422",
+    "500",
+    "503"
+   ],
+   "secured": true,
+   "success": {
+    "201": "MemberChange"
+   },
+   "tags": [
+    "tenants"
+   ]
+  },
+  "POST /api/v1/tickets": {
+   "body": [
+    "TicketCreate"
+   ],
+   "params": [
+    "header:authorization"
+   ],
+   "responses": [
+    "201",
+    "401",
+    "403",
+    "404",
+    "409",
+    "413",
+    "422",
+    "500",
+    "503"
+   ],
+   "secured": true,
+   "success": {
+    "201": "TicketOut"
+   },
+   "tags": [
+    "tickets"
+   ]
+  },
+  "POST /api/v1/tickets/{ticket_id}/cancel": {
+   "body": [],
+   "params": [
+    "header:authorization",
+    "path:ticket_id*"
+   ],
+   "responses": [
+    "200",
+    "401",
+    "403",
+    "404",
+    "409",
+    "500",
+    "503"
+   ],
+   "secured": true,
+   "success": {
+    "200": "TicketOut"
+   },
+   "tags": [
+    "tickets"
+   ]
+  },
+  "POST /api/v1/tickets/{ticket_id}/request-approval": {
+   "body": [],
+   "params": [
+    "header:authorization",
+    "path:ticket_id*"
+   ],
+   "responses": [
+    "200",
+    "401",
+    "403",
+    "404",
+    "409",
+    "500",
+    "503"
+   ],
+   "secured": true,
+   "success": {
+    "200": "TicketOut"
+   },
+   "tags": [
+    "tickets"
+   ]
+  },
+  "POST /api/v1/tickets/{ticket_id}/retry": {
+   "body": [],
+   "params": [
+    "header:authorization",
+    "path:ticket_id*"
+   ],
+   "responses": [
+    "200",
+    "401",
+    "403",
+    "404",
+    "409",
+    "500",
+    "503"
+   ],
+   "secured": true,
+   "success": {
+    "200": "TicketOut"
+   },
+   "tags": [
+    "tickets"
+   ]
+  },
+  "POST /api/v1/tickets/{ticket_id}/submit": {
+   "body": [],
+   "params": [
+    "header:authorization",
+    "path:ticket_id*"
+   ],
+   "responses": [
+    "200",
+    "401",
+    "403",
+    "404",
+    "409",
+    "500",
+    "503"
+   ],
+   "secured": true,
+   "success": {
+    "200": "TicketOut"
+   },
+   "tags": [
+    "tickets"
+   ]
+  },
+  "POST /api/v1/webhook-endpoints": {
+   "body": [
+    "EndpointCreate"
+   ],
+   "params": [
+    "header:authorization"
+   ],
+   "responses": [
+    "201",
+    "401",
+    "403",
+    "409",
+    "413",
+    "422",
+    "500",
+    "503"
+   ],
+   "secured": true,
+   "success": {
+    "201": "WebhookEndpointOut"
+   },
+   "tags": [
+    "webhooks"
+   ]
+  },
+  "POST /api/v1/webhooks/{endpoint_id}": {
+   "body": [
+    "inline"
+   ],
+   "params": [
+    "header:x-webhook-delivery-id",
+    "header:x-webhook-signature",
+    "header:x-webhook-timestamp",
+    "path:endpoint_id*"
+   ],
+   "responses": [
+    "202",
+    "401",
+    "409",
+    "413",
+    "415",
+    "422",
+    "429",
+    "500",
+    "503"
+   ],
+   "secured": true,
+   "success": {
+    "202": "WebhookAccepted"
+   },
+   "tags": [
+    "webhooks"
+   ]
+  },
+  "PUT /api/v1/tenant-profile": {
+   "body": [
+    "TenantProfile"
+   ],
+   "params": [
+    "header:authorization"
+   ],
+   "responses": [
+    "200",
+    "401",
+    "403",
+    "413",
+    "422",
+    "500",
+    "503"
+   ],
+   "secured": true,
+   "success": {
+    "200": "ProfileSaved"
+   },
+   "tags": [
+    "tenant-profile"
+   ]
+  }
+ },
+ "schemas": {
+  "ApprovalCounts": {
+   "properties": [
+    "approved",
+    "rejected"
+   ],
+   "required": [
+    "approved",
+    "rejected"
+   ]
+  },
+  "ApprovalDecisionOut": {
+   "properties": [
+    "comment",
+    "decided_at",
+    "decided_by",
+    "decision",
+    "ticket_id"
+   ],
+   "required": [
+    "comment",
+    "decided_at",
+    "decided_by",
+    "decision",
+    "ticket_id"
+   ]
+  },
+  "ApprovalRecord": {
+   "properties": [
+    "comment",
+    "decided_at",
+    "decided_by",
+    "decision"
+   ],
+   "required": [
+    "comment",
+    "decided_at",
+    "decided_by",
+    "decision"
+   ]
+  },
+  "AskRequest": {
+   "properties": [
+    "question"
+   ],
+   "required": [
+    "question"
+   ]
+  },
+  "AskResponse": {
+   "properties": [
+    "answer",
+    "citations",
+    "embedding_backend",
+    "excluded_suspicious",
+    "grounded",
+    "insufficient_evidence",
+    "llm_backend",
+    "llm_model",
+    "problems"
+   ],
+   "required": [
+    "answer",
+    "citations",
+    "embedding_backend",
+    "excluded_suspicious",
+    "grounded",
+    "insufficient_evidence",
+    "llm_backend",
+    "llm_model",
+    "problems"
+   ]
+  },
+  "AuditEventItem": {
+   "properties": [
+    "action",
+    "actor",
+    "actor_type",
+    "correlation_id",
+    "created_at",
+    "details",
+    "entity_id",
+    "entity_type",
+    "id"
+   ],
+   "required": [
+    "action",
+    "actor",
+    "actor_type",
+    "correlation_id",
+    "created_at",
+    "details",
+    "entity_id",
+    "entity_type",
+    "id"
+   ]
+  },
+  "Body_upload_document_api_v1_documents_post": {
+   "properties": [
+    "file",
+    "kind"
+   ],
+   "required": [
+    "file"
+   ]
+  },
+  "Category": {
+   "properties": [
+    "description",
+    "keywords",
+    "name"
+   ],
+   "required": [
+    "keywords",
+    "name"
+   ]
+  },
+  "CitationOut": {
+   "properties": [
+    "chunk_id",
+    "document_id",
+    "filename",
+    "marker",
+    "page_number",
+    "quote",
+    "record_id",
+    "version"
+   ],
+   "required": [
+    "chunk_id",
+    "document_id",
+    "filename",
+    "marker",
+    "quote",
+    "version"
+   ]
+  },
+  "Condition": {
+   "properties": [
+    "category_in",
+    "flag",
+    "gte",
+    "lte",
+    "signal"
+   ],
+   "required": []
+  },
+  "ConnectorCreate": {
+   "properties": [
+    "base_url",
+    "config",
+    "kind",
+    "name",
+    "secret_ref"
+   ],
+   "required": [
+    "base_url",
+    "kind",
+    "name"
+   ]
+  },
+  "ConnectorCreated": {
+   "properties": [
+    "id",
+    "kind",
+    "name"
+   ],
+   "required": [
+    "id",
+    "kind",
+    "name"
+   ]
+  },
+  "ConnectorDelivery": {
+   "properties": [
+    "failed",
+    "last_error",
+    "last_success_at",
+    "retry_pending",
+    "submitted",
+    "submitting"
+   ],
+   "required": [
+    "failed",
+    "last_error",
+    "last_success_at",
+    "retry_pending",
+    "submitted",
+    "submitting"
+   ]
+  },
+  "ConnectorItem": {
+   "properties": [
+    "base_url",
+    "config",
+    "has_secret",
+    "id",
+    "kind",
+    "name"
+   ],
+   "required": [
+    "base_url",
+    "config",
+    "has_secret",
+    "id",
+    "kind",
+    "name"
+   ]
+  },
+  "ConnectorStatus": {
+   "properties": [
+    "base_url",
+    "delivery",
+    "destination_authorized",
+    "destination_reason",
+    "has_secret_ref",
+    "id",
+    "kind",
+    "live_probe",
+    "name",
+    "probe",
+    "secret_configured",
+    "status"
+   ],
+   "required": [
+    "base_url",
+    "destination_authorized",
+    "destination_reason",
+    "has_secret_ref",
+    "id",
+    "kind",
+    "name",
+    "probe",
+    "secret_configured",
+    "status"
+   ]
+  },
+  "ConnectorsHealth": {
+   "properties": [
+    "items"
+   ],
+   "required": [
+    "items"
+   ]
+  },
+  "ConnectorsList": {
+   "properties": [
+    "items"
+   ],
+   "required": [
+    "items"
+   ]
+  },
+  "CounterSample": {
+   "properties": [
+    "labels",
+    "name",
+    "value"
+   ],
+   "required": [
+    "labels",
+    "name",
+    "value"
+   ]
+  },
+  "Decision": {
+   "properties": [
+    "comment",
+    "decision"
+   ],
+   "required": [
+    "decision"
+   ]
+  },
+  "DocumentDeletion": {
+   "properties": [
+    "already_deleted",
+    "cleanup_completed_at",
+    "cleanup_state",
+    "deleted_at",
+    "filename",
+    "id",
+    "lifecycle_status"
+   ],
+   "required": [
+    "already_deleted",
+    "cleanup_completed_at",
+    "cleanup_state",
+    "deleted_at",
+    "filename",
+    "id",
+    "lifecycle_status"
+   ]
+  },
+  "DocumentDetail": {
+   "properties": [
+    "current_version",
+    "filename",
+    "id",
+    "kind",
+    "versions"
+   ],
+   "required": [
+    "current_version",
+    "filename",
+    "id",
+    "kind",
+    "versions"
+   ]
+  },
+  "DocumentRow": {
+   "properties": [
+    "chunk_count",
+    "created_at",
+    "current_version",
+    "filename",
+    "id",
+    "kind",
+    "page_count"
+   ],
+   "required": [
+    "chunk_count",
+    "created_at",
+    "current_version",
+    "filename",
+    "id",
+    "kind",
+    "page_count"
+   ]
+  },
+  "DocumentUploaded": {
+   "properties": [
+    "chunk_count",
+    "document_id",
+    "status",
+    "version"
+   ],
+   "required": [
+    "chunk_count",
+    "document_id",
+    "status",
+    "version"
+   ]
+  },
+  "DocumentVersionRow": {
+   "properties": [
+    "chunks",
+    "created_at",
+    "embedding_backend",
+    "sha256",
+    "size_bytes",
+    "version"
+   ],
+   "required": [
+    "chunks",
+    "created_at",
+    "embedding_backend",
+    "sha256",
+    "size_bytes",
+    "version"
+   ]
+  },
+  "EndpointCreate": {
+   "properties": [
+    "config",
+    "name",
+    "secret_ref"
+   ],
+   "required": [
+    "config",
+    "name",
+    "secret_ref"
+   ]
+  },
+  "EndpointUpdate": {
+   "properties": [
+    "drop_previous_secret",
+    "secret_ref",
+    "status"
+   ],
+   "required": []
+  },
+  "Enrichment": {
+   "properties": [
+    "connector_kind",
+    "label",
+    "path",
+    "required_fields",
+    "template"
+   ],
+   "required": [
+    "connector_kind",
+    "label",
+    "path",
+    "template"
+   ]
+  },
+  "ErrorDetail": {
+   "properties": [
+    "loc",
+    "msg"
+   ],
+   "required": [
+    "loc",
+    "msg"
+   ]
+  },
+  "ErrorInfo": {
+   "properties": [
+    "code",
+    "correlation_id",
+    "details",
+    "message"
+   ],
+   "required": [
+    "code",
+    "correlation_id",
+    "message"
+   ]
+  },
+  "ErrorResponse": {
+   "properties": [
+    "error"
+   ],
+   "required": [
+    "error"
+   ]
+  },
+  "EvaluationBackends": {
+   "properties": [
+    "embedding",
+    "llm"
+   ],
+   "required": []
+  },
+  "EvaluationHardware": {
+   "properties": [
+    "cpu",
+    "gpu",
+    "os",
+    "ram_gb"
+   ],
+   "required": [
+    "cpu",
+    "gpu",
+    "os",
+    "ram_gb"
+   ]
+  },
+  "EvaluationMetrics": {
+   "properties": [
+    "citation_correctness",
+    "correct_refusals",
+    "duplicate_tickets",
+    "e2e_median_s",
+    "e2e_p95_s",
+    "groundedness_rate",
+    "llm_inference_median_s",
+    "llm_inference_p95_s",
+    "mrr",
+    "precision_at_5",
+    "recall_at_5",
+    "structured_validity"
+   ],
+   "required": [
+    "citation_correctness",
+    "correct_refusals",
+    "duplicate_tickets",
+    "e2e_median_s",
+    "e2e_p95_s",
+    "groundedness_rate",
+    "llm_inference_median_s",
+    "llm_inference_p95_s",
+    "mrr",
+    "precision_at_5",
+    "recall_at_5",
+    "structured_validity"
+   ]
+  },
+  "EvaluationRegistry": {
+   "properties": [
+    "items",
+    "limit",
+    "offset",
+    "total"
+   ],
+   "required": [
+    "items",
+    "limit",
+    "offset",
+    "total"
+   ]
+  },
+  "EvaluationRegistryRun": {
+   "properties": [
+    "command",
+    "dataset",
+    "duration_s",
+    "finished_at",
+    "git_commit",
+    "label",
+    "manifest_path",
+    "manifest_sha256",
+    "run_id",
+    "started_at",
+    "suite"
+   ],
+   "required": [
+    "manifest_path",
+    "manifest_sha256",
+    "run_id",
+    "suite"
+   ]
+  },
+  "EvaluationReports": {
+   "properties": [
+    "available",
+    "disclaimer",
+    "fault_injection",
+    "runs",
+    "smoke",
+    "targets"
+   ],
+   "required": [
+    "available",
+    "disclaimer",
+    "fault_injection",
+    "runs",
+    "smoke",
+    "targets"
+   ]
+  },
+  "EvaluationRun": {
+   "properties": [
+    "backends",
+    "command",
+    "dataset",
+    "evidence_class",
+    "group",
+    "hardware",
+    "has_note",
+    "id",
+    "metrics",
+    "started_utc",
+    "versions"
+   ],
+   "required": [
+    "backends",
+    "command",
+    "dataset",
+    "evidence_class",
+    "group",
+    "hardware",
+    "has_note",
+    "id",
+    "metrics",
+    "started_utc",
+    "versions"
+   ]
+  },
+  "EvaluationTarget": {
+   "properties": [
+    "actual",
+    "id",
+    "label",
+    "op",
+    "status",
+    "value"
+   ],
+   "required": [
+    "actual",
+    "id",
+    "label",
+    "op",
+    "status",
+    "value"
+   ]
+  },
+  "EvaluationVersions": {
+   "properties": [
+    "embedding_profile",
+    "ollama",
+    "ollama_model",
+    "ollama_model_digest",
+    "postgres",
+    "python"
+   ],
+   "required": [
+    "embedding_profile",
+    "ollama",
+    "ollama_model",
+    "ollama_model_digest",
+    "postgres",
+    "python"
+   ]
+  },
+  "EvidenceLocation": {
+   "properties": [
+    "end",
+    "field",
+    "start",
+    "value_end",
+    "value_start"
+   ],
+   "required": []
+  },
+  "ExtractRequest": {
+   "properties": [
+    "numeric_locale",
+    "observations",
+    "report_text"
+   ],
+   "required": [
+    "report_text"
+   ]
+  },
+  "FaultInjectionItem": {
+   "properties": [
+    "id",
+    "name",
+    "passed"
+   ],
+   "required": [
+    "id",
+    "name",
+    "passed"
+   ]
+  },
+  "FaultInjectionSummary": {
+   "properties": [
+    "failed",
+    "generated_utc",
+    "items",
+    "passed",
+    "scenarios",
+    "source"
+   ],
+   "required": [
+    "failed",
+    "generated_utc",
+    "items",
+    "passed",
+    "scenarios",
+    "source"
+   ]
+  },
+  "HealthResponse": {
+   "properties": [
+    "embedding_backend",
+    "llm_backend",
+    "status"
+   ],
+   "required": [
+    "embedding_backend",
+    "llm_backend",
+    "status"
+   ]
+  },
+  "HistoryEvent": {
+   "properties": [
+    "action",
+    "actor",
+    "actor_type",
+    "created_at",
+    "details",
+    "id"
+   ],
+   "required": [
+    "action",
+    "actor",
+    "actor_type",
+    "created_at",
+    "details",
+    "id"
+   ]
+  },
+  "IncidentHistory": {
+   "properties": [
+    "events",
+    "incident_id",
+    "tickets"
+   ],
+   "required": [
+    "events",
+    "incident_id",
+    "tickets"
+   ]
+  },
+  "IncidentOut": {
+   "properties": [
+    "asset_id",
+    "asset_verified",
+    "category",
+    "citations",
+    "created_at",
+    "extraction_backend",
+    "id",
+    "measurements",
+    "notes",
+    "priority",
+    "recommended_action",
+    "related_incidents",
+    "report_text",
+    "review_status",
+    "review_urgency",
+    "symptoms"
+   ],
+   "required": [
+    "asset_id",
+    "asset_verified",
+    "category",
+    "citations",
+    "created_at",
+    "extraction_backend",
+    "id",
+    "measurements",
+    "notes",
+    "priority",
+    "recommended_action",
+    "related_incidents",
+    "report_text",
+    "review_status",
+    "review_urgency",
+    "symptoms"
+   ]
+  },
+  "IncidentReview": {
+   "properties": [
+    "comment",
+    "decision"
+   ],
+   "required": [
+    "comment",
+    "decision"
+   ]
+  },
+  "IncidentReviewCounts": {
+   "properties": [
+    "accepted",
+    "cleared_without_review",
+    "extracted",
+    "needs_review_now",
+    "rejected",
+    "required_review",
+    "review_required_rate"
+   ],
+   "required": [
+    "accepted",
+    "cleared_without_review",
+    "extracted",
+    "needs_review_now",
+    "rejected",
+    "required_review",
+    "review_required_rate"
+   ]
+  },
+  "IncidentTicketRef": {
+   "properties": [
+    "external_ticket_id",
+    "id",
+    "state"
+   ],
+   "required": [
+    "external_ticket_id",
+    "id",
+    "state"
+   ]
+  },
+  "IngestionJobOut": {
+   "properties": [
+    "attempts",
+    "chunks",
+    "completed_at",
+    "connector_id",
+    "correlation_id",
+    "created_at",
+    "document_id",
+    "endpoint_id",
+    "error_code",
+    "error_detail",
+    "filename",
+    "from_generation",
+    "id",
+    "job_type",
+    "max_attempts",
+    "next_attempt_at",
+    "outcome",
+    "processing_config",
+    "requested_by",
+    "source_version",
+    "status",
+    "sync",
+    "to_generation",
+    "updated_at"
+   ],
+   "required": [
+    "attempts",
+    "chunks",
+    "completed_at",
+    "connector_id",
+    "correlation_id",
+    "created_at",
+    "document_id",
+    "endpoint_id",
+    "error_code",
+    "error_detail",
+    "filename",
+    "from_generation",
+    "id",
+    "job_type",
+    "max_attempts",
+    "next_attempt_at",
+    "outcome",
+    "processing_config",
+    "requested_by",
+    "source_version",
+    "status",
+    "sync",
+    "to_generation",
+    "updated_at"
+   ]
+  },
+  "IngestionStatus": {
+   "properties": [
+    "chunks",
+    "documents_versions"
+   ],
+   "required": [
+    "chunks",
+    "documents_versions"
+   ]
+  },
+  "KindMapping": {
+   "properties": [
+    "columns",
+    "id_field"
+   ],
+   "required": []
+  },
+  "LiveProbe": {
+   "properties": [
+    "checked_at",
+    "duration_ms",
+    "http_status",
+    "status"
+   ],
+   "required": [
+    "checked_at",
+    "duration_ms",
+    "http_status",
+    "status"
+   ]
+  },
+  "LoginRequest": {
+   "properties": [
+    "email",
+    "password",
+    "tenant"
+   ],
+   "required": [
+    "email",
+    "password"
+   ]
+  },
+  "LoginResponse": {
+   "properties": [
+    "access_token",
+    "role",
+    "tenant_id",
+    "token_type",
+    "user"
+   ],
+   "required": [
+    "access_token",
+    "token_type",
+    "user"
+   ]
+  },
+  "LoginUser": {
+   "properties": [
+    "email",
+    "full_name",
+    "id"
+   ],
+   "required": [
+    "email",
+    "full_name",
+    "id"
+   ]
+  },
+  "MeResponse": {
+   "properties": [
+    "email",
+    "full_name",
+    "id",
+    "is_platform_admin",
+    "role",
+    "tenant_id"
+   ],
+   "required": [
+    "email",
+    "full_name",
+    "id",
+    "is_platform_admin"
+   ]
+  },
+  "MeasurementRecord": {
+   "properties": [
+    "asset_id",
+    "candidate_value",
+    "candidate_values",
+    "context_type",
+    "converted",
+    "eligible_for_numeric_priority",
+    "evidence_class",
+    "evidence_location",
+    "evidence_span",
+    "implied_priority",
+    "incident_id",
+    "measurement_type",
+    "method",
+    "model_proposed_value",
+    "name",
+    "normalized_unit",
+    "normalized_value",
+    "numeric_locale",
+    "numeric_notation",
+    "observation_id",
+    "observation_timestamp",
+    "original_unit",
+    "original_value",
+    "potentially_critical",
+    "provenance",
+    "reason",
+    "review_required",
+    "simulated",
+    "simulation_source_id",
+    "source",
+    "source_document_id",
+    "source_text",
+    "status",
+    "temporal_status",
+    "tenant_id",
+    "trust_status",
+    "unit",
+    "value",
+    "verification",
+    "verification_comment",
+    "verification_reason",
+    "verification_status",
+    "verified_at",
+    "verified_by"
+   ],
+   "required": [
+    "name",
+    "status"
+   ]
+  },
+  "MeasurementVerification": {
+   "properties": [
+    "comment",
+    "decision",
+    "expected_trust_status"
+   ],
+   "required": [
+    "comment",
+    "decision",
+    "expected_trust_status"
+   ]
+  },
+  "Member": {
+   "properties": [
+    "email",
+    "full_name",
+    "role",
+    "user_id"
+   ],
+   "required": [
+    "email",
+    "full_name",
+    "role",
+    "user_id"
+   ]
+  },
+  "MemberChange": {
+   "properties": [
+    "role",
+    "user_id"
+   ],
+   "required": [
+    "role",
+    "user_id"
+   ]
+  },
+  "MemberCreate": {
+   "properties": [
+    "email",
+    "full_name",
+    "password",
+    "role"
+   ],
+   "required": [
+    "email",
+    "full_name",
+    "password",
+    "role"
+   ]
+  },
+  "MemberRemoved": {
+   "properties": [
+    "removed"
+   ],
+   "required": [
+    "removed"
+   ]
+  },
+  "MemberUpdate": {
+   "properties": [
+    "role"
+   ],
+   "required": [
+    "role"
+   ]
+  },
+  "MembersList": {
+   "properties": [
+    "items"
+   ],
+   "required": [
+    "items"
+   ]
+  },
+  "Metrics": {
+   "properties": [
+    "approvals_decided",
+    "avg_approval_turnaround_seconds",
+    "dead_letters",
+    "documents",
+    "documents_by_kind",
+    "incidents",
+    "incidents_by_priority",
+    "incidents_by_review_status",
+    "outbox_by_status",
+    "submission_attempts",
+    "tickets_by_state",
+    "tickets_needing_retries"
+   ],
+   "required": [
+    "approvals_decided",
+    "avg_approval_turnaround_seconds",
+    "dead_letters",
+    "documents",
+    "documents_by_kind",
+    "incidents",
+    "incidents_by_priority",
+    "incidents_by_review_status",
+    "outbox_by_status",
+    "submission_attempts",
+    "tickets_by_state",
+    "tickets_needing_retries"
+   ]
+  },
+  "ObservabilityDatabase": {
+   "properties": [
+    "approvals",
+    "incident_review",
+    "submission",
+    "ticket_error_classes",
+    "ticket_transitions"
+   ],
+   "required": [
+    "approvals",
+    "incident_review",
+    "submission",
+    "ticket_error_classes",
+    "ticket_transitions"
+   ]
+  },
+  "ObservabilityProcess": {
+   "properties": [
+    "counters",
+    "process_started_at",
+    "timers",
+    "uptime_s"
+   ],
+   "required": [
+    "counters",
+    "process_started_at",
+    "timers",
+    "uptime_s"
+   ]
+  },
+  "ObservabilitySummary": {
+   "properties": [
+    "database",
+    "process",
+    "scope"
+   ],
+   "required": [
+    "database",
+    "process",
+    "scope"
+   ]
+  },
+  "OnboardingCheck": {
+   "properties": [
+    "detail",
+    "id",
+    "label",
+    "status"
+   ],
+   "required": [
+    "detail",
+    "id",
+    "label",
+    "status"
+   ]
+  },
+  "OnboardingHealth": {
+   "properties": [
+    "checks",
+    "passed",
+    "total"
+   ],
+   "required": [
+    "checks",
+    "passed",
+    "total"
+   ]
+  },
+  "Page_ApprovalDecisionOut_": {
+   "properties": [
+    "items",
+    "limit",
+    "offset",
+    "total"
+   ],
+   "required": [
+    "items",
+    "limit",
+    "offset",
+    "total"
+   ]
+  },
+  "Page_AuditEventItem_": {
+   "properties": [
+    "items",
+    "limit",
+    "offset",
+    "total"
+   ],
+   "required": [
+    "items",
+    "limit",
+    "offset",
+    "total"
+   ]
+  },
+  "Page_DocumentRow_": {
+   "properties": [
+    "items",
+    "limit",
+    "offset",
+    "total"
+   ],
+   "required": [
+    "items",
+    "limit",
+    "offset",
+    "total"
+   ]
+  },
+  "Page_IncidentOut_": {
+   "properties": [
+    "items",
+    "limit",
+    "offset",
+    "total"
+   ],
+   "required": [
+    "items",
+    "limit",
+    "offset",
+    "total"
+   ]
+  },
+  "Page_IngestionJobOut_": {
+   "properties": [
+    "items",
+    "limit",
+    "offset",
+    "total"
+   ],
+   "required": [
+    "items",
+    "limit",
+    "offset",
+    "total"
+   ]
+  },
+  "Page_PlatformAuditItem_": {
+   "properties": [
+    "items",
+    "limit",
+    "offset",
+    "total"
+   ],
+   "required": [
+    "items",
+    "limit",
+    "offset",
+    "total"
+   ]
+  },
+  "Page_TicketOut_": {
+   "properties": [
+    "items",
+    "limit",
+    "offset",
+    "total"
+   ],
+   "required": [
+    "items",
+    "limit",
+    "offset",
+    "total"
+   ]
+  },
+  "Page_WorkflowEvent_": {
+   "properties": [
+    "items",
+    "limit",
+    "offset",
+    "total"
+   ],
+   "required": [
+    "items",
+    "limit",
+    "offset",
+    "total"
+   ]
+  },
+  "PlatformAuditItem": {
+   "properties": [
+    "action",
+    "actor_id",
+    "created_at",
+    "details",
+    "id"
+   ],
+   "required": [
+    "action",
+    "created_at",
+    "details",
+    "id"
+   ]
+  },
+  "PriorityRule": {
+   "properties": [
+    "any",
+    "priority"
+   ],
+   "required": [
+    "any",
+    "priority"
+   ]
+  },
+  "ProcessingConfig": {
+   "properties": [
+    "embedding_backend",
+    "embedding_model",
+    "index_prefix",
+    "safety_heuristics"
+   ],
+   "required": [
+    "embedding_backend",
+    "embedding_model",
+    "index_prefix",
+    "safety_heuristics"
+   ]
+  },
+  "ProfileRead": {
+   "properties": [
+    "profile",
+    "updated_at",
+    "using_defaults",
+    "version"
+   ],
+   "required": [
+    "profile",
+    "updated_at",
+    "using_defaults",
+    "version"
+   ]
+  },
+  "ProfileSaved": {
+   "properties": [
+    "version"
+   ],
+   "required": [
+    "version"
+   ]
+  },
+  "ProvenanceEnvelope": {
+   "properties": [
+    "channel",
+    "client_source_label",
+    "envelope_version",
+    "establishes_truth",
+    "evidence_location",
+    "evidence_span",
+    "extraction_origin",
+    "incident_id",
+    "observation_id",
+    "original_status",
+    "original_trust_status",
+    "simulation_source_id",
+    "source_available",
+    "source_document_id",
+    "source_field",
+    "source_missing_reason",
+    "source_type",
+    "submitted_by",
+    "tenant_id",
+    "trust_class"
+   ],
+   "required": [
+    "channel",
+    "client_source_label",
+    "envelope_version",
+    "establishes_truth",
+    "evidence_location",
+    "evidence_span",
+    "extraction_origin",
+    "incident_id",
+    "observation_id",
+    "original_status",
+    "simulation_source_id",
+    "source_available",
+    "source_document_id",
+    "source_field",
+    "source_missing_reason",
+    "source_type",
+    "submitted_by",
+    "tenant_id",
+    "trust_class"
+   ]
+  },
+  "RelatedIncidentOut": {
+   "properties": [
+    "chunk_id",
+    "filename",
+    "record_id",
+    "same_asset",
+    "summary"
+   ],
+   "required": [
+    "chunk_id",
+    "filename",
+    "record_id",
+    "same_asset",
+    "summary"
+   ]
+  },
+  "SearchHit": {
+   "properties": [
+    "chunk_id",
+    "document_id",
+    "filename",
+    "kind",
+    "overlap",
+    "page_number",
+    "record_id",
+    "score",
+    "similarity",
+    "suspicious",
+    "text",
+    "version"
+   ],
+   "required": [
+    "chunk_id",
+    "document_id",
+    "filename",
+    "kind",
+    "overlap",
+    "page_number",
+    "record_id",
+    "score",
+    "similarity",
+    "suspicious",
+    "text",
+    "version"
+   ]
+  },
+  "SearchRequest": {
+   "properties": [
+    "k",
+    "kinds",
+    "query"
+   ],
+   "required": [
+    "query"
+   ]
+  },
+  "SearchResponse": {
+   "properties": [
+    "embedding_backend",
+    "items"
+   ],
+   "required": [
+    "embedding_backend",
+    "items"
+   ]
+  },
+  "Signal": {
+   "properties": [
+    "name",
+    "regex",
+    "unit"
+   ],
+   "required": [
+    "name",
+    "regex"
+   ]
+  },
+  "SimulationClaim": {
+   "properties": [
+    "signature",
+    "source_id"
+   ],
+   "required": [
+    "signature",
+    "source_id"
+   ]
+  },
+  "SizeLimitErrorInfo": {
+   "properties": [
+    "code",
+    "message"
+   ],
+   "required": [
+    "code",
+    "message"
+   ]
+  },
+  "SizeLimitErrorResponse": {
+   "properties": [
+    "error"
+   ],
+   "required": [
+    "error"
+   ]
+  },
+  "SmokeModels": {
+   "properties": [
+    "embedding_profile",
+    "ollama_model"
+   ],
+   "required": [
+    "embedding_profile",
+    "ollama_model"
+   ]
+  },
+  "SmokeRun": {
+   "properties": [
+    "checks_passed",
+    "checks_total",
+    "failed",
+    "id",
+    "label",
+    "models",
+    "started_utc"
+   ],
+   "required": [
+    "checks_passed",
+    "checks_total",
+    "failed",
+    "id",
+    "label",
+    "models",
+    "started_utc"
+   ]
+  },
+  "StructuredObservation": {
+   "properties": [
+    "asset_id",
+    "measurement_type",
+    "observed_at",
+    "simulation",
+    "source",
+    "unit",
+    "value"
+   ],
+   "required": [
+    "asset_id",
+    "measurement_type",
+    "unit",
+    "value"
+   ]
+  },
+  "SubmissionCounts": {
+   "properties": [
+    "blocked_by_release_controls",
+    "dead_lettered",
+    "retries_scheduled",
+    "submitted"
+   ],
+   "required": [
+    "blocked_by_release_controls",
+    "dead_lettered",
+    "retries_scheduled",
+    "submitted"
+   ]
+  },
+  "Symptom": {
+   "properties": [
+    "keywords",
+    "name"
+   ],
+   "required": [
+    "keywords",
+    "name"
+   ]
+  },
+  "SyncSummary": {
+   "properties": [
+    "conflict",
+    "created",
+    "duplicate_in_sync",
+    "invalid",
+    "linked_duplicate",
+    "pages",
+    "rejections",
+    "seen",
+    "skipped_deleted",
+    "tombstoned_changed",
+    "truncated",
+    "unchanged",
+    "updated"
+   ],
+   "required": [
+    "conflict",
+    "created",
+    "duplicate_in_sync",
+    "invalid",
+    "linked_duplicate",
+    "pages",
+    "rejections",
+    "seen",
+    "skipped_deleted",
+    "tombstoned_changed",
+    "truncated",
+    "unchanged",
+    "updated"
+   ]
+  },
+  "TargetActual": {
+   "properties": [
+    "max",
+    "min",
+    "runs"
+   ],
+   "required": [
+    "max",
+    "min",
+    "runs"
+   ]
+  },
+  "TenantCreate": {
+   "properties": [
+    "name",
+    "slug"
+   ],
+   "required": [
+    "name",
+    "slug"
+   ]
+  },
+  "TenantCreated": {
+   "properties": [
+    "id",
+    "name",
+    "slug"
+   ],
+   "required": [
+    "id",
+    "name",
+    "slug"
+   ]
+  },
+  "TenantMineItem": {
+   "properties": [
+    "id",
+    "name",
+    "role",
+    "slug"
+   ],
+   "required": [
+    "id",
+    "name",
+    "role",
+    "slug"
+   ]
+  },
+  "TenantProfile": {
+   "properties": [
+    "asset_id_pattern",
+    "asset_label",
+    "categories",
+    "default_priority",
+    "document_kinds",
+    "enrichments",
+    "field_maps",
+    "guidance_kinds",
+    "history_kind",
+    "priority_rules",
+    "register_kind",
+    "safety_keywords",
+    "signals",
+    "symptoms"
+   ],
+   "required": [
+    "asset_id_pattern",
+    "categories",
+    "guidance_kinds",
+    "priority_rules",
+    "register_kind"
+   ]
+  },
+  "TenantsMine": {
+   "properties": [
+    "items"
+   ],
+   "required": [
+    "items"
+   ]
+  },
+  "TicketCreate": {
+   "properties": [
+    "incident_id"
+   ],
+   "required": [
+    "incident_id"
+   ]
+  },
+  "TicketHistory": {
+   "properties": [
+    "approvals",
+    "events",
+    "ticket_id"
+   ],
+   "required": [
+    "approvals",
+    "events",
+    "ticket_id"
+   ]
+  },
+  "TicketOut": {
+   "properties": [
+    "attempts",
+    "created_at",
+    "created_by",
+    "description",
+    "external_ticket_id",
+    "id",
+    "incident_id",
+    "last_error",
+    "priority",
+    "state",
+    "submitted_at",
+    "title",
+    "updated_at"
+   ],
+   "required": [
+    "attempts",
+    "created_at",
+    "created_by",
+    "description",
+    "external_ticket_id",
+    "id",
+    "incident_id",
+    "last_error",
+    "priority",
+    "state",
+    "submitted_at",
+    "title",
+    "updated_at"
+   ]
+  },
+  "TicketTransition": {
+   "properties": [
+    "count",
+    "from",
+    "to"
+   ],
+   "required": [
+    "count",
+    "from",
+    "to"
+   ]
+  },
+  "TicketUpdate": {
+   "properties": [
+    "description",
+    "priority",
+    "title"
+   ],
+   "required": []
+  },
+  "TimerSummary": {
+   "properties": [
+    "count",
+    "labels",
+    "max_s",
+    "mean_s",
+    "name",
+    "p50_s",
+    "p95_s",
+    "window"
+   ],
+   "required": [
+    "count",
+    "labels",
+    "max_s",
+    "mean_s",
+    "name",
+    "p50_s",
+    "p95_s",
+    "window"
+   ]
+  },
+  "VerificationBlock": {
+   "properties": [
+    "applied_rule",
+    "audit_event_id",
+    "comment",
+    "decision",
+    "incident_id",
+    "observation_id",
+    "priority_after",
+    "priority_before",
+    "provenance_envelope_unchanged",
+    "reviewed_at",
+    "reviewer_id",
+    "transition"
+   ],
+   "required": [
+    "applied_rule",
+    "comment",
+    "decision",
+    "incident_id",
+    "observation_id",
+    "priority_after",
+    "priority_before",
+    "provenance_envelope_unchanged",
+    "reviewed_at",
+    "reviewer_id",
+    "transition"
+   ]
+  },
+  "WebhookAccepted": {
+   "properties": [
+    "delivery_id",
+    "job_id",
+    "status"
+   ],
+   "required": [
+    "delivery_id",
+    "job_id",
+    "status"
+   ]
+  },
+  "WebhookConfigOut": {
+   "properties": [
+    "document_kind",
+    "id_field",
+    "max_record_bytes",
+    "max_records",
+    "record_path",
+    "reject_policy",
+    "required_fields",
+    "version_field"
+   ],
+   "required": [
+    "document_kind",
+    "id_field",
+    "max_record_bytes",
+    "max_records",
+    "record_path",
+    "reject_policy",
+    "required_fields",
+    "version_field"
+   ]
+  },
+  "WebhookEndpointOut": {
+   "properties": [
+    "config",
+    "created_at",
+    "has_previous_secret",
+    "id",
+    "name",
+    "receive_path",
+    "secret_configured",
+    "status",
+    "updated_at"
+   ],
+   "required": [
+    "config",
+    "created_at",
+    "has_previous_secret",
+    "id",
+    "name",
+    "receive_path",
+    "secret_configured",
+    "status",
+    "updated_at"
+   ]
+  },
+  "WebhookEndpointsList": {
+   "properties": [
+    "items"
+   ],
+   "required": [
+    "items"
+   ]
+  },
+  "WorkflowEvent": {
+   "properties": [
+    "attempts",
+    "created_at",
+    "id",
+    "last_error",
+    "processed_at",
+    "status",
+    "ticket_id",
+    "topic"
+   ],
+   "required": [
+    "attempts",
+    "created_at",
+    "id",
+    "last_error",
+    "processed_at",
+    "status",
+    "ticket_id",
+    "topic"
+   ]
+  }
+ }
+}

@@ -1,0 +1,160 @@
+{
+  "generated_utc": "2026-11-11T23:43:35.105662+00:00",
+  "command": "python -m pytest tests/fault_injection -q (set RUN_DISRUPTIVE=1 for FI-10)",
+  "environment": {
+    "backends": "deterministic test-only",
+    "database": "eaop_test (PostgreSQL 16 + pgvector)",
+    "mock_services": "local ticketing and inventory mocks",
+    "python": "3.10.0"
+  },
+  "summary": {
+    "scenarios": 11,
+    "passed": 11,
+    "failed": 0
+  },
+  "scenarios": [
+    {
+      "id": "FI-01",
+      "name": "HTTP 503 outage",
+      "initial_state": "Ticket APPROVED with a pending outbox event; mock ticketing healthy",
+      "injected_fault": "Mock ticketing fails the next 2 request(s) with '503'",
+      "expected_behavior": "Worker classifies the error as transient, retries with backoff, never duplicates, ends SUBMITTED",
+      "actual_behavior": "worker outcomes ['retry_scheduled', 'retry_scheduled', 'submitted']; attempts=3; external requests=3",
+      "recovery_action": "automatic exponential-backoff retries via the transactional outbox",
+      "final_state": "ticket SUBMITTED with external id MNT-1001; 1 external ticket(s) exist",
+      "passed": true,
+      "error": "",
+      "recorded_utc": "2026-11-11T23:42:03.141518+00:00"
+    },
+    {
+      "id": "FI-02",
+      "name": "HTTP 429 rate limiting",
+      "initial_state": "Ticket APPROVED with a pending outbox event; mock ticketing healthy",
+      "injected_fault": "Mock ticketing fails the next 2 request(s) with '429'",
+      "expected_behavior": "Worker classifies the error as transient, retries with backoff, never duplicates, ends SUBMITTED",
+      "actual_behavior": "worker outcomes ['retry_scheduled', 'retry_scheduled', 'submitted']; attempts=3; external requests=3",
+      "recovery_action": "automatic exponential-backoff retries via the transactional outbox",
+      "final_state": "ticket SUBMITTED with external id MNT-1002; 1 external ticket(s) exist",
+      "passed": true,
+      "error": "",
+      "recorded_utc": "2026-11-11T23:42:04.025583+00:00"
+    },
+    {
+      "id": "FI-03",
+      "name": "Network timeout",
+      "initial_state": "Ticket APPROVED with a pending outbox event; mock ticketing healthy",
+      "injected_fault": "Mock ticketing fails the next 1 request(s) with 'timeout'",
+      "expected_behavior": "Worker classifies the error as transient, retries with backoff, never duplicates, ends SUBMITTED",
+      "actual_behavior": "worker outcomes ['retry_scheduled', 'submitted']; attempts=2; external requests=2",
+      "recovery_action": "automatic exponential-backoff retries via the transactional outbox",
+      "final_state": "ticket SUBMITTED with external id MNT-1003; 1 external ticket(s) exist",
+      "passed": true,
+      "error": "",
+      "recorded_utc": "2026-11-11T23:42:04.860129+00:00"
+    },
+    {
+      "id": "FI-04",
+      "name": "Malformed API response",
+      "initial_state": "Ticket APPROVED with a pending outbox event; mock ticketing healthy",
+      "injected_fault": "Mock ticketing fails the next 1 request(s) with 'malformed'",
+      "expected_behavior": "Worker classifies the error as transient, retries with backoff, never duplicates, ends SUBMITTED",
+      "actual_behavior": "worker outcomes ['retry_scheduled', 'submitted']; attempts=2; external requests=2",
+      "recovery_action": "automatic exponential-backoff retries via the transactional outbox",
+      "final_state": "ticket SUBMITTED with external id MNT-1004; 1 external ticket(s) exist",
+      "passed": true,
+      "error": "",
+      "recorded_utc": "2026-11-11T23:42:06.023998+00:00"
+    },
+    {
+      "id": "FI-05",
+      "name": "Unauthorized cross-tenant access",
+      "initial_state": "Tenant A has a pending ticket, incident, documents",
+      "injected_fault": "Tenant B's most privileged users attempt 40+ reads/writes/actions on A's resources (all namespaces)",
+      "expected_behavior": "Every attempt denied or hidden; zero successful cross-tenant accesses; A's data unchanged",
+      "actual_behavior": "40 cross-tenant attempts, 0 succeeded; vector search leaked 0 chunks",
+      "recovery_action": "none needed (requests rejected)",
+      "final_state": "ticket still PENDING_APPROVAL",
+      "passed": true,
+      "error": "",
+      "recorded_utc": "2026-11-11T23:42:06.751445+00:00"
+    },
+    {
+      "id": "FI-06",
+      "name": "Concurrent approvals",
+      "initial_state": "Ticket PENDING_APPROVAL",
+      "injected_fault": "8 supervisors approve the same ticket at the same instant",
+      "expected_behavior": "Exactly one decision wins (200); the rest conflict (409); one approval row; one external ticket",
+      "actual_behavior": "status codes [200, 409, 409, 409, 409, 409, 409, 409]; approval rows=1; worker ['submitted']",
+      "recovery_action": "row lock + unique approval constraint serialise decisions",
+      "final_state": "ticket SUBMITTED; 1 external ticket",
+      "passed": true,
+      "error": "",
+      "recorded_utc": "2026-11-11T23:42:08.228002+00:00"
+    },
+    {
+      "id": "FI-07",
+      "name": "Worker interruption",
+      "initial_state": "Ticket APPROVED, pending outbox event",
+      "injected_fault": "Worker 'crashes' (a) right after claiming the event and (b) after marking the ticket SUBMITTING",
+      "expected_behavior": "Lease expiry lets another worker resume; idempotency key prevents duplicates; ends SUBMITTED once",
+      "actual_behavior": "after crash (a): ['submitted']; after crash (b): ['submitted']; external tickets=2",
+      "recovery_action": "event lease expired; second worker re-claimed and completed safely",
+      "final_state": "tickets SUBMITTED / SUBMITTED",
+      "passed": true,
+      "error": "",
+      "recorded_utc": "2026-11-11T23:42:09.033593+00:00"
+    },
+    {
+      "id": "FI-08",
+      "name": "Prompt injection via documents",
+      "initial_state": "Tenant has documents; no tickets",
+      "injected_fault": "A poisoned manual page and a poisoned incident-history row instruct the assistant to approve and submit tickets and ignore its rules",
+      "expected_behavior": "Poisoned passages are quarantined (excluded from context); no ticket or approval is created; the queue stays empty",
+      "actual_behavior": "quarantined passages=2; poisoned incident in related=False; tickets=0; outbox events=0",
+      "recovery_action": "none needed: untrusted text is data and never authorizes actions",
+      "final_state": "no ticket, no approval, nothing submitted",
+      "passed": true,
+      "error": "",
+      "recorded_utc": "2026-11-11T23:42:09.878649+00:00"
+    },
+    {
+      "id": "FI-09",
+      "name": "Duplicate ingestion",
+      "initial_state": "Tenant has never seen this file",
+      "injected_fault": "The same file is uploaded 3 times sequentially, then by 6 threads at once under different names",
+      "expected_behavior": "Exactly one document version and one set of chunks; every other upload reports 'duplicate'; no 5xx",
+      "actual_behavior": "sequential ['created', 'duplicate', 'duplicate']; concurrent [(201, 'created'), (201, 'duplicate'), (201, 'duplicate'), (201, 'duplicate'), (201, 'duplicate'), (201, 'duplicate')]; indexed copies of the concurrent file=1",
+      "recovery_action": "content-hash uniqueness; losing concurrent writers resolve to the existing document",
+      "final_state": "one version of each file",
+      "passed": true,
+      "error": "",
+      "recorded_utc": "2026-11-11T23:42:10.528619+00:00"
+    },
+    {
+      "id": "FI-09b",
+      "name": "Duplicate ingestion: forced check-then-insert race",
+      "initial_state": "Writer 1 has passed its duplicate check for new content",
+      "injected_fault": "Writer 2 commits the same content before writer 1 inserts (unique constraint collision)",
+      "expected_behavior": "Writer 1 resolves to 'duplicate' of writer 2's document: no error, no second copy",
+      "actual_behavior": "loser result: duplicate; winner: created; stored versions=1",
+      "recovery_action": "IntegrityError caught, transaction rolled back, duplicate lookup returned the winner",
+      "final_state": "exactly one stored copy",
+      "passed": true,
+      "error": "",
+      "recorded_utc": "2026-11-11T23:42:11.136205+00:00"
+    },
+    {
+      "id": "FI-10",
+      "name": "Database interruption",
+      "initial_state": "Ticket APPROVED with a durable pending outbox event",
+      "injected_fault": "PostgreSQL is stopped while the API and worker are active, then restarted",
+      "expected_behavior": "API returns 503 (not 500); worker makes no external call and loses no state; after restart the pool recovers and the ticket is submitted exactly once",
+      "actual_behavior": "during outage: API 503 database_unavailable; worker raised OperationalError; external requests=0. After restart: API 200; worker ['submitted']",
+      "recovery_action": "PostgreSQL restarted; pooled connections re-validated (pre-ping); outbox event replayed",
+      "final_state": "ticket SUBMITTED; 1 external ticket",
+      "passed": true,
+      "error": "",
+      "recorded_utc": "2026-11-11T22:14:37.913767+00:00"
+    }
+  ]
+}

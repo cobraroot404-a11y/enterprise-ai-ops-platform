@@ -1,0 +1,23 @@
+{
+  "purpose": "Phase 2 quality gate (functional verification only, not AI quality measurement)",
+  "timestamp_local": "2026-11-11",
+  "llm_backend": "deterministic (test-only)",
+  "embedding_backend": "deterministic (test-only hashed bag-of-words)",
+  "database": "PostgreSQL 16.15 + pgvector 0.8.7 (Docker)",
+  "commands": {
+    "lint": "python -m ruff check backend mock-services workers scripts tests",
+    "backend_tests": "python -m pytest -q --junitxml=evaluation/reports/phase2-gate/pytest-junit.xml",
+    "frontend": "cd frontend && npm run typecheck && npm test && npm run build"
+  },
+  "results": {
+    "backend_tests": "66 passed, 0 failed (see pytest-junit.xml)",
+    "frontend_unit_tests": "3 passed",
+    "frontend_typecheck_and_build": "clean"
+  },
+  "hardware_file": "hardware.json",
+  "notes": [
+    "Deterministic backends validate API behaviour, state transitions, approvals, authorization and isolation.",
+    "They say nothing about real retrieval quality, answer quality or LLM latency; those are Phase 3/8.",
+    "CI workflow has not been executed: nothing has been pushed."
+  ]
+}

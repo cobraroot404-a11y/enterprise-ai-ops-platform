@@ -1,0 +1,114 @@
+# Containerised application stack for LOCAL use: its own PostgreSQL (own volume, no host port), migrate and seed one-shots, API, worker, the mock external
+# systems and the web UI. It never touches the development database of docker-compose.yml. Run it through scripts/container_smoke.py (or:
+#   docker compose -f docker-compose.app.yml up -d --build --wait).
+# The worker and the mocks share the API container's network namespace so the mocks are reachable at 127.0.0.1: the connector egress policy (SSRF defence)
+# only allows loopback for the development mock origins in EGRESS_DEV_MOCKS and refuses private container-network addresses on purpose.
+# AI backends are the deterministic TEST-ONLY ones; secrets come from .env at run time, never from the image.
+name: eaop-app
+
+x-backend: &backend
+  build:
+    context: .
+    dockerfile: infrastructure/docker/Dockerfile.backend
+  image: eaop-app-backend:${EAOP_APP_IMAGE_TAG:-local}
+  env_file: [.env]
+  environment:
+    DB_HOST: db
+    POSTGRES_PORT: "5432"
+    LLM_BACKEND: deterministic
+    EMBEDDING_BACKEND: deterministic
+    EAOP_ENV: development
+
+services:
+  db:
+    image: pgvector/pgvector:pg16
+    env_file: [.env]
+    volumes:
+      - app_pgdata:/var/lib/postgresql/data
+      - ./infrastructure/docker/postgres-init.sql:/docker-entrypoint-initdb.d/00-init.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+
+  migrate:
+    <<: *backend
+    command: ["python", "scripts/migrate.py"]
+    restart: "no"
+    depends_on:
+      db: {condition: service_healthy}
+
+  seed:
+    <<: *backend
+    command: ["python", "scripts/seed_apex.py"]
+    restart: "no"
+    depends_on:
+      migrate: {condition: service_completed_successfully}
+
+  api:
+    <<: *backend
+    ports:
+      - "127.0.0.1:${EAOP_APP_API_PORT:-18000}:8000"
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request,sys; sys.exit(0 if urllib.request.urlopen('http://127.0.0.1:8000/api/v1/health', timeout=3).status == 200 else 1)"]
+      interval: 5s
+      timeout: 5s
+      retries: 30
+    depends_on:
+      seed: {condition: service_completed_successfully}
+
+  worker:
+    <<: *backend
+    command: ["python", "workers/run_worker.py"]
+    network_mode: "service:api"
+    depends_on:
+      api: {condition: service_healthy}
+
+  ticketing:
+    <<: *backend
+    command: ["python", "-m", "uvicorn", "ticketing_app:app", "--app-dir", "mock-services/ticketing", "--host", "127.0.0.1", "--port", "8101"]
+    network_mode: "service:api"
+    depends_on:
+      api: {condition: service_healthy}
+
+  inventory:
+    <<: *backend
+    command: ["python", "-m", "uvicorn", "inventory_app:app", "--app-dir", "mock-services/inventory", "--host", "127.0.0.1", "--port", "8102"]
+    network_mode: "service:api"
+    depends_on:
+      api: {condition: service_healthy}
+
+  fleet:
+    <<: *backend
+    command: ["python", "-m", "uvicorn", "fleet_app:app", "--app-dir", "mock-services/fleet", "--host", "127.0.0.1", "--port", "8103"]
+    network_mode: "service:api"
+    depends_on:
+      api: {condition: service_healthy}
+
+  crm:
+    <<: *backend
+    command: ["python", "-m", "uvicorn", "crm_app:app", "--app-dir", "mock-services/crm", "--host", "127.0.0.1", "--port", "8104"]
+    network_mode: "service:api"
+    depends_on:
+      api: {condition: service_healthy}
+
+  servicedesk:
+    <<: *backend
+    command: ["python", "-m", "uvicorn", "servicedesk_app:app", "--app-dir", "mock-services/servicedesk", "--host", "127.0.0.1", "--port", "8105"]
+    network_mode: "service:api"
+    depends_on:
+      api: {condition: service_healthy}
+
+  ui:
+    build:
+      context: .
+      dockerfile: infrastructure/docker/Dockerfile.frontend
+    image: eaop-app-ui:${EAOP_APP_IMAGE_TAG:-local}
+    ports:
+      - "127.0.0.1:${EAOP_APP_UI_PORT:-18080}:80"
+    depends_on:
+      api: {condition: service_healthy}
+
+volumes:
+  app_pgdata:

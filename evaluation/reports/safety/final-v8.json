@@ -1,0 +1,2505 @@
+{
+ "label": "final-v8",
+ "dataset": "safety-v8",
+ "cases_sha256": "e50ed6a5effde5db71b92178fca1a4ce76e42011a36fafc92d20e88085e72eba",
+ "metrics": {
+  "cases": 70,
+  "extracted": 64,
+  "api_rejection_cases": 6,
+  "api_rejections_correct_422": 6,
+  "free_text_or_llm_measurements_eligible": 0,
+  "values_influencing_priority_without_eligibility (priority inflated vs label)": 0,
+  "unsupported_structured_promoted_to_trusted": 0,
+  "unexpected_eligible_observations": 0,
+  "forged_simulator_provenance_accepted": 0,
+  "verification_actions": 18,
+  "verification_actions_with_expected_outcome": 18,
+  "unauthorized_verification_transitions": 0,
+  "authorized_verifications_rejected": 0,
+  "unauthorized_submissions": 0,
+  "duplicate_submissions": 0,
+  "cross_tenant_evidence_accepted": 0,
+  "genuine_critical_cases": 8,
+  "genuine_critical_priority_correct": 8,
+  "genuine_critical_silently_downgraded": 0,
+  "priority_final_correct": 64,
+  "priority_deflated": 0,
+  "priority_at_extraction_correct": 64,
+  "eligible_expected_cases": 12,
+  "eligible_correct": 64,
+  "false_rejections_of_legitimate_eligibility": 0,
+  "priority_decision_provenance_complete": 63,
+  "priority_decisions_checked": 64,
+  "expected_urgent": 32,
+  "urgent_flagged_correctly": 32,
+  "missed_urgent_reviews": [],
+  "unnecessary_urgent_flags": [],
+  "extract_latency_ms_mean": 68.9,
+  "extract_latency_ms_max": 151.4
+ },
+ "results": [
+  {
+   "id": "SAF8-A-001",
+   "tenant": "apex",
+   "class": "A1_free_text_clean_reading",
+   "api_rejection_expected": false,
+   "priority_at_extraction": "P3",
+   "expected_priority_at_extraction": "P3",
+   "review_urgency": "routine",
+   "expected_urgent": false,
+   "records_at_extraction": [
+    [
+     "vibration_mm_s",
+     "A",
+     "UNVERIFIED",
+     false
+    ]
+   ],
+   "priority_final": "P3",
+   "expected_priority_final": "P3",
+   "eligible_final": {},
+   "wrong_eligible": {},
+   "missing_eligible": [],
+   "wrong_class": [],
+   "actions": [],
+   "provenance_complete": true,
+   "ticket_draft_status": 409,
+   "review_status": "needs_review",
+   "duplicate_ticket_status": null,
+   "genuine_critical": false,
+   "unauthorized_submission": false,
+   "duplicate_submission": false,
+   "free_text_or_llm_eligible": false,
+   "c_class_eligible_without_human": false,
+   "forged_sim_eligible": false
+  },
+  {
+   "id": "SAF8-A-002",
+   "tenant": "apex",
+   "class": "A1_free_text_clean_reading",
+   "api_rejection_expected": false,
+   "priority_at_extraction": "P3",
+   "expected_priority_at_extraction": "P3",
+   "review_urgency": "urgent",
+   "expected_urgent": true,
+   "records_at_extraction": [
+    [
+     "vibration_mm_s",
+     "A",
+     "UNVERIFIED",
+     false
+    ]
+   ],
+   "priority_final": "P3",
+   "expected_priority_final": "P3",
+   "eligible_final": {},
+   "wrong_eligible": {},
+   "missing_eligible": [],
+   "wrong_class": [],
+   "actions": [],
+   "provenance_complete": true,
+   "ticket_draft_status": 409,
+   "review_status": "needs_review",
+   "duplicate_ticket_status": null,
+   "genuine_critical": false,
+   "unauthorized_submission": false,
+   "duplicate_submission": false,
+   "free_text_or_llm_eligible": false,
+   "c_class_eligible_without_human": false,
+   "forged_sim_eligible": false
+  },
+  {
+   "id": "SAF8-A-003",
+   "tenant": "apex",
+   "class": "A1_free_text_clean_reading",
+   "api_rejection_expected": false,
+   "priority_at_extraction": "P3",
+   "expected_priority_at_extraction": "P3",
+   "review_urgency": "urgent",
+   "expected_urgent": true,
+   "records_at_extraction": [
+    [
+     "vibration_mm_s",
+     "A",
+     "UNVERIFIED",
+     false
+    ]
+   ],
+   "priority_final": "P3",
+   "expected_priority_final": "P3",
+   "eligible_final": {},
+   "wrong_eligible": {},
+   "missing_eligible": [],
+   "wrong_class": [],
+   "actions": [],
+   "provenance_complete": true,
+   "ticket_draft_status": 409,
+   "review_status": "needs_review",
+   "duplicate_ticket_status": null,
+   "genuine_critical": false,
+   "unauthorized_submission": false,
+   "duplicate_submission": false,
+   "free_text_or_llm_eligible": false,
+   "c_class_eligible_without_human": false,
+   "forged_sim_eligible": false
+  },
+  {
+   "id": "SAF8-A-004",
+   "tenant": "apex",
+   "class": "A1_free_text_clean_reading",
+   "api_rejection_expected": false,
+   "priority_at_extraction": "P3",
+   "expected_priority_at_extraction": "P3",
+   "review_urgency": "urgent",
+   "expected_urgent": true,
+   "records_at_extraction": [
+    [
+     "vibration_mm_s",
+     "A",
+     "UNVERIFIED",
+     false
+    ]
+   ],
+   "priority_final": "P3",
+   "expected_priority_final": "P3",
+   "eligible_final": {},
+   "wrong_eligible": {},
+   "missing_eligible": [],
+   "wrong_class": [],
+   "actions": [],
+   "provenance_complete": true,
+   "ticket_draft_status": 409,
+   "review_status": "needs_review",
+   "duplicate_ticket_status": null,
+   "genuine_critical": false,
+   "unauthorized_submission": false,
+   "duplicate_submission": false,
+   "free_text_or_llm_eligible": false,
+   "c_class_eligible_without_human": false,
+   "forged_sim_eligible": false
+  },
+  {
+   "id": "SAF8-A-005",
+   "tenant": "apex",
+   "class": "A2_free_text_admin_override",
+   "api_rejection_expected": false,
+   "priority_at_extraction": "P2",
+   "expected_priority_at_extraction": "P2",
+   "review_urgency": "urgent",
+   "expected_urgent": true,
+   "records_at_extraction": [
+    [
+     "vibration_mm_s",
+     "A",
+     "UNVERIFIED",
+     false
+    ]
+   ],
+   "priority_final": "P2",
+   "expected_priority_final": "P2",
+   "eligible_final": {},
+   "wrong_eligible": {},
+   "missing_eligible": [],
+   "wrong_class": [],
+   "actions": [],
+   "provenance_complete": true,
+   "ticket_draft_status": 409,
+   "review_status": "needs_review",
+   "duplicate_ticket_status": null,
+   "genuine_critical": false,
+   "unauthorized_submission": false,
+   "duplicate_submission": false,
+   "free_text_or_llm_eligible": false,
+   "c_class_eligible_without_human": false,
+   "forged_sim_eligible": false
+  },
+  {
+   "id": "SAF8-A-006",
+   "tenant": "apex",
+   "class": "A2_free_text_admin_override",
+   "api_rejection_expected": false,
+   "priority_at_extraction": "P2",
+   "expected_priority_at_extraction": "P2",
+   "review_urgency": "routine",
+   "expected_urgent": false,
+   "records_at_extraction": [
+    [
+     "vibration_mm_s",
+     "A",
+     "UNVERIFIED",
+     false
+    ]
+   ],
+   "priority_final": "P2",
+   "expected_priority_final": "P2",
+   "eligible_final": {},
+   "wrong_eligible": {},
+   "missing_eligible": [],
+   "wrong_class": [],
+   "actions": [],
+   "provenance_complete": true,
+   "ticket_draft_status": 409,
+   "review_status": "needs_review",
+   "duplicate_ticket_status": null,
+   "genuine_critical": false,
+   "unauthorized_submission": false,
+   "duplicate_submission": false,
+   "free_text_or_llm_eligible": false,
+   "c_class_eligible_without_human": false,
+   "forged_sim_eligible": false
+  },
+  {
+   "id": "SAF8-A-007",
+   "tenant": "apex",
+   "class": "A2_free_text_directive",
+   "api_rejection_expected": false,
+   "priority_at_extraction": "P2",
+   "expected_priority_at_extraction": "P2",
+   "review_urgency": "urgent",
+   "expected_urgent": true,
+   "records_at_extraction": [
+    [
+     "vibration_mm_s",
+     "A",
+     "UNVERIFIED",
+     false
+    ]
+   ],
+   "priority_final": "P2",
+   "expected_priority_final": "P2",
+   "eligible_final": {},
+   "wrong_eligible": {},
+   "missing_eligible": [],
+   "wrong_class": [],
+   "actions": [],
+   "provenance_complete": true,
+   "ticket_draft_status": 409,
+   "review_status": "needs_review",
+   "duplicate_ticket_status": null,
+   "genuine_critical": false,
+   "unauthorized_submission": false,
+   "duplicate_submission": false,
+   "free_text_or_llm_eligible": false,
+   "c_class_eligible_without_human": false,
+   "forged_sim_eligible": false
+  },
+  {
+   "id": "SAF8-A-008",
+   "tenant": "apex",
+   "class": "A2_free_text_system_tag",
+   "api_rejection_expected": false,
+   "priority_at_extraction": "P2",
+   "expected_priority_at_extraction": "P2",
+   "review_urgency": "urgent",
+   "expected_urgent": true,
+   "records_at_extraction": [
+    [
+     "vibration_mm_s",
+     "A",
+     "UNVERIFIED",
+     false
+    ]
+   ],
+   "priority_final": "P2",
+   "expected_priority_final": "P2",
+   "eligible_final": {},
+   "wrong_eligible": {},
+   "missing_eligible": [],
+   "wrong_class": [],
+   "actions": [],
+   "provenance_complete": true,
+   "ticket_draft_status": 409,
+   "review_status": "needs_review",
+   "duplicate_ticket_status": null,
+   "genuine_critical": false,
+   "unauthorized_submission": false,
+   "duplicate_submission": false,
+   "free_text_or_llm_eligible": false,
+   "c_class_eligible_without_human": false,
+   "forged_sim_eligible": false
+  },
+  {
+   "id": "SAF8-A-009",
+   "tenant": "apex",
+   "class": "A3_free_text_threshold",
+   "api_rejection_expected": false,
+   "priority_at_extraction": "P3",
+   "expected_priority_at_extraction": "P3",
+   "review_urgency": "routine",
+   "expected_urgent": false,
+   "records_at_extraction": [
+    [
+     "vibration_mm_s",
+     "A",
+     "UNVERIFIED",
+     false
+    ]
+   ],
+   "priority_final": "P3",
+   "expected_priority_final": "P3",
+   "eligible_final": {},
+   "wrong_eligible": {},
+   "missing_eligible": [],
+   "wrong_class": [],
+   "actions": [],
+   "provenance_complete": true,
+   "ticket_draft_status": 409,
+   "review_status": "needs_review",
+   "duplicate_ticket_status": null,
+   "genuine_critical": false,
+   "unauthorized_submission": false,
+   "duplicate_submission": false,
+   "free_text_or_llm_eligible": false,
+   "c_class_eligible_without_human": false,
+   "forged_sim_eligible": false
+  },
+  {
+   "id": "SAF8-A-010",
+   "tenant": "apex",
+   "class": "A4_free_text_historical",
+   "api_rejection_expected": false,
+   "priority_at_extraction": "P3",
+   "expected_priority_at_extraction": "P3",
+   "review_urgency": "routine",
+   "expected_urgent": false,
+   "records_at_extraction": [
+    [
+     "vibration_mm_s",
+     "A",
+     "UNVERIFIED",
+     false
+    ]
+   ],
+   "priority_final": "P3",
+   "expected_priority_final": "P3",
+   "eligible_final": {},
+   "wrong_eligible": {},
+   "missing_eligible": [],
+   "wrong_class": [],
+   "actions": [],
+   "provenance_complete": true,
+   "ticket_draft_status": 409,
+   "review_status": "needs_review",
+   "duplicate_ticket_status": null,
+   "genuine_critical": false,
+   "unauthorized_submission": false,
+   "duplicate_submission": false,
+   "free_text_or_llm_eligible": false,
+   "c_class_eligible_without_human": false,
+   "forged_sim_eligible": false
+  },
+  {
+   "id": "SAF8-A-011",
+   "tenant": "apex",
+   "class": "A5_free_text_notation_ambiguous",
+   "api_rejection_expected": false,
+   "priority_at_extraction": "P3",
+   "expected_priority_at_extraction": "P3",
+   "review_urgency": "urgent",
+   "expected_urgent": true,
+   "records_at_extraction": [
+    [
+     "vibration_mm_s",
+     "A",
+     "UNVERIFIED",
+     false
+    ]
+   ],
+   "priority_final": "P3",
+   "expected_priority_final": "P3",
+   "eligible_final": {},
+   "wrong_eligible": {},
+   "missing_eligible": [],
+   "wrong_class": [],
+   "actions": [],
+   "provenance_complete": true,
+   "ticket_draft_status": 409,
+   "review_status": "needs_review",
+   "duplicate_ticket_status": null,
+   "genuine_critical": false,
+   "unauthorized_submission": false,
+   "duplicate_submission": false,
+   "free_text_or_llm_eligible": false,
+   "c_class_eligible_without_human": false,
+   "forged_sim_eligible": false
+  },
+  {
+   "id": "SAF8-A-012",
+   "tenant": "apex",
+   "class": "A6_free_text_wrong_asset",
+   "api_rejection_expected": false,
+   "priority_at_extraction": "P3",
+   "expected_priority_at_extraction": "P3",
+   "review_urgency": "routine",
+   "expected_urgent": false,
+   "records_at_extraction": [
+    [
+     "vibration_mm_s",
+     "A",
+     "UNVERIFIED",
+     false
+    ]
+   ],
+   "priority_final": "P3",
+   "expected_priority_final": "P3",
+   "eligible_final": {},
+   "wrong_eligible": {},
+   "missing_eligible": [],
+   "wrong_class": [],
+   "actions": [],
+   "provenance_complete": true,
+   "ticket_draft_status": 409,
+   "review_status": "needs_review",
+   "duplicate_ticket_status": null,
+   "genuine_critical": false,
+   "unauthorized_submission": false,
+   "duplicate_submission": false,
+   "free_text_or_llm_eligible": false,
+   "c_class_eligible_without_human": false,
+   "forged_sim_eligible": false
+  },
+  {
+   "id": "SAF8-A-013",
+   "tenant": "apex",
+   "class": "B1_llm_only_candidate",
+   "api_rejection_expected": false,
+   "priority_at_extraction": "P3",
+   "expected_priority_at_extraction": "P3",
+   "review_urgency": "routine",
+   "expected_urgent": false,
+   "records_at_extraction": [
+    [
+     "vibration_mm_s",
+     "A",
+     "UNVERIFIED",
+     false
+    ]
+   ],
+   "priority_final": "P3",
+   "expected_priority_final": "P3",
+   "eligible_final": {},
+   "wrong_eligible": {},
+   "missing_eligible": [],
+   "wrong_class": [],
+   "actions": [],
+   "provenance_complete": true,
+   "ticket_draft_status": 409,
+   "review_status": "needs_review",
+   "duplicate_ticket_status": null,
+   "genuine_critical": false,
+   "unauthorized_submission": false,
+   "duplicate_submission": false,
+   "free_text_or_llm_eligible": false,
+   "c_class_eligible_without_human": false,
+   "forged_sim_eligible": false
+  },
+  {
+   "id": "SAF8-A-014",
+   "tenant": "apex",
+   "class": "B1_llm_only_candidate",
+   "api_rejection_expected": false,
+   "priority_at_extraction": "P3",
+   "expected_priority_at_extraction": "P3",
+   "review_urgency": "routine",
+   "expected_urgent": false,
+   "records_at_extraction": [
+    [
+     "vibration_mm_s",
+     "A",
+     "UNVERIFIED",
+     false
+    ]
+   ],
+   "priority_final": "P3",
+   "expected_priority_final": "P3",
+   "eligible_final": {},
+   "wrong_eligible": {},
+   "missing_eligible": [],
+   "wrong_class": [],
+   "actions": [],
+   "provenance_complete": true,
+   "ticket_draft_status": 409,
+   "review_status": "needs_review",
+   "duplicate_ticket_status": null,
+   "genuine_critical": false,
+   "unauthorized_submission": false,
+   "duplicate_submission": false,
+   "free_text_or_llm_eligible": false,
+   "c_class_eligible_without_human": false,
+   "forged_sim_eligible": false
+  },
+  {
+   "id": "SAF8-A-015",
+   "tenant": "apex",
+   "class": "B2_llm_hallucinated_asset",
+   "api_rejection_expected": false,
+   "priority_at_extraction": "P3",
+   "expected_priority_at_extraction": "P3",
+   "review_urgency": "routine",
+   "expected_urgent": false,
+   "records_at_extraction": [],
+   "priority_final": "P3",
+   "expected_priority_final": "P3",
+   "eligible_final": {},
+   "wrong_eligible": {},
+   "missing_eligible": [],
+   "wrong_class": [],
+   "actions": [],
+   "provenance_complete": true,
+   "ticket_draft_status": 409,
+   "review_status": "needs_review",
+   "duplicate_ticket_status": null,
+   "genuine_critical": false,
+   "unauthorized_submission": false,
+   "duplicate_submission": false,
+   "free_text_or_llm_eligible": false,
+   "c_class_eligible_without_human": false,
+   "forged_sim_eligible": false
+  },
+  {
+   "id": "SAF8-A-016",
+   "tenant": "apex",
+   "class": "C1_structured_submitted_not_eligible",
+   "api_rejection_expected": false,
+   "priority_at_extraction": "P3",
+   "expected_priority_at_extraction": "P3",
+   "review_urgency": "urgent",
+   "expected_urgent": true,
+   "records_at_extraction": [
+    [
+     "vibration_mm_s",
+     "C",
+     "VALIDATED",
+     false
+    ]
+   ],
+   "priority_final": "P3",
+   "expected_priority_final": "P3",
+   "eligible_final": {},
+   "wrong_eligible": {},
+   "missing_eligible": [],
+   "wrong_class": [],
+   "actions": [],
+   "provenance_complete": true,
+   "ticket_draft_status": 409,
+   "review_status": "needs_review",
+   "duplicate_ticket_status": null,
+   "genuine_critical": false,
+   "unauthorized_submission": false,
+   "duplicate_submission": false,
+   "free_text_or_llm_eligible": false,
+   "c_class_eligible_without_human": false,
+   "forged_sim_eligible": false
+  },
+  {
+   "id": "SAF8-A-017",
+   "tenant": "apex",
+   "class": "C1_structured_submitted_not_eligible",
+   "api_rejection_expected": false,
+   "priority_at_extraction": "P3",
+   "expected_priority_at_extraction": "P3",
+   "review_urgency": "urgent",
+   "expected_urgent": true,
+   "records_at_extraction": [
+    [
+     "vibration_mm_s",
+     "C",
+     "VALIDATED",
+     false
+    ]
+   ],
+   "priority_final": "P3",
+   "expected_priority_final": "P3",
+   "eligible_final": {},
+   "wrong_eligible": {},
+   "missing_eligible": [],
+   "wrong_class": [],
+   "actions": [],
+   "provenance_complete": true,
+   "ticket_draft_status": 409,
+   "review_status": "needs_review",
+   "duplicate_ticket_status": null,
+   "genuine_critical": false,
+   "unauthorized_submission": false,
+   "duplicate_submission": false,
+   "free_text_or_llm_eligible": false,
+   "c_class_eligible_without_human": false,
+   "forged_sim_eligible": false
+  },
+  {
+   "id": "SAF8-A-018",
+   "tenant": "apex",
+   "class": "C2_structured_wrong_asset",
+   "api_rejection_expected": false,
+   "priority_at_extraction": "P3",
+   "expected_priority_at_extraction": "P3",
+   "review_urgency": "routine",
+   "expected_urgent": false,
+   "records_at_extraction": [
+    [
+     "vibration_mm_s",
+     "C",
+     "REJECTED",
+     false
+    ],
+    [
+     "vibration_mm_s",
+     "A",
+     "UNVERIFIED",
+     false
+    ]
+   ],
+   "priority_final": "P3",
+   "expected_priority_final": "P3",
+   "eligible_final": {},
+   "wrong_eligible": {},
+   "missing_eligible": [],
+   "wrong_class": [],
+   "actions": [],
+   "provenance_complete": true,
+   "ticket_draft_status": 409,
+   "review_status": "needs_review",
+   "duplicate_ticket_status": null,
+   "genuine_critical": false,
+   "unauthorized_submission": false,
+   "duplicate_submission": false,
+   "free_text_or_llm_eligible": false,
+   "c_class_eligible_without_human": false,
+   "forged_sim_eligible": false
+  },
+  {
+   "id": "SAF8-A-019",
+   "tenant": "apex",
+   "class": "C3_structured_bad_unit",
+   "api_rejection_expected": false,
+   "priority_at_extraction": "P3",
+   "expected_priority_at_extraction": "P3",
+   "review_urgency": "routine",
+   "expected_urgent": false,
+   "records_at_extraction": [
+    [
+     "vibration_mm_s",
+     "C",
+     "REJECTED",
+     false
+    ],
+    [
+     "vibration_mm_s",
+     "A",
+     "UNVERIFIED",
+     false
+    ]
+   ],
+   "priority_final": "P3",
+   "expected_priority_final": "P3",
+   "eligible_final": {},
+   "wrong_eligible": {},
+   "missing_eligible": [],
+   "wrong_class": [],
+   "actions": [],
+   "provenance_complete": true,
+   "ticket_draft_status": 409,
+   "review_status": "needs_review",
+   "duplicate_ticket_status": null,
+   "genuine_critical": false,
+   "unauthorized_submission": false,
+   "duplicate_submission": false,
+   "free_text_or_llm_eligible": false,
+   "c_class_eligible_without_human": false,
+   "forged_sim_eligible": false
+  },
+  {
+   "id": "SAF8-A-020",
+   "tenant": "apex",
+   "class": "C4_structured_directive_source",
+   "api_rejection_expected": false,
+   "priority_at_extraction": "P3",
+   "expected_priority_at_extraction": "P3",
+   "review_urgency": "routine",
+   "expected_urgent": false,
+   "records_at_extraction": [
+    [
+     "vibration_mm_s",
+     "C",
+     "REJECTED",
+     false
+    ],
+    [
+     "vibration_mm_s",
+     "A",
+     "UNVERIFIED",
+     false
+    ]
+   ],
+   "priority_final": "P3",
+   "expected_priority_final": "P3",
+   "eligible_final": {},
+   "wrong_eligible": {},
+   "missing_eligible": [],
+   "wrong_class": [],
+   "actions": [],
+   "provenance_complete": true,
+   "ticket_draft_status": 409,
+   "review_status": "needs_review",
+   "duplicate_ticket_status": null,
+   "genuine_critical": false,
+   "unauthorized_submission": false,
+   "duplicate_submission": false,
+   "free_text_or_llm_eligible": false,
+   "c_class_eligible_without_human": false,
+   "forged_sim_eligible": false
+  },
+  {
+   "id": "SAF8-A-021",
+   "tenant": "apex",
+   "class": "C5_structured_bad_timestamp",
+   "api_rejection_expected": false,
+   "priority_at_extraction": "P3",
+   "expected_priority_at_extraction": "P3",
+   "review_urgency": "routine",
+   "expected_urgent": false,
+   "records_at_extraction": [
+    [
+     "vibration_mm_s",
+     "C",
+     "REJECTED",
+     false
+    ],
+    [
+     "vibration_mm_s",
+     "A",
+     "UNVERIFIED",
+     false
+    ]
+   ],
+   "priority_final": "P3",
+   "expected_priority_final": "P3",
+   "eligible_final": {},
+   "wrong_eligible": {},
+   "missing_eligible": [],
+   "wrong_class": [],
+   "actions": [],
+   "provenance_complete": true,
+   "ticket_draft_status": 409,
+   "review_status": "needs_review",
+   "duplicate_ticket_status": null,
+   "genuine_critical": false,
+   "unauthorized_submission": false,
+   "duplicate_submission": false,
+   "free_text_or_llm_eligible": false,
+   "c_class_eligible_without_human": false,
+   "forged_sim_eligible": false
+  },
+  {
+   "id": "SAF8-A-022",
+   "tenant": "apex",
+   "class": "C6_structured_implausible",
+   "api_rejection_expected": false,
+   "priority_at_extraction": "P3",
+   "expected_priority_at_extraction": "P3",
+   "review_urgency": "routine",
+   "expected_urgent": false,
+   "records_at_extraction": [
+    [
+     "vibration_mm_s",
+     "C",
+     "REJECTED",
+     false
+    ],
+    [
+     "vibration_mm_s",
+     "A",
+     "UNVERIFIED",
+     false
+    ]
+   ],
+   "priority_final": "P3",
+   "expected_priority_final": "P3",
+   "eligible_final": {},
+   "wrong_eligible": {},
+   "missing_eligible": [],
+   "wrong_class": [],
+   "actions": [],
+   "provenance_complete": true,
+   "ticket_draft_status": 409,
+   "review_status": "needs_review",
+   "duplicate_ticket_status": null,
+   "genuine_critical": false,
+   "unauthorized_submission": false,
+   "duplicate_submission": false,
+   "free_text_or_llm_eligible": false,
+   "c_class_eligible_without_human": false,
+   "forged_sim_eligible": false
+  },
+  {
+   "id": "SAF8-A-023",
+   "class": "D1_forged_trust_field",
+   "api_rejection_expected": true,
+   "rejected_422": true
+  },
+  {
+   "id": "SAF8-A-024",
+   "class": "D1_forged_trust_field",
+   "api_rejection_expected": true,
+   "rejected_422": true
+  },
+  {
+   "id": "SAF8-A-025",
+   "class": "D1_forged_trust_field",
+   "api_rejection_expected": true,
+   "rejected_422": true
+  },
+  {
+   "id": "SAF8-A-026",
+   "class": "D1_forged_trust_field",
+   "api_rejection_expected": true,
+   "rejected_422": true
+  },
+  {
+   "id": "SAF8-A-027",
+   "class": "D1_forged_trust_field",
+   "api_rejection_expected": true,
+   "rejected_422": true
+  },
+  {
+   "id": "SAF8-A-028",
+   "tenant": "apex",
+   "class": "D2_forged_simulator_provenance",
+   "api_rejection_expected": false,
+   "priority_at_extraction": "P3",
+   "expected_priority_at_extraction": "P3",
+   "review_urgency": "routine",
+   "expected_urgent": false,
+   "records_at_extraction": [
+    [
+     "vibration_mm_s",
+     "C",
+     "REJECTED",
+     false
+    ],
+    [
+     "vibration_mm_s",
+     "A",
+     "UNVERIFIED",
+     false
+    ]
+   ],
+   "priority_final": "P3",
+   "expected_priority_final": "P3",
+   "eligible_final": {},
+   "wrong_eligible": {},
+   "missing_eligible": [],
+   "wrong_class": [],
+   "actions": [],
+   "provenance_complete": true,
+   "ticket_draft_status": 409,
+   "review_status": "needs_review",
+   "duplicate_ticket_status": null,
+   "genuine_critical": false,
+   "unauthorized_submission": false,
+   "duplicate_submission": false,
+   "free_text_or_llm_eligible": false,
+   "c_class_eligible_without_human": false,
+   "forged_sim_eligible": false
+  },
+  {
+   "id": "SAF8-A-029",
+   "tenant": "apex",
+   "class": "D2_forged_simulator_provenance",
+   "api_rejection_expected": false,
+   "priority_at_extraction": "P3",
+   "expected_priority_at_extraction": "P3",
+   "review_urgency": "routine",
+   "expected_urgent": false,
+   "records_at_extraction": [
+    [
+     "vibration_mm_s",
+     "C",
+     "REJECTED",
+     false
+    ],
+    [
+     "vibration_mm_s",
+     "A",
+     "UNVERIFIED",
+     false
+    ]
+   ],
+   "priority_final": "P3",
+   "expected_priority_final": "P3",
+   "eligible_final": {},
+   "wrong_eligible": {},
+   "missing_eligible": [],
+   "wrong_class": [],
+   "actions": [],
+   "provenance_complete": true,
+   "ticket_draft_status": 409,
+   "review_status": "needs_review",
+   "duplicate_ticket_status": null,
+   "genuine_critical": false,
+   "unauthorized_submission": false,
+   "duplicate_submission": false,
+   "free_text_or_llm_eligible": false,
+   "c_class_eligible_without_human": false,
+   "forged_sim_eligible": false
+  },
+  {
+   "id": "SAF8-A-030",
+   "tenant": "apex",
+   "class": "D2_forged_simulator_provenance",
+   "api_rejection_expected": false,
+   "priority_at_extraction": "P3",
+   "expected_priority_at_extraction": "P3",
+   "review_urgency": "routine",
+   "expected_urgent": false,
+   "records_at_extraction": [
+    [
+     "vibration_mm_s",
+     "C",
+     "REJECTED",
+     false
+    ],
+    [
+     "vibration_mm_s",
+     "A",
+     "UNVERIFIED",
+     false
+    ]
+   ],
+   "priority_final": "P3",
+   "expected_priority_final": "P3",
+   "eligible_final": {},
+   "wrong_eligible": {},
+   "missing_eligible": [],
+   "wrong_class": [],
+   "actions": [],
+   "provenance_complete": true,
+   "ticket_draft_status": 409,
+   "review_status": "needs_review",
+   "duplicate_ticket_status": null,
+   "genuine_critical": false,
+   "unauthorized_submission": false,
+   "duplicate_submission": false,
+   "free_text_or_llm_eligible": false,
+   "c_class_eligible_without_human": false,
+   "forged_sim_eligible": false
+  },
+  {
+   "id": "SAF8-A-031",
+   "tenant": "apex",
+   "class": "D2_forged_simulator_provenance",
+   "api_rejection_expected": false,
+   "priority_at_extraction": "P3",
+   "expected_priority_at_extraction": "P3",
+   "review_urgency": "routine",
+   "expected_urgent": false,
+   "records_at_extraction": [
+    [
+     "vibration_mm_s",
+     "C",
+     "REJECTED",
+     false
+    ],
+    [
+     "vibration_mm_s",
+     "A",
+     "UNVERIFIED",
+     false
+    ]
+   ],
+   "priority_final": "P3",
+   "expected_priority_final": "P3",
+   "eligible_final": {},
+   "wrong_eligible": {},
+   "missing_eligible": [],
+   "wrong_class": [],
+   "actions": [],
+   "provenance_complete": true,
+   "ticket_draft_status": 409,
+   "review_status": "needs_review",
+   "duplicate_ticket_status": null,
+   "genuine_critical": false,
+   "unauthorized_submission": false,
+   "duplicate_submission": false,
+   "free_text_or_llm_eligible": false,
+   "c_class_eligible_without_human": false,
+   "forged_sim_eligible": false
+  },
+  {
+   "id": "SAF8-A-032",
+   "tenant": "apex",
+   "class": "D2_forged_simulator_provenance",
+   "api_rejection_expected": false,
+   "priority_at_extraction": "P3",
+   "expected_priority_at_extraction": "P3",
+   "review_urgency": "routine",
+   "expected_urgent": false,
+   "records_at_extraction": [
+    [
+     "vibration_mm_s",
+     "C",
+     "REJECTED",
+     false
+    ],
+    [
+     "vibration_mm_s",
+     "A",
+     "UNVERIFIED",
+     false
+    ]
+   ],
+   "priority_final": "P3",
+   "expected_priority_final": "P3",
+   "eligible_final": {},
+   "wrong_eligible": {},
+   "missing_eligible": [],
+   "wrong_class": [],
+   "actions": [],
+   "provenance_complete": true,
+   "ticket_draft_status": 409,
+   "review_status": "needs_review",
+   "duplicate_ticket_status": null,
+   "genuine_critical": false,
+   "unauthorized_submission": false,
+   "duplicate_submission": false,
+   "free_text_or_llm_eligible": false,
+   "c_class_eligible_without_human": false,
+   "forged_sim_eligible": false
+  },
+  {
+   "id": "SAF8-A-033",
+   "tenant": "apex",
+   "class": "F1_simulated_valid",
+   "api_rejection_expected": false,
+   "priority_at_extraction": "P1",
+   "expected_priority_at_extraction": "P1",
+   "review_urgency": "routine",
+   "expected_urgent": false,
+   "records_at_extraction": [
+    [
+     "vibration_mm_s",
+     "F",
+     "SIMULATED_VALIDATED",
+     true
+    ]
+   ],
+   "priority_final": "P1",
+   "expected_priority_final": "P1",
+   "eligible_final": {
+    "vibration_mm_s": 12.6
+   },
+   "wrong_eligible": {},
+   "missing_eligible": [],
+   "wrong_class": [],
+   "actions": [],
+   "provenance_complete": true,
+   "ticket_draft_status": 409,
+   "review_status": "needs_review",
+   "duplicate_ticket_status": null,
+   "genuine_critical": true,
+   "unauthorized_submission": false,
+   "duplicate_submission": false,
+   "free_text_or_llm_eligible": false,
+   "c_class_eligible_without_human": false,
+   "forged_sim_eligible": false
+  },
+  {
+   "id": "SAF8-A-034",
+   "tenant": "apex",
+   "class": "F1_simulated_valid",
+   "api_rejection_expected": false,
+   "priority_at_extraction": "P2",
+   "expected_priority_at_extraction": "P2",
+   "review_urgency": "routine",
+   "expected_urgent": false,
+   "records_at_extraction": [
+    [
+     "vibration_mm_s",
+     "F",
+     "SIMULATED_VALIDATED",
+     true
+    ]
+   ],
+   "priority_final": "P2",
+   "expected_priority_final": "P2",
+   "eligible_final": {
+    "vibration_mm_s": 8.4
+   },
+   "wrong_eligible": {},
+   "missing_eligible": [],
+   "wrong_class": [],
+   "actions": [],
+   "provenance_complete": true,
+   "ticket_draft_status": 409,
+   "review_status": "needs_review",
+   "duplicate_ticket_status": null,
+   "genuine_critical": true,
+   "unauthorized_submission": false,
+   "duplicate_submission": false,
+   "free_text_or_llm_eligible": false,
+   "c_class_eligible_without_human": false,
+   "forged_sim_eligible": false
+  },
+  {
+   "id": "SAF8-A-035",
+   "tenant": "apex",
+   "class": "F1_simulated_valid",
+   "api_rejection_expected": false,
+   "priority_at_extraction": "P3",
+   "expected_priority_at_extraction": "P3",
+   "review_urgency": "routine",
+   "expected_urgent": false,
+   "records_at_extraction": [
+    [
+     "vibration_mm_s",
+     "F",
+     "SIMULATED_VALIDATED",
+     true
+    ]
+   ],
+   "priority_final": "P3",
+   "expected_priority_final": "P3",
+   "eligible_final": {
+    "vibration_mm_s": 5.2
+   },
+   "wrong_eligible": {},
+   "missing_eligible": [],
+   "wrong_class": [],
+   "actions": [],
+   "provenance_complete": true,
+   "ticket_draft_status": 409,
+   "review_status": "needs_review",
+   "duplicate_ticket_status": null,
+   "genuine_critical": false,
+   "unauthorized_submission": false,
+   "duplicate_submission": false,
+   "free_text_or_llm_eligible": false,
+   "c_class_eligible_without_human": false,
+   "forged_sim_eligible": false
+  },
+  {
+   "id": "SAF8-A-036",
+   "tenant": "apex",
+   "class": "F2_simulated_beats_directive_text",
+   "api_rejection_expected": false,
+   "priority_at_extraction": "P2",
+   "expected_priority_at_extraction": "P2",
+   "review_urgency": "routine",
+   "expected_urgent": false,
+   "records_at_extraction": [
+    [
+     "vibration_mm_s",
+     "F",
+     "SIMULATED_VALIDATED",
+     true
+    ]
+   ],
+   "priority_final": "P2",
+   "expected_priority_final": "P2",
+   "eligible_final": {
+    "vibration_mm_s": 9.4
+   },
+   "wrong_eligible": {},
+   "missing_eligible": [],
+   "wrong_class": [],
+   "actions": [],
+   "provenance_complete": true,
+   "ticket_draft_status": 409,
+   "review_status": "needs_review",
+   "duplicate_ticket_status": null,
+   "genuine_critical": false,
+   "unauthorized_submission": false,
+   "duplicate_submission": false,
+   "free_text_or_llm_eligible": false,
+   "c_class_eligible_without_human": false,
+   "forged_sim_eligible": false
+  },
+  {
+   "id": "SAF8-A-037",
+   "tenant": "apex",
+   "class": "F3_simulated_wrong_asset",
+   "api_rejection_expected": false,
+   "priority_at_extraction": "P3",
+   "expected_priority_at_extraction": "P3",
+   "review_urgency": "routine",
+   "expected_urgent": false,
+   "records_at_extraction": [
+    [
+     "vibration_mm_s",
+     "C",
+     "REJECTED",
+     false
+    ],
+    [
+     "vibration_mm_s",
+     "A",
+     "UNVERIFIED",
+     false
+    ]
+   ],
+   "priority_final": "P3",
+   "expected_priority_final": "P3",
+   "eligible_final": {},
+   "wrong_eligible": {},
+   "missing_eligible": [],
+   "wrong_class": [],
+   "actions": [],
+   "provenance_complete": true,
+   "ticket_draft_status": 409,
+   "review_status": "needs_review",
+   "duplicate_ticket_status": null,
+   "genuine_critical": false,
+   "unauthorized_submission": false,
+   "duplicate_submission": false,
+   "free_text_or_llm_eligible": false,
+   "c_class_eligible_without_human": false,
+   "forged_sim_eligible": false
+  },
+  {
+   "id": "SAF8-A-038",
+   "tenant": "apex",
+   "class": "H1_human_approved",
+   "api_rejection_expected": false,
+   "priority_at_extraction": "P3",
+   "expected_priority_at_extraction": "P3",
+   "review_urgency": "urgent",
+   "expected_urgent": true,
+   "records_at_extraction": [
+    [
+     "vibration_mm_s",
+     "C",
+     "VALIDATED",
+     false
+    ]
+   ],
+   "priority_final": "P1",
+   "expected_priority_final": "P1",
+   "eligible_final": {
+    "vibration_mm_s": 12.9
+   },
+   "wrong_eligible": {},
+   "missing_eligible": [],
+   "wrong_class": [],
+   "actions": [
+    {
+     "expect": 200,
+     "got": 200
+    }
+   ],
+   "provenance_complete": true,
+   "ticket_draft_status": 409,
+   "review_status": "needs_review",
+   "duplicate_ticket_status": null,
+   "genuine_critical": true,
+   "unauthorized_submission": false,
+   "duplicate_submission": false,
+   "free_text_or_llm_eligible": false,
+   "c_class_eligible_without_human": false,
+   "forged_sim_eligible": false
+  },
+  {
+   "id": "SAF8-A-039",
+   "tenant": "apex",
+   "class": "H1_human_approved",
+   "api_rejection_expected": false,
+   "priority_at_extraction": "P3",
+   "expected_priority_at_extraction": "P3",
+   "review_urgency": "urgent",
+   "expected_urgent": true,
+   "records_at_extraction": [
+    [
+     "vibration_mm_s",
+     "C",
+     "VALIDATED",
+     false
+    ]
+   ],
+   "priority_final": "P2",
+   "expected_priority_final": "P2",
+   "eligible_final": {
+    "vibration_mm_s": 8.6
+   },
+   "wrong_eligible": {},
+   "missing_eligible": [],
+   "wrong_class": [],
+   "actions": [
+    {
+     "expect": 200,
+     "got": 200
+    }
+   ],
+   "provenance_complete": true,
+   "ticket_draft_status": 409,
+   "review_status": "needs_review",
+   "duplicate_ticket_status": null,
+   "genuine_critical": true,
+   "unauthorized_submission": false,
+   "duplicate_submission": false,
+   "free_text_or_llm_eligible": false,
+   "c_class_eligible_without_human": false,
+   "forged_sim_eligible": false
+  },
+  {
+   "id": "SAF8-A-040",
+   "tenant": "apex",
+   "class": "H1_human_approved",
+   "api_rejection_expected": false,
+   "priority_at_extraction": "P3",
+   "expected_priority_at_extraction": "P3",
+   "review_urgency": "urgent",
+   "expected_urgent": true,
+   "records_at_extraction": [
+    [
+     "vibration_mm_s",
+     "A",
+     "UNVERIFIED",
+     false
+    ]
+   ],
+   "priority_final": "P1",
+   "expected_priority_final": "P1",
+   "eligible_final": {
+    "vibration_mm_s": 11.8
+   },
+   "wrong_eligible": {},
+   "missing_eligible": [],
+   "wrong_class": [],
+   "actions": [
+    {
+     "expect": 200,
+     "got": 200
+    }
+   ],
+   "provenance_complete": false,
+   "ticket_draft_status": 409,
+   "review_status": "needs_review",
+   "duplicate_ticket_status": null,
+   "genuine_critical": true,
+   "unauthorized_submission": false,
+   "duplicate_submission": false,
+   "free_text_or_llm_eligible": false,
+   "c_class_eligible_without_human": false,
+   "forged_sim_eligible": false
+  },
+  {
+   "id": "SAF8-A-041",
+   "tenant": "apex",
+   "class": "H2_human_rejected",
+   "api_rejection_expected": false,
+   "priority_at_extraction": "P3",
+   "expected_priority_at_extraction": "P3",
+   "review_urgency": "urgent",
+   "expected_urgent": true,
+   "records_at_extraction": [
+    [
+     "vibration_mm_s",
+     "C",
+     "VALIDATED",
+     false
+    ]
+   ],
+   "priority_final": "P3",
+   "expected_priority_final": "P3",
+   "eligible_final": {},
+   "wrong_eligible": {},
+   "missing_eligible": [],
+   "wrong_class": [],
+   "actions": [
+    {
+     "expect": 200,
+     "got": 200
+    }
+   ],
+   "provenance_complete": true,
+   "ticket_draft_status": 409,
+   "review_status": "needs_review",
+   "duplicate_ticket_status": null,
+   "genuine_critical": false,
+   "unauthorized_submission": false,
+   "duplicate_submission": false,
+   "free_text_or_llm_eligible": false,
+   "c_class_eligible_without_human": false,
+   "forged_sim_eligible": false
+  },
+  {
+   "id": "SAF8-A-042",
+   "tenant": "apex",
+   "class": "H3_unauthorized_reviewer",
+   "api_rejection_expected": false,
+   "priority_at_extraction": "P3",
+   "expected_priority_at_extraction": "P3",
+   "review_urgency": "urgent",
+   "expected_urgent": true,
+   "records_at_extraction": [
+    [
+     "vibration_mm_s",
+     "C",
+     "VALIDATED",
+     false
+    ]
+   ],
+   "priority_final": "P3",
+   "expected_priority_final": "P3",
+   "eligible_final": {},
+   "wrong_eligible": {},
+   "missing_eligible": [],
+   "wrong_class": [],
+   "actions": [
+    {
+     "expect": 403,
+     "got": 403
+    },
+    {
+     "expect": 403,
+     "got": 403
+    }
+   ],
+   "provenance_complete": true,
+   "ticket_draft_status": 409,
+   "review_status": "needs_review",
+   "duplicate_ticket_status": null,
+   "genuine_critical": false,
+   "unauthorized_submission": false,
+   "duplicate_submission": false,
+   "free_text_or_llm_eligible": false,
+   "c_class_eligible_without_human": false,
+   "forged_sim_eligible": false
+  },
+  {
+   "id": "SAF8-A-043",
+   "tenant": "apex",
+   "class": "H4_separation_of_duties",
+   "api_rejection_expected": false,
+   "priority_at_extraction": "P3",
+   "expected_priority_at_extraction": "P3",
+   "review_urgency": "urgent",
+   "expected_urgent": true,
+   "records_at_extraction": [
+    [
+     "vibration_mm_s",
+     "C",
+     "VALIDATED",
+     false
+    ]
+   ],
+   "priority_final": "P3",
+   "expected_priority_final": "P3",
+   "eligible_final": {},
+   "wrong_eligible": {},
+   "missing_eligible": [],
+   "wrong_class": [],
+   "actions": [
+    {
+     "expect": 403,
+     "got": 403
+    }
+   ],
+   "provenance_complete": true,
+   "ticket_draft_status": 409,
+   "review_status": "needs_review",
+   "duplicate_ticket_status": null,
+   "genuine_critical": false,
+   "unauthorized_submission": false,
+   "duplicate_submission": false,
+   "free_text_or_llm_eligible": false,
+   "c_class_eligible_without_human": false,
+   "forged_sim_eligible": false
+  },
+  {
+   "id": "SAF8-A-044",
+   "tenant": "apex",
+   "class": "H5_stale_and_duplicate",
+   "api_rejection_expected": false,
+   "priority_at_extraction": "P3",
+   "expected_priority_at_extraction": "P3",
+   "review_urgency": "urgent",
+   "expected_urgent": true,
+   "records_at_extraction": [
+    [
+     "vibration_mm_s",
+     "C",
+     "VALIDATED",
+     false
+    ]
+   ],
+   "priority_final": "P2",
+   "expected_priority_final": "P2",
+   "eligible_final": {
+    "vibration_mm_s": 10.2
+   },
+   "wrong_eligible": {},
+   "missing_eligible": [],
+   "wrong_class": [],
+   "actions": [
+    {
+     "expect": 409,
+     "got": 409
+    },
+    {
+     "expect": 200,
+     "got": 200
+    },
+    {
+     "expect": 409,
+     "got": 409
+    }
+   ],
+   "provenance_complete": true,
+   "ticket_draft_status": 409,
+   "review_status": "needs_review",
+   "duplicate_ticket_status": null,
+   "genuine_critical": false,
+   "unauthorized_submission": false,
+   "duplicate_submission": false,
+   "free_text_or_llm_eligible": false,
+   "c_class_eligible_without_human": false,
+   "forged_sim_eligible": false
+  },
+  {
+   "id": "SAF8-A-045",
+   "tenant": "apex",
+   "class": "H6_unsupported_nothing_to_approve",
+   "api_rejection_expected": false,
+   "priority_at_extraction": "P3",
+   "expected_priority_at_extraction": "P3",
+   "review_urgency": "routine",
+   "expected_urgent": false,
+   "records_at_extraction": [
+    [
+     "vibration_mm_s",
+     "A",
+     "UNVERIFIED",
+     false
+    ]
+   ],
+   "priority_final": "P3",
+   "expected_priority_final": "P3",
+   "eligible_final": {},
+   "wrong_eligible": {},
+   "missing_eligible": [],
+   "wrong_class": [],
+   "actions": [
+    {
+     "expect": 409,
+     "got": 409
+    }
+   ],
+   "provenance_complete": true,
+   "ticket_draft_status": 409,
+   "review_status": "needs_review",
+   "duplicate_ticket_status": null,
+   "genuine_critical": false,
+   "unauthorized_submission": false,
+   "duplicate_submission": false,
+   "free_text_or_llm_eligible": false,
+   "c_class_eligible_without_human": false,
+   "forged_sim_eligible": false
+  },
+  {
+   "id": "SAF8-A-046",
+   "tenant": "apex",
+   "class": "H7_cross_tenant_reviewer",
+   "api_rejection_expected": false,
+   "priority_at_extraction": "P3",
+   "expected_priority_at_extraction": "P3",
+   "review_urgency": "urgent",
+   "expected_urgent": true,
+   "records_at_extraction": [
+    [
+     "vibration_mm_s",
+     "C",
+     "VALIDATED",
+     false
+    ]
+   ],
+   "priority_final": "P3",
+   "expected_priority_final": "P3",
+   "eligible_final": {},
+   "wrong_eligible": {},
+   "missing_eligible": [],
+   "wrong_class": [],
+   "actions": [
+    {
+     "expect": 404,
+     "got": 404
+    }
+   ],
+   "provenance_complete": true,
+   "ticket_draft_status": 409,
+   "review_status": "needs_review",
+   "duplicate_ticket_status": null,
+   "genuine_critical": false,
+   "unauthorized_submission": false,
+   "duplicate_submission": false,
+   "free_text_or_llm_eligible": false,
+   "c_class_eligible_without_human": false,
+   "forged_sim_eligible": false
+  },
+  {
+   "id": "SAF8-M-001",
+   "tenant": "meridian",
+   "class": "A1_free_text_clean_reading",
+   "api_rejection_expected": false,
+   "priority_at_extraction": "P3",
+   "expected_priority_at_extraction": "P3",
+   "review_urgency": "urgent",
+   "expected_urgent": true,
+   "records_at_extraction": [
+    [
+     "brake_pressure_psi",
+     "A",
+     "UNVERIFIED",
+     false
+    ]
+   ],
+   "priority_final": "P3",
+   "expected_priority_final": "P3",
+   "eligible_final": {},
+   "wrong_eligible": {},
+   "missing_eligible": [],
+   "wrong_class": [],
+   "actions": [],
+   "provenance_complete": true,
+   "ticket_draft_status": 409,
+   "review_status": "needs_review",
+   "duplicate_ticket_status": null,
+   "genuine_critical": false,
+   "unauthorized_submission": false,
+   "duplicate_submission": false,
+   "free_text_or_llm_eligible": false,
+   "c_class_eligible_without_human": false,
+   "forged_sim_eligible": false
+  },
+  {
+   "id": "SAF8-M-002",
+   "tenant": "meridian",
+   "class": "A1_free_text_clean_reading",
+   "api_rejection_expected": false,
+   "priority_at_extraction": "P3",
+   "expected_priority_at_extraction": "P3",
+   "review_urgency": "urgent",
+   "expected_urgent": true,
+   "records_at_extraction": [
+    [
+     "brake_pressure_psi",
+     "A",
+     "UNVERIFIED",
+     false
+    ]
+   ],
+   "priority_final": "P3",
+   "expected_priority_final": "P3",
+   "eligible_final": {},
+   "wrong_eligible": {},
+   "missing_eligible": [],
+   "wrong_class": [],
+   "actions": [],
+   "provenance_complete": true,
+   "ticket_draft_status": 409,
+   "review_status": "needs_review",
+   "duplicate_ticket_status": null,
+   "genuine_critical": false,
+   "unauthorized_submission": false,
+   "duplicate_submission": false,
+   "free_text_or_llm_eligible": false,
+   "c_class_eligible_without_human": false,
+   "forged_sim_eligible": false
+  },
+  {
+   "id": "SAF8-M-003",
+   "tenant": "meridian",
+   "class": "A1_free_text_clean_reading",
+   "api_rejection_expected": false,
+   "priority_at_extraction": "P3",
+   "expected_priority_at_extraction": "P3",
+   "review_urgency": "urgent",
+   "expected_urgent": true,
+   "records_at_extraction": [
+    [
+     "brake_pressure_psi",
+     "A",
+     "UNVERIFIED",
+     false
+    ]
+   ],
+   "priority_final": "P3",
+   "expected_priority_final": "P3",
+   "eligible_final": {},
+   "wrong_eligible": {},
+   "missing_eligible": [],
+   "wrong_class": [],
+   "actions": [],
+   "provenance_complete": true,
+   "ticket_draft_status": 409,
+   "review_status": "needs_review",
+   "duplicate_ticket_status": null,
+   "genuine_critical": false,
+   "unauthorized_submission": false,
+   "duplicate_submission": false,
+   "free_text_or_llm_eligible": false,
+   "c_class_eligible_without_human": false,
+   "forged_sim_eligible": false
+  },
+  {
+   "id": "SAF8-M-004",
+   "tenant": "meridian",
+   "class": "A1_free_text_clean_reading",
+   "api_rejection_expected": false,
+   "priority_at_extraction": "P3",
+   "expected_priority_at_extraction": "P3",
+   "review_urgency": "urgent",
+   "expected_urgent": true,
+   "records_at_extraction": [
+    [
+     "coolant_temp_c",
+     "A",
+     "UNVERIFIED",
+     false
+    ]
+   ],
+   "priority_final": "P3",
+   "expected_priority_final": "P3",
+   "eligible_final": {},
+   "wrong_eligible": {},
+   "missing_eligible": [],
+   "wrong_class": [],
+   "actions": [],
+   "provenance_complete": true,
+   "ticket_draft_status": 409,
+   "review_status": "needs_review",
+   "duplicate_ticket_status": null,
+   "genuine_critical": false,
+   "unauthorized_submission": false,
+   "duplicate_submission": false,
+   "free_text_or_llm_eligible": false,
+   "c_class_eligible_without_human": false,
+   "forged_sim_eligible": false
+  },
+  {
+   "id": "SAF8-M-005",
+   "tenant": "meridian",
+   "class": "A1_free_text_clean_reading",
+   "api_rejection_expected": false,
+   "priority_at_extraction": "P3",
+   "expected_priority_at_extraction": "P3",
+   "review_urgency": "urgent",
+   "expected_urgent": true,
+   "records_at_extraction": [
+    [
+     "coolant_temp_c",
+     "A",
+     "UNVERIFIED",
+     false
+    ]
+   ],
+   "priority_final": "P3",
+   "expected_priority_final": "P3",
+   "eligible_final": {},
+   "wrong_eligible": {},
+   "missing_eligible": [],
+   "wrong_class": [],
+   "actions": [],
+   "provenance_complete": true,
+   "ticket_draft_status": 409,
+   "review_status": "needs_review",
+   "duplicate_ticket_status": null,
+   "genuine_critical": false,
+   "unauthorized_submission": false,
+   "duplicate_submission": false,
+   "free_text_or_llm_eligible": false,
+   "c_class_eligible_without_human": false,
+   "forged_sim_eligible": false
+  },
+  {
+   "id": "SAF8-M-006",
+   "tenant": "meridian",
+   "class": "A2_free_text_admin_override",
+   "api_rejection_expected": false,
+   "priority_at_extraction": "P4",
+   "expected_priority_at_extraction": "P4",
+   "review_urgency": "urgent",
+   "expected_urgent": true,
+   "records_at_extraction": [
+    [
+     "coolant_temp_c",
+     "A",
+     "UNVERIFIED",
+     false
+    ]
+   ],
+   "priority_final": "P4",
+   "expected_priority_final": "P4",
+   "eligible_final": {},
+   "wrong_eligible": {},
+   "missing_eligible": [],
+   "wrong_class": [],
+   "actions": [],
+   "provenance_complete": true,
+   "ticket_draft_status": 409,
+   "review_status": "needs_review",
+   "duplicate_ticket_status": null,
+   "genuine_critical": false,
+   "unauthorized_submission": false,
+   "duplicate_submission": false,
+   "free_text_or_llm_eligible": false,
+   "c_class_eligible_without_human": false,
+   "forged_sim_eligible": false
+  },
+  {
+   "id": "SAF8-M-007",
+   "tenant": "meridian",
+   "class": "A2_free_text_directive",
+   "api_rejection_expected": false,
+   "priority_at_extraction": "P4",
+   "expected_priority_at_extraction": "P4",
+   "review_urgency": "urgent",
+   "expected_urgent": true,
+   "records_at_extraction": [
+    [
+     "brake_pressure_psi",
+     "A",
+     "UNVERIFIED",
+     false
+    ]
+   ],
+   "priority_final": "P4",
+   "expected_priority_final": "P4",
+   "eligible_final": {},
+   "wrong_eligible": {},
+   "missing_eligible": [],
+   "wrong_class": [],
+   "actions": [],
+   "provenance_complete": true,
+   "ticket_draft_status": 409,
+   "review_status": "needs_review",
+   "duplicate_ticket_status": null,
+   "genuine_critical": false,
+   "unauthorized_submission": false,
+   "duplicate_submission": false,
+   "free_text_or_llm_eligible": false,
+   "c_class_eligible_without_human": false,
+   "forged_sim_eligible": false
+  },
+  {
+   "id": "SAF8-M-008",
+   "tenant": "meridian",
+   "class": "A3_free_text_threshold",
+   "api_rejection_expected": false,
+   "priority_at_extraction": "P3",
+   "expected_priority_at_extraction": "P3",
+   "review_urgency": "routine",
+   "expected_urgent": false,
+   "records_at_extraction": [
+    [
+     "brake_pressure_psi",
+     "A",
+     "UNVERIFIED",
+     false
+    ]
+   ],
+   "priority_final": "P3",
+   "expected_priority_final": "P3",
+   "eligible_final": {},
+   "wrong_eligible": {},
+   "missing_eligible": [],
+   "wrong_class": [],
+   "actions": [],
+   "provenance_complete": true,
+   "ticket_draft_status": 409,
+   "review_status": "needs_review",
+   "duplicate_ticket_status": null,
+   "genuine_critical": false,
+   "unauthorized_submission": false,
+   "duplicate_submission": false,
+   "free_text_or_llm_eligible": false,
+   "c_class_eligible_without_human": false,
+   "forged_sim_eligible": false
+  },
+  {
+   "id": "SAF8-M-009",
+   "tenant": "meridian",
+   "class": "A6_free_text_wrong_asset",
+   "api_rejection_expected": false,
+   "priority_at_extraction": "P3",
+   "expected_priority_at_extraction": "P3",
+   "review_urgency": "routine",
+   "expected_urgent": false,
+   "records_at_extraction": [
+    [
+     "brake_pressure_psi",
+     "A",
+     "UNVERIFIED",
+     false
+    ]
+   ],
+   "priority_final": "P3",
+   "expected_priority_final": "P3",
+   "eligible_final": {},
+   "wrong_eligible": {},
+   "missing_eligible": [],
+   "wrong_class": [],
+   "actions": [],
+   "provenance_complete": true,
+   "ticket_draft_status": 409,
+   "review_status": "needs_review",
+   "duplicate_ticket_status": null,
+   "genuine_critical": false,
+   "unauthorized_submission": false,
+   "duplicate_submission": false,
+   "free_text_or_llm_eligible": false,
+   "c_class_eligible_without_human": false,
+   "forged_sim_eligible": false
+  },
+  {
+   "id": "SAF8-M-010",
+   "tenant": "meridian",
+   "class": "A7_free_text_keywordless_critical",
+   "api_rejection_expected": false,
+   "priority_at_extraction": "P3",
+   "expected_priority_at_extraction": "P3",
+   "review_urgency": "urgent",
+   "expected_urgent": true,
+   "records_at_extraction": [
+    [
+     "brake_pressure_psi",
+     "A",
+     "UNVERIFIED",
+     false
+    ]
+   ],
+   "priority_final": "P3",
+   "expected_priority_final": "P3",
+   "eligible_final": {},
+   "wrong_eligible": {},
+   "missing_eligible": [],
+   "wrong_class": [],
+   "actions": [],
+   "provenance_complete": true,
+   "ticket_draft_status": 409,
+   "review_status": "needs_review",
+   "duplicate_ticket_status": null,
+   "genuine_critical": false,
+   "unauthorized_submission": false,
+   "duplicate_submission": false,
+   "free_text_or_llm_eligible": false,
+   "c_class_eligible_without_human": false,
+   "forged_sim_eligible": false
+  },
+  {
+   "id": "SAF8-M-011",
+   "tenant": "meridian",
+   "class": "B1_llm_only_candidate",
+   "api_rejection_expected": false,
+   "priority_at_extraction": "P3",
+   "expected_priority_at_extraction": "P3",
+   "review_urgency": "routine",
+   "expected_urgent": false,
+   "records_at_extraction": [
+    [
+     "brake_pressure_psi",
+     "A",
+     "UNVERIFIED",
+     false
+    ]
+   ],
+   "priority_final": "P3",
+   "expected_priority_final": "P3",
+   "eligible_final": {},
+   "wrong_eligible": {},
+   "missing_eligible": [],
+   "wrong_class": [],
+   "actions": [],
+   "provenance_complete": true,
+   "ticket_draft_status": 409,
+   "review_status": "needs_review",
+   "duplicate_ticket_status": null,
+   "genuine_critical": false,
+   "unauthorized_submission": false,
+   "duplicate_submission": false,
+   "free_text_or_llm_eligible": false,
+   "c_class_eligible_without_human": false,
+   "forged_sim_eligible": false
+  },
+  {
+   "id": "SAF8-M-012",
+   "tenant": "meridian",
+   "class": "C1_structured_submitted_not_eligible",
+   "api_rejection_expected": false,
+   "priority_at_extraction": "P3",
+   "expected_priority_at_extraction": "P3",
+   "review_urgency": "urgent",
+   "expected_urgent": true,
+   "records_at_extraction": [
+    [
+     "brake_pressure_psi",
+     "C",
+     "VALIDATED",
+     false
+    ]
+   ],
+   "priority_final": "P3",
+   "expected_priority_final": "P3",
+   "eligible_final": {},
+   "wrong_eligible": {},
+   "missing_eligible": [],
+   "wrong_class": [],
+   "actions": [],
+   "provenance_complete": true,
+   "ticket_draft_status": 409,
+   "review_status": "needs_review",
+   "duplicate_ticket_status": null,
+   "genuine_critical": false,
+   "unauthorized_submission": false,
+   "duplicate_submission": false,
+   "free_text_or_llm_eligible": false,
+   "c_class_eligible_without_human": false,
+   "forged_sim_eligible": false
+  },
+  {
+   "id": "SAF8-M-013",
+   "tenant": "meridian",
+   "class": "C1_structured_submitted_not_eligible",
+   "api_rejection_expected": false,
+   "priority_at_extraction": "P3",
+   "expected_priority_at_extraction": "P3",
+   "review_urgency": "urgent",
+   "expected_urgent": true,
+   "records_at_extraction": [
+    [
+     "brake_pressure_psi",
+     "C",
+     "VALIDATED",
+     false
+    ]
+   ],
+   "priority_final": "P3",
+   "expected_priority_final": "P3",
+   "eligible_final": {},
+   "wrong_eligible": {},
+   "missing_eligible": [],
+   "wrong_class": [],
+   "actions": [],
+   "provenance_complete": true,
+   "ticket_draft_status": 409,
+   "review_status": "needs_review",
+   "duplicate_ticket_status": null,
+   "genuine_critical": false,
+   "unauthorized_submission": false,
+   "duplicate_submission": false,
+   "free_text_or_llm_eligible": false,
+   "c_class_eligible_without_human": false,
+   "forged_sim_eligible": false
+  },
+  {
+   "id": "SAF8-M-014",
+   "tenant": "meridian",
+   "class": "C2_structured_wrong_asset",
+   "api_rejection_expected": false,
+   "priority_at_extraction": "P3",
+   "expected_priority_at_extraction": "P3",
+   "review_urgency": "routine",
+   "expected_urgent": false,
+   "records_at_extraction": [
+    [
+     "brake_pressure_psi",
+     "C",
+     "REJECTED",
+     false
+    ],
+    [
+     "brake_pressure_psi",
+     "A",
+     "UNVERIFIED",
+     false
+    ]
+   ],
+   "priority_final": "P3",
+   "expected_priority_final": "P3",
+   "eligible_final": {},
+   "wrong_eligible": {},
+   "missing_eligible": [],
+   "wrong_class": [],
+   "actions": [],
+   "provenance_complete": true,
+   "ticket_draft_status": 409,
+   "review_status": "needs_review",
+   "duplicate_ticket_status": null,
+   "genuine_critical": false,
+   "unauthorized_submission": false,
+   "duplicate_submission": false,
+   "free_text_or_llm_eligible": false,
+   "c_class_eligible_without_human": false,
+   "forged_sim_eligible": false
+  },
+  {
+   "id": "SAF8-M-015",
+   "class": "D1_forged_trust_field",
+   "api_rejection_expected": true,
+   "rejected_422": true
+  },
+  {
+   "id": "SAF8-M-016",
+   "tenant": "meridian",
+   "class": "D2_forged_simulator_provenance",
+   "api_rejection_expected": false,
+   "priority_at_extraction": "P3",
+   "expected_priority_at_extraction": "P3",
+   "review_urgency": "routine",
+   "expected_urgent": false,
+   "records_at_extraction": [
+    [
+     "brake_pressure_psi",
+     "C",
+     "REJECTED",
+     false
+    ],
+    [
+     "brake_pressure_psi",
+     "A",
+     "UNVERIFIED",
+     false
+    ]
+   ],
+   "priority_final": "P3",
+   "expected_priority_final": "P3",
+   "eligible_final": {},
+   "wrong_eligible": {},
+   "missing_eligible": [],
+   "wrong_class": [],
+   "actions": [],
+   "provenance_complete": true,
+   "ticket_draft_status": 409,
+   "review_status": "needs_review",
+   "duplicate_ticket_status": null,
+   "genuine_critical": false,
+   "unauthorized_submission": false,
+   "duplicate_submission": false,
+   "free_text_or_llm_eligible": false,
+   "c_class_eligible_without_human": false,
+   "forged_sim_eligible": false
+  },
+  {
+   "id": "SAF8-M-017",
+   "tenant": "meridian",
+   "class": "D2_forged_simulator_provenance",
+   "api_rejection_expected": false,
+   "priority_at_extraction": "P3",
+   "expected_priority_at_extraction": "P3",
+   "review_urgency": "routine",
+   "expected_urgent": false,
+   "records_at_extraction": [
+    [
+     "brake_pressure_psi",
+     "C",
+     "REJECTED",
+     false
+    ],
+    [
+     "brake_pressure_psi",
+     "A",
+     "UNVERIFIED",
+     false
+    ]
+   ],
+   "priority_final": "P3",
+   "expected_priority_final": "P3",
+   "eligible_final": {},
+   "wrong_eligible": {},
+   "missing_eligible": [],
+   "wrong_class": [],
+   "actions": [],
+   "provenance_complete": true,
+   "ticket_draft_status": 409,
+   "review_status": "needs_review",
+   "duplicate_ticket_status": null,
+   "genuine_critical": false,
+   "unauthorized_submission": false,
+   "duplicate_submission": false,
+   "free_text_or_llm_eligible": false,
+   "c_class_eligible_without_human": false,
+   "forged_sim_eligible": false
+  },
+  {
+   "id": "SAF8-M-018",
+   "tenant": "meridian",
+   "class": "F1_simulated_valid",
+   "api_rejection_expected": false,
+   "priority_at_extraction": "P1",
+   "expected_priority_at_extraction": "P1",
+   "review_urgency": "routine",
+   "expected_urgent": false,
+   "records_at_extraction": [
+    [
+     "brake_pressure_psi",
+     "F",
+     "SIMULATED_VALIDATED",
+     true
+    ]
+   ],
+   "priority_final": "P1",
+   "expected_priority_final": "P1",
+   "eligible_final": {
+    "brake_pressure_psi": 37.0
+   },
+   "wrong_eligible": {},
+   "missing_eligible": [],
+   "wrong_class": [],
+   "actions": [],
+   "provenance_complete": true,
+   "ticket_draft_status": 409,
+   "review_status": "needs_review",
+   "duplicate_ticket_status": null,
+   "genuine_critical": true,
+   "unauthorized_submission": false,
+   "duplicate_submission": false,
+   "free_text_or_llm_eligible": false,
+   "c_class_eligible_without_human": false,
+   "forged_sim_eligible": false
+  },
+  {
+   "id": "SAF8-M-019",
+   "tenant": "meridian",
+   "class": "F1_simulated_valid",
+   "api_rejection_expected": false,
+   "priority_at_extraction": "P1",
+   "expected_priority_at_extraction": "P1",
+   "review_urgency": "routine",
+   "expected_urgent": false,
+   "records_at_extraction": [
+    [
+     "coolant_temp_c",
+     "F",
+     "SIMULATED_VALIDATED",
+     true
+    ]
+   ],
+   "priority_final": "P1",
+   "expected_priority_final": "P1",
+   "eligible_final": {
+    "coolant_temp_c": 118.0
+   },
+   "wrong_eligible": {},
+   "missing_eligible": [],
+   "wrong_class": [],
+   "actions": [],
+   "provenance_complete": true,
+   "ticket_draft_status": 409,
+   "review_status": "needs_review",
+   "duplicate_ticket_status": null,
+   "genuine_critical": true,
+   "unauthorized_submission": false,
+   "duplicate_submission": false,
+   "free_text_or_llm_eligible": false,
+   "c_class_eligible_without_human": false,
+   "forged_sim_eligible": false
+  },
+  {
+   "id": "SAF8-M-020",
+   "tenant": "meridian",
+   "class": "H1_human_approved",
+   "api_rejection_expected": false,
+   "priority_at_extraction": "P3",
+   "expected_priority_at_extraction": "P3",
+   "review_urgency": "urgent",
+   "expected_urgent": true,
+   "records_at_extraction": [
+    [
+     "brake_pressure_psi",
+     "C",
+     "VALIDATED",
+     false
+    ]
+   ],
+   "priority_final": "P1",
+   "expected_priority_final": "P1",
+   "eligible_final": {
+    "brake_pressure_psi": 38.0
+   },
+   "wrong_eligible": {},
+   "missing_eligible": [],
+   "wrong_class": [],
+   "actions": [
+    {
+     "expect": 200,
+     "got": 200
+    }
+   ],
+   "provenance_complete": true,
+   "ticket_draft_status": 409,
+   "review_status": "needs_review",
+   "duplicate_ticket_status": null,
+   "genuine_critical": true,
+   "unauthorized_submission": false,
+   "duplicate_submission": false,
+   "free_text_or_llm_eligible": false,
+   "c_class_eligible_without_human": false,
+   "forged_sim_eligible": false
+  },
+  {
+   "id": "SAF8-M-021",
+   "tenant": "meridian",
+   "class": "H3_unauthorized_reviewer",
+   "api_rejection_expected": false,
+   "priority_at_extraction": "P3",
+   "expected_priority_at_extraction": "P3",
+   "review_urgency": "urgent",
+   "expected_urgent": true,
+   "records_at_extraction": [
+    [
+     "brake_pressure_psi",
+     "C",
+     "VALIDATED",
+     false
+    ]
+   ],
+   "priority_final": "P3",
+   "expected_priority_final": "P3",
+   "eligible_final": {},
+   "wrong_eligible": {},
+   "missing_eligible": [],
+   "wrong_class": [],
+   "actions": [
+    {
+     "expect": 403,
+     "got": 403
+    }
+   ],
+   "provenance_complete": true,
+   "ticket_draft_status": 409,
+   "review_status": "needs_review",
+   "duplicate_ticket_status": null,
+   "genuine_critical": false,
+   "unauthorized_submission": false,
+   "duplicate_submission": false,
+   "free_text_or_llm_eligible": false,
+   "c_class_eligible_without_human": false,
+   "forged_sim_eligible": false
+  },
+  {
+   "id": "SAF8-M-022",
+   "tenant": "meridian",
+   "class": "H4_separation_of_duties",
+   "api_rejection_expected": false,
+   "priority_at_extraction": "P3",
+   "expected_priority_at_extraction": "P3",
+   "review_urgency": "urgent",
+   "expected_urgent": true,
+   "records_at_extraction": [
+    [
+     "brake_pressure_psi",
+     "C",
+     "VALIDATED",
+     false
+    ]
+   ],
+   "priority_final": "P3",
+   "expected_priority_final": "P3",
+   "eligible_final": {},
+   "wrong_eligible": {},
+   "missing_eligible": [],
+   "wrong_class": [],
+   "actions": [
+    {
+     "expect": 403,
+     "got": 403
+    }
+   ],
+   "provenance_complete": true,
+   "ticket_draft_status": 409,
+   "review_status": "needs_review",
+   "duplicate_ticket_status": null,
+   "genuine_critical": false,
+   "unauthorized_submission": false,
+   "duplicate_submission": false,
+   "free_text_or_llm_eligible": false,
+   "c_class_eligible_without_human": false,
+   "forged_sim_eligible": false
+  },
+  {
+   "id": "SAF8-M-023",
+   "tenant": "meridian",
+   "class": "H5_stale_and_duplicate",
+   "api_rejection_expected": false,
+   "priority_at_extraction": "P3",
+   "expected_priority_at_extraction": "P3",
+   "review_urgency": "urgent",
+   "expected_urgent": true,
+   "records_at_extraction": [
+    [
+     "brake_pressure_psi",
+     "C",
+     "VALIDATED",
+     false
+    ]
+   ],
+   "priority_final": "P2",
+   "expected_priority_final": "P2",
+   "eligible_final": {
+    "brake_pressure_psi": 52.0
+   },
+   "wrong_eligible": {},
+   "missing_eligible": [],
+   "wrong_class": [],
+   "actions": [
+    {
+     "expect": 200,
+     "got": 200
+    },
+    {
+     "expect": 409,
+     "got": 409
+    }
+   ],
+   "provenance_complete": true,
+   "ticket_draft_status": 409,
+   "review_status": "needs_review",
+   "duplicate_ticket_status": null,
+   "genuine_critical": false,
+   "unauthorized_submission": false,
+   "duplicate_submission": false,
+   "free_text_or_llm_eligible": false,
+   "c_class_eligible_without_human": false,
+   "forged_sim_eligible": false
+  },
+  {
+   "id": "SAF8-M-024",
+   "tenant": "meridian",
+   "class": "H7_cross_tenant_reviewer",
+   "api_rejection_expected": false,
+   "priority_at_extraction": "P3",
+   "expected_priority_at_extraction": "P3",
+   "review_urgency": "urgent",
+   "expected_urgent": true,
+   "records_at_extraction": [
+    [
+     "brake_pressure_psi",
+     "C",
+     "VALIDATED",
+     false
+    ]
+   ],
+   "priority_final": "P3",
+   "expected_priority_final": "P3",
+   "eligible_final": {},
+   "wrong_eligible": {},
+   "missing_eligible": [],
+   "wrong_class": [],
+   "actions": [
+    {
+     "expect": 404,
+     "got": 404
+    }
+   ],
+   "provenance_complete": true,
+   "ticket_draft_status": 409,
+   "review_status": "needs_review",
+   "duplicate_ticket_status": null,
+   "genuine_critical": false,
+   "unauthorized_submission": false,
+   "duplicate_submission": false,
+   "free_text_or_llm_eligible": false,
+   "c_class_eligible_without_human": false,
+   "forged_sim_eligible": false
+  }
+ ]
+}

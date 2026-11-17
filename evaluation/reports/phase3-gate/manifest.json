@@ -1,0 +1,19 @@
+{
+  "purpose": "Phase 3 quality gate",
+  "date": "2026-11-11",
+  "commands": {
+    "lint": "python -m ruff check backend mock-services workers scripts tests evaluation",
+    "functional_suite": "python -m pytest -q --junitxml=evaluation/reports/phase3-gate/pytest-junit.xml",
+    "real_ai_suite": "RUN_REAL_AI=1 python -m pytest backend/tests/test_real_ai.py -q --junitxml=evaluation/reports/phase3-gate/pytest-real-ai-junit.xml",
+    "frontend": "cd frontend && npm run typecheck && npm test && npm run build"
+  },
+  "results": {
+    "lint": "clean",
+    "functional_suite": "72 passed, 8 skipped (the skipped tests are the real-AI tests), 0 failed; deterministic test-only backends",
+    "real_ai_suite": "8 passed, 0 failed; Ollama qwen2.5:1.5b (digest 65ec06548149...) + MiniLM @ 1110a243fdf4...",
+    "frontend": "3 unit tests passed; typecheck and build clean"
+  },
+  "benchmarks": "evaluation/reports/phase3/SUMMARY.md (three real-AI runs, one deterministic functional baseline)",
+  "notes": ["Functional tests force the deterministic backends regardless of .env; only test_real_ai.py uses real AI.",
+            "CI has not run: nothing has been pushed."]
+}

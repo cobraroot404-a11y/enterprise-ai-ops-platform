@@ -1,0 +1,44 @@
+{
+  "purpose": "Phase 4 quality gate (security hardening and reliability)",
+  "date": "2026-11-11",
+  "commands": {
+    "lint": "python -m ruff check backend mock-services workers scripts tests evaluation conftest.py",
+    "functional_suite": "python -m pytest -q --junitxml=evaluation/reports/phase4-gate/pytest-junit.xml",
+    "fault_injection_all_including_db_outage": "RUN_DISRUPTIVE=1 python -m pytest tests/fault_injection -q",
+    "real_ai_suite": "RUN_REAL_AI=1 python -m pytest backend/tests/test_real_ai.py -q --junitxml=evaluation/reports/phase4-gate/pytest-real-ai-junit.xml",
+    "frontend": "cd frontend && npm run typecheck && npm test && npm run build"
+  },
+  "results": {
+    "lint": "clean",
+    "functional_suite": "111 passed, 10 skipped (9 real-AI tests + opt-in FI-10), 0 failed; deterministic test-only backends; Ollama stopped",
+    "per_area": {
+      "jwt_and_login_throttle": 6,
+      "authorization_matrix_all_routes": 5,
+      "membership_rls": 9,
+      "tenant_rls_and_pooling_and_rbac": 17,
+      "mutation_proofs": 9,
+      "ai_safeguards_and_review_gate": 8,
+      "workflow_approval_outbox_retries": 20,
+      "embedding_profiles_reindex": 6,
+      "fault_injection_default": "10 passed, 1 opt-in"
+    },
+    "fault_injection_full": "11 of 11 scenarios passed including FI-10 (PostgreSQL stop/restart); see evaluation/failure-reports/phase4/",
+    "real_ai_suite": "9 passed on Ollama 0.40.16 qwen2.5:1.5b (digest 65ec06548149...) + MiniLM @ 1110a243fdf4...",
+    "frontend": "3 unit tests passed; typecheck and build clean",
+    "ui_recheck_with_real_inference": "manual browser run on apex-uitest: grounded cited answer, incident extraction, draft, request approval, supervisor approval, worker submission (external ID issued), needs_review gate and human acceptance"
+  },
+  "unchanged": "Phase 3 reports and dataset apex-eval-v1 were not modified or re-run; AI-quality targets (citation correctness 95%) remain NOT MET",
+  "notes": [
+    "Functional tests force deterministic backends regardless of .env.",
+    "Ollama was stopped after real-AI work (scripts/ollama_ctl.py); nothing was uninstalled, no model removed, PATH untouched.",
+    "CI has not run: nothing has been pushed."
+  ],
+  "closure_reverification": {
+    "date": "2026-11-11",
+    "functional_suite": "169 passed, 10 skipped (Phase 4 scope, before Meridian tests existed)",
+    "fault_injection_full": "11 of 11 passed (isolated project container)",
+    "real_ai_suite": "9 passed",
+    "frontend": "3 passed; typecheck and build clean",
+    "superseded_by": "evaluation/reports/phase5-gate/manifest.json"
+  }
+}

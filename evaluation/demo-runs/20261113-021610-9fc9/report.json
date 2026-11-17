@@ -1,0 +1,420 @@
+{
+ "run_id": "20261113-021610-9fc9",
+ "mode": "smoke",
+ "ai": "deterministic",
+ "started_at": "2026-11-13T02:16:10-05:00",
+ "executed": [],
+ "failures": [
+  "browser smoke failed or incomplete: 0 passed, 1 failed of 2; see .demo\\20261113-021610-9fc9\\logs\\playwright.log"
+ ],
+ "skipped": [],
+ "git_head": "75024fe886ddb27817f4ecb439a9c607048337c1",
+ "preflight": [
+  {
+   "check": "python environment",
+   "ok": true,
+   "detail": "<local-path>",
+   "hint": "run with the project's virtual environment: .venv\\Scripts\\python scripts\\demo.py ..."
+  },
+  {
+   "check": "environment configuration",
+   "ok": true,
+   "detail": "required settings present, JSON settings valid, mock origins authorised",
+   "hint": "fix .env (names only are shown here; values are never printed)"
+  },
+  {
+   "check": "node",
+   "ok": true,
+   "detail": "C:\\Program Files\\nodejs\\node.EXE",
+   "hint": "install Node 20+ (not done automatically)"
+  },
+  {
+   "check": "frontend dependencies",
+   "ok": true,
+   "detail": "frontend/node_modules/vite present",
+   "hint": "run `npm install` in frontend/ (not done automatically)"
+  },
+  {
+   "check": "disk space",
+   "ok": true,
+   "detail": "113 GB free",
+   "hint": "free at least 2 GB"
+  },
+  {
+   "check": "ports free",
+   "ok": true,
+   "detail": "all required ports free",
+   "hint": "another program (possibly your own dev stack) holds these ports; the launcher never stops processes it did not start. Stop that program yourself or run `python scripts/demo.py down` if it is a previous demo"
+  },
+  {
+   "check": "postgresql",
+   "ok": true,
+   "detail": "PostgreSQL reachable, pgvector available",
+   "hint": "start it with `python scripts/dev.py up` (Docker Desktop must be running)"
+  }
+ ],
+ "database": {
+  "name": "eaop_demo_20261113_021610_9fc9",
+  "revision": "0008",
+  "head": "0008",
+  "created_by_this_run": true
+ },
+ "workflows": {
+  "external_systems": "simulated: local mock ticketing (8101) and service desk (8105)",
+  "tenants": {
+   "apex-industrial": [
+    {
+     "tenant": "apex-industrial",
+     "step": "sign in as engineer, supervisor, administrator and auditor",
+     "ok": true,
+     "detail": ""
+    },
+    {
+     "tenant": "apex-industrial",
+     "step": "engineer analyses a fault report with a structured observation (HTTP 201)",
+     "ok": true,
+     "detail": "HTTP 201"
+    },
+    {
+     "tenant": "apex-industrial",
+     "step": "the observation is stored as a submitted observation awaiting verification (class C, VALIDATED, not used for priority)",
+     "ok": true,
+     "detail": "{\"trust_status\": \"VALIDATED\", \"evidence_class\": \"C\", \"eligible_for_numeric_priority\": false}"
+    },
+    {
+     "tenant": "apex-industrial",
+     "step": "asset is registered",
+     "ok": true,
+     "detail": "P-101"
+    },
+    {
+     "tenant": "apex-industrial",
+     "step": "engineer cannot verify (403 insufficient_role)",
+     "ok": true,
+     "detail": "HTTP 403"
+    },
+    {
+     "tenant": "apex-industrial",
+     "step": "auditor cannot verify (403 insufficient_role)",
+     "ok": true,
+     "detail": "HTTP 403"
+    },
+    {
+     "tenant": "apex-industrial",
+     "step": "another tenant's supervisor gets 404 (tenant isolation)",
+     "ok": true,
+     "detail": "HTTP 404"
+    },
+    {
+     "tenant": "apex-industrial",
+     "step": "another tenant's engineer cannot read the incident (404)",
+     "ok": true,
+     "detail": "HTTP 404"
+    },
+    {
+     "tenant": "apex-industrial",
+     "step": "supervisor verifies; the server returns HUMAN_VERIFIED, class D, eligible",
+     "ok": true,
+     "detail": "HTTP 200"
+    },
+    {
+     "tenant": "apex-industrial",
+     "step": "priority comes from the server: P3 -> P2 (verification block says P3 -> P2)",
+     "ok": true,
+     "detail": ""
+    },
+    {
+     "tenant": "apex-industrial",
+     "step": "a repeated decision is refused (409)",
+     "ok": true,
+     "detail": "HTTP 409 measurement_not_pending"
+    },
+    {
+     "tenant": "apex-industrial",
+     "step": "the creator cannot verify their own incident's measurement (403 separation_of_duties)",
+     "ok": true,
+     "detail": "HTTP 403"
+    },
+    {
+     "tenant": "apex-industrial",
+     "step": "engineer drafts a ticket (201, DRAFT)",
+     "ok": true,
+     "detail": "HTTP 201"
+    },
+    {
+     "tenant": "apex-industrial",
+     "step": "approval requested (PENDING_APPROVAL)",
+     "ok": true,
+     "detail": "HTTP 200"
+    },
+    {
+     "tenant": "apex-industrial",
+     "step": "the author cannot approve (403)",
+     "ok": true,
+     "detail": "HTTP 403"
+    },
+    {
+     "tenant": "apex-industrial",
+     "step": "supervisor approves",
+     "ok": true,
+     "detail": "HTTP 200"
+    },
+    {
+     "tenant": "apex-industrial",
+     "step": "the worker submits it to the (simulated) external system: SUBMITTED with an external id",
+     "ok": true,
+     "detail": "state SUBMITTED external id MNT-1001"
+    },
+    {
+     "tenant": "apex-industrial",
+     "step": "the audit log shows the whole chain",
+     "ok": true,
+     "detail": "missing []"
+    }
+   ],
+   "meridian-fleet": [
+    {
+     "tenant": "meridian-fleet",
+     "step": "sign in as engineer, supervisor, administrator and auditor",
+     "ok": true,
+     "detail": ""
+    },
+    {
+     "tenant": "meridian-fleet",
+     "step": "engineer analyses a fault report with a structured observation (HTTP 201)",
+     "ok": true,
+     "detail": "HTTP 201"
+    },
+    {
+     "tenant": "meridian-fleet",
+     "step": "the observation is stored as a submitted observation awaiting verification (class C, VALIDATED, not used for priority)",
+     "ok": true,
+     "detail": "{\"trust_status\": \"VALIDATED\", \"evidence_class\": \"C\", \"eligible_for_numeric_priority\": false}"
+    },
+    {
+     "tenant": "meridian-fleet",
+     "step": "asset is registered",
+     "ok": true,
+     "detail": "VH-2101"
+    },
+    {
+     "tenant": "meridian-fleet",
+     "step": "engineer cannot verify (403 insufficient_role)",
+     "ok": true,
+     "detail": "HTTP 403"
+    },
+    {
+     "tenant": "meridian-fleet",
+     "step": "auditor cannot verify (403 insufficient_role)",
+     "ok": true,
+     "detail": "HTTP 403"
+    },
+    {
+     "tenant": "meridian-fleet",
+     "step": "another tenant's supervisor gets 404 (tenant isolation)",
+     "ok": true,
+     "detail": "HTTP 404"
+    },
+    {
+     "tenant": "meridian-fleet",
+     "step": "another tenant's engineer cannot read the incident (404)",
+     "ok": true,
+     "detail": "HTTP 404"
+    },
+    {
+     "tenant": "meridian-fleet",
+     "step": "supervisor verifies; the server returns HUMAN_VERIFIED, class D, eligible",
+     "ok": true,
+     "detail": "HTTP 200"
+    },
+    {
+     "tenant": "meridian-fleet",
+     "step": "priority comes from the server: P3 -> P2 (verification block says P3 -> P2)",
+     "ok": true,
+     "detail": ""
+    },
+    {
+     "tenant": "meridian-fleet",
+     "step": "a repeated decision is refused (409)",
+     "ok": true,
+     "detail": "HTTP 409 measurement_not_pending"
+    },
+    {
+     "tenant": "meridian-fleet",
+     "step": "the creator cannot verify their own incident's measurement (403 separation_of_duties)",
+     "ok": true,
+     "detail": "HTTP 403"
+    },
+    {
+     "tenant": "meridian-fleet",
+     "step": "engineer drafts a ticket (201, DRAFT)",
+     "ok": true,
+     "detail": "HTTP 201"
+    },
+    {
+     "tenant": "meridian-fleet",
+     "step": "approval requested (PENDING_APPROVAL)",
+     "ok": true,
+     "detail": "HTTP 200"
+    },
+    {
+     "tenant": "meridian-fleet",
+     "step": "the author cannot approve (403)",
+     "ok": true,
+     "detail": "HTTP 403"
+    },
+    {
+     "tenant": "meridian-fleet",
+     "step": "supervisor approves",
+     "ok": true,
+     "detail": "HTTP 200"
+    },
+    {
+     "tenant": "meridian-fleet",
+     "step": "the worker submits it to the (simulated) external system: SUBMITTED with an external id",
+     "ok": true,
+     "detail": "state SUBMITTED external id WO-7001"
+    },
+    {
+     "tenant": "meridian-fleet",
+     "step": "the audit log shows the whole chain",
+     "ok": true,
+     "detail": "missing []"
+    }
+   ]
+  }
+ },
+ "timeline": [
+  {
+   "step": "preflight",
+   "ok": true,
+   "seconds": 4.1,
+   "detail": "7 checks passed"
+  },
+  {
+   "step": "create disposable database eaop_demo_20261113_021610_9fc9",
+   "ok": true,
+   "seconds": 0.1,
+   "detail": "created"
+  },
+  {
+   "step": "apply migrations (alembic upgrade head)",
+   "ok": true,
+   "seconds": 1.4,
+   "detail": "revision 0008"
+  },
+  {
+   "step": "seed Apex Industrial fixtures",
+   "ok": true,
+   "seconds": 1.5,
+   "detail": "ok (log .demo\\20261113-021610-9fc9\\logs\\seed-apex.log)"
+  },
+  {
+   "step": "start ticketing and wait for readiness",
+   "ok": true,
+   "seconds": 1.9,
+   "detail": "responds over HTTP"
+  },
+  {
+   "step": "start inventory and wait for readiness",
+   "ok": true,
+   "seconds": 1.3,
+   "detail": "responds over HTTP"
+  },
+  {
+   "step": "start fleet and wait for readiness",
+   "ok": true,
+   "seconds": 1.3,
+   "detail": "responds over HTTP"
+  },
+  {
+   "step": "start crm and wait for readiness",
+   "ok": true,
+   "seconds": 1.3,
+   "detail": "responds over HTTP"
+  },
+  {
+   "step": "start servicedesk and wait for readiness",
+   "ok": true,
+   "seconds": 1.3,
+   "detail": "responds over HTTP"
+  },
+  {
+   "step": "start worker and wait for readiness",
+   "ok": true,
+   "seconds": 1.3,
+   "detail": "logged 'worker started'"
+  },
+  {
+   "step": "start api and wait for readiness",
+   "ok": true,
+   "seconds": 2.4,
+   "detail": "GET /api/v1/health 200 (database reachable)"
+  },
+  {
+   "step": "onboard Meridian Fleet (public API)",
+   "ok": true,
+   "seconds": 1.4,
+   "detail": "ok (log .demo\\20261113-021610-9fc9\\logs\\onboard-meridian.log)"
+  },
+  {
+   "step": "start frontend and wait for readiness",
+   "ok": true,
+   "seconds": 1.6,
+   "detail": "page 200 and /api proxy reaches the API"
+  },
+  {
+   "step": "customer workflows through the API (Apex and Meridian)",
+   "ok": true,
+   "seconds": 4.0,
+   "detail": ""
+  },
+  {
+   "step": "browser smoke (Playwright, Microsoft Edge, against this demo stack)",
+   "ok": false,
+   "seconds": 109.1,
+   "detail": "browser smoke failed or incomplete: 0 passed, 1 failed of 2; see .demo\\20261113-021610-9fc9\\logs\\playwright.log"
+  }
+ ],
+ "cleanup": [
+  {
+   "resource": "process ui (pid 27024)",
+   "result": "stopped"
+  },
+  {
+   "resource": "process api (pid 32584)",
+   "result": "stopped"
+  },
+  {
+   "resource": "process worker (pid 27816)",
+   "result": "stopped"
+  },
+  {
+   "resource": "process servicedesk (pid 17820)",
+   "result": "stopped"
+  },
+  {
+   "resource": "process crm (pid 19944)",
+   "result": "stopped"
+  },
+  {
+   "resource": "process fleet (pid 26392)",
+   "result": "stopped"
+  },
+  {
+   "resource": "process inventory (pid 9648)",
+   "result": "stopped"
+  },
+  {
+   "resource": "process ticketing (pid 372)",
+   "result": "stopped"
+  },
+  {
+   "resource": "database eaop_demo_20261113_021610_9fc9",
+   "result": "dropped"
+  }
+ ],
+ "duration_seconds": 146.2,
+ "finished_at": "2026-11-13T02:18:36-05:00",
+ "success": false
+}

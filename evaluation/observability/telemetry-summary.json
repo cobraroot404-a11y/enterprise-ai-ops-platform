@@ -1,0 +1,277 @@
+{
+  "database": {
+    "approvals": {
+      "approved": 3,
+      "rejected": 0
+    },
+    "incident_review": {
+      "accepted": 0,
+      "cleared_without_review": 3,
+      "extracted": 3,
+      "needs_review_now": 0,
+      "rejected": 0,
+      "required_review": 0,
+      "review_required_rate": 0.0
+    },
+    "submission": {
+      "blocked_by_release_controls": 0,
+      "dead_lettered": 0,
+      "retries_scheduled": 2,
+      "submitted": 3
+    },
+    "ticket_error_classes": {},
+    "ticket_transitions": [
+      {
+        "count": 3,
+        "from": "APPROVED",
+        "to": "SUBMITTING"
+      },
+      {
+        "count": 3,
+        "from": "DRAFT",
+        "to": "PENDING_APPROVAL"
+      },
+      {
+        "count": 3,
+        "from": "PENDING_APPROVAL",
+        "to": "APPROVED"
+      },
+      {
+        "count": 2,
+        "from": "RETRY_PENDING",
+        "to": "SUBMITTING"
+      },
+      {
+        "count": 2,
+        "from": "SUBMITTING",
+        "to": "RETRY_PENDING"
+      },
+      {
+        "count": 3,
+        "from": "SUBMITTING",
+        "to": "SUBMITTED"
+      }
+    ]
+  },
+  "process": {
+    "counters": [
+      {
+        "labels": {
+          "outcome": "grounded",
+          "tenant": "95dbaa3c-27c4-4030-97a8-81be83a52c1f"
+        },
+        "name": "ai_answers_total",
+        "value": 4
+      },
+      {
+        "labels": {
+          "outcome": "ok",
+          "tenant": "95dbaa3c-27c4-4030-97a8-81be83a52c1f"
+        },
+        "name": "connector_calls_total",
+        "value": 6
+      },
+      {
+        "labels": {
+          "outcome": "transient",
+          "tenant": "95dbaa3c-27c4-4030-97a8-81be83a52c1f"
+        },
+        "name": "connector_calls_total",
+        "value": 2
+      },
+      {
+        "labels": {
+          "review_status": "pending_review",
+          "tenant": "95dbaa3c-27c4-4030-97a8-81be83a52c1f"
+        },
+        "name": "incidents_extracted_total",
+        "value": 3
+      },
+      {
+        "labels": {
+          "outcome": "retry_scheduled",
+          "tenant": "95dbaa3c-27c4-4030-97a8-81be83a52c1f"
+        },
+        "name": "submission_outcomes_total",
+        "value": 2
+      },
+      {
+        "labels": {
+          "outcome": "submitted",
+          "tenant": "95dbaa3c-27c4-4030-97a8-81be83a52c1f"
+        },
+        "name": "submission_outcomes_total",
+        "value": 3
+      },
+      {
+        "labels": {
+          "tenant": "95dbaa3c-27c4-4030-97a8-81be83a52c1f"
+        },
+        "name": "submission_retries_total",
+        "value": 2
+      },
+      {
+        "labels": {
+          "from_state": "APPROVED",
+          "tenant": "95dbaa3c-27c4-4030-97a8-81be83a52c1f",
+          "to_state": "SUBMITTING"
+        },
+        "name": "ticket_transitions_total",
+        "value": 3
+      },
+      {
+        "labels": {
+          "from_state": "DRAFT",
+          "tenant": "95dbaa3c-27c4-4030-97a8-81be83a52c1f",
+          "to_state": "PENDING_APPROVAL"
+        },
+        "name": "ticket_transitions_total",
+        "value": 3
+      },
+      {
+        "labels": {
+          "from_state": "PENDING_APPROVAL",
+          "tenant": "95dbaa3c-27c4-4030-97a8-81be83a52c1f",
+          "to_state": "APPROVED"
+        },
+        "name": "ticket_transitions_total",
+        "value": 3
+      },
+      {
+        "labels": {
+          "from_state": "RETRY_PENDING",
+          "tenant": "95dbaa3c-27c4-4030-97a8-81be83a52c1f",
+          "to_state": "SUBMITTING"
+        },
+        "name": "ticket_transitions_total",
+        "value": 2
+      },
+      {
+        "labels": {
+          "from_state": "SUBMITTING",
+          "tenant": "95dbaa3c-27c4-4030-97a8-81be83a52c1f",
+          "to_state": "RETRY_PENDING"
+        },
+        "name": "ticket_transitions_total",
+        "value": 2
+      },
+      {
+        "labels": {
+          "from_state": "SUBMITTING",
+          "tenant": "95dbaa3c-27c4-4030-97a8-81be83a52c1f",
+          "to_state": "SUBMITTED"
+        },
+        "name": "ticket_transitions_total",
+        "value": 3
+      }
+    ],
+    "process_started_at": 1794878680.0406203,
+    "timers": [
+      {
+        "count": 3,
+        "labels": {
+          "decision": "approved",
+          "tenant": "95dbaa3c-27c4-4030-97a8-81be83a52c1f"
+        },
+        "max_s": 0.068224,
+        "mean_s": 0.046619,
+        "name": "approval_turnaround_seconds",
+        "p50_s": 0.038891,
+        "p95_s": 0.065291,
+        "window": 3
+      },
+      {
+        "count": 8,
+        "labels": {
+          "tenant": "95dbaa3c-27c4-4030-97a8-81be83a52c1f"
+        },
+        "max_s": 0.014663,
+        "mean_s": 0.014124,
+        "name": "connector_seconds",
+        "p50_s": 0.014063,
+        "p95_s": 0.014543,
+        "window": 8
+      },
+      {
+        "count": 8,
+        "labels": {
+          "backend": "deterministic",
+          "tenant": "95dbaa3c-27c4-4030-97a8-81be83a52c1f"
+        },
+        "max_s": 8.5e-05,
+        "mean_s": 7.6e-05,
+        "name": "embedding_seconds",
+        "p50_s": 7.8e-05,
+        "p95_s": 8.3e-05,
+        "window": 8
+      },
+      {
+        "count": 4,
+        "labels": {
+          "backend": "deterministic",
+          "kind": "answer",
+          "tenant": "95dbaa3c-27c4-4030-97a8-81be83a52c1f"
+        },
+        "max_s": 9.1e-05,
+        "mean_s": 6.9e-05,
+        "name": "llm_seconds",
+        "p50_s": 6.2e-05,
+        "p95_s": 8.7e-05,
+        "window": 4
+      },
+      {
+        "count": 3,
+        "labels": {
+          "backend": "deterministic",
+          "kind": "extract",
+          "tenant": "95dbaa3c-27c4-4030-97a8-81be83a52c1f"
+        },
+        "max_s": 2.9e-05,
+        "mean_s": 2.8e-05,
+        "name": "llm_seconds",
+        "p50_s": 2.8e-05,
+        "p95_s": 2.9e-05,
+        "window": 3
+      },
+      {
+        "count": 8,
+        "labels": {
+          "mode": "hybrid",
+          "tenant": "95dbaa3c-27c4-4030-97a8-81be83a52c1f"
+        },
+        "max_s": 0.007204,
+        "mean_s": 0.004321,
+        "name": "retrieval_seconds",
+        "p50_s": 0.003531,
+        "p95_s": 0.007009,
+        "window": 8
+      },
+      {
+        "count": 5,
+        "labels": {
+          "tenant": "95dbaa3c-27c4-4030-97a8-81be83a52c1f"
+        },
+        "max_s": 0.039985,
+        "mean_s": 0.037945,
+        "name": "submission_seconds",
+        "p50_s": 0.037453,
+        "p95_s": 0.039568,
+        "window": 5
+      },
+      {
+        "count": 3,
+        "labels": {
+          "tenant": "95dbaa3c-27c4-4030-97a8-81be83a52c1f"
+        },
+        "max_s": 0.210493,
+        "mean_s": 0.170339,
+        "name": "workflow_completion_seconds",
+        "p50_s": 0.177897,
+        "p95_s": 0.207233,
+        "window": 3
+      }
+    ],
+    "uptime_s": 11.0
+  },
+  "scope": "process metrics cover this API process since it started; database figures are durable"
+}

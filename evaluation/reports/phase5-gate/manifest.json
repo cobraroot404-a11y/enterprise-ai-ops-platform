@@ -1,0 +1,35 @@
+{
+  "purpose": "Phase 5 quality gate (Meridian onboarding) including Phase 4 closure re-verification",
+  "date": "2026-11-11",
+  "commands": {
+    "lint": "python -m ruff check backend mock-services workers scripts tests evaluation conftest.py",
+    "functional_suite": "python -m pytest -q --junitxml=evaluation/reports/phase5-gate/pytest-junit.xml",
+    "fault_injection_all_including_db_outage": "RUN_DISRUPTIVE=1 python -m pytest tests/fault_injection -q",
+    "real_ai_suite_both_tenants": "RUN_REAL_AI=1 python -m pytest backend/tests/test_real_ai.py -q --junitxml=evaluation/reports/phase5-gate/pytest-real-ai-junit.xml",
+    "frontend": "cd frontend && npm run typecheck && npm test && npm run build",
+    "ai_remeasurement": "python evaluation/benchmarks/run_phase4.py --embedding sentence_transformers --llm ollama --e2e-runs 5 --qa-repeats 2 (x3); python evaluation/benchmarks/compare_phase3_phase4.py"
+  },
+  "results": {
+    "lint": "clean",
+    "functional_suite": "181 passed, 13 skipped (12 real-AI tests + opt-in FI-10), 0 failed; deterministic test-only backends",
+    "new_in_this_phase": {
+      "review_gate": 7,
+      "identity_security": 17,
+      "resource_limits": 6,
+      "profile_engine": 28,
+      "meridian_integration": 12,
+      "real_ai_added": 3
+    },
+    "fault_injection_full": "11 of 11 passed including FI-10 (PostgreSQL stop/restart); run only in the isolated project container (postgres:eaop, eaop_test, eaop_bench; no other workload or databases; verified with docker ps and pg_stat_activity before running)",
+    "real_ai_suite": "12 passed on Ollama 0.40.16 qwen2.5:1.5b (digest 65ec06548149...) + MiniLM @ 1110a243fdf4...",
+    "frontend": "3 unit tests passed; typecheck and build clean",
+    "ui_demonstration_with_real_inference": "browser run on fixtures meridian-uitest and apex-uitest: Meridian grounded cited answer; extraction (VH-2101 verified, P2, fleet+CRM notes; model chose category 'leak' and produced no verifiable guidance, so supervisor review with justification was required); separate tenant-admin approval; worker submitted WO-7001 to Meridian's service desk. Apex: grounded recommendation (pending_review), approval, MNT-1001. Service desk received 1 order, maintenance system 1 ticket, each only its own."
+  },
+  "ai_remeasurement": "evaluation/reports/phase4-remeasure/ (3 real runs on frozen apex-eval-v1; no change versus Phase 3; citation correctness 89.3-92.6%, target 95% NOT MET)",
+  "unchanged": "evaluation/reports/phase3 and dataset apex-eval-v1 not modified",
+  "notes": [
+    "Meridian has no AI-quality benchmark; validated for correctness, isolation and workflow.",
+    "Ollama stopped after use; nothing uninstalled, no model removed, PATH untouched.",
+    "CI has not run: nothing has been pushed."
+  ]
+}

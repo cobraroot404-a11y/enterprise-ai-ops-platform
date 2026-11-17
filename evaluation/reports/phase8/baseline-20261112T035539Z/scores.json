@@ -1,0 +1,3925 @@
+{
+ "run_id": "baseline-20261112T035539Z",
+ "split": "dev",
+ "dataset_hashes": {
+  "name": "eval-v2",
+  "version": "eval-v2.0",
+  "split": "dev",
+  "manifest_sha256": "42fec8bc8abea9efff135208127990747d915287e77e8b3d64b65732e7d9cb62",
+  "frozen_splits_sha256": "31d18132ad3d2bd22fdac903c721b2427c67822634d1ceca76204520f880f42f",
+  "queries": 118,
+  "cases": 34
+ },
+ "targets": {
+  "recall_at_5": 0.85,
+  "citation_correctness": 0.95,
+  "grounded_answer_coverage": 0.75,
+  "grounded_answer_floor": 0.6,
+  "correct_abstention": 0.9,
+  "claim_support": 0.95,
+  "raw_schema_validity": 1.0,
+  "p95_latency_s": 15.0
+ },
+ "reps": [
+  1,
+  2,
+  3
+ ],
+ "scopes": {
+  "combined": {
+   "retrieval": {
+    "hybrid": {
+     "queries": 87,
+     "recall@1": 0.5057,
+     "recall@3": 0.8391,
+     "recall@5": 0.8851,
+     "recall@10": 0.9119,
+     "precision@5": 0.2368,
+     "precision_ceiling@5": 0.2828,
+     "mrr": 0.7843,
+     "ndcg@5": 0.7918,
+     "ndcg@10": 0.8013,
+     "recall@5_ci95": [
+      0.8276,
+      0.9349
+     ],
+     "ndcg@5_ci95": [
+      0.7324,
+      0.8466
+     ],
+     "latency_s": {
+      "p50": 0.03,
+      "p95": 0.041630000000000014,
+      "n": 87
+     }
+    },
+    "vector": {
+     "queries": 87,
+     "recall@1": 0.5172,
+     "recall@3": 0.8391,
+     "recall@5": 0.8851,
+     "recall@10": 0.9157,
+     "precision@5": 0.2368,
+     "precision_ceiling@5": 0.2828,
+     "mrr": 0.79,
+     "ndcg@5": 0.796,
+     "ndcg@10": 0.8062,
+     "recall@5_ci95": [
+      0.8276,
+      0.9349
+     ],
+     "ndcg@5_ci95": [
+      0.7362,
+      0.8509
+     ],
+     "latency_s": {
+      "p50": 0.0285,
+      "p95": 0.037180000000000005,
+      "n": 87
+     }
+    },
+    "fts": {
+     "queries": 87,
+     "recall@1": 0.5441,
+     "recall@3": 0.8391,
+     "recall@5": 0.8851,
+     "recall@10": 0.9004,
+     "precision@5": 0.2368,
+     "precision_ceiling@5": 0.2828,
+     "mrr": 0.8058,
+     "ndcg@5": 0.8069,
+     "ndcg@10": 0.8128,
+     "recall@5_ci95": [
+      0.8276,
+      0.9349
+     ],
+     "ndcg@5_ci95": [
+      0.7486,
+      0.8612
+     ],
+     "latency_s": {
+      "p50": 0.03,
+      "p95": 0.03935,
+      "n": 87
+     }
+    },
+    "cross_tenant_leakage": {
+     "retrieved_passages": 3519,
+     "foreign": 0,
+     "rate": 0.0
+    },
+    "repeat_ranking_identical": {
+     "identical": 118,
+     "different": 0
+    },
+    "hybrid_recall@5_by_category": {
+     "asset_confusion": {
+      "n": 5,
+      "value": 0.8
+     },
+     "compare": {
+      "n": 10,
+      "value": 1.0
+     },
+     "conflicting_record": {
+      "n": 5,
+      "value": 0.8
+     },
+     "keyword": {
+      "n": 16,
+      "value": 1.0
+     },
+     "multi_hop": {
+      "n": 13,
+      "value": 0.6154
+     },
+     "paraphrase": {
+      "n": 22,
+      "value": 0.8636
+     },
+     "procedure": {
+      "n": 6,
+      "value": 1.0
+     },
+     "version_conflict": {
+      "n": 10,
+      "value": 1.0
+     }
+    }
+   },
+   "qa": {
+    "rep1": {
+     "answerable": 87,
+     "answered": {
+      "numerator": 65,
+      "denominator": 87,
+      "value": 0.7471,
+      "wilson95": [
+       0.6467,
+       0.8267
+      ]
+     },
+     "grounded_answer_coverage": {
+      "numerator": 54,
+      "denominator": 87,
+      "value": 0.6207,
+      "wilson95": [
+       0.5157,
+       0.7155
+      ],
+      "classification": "OBSERVED TARGET NOT MET",
+      "interval_vs_target": "interval entirely below target"
+     },
+     "grounded_answer_floor_60": {
+      "numerator": 54,
+      "denominator": 87,
+      "value": 0.6207,
+      "wilson95": [
+       0.5157,
+       0.7155
+      ],
+      "classification": "OBSERVED TARGET MET",
+      "interval_vs_target": "interval overlaps target"
+     },
+     "false_refusals": {
+      "numerator": 0,
+      "denominator": 87,
+      "value": 0.0,
+      "wilson95": [
+       0.0,
+       0.0423
+      ]
+     },
+     "withheld_unverified": {
+      "numerator": 22,
+      "denominator": 87,
+      "value": 0.2529,
+      "wilson95": [
+       0.1733,
+       0.3533
+      ]
+     },
+     "citation_correctness_answerable": {
+      "numerator": 66,
+      "denominator": 77,
+      "value": 0.8571,
+      "wilson95": [
+       0.762,
+       0.9183
+      ],
+      "classification": "OBSERVED TARGET NOT MET",
+      "interval_vs_target": "interval entirely below target"
+     },
+     "citation_correctness_all_emitted": {
+      "numerator": 66,
+      "denominator": 93,
+      "value": 0.7097,
+      "wilson95": [
+       0.6106,
+       0.7921
+      ],
+      "classification": "OBSERVED TARGET NOT MET",
+      "interval_vs_target": "interval entirely below target"
+     },
+     "citation_id_validity": {
+      "numerator": 93,
+      "denominator": 93,
+      "value": 1.0,
+      "wilson95": [
+       0.9603,
+       1.0
+      ]
+     },
+     "citation_tenant_ownership": {
+      "numerator": 93,
+      "denominator": 93,
+      "value": 1.0,
+      "wilson95": [
+       0.9603,
+       1.0
+      ]
+     },
+     "citation_quote_correctness": {
+      "numerator": 93,
+      "denominator": 93,
+      "value": 1.0,
+      "wilson95": [
+       0.9603,
+       1.0
+      ]
+     },
+     "claim_support": {
+      "numerator": 130,
+      "denominator": 133,
+      "value": 0.9774,
+      "wilson95": [
+       0.9358,
+       0.9923
+      ],
+      "classification": "OBSERVED TARGET MET",
+      "interval_vs_target": "interval overlaps target"
+     },
+     "correct_abstention": {
+      "numerator": 14,
+      "denominator": 23,
+      "value": 0.6087,
+      "wilson95": [
+       0.4079,
+       0.7784
+      ],
+      "classification": "OBSERVED TARGET NOT MET",
+      "interval_vs_target": "interval entirely below target"
+     },
+     "unanswerable_answered_wrongly": {
+      "numerator": 9,
+      "denominator": 23,
+      "value": 0.3913,
+      "wilson95": [
+       0.2216,
+       0.5921
+      ]
+     },
+     "unsupported_answer_rate": {
+      "numerator": 21,
+      "denominator": 74,
+      "value": 0.2838,
+      "wilson95": [
+       0.1937,
+       0.3952
+      ]
+     },
+     "prompt_injection_effect": {
+      "cases": 12,
+      "flagged_by_heuristic": 0,
+      "flagged_ids": [],
+      "note": "keyword heuristic on answer text; flagged items need manual review, they are not proven attacks"
+     },
+     "cross_tenant_probes": {
+      "cases": 8,
+      "leaks": 1
+     },
+     "by_category": {
+      "asset_confusion": {
+       "answerable": 5,
+       "grounded_correct": 3,
+       "not_answered": 1
+      },
+      "compare": {
+       "answerable": 10,
+       "grounded_correct": 7,
+       "not_answered": 2
+      },
+      "conflicting_record": {
+       "answerable": 5,
+       "grounded_correct": 0,
+       "not_answered": 1
+      },
+      "keyword": {
+       "answerable": 16,
+       "grounded_correct": 15
+      },
+      "multi_hop": {
+       "answerable": 13,
+       "not_answered": 11,
+       "grounded_correct": 0
+      },
+      "paraphrase": {
+       "answerable": 22,
+       "grounded_correct": 20
+      },
+      "procedure": {
+       "answerable": 6,
+       "not_answered": 6
+      },
+      "unanswerable": {
+       "unanswerable": 23,
+       "correct_refusals": 14
+      },
+      "version_conflict": {
+       "answerable": 10,
+       "grounded_correct": 9,
+       "not_answered": 1
+      }
+     },
+     "latency_s": {
+      "all": {
+       "n": 118,
+       "p50": 4.4125,
+       "p95": 12.43229999999999,
+       "p99": null
+      },
+      "answerable": {
+       "n": 87,
+       "p50": 4.692,
+       "p95": 13.5937
+      }
+     },
+     "latency_p95_target_15s": "OBSERVED TARGET MET",
+     "llm_calls": {
+      "n": 106,
+      "valid": 105,
+      "wall_p50": 4.5455000000000005,
+      "wall_p95": 13.00475,
+      "tokens_per_s_median": 25.375
+     }
+    },
+    "rep2": {
+     "answerable": 87,
+     "answered": {
+      "numerator": 65,
+      "denominator": 87,
+      "value": 0.7471,
+      "wilson95": [
+       0.6467,
+       0.8267
+      ]
+     },
+     "grounded_answer_coverage": {
+      "numerator": 55,
+      "denominator": 87,
+      "value": 0.6322,
+      "wilson95": [
+       0.5273,
+       0.7259
+      ],
+      "classification": "OBSERVED TARGET NOT MET",
+      "interval_vs_target": "interval entirely below target"
+     },
+     "grounded_answer_floor_60": {
+      "numerator": 55,
+      "denominator": 87,
+      "value": 0.6322,
+      "wilson95": [
+       0.5273,
+       0.7259
+      ],
+      "classification": "OBSERVED TARGET MET",
+      "interval_vs_target": "interval overlaps target"
+     },
+     "false_refusals": {
+      "numerator": 0,
+      "denominator": 87,
+      "value": 0.0,
+      "wilson95": [
+       0.0,
+       0.0423
+      ]
+     },
+     "withheld_unverified": {
+      "numerator": 22,
+      "denominator": 87,
+      "value": 0.2529,
+      "wilson95": [
+       0.1733,
+       0.3533
+      ]
+     },
+     "citation_correctness_answerable": {
+      "numerator": 67,
+      "denominator": 76,
+      "value": 0.8816,
+      "wilson95": [
+       0.79,
+       0.9364
+      ],
+      "classification": "OBSERVED TARGET NOT MET",
+      "interval_vs_target": "interval entirely below target"
+     },
+     "citation_correctness_all_emitted": {
+      "numerator": 67,
+      "denominator": 92,
+      "value": 0.7283,
+      "wilson95": [
+       0.6296,
+       0.8086
+      ],
+      "classification": "OBSERVED TARGET NOT MET",
+      "interval_vs_target": "interval entirely below target"
+     },
+     "citation_id_validity": {
+      "numerator": 92,
+      "denominator": 92,
+      "value": 1.0,
+      "wilson95": [
+       0.9599,
+       1.0
+      ]
+     },
+     "citation_tenant_ownership": {
+      "numerator": 92,
+      "denominator": 92,
+      "value": 1.0,
+      "wilson95": [
+       0.9599,
+       1.0
+      ]
+     },
+     "citation_quote_correctness": {
+      "numerator": 92,
+      "denominator": 92,
+      "value": 1.0,
+      "wilson95": [
+       0.9599,
+       1.0
+      ]
+     },
+     "claim_support": {
+      "numerator": 127,
+      "denominator": 129,
+      "value": 0.9845,
+      "wilson95": [
+       0.9452,
+       0.9957
+      ],
+      "classification": "OBSERVED TARGET MET",
+      "interval_vs_target": "interval overlaps target"
+     },
+     "correct_abstention": {
+      "numerator": 14,
+      "denominator": 23,
+      "value": 0.6087,
+      "wilson95": [
+       0.4079,
+       0.7784
+      ],
+      "classification": "OBSERVED TARGET NOT MET",
+      "interval_vs_target": "interval entirely below target"
+     },
+     "unanswerable_answered_wrongly": {
+      "numerator": 9,
+      "denominator": 23,
+      "value": 0.3913,
+      "wilson95": [
+       0.2216,
+       0.5921
+      ]
+     },
+     "unsupported_answer_rate": {
+      "numerator": 19,
+      "denominator": 74,
+      "value": 0.2568,
+      "wilson95": [
+       0.171,
+       0.3665
+      ]
+     },
+     "prompt_injection_effect": {
+      "cases": 12,
+      "flagged_by_heuristic": 0,
+      "flagged_ids": [],
+      "note": "keyword heuristic on answer text; flagged items need manual review, they are not proven attacks"
+     },
+     "cross_tenant_probes": {
+      "cases": 8,
+      "leaks": 1
+     },
+     "by_category": {
+      "asset_confusion": {
+       "answerable": 5,
+       "grounded_correct": 3,
+       "not_answered": 1
+      },
+      "compare": {
+       "answerable": 10,
+       "grounded_correct": 7,
+       "not_answered": 2
+      },
+      "conflicting_record": {
+       "answerable": 5,
+       "grounded_correct": 0,
+       "not_answered": 1
+      },
+      "keyword": {
+       "answerable": 16,
+       "grounded_correct": 16
+      },
+      "multi_hop": {
+       "answerable": 13,
+       "not_answered": 11,
+       "grounded_correct": 0
+      },
+      "paraphrase": {
+       "answerable": 22,
+       "grounded_correct": 20
+      },
+      "procedure": {
+       "answerable": 6,
+       "not_answered": 6
+      },
+      "unanswerable": {
+       "unanswerable": 23,
+       "correct_refusals": 14
+      },
+      "version_conflict": {
+       "answerable": 10,
+       "grounded_correct": 9,
+       "not_answered": 1
+      }
+     },
+     "latency_s": {
+      "all": {
+       "n": 118,
+       "p50": 4.5715,
+       "p95": 12.748249999999999,
+       "p99": null
+      },
+      "answerable": {
+       "n": 87,
+       "p50": 4.745,
+       "p95": 12.7895
+      }
+     },
+     "latency_p95_target_15s": "OBSERVED TARGET MET",
+     "llm_calls": {
+      "n": 106,
+      "valid": 105,
+      "wall_p50": 4.621,
+      "wall_p95": 12.69675,
+      "tokens_per_s_median": 22.495
+     }
+    },
+    "rep3": {
+     "answerable": 87,
+     "answered": {
+      "numerator": 64,
+      "denominator": 87,
+      "value": 0.7356,
+      "wilson95": [
+       0.6344,
+       0.8169
+      ]
+     },
+     "grounded_answer_coverage": {
+      "numerator": 55,
+      "denominator": 87,
+      "value": 0.6322,
+      "wilson95": [
+       0.5273,
+       0.7259
+      ],
+      "classification": "OBSERVED TARGET NOT MET",
+      "interval_vs_target": "interval entirely below target"
+     },
+     "grounded_answer_floor_60": {
+      "numerator": 55,
+      "denominator": 87,
+      "value": 0.6322,
+      "wilson95": [
+       0.5273,
+       0.7259
+      ],
+      "classification": "OBSERVED TARGET MET",
+      "interval_vs_target": "interval overlaps target"
+     },
+     "false_refusals": {
+      "numerator": 0,
+      "denominator": 87,
+      "value": 0.0,
+      "wilson95": [
+       0.0,
+       0.0423
+      ]
+     },
+     "withheld_unverified": {
+      "numerator": 23,
+      "denominator": 87,
+      "value": 0.2644,
+      "wilson95": [
+       0.1831,
+       0.3656
+      ]
+     },
+     "citation_correctness_answerable": {
+      "numerator": 65,
+      "denominator": 74,
+      "value": 0.8784,
+      "wilson95": [
+       0.7847,
+       0.9347
+      ],
+      "classification": "OBSERVED TARGET NOT MET",
+      "interval_vs_target": "interval entirely below target"
+     },
+     "citation_correctness_all_emitted": {
+      "numerator": 65,
+      "denominator": 90,
+      "value": 0.7222,
+      "wilson95": [
+       0.622,
+       0.8042
+      ],
+      "classification": "OBSERVED TARGET NOT MET",
+      "interval_vs_target": "interval entirely below target"
+     },
+     "citation_id_validity": {
+      "numerator": 90,
+      "denominator": 90,
+      "value": 1.0,
+      "wilson95": [
+       0.9591,
+       1.0
+      ]
+     },
+     "citation_tenant_ownership": {
+      "numerator": 90,
+      "denominator": 90,
+      "value": 1.0,
+      "wilson95": [
+       0.9591,
+       1.0
+      ]
+     },
+     "citation_quote_correctness": {
+      "numerator": 90,
+      "denominator": 90,
+      "value": 1.0,
+      "wilson95": [
+       0.9591,
+       1.0
+      ]
+     },
+     "claim_support": {
+      "numerator": 125,
+      "denominator": 127,
+      "value": 0.9843,
+      "wilson95": [
+       0.9444,
+       0.9957
+      ],
+      "classification": "OBSERVED TARGET MET",
+      "interval_vs_target": "interval overlaps target"
+     },
+     "correct_abstention": {
+      "numerator": 14,
+      "denominator": 23,
+      "value": 0.6087,
+      "wilson95": [
+       0.4079,
+       0.7784
+      ],
+      "classification": "OBSERVED TARGET NOT MET",
+      "interval_vs_target": "interval entirely below target"
+     },
+     "unanswerable_answered_wrongly": {
+      "numerator": 9,
+      "denominator": 23,
+      "value": 0.3913,
+      "wilson95": [
+       0.2216,
+       0.5921
+      ]
+     },
+     "unsupported_answer_rate": {
+      "numerator": 19,
+      "denominator": 73,
+      "value": 0.2603,
+      "wilson95": [
+       0.1734,
+       0.3711
+      ]
+     },
+     "prompt_injection_effect": {
+      "cases": 12,
+      "flagged_by_heuristic": 0,
+      "flagged_ids": [],
+      "note": "keyword heuristic on answer text; flagged items need manual review, they are not proven attacks"
+     },
+     "cross_tenant_probes": {
+      "cases": 8,
+      "leaks": 1
+     },
+     "by_category": {
+      "asset_confusion": {
+       "answerable": 5,
+       "grounded_correct": 3,
+       "not_answered": 1
+      },
+      "compare": {
+       "answerable": 10,
+       "grounded_correct": 7,
+       "not_answered": 2
+      },
+      "conflicting_record": {
+       "answerable": 5,
+       "grounded_correct": 0,
+       "not_answered": 1
+      },
+      "keyword": {
+       "answerable": 16,
+       "grounded_correct": 16
+      },
+      "multi_hop": {
+       "answerable": 13,
+       "not_answered": 12,
+       "grounded_correct": 0
+      },
+      "paraphrase": {
+       "answerable": 22,
+       "grounded_correct": 20
+      },
+      "procedure": {
+       "answerable": 6,
+       "not_answered": 6
+      },
+      "unanswerable": {
+       "unanswerable": 23,
+       "correct_refusals": 14
+      },
+      "version_conflict": {
+       "answerable": 10,
+       "grounded_correct": 9,
+       "not_answered": 1
+      }
+     },
+     "latency_s": {
+      "all": {
+       "n": 118,
+       "p50": 4.9495000000000005,
+       "p95": 14.696999999999994,
+       "p99": null
+      },
+      "answerable": {
+       "n": 87,
+       "p50": 5.41,
+       "p95": 15.137000000000002
+      }
+     },
+     "latency_p95_target_15s": "OBSERVED TARGET MET",
+     "llm_calls": {
+      "n": 106,
+      "valid": 105,
+      "wall_p50": 5.1545000000000005,
+      "wall_p95": 15.051,
+      "tokens_per_s_median": 19.275
+     }
+    }
+   },
+   "extraction": {
+    "rep1": {
+     "cases": 34,
+     "raw_schema_validity": {
+      "numerator": 34,
+      "denominator": 34,
+      "value": 1.0,
+      "wilson95": [
+       0.8985,
+       1.0
+      ],
+      "classification": "OBSERVED TARGET MET",
+      "interval_vs_target": "interval entirely below target"
+     },
+     "raw_asset_correct": {
+      "numerator": 34,
+      "denominator": 34,
+      "value": 1.0,
+      "wilson95": [
+       0.8985,
+       1.0
+      ]
+     },
+     "raw_category_correct": {
+      "numerator": 25,
+      "denominator": 34,
+      "value": 0.7353,
+      "wilson95": [
+       0.5688,
+       0.854
+      ]
+     },
+     "hallucinated_identifier_rate": {
+      "numerator": 0,
+      "denominator": 34,
+      "value": 0.0,
+      "wilson95": [
+       0.0,
+       0.1015
+      ]
+     },
+     "hallucinated_numeric_signal_rate": {
+      "numerator": 3,
+      "denominator": 6,
+      "value": 0.5,
+      "wilson95": [
+       0.1876,
+       0.8124
+      ]
+     },
+     "post_validation_acceptance": {
+      "numerator": 34,
+      "denominator": 34,
+      "value": 1.0,
+      "wilson95": [
+       0.8985,
+       1.0
+      ]
+     },
+     "final_asset_correct": {
+      "numerator": 34,
+      "denominator": 34,
+      "value": 1.0,
+      "wilson95": [
+       0.8985,
+       1.0
+      ]
+     },
+     "final_category_accuracy": {
+      "numerator": 25,
+      "denominator": 34,
+      "value": 0.7353,
+      "wilson95": [
+       0.5688,
+       0.854
+      ]
+     },
+     "priority_accuracy": {
+      "numerator": 28,
+      "denominator": 34,
+      "value": 0.8235,
+      "wilson95": [
+       0.6649,
+       0.9165
+      ]
+     },
+     "evidence_completeness": {
+      "numerator": 8,
+      "denominator": 34,
+      "value": 0.2353,
+      "wilson95": [
+       0.1244,
+       0.4
+      ]
+     },
+     "invalid_asset_rejection": {
+      "numerator": 0,
+      "denominator": 0,
+      "value": null,
+      "wilson95": null
+     },
+     "review_rate": {
+      "numerator": 27,
+      "denominator": 34,
+      "value": 0.7941,
+      "wilson95": [
+       0.632,
+       0.8965
+      ]
+     },
+     "review_true_positive": 4,
+     "review_false_positive": 23,
+     "review_missed_unsafe": 0,
+     "review_routing_correct": {
+      "numerator": 11,
+      "denominator": 34,
+      "value": 0.3235,
+      "wilson95": [
+       0.1913,
+       0.4916
+      ]
+     },
+     "unsafe_automatic_acceptance": {
+      "numerator": 0,
+      "denominator": 4,
+      "value": 0.0,
+      "wilson95": [
+       0.0,
+       0.4899
+      ]
+     },
+     "injection_priority_kept": {
+      "numerator": 1,
+      "denominator": 2,
+      "value": 0.5,
+      "wilson95": [
+       0.0945,
+       0.9055
+      ]
+     },
+     "ambiguous_cases_blocked_for_review": {
+      "numerator": 3,
+      "denominator": 4,
+      "value": 0.75,
+      "wilson95": [
+       0.3006,
+       0.9544
+      ]
+     },
+     "latency_s": {
+      "n": 34,
+      "p50": 3.404,
+      "p95": 7.83745
+     }
+    },
+    "rep2": {
+     "cases": 34,
+     "raw_schema_validity": {
+      "numerator": 34,
+      "denominator": 34,
+      "value": 1.0,
+      "wilson95": [
+       0.8985,
+       1.0
+      ],
+      "classification": "OBSERVED TARGET MET",
+      "interval_vs_target": "interval entirely below target"
+     },
+     "raw_asset_correct": {
+      "numerator": 34,
+      "denominator": 34,
+      "value": 1.0,
+      "wilson95": [
+       0.8985,
+       1.0
+      ]
+     },
+     "raw_category_correct": {
+      "numerator": 25,
+      "denominator": 34,
+      "value": 0.7353,
+      "wilson95": [
+       0.5688,
+       0.854
+      ]
+     },
+     "hallucinated_identifier_rate": {
+      "numerator": 0,
+      "denominator": 34,
+      "value": 0.0,
+      "wilson95": [
+       0.0,
+       0.1015
+      ]
+     },
+     "hallucinated_numeric_signal_rate": {
+      "numerator": 3,
+      "denominator": 6,
+      "value": 0.5,
+      "wilson95": [
+       0.1876,
+       0.8124
+      ]
+     },
+     "post_validation_acceptance": {
+      "numerator": 34,
+      "denominator": 34,
+      "value": 1.0,
+      "wilson95": [
+       0.8985,
+       1.0
+      ]
+     },
+     "final_asset_correct": {
+      "numerator": 34,
+      "denominator": 34,
+      "value": 1.0,
+      "wilson95": [
+       0.8985,
+       1.0
+      ]
+     },
+     "final_category_accuracy": {
+      "numerator": 25,
+      "denominator": 34,
+      "value": 0.7353,
+      "wilson95": [
+       0.5688,
+       0.854
+      ]
+     },
+     "priority_accuracy": {
+      "numerator": 28,
+      "denominator": 34,
+      "value": 0.8235,
+      "wilson95": [
+       0.6649,
+       0.9165
+      ]
+     },
+     "evidence_completeness": {
+      "numerator": 8,
+      "denominator": 34,
+      "value": 0.2353,
+      "wilson95": [
+       0.1244,
+       0.4
+      ]
+     },
+     "invalid_asset_rejection": {
+      "numerator": 0,
+      "denominator": 0,
+      "value": null,
+      "wilson95": null
+     },
+     "review_rate": {
+      "numerator": 27,
+      "denominator": 34,
+      "value": 0.7941,
+      "wilson95": [
+       0.632,
+       0.8965
+      ]
+     },
+     "review_true_positive": 4,
+     "review_false_positive": 23,
+     "review_missed_unsafe": 0,
+     "review_routing_correct": {
+      "numerator": 11,
+      "denominator": 34,
+      "value": 0.3235,
+      "wilson95": [
+       0.1913,
+       0.4916
+      ]
+     },
+     "unsafe_automatic_acceptance": {
+      "numerator": 0,
+      "denominator": 4,
+      "value": 0.0,
+      "wilson95": [
+       0.0,
+       0.4899
+      ]
+     },
+     "injection_priority_kept": {
+      "numerator": 1,
+      "denominator": 2,
+      "value": 0.5,
+      "wilson95": [
+       0.0945,
+       0.9055
+      ]
+     },
+     "ambiguous_cases_blocked_for_review": {
+      "numerator": 3,
+      "denominator": 4,
+      "value": 0.75,
+      "wilson95": [
+       0.3006,
+       0.9544
+      ]
+     },
+     "latency_s": {
+      "n": 34,
+      "p50": 4.9094999999999995,
+      "p95": 10.9794
+     }
+    },
+    "rep3": {
+     "cases": 34,
+     "raw_schema_validity": {
+      "numerator": 34,
+      "denominator": 34,
+      "value": 1.0,
+      "wilson95": [
+       0.8985,
+       1.0
+      ],
+      "classification": "OBSERVED TARGET MET",
+      "interval_vs_target": "interval entirely below target"
+     },
+     "raw_asset_correct": {
+      "numerator": 34,
+      "denominator": 34,
+      "value": 1.0,
+      "wilson95": [
+       0.8985,
+       1.0
+      ]
+     },
+     "raw_category_correct": {
+      "numerator": 25,
+      "denominator": 34,
+      "value": 0.7353,
+      "wilson95": [
+       0.5688,
+       0.854
+      ]
+     },
+     "hallucinated_identifier_rate": {
+      "numerator": 0,
+      "denominator": 34,
+      "value": 0.0,
+      "wilson95": [
+       0.0,
+       0.1015
+      ]
+     },
+     "hallucinated_numeric_signal_rate": {
+      "numerator": 3,
+      "denominator": 6,
+      "value": 0.5,
+      "wilson95": [
+       0.1876,
+       0.8124
+      ]
+     },
+     "post_validation_acceptance": {
+      "numerator": 34,
+      "denominator": 34,
+      "value": 1.0,
+      "wilson95": [
+       0.8985,
+       1.0
+      ]
+     },
+     "final_asset_correct": {
+      "numerator": 34,
+      "denominator": 34,
+      "value": 1.0,
+      "wilson95": [
+       0.8985,
+       1.0
+      ]
+     },
+     "final_category_accuracy": {
+      "numerator": 25,
+      "denominator": 34,
+      "value": 0.7353,
+      "wilson95": [
+       0.5688,
+       0.854
+      ]
+     },
+     "priority_accuracy": {
+      "numerator": 28,
+      "denominator": 34,
+      "value": 0.8235,
+      "wilson95": [
+       0.6649,
+       0.9165
+      ]
+     },
+     "evidence_completeness": {
+      "numerator": 8,
+      "denominator": 34,
+      "value": 0.2353,
+      "wilson95": [
+       0.1244,
+       0.4
+      ]
+     },
+     "invalid_asset_rejection": {
+      "numerator": 0,
+      "denominator": 0,
+      "value": null,
+      "wilson95": null
+     },
+     "review_rate": {
+      "numerator": 27,
+      "denominator": 34,
+      "value": 0.7941,
+      "wilson95": [
+       0.632,
+       0.8965
+      ]
+     },
+     "review_true_positive": 4,
+     "review_false_positive": 23,
+     "review_missed_unsafe": 0,
+     "review_routing_correct": {
+      "numerator": 11,
+      "denominator": 34,
+      "value": 0.3235,
+      "wilson95": [
+       0.1913,
+       0.4916
+      ]
+     },
+     "unsafe_automatic_acceptance": {
+      "numerator": 0,
+      "denominator": 4,
+      "value": 0.0,
+      "wilson95": [
+       0.0,
+       0.4899
+      ]
+     },
+     "injection_priority_kept": {
+      "numerator": 1,
+      "denominator": 2,
+      "value": 0.5,
+      "wilson95": [
+       0.0945,
+       0.9055
+      ]
+     },
+     "ambiguous_cases_blocked_for_review": {
+      "numerator": 3,
+      "denominator": 4,
+      "value": 0.75,
+      "wilson95": [
+       0.3006,
+       0.9544
+      ]
+     },
+     "latency_s": {
+      "n": 34,
+      "p50": 4.2835,
+      "p95": 9.771749999999999
+     }
+    }
+   }
+  },
+  "apex": {
+   "retrieval": {
+    "hybrid": {
+     "queries": 43,
+     "recall@1": 0.4961,
+     "recall@3": 0.8682,
+     "recall@5": 0.8837,
+     "recall@10": 0.8915,
+     "precision@5": 0.2512,
+     "precision_ceiling@5": 0.3023,
+     "mrr": 0.8023,
+     "ndcg@5": 0.8058,
+     "ndcg@10": 0.8104,
+     "recall@5_ci95": [
+      0.8062,
+      0.9535
+     ],
+     "ndcg@5_ci95": [
+      0.7238,
+      0.878
+     ],
+     "latency_s": {
+      "p50": 0.0301,
+      "p95": 0.03955,
+      "n": 43
+     }
+    },
+    "vector": {
+     "queries": 43,
+     "recall@1": 0.4961,
+     "recall@3": 0.8682,
+     "recall@5": 0.8837,
+     "recall@10": 0.8992,
+     "precision@5": 0.2512,
+     "precision_ceiling@5": 0.3023,
+     "mrr": 0.8023,
+     "ndcg@5": 0.8058,
+     "ndcg@10": 0.8117,
+     "recall@5_ci95": [
+      0.8062,
+      0.9535
+     ],
+     "ndcg@5_ci95": [
+      0.7238,
+      0.878
+     ],
+     "latency_s": {
+      "p50": 0.0283,
+      "p95": 0.03578,
+      "n": 43
+     }
+    },
+    "fts": {
+     "queries": 43,
+     "recall@1": 0.5271,
+     "recall@3": 0.8682,
+     "recall@5": 0.8837,
+     "recall@10": 0.8915,
+     "precision@5": 0.2512,
+     "precision_ceiling@5": 0.3023,
+     "mrr": 0.8256,
+     "ndcg@5": 0.8191,
+     "ndcg@10": 0.8237,
+     "recall@5_ci95": [
+      0.8062,
+      0.9535
+     ],
+     "ndcg@5_ci95": [
+      0.7392,
+      0.8884
+     ],
+     "latency_s": {
+      "p50": 0.029,
+      "p95": 0.037380000000000004,
+      "n": 43
+     }
+    },
+    "cross_tenant_leakage": {
+     "retrieved_passages": 1706,
+     "foreign": 0,
+     "rate": 0.0
+    },
+    "repeat_ranking_identical": {
+     "identical": 57,
+     "different": 0
+    },
+    "hybrid_recall@5_by_category": {
+     "asset_confusion": {
+      "n": 1,
+      "value": 1.0
+     },
+     "compare": {
+      "n": 6,
+      "value": 1.0
+     },
+     "conflicting_record": {
+      "n": 1,
+      "value": 1.0
+     },
+     "keyword": {
+      "n": 8,
+      "value": 1.0
+     },
+     "multi_hop": {
+      "n": 8,
+      "value": 0.625
+     },
+     "paraphrase": {
+      "n": 11,
+      "value": 0.8182
+     },
+     "procedure": {
+      "n": 4,
+      "value": 1.0
+     },
+     "version_conflict": {
+      "n": 4,
+      "value": 1.0
+     }
+    }
+   },
+   "qa": {
+    "rep1": {
+     "answerable": 43,
+     "answered": {
+      "numerator": 33,
+      "denominator": 43,
+      "value": 0.7674,
+      "wilson95": [
+       0.6226,
+       0.8685
+      ]
+     },
+     "grounded_answer_coverage": {
+      "numerator": 26,
+      "denominator": 43,
+      "value": 0.6047,
+      "wilson95": [
+       0.4558,
+       0.7363
+      ],
+      "classification": "OBSERVED TARGET NOT MET",
+      "interval_vs_target": "interval entirely below target"
+     },
+     "grounded_answer_floor_60": {
+      "numerator": 26,
+      "denominator": 43,
+      "value": 0.6047,
+      "wilson95": [
+       0.4558,
+       0.7363
+      ],
+      "classification": "OBSERVED TARGET MET",
+      "interval_vs_target": "interval overlaps target"
+     },
+     "false_refusals": {
+      "numerator": 0,
+      "denominator": 43,
+      "value": 0.0,
+      "wilson95": [
+       0.0,
+       0.082
+      ]
+     },
+     "withheld_unverified": {
+      "numerator": 10,
+      "denominator": 43,
+      "value": 0.2326,
+      "wilson95": [
+       0.1315,
+       0.3774
+      ]
+     },
+     "citation_correctness_answerable": {
+      "numerator": 36,
+      "denominator": 43,
+      "value": 0.8372,
+      "wilson95": [
+       0.7003,
+       0.9188
+      ],
+      "classification": "OBSERVED TARGET NOT MET",
+      "interval_vs_target": "interval entirely below target"
+     },
+     "citation_correctness_all_emitted": {
+      "numerator": 36,
+      "denominator": 49,
+      "value": 0.7347,
+      "wilson95": [
+       0.5974,
+       0.8379
+      ],
+      "classification": "OBSERVED TARGET NOT MET",
+      "interval_vs_target": "interval entirely below target"
+     },
+     "citation_id_validity": {
+      "numerator": 49,
+      "denominator": 49,
+      "value": 1.0,
+      "wilson95": [
+       0.9273,
+       1.0
+      ]
+     },
+     "citation_tenant_ownership": {
+      "numerator": 49,
+      "denominator": 49,
+      "value": 1.0,
+      "wilson95": [
+       0.9273,
+       1.0
+      ]
+     },
+     "citation_quote_correctness": {
+      "numerator": 49,
+      "denominator": 49,
+      "value": 1.0,
+      "wilson95": [
+       0.9273,
+       1.0
+      ]
+     },
+     "claim_support": {
+      "numerator": 77,
+      "denominator": 79,
+      "value": 0.9747,
+      "wilson95": [
+       0.9123,
+       0.993
+      ],
+      "classification": "OBSERVED TARGET MET",
+      "interval_vs_target": "interval overlaps target"
+     },
+     "correct_abstention": {
+      "numerator": 8,
+      "denominator": 10,
+      "value": 0.8,
+      "wilson95": [
+       0.4902,
+       0.9433
+      ],
+      "classification": "OBSERVED TARGET NOT MET",
+      "interval_vs_target": "interval overlaps target"
+     },
+     "unanswerable_answered_wrongly": {
+      "numerator": 2,
+      "denominator": 10,
+      "value": 0.2,
+      "wilson95": [
+       0.0567,
+       0.5098
+      ]
+     },
+     "unsupported_answer_rate": {
+      "numerator": 9,
+      "denominator": 35,
+      "value": 0.2571,
+      "wilson95": [
+       0.1416,
+       0.4207
+      ]
+     },
+     "prompt_injection_effect": {
+      "cases": 6,
+      "flagged_by_heuristic": 0,
+      "flagged_ids": [],
+      "note": "keyword heuristic on answer text; flagged items need manual review, they are not proven attacks"
+     },
+     "cross_tenant_probes": {
+      "cases": 5,
+      "leaks": 0
+     },
+     "by_category": {
+      "asset_confusion": {
+       "answerable": 1,
+       "grounded_correct": 1
+      },
+      "compare": {
+       "answerable": 6,
+       "grounded_correct": 5
+      },
+      "conflicting_record": {
+       "answerable": 1,
+       "grounded_correct": 0
+      },
+      "keyword": {
+       "answerable": 8,
+       "grounded_correct": 7
+      },
+      "multi_hop": {
+       "answerable": 8,
+       "not_answered": 6,
+       "grounded_correct": 0
+      },
+      "paraphrase": {
+       "answerable": 11,
+       "grounded_correct": 9
+      },
+      "procedure": {
+       "answerable": 4,
+       "not_answered": 4
+      },
+      "unanswerable": {
+       "unanswerable": 10,
+       "correct_refusals": 8
+      },
+      "version_conflict": {
+       "answerable": 4,
+       "grounded_correct": 4
+      }
+     },
+     "latency_s": {
+      "all": {
+       "n": 57,
+       "p50": 4.651,
+       "p95": 12.764999999999988,
+       "p99": null
+      },
+      "answerable": {
+       "n": 43,
+       "p50": 4.986,
+       "p95": 14.507999999999996
+      }
+     },
+     "latency_p95_target_15s": "OBSERVED TARGET MET",
+     "llm_calls": {
+      "n": 51,
+      "valid": 51,
+      "wall_p50": 4.717,
+      "wall_p95": 13.4275,
+      "tokens_per_s_median": 25.84
+     }
+    },
+    "rep2": {
+     "answerable": 43,
+     "answered": {
+      "numerator": 33,
+      "denominator": 43,
+      "value": 0.7674,
+      "wilson95": [
+       0.6226,
+       0.8685
+      ]
+     },
+     "grounded_answer_coverage": {
+      "numerator": 27,
+      "denominator": 43,
+      "value": 0.6279,
+      "wilson95": [
+       0.4786,
+       0.7562
+      ],
+      "classification": "OBSERVED TARGET NOT MET",
+      "interval_vs_target": "interval overlaps target"
+     },
+     "grounded_answer_floor_60": {
+      "numerator": 27,
+      "denominator": 43,
+      "value": 0.6279,
+      "wilson95": [
+       0.4786,
+       0.7562
+      ],
+      "classification": "OBSERVED TARGET MET",
+      "interval_vs_target": "interval overlaps target"
+     },
+     "false_refusals": {
+      "numerator": 0,
+      "denominator": 43,
+      "value": 0.0,
+      "wilson95": [
+       0.0,
+       0.082
+      ]
+     },
+     "withheld_unverified": {
+      "numerator": 10,
+      "denominator": 43,
+      "value": 0.2326,
+      "wilson95": [
+       0.1315,
+       0.3774
+      ]
+     },
+     "citation_correctness_answerable": {
+      "numerator": 37,
+      "denominator": 42,
+      "value": 0.881,
+      "wilson95": [
+       0.75,
+       0.9481
+      ],
+      "classification": "OBSERVED TARGET NOT MET",
+      "interval_vs_target": "interval entirely below target"
+     },
+     "citation_correctness_all_emitted": {
+      "numerator": 37,
+      "denominator": 48,
+      "value": 0.7708,
+      "wilson95": [
+       0.6346,
+       0.8669
+      ],
+      "classification": "OBSERVED TARGET NOT MET",
+      "interval_vs_target": "interval entirely below target"
+     },
+     "citation_id_validity": {
+      "numerator": 48,
+      "denominator": 48,
+      "value": 1.0,
+      "wilson95": [
+       0.9259,
+       1.0
+      ]
+     },
+     "citation_tenant_ownership": {
+      "numerator": 48,
+      "denominator": 48,
+      "value": 1.0,
+      "wilson95": [
+       0.9259,
+       1.0
+      ]
+     },
+     "citation_quote_correctness": {
+      "numerator": 48,
+      "denominator": 48,
+      "value": 1.0,
+      "wilson95": [
+       0.9259,
+       1.0
+      ]
+     },
+     "claim_support": {
+      "numerator": 74,
+      "denominator": 75,
+      "value": 0.9867,
+      "wilson95": [
+       0.9283,
+       0.9976
+      ],
+      "classification": "OBSERVED TARGET MET",
+      "interval_vs_target": "interval overlaps target"
+     },
+     "correct_abstention": {
+      "numerator": 8,
+      "denominator": 10,
+      "value": 0.8,
+      "wilson95": [
+       0.4902,
+       0.9433
+      ],
+      "classification": "OBSERVED TARGET NOT MET",
+      "interval_vs_target": "interval overlaps target"
+     },
+     "unanswerable_answered_wrongly": {
+      "numerator": 2,
+      "denominator": 10,
+      "value": 0.2,
+      "wilson95": [
+       0.0567,
+       0.5098
+      ]
+     },
+     "unsupported_answer_rate": {
+      "numerator": 7,
+      "denominator": 35,
+      "value": 0.2,
+      "wilson95": [
+       0.1004,
+       0.3589
+      ]
+     },
+     "prompt_injection_effect": {
+      "cases": 6,
+      "flagged_by_heuristic": 0,
+      "flagged_ids": [],
+      "note": "keyword heuristic on answer text; flagged items need manual review, they are not proven attacks"
+     },
+     "cross_tenant_probes": {
+      "cases": 5,
+      "leaks": 0
+     },
+     "by_category": {
+      "asset_confusion": {
+       "answerable": 1,
+       "grounded_correct": 1
+      },
+      "compare": {
+       "answerable": 6,
+       "grounded_correct": 5
+      },
+      "conflicting_record": {
+       "answerable": 1,
+       "grounded_correct": 0
+      },
+      "keyword": {
+       "answerable": 8,
+       "grounded_correct": 8
+      },
+      "multi_hop": {
+       "answerable": 8,
+       "not_answered": 6,
+       "grounded_correct": 0
+      },
+      "paraphrase": {
+       "answerable": 11,
+       "grounded_correct": 9
+      },
+      "procedure": {
+       "answerable": 4,
+       "not_answered": 4
+      },
+      "unanswerable": {
+       "unanswerable": 10,
+       "correct_refusals": 8
+      },
+      "version_conflict": {
+       "answerable": 4,
+       "grounded_correct": 4
+      }
+     },
+     "latency_s": {
+      "all": {
+       "n": 57,
+       "p50": 4.727,
+       "p95": 10.604799999999988,
+       "p99": null
+      },
+      "answerable": {
+       "n": 43,
+       "p50": 4.996,
+       "p95": 12.536099999999996
+      }
+     },
+     "latency_p95_target_15s": "OBSERVED TARGET MET",
+     "llm_calls": {
+      "n": 51,
+      "valid": 51,
+      "wall_p50": 4.875,
+      "wall_p95": 11.322,
+      "tokens_per_s_median": 22.95
+     }
+    },
+    "rep3": {
+     "answerable": 43,
+     "answered": {
+      "numerator": 32,
+      "denominator": 43,
+      "value": 0.7442,
+      "wilson95": [
+       0.5976,
+       0.8507
+      ]
+     },
+     "grounded_answer_coverage": {
+      "numerator": 27,
+      "denominator": 43,
+      "value": 0.6279,
+      "wilson95": [
+       0.4786,
+       0.7562
+      ],
+      "classification": "OBSERVED TARGET NOT MET",
+      "interval_vs_target": "interval overlaps target"
+     },
+     "grounded_answer_floor_60": {
+      "numerator": 27,
+      "denominator": 43,
+      "value": 0.6279,
+      "wilson95": [
+       0.4786,
+       0.7562
+      ],
+      "classification": "OBSERVED TARGET MET",
+      "interval_vs_target": "interval overlaps target"
+     },
+     "false_refusals": {
+      "numerator": 0,
+      "denominator": 43,
+      "value": 0.0,
+      "wilson95": [
+       0.0,
+       0.082
+      ]
+     },
+     "withheld_unverified": {
+      "numerator": 11,
+      "denominator": 43,
+      "value": 0.2558,
+      "wilson95": [
+       0.1493,
+       0.4024
+      ]
+     },
+     "citation_correctness_answerable": {
+      "numerator": 35,
+      "denominator": 40,
+      "value": 0.875,
+      "wilson95": [
+       0.7389,
+       0.9454
+      ],
+      "classification": "OBSERVED TARGET NOT MET",
+      "interval_vs_target": "interval entirely below target"
+     },
+     "citation_correctness_all_emitted": {
+      "numerator": 35,
+      "denominator": 46,
+      "value": 0.7609,
+      "wilson95": [
+       0.6206,
+       0.8609
+      ],
+      "classification": "OBSERVED TARGET NOT MET",
+      "interval_vs_target": "interval entirely below target"
+     },
+     "citation_id_validity": {
+      "numerator": 46,
+      "denominator": 46,
+      "value": 1.0,
+      "wilson95": [
+       0.9229,
+       1.0
+      ]
+     },
+     "citation_tenant_ownership": {
+      "numerator": 46,
+      "denominator": 46,
+      "value": 1.0,
+      "wilson95": [
+       0.9229,
+       1.0
+      ]
+     },
+     "citation_quote_correctness": {
+      "numerator": 46,
+      "denominator": 46,
+      "value": 1.0,
+      "wilson95": [
+       0.9229,
+       1.0
+      ]
+     },
+     "claim_support": {
+      "numerator": 71,
+      "denominator": 72,
+      "value": 0.9861,
+      "wilson95": [
+       0.9254,
+       0.9975
+      ],
+      "classification": "OBSERVED TARGET MET",
+      "interval_vs_target": "interval overlaps target"
+     },
+     "correct_abstention": {
+      "numerator": 8,
+      "denominator": 10,
+      "value": 0.8,
+      "wilson95": [
+       0.4902,
+       0.9433
+      ],
+      "classification": "OBSERVED TARGET NOT MET",
+      "interval_vs_target": "interval overlaps target"
+     },
+     "unanswerable_answered_wrongly": {
+      "numerator": 2,
+      "denominator": 10,
+      "value": 0.2,
+      "wilson95": [
+       0.0567,
+       0.5098
+      ]
+     },
+     "unsupported_answer_rate": {
+      "numerator": 7,
+      "denominator": 34,
+      "value": 0.2059,
+      "wilson95": [
+       0.1035,
+       0.368
+      ]
+     },
+     "prompt_injection_effect": {
+      "cases": 6,
+      "flagged_by_heuristic": 0,
+      "flagged_ids": [],
+      "note": "keyword heuristic on answer text; flagged items need manual review, they are not proven attacks"
+     },
+     "cross_tenant_probes": {
+      "cases": 5,
+      "leaks": 0
+     },
+     "by_category": {
+      "asset_confusion": {
+       "answerable": 1,
+       "grounded_correct": 1
+      },
+      "compare": {
+       "answerable": 6,
+       "grounded_correct": 5
+      },
+      "conflicting_record": {
+       "answerable": 1,
+       "grounded_correct": 0
+      },
+      "keyword": {
+       "answerable": 8,
+       "grounded_correct": 8
+      },
+      "multi_hop": {
+       "answerable": 8,
+       "not_answered": 7,
+       "grounded_correct": 0
+      },
+      "paraphrase": {
+       "answerable": 11,
+       "grounded_correct": 9
+      },
+      "procedure": {
+       "answerable": 4,
+       "not_answered": 4
+      },
+      "unanswerable": {
+       "unanswerable": 10,
+       "correct_refusals": 8
+      },
+      "version_conflict": {
+       "answerable": 4,
+       "grounded_correct": 4
+      }
+     },
+     "latency_s": {
+      "all": {
+       "n": 57,
+       "p50": 5.208,
+       "p95": 14.736999999999997,
+       "p99": null
+      },
+      "answerable": {
+       "n": 43,
+       "p50": 5.858,
+       "p95": 15.296999999999999
+      }
+     },
+     "latency_p95_target_15s": "OBSERVED TARGET MET",
+     "llm_calls": {
+      "n": 51,
+      "valid": 51,
+      "wall_p50": 5.301,
+      "wall_p95": 14.855,
+      "tokens_per_s_median": 18.77
+     }
+    }
+   },
+   "extraction": {
+    "rep1": {
+     "cases": 17,
+     "raw_schema_validity": {
+      "numerator": 17,
+      "denominator": 17,
+      "value": 1.0,
+      "wilson95": [
+       0.8157,
+       1.0
+      ],
+      "classification": "OBSERVED TARGET MET",
+      "interval_vs_target": "interval overlaps target"
+     },
+     "raw_asset_correct": {
+      "numerator": 17,
+      "denominator": 17,
+      "value": 1.0,
+      "wilson95": [
+       0.8157,
+       1.0
+      ]
+     },
+     "raw_category_correct": {
+      "numerator": 15,
+      "denominator": 17,
+      "value": 0.8824,
+      "wilson95": [
+       0.6566,
+       0.9671
+      ]
+     },
+     "hallucinated_identifier_rate": {
+      "numerator": 0,
+      "denominator": 17,
+      "value": 0.0,
+      "wilson95": [
+       0.0,
+       0.1843
+      ]
+     },
+     "hallucinated_numeric_signal_rate": {
+      "numerator": 3,
+      "denominator": 6,
+      "value": 0.5,
+      "wilson95": [
+       0.1876,
+       0.8124
+      ]
+     },
+     "post_validation_acceptance": {
+      "numerator": 17,
+      "denominator": 17,
+      "value": 1.0,
+      "wilson95": [
+       0.8157,
+       1.0
+      ]
+     },
+     "final_asset_correct": {
+      "numerator": 17,
+      "denominator": 17,
+      "value": 1.0,
+      "wilson95": [
+       0.8157,
+       1.0
+      ]
+     },
+     "final_category_accuracy": {
+      "numerator": 15,
+      "denominator": 17,
+      "value": 0.8824,
+      "wilson95": [
+       0.6566,
+       0.9671
+      ]
+     },
+     "priority_accuracy": {
+      "numerator": 15,
+      "denominator": 17,
+      "value": 0.8824,
+      "wilson95": [
+       0.6566,
+       0.9671
+      ]
+     },
+     "evidence_completeness": {
+      "numerator": 3,
+      "denominator": 17,
+      "value": 0.1765,
+      "wilson95": [
+       0.0619,
+       0.4103
+      ]
+     },
+     "invalid_asset_rejection": {
+      "numerator": 0,
+      "denominator": 0,
+      "value": null,
+      "wilson95": null
+     },
+     "review_rate": {
+      "numerator": 14,
+      "denominator": 17,
+      "value": 0.8235,
+      "wilson95": [
+       0.5897,
+       0.9381
+      ]
+     },
+     "review_true_positive": 2,
+     "review_false_positive": 12,
+     "review_missed_unsafe": 0,
+     "review_routing_correct": {
+      "numerator": 5,
+      "denominator": 17,
+      "value": 0.2941,
+      "wilson95": [
+       0.1328,
+       0.5313
+      ]
+     },
+     "unsafe_automatic_acceptance": {
+      "numerator": 0,
+      "denominator": 2,
+      "value": 0.0,
+      "wilson95": [
+       0.0,
+       0.6576
+      ]
+     },
+     "injection_priority_kept": {
+      "numerator": 1,
+      "denominator": 1,
+      "value": 1.0,
+      "wilson95": [
+       0.2065,
+       1.0
+      ]
+     },
+     "ambiguous_cases_blocked_for_review": {
+      "numerator": 1,
+      "denominator": 2,
+      "value": 0.5,
+      "wilson95": [
+       0.0945,
+       0.9055
+      ]
+     },
+     "latency_s": {
+      "n": 17,
+      "p50": 2.963,
+      "p95": 5.9086
+     }
+    },
+    "rep2": {
+     "cases": 17,
+     "raw_schema_validity": {
+      "numerator": 17,
+      "denominator": 17,
+      "value": 1.0,
+      "wilson95": [
+       0.8157,
+       1.0
+      ],
+      "classification": "OBSERVED TARGET MET",
+      "interval_vs_target": "interval overlaps target"
+     },
+     "raw_asset_correct": {
+      "numerator": 17,
+      "denominator": 17,
+      "value": 1.0,
+      "wilson95": [
+       0.8157,
+       1.0
+      ]
+     },
+     "raw_category_correct": {
+      "numerator": 15,
+      "denominator": 17,
+      "value": 0.8824,
+      "wilson95": [
+       0.6566,
+       0.9671
+      ]
+     },
+     "hallucinated_identifier_rate": {
+      "numerator": 0,
+      "denominator": 17,
+      "value": 0.0,
+      "wilson95": [
+       0.0,
+       0.1843
+      ]
+     },
+     "hallucinated_numeric_signal_rate": {
+      "numerator": 3,
+      "denominator": 6,
+      "value": 0.5,
+      "wilson95": [
+       0.1876,
+       0.8124
+      ]
+     },
+     "post_validation_acceptance": {
+      "numerator": 17,
+      "denominator": 17,
+      "value": 1.0,
+      "wilson95": [
+       0.8157,
+       1.0
+      ]
+     },
+     "final_asset_correct": {
+      "numerator": 17,
+      "denominator": 17,
+      "value": 1.0,
+      "wilson95": [
+       0.8157,
+       1.0
+      ]
+     },
+     "final_category_accuracy": {
+      "numerator": 15,
+      "denominator": 17,
+      "value": 0.8824,
+      "wilson95": [
+       0.6566,
+       0.9671
+      ]
+     },
+     "priority_accuracy": {
+      "numerator": 15,
+      "denominator": 17,
+      "value": 0.8824,
+      "wilson95": [
+       0.6566,
+       0.9671
+      ]
+     },
+     "evidence_completeness": {
+      "numerator": 3,
+      "denominator": 17,
+      "value": 0.1765,
+      "wilson95": [
+       0.0619,
+       0.4103
+      ]
+     },
+     "invalid_asset_rejection": {
+      "numerator": 0,
+      "denominator": 0,
+      "value": null,
+      "wilson95": null
+     },
+     "review_rate": {
+      "numerator": 14,
+      "denominator": 17,
+      "value": 0.8235,
+      "wilson95": [
+       0.5897,
+       0.9381
+      ]
+     },
+     "review_true_positive": 2,
+     "review_false_positive": 12,
+     "review_missed_unsafe": 0,
+     "review_routing_correct": {
+      "numerator": 5,
+      "denominator": 17,
+      "value": 0.2941,
+      "wilson95": [
+       0.1328,
+       0.5313
+      ]
+     },
+     "unsafe_automatic_acceptance": {
+      "numerator": 0,
+      "denominator": 2,
+      "value": 0.0,
+      "wilson95": [
+       0.0,
+       0.6576
+      ]
+     },
+     "injection_priority_kept": {
+      "numerator": 1,
+      "denominator": 1,
+      "value": 1.0,
+      "wilson95": [
+       0.2065,
+       1.0
+      ]
+     },
+     "ambiguous_cases_blocked_for_review": {
+      "numerator": 1,
+      "denominator": 2,
+      "value": 0.5,
+      "wilson95": [
+       0.0945,
+       0.9055
+      ]
+     },
+     "latency_s": {
+      "n": 17,
+      "p50": 3.922,
+      "p95": 7.0808
+     }
+    },
+    "rep3": {
+     "cases": 17,
+     "raw_schema_validity": {
+      "numerator": 17,
+      "denominator": 17,
+      "value": 1.0,
+      "wilson95": [
+       0.8157,
+       1.0
+      ],
+      "classification": "OBSERVED TARGET MET",
+      "interval_vs_target": "interval overlaps target"
+     },
+     "raw_asset_correct": {
+      "numerator": 17,
+      "denominator": 17,
+      "value": 1.0,
+      "wilson95": [
+       0.8157,
+       1.0
+      ]
+     },
+     "raw_category_correct": {
+      "numerator": 15,
+      "denominator": 17,
+      "value": 0.8824,
+      "wilson95": [
+       0.6566,
+       0.9671
+      ]
+     },
+     "hallucinated_identifier_rate": {
+      "numerator": 0,
+      "denominator": 17,
+      "value": 0.0,
+      "wilson95": [
+       0.0,
+       0.1843
+      ]
+     },
+     "hallucinated_numeric_signal_rate": {
+      "numerator": 3,
+      "denominator": 6,
+      "value": 0.5,
+      "wilson95": [
+       0.1876,
+       0.8124
+      ]
+     },
+     "post_validation_acceptance": {
+      "numerator": 17,
+      "denominator": 17,
+      "value": 1.0,
+      "wilson95": [
+       0.8157,
+       1.0
+      ]
+     },
+     "final_asset_correct": {
+      "numerator": 17,
+      "denominator": 17,
+      "value": 1.0,
+      "wilson95": [
+       0.8157,
+       1.0
+      ]
+     },
+     "final_category_accuracy": {
+      "numerator": 15,
+      "denominator": 17,
+      "value": 0.8824,
+      "wilson95": [
+       0.6566,
+       0.9671
+      ]
+     },
+     "priority_accuracy": {
+      "numerator": 15,
+      "denominator": 17,
+      "value": 0.8824,
+      "wilson95": [
+       0.6566,
+       0.9671
+      ]
+     },
+     "evidence_completeness": {
+      "numerator": 3,
+      "denominator": 17,
+      "value": 0.1765,
+      "wilson95": [
+       0.0619,
+       0.4103
+      ]
+     },
+     "invalid_asset_rejection": {
+      "numerator": 0,
+      "denominator": 0,
+      "value": null,
+      "wilson95": null
+     },
+     "review_rate": {
+      "numerator": 14,
+      "denominator": 17,
+      "value": 0.8235,
+      "wilson95": [
+       0.5897,
+       0.9381
+      ]
+     },
+     "review_true_positive": 2,
+     "review_false_positive": 12,
+     "review_missed_unsafe": 0,
+     "review_routing_correct": {
+      "numerator": 5,
+      "denominator": 17,
+      "value": 0.2941,
+      "wilson95": [
+       0.1328,
+       0.5313
+      ]
+     },
+     "unsafe_automatic_acceptance": {
+      "numerator": 0,
+      "denominator": 2,
+      "value": 0.0,
+      "wilson95": [
+       0.0,
+       0.6576
+      ]
+     },
+     "injection_priority_kept": {
+      "numerator": 1,
+      "denominator": 1,
+      "value": 1.0,
+      "wilson95": [
+       0.2065,
+       1.0
+      ]
+     },
+     "ambiguous_cases_blocked_for_review": {
+      "numerator": 1,
+      "denominator": 2,
+      "value": 0.5,
+      "wilson95": [
+       0.0945,
+       0.9055
+      ]
+     },
+     "latency_s": {
+      "n": 17,
+      "p50": 3.712,
+      "p95": 7.401399999999999
+     }
+    }
+   }
+  },
+  "meridian": {
+   "retrieval": {
+    "hybrid": {
+     "queries": 44,
+     "recall@1": 0.5152,
+     "recall@3": 0.8106,
+     "recall@5": 0.8864,
+     "recall@10": 0.9318,
+     "precision@5": 0.2227,
+     "precision_ceiling@5": 0.2636,
+     "mrr": 0.7667,
+     "ndcg@5": 0.7781,
+     "ndcg@10": 0.7925,
+     "recall@5_ci95": [
+      0.7955,
+      0.9621
+     ],
+     "ndcg@5_ci95": [
+      0.6876,
+      0.8582
+     ],
+     "latency_s": {
+      "p50": 0.02985,
+      "p95": 0.04362500000000001,
+      "n": 44
+     }
+    },
+    "vector": {
+     "queries": 44,
+     "recall@1": 0.5379,
+     "recall@3": 0.8106,
+     "recall@5": 0.8864,
+     "recall@10": 0.9318,
+     "precision@5": 0.2227,
+     "precision_ceiling@5": 0.2636,
+     "mrr": 0.778,
+     "ndcg@5": 0.7865,
+     "ndcg@10": 0.8009,
+     "recall@5_ci95": [
+      0.7955,
+      0.9621
+     ],
+     "ndcg@5_ci95": [
+      0.6951,
+      0.8659
+     ],
+     "latency_s": {
+      "p50": 0.0288,
+      "p95": 0.041425000000000003,
+      "n": 44
+     }
+    },
+    "fts": {
+     "queries": 44,
+     "recall@1": 0.5606,
+     "recall@3": 0.8106,
+     "recall@5": 0.8864,
+     "recall@10": 0.9091,
+     "precision@5": 0.2227,
+     "precision_ceiling@5": 0.2636,
+     "mrr": 0.7866,
+     "ndcg@5": 0.7949,
+     "ndcg@10": 0.8021,
+     "recall@5_ci95": [
+      0.7955,
+      0.9621
+     ],
+     "ndcg@5_ci95": [
+      0.7033,
+      0.8743
+     ],
+     "latency_s": {
+      "p50": 0.0304,
+      "p95": 0.03997,
+      "n": 44
+     }
+    },
+    "cross_tenant_leakage": {
+     "retrieved_passages": 1813,
+     "foreign": 0,
+     "rate": 0.0
+    },
+    "repeat_ranking_identical": {
+     "identical": 61,
+     "different": 0
+    },
+    "hybrid_recall@5_by_category": {
+     "asset_confusion": {
+      "n": 4,
+      "value": 0.75
+     },
+     "compare": {
+      "n": 4,
+      "value": 1.0
+     },
+     "conflicting_record": {
+      "n": 4,
+      "value": 0.75
+     },
+     "keyword": {
+      "n": 8,
+      "value": 1.0
+     },
+     "multi_hop": {
+      "n": 5,
+      "value": 0.6
+     },
+     "paraphrase": {
+      "n": 11,
+      "value": 0.9091
+     },
+     "procedure": {
+      "n": 2,
+      "value": 1.0
+     },
+     "version_conflict": {
+      "n": 6,
+      "value": 1.0
+     }
+    }
+   },
+   "qa": {
+    "rep1": {
+     "answerable": 44,
+     "answered": {
+      "numerator": 32,
+      "denominator": 44,
+      "value": 0.7273,
+      "wilson95": [
+       0.5815,
+       0.8365
+      ]
+     },
+     "grounded_answer_coverage": {
+      "numerator": 28,
+      "denominator": 44,
+      "value": 0.6364,
+      "wilson95": [
+       0.4887,
+       0.7622
+      ],
+      "classification": "OBSERVED TARGET NOT MET",
+      "interval_vs_target": "interval overlaps target"
+     },
+     "grounded_answer_floor_60": {
+      "numerator": 28,
+      "denominator": 44,
+      "value": 0.6364,
+      "wilson95": [
+       0.4887,
+       0.7622
+      ],
+      "classification": "OBSERVED TARGET MET",
+      "interval_vs_target": "interval overlaps target"
+     },
+     "false_refusals": {
+      "numerator": 0,
+      "denominator": 44,
+      "value": 0.0,
+      "wilson95": [
+       0.0,
+       0.0803
+      ]
+     },
+     "withheld_unverified": {
+      "numerator": 12,
+      "denominator": 44,
+      "value": 0.2727,
+      "wilson95": [
+       0.1635,
+       0.4185
+      ]
+     },
+     "citation_correctness_answerable": {
+      "numerator": 30,
+      "denominator": 34,
+      "value": 0.8824,
+      "wilson95": [
+       0.7338,
+       0.9533
+      ],
+      "classification": "OBSERVED TARGET NOT MET",
+      "interval_vs_target": "interval overlaps target"
+     },
+     "citation_correctness_all_emitted": {
+      "numerator": 30,
+      "denominator": 44,
+      "value": 0.6818,
+      "wilson95": [
+       0.5344,
+       0.8
+      ],
+      "classification": "OBSERVED TARGET NOT MET",
+      "interval_vs_target": "interval entirely below target"
+     },
+     "citation_id_validity": {
+      "numerator": 44,
+      "denominator": 44,
+      "value": 1.0,
+      "wilson95": [
+       0.9197,
+       1.0
+      ]
+     },
+     "citation_tenant_ownership": {
+      "numerator": 44,
+      "denominator": 44,
+      "value": 1.0,
+      "wilson95": [
+       0.9197,
+       1.0
+      ]
+     },
+     "citation_quote_correctness": {
+      "numerator": 44,
+      "denominator": 44,
+      "value": 1.0,
+      "wilson95": [
+       0.9197,
+       1.0
+      ]
+     },
+     "claim_support": {
+      "numerator": 53,
+      "denominator": 54,
+      "value": 0.9815,
+      "wilson95": [
+       0.9023,
+       0.9967
+      ],
+      "classification": "OBSERVED TARGET MET",
+      "interval_vs_target": "interval overlaps target"
+     },
+     "correct_abstention": {
+      "numerator": 6,
+      "denominator": 13,
+      "value": 0.4615,
+      "wilson95": [
+       0.2321,
+       0.7086
+      ],
+      "classification": "OBSERVED TARGET NOT MET",
+      "interval_vs_target": "interval entirely below target"
+     },
+     "unanswerable_answered_wrongly": {
+      "numerator": 7,
+      "denominator": 13,
+      "value": 0.5385,
+      "wilson95": [
+       0.2914,
+       0.7679
+      ]
+     },
+     "unsupported_answer_rate": {
+      "numerator": 12,
+      "denominator": 39,
+      "value": 0.3077,
+      "wilson95": [
+       0.1857,
+       0.4642
+      ]
+     },
+     "prompt_injection_effect": {
+      "cases": 6,
+      "flagged_by_heuristic": 0,
+      "flagged_ids": [],
+      "note": "keyword heuristic on answer text; flagged items need manual review, they are not proven attacks"
+     },
+     "cross_tenant_probes": {
+      "cases": 3,
+      "leaks": 1
+     },
+     "by_category": {
+      "asset_confusion": {
+       "answerable": 4,
+       "grounded_correct": 2,
+       "not_answered": 1
+      },
+      "compare": {
+       "answerable": 4,
+       "grounded_correct": 2,
+       "not_answered": 2
+      },
+      "conflicting_record": {
+       "answerable": 4,
+       "not_answered": 1,
+       "grounded_correct": 0
+      },
+      "keyword": {
+       "answerable": 8,
+       "grounded_correct": 8
+      },
+      "multi_hop": {
+       "answerable": 5,
+       "not_answered": 5
+      },
+      "paraphrase": {
+       "answerable": 11,
+       "grounded_correct": 11
+      },
+      "procedure": {
+       "answerable": 2,
+       "not_answered": 2
+      },
+      "unanswerable": {
+       "unanswerable": 13,
+       "correct_refusals": 6
+      },
+      "version_conflict": {
+       "answerable": 6,
+       "grounded_correct": 5,
+       "not_answered": 1
+      }
+     },
+     "latency_s": {
+      "all": {
+       "n": 61,
+       "p50": 4.025,
+       "p95": 12.012,
+       "p99": null
+      },
+      "answerable": {
+       "n": 44,
+       "p50": 4.318,
+       "p95": 13.165450000000002
+      }
+     },
+     "latency_p95_target_15s": "OBSERVED TARGET MET",
+     "llm_calls": {
+      "n": 55,
+      "valid": 54,
+      "wall_p50": 4.199,
+      "wall_p95": 12.320799999999995,
+      "tokens_per_s_median": 24.79
+     }
+    },
+    "rep2": {
+     "answerable": 44,
+     "answered": {
+      "numerator": 32,
+      "denominator": 44,
+      "value": 0.7273,
+      "wilson95": [
+       0.5815,
+       0.8365
+      ]
+     },
+     "grounded_answer_coverage": {
+      "numerator": 28,
+      "denominator": 44,
+      "value": 0.6364,
+      "wilson95": [
+       0.4887,
+       0.7622
+      ],
+      "classification": "OBSERVED TARGET NOT MET",
+      "interval_vs_target": "interval overlaps target"
+     },
+     "grounded_answer_floor_60": {
+      "numerator": 28,
+      "denominator": 44,
+      "value": 0.6364,
+      "wilson95": [
+       0.4887,
+       0.7622
+      ],
+      "classification": "OBSERVED TARGET MET",
+      "interval_vs_target": "interval overlaps target"
+     },
+     "false_refusals": {
+      "numerator": 0,
+      "denominator": 44,
+      "value": 0.0,
+      "wilson95": [
+       0.0,
+       0.0803
+      ]
+     },
+     "withheld_unverified": {
+      "numerator": 12,
+      "denominator": 44,
+      "value": 0.2727,
+      "wilson95": [
+       0.1635,
+       0.4185
+      ]
+     },
+     "citation_correctness_answerable": {
+      "numerator": 30,
+      "denominator": 34,
+      "value": 0.8824,
+      "wilson95": [
+       0.7338,
+       0.9533
+      ],
+      "classification": "OBSERVED TARGET NOT MET",
+      "interval_vs_target": "interval overlaps target"
+     },
+     "citation_correctness_all_emitted": {
+      "numerator": 30,
+      "denominator": 44,
+      "value": 0.6818,
+      "wilson95": [
+       0.5344,
+       0.8
+      ],
+      "classification": "OBSERVED TARGET NOT MET",
+      "interval_vs_target": "interval entirely below target"
+     },
+     "citation_id_validity": {
+      "numerator": 44,
+      "denominator": 44,
+      "value": 1.0,
+      "wilson95": [
+       0.9197,
+       1.0
+      ]
+     },
+     "citation_tenant_ownership": {
+      "numerator": 44,
+      "denominator": 44,
+      "value": 1.0,
+      "wilson95": [
+       0.9197,
+       1.0
+      ]
+     },
+     "citation_quote_correctness": {
+      "numerator": 44,
+      "denominator": 44,
+      "value": 1.0,
+      "wilson95": [
+       0.9197,
+       1.0
+      ]
+     },
+     "claim_support": {
+      "numerator": 53,
+      "denominator": 54,
+      "value": 0.9815,
+      "wilson95": [
+       0.9023,
+       0.9967
+      ],
+      "classification": "OBSERVED TARGET MET",
+      "interval_vs_target": "interval overlaps target"
+     },
+     "correct_abstention": {
+      "numerator": 6,
+      "denominator": 13,
+      "value": 0.4615,
+      "wilson95": [
+       0.2321,
+       0.7086
+      ],
+      "classification": "OBSERVED TARGET NOT MET",
+      "interval_vs_target": "interval entirely below target"
+     },
+     "unanswerable_answered_wrongly": {
+      "numerator": 7,
+      "denominator": 13,
+      "value": 0.5385,
+      "wilson95": [
+       0.2914,
+       0.7679
+      ]
+     },
+     "unsupported_answer_rate": {
+      "numerator": 12,
+      "denominator": 39,
+      "value": 0.3077,
+      "wilson95": [
+       0.1857,
+       0.4642
+      ]
+     },
+     "prompt_injection_effect": {
+      "cases": 6,
+      "flagged_by_heuristic": 0,
+      "flagged_ids": [],
+      "note": "keyword heuristic on answer text; flagged items need manual review, they are not proven attacks"
+     },
+     "cross_tenant_probes": {
+      "cases": 3,
+      "leaks": 1
+     },
+     "by_category": {
+      "asset_confusion": {
+       "answerable": 4,
+       "grounded_correct": 2,
+       "not_answered": 1
+      },
+      "compare": {
+       "answerable": 4,
+       "grounded_correct": 2,
+       "not_answered": 2
+      },
+      "conflicting_record": {
+       "answerable": 4,
+       "not_answered": 1,
+       "grounded_correct": 0
+      },
+      "keyword": {
+       "answerable": 8,
+       "grounded_correct": 8
+      },
+      "multi_hop": {
+       "answerable": 5,
+       "not_answered": 5
+      },
+      "paraphrase": {
+       "answerable": 11,
+       "grounded_correct": 11
+      },
+      "procedure": {
+       "answerable": 2,
+       "not_answered": 2
+      },
+      "unanswerable": {
+       "unanswerable": 13,
+       "correct_refusals": 6
+      },
+      "version_conflict": {
+       "answerable": 6,
+       "grounded_correct": 5,
+       "not_answered": 1
+      }
+     },
+     "latency_s": {
+      "all": {
+       "n": 61,
+       "p50": 4.374,
+       "p95": 12.737,
+       "p99": null
+      },
+      "answerable": {
+       "n": 44,
+       "p50": 4.5515,
+       "p95": 12.70655
+      }
+     },
+     "latency_p95_target_15s": "OBSERVED TARGET MET",
+     "llm_calls": {
+      "n": 55,
+      "valid": 54,
+      "wall_p50": 4.432,
+      "wall_p95": 12.733799999999999,
+      "tokens_per_s_median": 22.38
+     }
+    },
+    "rep3": {
+     "answerable": 44,
+     "answered": {
+      "numerator": 32,
+      "denominator": 44,
+      "value": 0.7273,
+      "wilson95": [
+       0.5815,
+       0.8365
+      ]
+     },
+     "grounded_answer_coverage": {
+      "numerator": 28,
+      "denominator": 44,
+      "value": 0.6364,
+      "wilson95": [
+       0.4887,
+       0.7622
+      ],
+      "classification": "OBSERVED TARGET NOT MET",
+      "interval_vs_target": "interval overlaps target"
+     },
+     "grounded_answer_floor_60": {
+      "numerator": 28,
+      "denominator": 44,
+      "value": 0.6364,
+      "wilson95": [
+       0.4887,
+       0.7622
+      ],
+      "classification": "OBSERVED TARGET MET",
+      "interval_vs_target": "interval overlaps target"
+     },
+     "false_refusals": {
+      "numerator": 0,
+      "denominator": 44,
+      "value": 0.0,
+      "wilson95": [
+       0.0,
+       0.0803
+      ]
+     },
+     "withheld_unverified": {
+      "numerator": 12,
+      "denominator": 44,
+      "value": 0.2727,
+      "wilson95": [
+       0.1635,
+       0.4185
+      ]
+     },
+     "citation_correctness_answerable": {
+      "numerator": 30,
+      "denominator": 34,
+      "value": 0.8824,
+      "wilson95": [
+       0.7338,
+       0.9533
+      ],
+      "classification": "OBSERVED TARGET NOT MET",
+      "interval_vs_target": "interval overlaps target"
+     },
+     "citation_correctness_all_emitted": {
+      "numerator": 30,
+      "denominator": 44,
+      "value": 0.6818,
+      "wilson95": [
+       0.5344,
+       0.8
+      ],
+      "classification": "OBSERVED TARGET NOT MET",
+      "interval_vs_target": "interval entirely below target"
+     },
+     "citation_id_validity": {
+      "numerator": 44,
+      "denominator": 44,
+      "value": 1.0,
+      "wilson95": [
+       0.9197,
+       1.0
+      ]
+     },
+     "citation_tenant_ownership": {
+      "numerator": 44,
+      "denominator": 44,
+      "value": 1.0,
+      "wilson95": [
+       0.9197,
+       1.0
+      ]
+     },
+     "citation_quote_correctness": {
+      "numerator": 44,
+      "denominator": 44,
+      "value": 1.0,
+      "wilson95": [
+       0.9197,
+       1.0
+      ]
+     },
+     "claim_support": {
+      "numerator": 54,
+      "denominator": 55,
+      "value": 0.9818,
+      "wilson95": [
+       0.9039,
+       0.9968
+      ],
+      "classification": "OBSERVED TARGET MET",
+      "interval_vs_target": "interval overlaps target"
+     },
+     "correct_abstention": {
+      "numerator": 6,
+      "denominator": 13,
+      "value": 0.4615,
+      "wilson95": [
+       0.2321,
+       0.7086
+      ],
+      "classification": "OBSERVED TARGET NOT MET",
+      "interval_vs_target": "interval entirely below target"
+     },
+     "unanswerable_answered_wrongly": {
+      "numerator": 7,
+      "denominator": 13,
+      "value": 0.5385,
+      "wilson95": [
+       0.2914,
+       0.7679
+      ]
+     },
+     "unsupported_answer_rate": {
+      "numerator": 12,
+      "denominator": 39,
+      "value": 0.3077,
+      "wilson95": [
+       0.1857,
+       0.4642
+      ]
+     },
+     "prompt_injection_effect": {
+      "cases": 6,
+      "flagged_by_heuristic": 0,
+      "flagged_ids": [],
+      "note": "keyword heuristic on answer text; flagged items need manual review, they are not proven attacks"
+     },
+     "cross_tenant_probes": {
+      "cases": 3,
+      "leaks": 1
+     },
+     "by_category": {
+      "asset_confusion": {
+       "answerable": 4,
+       "grounded_correct": 2,
+       "not_answered": 1
+      },
+      "compare": {
+       "answerable": 4,
+       "grounded_correct": 2,
+       "not_answered": 2
+      },
+      "conflicting_record": {
+       "answerable": 4,
+       "not_answered": 1,
+       "grounded_correct": 0
+      },
+      "keyword": {
+       "answerable": 8,
+       "grounded_correct": 8
+      },
+      "multi_hop": {
+       "answerable": 5,
+       "not_answered": 5
+      },
+      "paraphrase": {
+       "answerable": 11,
+       "grounded_correct": 11
+      },
+      "procedure": {
+       "answerable": 2,
+       "not_answered": 2
+      },
+      "unanswerable": {
+       "unanswerable": 13,
+       "correct_refusals": 6
+      },
+      "version_conflict": {
+       "answerable": 6,
+       "grounded_correct": 5,
+       "not_answered": 1
+      }
+     },
+     "latency_s": {
+      "all": {
+       "n": 61,
+       "p50": 4.702,
+       "p95": 13.076,
+       "p99": null
+      },
+      "answerable": {
+       "n": 44,
+       "p50": 4.9079999999999995,
+       "p95": 12.844250000000002
+      }
+     },
+     "latency_p95_target_15s": "OBSERVED TARGET MET",
+     "llm_calls": {
+      "n": 55,
+      "valid": 54,
+      "wall_p50": 4.833,
+      "wall_p95": 14.01769999999999,
+      "tokens_per_s_median": 19.76
+     }
+    }
+   },
+   "extraction": {
+    "rep1": {
+     "cases": 17,
+     "raw_schema_validity": {
+      "numerator": 17,
+      "denominator": 17,
+      "value": 1.0,
+      "wilson95": [
+       0.8157,
+       1.0
+      ],
+      "classification": "OBSERVED TARGET MET",
+      "interval_vs_target": "interval overlaps target"
+     },
+     "raw_asset_correct": {
+      "numerator": 17,
+      "denominator": 17,
+      "value": 1.0,
+      "wilson95": [
+       0.8157,
+       1.0
+      ]
+     },
+     "raw_category_correct": {
+      "numerator": 10,
+      "denominator": 17,
+      "value": 0.5882,
+      "wilson95": [
+       0.3601,
+       0.7839
+      ]
+     },
+     "hallucinated_identifier_rate": {
+      "numerator": 0,
+      "denominator": 17,
+      "value": 0.0,
+      "wilson95": [
+       0.0,
+       0.1843
+      ]
+     },
+     "hallucinated_numeric_signal_rate": {
+      "numerator": 0,
+      "denominator": 0,
+      "value": null,
+      "wilson95": null
+     },
+     "post_validation_acceptance": {
+      "numerator": 17,
+      "denominator": 17,
+      "value": 1.0,
+      "wilson95": [
+       0.8157,
+       1.0
+      ]
+     },
+     "final_asset_correct": {
+      "numerator": 17,
+      "denominator": 17,
+      "value": 1.0,
+      "wilson95": [
+       0.8157,
+       1.0
+      ]
+     },
+     "final_category_accuracy": {
+      "numerator": 10,
+      "denominator": 17,
+      "value": 0.5882,
+      "wilson95": [
+       0.3601,
+       0.7839
+      ]
+     },
+     "priority_accuracy": {
+      "numerator": 13,
+      "denominator": 17,
+      "value": 0.7647,
+      "wilson95": [
+       0.5274,
+       0.9044
+      ]
+     },
+     "evidence_completeness": {
+      "numerator": 5,
+      "denominator": 17,
+      "value": 0.2941,
+      "wilson95": [
+       0.1328,
+       0.5313
+      ]
+     },
+     "invalid_asset_rejection": {
+      "numerator": 0,
+      "denominator": 0,
+      "value": null,
+      "wilson95": null
+     },
+     "review_rate": {
+      "numerator": 13,
+      "denominator": 17,
+      "value": 0.7647,
+      "wilson95": [
+       0.5274,
+       0.9044
+      ]
+     },
+     "review_true_positive": 2,
+     "review_false_positive": 11,
+     "review_missed_unsafe": 0,
+     "review_routing_correct": {
+      "numerator": 6,
+      "denominator": 17,
+      "value": 0.3529,
+      "wilson95": [
+       0.1731,
+       0.587
+      ]
+     },
+     "unsafe_automatic_acceptance": {
+      "numerator": 0,
+      "denominator": 2,
+      "value": 0.0,
+      "wilson95": [
+       0.0,
+       0.6576
+      ]
+     },
+     "injection_priority_kept": {
+      "numerator": 0,
+      "denominator": 1,
+      "value": 0.0,
+      "wilson95": [
+       0.0,
+       0.7935
+      ]
+     },
+     "ambiguous_cases_blocked_for_review": {
+      "numerator": 2,
+      "denominator": 2,
+      "value": 1.0,
+      "wilson95": [
+       0.3424,
+       1.0
+      ]
+     },
+     "latency_s": {
+      "n": 17,
+      "p50": 3.673,
+      "p95": 8.570799999999998
+     }
+    },
+    "rep2": {
+     "cases": 17,
+     "raw_schema_validity": {
+      "numerator": 17,
+      "denominator": 17,
+      "value": 1.0,
+      "wilson95": [
+       0.8157,
+       1.0
+      ],
+      "classification": "OBSERVED TARGET MET",
+      "interval_vs_target": "interval overlaps target"
+     },
+     "raw_asset_correct": {
+      "numerator": 17,
+      "denominator": 17,
+      "value": 1.0,
+      "wilson95": [
+       0.8157,
+       1.0
+      ]
+     },
+     "raw_category_correct": {
+      "numerator": 10,
+      "denominator": 17,
+      "value": 0.5882,
+      "wilson95": [
+       0.3601,
+       0.7839
+      ]
+     },
+     "hallucinated_identifier_rate": {
+      "numerator": 0,
+      "denominator": 17,
+      "value": 0.0,
+      "wilson95": [
+       0.0,
+       0.1843
+      ]
+     },
+     "hallucinated_numeric_signal_rate": {
+      "numerator": 0,
+      "denominator": 0,
+      "value": null,
+      "wilson95": null
+     },
+     "post_validation_acceptance": {
+      "numerator": 17,
+      "denominator": 17,
+      "value": 1.0,
+      "wilson95": [
+       0.8157,
+       1.0
+      ]
+     },
+     "final_asset_correct": {
+      "numerator": 17,
+      "denominator": 17,
+      "value": 1.0,
+      "wilson95": [
+       0.8157,
+       1.0
+      ]
+     },
+     "final_category_accuracy": {
+      "numerator": 10,
+      "denominator": 17,
+      "value": 0.5882,
+      "wilson95": [
+       0.3601,
+       0.7839
+      ]
+     },
+     "priority_accuracy": {
+      "numerator": 13,
+      "denominator": 17,
+      "value": 0.7647,
+      "wilson95": [
+       0.5274,
+       0.9044
+      ]
+     },
+     "evidence_completeness": {
+      "numerator": 5,
+      "denominator": 17,
+      "value": 0.2941,
+      "wilson95": [
+       0.1328,
+       0.5313
+      ]
+     },
+     "invalid_asset_rejection": {
+      "numerator": 0,
+      "denominator": 0,
+      "value": null,
+      "wilson95": null
+     },
+     "review_rate": {
+      "numerator": 13,
+      "denominator": 17,
+      "value": 0.7647,
+      "wilson95": [
+       0.5274,
+       0.9044
+      ]
+     },
+     "review_true_positive": 2,
+     "review_false_positive": 11,
+     "review_missed_unsafe": 0,
+     "review_routing_correct": {
+      "numerator": 6,
+      "denominator": 17,
+      "value": 0.3529,
+      "wilson95": [
+       0.1731,
+       0.587
+      ]
+     },
+     "unsafe_automatic_acceptance": {
+      "numerator": 0,
+      "denominator": 2,
+      "value": 0.0,
+      "wilson95": [
+       0.0,
+       0.6576
+      ]
+     },
+     "injection_priority_kept": {
+      "numerator": 0,
+      "denominator": 1,
+      "value": 0.0,
+      "wilson95": [
+       0.0,
+       0.7935
+      ]
+     },
+     "ambiguous_cases_blocked_for_review": {
+      "numerator": 2,
+      "denominator": 2,
+      "value": 1.0,
+      "wilson95": [
+       0.3424,
+       1.0
+      ]
+     },
+     "latency_s": {
+      "n": 17,
+      "p50": 5.601,
+      "p95": 11.900799999999998
+     }
+    },
+    "rep3": {
+     "cases": 17,
+     "raw_schema_validity": {
+      "numerator": 17,
+      "denominator": 17,
+      "value": 1.0,
+      "wilson95": [
+       0.8157,
+       1.0
+      ],
+      "classification": "OBSERVED TARGET MET",
+      "interval_vs_target": "interval overlaps target"
+     },
+     "raw_asset_correct": {
+      "numerator": 17,
+      "denominator": 17,
+      "value": 1.0,
+      "wilson95": [
+       0.8157,
+       1.0
+      ]
+     },
+     "raw_category_correct": {
+      "numerator": 10,
+      "denominator": 17,
+      "value": 0.5882,
+      "wilson95": [
+       0.3601,
+       0.7839
+      ]
+     },
+     "hallucinated_identifier_rate": {
+      "numerator": 0,
+      "denominator": 17,
+      "value": 0.0,
+      "wilson95": [
+       0.0,
+       0.1843
+      ]
+     },
+     "hallucinated_numeric_signal_rate": {
+      "numerator": 0,
+      "denominator": 0,
+      "value": null,
+      "wilson95": null
+     },
+     "post_validation_acceptance": {
+      "numerator": 17,
+      "denominator": 17,
+      "value": 1.0,
+      "wilson95": [
+       0.8157,
+       1.0
+      ]
+     },
+     "final_asset_correct": {
+      "numerator": 17,
+      "denominator": 17,
+      "value": 1.0,
+      "wilson95": [
+       0.8157,
+       1.0
+      ]
+     },
+     "final_category_accuracy": {
+      "numerator": 10,
+      "denominator": 17,
+      "value": 0.5882,
+      "wilson95": [
+       0.3601,
+       0.7839
+      ]
+     },
+     "priority_accuracy": {
+      "numerator": 13,
+      "denominator": 17,
+      "value": 0.7647,
+      "wilson95": [
+       0.5274,
+       0.9044
+      ]
+     },
+     "evidence_completeness": {
+      "numerator": 5,
+      "denominator": 17,
+      "value": 0.2941,
+      "wilson95": [
+       0.1328,
+       0.5313
+      ]
+     },
+     "invalid_asset_rejection": {
+      "numerator": 0,
+      "denominator": 0,
+      "value": null,
+      "wilson95": null
+     },
+     "review_rate": {
+      "numerator": 13,
+      "denominator": 17,
+      "value": 0.7647,
+      "wilson95": [
+       0.5274,
+       0.9044
+      ]
+     },
+     "review_true_positive": 2,
+     "review_false_positive": 11,
+     "review_missed_unsafe": 0,
+     "review_routing_correct": {
+      "numerator": 6,
+      "denominator": 17,
+      "value": 0.3529,
+      "wilson95": [
+       0.1731,
+       0.587
+      ]
+     },
+     "unsafe_automatic_acceptance": {
+      "numerator": 0,
+      "denominator": 2,
+      "value": 0.0,
+      "wilson95": [
+       0.0,
+       0.6576
+      ]
+     },
+     "injection_priority_kept": {
+      "numerator": 0,
+      "denominator": 1,
+      "value": 0.0,
+      "wilson95": [
+       0.0,
+       0.7935
+      ]
+     },
+     "ambiguous_cases_blocked_for_review": {
+      "numerator": 2,
+      "denominator": 2,
+      "value": 1.0,
+      "wilson95": [
+       0.3424,
+       1.0
+      ]
+     },
+     "latency_s": {
+      "n": 17,
+      "p50": 4.631,
+      "p95": 10.715799999999996
+     }
+    }
+   }
+  }
+ },
+ "recall_at_5_target": {
+  "value": 0.8851,
+  "target": 0.85,
+  "classification": "OBSERVED TARGET MET"
+ },
+ "workflow": {
+  "cases": 6,
+  "submitted": 6,
+  "completion": {
+   "numerator": 6,
+   "denominator": 6,
+   "value": 1.0,
+   "wilson95": [
+    0.6097,
+    1.0
+   ]
+  },
+  "unauthorised_submission_or_approval_succeeded": 0,
+  "external_tickets": {
+   "ticketing_tickets": 3,
+   "servicedesk_tickets": 3
+  },
+  "duplicate_external_actions": 0,
+  "review_required": 6,
+  "total_s": {
+   "p50": 4.5184999999999995,
+   "max": 5.477
+  },
+  "approval_to_submitted_s": {
+   "p50": 0.1935
+  }
+ },
+ "run_to_run_spread": {
+  "grounded_answer_coverage": {
+   "per_rep": [
+    0.6207,
+    0.6322,
+    0.6322
+   ],
+   "min": 0.6207,
+   "max": 0.6322
+  },
+  "citation_correctness_answerable": {
+   "per_rep": [
+    0.8571,
+    0.8816,
+    0.8784
+   ],
+   "min": 0.8571,
+   "max": 0.8816
+  },
+  "claim_support": {
+   "per_rep": [
+    0.9774,
+    0.9845,
+    0.9843
+   ],
+   "min": 0.9774,
+   "max": 0.9845
+  },
+  "correct_abstention": {
+   "per_rep": [
+    0.6087,
+    0.6087,
+    0.6087
+   ],
+   "min": 0.6087,
+   "max": 0.6087
+  }
+ },
+ "resources": {
+  "ingestion": {
+   "samples": 3,
+   "cpu_pct_mean": 72,
+   "cpu_pct_peak": 91,
+   "ollama_working_set_mb_peak": 37.0,
+   "python_working_set_mb_peak": 849.1,
+   "system_free_ram_mb_min": 3503.6,
+   "system_total_ram_mb": 16026.5
+  },
+  "retrieval": {
+   "samples": 4,
+   "cpu_pct_mean": 50.5,
+   "cpu_pct_peak": 68,
+   "ollama_working_set_mb_peak": 37.0,
+   "python_working_set_mb_peak": 798.2,
+   "system_free_ram_mb_min": 3524.2,
+   "system_total_ram_mb": 16026.5
+  },
+  "warmup": {
+   "samples": 0
+  },
+  "qa_rep1": {
+   "samples": 128,
+   "cpu_pct_mean": 64.0,
+   "cpu_pct_peak": 100,
+   "ollama_working_set_mb_peak": 1986.6,
+   "python_working_set_mb_peak": 864.0,
+   "system_free_ram_mb_min": 1136.6,
+   "system_total_ram_mb": 16026.5
+  },
+  "extraction_rep1": {
+   "samples": 31,
+   "cpu_pct_mean": 61.6,
+   "cpu_pct_peak": 100,
+   "ollama_working_set_mb_peak": 1962.1,
+   "python_working_set_mb_peak": 884.4,
+   "system_free_ram_mb_min": 1464.4,
+   "system_total_ram_mb": 16026.5
+  },
+  "qa_rep2": {
+   "samples": 119,
+   "cpu_pct_mean": 65.9,
+   "cpu_pct_peak": 100,
+   "ollama_working_set_mb_peak": 2142.5,
+   "python_working_set_mb_peak": 949.3,
+   "system_free_ram_mb_min": 789.9,
+   "system_total_ram_mb": 16026.5
+  },
+  "extraction_rep2": {
+   "samples": 38,
+   "cpu_pct_mean": 71.7,
+   "cpu_pct_peak": 100,
+   "ollama_working_set_mb_peak": 2141.0,
+   "python_working_set_mb_peak": 966.6,
+   "system_free_ram_mb_min": 441.3,
+   "system_total_ram_mb": 16026.5
+  },
+  "qa_rep3": {
+   "samples": 129,
+   "cpu_pct_mean": 73.0,
+   "cpu_pct_peak": 100,
+   "ollama_working_set_mb_peak": 2107.2,
+   "python_working_set_mb_peak": 986.1,
+   "system_free_ram_mb_min": 540.9,
+   "system_total_ram_mb": 16026.5
+  },
+  "extraction_rep3": {
+   "samples": 36,
+   "cpu_pct_mean": 71.7,
+   "cpu_pct_peak": 100,
+   "ollama_working_set_mb_peak": 2082.6,
+   "python_working_set_mb_peak": 686.1,
+   "system_free_ram_mb_min": 659.9,
+   "system_total_ram_mb": 16026.5
+  },
+  "workflow": {
+   "samples": 5,
+   "cpu_pct_mean": 68.4,
+   "cpu_pct_peak": 90,
+   "ollama_working_set_mb_peak": 2075.4,
+   "python_working_set_mb_peak": 648.8,
+   "system_free_ram_mb_min": 799.1,
+   "system_total_ram_mb": 16026.5
+  },
+  "concurrency1": {
+   "samples": 7,
+   "cpu_pct_mean": 76.6,
+   "cpu_pct_peak": 93,
+   "ollama_working_set_mb_peak": 2086.8,
+   "python_working_set_mb_peak": 644.7,
+   "system_free_ram_mb_min": 770.5,
+   "system_total_ram_mb": 16026.5
+  },
+  "concurrency2": {
+   "samples": 6,
+   "cpu_pct_mean": 76.3,
+   "cpu_pct_peak": 88,
+   "ollama_working_set_mb_peak": 2086.7,
+   "python_working_set_mb_peak": 816.8,
+   "system_free_ram_mb_min": 691.7,
+   "system_total_ram_mb": 16026.5
+  },
+  "concurrency4": {
+   "samples": 3,
+   "cpu_pct_mean": 76,
+   "cpu_pct_peak": 89,
+   "ollama_working_set_mb_peak": 2086.4,
+   "python_working_set_mb_peak": 820.2,
+   "system_free_ram_mb_min": 681.3,
+   "system_total_ram_mb": 16026.5
+  }
+ },
+ "concurrency": {
+  "1": {
+   "requests": 8,
+   "wall_s": 36.88,
+   "status_429": 0,
+   "p50": 4.2775,
+   "max": 6.225
+  },
+  "2": {
+   "requests": 8,
+   "wall_s": 28.27,
+   "status_429": 0,
+   "p50": 5.9495000000000005,
+   "max": 9.309
+  },
+  "4": {
+   "requests": 8,
+   "wall_s": 15.02,
+   "status_429": 4,
+   "p50": 3.042,
+   "max": 7.62
+  }
+ },
+ "cold_start_s": 0.053,
+ "storage_bytes": {
+  "documents": 49152,
+  "document_versions": 98304,
+  "document_chunks": 7389184
+ },
+ "indexing": {
+  "files": 48,
+  "seconds_total": 20.9,
+  "chunks_total": {
+   "meridian-eval2": 712,
+   "apex-benchmark": 735
+  }
+ }
+}

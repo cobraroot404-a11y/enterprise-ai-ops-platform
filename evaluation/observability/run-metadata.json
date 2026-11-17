@@ -1,0 +1,17 @@
+{
+  "generated_utc": "2026-11-17T01:24:51.055960+00:00",
+  "command": "python -m pytest tests/acceptance/test_observability_evidence.py -q",
+  "mode": "deterministic",
+  "python": "3.10.0",
+  "log_lines_captured": 107,
+  "event_types": [
+    "connector.call",
+    "request",
+    "span",
+    "submission.claimed",
+    "submission.outcome",
+    "ticket.transition"
+  ],
+  "workflow": "Apex end-to-end with injected 503 and lost-response failures (3 tickets)",
+  "labelling": "Local test-run telemetry; not production measurements."
+}

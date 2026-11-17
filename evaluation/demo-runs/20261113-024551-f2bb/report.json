@@ -1,0 +1,117 @@
+{
+ "run_id": "20261113-024551-f2bb",
+ "mode": "smoke",
+ "ai": "deterministic",
+ "started_at": "2026-11-13T02:45:52-05:00",
+ "executed": [],
+ "failures": [
+  "[startup] api was not ready after 90s \n    -> see its log under .demo/<run id>/logs/"
+ ],
+ "skipped": [],
+ "git_head": "ae8fd5512c57e49d820a7fc26858a586d4031200",
+ "timeline": [
+  {
+   "step": "preflight",
+   "ok": true,
+   "seconds": 4.1,
+   "detail": "7 checks passed"
+  },
+  {
+   "step": "create disposable database eaop_demo_20261113_024551_f2bb",
+   "ok": true,
+   "seconds": 0.1,
+   "detail": "created"
+  },
+  {
+   "step": "apply migrations (alembic upgrade head)",
+   "ok": true,
+   "seconds": 1.4,
+   "detail": "revision 0008"
+  },
+  {
+   "step": "seed Apex Industrial fixtures",
+   "ok": true,
+   "seconds": 1.4,
+   "detail": "ok (log .demo\\20261113-024551-f2bb\\logs\\seed-apex.log)"
+  },
+  {
+   "step": "start ticketing and wait for readiness",
+   "ok": true,
+   "seconds": 1.9,
+   "detail": "responds over HTTP"
+  },
+  {
+   "step": "start inventory and wait for readiness",
+   "ok": true,
+   "seconds": 1.4,
+   "detail": "responds over HTTP"
+  },
+  {
+   "step": "start fleet and wait for readiness",
+   "ok": true,
+   "seconds": 2.3,
+   "detail": "responds over HTTP"
+  },
+  {
+   "step": "start crm and wait for readiness",
+   "ok": true,
+   "seconds": 1.4,
+   "detail": "responds over HTTP"
+  },
+  {
+   "step": "start servicedesk and wait for readiness",
+   "ok": true,
+   "seconds": 1.5,
+   "detail": "responds over HTTP"
+  },
+  {
+   "step": "start worker and wait for readiness",
+   "ok": true,
+   "seconds": 2.7,
+   "detail": "logged 'worker started'"
+  },
+  {
+   "step": "start api and wait for readiness",
+   "ok": false,
+   "seconds": 96.3,
+   "detail": "[startup] api was not ready after 90s "
+  }
+ ],
+ "cleanup": [
+  {
+   "resource": "process api (pid 22212)",
+   "result": "stopped"
+  },
+  {
+   "resource": "process worker (pid 13872)",
+   "result": "stopped"
+  },
+  {
+   "resource": "process servicedesk (pid 26312)",
+   "result": "stopped"
+  },
+  {
+   "resource": "process crm (pid 32348)",
+   "result": "stopped"
+  },
+  {
+   "resource": "process fleet (pid 27612)",
+   "result": "stopped"
+  },
+  {
+   "resource": "process inventory (pid 32712)",
+   "result": "stopped"
+  },
+  {
+   "resource": "process ticketing (pid 18512)",
+   "result": "stopped"
+  },
+  {
+   "resource": "database eaop_demo_20261113_024551_f2bb",
+   "result": "dropped"
+  }
+ ],
+ "duration_seconds": 139.2,
+ "finished_at": "2026-11-13T02:48:11-05:00",
+ "success": false
+}

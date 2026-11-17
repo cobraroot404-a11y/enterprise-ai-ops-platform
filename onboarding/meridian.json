@@ -1,0 +1,91 @@
+{
+  "_comment": "Fictional Meridian Fleet Logistics onboarding, applied only through public API endpoints by scripts/onboard_tenant.py. No shared code is specific to this customer.",
+  "tenant": {"slug": "meridian-fleet", "name": "Meridian Fleet Logistics (fictional)"},
+  "members": [
+    {"email": "admin@meridian.example.test", "full_name": "Meridian Admin", "role": "tenant_admin"},
+    {"email": "supervisor@meridian.example.test", "full_name": "Meridian Supervisor", "role": "maintenance_supervisor"},
+    {"email": "engineer@meridian.example.test", "full_name": "Meridian Engineer", "role": "support_engineer"},
+    {"email": "auditor@meridian.example.test", "full_name": "Meridian Auditor", "role": "read_only_auditor"}
+  ],
+  "connectors": [
+    {"kind": "ticketing", "name": "meridian-service-desk", "base_url": "http://127.0.0.1:8105",
+     "secret_ref": "MERIDIAN_SERVICEDESK_KEY",
+     "config": {
+       "create_path": "/api/v2/work-orders",
+       "id_field": "work_order_id",
+       "payload_map": {"title": "summary", "description": "details", "priority": "urgency",
+                       "asset_id": "vehicle_ref", "source_ticket_id": "source_ref"},
+       "priority_map": {"P1": "critical", "P2": "high", "P3": "normal", "P4": "low"}}},
+    {"kind": "fleet", "name": "meridian-fleet-telematics", "base_url": "http://127.0.0.1:8103", "secret_ref": null, "config": {}},
+    {"kind": "crm", "name": "meridian-crm", "base_url": "http://127.0.0.1:8104", "secret_ref": null, "config": {}}
+  ],
+  "profile": {
+    "asset_label": "vehicle",
+    "asset_id_pattern": "\\b(VH-\\d{4})\\b",
+    "register_kind": "fleet_register",
+    "guidance_kinds": ["fleet_manual", "depot_inspection"],
+    "history_kind": "service_history",
+    "document_kinds": ["telematics_alerts"],
+    "categories": [
+      {"name": "brake_system", "keywords": ["brake", "air dryer"],
+       "description": "low brake line pressure, brake leaks, air dryer or brake chamber problems"},
+      {"name": "engine_cooling", "keywords": ["coolant", "overheat", "radiator", "running hot", "thermostat"],
+       "description": "high coolant temperature, overheating engine, radiator or coolant problems"},
+      {"name": "tire_wheel", "keywords": ["tire", "tyre", "wheel", "flat"],
+       "description": "tire pressure, tire damage or wheel problems"},
+      {"name": "refrigeration_unit", "keywords": ["refrigeration", "reefer", "cargo temperature"],
+       "description": "the refrigeration unit or cargo temperature is out of range"},
+      {"name": "electrical_fault", "keywords": ["tripp", "short circuit", "electrical", "battery", "alternator"],
+       "description": "electrical faults, battery or alternator problems, tripping breakers"},
+      {"name": "leak", "keywords": ["leak", "dripping", "seep"],
+       "description": "fluid leaking, dripping or seeping (when not mainly a brake or coolant problem)"},
+      {"name": "noise_vibration", "keywords": ["noise", "grinding", "squeal", "rattl", "vibrat"],
+       "description": "abnormal noise or vibration when no other category is the main complaint"}
+    ],
+    "symptoms": [
+      {"name": "low brake pressure", "keywords": ["low brake", "brake pressure", "pressure drop"]},
+      {"name": "air leak (hissing)", "keywords": ["hiss"]},
+      {"name": "high coolant temperature", "keywords": ["coolant temp", "overheat", "running hot"]},
+      {"name": "coolant leak or seep", "keywords": ["coolant leak", "seep"]},
+      {"name": "refrigeration unit too warm", "keywords": ["cargo temperature", "reefer", "refrigeration"]},
+      {"name": "unusual noise", "keywords": ["noise", "grinding", "squeal", "rattl"]},
+      {"name": "smoke or burning smell", "keywords": ["smoke", "burning smell"]}
+    ],
+    "signals": [
+      {"name": "brake_pressure_psi", "regex": "brake\\D{0,40}?(\\d+(?:\\.\\d+)?)\\s*psi", "unit": "psi"},
+      {"name": "coolant_temp_c", "regex": "coolant\\D{0,40}?(\\d+(?:\\.\\d+)?)\\s*(?:°\\s*)?C\\b", "unit": "C"}
+    ],
+    "safety_keywords": ["smoke", "fire", "burning smell", "brake failure", "loss of steering", "no brakes"],
+    "priority_rules": [
+      {"priority": "P1", "any": [{"flag": "safety"}, {"signal": "brake_pressure_psi", "lte": 40},
+                                 {"signal": "coolant_temp_c", "gte": 115}]},
+      {"priority": "P2", "any": [{"signal": "brake_pressure_psi", "lte": 55}, {"signal": "coolant_temp_c", "gte": 105},
+                                 {"category_in": ["leak", "electrical_fault", "refrigeration_unit"]}]},
+      {"priority": "P3", "any": [{"category_in": ["brake_system", "engine_cooling", "tire_wheel", "noise_vibration"]}]}
+    ],
+    "default_priority": "P4",
+    "enrichments": [
+      {"label": "Fleet telematics", "connector_kind": "fleet", "path": "/vehicles/{asset_id}",
+       "template": "Vehicle {unit_id}: odometer {odometer_km} km, last service {last_service_date}, status {status}",
+       "required_fields": ["odometer_km", "last_service_date"]},
+      {"label": "CRM account", "connector_kind": "crm", "path": "/accounts/by-vehicle/{asset_id}",
+       "template": "Customer account {account_name} ({account_code}), SLA tier {sla_tier}, response within {sla_response_hours} h",
+       "required_fields": ["account_name", "sla_tier"]}
+    ],
+    "field_maps": {
+      "fleet_register": {"id_field": "unit_id", "columns": {"unit_id": "vehicle_id", "description": "name", "depot": "location"}},
+      "service_history": {"id_field": "record_ref", "columns": {"record_ref": "service_record_id", "unit_id": "vehicle_id",
+                          "service_date": "date", "issue_type": "category", "issue_summary": "description",
+                          "cause": "root_cause", "fix": "resolution"}},
+      "telematics_alerts": {"id_field": "alert_ref", "columns": {"alert_ref": "alert_id", "unit_id": "vehicle_id",
+                            "raised_at": "timestamp", "alert_text": "description"}}
+    }
+  },
+  "documents": [
+    {"file": "sample-data/customer-b/fleet_register.csv", "kind": "fleet_register"},
+    {"file": "sample-data/customer-b/meridian_mx300_maintenance_manual.pdf", "kind": "fleet_manual"},
+    {"file": "sample-data/customer-b/meridian_depot_inspection_2026q3.pdf", "kind": "depot_inspection"},
+    {"file": "sample-data/customer-b/service_history.csv", "kind": "service_history"},
+    {"file": "sample-data/customer-b/telematics_alerts.csv", "kind": "telematics_alerts"}
+  ]
+}

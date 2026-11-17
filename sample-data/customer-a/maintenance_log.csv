@@ -1,0 +1,4 @@
+log_id,date,equipment_id,work_done,technician
+ML-9001,2026-08-14,P-101,Weekly bearing inspection; lubricant topped up,R. Okafor
+ML-9002,2026-08-21,P-101,Weekly bearing inspection; no findings,R. Okafor
+ML-9003,2026-09-02,P-102,Replaced lubricant,L. Brandt

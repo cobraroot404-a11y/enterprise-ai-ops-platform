@@ -1,0 +1,65 @@
+{
+ "run_id": "exp-H1-20261114T214610Z",
+ "experiment": "H1",
+ "command": "python evaluation/phase8/run_experiment.py --id H1 --tuning {\"entity_boost\": 0.02, \"entity_gate\": true, \"query_override_gate\": true, \"claim_completion\": true, \"numeric_verification\": true, \"guidance_query\": \"asset_context\", \"authority_demotion\": true} --phases qa --reps 1",
+ "started_utc": "2026-11-14T21:46:10.874715+00:00",
+ "finished_utc": "2026-11-14T21:57:03.870187+00:00",
+ "duration_s": 653.0,
+ "git_commit": "c619fab2496c03035191dcfb06f0ee7878d7bf36",
+ "uncommitted_changes_in_scope": [],
+ "python": "3.10.0",
+ "versions": {
+  "python": "3.10.0",
+  "torch": "2.14.1+cpu",
+  "transformers": "5.20.2",
+  "sentence_transformers": "6.3.0",
+  "huggingface_hub": "2.4.0",
+  "numpy": "2.2.6",
+  "ollama": "0.40.16",
+  "ollama_model": "qwen2.5:1.5b",
+  "ollama_model_digest": "65ec06548149b04c096a120e4a6da9d4017ea809c91734ea5631e89f96ddc57b",
+  "prompt_version": "3",
+  "prompts_sha256": "3710b8b7897780f85600ce5eb007731ae5f38f895790d09c3cdb096a921575c6",
+  "ollama_options": {
+   "temperature": 0,
+   "seed": 7,
+   "num_ctx": 4096,
+   "num_predict": 320
+  },
+  "postgres": "16.15 (Debian 16.15-1.pgdg12+2)",
+  "pgvector": "0.8.7",
+  "embedding_profile": "sentence_transformers:sentence-transformers/all-MiniLM-L6-v2@1110a243fdf4706b3f48f1d95db1a4f5529b4d41:384",
+  "embedding_evidence_threshold_used": 0.5
+ },
+ "tuning_at_ingestion": {
+  "entity_boost": 0.02,
+  "entity_gate": true,
+  "query_override_gate": true,
+  "claim_completion": true,
+  "numeric_verification": true,
+  "guidance_query": "asset_context",
+  "authority_demotion": true
+ },
+ "tuning_hash_at_ingestion": "6f0c0262237f15d39969cadff75bcd7191af341dad35390365d503f8af556fbb",
+ "reps": 1,
+ "phases": [
+  "qa"
+ ],
+ "dataset": {
+  "name": "eval-v2",
+  "split": "dev",
+  "queries": 118,
+  "cases": 34,
+  "manifest_sha256": "42fec8bc8abea9efff135208127990747d915287e77e8b3d64b65732e7d9cb62",
+  "frozen_splits_sha256": "31d18132ad3d2bd22fdac903c721b2427c67822634d1ceca76204520f880f42f"
+ },
+ "runtime": {
+  "ollama_options": {
+   "temperature": 0,
+   "seed": 7,
+   "num_ctx": 4096,
+   "num_predict": 320
+  },
+  "evidence_threshold": 0.5
+ }
+}

@@ -1,0 +1,682 @@
+{
+ "answerable": {
+  "withheld: numeric mismatch": 10,
+  "withheld: incorrect quotation": 4,
+  "wrong passage: sibling/hard-negative page": 2,
+  "refused": 1,
+  "incomplete evidence: required fact missing from answer": 2
+ },
+ "answerable_items": [
+  {
+   "id": "E2-A-0017",
+   "category": "paraphrase",
+   "class": "withheld: numeric mismatch",
+   "detail": "number(s) not found in the cited evidence: 89",
+   "query": "At what lubricant heat does the GB-550 gearbox warn the operators?"
+  },
+  {
+   "id": "E2-A-0034",
+   "category": "paraphrase",
+   "class": "withheld: numeric mismatch",
+   "detail": "number(s) not found in the cited evidence: 1000",
+   "query": "How high must the megohmmeter reading be before the EM-75 may be switched on?"
+  },
+  {
+   "id": "E2-A-0038",
+   "category": "multi_hop",
+   "class": "withheld: numeric mismatch",
+   "detail": "number(s) not found in the cited evidence: 110",
+   "query": "What thermal overload setting applies to M-301, and what reference was logged when that check was last carried"
+  },
+  {
+   "id": "E2-A-0045",
+   "category": "multi_hop",
+   "class": "withheld: incorrect quotation",
+   "detail": "citation [4] quote not found in the cited passage",
+   "query": "What compressor vibration limit applies to C-102, and what reference was logged when that check was last carri"
+  },
+  {
+   "id": "E2-A-0052",
+   "category": "version_conflict",
+   "class": "withheld: numeric mismatch",
+   "detail": "number(s) not found in the cited evidence: 500",
+   "query": "What is the minimum insulation resistance for the EM-55?"
+  },
+  {
+   "id": "E2-A-0059",
+   "category": "conflicting_record",
+   "class": "wrong passage: sibling/hard-negative page",
+   "detail": "[('apex_gb-500_manual.pdf', 2)]",
+   "query": "What breather cleaning interval applies to G-111?"
+  },
+  {
+   "id": "E2-A-0061",
+   "category": "conflicting_record",
+   "class": "wrong passage: sibling/hard-negative page",
+   "detail": "[('apex_em-75_manual.pdf', 2)]",
+   "query": "What minimum insulation resistance applies to M-211?"
+  },
+  {
+   "id": "E2-A-0069",
+   "category": "compare",
+   "class": "withheld: numeric mismatch",
+   "detail": "number(s) not found in the cited evidence: 3.5, 450",
+   "query": "Compare the take-up tension of the CV-400 and the CV-450: what is each value?"
+  },
+  {
+   "id": "E2-A-0080",
+   "category": "procedure",
+   "class": "withheld: numeric mismatch",
+   "detail": "number(s) not found in the cited evidence: 1, 3",
+   "query": "The centrifugal pump shows this problem: pump runs but delivers little flow. What should be checked?"
+  },
+  {
+   "id": "E2-A-0083",
+   "category": "procedure",
+   "class": "withheld: numeric mismatch",
+   "detail": "number(s) not found in the cited evidence: 1, 4",
+   "query": "The electric motor shows this problem: high-pitched squeal from the motor end. What should be checked?"
+  },
+  {
+   "id": "E2-A-0084",
+   "category": "procedure",
+   "class": "withheld: numeric mismatch",
+   "detail": "number(s) not found in the cited evidence: 1, 4",
+   "query": "The electric motor shows this problem: motor housing too hot to touch. What should be checked?"
+  },
+  {
+   "id": "E2-A-0085",
+   "category": "procedure",
+   "class": "withheld: numeric mismatch",
+   "detail": "number(s) not found in the cited evidence: 1, 3",
+   "query": "The centrifugal pump shows this problem: gravel-like rattling at the pump inlet. What should be checked?"
+  },
+  {
+   "id": "E2-M-0024",
+   "category": "paraphrase",
+   "class": "refused",
+   "detail": "",
+   "query": "How much looseness at the steering wheel of the MX-300 is tolerated?"
+  },
+  {
+   "id": "E2-M-0029",
+   "category": "multi_hop",
+   "class": "incomplete evidence: required fact missing from answer",
+   "detail": "missing ['12.1', 'REF-5364']; relevant needs 3 passages, cited 1",
+   "query": "What minimum battery voltage applies to VH-3001, and what reference was logged when that check was last carrie"
+  },
+  {
+   "id": "E2-M-0033",
+   "category": "multi_hop",
+   "class": "withheld: incorrect quotation",
+   "detail": "citation [1] quote not found in the cited passage; citation [2] quote not found in the cited passage",
+   "query": "What minimum brake pad thickness applies to VH-2002, and what reference was logged when that check was last ca"
+  },
+  {
+   "id": "E2-M-0034",
+   "category": "multi_hop",
+   "class": "withheld: incorrect quotation",
+   "detail": "citation [1] quote not found in the cited passage",
+   "query": "What low brake pressure warning threshold applies to VH-3002, and what reference was logged when that check wa"
+  },
+  {
+   "id": "E2-M-0035",
+   "category": "multi_hop",
+   "class": "incomplete evidence: required fact missing from answer",
+   "detail": "missing ['180']; relevant needs 3 passages, cited 1",
+   "query": "What wheel nut torque applies to VH-5101, and what reference was logged when that check was last carried out o"
+  },
+  {
+   "id": "E2-M-0036",
+   "category": "multi_hop",
+   "class": "withheld: numeric mismatch",
+   "detail": "number(s) not found in the cited evidence: 3.5",
+   "query": "What minimum brake pad thickness applies to VH-7110, and what reference was logged when that check was last ca"
+  },
+  {
+   "id": "E2-M-0061",
+   "category": "asset_confusion",
+   "class": "withheld: incorrect quotation",
+   "detail": "citation [1] quote not found in the cited passage; answer marker [1] has no verified citation",
+   "query": "What service brake line pressure did the 2026Q2 inspection record for VH-4101?"
+  }
+ ],
+ "unanswerable_wrong": [
+  {
+   "id": "E2-A-0105",
+   "subtype": [
+    "gap_in_manual"
+   ],
+   "query": "At what temperature difference is an idler on the CV-450 replaced?",
+   "answer": "An idler on the CV-450 is due for replacement when it is 2.5 degrees above its neighbors.",
+   "cited": [
+    "apex_cv-450_manual.pdf"
+   ]
+  }
+ ],
+ "citation_issues": [
+  {
+   "id": "E2-A-0059",
+   "category": "conflicting_record",
+   "cited": [
+    "apex_gb-500_manual.pdf",
+    2
+   ],
+   "relevant": [
+    [
+     "apex_gb-550_manual.pdf",
+     1
+    ]
+   ]
+  },
+  {
+   "id": "E2-A-0061",
+   "category": "conflicting_record",
+   "cited": [
+    "apex_em-75_manual.pdf",
+    2
+   ],
+   "relevant": [
+    [
+     "apex_em-55_manual.pdf",
+     2
+    ]
+   ]
+  }
+ ],
+ "extraction": [
+  {
+   "id": "E2-A-X006",
+   "tenant": "apex",
+   "tags": [
+    "clear"
+   ],
+   "label": [
+    "performance_degradation",
+    "P4",
+    null,
+    null,
+    null
+   ],
+   "got": [
+    "performance_degradation",
+    "P4",
+    "needs_review",
+    0
+   ],
+   "raw_vib": null,
+   "notes": [
+    "No grounded manual guidance found; escalation recommended.",
+    "Human review required before ticketing: no grounded evidence."
+   ]
+  },
+  {
+   "id": "E2-A-X008",
+   "tenant": "apex",
+   "tags": [
+    "clear"
+   ],
+   "label": [
+    "mechanical_vibration",
+    "P3",
+    null,
+    null,
+    null
+   ],
+   "got": [
+    "mechanical_vibration",
+    "P1",
+    "needs_review",
+    0
+   ],
+   "raw_vib": 120.0,
+   "notes": [
+    "No grounded manual guidance found; escalation recommended.",
+    "Human review required before ticketing: no grounded evidence."
+   ]
+  },
+  {
+   "id": "E2-A-X010",
+   "tenant": "apex",
+   "tags": [
+    "clear"
+   ],
+   "label": [
+    "overheating",
+    "P2",
+    null,
+    null,
+    null
+   ],
+   "got": [
+    "overheating",
+    "P2",
+    "needs_review",
+    0
+   ],
+   "raw_vib": null,
+   "notes": [
+    "No grounded manual guidance found; escalation recommended.",
+    "Human review required before ticketing: no grounded evidence."
+   ]
+  },
+  {
+   "id": "E2-A-X012",
+   "tenant": "apex",
+   "tags": [
+    "clear"
+   ],
+   "label": [
+    "noise",
+    "P3",
+    null,
+    null,
+    null
+   ],
+   "got": [
+    "noise",
+    "P3",
+    "pending_review",
+    1
+   ],
+   "raw_vib": null,
+   "notes": []
+  },
+  {
+   "id": "E2-A-X014",
+   "tenant": "apex",
+   "tags": [
+    "clear"
+   ],
+   "label": [
+    "other",
+    "P4",
+    null,
+    null,
+    null
+   ],
+   "got": [
+    "performance_degradation",
+    "P4",
+    "needs_review",
+    0
+   ],
+   "raw_vib": null,
+   "notes": [
+    "No grounded manual guidance found; escalation recommended.",
+    "Equipment P-101 was not found in the tenant equipment register."
+   ]
+  },
+  {
+   "id": "E2-A-X017",
+   "tenant": "apex",
+   "tags": [
+    "severity"
+   ],
+   "label": [
+    "mechanical_vibration",
+    "P3",
+    5.2,
+    null,
+    null
+   ],
+   "got": [
+    "mechanical_vibration",
+    "P3",
+    "needs_review",
+    0
+   ],
+   "raw_vib": 5.2,
+   "notes": [
+    "No grounded manual guidance found; escalation recommended.",
+    "Human review required before ticketing: no grounded evidence."
+   ]
+  },
+  {
+   "id": "E2-A-X021",
+   "tenant": "apex",
+   "tags": [
+    "ambiguous"
+   ],
+   "label": [
+    "electrical_fault",
+    "P2",
+    null,
+    null,
+    null
+   ],
+   "got": [
+    "overheating",
+    "P2",
+    "needs_review",
+    0
+   ],
+   "raw_vib": null,
+   "notes": [
+    "No grounded manual guidance found; escalation recommended.",
+    "Human review required before ticketing: no grounded evidence."
+   ]
+  },
+  {
+   "id": "E2-A-X024",
+   "tenant": "apex",
+   "tags": [
+    "safety"
+   ],
+   "label": [
+    "overheating",
+    "P1",
+    null,
+    null,
+    null
+   ],
+   "got": [
+    "electrical_fault",
+    "P1",
+    "needs_review",
+    0
+   ],
+   "raw_vib": null,
+   "notes": [
+    "No grounded manual guidance found; escalation recommended.",
+    "Human review required before ticketing: no grounded evidence."
+   ]
+  },
+  {
+   "id": "E2-A-X028",
+   "tenant": "apex",
+   "tags": [
+    "no_asset"
+   ],
+   "label": [
+    "other",
+    "P4",
+    null,
+    null,
+    null
+   ],
+   "got": [
+    null,
+    null,
+    null,
+    null
+   ],
+   "raw_vib": null,
+   "notes": []
+  },
+  {
+   "id": "E2-A-X030",
+   "tenant": "apex",
+   "tags": [
+    "prompt_injection",
+    "adversarial"
+   ],
+   "label": [
+    "noise",
+    "P3",
+    null,
+    null,
+    null
+   ],
+   "got": [
+    "noise",
+    "P3",
+    "needs_review",
+    0
+   ],
+   "raw_vib": null,
+   "notes": [
+    "No grounded manual guidance found; escalation recommended.",
+    "Human review required before ticketing: no grounded evidence."
+   ]
+  },
+  {
+   "id": "E2-M-X006",
+   "tenant": "meridian",
+   "tags": [
+    "clear"
+   ],
+   "label": [
+    "leak",
+    "P2",
+    null,
+    null,
+    null
+   ],
+   "got": [
+    "leak",
+    "P2",
+    "needs_review",
+    0
+   ],
+   "raw_vib": null,
+   "notes": [
+    "No grounded manual guidance found; escalation recommended.",
+    "Fleet telematics lookup failed (permanent)"
+   ]
+  },
+  {
+   "id": "E2-M-X008",
+   "tenant": "meridian",
+   "tags": [
+    "clear"
+   ],
+   "label": [
+    "brake_system",
+    "P3",
+    null,
+    null,
+    null
+   ],
+   "got": [
+    "leak",
+    "P2",
+    "needs_review",
+    0
+   ],
+   "raw_vib": null,
+   "notes": [
+    "No grounded manual guidance found; escalation recommended.",
+    "Fleet telematics lookup failed (permanent)"
+   ]
+  },
+  {
+   "id": "E2-M-X010",
+   "tenant": "meridian",
+   "tags": [
+    "clear"
+   ],
+   "label": [
+    "tire_wheel",
+    "P3",
+    null,
+    null,
+    null
+   ],
+   "got": [
+    "leak",
+    "P2",
+    "needs_review",
+    0
+   ],
+   "raw_vib": null,
+   "notes": [
+    "No grounded manual guidance found; escalation recommended.",
+    "Fleet telematics lookup failed (permanent)"
+   ]
+  },
+  {
+   "id": "E2-M-X012",
+   "tenant": "meridian",
+   "tags": [
+    "clear"
+   ],
+   "label": [
+    "electrical_fault",
+    "P2",
+    null,
+    null,
+    null
+   ],
+   "got": [
+    "electrical_fault",
+    "P2",
+    "needs_review",
+    0
+   ],
+   "raw_vib": null,
+   "notes": [
+    "No grounded manual guidance found; escalation recommended.",
+    "Fleet telematics lookup failed (permanent)"
+   ]
+  },
+  {
+   "id": "E2-M-X014",
+   "tenant": "meridian",
+   "tags": [
+    "clear"
+   ],
+   "label": [
+    "noise_vibration",
+    "P3",
+    null,
+    null,
+    null
+   ],
+   "got": [
+    "noise_vibration",
+    "P3",
+    "needs_review",
+    0
+   ],
+   "raw_vib": null,
+   "notes": [
+    "No grounded manual guidance found; escalation recommended.",
+    "Vehicle VH-2103: odometer 94310 km, last service 2026-06-11, status in_service"
+   ]
+  },
+  {
+   "id": "E2-M-X017",
+   "tenant": "meridian",
+   "tags": [
+    "severity"
+   ],
+   "label": [
+    "brake_system",
+    "P3",
+    null,
+    62,
+    null
+   ],
+   "got": [
+    "brake_system",
+    "P3",
+    "pending_review",
+    1
+   ],
+   "raw_vib": null,
+   "notes": [
+    "Fleet telematics lookup failed (permanent)",
+    "CRM account lookup failed (permanent)"
+   ]
+  },
+  {
+   "id": "E2-M-X021",
+   "tenant": "meridian",
+   "tags": [
+    "ambiguous"
+   ],
+   "label": [
+    "tire_wheel",
+    "P3",
+    null,
+    null,
+    null
+   ],
+   "got": [
+    "noise_vibration",
+    "P3",
+    "needs_review",
+    0
+   ],
+   "raw_vib": null,
+   "notes": [
+    "No grounded manual guidance found; escalation recommended.",
+    "Fleet telematics lookup failed (permanent)"
+   ]
+  },
+  {
+   "id": "E2-M-X024",
+   "tenant": "meridian",
+   "tags": [
+    "safety"
+   ],
+   "label": [
+    "brake_system",
+    "P1",
+    null,
+    null,
+    null
+   ],
+   "got": [
+    "leak",
+    "P1",
+    "needs_review",
+    0
+   ],
+   "raw_vib": null,
+   "notes": [
+    "No grounded manual guidance found; escalation recommended.",
+    "Fleet telematics lookup failed (permanent)"
+   ]
+  },
+  {
+   "id": "E2-M-X028",
+   "tenant": "meridian",
+   "tags": [
+    "no_asset"
+   ],
+   "label": [
+    "other",
+    "P4",
+    null,
+    null,
+    null
+   ],
+   "got": [
+    null,
+    null,
+    null,
+    null
+   ],
+   "raw_vib": null,
+   "notes": []
+  },
+  {
+   "id": "E2-M-X030",
+   "tenant": "meridian",
+   "tags": [
+    "prompt_injection",
+    "adversarial"
+   ],
+   "label": [
+    "refrigeration_unit",
+    "P2",
+    null,
+    null,
+    null
+   ],
+   "got": [
+    "refrigeration_unit",
+    "P2",
+    "needs_review",
+    0
+   ],
+   "raw_vib": null,
+   "notes": [
+    "No grounded manual guidance found; escalation recommended.",
+    "Fleet telematics lookup failed (permanent)"
+   ]
+  }
+ ]
+}

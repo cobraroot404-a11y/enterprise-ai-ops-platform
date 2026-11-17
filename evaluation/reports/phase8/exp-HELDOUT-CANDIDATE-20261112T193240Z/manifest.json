@@ -1,0 +1,70 @@
+{
+ "run_id": "exp-HELDOUT-CANDIDATE-20261112T193240Z",
+ "experiment": "HELDOUT-CANDIDATE",
+ "command": "python evaluation/phase8/run_experiment.py --id HELDOUT-CANDIDATE --tuning {\"entity_boost\": 0.02, \"entity_gate\": true, \"query_override_gate\": true, \"claim_completion\": true, \"numeric_verification\": true, \"guidance_query\": \"asset_context\"} --split test --allow-heldout --phases retrieval,qa,extraction,workflow --reps 3",
+ "started_utc": "2026-11-12T19:32:40.038620+00:00",
+ "finished_utc": "2026-11-12T19:57:05.710602+00:00",
+ "duration_s": 1465.7,
+ "git_commit": "a2571a42c5908cf6d79b5a8586647e9c4d2a4d8a",
+ "uncommitted_changes_in_scope": [
+  "?? evaluation/phase8/configs/run_heldout.sh",
+  "?? evaluation/phase8/make_heldout_report.py"
+ ],
+ "python": "3.10.0",
+ "versions": {
+  "python": "3.10.0",
+  "torch": "2.14.1+cpu",
+  "transformers": "5.20.2",
+  "sentence_transformers": "6.3.0",
+  "huggingface_hub": "2.4.0",
+  "numpy": "2.2.6",
+  "ollama": "0.40.16",
+  "ollama_model": "qwen2.5:1.5b",
+  "ollama_model_digest": "65ec06548149b04c096a120e4a6da9d4017ea809c91734ea5631e89f96ddc57b",
+  "prompt_version": "3",
+  "prompts_sha256": "3710b8b7897780f85600ce5eb007731ae5f38f895790d09c3cdb096a921575c6",
+  "ollama_options": {
+   "temperature": 0,
+   "seed": 7,
+   "num_ctx": 4096,
+   "num_predict": 320
+  },
+  "postgres": "16.15 (Debian 16.15-1.pgdg12+2)",
+  "pgvector": "0.8.7",
+  "embedding_profile": "sentence_transformers:sentence-transformers/all-MiniLM-L6-v2@1110a243fdf4706b3f48f1d95db1a4f5529b4d41:384",
+  "embedding_evidence_threshold_used": 0.5
+ },
+ "tuning_at_ingestion": {
+  "entity_boost": 0.02,
+  "entity_gate": true,
+  "query_override_gate": true,
+  "claim_completion": true,
+  "numeric_verification": true,
+  "guidance_query": "asset_context"
+ },
+ "tuning_hash_at_ingestion": "4e24e63f3f2d06c31946d07e52d6f3a5c6c378a1f47b9b0535d8750368268e03",
+ "reps": 3,
+ "phases": [
+  "extraction",
+  "qa",
+  "retrieval",
+  "workflow"
+ ],
+ "dataset": {
+  "name": "eval-v2",
+  "split": "test",
+  "queries": 75,
+  "cases": 20,
+  "manifest_sha256": "42fec8bc8abea9efff135208127990747d915287e77e8b3d64b65732e7d9cb62",
+  "frozen_splits_sha256": "31d18132ad3d2bd22fdac903c721b2427c67822634d1ceca76204520f880f42f"
+ },
+ "runtime": {
+  "ollama_options": {
+   "temperature": 0,
+   "seed": 7,
+   "num_ctx": 4096,
+   "num_predict": 320
+  },
+  "evidence_threshold": 0.5
+ }
+}
