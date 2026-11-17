@@ -82,8 +82,13 @@ export default function OverviewPage({ session }: { session: Session }) {
           <Card title="Latest audit events" id="ov-aud">
             <Status state={audit} label="audit events" />
             {audit.data && (
-              <ul className="plain">
-                {audit.data.items.map((a) => <li key={a.id}><code>{a.action}</code> <span className="muted small">{a.actor} · {fmtTime(a.created_at)}</span></li>)}
+              <ul className="activity">
+                {audit.data.items.map((a) => (
+                  <li key={a.id}>
+                    <code>{a.action}</code>
+                    <span className="muted small">{a.actor} · {fmtTime(a.created_at)}</span>
+                  </li>
+                ))}
               </ul>
             )}
             <a href="#/audit">Open Audit Logs</a>
@@ -107,5 +112,11 @@ function Stat({ label, value, tone, href, note }: { label: string; value: number
       {note && <span className="muted small">{note}</span>}
     </>
   );
-  return <div role="listitem" className="stat">{href ? <a href={href} className="stat-link">{body}</a> : body}</div>;
+  return (
+    <div role="listitem" className="stat">
+      {href
+        ? <a href={href} className="stat-content stat-link">{body}</a>
+        : <div className="stat-content">{body}</div>}
+    </div>
+  );
 }

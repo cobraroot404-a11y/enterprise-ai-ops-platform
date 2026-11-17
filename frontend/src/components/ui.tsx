@@ -3,7 +3,7 @@ import type { ReactNode } from "react";
 import type { AsyncState } from "../hooks/useAsync";
 
 export function Status({ state, empty, label = "data" }: { state: AsyncState<unknown>; empty?: string; label?: string }) {
-  if (state.loading && !state.data) return <p role="status" className="muted">Loading {label}…</p>;
+  if (state.loading && !state.data) return <p role="status" className="muted loading">Loading {label}…</p>;
   if (state.error)
     return (
       <div role="alert" className="notice notice-bad">
