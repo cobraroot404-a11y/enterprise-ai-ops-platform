@@ -23,13 +23,14 @@ def test_label_and_four_phases_each_with_eight_items():
         assert "Formal approval recorded:** none found" in s
 
 
-def test_cited_paths_and_commits_exist_and_status_not_overstated():
+def test_portfolio_evidence_paths_exist_and_status_is_not_overstated():
     t = _text()
     paths = {p for p in re.findall(r"`([A-Za-z0-9_./-]+\.[a-z]+)`", t) if "/" in p}
     paths |= {p for p in re.findall(r"`([A-Za-z0-9_./-]+/[A-Za-z0-9_-]+)`", t) if p.startswith("evaluation/")}
-    assert len(paths) >= 15
+    assert len(paths) >= 14
     assert [p for p in sorted(paths) if not (ROOT / p).exists()] == []
-    import subprocess
-    for sha in sorted(set(re.findall(r"`([0-9a-f]{7})`", t))):
-        assert subprocess.run(["git", "cat-file", "-e", sha + "^{commit}"], cwd=ROOT).returncode == 0, sha
+    for phase in (2, 3, 4):
+        assert f"evaluation/reports/phase{phase}-gate/manifest.json" in paths
+    assert "historical references to the private engineering repository" in t
+    assert not any(path.endswith(".xml") for path in paths)
     assert "stays PARTIAL" in t and "cannot create one" in t

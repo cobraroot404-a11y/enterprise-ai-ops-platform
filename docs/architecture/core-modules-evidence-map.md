@@ -16,7 +16,7 @@ Maps each of the 13 core modules to existing code, tests and stored evidence. It
 | 10 | Audit Logging | `backend/app/audit/service.py` | `backend/tests/test_deletion_exposure_audit.py`, `backend/tests/test_control_mutations.py` | `docs/security/` |
 | 11 | Observability | `backend/app/observability/` | `backend/tests/test_observability.py`, `backend/tests/test_spans.py`, `backend/tests/test_durable_metrics.py` | `docs/operations/observability.md`, `evaluation/observability/README.md` |
 | 12 | Evaluation | `backend/app/evaluation_registry.py`, `backend/app/api/v1/ops_routes.py`, `evaluation/phase8/` | `backend/tests/test_evaluation_registry.py`, `backend/tests/test_phase8_quality.py`, `tests/test_phase8_metrics.py` | `docs/performance/benchmark-reports-index.md`, `evaluation/reports/` |
-| 13 | Customer Dashboard | `frontend/src/pages/OverviewPage.tsx`, `frontend/src/pages/EvaluationPage.tsx` | `frontend/src/pages/pages.test.tsx`, `frontend/e2e/demo-smoke.spec.ts` | `evaluation/ui-acceptance/` |
+| 13 | Customer Dashboard | `frontend/src/pages/OverviewPage.tsx`, `frontend/src/pages/EvaluationPage.tsx` | `frontend/src/pages/pages.test.tsx`, `frontend/e2e/demo-smoke.spec.ts` | `docs/phase6/phase6-closure-gate.md` |
 
 ## Limits (what this map does not claim)
 - Module 12: evaluation **runs** are executed by offline scripts under `evaluation/phase8/`, not started or managed through the API. The API exposes only a read-only registry (`GET /api/v1/evaluation/registry`) over recorded runs. L417 lists Evaluation as a module and does not specify run management; the register keeps this as a documented limit, not a hidden claim.
