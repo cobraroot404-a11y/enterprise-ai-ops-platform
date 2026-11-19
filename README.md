@@ -50,7 +50,7 @@ The dark-mode walkthrough follows a fictional Apex Industrial maintenance reques
 
 **Tenant overview.** Baseline the incident review backlog, delivery outcomes, and approval turnaround before rolling out the workflow.
 
-![Apex Industrial overview with onboarding health, incident review load, and delivery metrics](docs/images/eaop-apex-overview.png)
+![Refreshed Apex Industrial dashboard with 25 demo incidents, a seven-day bar chart, category breakdown, and system health](docs/images/eaop-apex-overview.png)
 
 **Grounded maintenance answer.** The assistant retrieves tenant documents and shows the passages behind its answer to a pump vibration question.
 
