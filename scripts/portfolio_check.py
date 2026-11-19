@@ -14,12 +14,12 @@ DEBUG_DIRS = {"artifacts", "playwright-report", "test-results", ".demo"}
 DEBUG_SUFFIXES = {".zip", ".har", ".log", ".xml", ".webm", ".dump", ".png", ".jpg", ".jpeg", ".webp"}
 # Reviewed README screenshots of fictional demo data. Replacements require review.
 README_SCREENSHOTS = {
-    "docs/images/eaop-apex-connectors.png": "35a4280cdce18ddeb527de3421e5af264ca15c811c38a17e0b0440b7f64f30e3",
+    "docs/images/eaop-apex-connectors.png": "9a8cc5608756493e2459686273fac268610d787a92fbff1ce7a78bb76fe27261",
     "docs/images/eaop-apex-overview.png": "876d470f7ac729582ba5303f79b7f07d4f667fa95e584468df747facf894c42c",
-    "docs/images/eaop-grounded-maintenance-answer.png": "6699e2a666a6346efd30b785911cad7ca09bb11321fb23d17282ce8921aa06a9",
-    "docs/images/eaop-integration-health.png": "a11301bae5b3c631308f7be07c94633f400cc059eae56159325fcf98a5eab807",
-    "docs/images/eaop-supervisor-approval-queue.png": "224d67db6328b712c572488c0ed5c3c6e10b520deee2358a8417e28367069974",
-    "docs/images/eaop-ticket-audit-trail.png": "1f888a3e8f152bbf2db29bf837a59f45b64adebb1f676c978072712267078a4b",
+    "docs/images/eaop-grounded-maintenance-answer.png": "a43c4bb6e91f8b5f75a7f540944f62c433509e5dd76c7eecc4f064de1422818b",
+    "docs/images/eaop-integration-health.png": "6222934e2ac1a2348c869e89b5623a97f0e6e54d8896590807d5adce8106448c",
+    "docs/images/eaop-supervisor-approval-queue.png": "fd8c5f14062161b7302b87911905c4e66a7ed6847fc4b551b03f7a207da1b117",
+    "docs/images/eaop-ticket-audit-trail.png": "f95657778c5c5128eddaa0fba98cdd768529a9f49ee71315ca66ad2524c78d9c",
 }
 MACHINE_PATH = re.compile(
     rb"(?i)[a-z]:(?:[/\\]+)Users(?:[/\\]+)[\w.-]+"
